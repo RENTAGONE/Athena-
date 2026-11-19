@@ -1,24 +1,78 @@
-/* Cognitive Atlas tokens. Values are copied from ATHENA_VISUAL_IDENTITY_AND_DESIGN_SYSTEM_v1.0 sections 3-5. No colour is written ad hoc elsewhere. */
+/* Cognitive Atlas design tokens. Every colour, space and duration in the app comes from this file.
+   Legacy names (--canvas-0, --surface-1, --line-subtle, --signal-teal) stay as aliases so older
+   components keep one source of truth instead of carrying hard-coded hex values. */
 :root {
   color-scheme: dark;
-  --canvas-0: #080d12; --canvas-1: #0d141b;
-  --surface-1: #121c25; --surface-2: #182631; --surface-3: #20323f;
-  --line-subtle: #253743; --line-strong: #3a505e;
-  --text-primary: #f1f5f7; --text-secondary: #b0bec7; --text-muted: #8799a5; --text-inverse: #071016;
-  --signal-teal: #5be0c1; --signal-blue: #8cb9ff; --signal-violet: #b8a5ff; --signal-amber: #f2c47b; --signal-coral: #ff8e87; --signal-green: #70d7a5;
-  --discipline-eng: #75afff; --discipline-biz: #e9b66d; --discipline-elec: #65cfe0; --discipline-fin: #a9d58a; --discipline-body: #e58fa0; --discipline-psy: #b5a0f4;
-  --discipline-aest: #f09bc5; --discipline-work: #91aab8; --discipline-art: #dfa77a; --discipline-ath: #79d3a5; --discipline-perf: #c9a0f2; --discipline-math: #8fb7f0;
-  --discipline-cyber: #79b6d0; --discipline-lang: #d4b77d; --discipline-res: #9abba8; --discipline-indep: #d4a88c; --discipline-lead: #a6b1e2; --discipline-comm: #e0a09b;
 
-  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
-  --radius-control: 8px; --radius-panel: 12px; --radius-sheet: 16px; --radius-modal: 20px;
+  /* Observatory palette: dark-first, structural 1px edges, no diffused drop shadows. */
+  --void: #070b18;
+  --deep: #0b1224;
+  --surface: #101b33;
+  --elevated: #172541;
+  --border: #263858;
+
+  --text-primary: #f1f5ff;
+  --text-secondary: #a8b6d2;
+  --text-muted: #71819f;
+
+  --atlas-cyan: #35d9ff;
+  --signal-blue: #648bff;
+  --discovery-violet: #a78bfa;
+  --growth-teal: #42e6c4;
+  --insight-amber: #ffc66d;
+  --danger-red: #ff6b6b;
+
+  /* 4px base spacing unit. */
+  --space-unit: 4px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --radius-control: 8px;
+  --radius-panel: 12px;
+  --radius-sheet: 16px;
+  --radius-modal: 20px;
+  --hairline: 1px;
+
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-ui: "Inter", ui-sans-serif, system-ui, "Noto Sans Bengali", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --dur-press: 120ms; --dur-select: 160ms; --dur-sheet: 200ms; --dur-page: 220ms;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  --dur-press: 120ms;
+  --dur-select: 160ms;
+  --dur-sheet: 200ms;
+  --dur-page: 220ms;
   --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
   --touch: 48px;
+
+  /* Aliases used by the existing component classes. */
+  --canvas-0: var(--void);
+  --canvas-1: var(--deep);
+  --surface-1: var(--surface);
+  --surface-2: var(--elevated);
+  --surface-3: #1e2e4e;
+  --line-subtle: var(--border);
+  --line-strong: #33496f;
+  --signal-teal: var(--growth-teal);
+  --signal-green: var(--growth-teal);
+  --signal-violet: var(--discovery-violet);
+  --signal-amber: var(--insight-amber);
+  --signal-coral: var(--danger-red);
+  --text-inverse: #06101c;
 }
+
 @media (prefers-reduced-motion: reduce) {
-  :root { --dur-press: 0ms; --dur-select: 0ms; --dur-sheet: 0ms; --dur-page: 0ms; }
+  :root {
+    --dur-press: 0ms;
+    --dur-select: 0ms;
+    --dur-sheet: 0ms;
+    --dur-page: 0ms;
+  }
 }

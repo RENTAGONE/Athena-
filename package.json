@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "description": "ATHENA: local-first, phone-first capability and knowledge system. Scaffold v0.1 (domain core verified offline; UI, Dexie, Ajv, PWA and CI unrun).",
-  "engines": { "node": ">=22.18" },
+  "engines": {
+    "node": ">=22.18"
+  },
   "scripts": {
     "build:validators": "node tools/build-validators.mjs",
     "predev": "npm run build:validators",
@@ -21,10 +23,12 @@
     "verify": "npm run typecheck && npm run test && npm run test:ajv && npm run test:dexie && npm run validate:pack && npm run build"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.0.0",
     "@fontsource/ibm-plex-mono": "^5.0.0",
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
     "@fontsource/space-grotesk": "^5.0.0",
     "dexie": "^4.0.0",
+    "lucide-react": "^1.76.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

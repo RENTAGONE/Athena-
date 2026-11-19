@@ -12,10 +12,10 @@ export default defineConfig({
         name: "ATHENA",
         short_name: "ATHENA",
         description: "Private, offline-first capability and knowledge system",
-        theme_color: "#080D12",
-        background_color: "#080D12",
+        theme_color: "#070B18",
+        background_color: "#070B18",
         display: "standalone",
-        orientation: "portrait",
+        orientation: "any",
         start_url: "/",
         icons: [
           { src: "icon-192.png", sizes: "192x192", type: "image/png" },

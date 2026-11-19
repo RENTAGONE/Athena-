@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { disciplineColor } from "./disciplines.ts";
 
 export function Head({ label, title }: { label: string; title: string }): ReactNode {
   return (
@@ -13,7 +14,7 @@ export function StatusTag({ status }: { status: string }): ReactNode {
   return <span className={`tag ${cls}`}>{status}</span>;
 }
 export function disciplineVar(ownerCode: string | null): string {
-  return ownerCode?.startsWith("ATH-DISC-") ? `var(--discipline-${ownerCode.slice(9).toLowerCase()})` : "var(--line-strong)";
+  return disciplineColor(ownerCode);
 }
 export function Empty({ title, children }: { title: string; children?: ReactNode }): ReactNode {
   return (
