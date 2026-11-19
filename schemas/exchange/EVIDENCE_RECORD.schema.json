@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-evidence-record-v0.2.schema.json",
+  "title": "ATHENA_EVIDENCE_RECORD_v0.2",
+  "description": "Append-only learner evidence. Structured outcomes support explainable competency derivation. Evidence records never directly overwrite competency history.",
+  "type": "object",
+  "required": [
+    "id",
+    "record_type",
+    "target_ids",
+    "occurred_at",
+    "evidence_class",
+    "result_summary",
+    "evaluator"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "record_type": {
+      "const": "evidence_record"
+    },
+    "target_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|XFER)-[A-Z0-9-]+$"
+      }
+    },
+    "assessment_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "objective_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|XFER)-[A-Z0-9-]+$"
+      }
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "type": "string"
+    },
+    "evidence_class": {
+      "enum": [
+        "SELF_REPORT",
+        "RETRIEVAL",
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE",
+        "PRACTICAL_DEMONSTRATION",
+        "PROJECT_ARTEFACT",
+        "TRANSFER_PERFORMANCE",
+        "EXTERNAL_VERIFICATION"
+      ]
+    },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "time_limit_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "calculator_used": {
+          "type": "boolean"
+        },
+        "notes_used": {
+          "type": "boolean"
+        },
+        "ai_used": {
+          "type": "boolean"
+        },
+        "hints_used": {
+          "type": "boolean"
+        },
+        "collaboration_used": {
+          "type": "boolean"
+        },
+        "tools_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "result_summary": {
+      "type": "string"
+    },
+    "rubric_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "criterion",
+          "result"
+        ],
+        "properties": {
+          "criterion": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "max_score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "met": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Optional criterion-level threshold result. Null/omitted means not evaluated; false is not demonstrated; true meets the criterion."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evaluator": {
+      "type": "object",
+      "required": [
+        "type",
+        "name"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "learner",
+            "human",
+            "ai",
+            "automated",
+            "external"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "prompt_or_protocol_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "self_confidence": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 5
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "not_demonstrated",
+        "partial",
+        "demonstrated"
+      ],
+      "description": "Record-level outcome. Use only when the same outcome applies to every target_id. For mixed outcomes, omit and provide target_outcomes."
+    },
+    "target_outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Per-target outcome for a multi-target evidence record. Semantic validation must ensure each target_id occurs exactly once and no non-target is listed.",
+      "items": {
+        "type": "object",
+        "required": [
+          "target_id",
+          "outcome"
+        ],
+        "properties": {
+          "target_id": {
+            "type": "string",
+            "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|XFER)-[A-Z0-9-]+$"
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "not_demonstrated",
+              "partial",
+              "demonstrated"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "outcome_schema_version": {
+      "const": "0.2",
+      "description": "Set to 0.2 for records using structured outcome semantics."
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "outcome_schema_version": {
+            "const": "0.2"
+          }
+        },
+        "required": [
+          "outcome_schema_version"
+        ]
+      },
+      "then": {
+        "oneOf": [
+          {
+            "required": [
+              "outcome"
+            ]
+          },
+          {
+            "required": [
+              "target_outcomes"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "not": {
+    "required": [
+      "outcome",
+      "target_outcomes"
+    ]
+  }
+}

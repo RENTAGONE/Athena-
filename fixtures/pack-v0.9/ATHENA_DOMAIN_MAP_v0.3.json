@@ -1,0 +1,2625 @@
+{
+  "schema_version": "0.3.0",
+  "registry_type": "domain_and_family_map",
+  "status": "draft_for_review",
+  "discipline_registry_version": "0.1.0",
+  "counts": {
+    "disciplines": 18,
+    "domains": 113,
+    "skill_families": 40,
+    "total_domain_and_family_records": 153
+  },
+  "domains": [
+    {
+      "id": "ATH-DOM-ENG-PROG",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "PROG",
+      "title": "Programming & Computational Thinking",
+      "description": "Programming fundamentals, control flow, data structures and computational problem solving.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-SOFT",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "SOFT",
+      "title": "Software Engineering",
+      "description": "Requirements, architecture, testing, debugging, maintainability and delivery.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-WEB",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "WEB",
+      "title": "Web & Application Development",
+      "description": "Frontend, backend, APIs, databases and application deployment.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-ALGO",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "ALGO",
+      "title": "Algorithms & Data Structures",
+      "description": "Algorithmic reasoning, complexity, common structures and problem-solving patterns.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-SYS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "SYS",
+      "title": "Computer Systems",
+      "description": "Operating systems, processes, memory, filesystems and computer architecture.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-ADV",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "ADV",
+      "title": "Advanced Computing",
+      "description": "Distributed systems, concurrency, compilers, AI and advanced language concepts.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-BIZ-VALUE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BIZ",
+      "code": "VALUE",
+      "title": "Value Creation & Customer Discovery",
+      "description": "Problems, customer research, value propositions and product-market evidence.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-OFFER",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BIZ",
+      "code": "OFFER",
+      "title": "Offers & Positioning",
+      "description": "Offer design, differentiation, pricing logic and positioning.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-MKT",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BIZ",
+      "code": "MKT",
+      "title": "Marketing & Distribution",
+      "description": "Messaging, channels, content, acquisition and distribution.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-SALES",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BIZ",
+      "code": "SALES",
+      "title": "Sales & Negotiation",
+      "description": "Lead qualification, discovery, proposals, objection handling and ethical negotiation.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-OPS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BIZ",
+      "code": "OPS",
+      "title": "Operations & Systems",
+      "description": "Processes, quality, fulfilment, documentation, automation and service delivery.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-GROW",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BIZ",
+      "code": "GROW",
+      "title": "Venture Strategy & Growth",
+      "description": "Unit economics, retention, experimentation, partnerships and responsible scaling.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-DOM-ELEC-FUND",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ELEC",
+      "code": "FUND",
+      "title": "Electrical Fundamentals",
+      "description": "Charge, voltage, current, resistance, power, energy and circuit laws.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-COMP",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ELEC",
+      "code": "COMP",
+      "title": "Components & Circuits",
+      "description": "Passive and active components, circuit topologies and component selection.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-DIG",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ELEC",
+      "code": "DIG",
+      "title": "Digital Electronics",
+      "description": "Binary logic, gates, combinational and sequential circuits.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-EMB",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ELEC",
+      "code": "EMB",
+      "title": "Embedded Systems",
+      "description": "Microcontrollers, firmware, GPIO, timers, interrupts and real-time constraints.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-MEAS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ELEC",
+      "code": "MEAS",
+      "title": "Instrumentation & Measurement",
+      "description": "Multimeters, sensors, signal conditioning, calibration and uncertainty.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-FAB",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ELEC",
+      "code": "FAB",
+      "title": "Fabrication & Mechatronics",
+      "description": "Soldering, PCB design, prototyping, actuators and mechanical-electrical integration.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-DOM-FIN-PERSONAL",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-FIN",
+      "code": "PERSONAL",
+      "title": "Personal Finance",
+      "description": "Budgeting, saving, cash flow, financial goals and risk awareness.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "owner_discipline_id": "ATH-DISC-FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-ACC",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-FIN",
+      "code": "ACC",
+      "title": "Accounting & Statements",
+      "description": "Bookkeeping, income statements, balance sheets and cash-flow statements.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "owner_discipline_id": "ATH-DISC-FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-ECON",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-FIN",
+      "code": "ECON",
+      "title": "Economic Principles",
+      "description": "Scarcity, incentives, supply and demand, markets and macroeconomic indicators.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "owner_discipline_id": "ATH-DISC-FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-MARKETS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-FIN",
+      "code": "MARKETS",
+      "title": "Markets & Investing",
+      "description": "Asset classes, diversification, valuation basics and market mechanics.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "owner_discipline_id": "ATH-DISC-FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-CORP",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-FIN",
+      "code": "CORP",
+      "title": "Corporate Finance",
+      "description": "Capital budgeting, cost of capital, financial modelling and business valuation.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "owner_discipline_id": "ATH-DISC-FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-RISK",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-FIN",
+      "code": "RISK",
+      "title": "Risk & Capital Allocation",
+      "description": "Risk management, portfolio construction, liquidity and decision-making under uncertainty.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "owner_discipline_id": "ATH-DISC-FIN"
+    },
+    {
+      "id": "ATH-DOM-BODY-ANAT",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BODY",
+      "code": "ANAT",
+      "title": "Human Anatomy",
+      "description": "Body structures, organs, tissues, anatomical terminology and system organisation.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-PHYS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BODY",
+      "code": "PHYS",
+      "title": "Human Physiology",
+      "description": "How body systems function and maintain homeostasis.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-BIOCHEM",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BODY",
+      "code": "BIOCHEM",
+      "title": "Biochemistry & Cell Biology",
+      "description": "Cells, biomolecules, metabolism and energy systems.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-KINES",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BODY",
+      "code": "KINES",
+      "title": "Kinesiology & Biomechanics",
+      "description": "Movement analysis, forces, joints, levers and motor control.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-NUTRI",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BODY",
+      "code": "NUTRI",
+      "title": "Nutrition Science",
+      "description": "Energy balance, macronutrients, micronutrients, hydration and evidence quality.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-RECOV",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-BODY",
+      "code": "RECOV",
+      "title": "Recovery & Health Science",
+      "description": "Sleep, fatigue, adaptation, injury prevention and recovery principles.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-DOM-PSY-COG",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PSY",
+      "code": "COG",
+      "title": "Cognition & Learning Psychology",
+      "description": "Attention, memory, perception, learning and cognitive biases.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "owner_discipline_id": "ATH-DISC-PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-BEHAV",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PSY",
+      "code": "BEHAV",
+      "title": "Behavior & Motivation",
+      "description": "Habit formation, reinforcement, motivation and behavior change.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "owner_discipline_id": "ATH-DISC-PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-SOCIAL",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PSY",
+      "code": "SOCIAL",
+      "title": "Social Psychology",
+      "description": "Groups, norms, influence, cooperation and interpersonal perception.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "owner_discipline_id": "ATH-DISC-PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-DECIDE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PSY",
+      "code": "DECIDE",
+      "title": "Decision Science",
+      "description": "Judgment, probability, expected value, uncertainty and decision processes.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "owner_discipline_id": "ATH-DISC-PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-STRAT",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PSY",
+      "code": "STRAT",
+      "title": "Strategic Reasoning & Game Theory",
+      "description": "Competitive interaction, incentives, negotiation models and strategic choice.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "owner_discipline_id": "ATH-DISC-PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-EMOTION",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PSY",
+      "code": "EMOTION",
+      "title": "Emotion & Self-Regulation",
+      "description": "Emotion processes, stress regulation and psychological resilience.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "owner_discipline_id": "ATH-DISC-PSY"
+    },
+    {
+      "id": "ATH-DOM-AEST-VISPER",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-AEST",
+      "code": "VISPER",
+      "title": "Visual Perception & Principles",
+      "description": "Gestalt, hierarchy, contrast, balance, proportion and visual attention.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "owner_discipline_id": "ATH-DISC-AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-COMP",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-AEST",
+      "code": "COMP",
+      "title": "Composition & Art Direction",
+      "description": "Framing, layout, focal hierarchy, rhythm and visual storytelling.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "owner_discipline_id": "ATH-DISC-AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-TYPE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-AEST",
+      "code": "TYPE",
+      "title": "Typography & Layout",
+      "description": "Type anatomy, pairing, readability, grids and information hierarchy.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "owner_discipline_id": "ATH-DISC-AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-PHOTO",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-AEST",
+      "code": "PHOTO",
+      "title": "Photography & Imaging",
+      "description": "Exposure, focus, lens perspective, lighting, framing and image processing.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "owner_discipline_id": "ATH-DISC-AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-BRAND",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-AEST",
+      "code": "BRAND",
+      "title": "Identity & Brand Systems",
+      "description": "Visual identity, consistency, design systems and brand applications.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "owner_discipline_id": "ATH-DISC-AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-DIGDES",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-AEST",
+      "code": "DIGDES",
+      "title": "Digital Interface Design",
+      "description": "Interaction patterns, responsive layouts, accessibility and interface aesthetics.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "owner_discipline_id": "ATH-DISC-AEST"
+    },
+    {
+      "id": "ATH-DOM-WORK-PERSONAL",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "PERSONAL",
+      "title": "Personal Workflow Design",
+      "description": "Prioritisation, planning, routines, task capture and review.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-TYPING",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "TYPING",
+      "title": "Typing & Input Fluency",
+      "description": "Touch typing, shortcuts, text navigation and efficient input.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-CLI",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "CLI",
+      "title": "Command Line & Shell",
+      "description": "Terminal navigation, files, processes, scripting and shell composition.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-VERSION",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "VERSION",
+      "title": "Version Control",
+      "description": "Git concepts, branching, commits, collaboration and recovery.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-AUTO",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "AUTO",
+      "title": "Automation & Scripting",
+      "description": "Task automation, APIs, data transformation and repeatable workflows.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-KNOW",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "KNOW",
+      "title": "Knowledge & Information Management",
+      "description": "Notes, metadata, retrieval, documentation and personal knowledge systems.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    },
+    {
+      "id": "ATH-DOM-ART-OBS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ART",
+      "code": "OBS",
+      "title": "Observation & Visual Literacy",
+      "description": "Seeing proportion, edges, values, shapes and visual relationships.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "owner_discipline_id": "ATH-DISC-ART"
+    },
+    {
+      "id": "ATH-DOM-ART-DRAW",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ART",
+      "code": "DRAW",
+      "title": "Drawing Fundamentals",
+      "description": "Line, shape, form, gesture, contour and construction.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "owner_discipline_id": "ATH-DISC-ART"
+    },
+    {
+      "id": "ATH-DOM-ART-SPACE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ART",
+      "code": "SPACE",
+      "title": "Perspective & Spatial Form",
+      "description": "Perspective systems, volume, rotation and spatial reasoning.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "owner_discipline_id": "ATH-DISC-ART"
+    },
+    {
+      "id": "ATH-DOM-ART-LIGHT",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ART",
+      "code": "LIGHT",
+      "title": "Light, Value & Rendering",
+      "description": "Value structure, shading, material and light behaviour.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "owner_discipline_id": "ATH-DISC-ART"
+    },
+    {
+      "id": "ATH-DOM-ART-COLOR",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ART",
+      "code": "COLOR",
+      "title": "Color Theory & Application",
+      "description": "Color relationships, harmony, temperature and controlled palettes.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "owner_discipline_id": "ATH-DISC-ART"
+    },
+    {
+      "id": "ATH-DOM-ART-ILLUS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ART",
+      "code": "ILLUS",
+      "title": "Illustration & Visual Storytelling",
+      "description": "Character, environment, narrative composition and style development.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "owner_discipline_id": "ATH-DISC-ART"
+    },
+    {
+      "id": "ATH-DOM-ATH-FITBASE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ATH",
+      "code": "FITBASE",
+      "title": "Physical Literacy & Training Principles",
+      "description": "Movement quality, training principles, progression and load management.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-STRENGTH",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ATH",
+      "code": "STRENGTH",
+      "title": "Strength & Power",
+      "description": "Strength development, power, jumping, landing and safe resistance training.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-ENDURE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ATH",
+      "code": "ENDURE",
+      "title": "Aerobic & Anaerobic Conditioning",
+      "description": "Aerobic capacity, repeat efforts, intervals and endurance.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-SPEED",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ATH",
+      "code": "SPEED",
+      "title": "Speed, Agility & Change of Direction",
+      "description": "Acceleration, deceleration, sprint mechanics and agility.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-SKILL",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ATH",
+      "code": "SKILL",
+      "title": "Coordination & Sport Skill",
+      "description": "Balance, coordination, ball skills and sport-specific technique.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-RECOVERY",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ATH",
+      "code": "RECOVERY",
+      "title": "Performance Recovery",
+      "description": "Warm-ups, mobility, recovery habits and monitoring fatigue.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-ATH"
+    },
+    {
+      "id": "ATH-DOM-PERF-VOICE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PERF",
+      "code": "VOICE",
+      "title": "Vocal Technique & Voice Care",
+      "description": "Breath coordination, resonance, articulation, projection and vocal health.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "owner_discipline_id": "ATH-DISC-PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-SING",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PERF",
+      "code": "SING",
+      "title": "Singing & Pitch",
+      "description": "Pitch matching, intonation, range development, rhythm and musical phrasing.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "owner_discipline_id": "ATH-DISC-PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-SPEAK",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PERF",
+      "code": "SPEAK",
+      "title": "Spoken Performance",
+      "description": "Diction, pacing, emphasis, vocal expression and microphone technique.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "owner_discipline_id": "ATH-DISC-PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-PRESENCE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PERF",
+      "code": "PRESENCE",
+      "title": "Stage & Camera Presence",
+      "description": "Presence, body language, audience awareness and performance confidence.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "owner_discipline_id": "ATH-DISC-PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-IMPROV",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PERF",
+      "code": "IMPROV",
+      "title": "Improvisation & Creative Response",
+      "description": "Spontaneity, listening, scene work and adaptive performance.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "owner_discipline_id": "ATH-DISC-PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-MOVE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-PERF",
+      "code": "MOVE",
+      "title": "Movement & Physical Expression",
+      "description": "Gesture, posture, rhythm and expressive movement.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "owner_discipline_id": "ATH-DISC-PERF"
+    },
+    {
+      "id": "ATH-DOM-MATH-NUM",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "NUM",
+      "title": "Number & Arithmetic Foundations",
+      "description": "Number sense, operations, fractions, decimals, percentages, ratios and proportional reasoning.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-ALG",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "ALG",
+      "title": "Algebra & Symbolic Reasoning",
+      "description": "Expressions, equations, inequalities, exponents, roots and functions.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-GEO",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "GEO",
+      "title": "Geometry & Measurement",
+      "description": "Shapes, spatial reasoning, measurement, coordinate geometry and trigonometry.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-DATA",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "DATA",
+      "title": "Statistics & Probability",
+      "description": "Data literacy, descriptive statistics, probability, inference and uncertainty.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-REASON",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "REASON",
+      "title": "Logic & Mathematical Reasoning",
+      "description": "Deduction, proof, patterns, abstraction, argument and problem solving.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-SCI",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "SCI",
+      "title": "Scientific Method & Modelling",
+      "description": "Hypotheses, variables, experiments, measurement, models and scientific explanation.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-ADV",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "ADV",
+      "title": "Advanced Mathematics",
+      "description": "Calculus, vectors, matrices, discrete mathematics and advanced quantitative methods.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-CYBER-SAFETY",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-CYBER",
+      "code": "SAFETY",
+      "title": "Personal Digital Security",
+      "description": "Account security, authentication, privacy, backups and safe device practices.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "owner_discipline_id": "ATH-DISC-CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-NETWORK",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-CYBER",
+      "code": "NETWORK",
+      "title": "Networking Fundamentals",
+      "description": "Network models, addressing, DNS, routing, TCP/IP and common protocols.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "owner_discipline_id": "ATH-DISC-CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-OS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-CYBER",
+      "code": "OS",
+      "title": "Operating Systems & Linux",
+      "description": "Users, permissions, processes, services, filesystems and system administration.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "owner_discipline_id": "ATH-DISC-CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-WEBSEC",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-CYBER",
+      "code": "WEBSEC",
+      "title": "Web & Application Security",
+      "description": "Threat modelling, secure design, common web vulnerabilities and mitigations.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "owner_discipline_id": "ATH-DISC-CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-DEFENSE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-CYBER",
+      "code": "DEFENSE",
+      "title": "Defensive Security",
+      "description": "Logging, monitoring, incident response, hardening and threat analysis.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "owner_discipline_id": "ATH-DISC-CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-TEST",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-CYBER",
+      "code": "TEST",
+      "title": "Authorized Security Testing",
+      "description": "Controlled labs, scoped testing, vulnerability validation and responsible disclosure.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "owner_discipline_id": "ATH-DISC-CYBER"
+    },
+    {
+      "id": "ATH-DOM-LANG-LING",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LANG",
+      "code": "LING",
+      "title": "Linguistic Foundations",
+      "description": "Sounds, morphology, syntax, semantics, pragmatics and language structure.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "owner_discipline_id": "ATH-DISC-LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-VOCAB",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LANG",
+      "code": "VOCAB",
+      "title": "Vocabulary & Lexical Growth",
+      "description": "Word learning, collocations, semantic nuance and active vocabulary.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "owner_discipline_id": "ATH-DISC-LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-GRAM",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LANG",
+      "code": "GRAM",
+      "title": "Grammar & Usage",
+      "description": "Sentence construction, grammatical systems, editing and register.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "owner_discipline_id": "ATH-DISC-LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-READ",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LANG",
+      "code": "READ",
+      "title": "Reading & Interpretation",
+      "description": "Comprehension, inference, critical reading and text analysis.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "owner_discipline_id": "ATH-DISC-LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-WRITE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LANG",
+      "code": "WRITE",
+      "title": "Writing Development",
+      "description": "Clarity, structure, style, revision and audience-aware writing.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "owner_discipline_id": "ATH-DISC-LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-ACQUIRE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LANG",
+      "code": "ACQUIRE",
+      "title": "Additional Language Acquisition",
+      "description": "Listening, speaking, pronunciation, fluency and deliberate language practice.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "owner_discipline_id": "ATH-DISC-LANG"
+    },
+    {
+      "id": "ATH-DOM-RES-QUEST",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-RES",
+      "code": "QUEST",
+      "title": "Question Formation & Research Design",
+      "description": "Research questions, scope, hypotheses and appropriate methods.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-DOM-RES-SOURCES",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-RES",
+      "code": "SOURCES",
+      "title": "Source Evaluation",
+      "description": "Authority, provenance, bias, primary sources and source quality.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-DOM-RES-EVIDENCE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-RES",
+      "code": "EVIDENCE",
+      "title": "Evidence & Verification",
+      "description": "Triangulation, fact checking, uncertainty and claim-evidence alignment.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-DOM-RES-SYNTH",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-RES",
+      "code": "SYNTH",
+      "title": "Synthesis & Analysis",
+      "description": "Comparing sources, extracting patterns and constructing explanations.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-DOM-RES-DOC",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-RES",
+      "code": "DOC",
+      "title": "Documentation & Citation",
+      "description": "Research notes, references, reproducibility and traceability.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-DOM-RES-INFO",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-RES",
+      "code": "INFO",
+      "title": "Information Literacy & OSINT",
+      "description": "Search strategy, information environments and lawful open-source investigation.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-DOM-INDEP-HOME",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-INDEP",
+      "code": "HOME",
+      "title": "Home & Daily Living",
+      "description": "Household organisation, cleaning, maintenance and practical routines.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "owner_discipline_id": "ATH-DISC-INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-FOOD",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-INDEP",
+      "code": "FOOD",
+      "title": "Food Preparation & Cooking",
+      "description": "Food safety, basic cooking methods, meal preparation and kitchen skills.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "owner_discipline_id": "ATH-DISC-INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-REPAIR",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-INDEP",
+      "code": "REPAIR",
+      "title": "Tools & Basic Repair",
+      "description": "Tool identification, safe handling, simple maintenance and repair judgement.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "owner_discipline_id": "ATH-DISC-INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-NAV",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-INDEP",
+      "code": "NAV",
+      "title": "Navigation & Travel Skills",
+      "description": "Maps, directions, route planning, public transport and situational awareness.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "owner_discipline_id": "ATH-DISC-INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-SAFETY",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-INDEP",
+      "code": "SAFETY",
+      "title": "Personal & Emergency Safety",
+      "description": "Risk recognition, emergency response and seeking qualified help.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "owner_discipline_id": "ATH-DISC-INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-MONEY",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-INDEP",
+      "code": "MONEY",
+      "title": "Everyday Administration",
+      "description": "Documents, appointments, purchases, consumer awareness and personal organisation.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "owner_discipline_id": "ATH-DISC-INDEP"
+    },
+    {
+      "id": "ATH-DOM-LEAD-SELF",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LEAD",
+      "code": "SELF",
+      "title": "Self-Leadership",
+      "description": "Responsibility, initiative, self-management and dependable execution.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "owner_discipline_id": "ATH-DISC-LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-TEAM",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LEAD",
+      "code": "TEAM",
+      "title": "Team Dynamics",
+      "description": "Roles, trust, collaboration, group norms and shared objectives.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "owner_discipline_id": "ATH-DISC-LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-PLAN",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LEAD",
+      "code": "PLAN",
+      "title": "Planning & Coordination",
+      "description": "Goal setting, delegation, scheduling, dependencies and follow-through.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "owner_discipline_id": "ATH-DISC-LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-FEEDBACK",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LEAD",
+      "code": "FEEDBACK",
+      "title": "Feedback & Development",
+      "description": "Giving, receiving and applying feedback; coaching fundamentals.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "owner_discipline_id": "ATH-DISC-LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-CONFLICT",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LEAD",
+      "code": "CONFLICT",
+      "title": "Conflict & Difficult Conversations",
+      "description": "Conflict analysis, mediation basics, boundaries and resolution.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "owner_discipline_id": "ATH-DISC-LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-ORG",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-LEAD",
+      "code": "ORG",
+      "title": "Organisational Systems",
+      "description": "Processes, accountability, culture, decision rights and management.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "owner_discipline_id": "ATH-DISC-LEAD"
+    },
+    {
+      "id": "ATH-DOM-COMM-EXPLAIN",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-COMM",
+      "code": "EXPLAIN",
+      "title": "Explanation & Teaching",
+      "description": "Clear explanations, analogies, audience modelling and checking understanding.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "owner_discipline_id": "ATH-DISC-COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-LISTEN",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-COMM",
+      "code": "LISTEN",
+      "title": "Listening & Dialogue",
+      "description": "Active listening, questioning, turn-taking and conversational accuracy.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "owner_discipline_id": "ATH-DISC-COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-WRITE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-COMM",
+      "code": "WRITE",
+      "title": "Practical & Professional Writing",
+      "description": "Messages, reports, proposals, concise writing and tone control.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "owner_discipline_id": "ATH-DISC-COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-SPEAK",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-COMM",
+      "code": "SPEAK",
+      "title": "Public Speaking & Presentation",
+      "description": "Structure, delivery, audience engagement and presentation design.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "owner_discipline_id": "ATH-DISC-COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-ARGUE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-COMM",
+      "code": "ARGUE",
+      "title": "Argumentation & Debate",
+      "description": "Claims, reasoning, evidence, rebuttals and logical fallacies.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "owner_discipline_id": "ATH-DISC-COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-PERSUADE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-COMM",
+      "code": "PERSUADE",
+      "title": "Persuasion & Negotiation Communication",
+      "description": "Ethical persuasion, framing, negotiation language and influence.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [],
+      "source_basis": "ATHENA initial domain architecture; requires subject-matter review",
+      "existing_in_v0_1_seed": false,
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "owner_discipline_id": "ATH-DISC-COMM"
+    },
+    {
+      "id": "ATH-DOM-ENG-COMPUTE",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-ENG",
+      "code": "COMPUTE",
+      "title": "Computational Foundations",
+      "description": "Decomposition, algorithms, data representation, abstraction and computational problem-solving. This domain provides conceptual foundations; detailed programming practice remains in Programming & Computational Thinking and algorithm implementation remains in Algorithms & Data Structures.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [
+        "Computing foundations"
+      ],
+      "source_basis": "Retained from FOUNDATION_NODE_SEED_v0.1 to preserve the existing ATH-CON-ENG-ALGORITHM parent reference; scope clarified against neighbouring domains.",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "owner_discipline_id": "ATH-DISC-ENG"
+    },
+    {
+      "id": "ATH-DOM-MATH-PHYS",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "PHYS",
+      "title": "Physics Foundations & Quantitative Modelling",
+      "description": "Quantitative foundations for reasoning about physical quantities, units, motion, forces, energy, waves, electricity and simple physical models. This is a mathematics-owned applied-science domain, not a separate ATHENA physics discipline or a complete physics curriculum.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [
+        "Physics foundations"
+      ],
+      "source_basis": "Retained from FOUNDATION_NODE_SEED_v0.1; ownership and scope clarified to keep the 18-discipline taxonomy intact.",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-CHEM",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-MATH",
+      "code": "CHEM",
+      "title": "Chemistry Foundations & Quantitative Modelling",
+      "description": "Quantitative and model-based foundations for reasoning about matter, atomic models, chemical quantities, ratios, reactions and transformations. This is a mathematics-owned applied-science domain, not a separate ATHENA chemistry discipline or a complete chemistry curriculum.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [
+        "Chemistry foundations"
+      ],
+      "source_basis": "Retained from FOUNDATION_NODE_SEED_v0.1; ownership and scope clarified to keep the 18-discipline taxonomy intact.",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-DOM-WORK-LEARN",
+      "object_type": "domain",
+      "parent_id": "ATH-DISC-WORK",
+      "code": "LEARN",
+      "title": "Learning Systems & Metacognition",
+      "description": "Self-regulated learning, retrieval practice, deliberate practice, feedback use, reflection, calibration and learning-strategy selection. It models how the learner develops capability; it does not duplicate the content of the other disciplines.",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "aliases": [
+        "Learning systems",
+        "Metacognition"
+      ],
+      "source_basis": "Retained from FOUNDATION_NODE_SEED_v0.1; placed under Workflow & Productivity with explicit cross-domain application.",
+      "existing_in_v0_1_seed": true,
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "owner_discipline_id": "ATH-DISC-WORK"
+    }
+  ],
+  "skill_families": [
+    {
+      "id": "ATH-FAM-MATH-NUM-PLACE",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "code": "PLACE",
+      "title": "Place Value & Number Sense",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-NUM-OPS",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "code": "OPS",
+      "title": "Arithmetic Operations",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-NUM-FRAC",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "code": "FRAC",
+      "title": "Fractions & Decimals",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-NUM-PCT",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "code": "PCT",
+      "title": "Percentages & Ratios",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-NUM-SIGN",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "code": "SIGN",
+      "title": "Signed Numbers & Order of Operations",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-ALG-EXPR",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "code": "EXPR",
+      "title": "Expressions & Variables",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-ALG-EQ",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "code": "EQ",
+      "title": "Equations & Inequalities",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-ALG-POW",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "code": "POW",
+      "title": "Powers, Roots & Scientific Notation",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-ALG-FUNC",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "code": "FUNC",
+      "title": "Functions & Graphs",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-ALG-SYMBOL",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "code": "SYMBOL",
+      "title": "Symbolic Manipulation",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-REASON-LOGIC",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "code": "LOGIC",
+      "title": "Formal & Informal Logic",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-REASON-PROOF",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "code": "PROOF",
+      "title": "Proof & Justification",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-REASON-PATTERN",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "code": "PATTERN",
+      "title": "Patterns & Generalisation",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-REASON-PROBLEM",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "code": "PROBLEM",
+      "title": "Problem-Solving Heuristics",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-MATH-REASON-MODEL",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "code": "MODEL",
+      "title": "Mathematical Modelling",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "owner_discipline_id": "ATH-DISC-MATH"
+    },
+    {
+      "id": "ATH-FAM-BODY-ANAT-TERMS",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-ANAT",
+      "code": "TERMS",
+      "title": "Anatomical Terminology & Orientation",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-ANAT-TISSUE",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-ANAT",
+      "code": "TISSUE",
+      "title": "Cells & Tissues",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-ANAT-SKELETAL",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-ANAT",
+      "code": "SKELETAL",
+      "title": "Skeletal System",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-ANAT-MUSC",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-ANAT",
+      "code": "MUSC",
+      "title": "Muscular System",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-ANAT-ORGANS",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-ANAT",
+      "code": "ORGANS",
+      "title": "Organ Systems & Integration",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-KINES-JOINT",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-KINES",
+      "code": "JOINT",
+      "title": "Joint Mechanics",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-KINES-LEVER",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-KINES",
+      "code": "LEVER",
+      "title": "Levers & Mechanical Advantage",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-KINES-FORCE",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-KINES",
+      "code": "FORCE",
+      "title": "Forces & Motion",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-KINES-GAIT",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-KINES",
+      "code": "GAIT",
+      "title": "Gait & Movement Analysis",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-BODY-KINES-MOTOR",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BODY-KINES",
+      "code": "MOTOR",
+      "title": "Motor Control & Coordination",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "owner_discipline_id": "ATH-DISC-BODY"
+    },
+    {
+      "id": "ATH-FAM-ELEC-FUND-CHARGE",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-ELEC-FUND",
+      "code": "CHARGE",
+      "title": "Charge & Electric Fields",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-FAM-ELEC-FUND-VIR",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-ELEC-FUND",
+      "code": "VIR",
+      "title": "Voltage, Current & Resistance",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-FAM-ELEC-FUND-POWER",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-ELEC-FUND",
+      "code": "POWER",
+      "title": "Electrical Power & Energy",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-FAM-ELEC-FUND-DC",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-ELEC-FUND",
+      "code": "DC",
+      "title": "DC Circuit Analysis",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-FAM-ELEC-FUND-AC",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-ELEC-FUND",
+      "code": "AC",
+      "title": "AC Fundamentals & Signals",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "owner_discipline_id": "ATH-DISC-ELEC"
+    },
+    {
+      "id": "ATH-FAM-RES-SOURCES-PRIMARY",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-RES-SOURCES",
+      "code": "PRIMARY",
+      "title": "Primary & Secondary Sources",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-FAM-RES-SOURCES-AUTH",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-RES-SOURCES",
+      "code": "AUTH",
+      "title": "Authority & Expertise",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-FAM-RES-SOURCES-BIAS",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-RES-SOURCES",
+      "code": "BIAS",
+      "title": "Bias, Incentives & Conflicts",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-FAM-RES-SOURCES-TRACE",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-RES-SOURCES",
+      "code": "TRACE",
+      "title": "Source Provenance & Traceability",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-FAM-RES-SOURCES-QUALITY",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-RES-SOURCES",
+      "code": "QUALITY",
+      "title": "Evidence Quality & Limitations",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "owner_discipline_id": "ATH-DISC-RES"
+    },
+    {
+      "id": "ATH-FAM-BIZ-VALUE-PROBLEM",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BIZ-VALUE",
+      "code": "PROBLEM",
+      "title": "Problem Discovery",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-FAM-BIZ-VALUE-CUSTOMER",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BIZ-VALUE",
+      "code": "CUSTOMER",
+      "title": "Customer Segmentation & Research",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-FAM-BIZ-VALUE-VALUEPROP",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BIZ-VALUE",
+      "code": "VALUEPROP",
+      "title": "Value Proposition",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-FAM-BIZ-VALUE-VALIDATE",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BIZ-VALUE",
+      "code": "VALIDATE",
+      "title": "Validation & Experimentation",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    },
+    {
+      "id": "ATH-FAM-BIZ-VALUE-FEEDBACK",
+      "object_type": "skill_family",
+      "parent_id": "ATH-DOM-BIZ-VALUE",
+      "code": "FEEDBACK",
+      "title": "Customer Feedback Loops",
+      "status": "draft",
+      "content_version": 1,
+      "review_state": "needs_review",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "owner_discipline_id": "ATH-DISC-BIZ"
+    }
+  ],
+  "validation_notes": [
+    "Four domain IDs from FOUNDATION_NODE_SEED_v0.1 are retained as first-class draft records; none is silently dropped.",
+    "All domain and skill-family records carry discipline_ids and explicit owner_discipline_id.",
+    "The four retained domains remain draft and need subject-matter review; they do not create new macro disciplines.",
+    "Skill-family parent references are checked against the canonical domain registry."
+  ]
+}

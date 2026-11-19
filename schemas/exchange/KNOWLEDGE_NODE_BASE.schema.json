@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-knowledge-node-storage-v0.2.schema.json",
+  "title": "ATHENA_KNOWLEDGE_NODE_STORAGE_v0.2",
+  "description": "Storage representation. id is an internal immutable UUID; code is the stable human-readable ATHENA semantic identifier. Exchange registries in this pack use ATHENA codes in their id/reference fields and are normalised by an import adapter.",
+  "type": "object",
+  "required": [
+    "id",
+    "code",
+    "object_type",
+    "title",
+    "status",
+    "content_version",
+    "version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|CTX)-[A-Z0-9-]+$"
+    },
+    "object_type": {
+      "enum": [
+        "discipline",
+        "domain",
+        "skill_family",
+        "skill",
+        "subskill",
+        "concept",
+        "learning_objective",
+        "learning_unit",
+        "resource",
+        "assessment",
+        "project",
+        "milestone",
+        "micro_skill",
+        "practice_protocol",
+        "context"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated",
+        "archived"
+      ]
+    },
+    "owner_discipline_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "discipline_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "parent_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uuid"
+    },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
