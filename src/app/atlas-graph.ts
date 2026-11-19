@@ -1,4 +1,4 @@
-// Bespoke 3D math for the Knowledge Atlas. No WebGL, no graph library: a camera, a perspective
+// Hand-written 3D math for the Knowledge Atlas. No WebGL, no graph library: a camera, a perspective
 // projection, golden-angle star placement, tilted elliptical orbits and quadratic Bezier threads.
 // Everything is deterministic — the same state and the same clock always draw the same frame.
 

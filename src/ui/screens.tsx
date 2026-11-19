@@ -139,7 +139,7 @@ export function Today(): ReactNode {
 
           <section className="panel">
             <span className="label">Load content</span>
-            <p style={{ marginTop: 8 }}>The Pack v0.9 draft seed ships with the app. Preview it first: nothing is written until you approve.</p>
+            <p style={{ marginTop: 8 }}>The Pack v1.0 seed ships with the app. Preview it first: nothing is written until you approve.</p>
             <ImportPanel seed />
           </section>
         </div>

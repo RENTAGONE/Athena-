@@ -14,7 +14,8 @@ export function Studio({ tab }: { tab: "updates" | "backup" }): ReactNode {
   return (
     <>
       <Head label="Architect Studio" title={tab === "updates" ? "Updates inbox" : "Backup and restore"} />
-      <nav className="seg" aria-label="Studio sections">
+      <nav className="seg" aria-label="Studio sections" data-index={tab === "updates" ? "0" : "1"}>
+        <span className="seg-thumb" aria-hidden="true" />
         <a href="#/studio/updates" aria-current={tab === "updates" ? "page" : undefined}>Updates</a>
         <a href="#/studio/backup" aria-current={tab === "backup" ? "page" : undefined}>Backup</a>
       </nav>
@@ -122,8 +123,8 @@ export function ImportPanel({ seed = false }: { seed?: boolean }): ReactNode {
     <section className="stack">
       {seed && (
         <div className="panel rail">
-          <span className="label">Bundled Pack v0.9 draft seed</span>
-          <p style={{ marginTop: 8 }}>The content owner’s draft seed ships inside the app. Preview it to see the exact create/update tally before anything is written.</p>
+          <span className="label">Bundled Pack v1.0 seed</span>
+          <p style={{ marginTop: 8 }}>The content owner’s canonical pack plus the KB v3.28 working tier ships inside the app. Preview it to see the exact create/update tally before anything is written.</p>
           <button className="btn primary" disabled={busy} onClick={() => void loadSeedPackage().then(preview)}>Preview the draft seed</button>
         </div>
       )}

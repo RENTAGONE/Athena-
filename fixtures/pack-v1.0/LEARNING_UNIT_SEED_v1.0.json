@@ -1,0 +1,44 @@
+{
+ "schema_version": "0.2.0",
+ "registry_status": "illustrative_draft",
+ "units": [
+  {
+   "id": "ATH-UNIT-MATH-FOUNDATIONS-01",
+   "object_type": "learning_unit",
+   "title": "Mathematical baseline and number sense diagnostic",
+   "status": "draft",
+   "discipline_ids": [
+    "ATH-DISC-MATH"
+   ],
+   "summary": "A diagnostic unit to identify current strengths and gaps without treating the result as a gate.",
+   "purpose": "Establish a baseline and route the learner to appropriately challenging next steps.",
+   "objective_ids": [
+    "ATH-OBJ-MATH-BASELINE-DIAGNOSIS"
+   ],
+   "concept_ids": [],
+   "skill_ids": [
+    "ATH-SKILL-MATH-NUMBER-ALGEBRA"
+   ],
+   "prerequisite_unit_ids": [],
+   "resource_ids": [],
+   "practice_protocol_ids": [],
+   "assessment_ids": [
+    "ATH-ASMT-MATH-BASELINE-01"
+   ],
+   "estimated_effort_minutes": 45,
+   "sequence_rationale": "Run at launch; results guide placement but do not block parallel interests or learning lanes.",
+   "completion_criteria": [
+    "Diagnostic attempted under recorded conditions.",
+    "Strengths, gaps and confidence are recorded separately."
+   ],
+   "content_version": 1,
+   "owner_discipline_id": "ATH-DISC-MATH",
+   "primary_domain_id": "ATH-DOM-MATH-NUM",
+   "domain_ids": [
+    "ATH-DOM-MATH-NUM",
+    "ATH-DOM-MATH-ALG",
+    "ATH-DOM-MATH-DATA"
+   ]
+  }
+ ]
+}

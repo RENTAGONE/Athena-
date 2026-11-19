@@ -275,3 +275,30 @@ label > .label { display: block; margin-bottom: 4px; }
   .hud-actions .btn { padding: 0 10px; }
   .pill button { padding: 0 11px; }
 }
+
+/* ── Spring-driven segmented indicators ─────────────────────────────────── */
+.pill { position: relative; }
+.pill-thumb {
+  position: absolute; top: 2px; bottom: 2px; left: 2px; width: calc(50% - 2px);
+  border-radius: 999px; background: var(--elevated); pointer-events: none;
+  transform: translateX(0);
+  transition: transform var(--dur-page) var(--ease-spring);
+}
+.pill[data-index="1"] .pill-thumb { transform: translateX(100%); }
+.pill button { position: relative; z-index: 1; background: transparent; }
+.pill button[aria-pressed="true"] { background: transparent; color: var(--atlas-cyan); }
+.pill button[aria-pressed="false"] { color: var(--text-secondary); }
+.seg { position: relative; }
+.seg-thumb {
+  position: absolute; top: 0; bottom: 0; left: 0; width: 50%;
+  background: var(--elevated); box-shadow: inset 0 -2px 0 var(--atlas-cyan);
+  pointer-events: none; transform: translateX(0);
+  transition: transform var(--dur-page) var(--ease-spring);
+}
+.seg[data-index="1"] .seg-thumb { transform: translateX(100%); }
+.seg a { position: relative; z-index: 1; }
+.seg a[aria-current="page"] { background: transparent; box-shadow: none; color: var(--text-primary); }
+
+/* The rail keeps the primary wordmark beside the symbol. */
+.brandrail .mark-word { display: flex; }
+.brandrail .mark-name { font-size: 15px; letter-spacing: 0.18em; }

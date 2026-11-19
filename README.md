@@ -39,7 +39,9 @@ Installing a PWA needs HTTPS. In a Codespace, `npm run preview` forwards a port 
 
 ```
 schemas/exchange/   Pack v0.9 JSON Schemas, vendored, read-only
-fixtures/pack-v0.9/ Pack v0.9 draft seed registries (content owner's files, unmodified)
+fixtures/pack-v1.0/  Pack v1.0: canonical v0.9 records plus the KB v3.28 working tier (146 domains, 777 skill families, 158 micro-skills, 75 transfer links)
+fixtures/pack-v0.9/  Pack v0.9 canonical registries, kept as the merge input
+tools/build_pack_v1_0.py  Rebuilds pack-v1.0 from the two KB archives
 src/domain/         pure logic: ids, codes, graph rules, change sets, evidence, competency, archive, integrity
 src/app/            importer pipeline, backup helpers, runtime wiring
 src/adapters/       Dexie store, precompiled-validator adapter, Pack format adapter

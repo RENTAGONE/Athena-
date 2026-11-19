@@ -1,0 +1,537 @@
+{
+ "schema_version": "0.2.0",
+ "registry_type": "relationship_type_registry",
+ "status": "draft_for_review",
+ "types": [
+  {
+   "code": "CONTAINS",
+   "label": "Contains",
+   "meaning": "Source is the canonical structural parent/container of target.",
+   "symmetric": false,
+   "cycle_policy": "acyclic_hierarchy",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "project",
+    "learning_unit"
+   ],
+   "allowed_target_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol"
+   ]
+  },
+  {
+   "code": "PART_OF",
+   "label": "Part Of",
+   "meaning": "Source is a component of target; inverse convenience relation to CONTAINS.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol"
+   ],
+   "allowed_target_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "project",
+    "learning_unit"
+   ]
+  },
+  {
+   "code": "PREREQUISITE_FOR",
+   "label": "Prerequisite For",
+   "meaning": "Source capability/object is a prerequisite for target.",
+   "symmetric": false,
+   "cycle_policy": "acyclic_if_hard",
+   "gating_allowed": true,
+   "allowed_source_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "project",
+    "milestone",
+    "practice_protocol",
+    "micro_skill"
+   ],
+   "allowed_target_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "project",
+    "milestone",
+    "practice_protocol",
+    "micro_skill"
+   ]
+  },
+  {
+   "code": "SUPPORTS",
+   "label": "Supports",
+   "meaning": "Source can improve, inform or enable target without necessarily being required.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ]
+  },
+  {
+   "code": "APPLIES_TO",
+   "label": "Applies To",
+   "meaning": "Source is relevant in a named application context or target.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "context"
+   ]
+  },
+  {
+   "code": "TRANSFER_TO",
+   "label": "Transfer To",
+   "meaning": "Source knowledge/skill is hypothesised to transfer to target/context; evidence required to claim demonstrated transfer.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "project",
+    "milestone",
+    "practice_protocol"
+   ],
+   "allowed_target_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "project",
+    "milestone",
+    "practice_protocol",
+    "context"
+   ]
+  },
+  {
+   "code": "RELATED_TO",
+   "label": "Related To",
+   "meaning": "A meaningful relation exists but is not more specifically typed.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ]
+  },
+  {
+   "code": "CONTRASTS_WITH",
+   "label": "Contrasts With",
+   "meaning": "Source and target are meaningfully contrasted.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "concept",
+    "skill",
+    "subskill",
+    "learning_objective"
+   ],
+   "allowed_target_types": [
+    "concept",
+    "skill",
+    "subskill",
+    "learning_objective"
+   ]
+  },
+  {
+   "code": "ASSESSES",
+   "label": "Assesses",
+   "meaning": "Source assessment elicits evidence about target.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "assessment"
+   ],
+   "allowed_target_types": [
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "project",
+    "milestone"
+   ]
+  },
+  {
+   "code": "EVIDENCES",
+   "label": "Evidences",
+   "meaning": "Source evidence record supports a claim about target.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "project",
+    "milestone",
+    "practice_protocol"
+   ]
+  },
+  {
+   "code": "USES_RESOURCE",
+   "label": "Uses Resource",
+   "meaning": "Source learning object uses target resource.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "learning_unit",
+    "skill",
+    "subskill",
+    "project",
+    "practice_protocol"
+   ],
+   "allowed_target_types": [
+    "resource"
+   ]
+  },
+  {
+   "code": "DEVELOPS",
+   "label": "Develops",
+   "meaning": "Source learning unit/practice develops target capability.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "learning_unit",
+    "practice_protocol",
+    "project"
+   ],
+   "allowed_target_types": [
+    "skill",
+    "subskill",
+    "concept"
+   ]
+  },
+  {
+   "code": "CONTRIBUTES_TO",
+   "label": "Contributes To",
+   "meaning": "Source contributes to a broader target capability or project.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ]
+  },
+  {
+   "code": "SUPERSEDES",
+   "label": "Supersedes",
+   "meaning": "Source is the approved successor/replacement for target.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ]
+  },
+  {
+   "code": "EXPLAINS",
+   "label": "Explains",
+   "meaning": "Source provides an explanatory account or model for target.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "concept",
+    "skill",
+    "resource",
+    "learning_unit"
+   ],
+   "allowed_target_types": [
+    "concept",
+    "skill",
+    "subskill",
+    "learning_objective"
+   ]
+  },
+  {
+   "code": "ENABLES",
+   "label": "Enables",
+   "meaning": "Source makes target action or capability possible/easier under stated conditions.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ],
+   "allowed_target_types": [
+    "discipline",
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "resource",
+    "assessment",
+    "project",
+    "milestone",
+    "micro_skill",
+    "practice_protocol",
+    "context",
+    "evidence_record"
+   ]
+  },
+  {
+   "code": "SHARED_FOUNDATION_FOR",
+   "label": "Shared Foundation For",
+   "meaning": "Source is a shared foundation used by multiple targets.",
+   "symmetric": false,
+   "cycle_policy": "non_prerequisite",
+   "gating_allowed": false,
+   "allowed_source_types": [
+    "concept",
+    "skill",
+    "domain",
+    "learning_objective"
+   ],
+   "allowed_target_types": [
+    "domain",
+    "skill_family",
+    "skill",
+    "subskill",
+    "concept",
+    "learning_objective",
+    "learning_unit",
+    "project",
+    "milestone",
+    "practice_protocol"
+   ]
+  }
+ ],
+ "global_rules": [
+  "Relation vocabulary is canonical and data-driven; app code must not hard-code an incomplete enum.",
+  "gating is a separate edge field, not a relation type.",
+  "Only PREREQUISITE_FOR may use gating=hard.",
+  "SUPPORTS is the canonical micro-skill-to-skill/discipline relationship; APPLIES_TO links to explicit contexts.",
+  "TRANSFER_TO is not a prerequisite and never creates a gate.",
+  "A graph relation alone is not evidence that transfer or competence has occurred."
+ ]
+}

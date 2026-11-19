@@ -4,3 +4,5 @@ playwright-report
 test-results
 src/generated/validators.js
 *.log
+athena.zip
+artifacts/

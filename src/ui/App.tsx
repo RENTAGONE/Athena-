@@ -87,7 +87,7 @@ export function App(): ReactNode {
           </a>
           <span className="rail-sub">Cognitive Atlas</span>
           <span className="rail-foot">
-            v0.9 pack · <span className="num">{Object.keys(state.nodes).length}</span> records
+            v1.0 pack · <span className="num">{Object.keys(state.nodes).length}</span> records
           </span>
         </header>
         <div className="topbar">

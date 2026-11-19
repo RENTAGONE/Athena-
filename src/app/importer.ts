@@ -108,6 +108,13 @@ interface WantedEdge {
   implied: boolean;
 }
 const s = (v: unknown): string | null => (typeof v === "string" && v ? v : null);
+/** A micro-skill has no owner field in its schema; its first discipline link is where it is indexed (N-14). */
+function microOwner(rec: Rec, kind: "discipline" | "node" | "micro" | "context"): string | null {
+  const explicit = s(rec["owner_discipline_id"]);
+  if (explicit || kind !== "micro") return explicit;
+  const links = (rec["discipline_links"] as unknown[] | undefined) ?? [];
+  return links.map((x) => s(x)).find((x): x is string => x !== null) ?? null;
+}
 
 /** Normalises embedded convenience links into edge records (G-08). Explicit edges always win over implied ones. */
 function impliedEdges(w: Wanted): WantedEdge[] {
@@ -145,7 +152,7 @@ export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: Impo
       const code = s(rec["id"]);
       if (!code) return void err("missing_id", `${path}.id`, "record has no id");
       const objectType = kind === "micro" ? "micro_skill" : kind === "discipline" ? "discipline" : (s(rec["object_type"]) ?? "");
-      const owner = kind === "discipline" ? code : s(rec["owner_discipline_id"]);
+      const owner = kind === "discipline" ? code : microOwner(rec, kind);
       wanted.push({ code, kind, rec, objectType, owner, path });
     });
   pushW(pkg.disciplines, "discipline", "disciplines");
@@ -368,7 +375,7 @@ export async function materialise(state: DbState, plan: ImportPlan, deps: Import
     const code = rec["id"] as string;
     const existingEntry = state.codes[code];
     const objectType = kind === "micro" ? "micro_skill" : kind === "discipline" ? "discipline" : String(rec["object_type"]);
-    const owner = kind === "discipline" ? code : s(rec["owner_discipline_id"]);
+    const owner = kind === "discipline" ? code : microOwner(rec, kind);
     const common = { code, object_type: objectType, title: String(rec["title"] ?? rec["name"] ?? code), status: String(rec["status"] ?? "draft").toLowerCase(), owner_discipline_id: owner, content_version: (rec["content_version"] as number | undefined) ?? 1, is_sample: isSample, extensions: {}, body: rec };
     if (!existingEntry) {
       const id = deps.ids.next();

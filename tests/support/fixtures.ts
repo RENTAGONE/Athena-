@@ -15,11 +15,11 @@ const ajvMod = process.env["VALIDATOR"] === "ajv" ? await import("./ajv-validato
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 export const read = (rel: string): any => JSON.parse(readFileSync(join(root, rel), "utf8"));
 export const packFiles = (): PackFiles => {
-  const f = (n: string): any => read(`fixtures/pack-v0.9/${n}`);
+  const f = (n: string): any => read(`fixtures/pack-v1.0/${n}`);
   return {
-    disciplines: f("DISCIPLINE_REGISTRY.json"), domainMap: f("ATHENA_DOMAIN_MAP_v0.3.json"), skills: f("ATHENA_SKILL_SEED_v0.3.json"), subskills: f("ATHENA_SUBSKILL_SEED_v0.2.json"),
-    objectives: f("LEARNING_OBJECTIVE_SEED_v0.2.json"), units: f("LEARNING_UNIT_SEED_v0.2.json"), assessments: f("ASSESSMENT_SEED_v0.2.json"), foundation: f("FOUNDATION_NODE_SEED_v0.2.json"),
-    micro: f("ATHENA_MICRO_SKILL_REGISTRY_v0.3.json"), relationships: f("ATHENA_RELATIONSHIP_SEED_v0.3.json"), transfers: f("ATHENA_CROSS_DOMAIN_TRANSFER_v0.3.json"),
+    disciplines: f("DISCIPLINE_REGISTRY.json"), domainMap: f("ATHENA_DOMAIN_MAP_v1.0.json"), skills: f("ATHENA_SKILL_SEED_v1.0.json"), subskills: f("ATHENA_SUBSKILL_SEED_v1.0.json"),
+    objectives: f("LEARNING_OBJECTIVE_SEED_v1.0.json"), units: f("LEARNING_UNIT_SEED_v1.0.json"), assessments: f("ASSESSMENT_SEED_v1.0.json"), foundation: f("FOUNDATION_NODE_SEED_v1.0.json"),
+    micro: f("ATHENA_MICRO_SKILL_REGISTRY_v1.0.json"), relationships: f("ATHENA_RELATIONSHIP_SEED_v1.0.json"), transfers: f("ATHENA_CROSS_DOMAIN_TRANSFER_v1.0.json"),
     relationTypes: f("RELATIONSHIP_TYPE_REGISTRY_v0.2.json"), namespaces: f("ID_NAMESPACE_REGISTRY_v0.2.json"),
   };
 };

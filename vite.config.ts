@@ -16,6 +16,7 @@ export default defineConfig({
         background_color: "#070B18",
         display: "standalone",
         orientation: "any",
+        categories: ["education", "productivity"],
         start_url: "/",
         icons: [
           { src: "icon-192.png", sizes: "192x192", type: "image/png" },

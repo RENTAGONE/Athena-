@@ -17,6 +17,7 @@ import {
 } from "../app/selectors.ts";
 import {
   FOCAL,
+  GALAXY_RADIUS,
   bezierControl,
   distanceToPolyline,
   easeOutCubic,
@@ -82,7 +83,7 @@ export function Knowledge(): ReactNode {
   const [playing, setPlaying] = useState(true);
   const [selected, setSelected] = useState<string | null>(null);
   const [isolated, setIsolated] = useState<number | null>(null);
-  const [confirm, setConfirm] = useState<{ star: number; title: string; code: string } | null>(null);
+  const [confirm, setConfirm] = useState<{ star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string } | null>(null);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const sceneRef = useRef<Scene>({ galaxy, starsWorld, location: galaxy.location });
@@ -95,7 +96,7 @@ export function Knowledge(): ReactNode {
   const filterRef = useRef<string | null>(filter);
   const matchedRef = useRef<Set<string> | null>(null);
   const bodiesRef = useRef<Body[]>([]);
-  const threadsRef = useRef<{ id: string; star: number; title: string; code: string; points: ScreenPoint[] }[]>([]);
+  const threadsRef = useRef<{ id: string; star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string; points: ScreenPoint[] }[]>([]);
   const clockRef = useRef(0);
   const dirtyRef = useRef(true);
   const reduceRef = useRef(false);
@@ -184,8 +185,19 @@ export function Knowledge(): ReactNode {
     let height = 0;
     let dpr = 1;
 
+    let framedLayout: boolean | null = null;
     const resize = (): void => {
       const rect = canvas.getBoundingClientRect();
+      const isNarrow = rect.width < 700;
+      // Re-frame on mount and whenever the layout switches between phone and desktop widths; a later
+      // manual zoom or pan is left alone.
+      if (rect.width > 0 && framedLayout !== isNarrow) {
+        framedLayout = isNarrow;
+        // Frame the whole galaxy (stars plus their planet clouds) inside the smaller viewport axis.
+        const span = Math.min(rect.width, rect.height);
+        // Stars sit on a 440-unit sphere and their planet clouds add ~160 units, so frame the outer extent.
+        if (span > 0) cameraRef.current.distance = Math.min(1900, Math.max(760, ((GALAXY_RADIUS + 160) * FOCAL) / (0.34 * span)));
+      }
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = Math.max(1, rect.width);
       height = Math.max(1, rect.height);
@@ -300,6 +312,14 @@ export function Knowledge(): ReactNode {
 
         if (visible) {
           const r = Math.max(3.2, Math.min(13, 26 * proj.scale));
+          // Restrained radial corona: light falls off into the void, no glow loop.
+          const corona = ctx.createRadialGradient(proj.sx, proj.sy, r * 0.5, proj.sx, proj.sy, r * 4.4);
+          corona.addColorStop(0, rgba(meta?.color ?? "#648bff", 0.3 * dim));
+          corona.addColorStop(1, "rgba(7,11,24,0)");
+          ctx.fillStyle = corona;
+          ctx.beginPath();
+          ctx.arc(proj.sx, proj.sy, r * 4.4, 0, Math.PI * 2);
+          ctx.fill();
           ctx.globalAlpha = dim;
           ctx.beginPath();
           ctx.arc(proj.sx, proj.sy, r, 0, Math.PI * 2);
@@ -323,8 +343,10 @@ export function Knowledge(): ReactNode {
         // Planets and their moons stay in motion even while a system is isolated.
         if (iso !== null && iso !== si) return;
 
+        // With hundreds of planets per galaxy, spread them over up to seven rings instead of three.
+        const rings = Math.max(1, Math.min(7, Math.ceil(system.planets.length / 8)));
         system.planets.forEach((planet: GalaxyPlanet, pi: number) => {
-          const rx = 78 + (pi % 3) * 34;
+          const rx = 64 + (pi % rings) * 14;
           const rz = rx * 0.74;
           const tilt = ((pi % 5) - 2) * 0.2 + si * 0.03;
           const orbitYaw = si * 0.6 + pi * 0.9;
@@ -335,8 +357,27 @@ export function Knowledge(): ReactNode {
           if (!pp) return;
           const inView = pp.sx > -80 && pp.sx < width + 80 && pp.sy > -80 && pp.sy < height + 80;
           if (!inView) return;
-          const r = Math.max(2.2, Math.min(9, 13 * pp.scale));
+          const r = Math.max(2.2, Math.min(9, 13 * pp.scale)) * (system.planets.length > 30 ? 0.68 : 1);
           const dimP = flt !== null && flt !== system.code ? 0.2 : 1;
+          // Razor-thin orbital ring, projected point by point so it tilts in 3D.
+          if (iso === si || cam.distance < 1050) {
+            let broken = false;
+            ctx.beginPath();
+            for (let k = 0; k <= 40; k += 1) {
+              const rp = project(orbitPoint(world, rx, rz, tilt, orbitYaw, (k / 40) * Math.PI * 2), cam, width, height);
+              if (!rp) {
+                broken = true;
+                break;
+              }
+              if (k === 0) ctx.moveTo(rp.sx, rp.sy);
+              else ctx.lineTo(rp.sx, rp.sy);
+            }
+            if (!broken) {
+              ctx.strokeStyle = iso === si ? "rgba(38,56,88,0.72)" : "rgba(38,56,88,0.34)";
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
           ctx.globalAlpha = dimP;
           ctx.beginPath();
           ctx.arc(pp.sx, pp.sy, r, 0, Math.PI * 2);
@@ -381,7 +422,7 @@ export function Knowledge(): ReactNode {
       });
 
       // Threads — intra-system cyan, cross-domain violet at 28%.
-      const threads: { id: string; star: number; title: string; code: string; points: ScreenPoint[] }[] = [];
+      const threads: { id: string; star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string; points: ScreenPoint[] }[] = [];
       const systemStar = (code: string): number => scene.galaxy.stars.findIndex((s) => s.code === code);
       const drawThreads = (list: typeof edgesRef.current.intra, color: string, widthPx: number, curve: number, cross: boolean): void => {
         for (const e of list) {
@@ -408,7 +449,7 @@ export function Knowledge(): ReactNode {
           ctx.strokeStyle = color;
           ctx.lineWidth = widthPx;
           ctx.stroke();
-          if (cross) threads.push({ id: e.id, star: b.star, title: DISCIPLINE_BY_ID[scene.galaxy.stars[b.star]?.code ?? ""]?.name ?? "another discipline", code: scene.galaxy.stars[b.star]?.code ?? "", points: pts });
+          if (cross) threads.push({ id: e.id, star: b.star, title: DISCIPLINE_BY_ID[scene.galaxy.stars[b.star]?.code ?? ""]?.name ?? "another discipline", code: scene.galaxy.stars[b.star]?.code ?? "", relation: e.relation_type, sourceTitle: a.node.title, sourceCode: a.node.code, targetTitle: b.node.title, points: pts });
         }
       };
       ctx.globalAlpha = iso === null && flt === null ? 1 : 0.55;
@@ -419,10 +460,22 @@ export function Knowledge(): ReactNode {
       bodiesRef.current = bodies;
 
       // Labels with level-of-detail culling.
-      const label = (text: string, x: number, y: number, color: string, alpha: number): void => {
+      // Greedy label placement: a label that would collide with one already drawn is culled, so 18
+      // star names never pile up at 360px.
+      const placed: { x0: number; y0: number; x1: number; y1: number }[] = [];
+      const fitLabel = (x: number, y: number, w: number): boolean => {
+        const box = { x0: x - w / 2 - 6, y0: y - 11, x1: x + w / 2 + 6, y1: y + 6 };
+        for (const b of placed) if (box.x0 < b.x1 && box.x1 > b.x0 && box.y0 < b.y1 && box.y1 > b.y0) return false;
+        placed.push(box);
+        return true;
+      };
+      const label = (text: string, x: number, y: number, color: string, alpha: number, force = false): void => {
         ctx.font = '600 11px "JetBrains Mono", ui-monospace, monospace';
         ctx.textAlign = "center";
         const w = ctx.measureText(text).width;
+        // Never draw a label half off the canvas: cull it instead of clipping the name.
+        if (x - w / 2 < 6 || x + w / 2 > width - 6) return;
+        if (!force && !fitLabel(x, y, w)) return;
         ctx.globalAlpha = alpha * 0.72;
         ctx.fillStyle = "#070b18";
         ctx.fillRect(x - w / 2 - 4, y - 9, w + 8, 15);
@@ -440,7 +493,8 @@ export function Knowledge(): ReactNode {
         const matchedNow = matchedRef.current;
         const alpha = dimAll ? 0.22 : sel === system.discipline.id ? 0.95 : matchedNow === null || matchedNow.has(system.discipline.id) ? 0.86 : 0.34;
         const r = Math.max(3.2, Math.min(13, 26 * screen.scale));
-        if (screen.scale > 0.16 || iso === si) label(meta?.short.toUpperCase() ?? system.code, screen.x, screen.y - r - 10, meta?.color ?? "#f1f5ff", alpha);
+        const moonTotal = system.moons.length + system.planets.reduce((m, p) => m + p.moons.length, 0);
+        if (screen.scale > 0.16 || iso === si) label(`${meta?.short.toUpperCase() ?? system.code} · ${moonTotal}`, screen.x, screen.y - r - 10, meta?.color ?? "#f1f5ff", alpha, sel === system.discipline.id);
       });
       // Planet labels appear once the camera is close enough to read them.
       if (cam.distance < 900) {
@@ -455,7 +509,7 @@ export function Knowledge(): ReactNode {
         });
       }
       const selectedPos = sel ? nodePos.get(sel) : undefined;
-      if (selectedPos) label(selectedPos.node.title, selectedPos.x, selectedPos.y - selectedPos.r - 10, "#f1f5ff", 1);
+      if (selectedPos) label(selectedPos.node.title, selectedPos.x, selectedPos.y - selectedPos.r - 10, "#f1f5ff", 1, true);
     };
 
     const loop = (now: number): void => {
@@ -560,7 +614,7 @@ export function Knowledge(): ReactNode {
       }
       const thread = threadsRef.current.find((t) => distanceToPolyline(x, y, t.points) < 9);
       if (thread) {
-        setConfirm({ star: thread.star, title: thread.title, code: thread.code });
+        setConfirm({ star: thread.star, title: thread.title, code: thread.code, relation: thread.relation, sourceTitle: thread.sourceTitle, sourceCode: thread.sourceCode, targetTitle: thread.targetTitle });
         return;
       }
       setSelected(null);
@@ -623,7 +677,8 @@ export function Knowledge(): ReactNode {
             {playing ? <Pause size={15} strokeWidth={1.5} aria-hidden="true" /> : <Play size={15} strokeWidth={1.5} aria-hidden="true" />}
             <span>{playing ? "Pause" : "Orbit"}</span>
           </button>
-          <div className="pill" role="group" aria-label="Atlas view">
+          <div className="pill" role="group" aria-label="Atlas view" data-index={view === "index" ? "1" : "0"}>
+            <span className="pill-thumb" aria-hidden="true" />
             <button aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>Atlas</button>
             <button aria-pressed={view === "index"} onClick={() => setView("index")}>Index</button>
           </div>
@@ -642,7 +697,7 @@ export function Knowledge(): ReactNode {
       {galaxy.stars.length === 0 && view === "atlas" && (
         <div className="atlas-empty" role="status">
           <h2>No knowledge imported yet</h2>
-          <p>The atlas draws only what is in your local store. Preview the Pack v0.9 draft seed and approve it to load the 293 records it ships with.</p>
+          <p>The atlas draws only what is in your local store. Preview the bundled Pack v1.0 seed and approve it to load the 1,201 records it ships with.</p>
           <a className="btn primary" href="#/studio/updates">Open Studio</a>
         </div>
       )}
@@ -704,7 +759,11 @@ export function Knowledge(): ReactNode {
 
       {confirm && (
         <div className="confirm-card" role="dialog" aria-modal="false" aria-label="Cross-domain thread">
-          <p style={{ margin: 0 }}>
+          <span className="tag" style={{ borderColor: "var(--discovery-violet)", color: "var(--discovery-violet)" }}>{confirm.relation.replace(/_/g, " ").toLowerCase()}</span>
+          <p style={{ margin: "8px 0 0" }}>
+            <strong>{confirm.sourceTitle}</strong> <span className="mono">{confirm.sourceCode}</span> → <strong>{confirm.targetTitle}</strong>
+          </p>
+          <p style={{ margin: "6px 0 0" }}>
             Navigate to <strong>{confirm.title}</strong>?
           </p>
           <span className="label mono">{confirm.code}</span>
@@ -747,6 +806,16 @@ export function Knowledge(): ReactNode {
       </div>
     </section>
   );
+}
+
+/** #rrggbb → rgba() so the corona can fade a discipline colour into the void. */
+function rgba(hex: string, alpha: number): string {
+  const h = hex.replace("#", "");
+  if (h.length !== 6) return `rgba(53,217,255,${alpha})`;
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
 }
 
 function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, tier: MasteryTier, selected: boolean): void {

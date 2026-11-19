@@ -76,3 +76,11 @@
     --dur-page: 0ms;
   }
 }
+
+/* Deterministic spring constants (mass-spring-damper). Animations that need spring feel map these
+   to GPU-composited transform/opacity transitions; layout properties are never animated. */
+:root {
+  --spring-master: 400 30 0.8;
+  --spring-sheet: 380 36 0.8;
+  --ease-spring: cubic-bezier(0.2, 0.9, 0.3, 1.06);
+}

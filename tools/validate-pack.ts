@@ -4,12 +4,12 @@ import { join } from "node:path";
 import { makeAjvValidator } from "../tests/support/ajv-validator.ts";
 
 const v = makeAjvValidator("schemas/exchange");
-const read = (n: string): any => JSON.parse(readFileSync(join("fixtures/pack-v0.9", n), "utf8"));
+const read = (n: string): any => JSON.parse(readFileSync(join("fixtures/pack-v1.0", n), "utf8"));
 const checks: [string, string, string][] = [
-  ["ATHENA_DOMAIN_MAP_v0.3.json", "domains", "DOMAIN_RECORD"], ["ATHENA_DOMAIN_MAP_v0.3.json", "skill_families", "SKILL_FAMILY_RECORD"],
-  ["ATHENA_SKILL_SEED_v0.3.json", "skills", "SKILL_RECORD"], ["ATHENA_SUBSKILL_SEED_v0.2.json", "subskills", "SUBSKILL_RECORD"],
-  ["ATHENA_MICRO_SKILL_REGISTRY_v0.3.json", "records", "MICRO_SKILL"], ["ATHENA_RELATIONSHIP_SEED_v0.3.json", "edges", "KNOWLEDGE_RELATIONSHIP"],
-  ["ATHENA_CROSS_DOMAIN_TRANSFER_v0.3.json", "transfers", "TRANSFER_LINK"], ["ATHENA_CROSS_DOMAIN_TRANSFER_v0.3.json", "context_registry", "CONTEXT_RECORD"],
+  ["ATHENA_DOMAIN_MAP_v1.0.json", "domains", "DOMAIN_RECORD"], ["ATHENA_DOMAIN_MAP_v1.0.json", "skill_families", "SKILL_FAMILY_RECORD"],
+  ["ATHENA_SKILL_SEED_v1.0.json", "skills", "SKILL_RECORD"], ["ATHENA_SUBSKILL_SEED_v1.0.json", "subskills", "SUBSKILL_RECORD"],
+  ["ATHENA_MICRO_SKILL_REGISTRY_v1.0.json", "records", "MICRO_SKILL"], ["ATHENA_RELATIONSHIP_SEED_v1.0.json", "edges", "KNOWLEDGE_RELATIONSHIP"],
+  ["ATHENA_CROSS_DOMAIN_TRANSFER_v1.0.json", "transfers", "TRANSFER_LINK"], ["ATHENA_CROSS_DOMAIN_TRANSFER_v1.0.json", "context_registry", "CONTEXT_RECORD"],
 ];
 let n = 0;
 let bad = 0;

@@ -1,0 +1,133 @@
+{
+ "schema_version": "0.1.0",
+ "registry_status": "initial_seed_registry_not_final_curriculum",
+ "id_policy": "Human-readable IDs are stable references; internal immutable UUID/ULID may be used by the application. Never recycle an ID.",
+ "disciplines": [
+  {
+   "id": "ATH-DISC-ENG",
+   "name": "Engineering & Computer Science",
+   "description": "Code, software systems, programming, architecture and computing.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-BIZ",
+   "name": "Business & Entrepreneurship",
+   "description": "Customer value, offers, sales, marketing, operations and venture building.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-ELEC",
+   "name": "Electronics & Hardware",
+   "description": "Electrical principles, circuits, embedded systems, fabrication and mechatronics.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-FIN",
+   "name": "Finance & Economics",
+   "description": "Personal finance, accounting, markets, economics, valuation and capital allocation.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-BODY",
+   "name": "Body Science & Anatomy",
+   "description": "Anatomy, physiology, biomechanics, nutrition, recovery and human performance science.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-PSY",
+   "name": "Psychology & Strategy",
+   "description": "Cognition, behavior, decision-making, game theory, systems thinking and forecasting.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-AEST",
+   "name": "Aesthetics & Visual Design",
+   "description": "Visual literacy, composition, photography, graphic design, branding and 3D.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-WORK",
+   "name": "Workflow & Productivity",
+   "description": "Typing, terminal, Git, automation, organization and personal knowledge workflows.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-ART",
+   "name": "Artistic Development",
+   "description": "Drawing, perspective, form, light, color, illustration and concept art.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-ATH",
+   "name": "Athletics & Physical Performance",
+   "description": "Strength, conditioning, speed, agility, coordination and sport-specific performance.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-PERF",
+   "name": "Vocal & Performance Arts",
+   "description": "Voice, articulation, singing, breath control, stage presence and movement performance.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-MATH",
+   "name": "Mathematics & Scientific Reasoning",
+   "description": "Mathematical foundations, proof, statistics, probability and scientific methods.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-CYBER",
+   "name": "Cybersecurity & Digital Infrastructure",
+   "description": "Digital safety, operating systems, networks, web security and authorized defensive testing.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-LANG",
+   "name": "Language & Linguistic Intelligence",
+   "description": "Language structure, vocabulary, comprehension, grammar and multilingual competence.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-RES",
+   "name": "Research & Information Intelligence",
+   "description": "Research methods, source evaluation, evidence, synthesis, documentation and information literacy.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-INDEP",
+   "name": "Practical Independence",
+   "description": "Cooking, personal organization, navigation, household skills, tools and everyday competence.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-LEAD",
+   "name": "Leadership & Management",
+   "description": "Planning, coordination, delegation, team development, operations and accountability.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  },
+  {
+   "id": "ATH-DISC-COMM",
+   "name": "Communication & Rhetoric",
+   "description": "Writing, speaking, listening, argumentation, negotiation and interpersonal communication.",
+   "status": "active_domain",
+   "curriculum_status": "outline"
+  }
+ ]
+}

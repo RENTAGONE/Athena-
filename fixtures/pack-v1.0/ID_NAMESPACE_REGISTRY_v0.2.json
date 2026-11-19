@@ -1,0 +1,194 @@
+{
+ "schema_version": "0.2.0",
+ "registry_type": "id_namespace_registry",
+ "status": "draft_for_review",
+ "namespaces": [
+  {
+   "code": "ENG",
+   "owner_discipline_id": "ATH-DISC-ENG",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-ENG"
+   ]
+  },
+  {
+   "code": "BIZ",
+   "owner_discipline_id": "ATH-DISC-BIZ",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-BIZ"
+   ]
+  },
+  {
+   "code": "ELEC",
+   "owner_discipline_id": "ATH-DISC-ELEC",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-ELEC"
+   ]
+  },
+  {
+   "code": "FIN",
+   "owner_discipline_id": "ATH-DISC-FIN",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-FIN"
+   ]
+  },
+  {
+   "code": "BODY",
+   "owner_discipline_id": "ATH-DISC-BODY",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-BODY"
+   ]
+  },
+  {
+   "code": "PSY",
+   "owner_discipline_id": "ATH-DISC-PSY",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-PSY"
+   ]
+  },
+  {
+   "code": "AEST",
+   "owner_discipline_id": "ATH-DISC-AEST",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-AEST"
+   ]
+  },
+  {
+   "code": "WORK",
+   "owner_discipline_id": "ATH-DISC-WORK",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-WORK"
+   ]
+  },
+  {
+   "code": "ART",
+   "owner_discipline_id": "ATH-DISC-ART",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-ART"
+   ]
+  },
+  {
+   "code": "ATH",
+   "owner_discipline_id": "ATH-DISC-ATH",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-ATH"
+   ]
+  },
+  {
+   "code": "PERF",
+   "owner_discipline_id": "ATH-DISC-PERF",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-PERF"
+   ]
+  },
+  {
+   "code": "MATH",
+   "owner_discipline_id": "ATH-DISC-MATH",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-MATH"
+   ]
+  },
+  {
+   "code": "CYBER",
+   "owner_discipline_id": "ATH-DISC-CYBER",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-CYBER"
+   ]
+  },
+  {
+   "code": "LANG",
+   "owner_discipline_id": "ATH-DISC-LANG",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-LANG"
+   ]
+  },
+  {
+   "code": "RES",
+   "owner_discipline_id": "ATH-DISC-RES",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-RES"
+   ]
+  },
+  {
+   "code": "INDEP",
+   "owner_discipline_id": "ATH-DISC-INDEP",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-INDEP"
+   ]
+  },
+  {
+   "code": "LEAD",
+   "owner_discipline_id": "ATH-DISC-LEAD",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-LEAD"
+   ]
+  },
+  {
+   "code": "COMM",
+   "owner_discipline_id": "ATH-DISC-COMM",
+   "status": "active",
+   "legacy": false,
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-COMM"
+   ]
+  },
+  {
+   "code": "SCI",
+   "status": "legacy_alias",
+   "legacy": true,
+   "notes": "Legacy origin namespace retained for existing ATH-CON-SCI-* and ATH-OBJ-SCI-* IDs. The owner is per-record (Math or Research); do not infer it from SCI.",
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-MATH",
+    "ATH-DISC-RES"
+   ]
+  },
+  {
+   "code": "LEARN",
+   "status": "legacy_alias",
+   "legacy": true,
+   "notes": "Legacy origin namespace retained for existing ATH-OBJ-LEARN-* IDs; per-record owner remains explicit.",
+   "allowed_owner_discipline_ids": [
+    "ATH-DISC-WORK"
+   ]
+  }
+ ],
+ "rules": [
+  "Namespace is an immutable origin label, not current owner.",
+  "owner_discipline_id is explicit on records.",
+  "No code is regenerated to make its segment match a current owner.",
+  "Legacy aliases are valid for existing IDs and should not be used for new content by default."
+ ]
+}

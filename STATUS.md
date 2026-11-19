@@ -1,5 +1,16 @@
 # STATUS: what was run, and what was not
 
+## Pack v1.0 upgrade (2026-11-19)
+
+`npm run verify` → exit 0: 47/47 domain tests, 47/47 with Ajv, 3/3 Dexie, `validate:pack` 1,266 records with 0 failures, production build and service worker generated.
+`npm run test:e2e` → 3/3 pass. A browser session at 390×844 and 1440×900 imported the bundled Pack v1.0 seed (1,201 nodes, 1,125 edges, 2,326 changes) and rendered the full atlas with 0 horizontal overflow and no console errors.
+
+Pack v1.0 merges the content owner's KB v3.28 working tier into the canonical v0.9 records: 146 domains (113 canonical + 33 working), 777 skill families (40 canonical + 737 working), 158 micro-skills (156 KB candidates with their substantive protocols + 2 canonical records with no counterpart) and 75 transfer links (31 canonical + 44 Message-14 hypotheses). Every canonical ATH-* code is preserved. The 156 KB candidates are imported as DRAFT with `review_required_before_approval` on the high-risk set; authoring is not approval.
+
+The numbers in the table below describe the earlier v0.9 authoring run and are kept as recorded.
+
+
+
 Authoring environment: a chat sandbox with **no network** (Node v22.23.4, TypeScript 6.0.3, Python 3). No npm package could be installed. Dependencies listed in `package.json` have never been installed or version-checked.
 
 ## Executed here, with real output

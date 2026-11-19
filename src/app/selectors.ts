@@ -3,7 +3,7 @@
 import { CONSERVATIVE_V0 } from "../domain/competency.ts";
 import { deriveIndependence } from "../domain/evidence.ts";
 import type { DbState, EdgeRecord, EvidenceStored, NodeRecord, OutcomeValue } from "../domain/types.ts";
-import registry from "../../fixtures/pack-v0.9/DISCIPLINE_REGISTRY.json";
+import registry from "../../fixtures/pack-v1.0/DISCIPLINE_REGISTRY.json";
 
 export type MasteryTier = "unassessed" | "needs_revision" | "demonstrated" | "mastered";
 export const MASTERY_TIERS: MasteryTier[] = ["unassessed", "needs_revision", "demonstrated", "mastered"];

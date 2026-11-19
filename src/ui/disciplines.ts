@@ -2,7 +2,7 @@
 // re-typed by hand: this module only adds a stable secondary colour and an icon to each registered record.
 import type { LucideIcon } from "lucide-react";
 import { Atom, Brain, Briefcase, Brush, CircuitBoard, Cpu, Dumbbell, HeartPulse, Landmark, Languages, MessageSquare, Mic, Palette, ShieldCheck, Sigma, Users, Workflow, Wrench } from "lucide-react";
-import registry from "../../fixtures/pack-v0.9/DISCIPLINE_REGISTRY.json";
+import registry from "../../fixtures/pack-v1.0/DISCIPLINE_REGISTRY.json";
 
 export interface DisciplineMeta {
   /** Canonical ATH-DISC-* code, exactly as registered. */
