@@ -35,7 +35,8 @@ test("dexie: a stale revision is rejected and nothing is written", async () => {
   const plan = await buildPlan(st, baselinePackage(), deps);
   await commitPlan(store, plan, "approve", deps);
   const h = await contentHash(await store.load());
-  const stale = await buildPlan(st, pkg({ nodes: [newSkill("ATH-SKILL-MATH-TEST-STALE")] }, "pkg-stale"), deps);
+  const base = baselinePackage();
+  const stale = await buildPlan(st, pkg({ disciplines: base.disciplines, nodes: [...(base.nodes ?? []), newSkill("ATH-SKILL-MATH-TEST-STALE")] }, "pkg-stale"), deps);
   await assert.rejects(() => commitPlan(store, stale, "approve", deps), RevisionConflict);
   assert.equal(await contentHash(await store.load()), h);
 });

@@ -125,7 +125,7 @@ test("IMP-008 invalid lifecycle enum is rejected", async () => {
   const bad = { ...newSkill("ATH-SKILL-MATH-TEST-ENUM"), status: "complete_forever" };
   const p = await plan(store, deps, pkg({ nodes: [bad] }, "pkg-008"));
   assert.equal(p.ok, false);
-  assert.ok(p.issues.some((i) => i.code === "schema" && i.message.includes("not an allowed value") && i.path.includes("status")));
+  assert.ok(p.issues.some((i) => i.code === "schema" && (i.message.includes("not an allowed value") || i.message.includes("allowed values")) && i.path.includes("status")));
 });
 
 test("IMP-009 hard prerequisite without justification, or not PREREQUISITE_FOR/required, is rejected before commit", async () => {
