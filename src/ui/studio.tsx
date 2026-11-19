@@ -82,9 +82,9 @@ export function ImportPanel({ seed = false }: { seed?: boolean }): ReactNode {
       ) : (
         <>
           <p>Paste a package produced by ChatGPT, Gemini or any other tool, or choose a file. ATHENA validates it and shows a preview. Nothing is written until you approve.</p>
-          <textarea aria-label="Package JSON" value={text} onChange={(e) => setText(e.target.value)} placeholder='{"athena_package":"0.1", ...}' />
+          <textarea aria-label="Package JSON" value={text} onChange={(e: { target: HTMLTextAreaElement }) => setText(e.target.value)} placeholder='{"athena_package":"0.1", ...}' />
           <div className="row wrap">
-            <label className="btn">Choose file<input type="file" accept="application/json,.json,.txt" hidden onChange={(e) => void e.target.files?.[0]?.text().then(setText)} /></label>
+            <label className="btn">Choose file<input type="file" accept="application/json,.json,.txt" hidden onChange={(e: { target: HTMLInputElement }) => void e.target.files?.[0]?.text().then(setText)} /></label>
             <button className="btn primary" disabled={busy || !text.trim()} onClick={() => void previewText()}>Preview</button>
           </div>
         </>
@@ -159,7 +159,7 @@ export function BackupPanel(): ReactNode {
       <div className="panel">
         <h3>Check a backup file</h3>
         <p>Choose a backup. ATHENA reads it into a scratch copy and checks it. Your real data is never changed.</p>
-        <label className="btn">Choose backup file<input type="file" hidden onChange={(e) => void run(async () => { const f = e.target.files?.[0]; if (f) setCheck(await scratchRestoreCheck(new Uint8Array(await f.arrayBuffer()))); })} /></label>
+        <label className="btn">Choose backup file<input type="file" hidden onChange={(e: { target: HTMLInputElement }) => void run(async () => { const f = e.target.files?.[0]; if (f) setCheck(await scratchRestoreCheck(new Uint8Array(await f.arrayBuffer()))); })} /></label>
       </div>
       {msg && <div className="panel" role="status">{msg}</div>}
       {check && (

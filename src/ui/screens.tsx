@@ -86,7 +86,7 @@ export function Knowledge(): ReactNode {
           <button key={t} className="chip" aria-pressed={t === type} onClick={() => setType(t)}>{t.replace("_", " ")} · {counts.get(t)}</button>
         ))}
       </div>
-      <input type="search" placeholder="Search title or code" aria-label="Search title or code" value={q} onChange={(e) => setQ(e.target.value)} style={{ marginBottom: 12 }} />
+      <input type="search" placeholder="Search title or code" aria-label="Search title or code" value={q} onChange={(e: { target: HTMLInputElement }) => setQ(e.target.value)} style={{ marginBottom: 12 }} />
       <ul className="list">
         {shown.slice(0, 300).map((n) => (
           <li key={n.id}>
