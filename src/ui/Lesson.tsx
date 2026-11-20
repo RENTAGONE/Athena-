@@ -9,7 +9,7 @@ import { PageBack } from "./PageBack.tsx";
 import { PracticeSession } from "./screens.tsx";
 import { useApp } from "./context.ts";
 import { useEngineInput } from "./use-engine-input.ts";
-import { Head, disciplineVar } from "./ui.tsx";
+import { PageHead, disciplineVar } from "./ui.tsx";
 
 const STAGES = ["Read", "Practise", "Retrieve", "Record"] as const;
 
@@ -27,7 +27,7 @@ export function LessonScreen({ code }: { code: string }): ReactNode {
     return (
       <>
         <PageBack href="#/knowledge" label="Knowledge" />
-        <Head label="Learning lesson" title="Record not found" />
+        <PageHead label="Learning lesson" title="Record not found" />
         <p>No record has the code <code>{code}</code>. <a href="#/knowledge">Back to the atlas</a></p>
       </>
     );
@@ -39,9 +39,15 @@ export function LessonScreen({ code }: { code: string }): ReactNode {
   const last = stage === STAGES.length - 1;
 
   return (
-    <>
+    <div className="page page-lesson">
       <PageBack href={`#/knowledge/${encodeURIComponent(node.code)}`} label={node.title} />
-      <Head label={`${node.object_type.replace(/_/g, " ")} · ${meta?.short ?? "cross-cutting"} · ${plan.minutes} min`} title={`Learn · ${node.title}`} />
+      <PageHead
+        label={`${node.object_type.replace(/_/g, " ")} · ${meta?.short ?? "cross-cutting"}`}
+        title={`Learn · ${node.title}`}
+        tone={disciplineVar(node.owner_discipline_id)}
+        meta={<>{plan.minutes} min · {plan.protocol.length} protocol step{plan.protocol.length === 1 ? "" : "s"} · evidence is recorded only at the last stage.</>}
+        glyph={<BookOpen strokeWidth={1.4} />}
+      />
 
       <nav className="lesson-stepper" aria-label="Lesson stages">
         {STAGES.map((label, i) => (
@@ -60,7 +66,10 @@ export function LessonScreen({ code }: { code: string }): ReactNode {
       <div className="workspace">
         <div className="span-7">
           <section className="panel lesson-stage" style={{ ["--rail" as string]: disciplineVar(node.owner_discipline_id) }}>
-            <span className="label">Stage {stage + 1} of {STAGES.length} · {STAGES[stage]}</span>
+            <div className="stage-head">
+              <span className="stage-index" aria-hidden="true">{String(stage + 1).padStart(2, "0")}</span>
+              <span className="label">Stage {stage + 1} of {STAGES.length} · {STAGES[stage]}</span>
+            </div>
 
             {stage === 0 && (
               <>
@@ -195,6 +204,6 @@ export function LessonScreen({ code }: { code: string }): ReactNode {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 }

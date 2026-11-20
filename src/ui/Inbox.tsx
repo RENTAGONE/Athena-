@@ -4,7 +4,7 @@ import { buildInbox, type InboxKind } from "../app/engines/inbox.ts";
 import { PageBack } from "./PageBack.tsx";
 import { useApp } from "./context.ts";
 import { useEngineInput } from "./use-engine-input.ts";
-import { Head } from "./ui.tsx";
+import { PageHead } from "./ui.tsx";
 
 const KIND_LABEL: Record<InboxKind, string> = {
   safety: "Review flag",
@@ -21,9 +21,27 @@ export function InboxScreen(): ReactNode {
   const total = inbox.items.length;
 
   return (
-    <>
+    <div className="page page-inbox">
       <PageBack href="#/today" label="Today" />
-      <Head label="Derived from your store" title="Inbox" />
+      <PageHead
+        label="Derived from your store"
+        title="Inbox"
+        meta={<>{total === 0 ? "Nothing is waiting on you." : <><b>{total}</b> item{total === 1 ? "" : "s"} between retry, retention, drafts and review flags.</>} Reading an item never clears it; recording an outcome does.</>}
+        glyph={<InboxIcon strokeWidth={1.4} />}
+      />
+      <div className="triage">
+        {([
+          ["Retry", inbox.counts.revision, "var(--insight-amber)"],
+          ["Retention", inbox.counts.retention, "var(--growth-teal)"],
+          ["Draft", inbox.counts.draft, "var(--signal-blue)"],
+          ["Review", inbox.counts.safety, "var(--danger-red)"],
+        ] as [string, number, string][]).map(([name, n, tone]) => (
+          <div className="triage-cell" key={name} style={{ ["--tone" as string]: tone }}>
+            <b>{n}</b>
+            <span>{name}</span>
+          </div>
+        ))}
+      </div>
       <div className="bento">
         <section className="panel span-8">
           <div className="row between wrap">
@@ -83,6 +101,6 @@ export function InboxScreen(): ReactNode {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 }

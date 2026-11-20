@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { Database, Download, Layers, Orbit, RefreshCw } from "lucide-react";
+import { Database, Download, Layers, Orbit, RefreshCw, SlidersHorizontal } from "lucide-react";
 import { usePrefs, setPrefs } from "./prefs.ts";
 import {
   applyUpdate,
@@ -12,7 +12,7 @@ import {
 } from "./update.ts";
 import { PageBack } from "./PageBack.tsx";
 import { useApp } from "./context.ts";
-import { Head } from "./ui.tsx";
+import { PageHead } from "./ui.tsx";
 
 function Toggle({ label, detail, checked, onChange }: { label: string; detail: string; checked: boolean; onChange: (v: boolean) => void }): ReactNode {
   return (
@@ -113,9 +113,14 @@ export function SettingsScreen(): ReactNode {
   const mb = (n: number): string => `${(n / (1024 * 1024)).toFixed(n > 10 * 1024 * 1024 ? 0 : 1)} MB`;
 
   return (
-    <>
+    <div className="page page-settings">
       <PageBack href="#/today" label="Today" />
-      <Head label="This device only" title="Settings" />
+      <PageHead
+        label="This device only"
+        title="Settings"
+        meta={<>Presentation, routine budget, storage and the update channel. None of these preferences touch the knowledge store or the evidence log.</>}
+        glyph={<SlidersHorizontal strokeWidth={1.4} />}
+      />
       <div className="workspace">
         <div className="span-7 stack">
           <section className="panel">
@@ -189,6 +194,6 @@ export function SettingsScreen(): ReactNode {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 }

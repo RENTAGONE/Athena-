@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Layers } from "lucide-react";
 import type { ReactNode } from "react";
 import { buildPlan, commitPlan, parsePackage, type Decision, type ExchangePackage, type ImportPlan } from "../app/importer.ts";
 import { loadSeedPackage } from "../app/runtime.ts";
@@ -8,12 +9,17 @@ import { checkIntegrity } from "../domain/integrity.ts";
 import { projectGroups } from "../app/selectors.ts";
 import type { Delta, Issue } from "../domain/types.ts";
 import { useApp } from "./context.ts";
-import { Head } from "./ui.tsx";
+import { PageHead } from "./ui.tsx";
 
 export function Studio({ tab }: { tab: "updates" | "backup" }): ReactNode {
   return (
-    <>
-      <Head label="Architect Studio" title={tab === "updates" ? "Updates inbox" : "Backup and restore"} />
+    <div className="page page-studio">
+      <PageHead
+        label="Architect Studio"
+        title={tab === "updates" ? "Updates inbox" : "Backup and restore"}
+        meta={tab === "updates" ? <>A package is previewed, tallied and then approved or rejected. Nothing is written before you approve the preview.</> : <>A backup is one compressed file holding your records, evidence and history. The only copy that survives a cleared browser is one you keep elsewhere.</>}
+        glyph={<Layers strokeWidth={1.4} />}
+      />
       <nav className="seg" aria-label="Studio sections" data-index={tab === "updates" ? "0" : "1"}>
         <span className="seg-thumb" aria-hidden="true" />
         <a href="#/studio/updates" aria-current={tab === "updates" ? "page" : undefined}>Updates</a>
@@ -31,7 +37,7 @@ export function Studio({ tab }: { tab: "updates" | "backup" }): ReactNode {
       ) : (
         <BackupPanel />
       )}
-    </>
+    </div>
   );
 }
 
@@ -121,7 +127,7 @@ export function ImportPanel({ seed = false }: { seed?: boolean }): ReactNode {
   const changes = plan ? plan.items.filter((i) => i.action !== "noop") : [];
   const tally = (table: string, action: string): number => (plan ? plan.items.filter((i) => i.table === table && i.action === action).length : 0);
   return (
-    <section className="stack">
+    <section className="stack uplink">
       {seed && (
         <div className="panel rail">
           <span className="label">Bundled Pack v1.0 seed</span>

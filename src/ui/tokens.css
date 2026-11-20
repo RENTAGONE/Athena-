@@ -1,3 +1,21 @@
+/* Self-hosted type. Orbitron carries the instrument voice — wordmark, numerals, readouts — while
+   Inter carries everything a person reads. Both are latin subsets served from our own origin, so the
+   strict CSP (font-src 'self') holds and no third-party request is ever made. */
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/orbitron-latin.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Atlas";
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Cognitive Atlas design tokens. Every colour, space and duration in the app comes from this file.
    Legacy names (--canvas-0, --surface-1, --line-subtle, --signal-teal) stay as aliases so older
    components keep one source of truth instead of carrying hard-coded hex values. */
@@ -54,9 +72,20 @@
   --shadow-panel: 0 26px 60px -34px rgba(2, 6, 18, 0.95), 0 2px 10px -6px rgba(2, 6, 18, 0.8);
   --shadow-lift: 0 34px 80px -34px rgba(2, 8, 24, 0.98);
 
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-ui: "Inter", ui-sans-serif, system-ui, "Noto Sans Bengali", sans-serif;
+  --font-brand: "Orbitron", "Inter Atlas", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Atlas", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Inter Atlas", "Inter", ui-sans-serif, system-ui, "Noto Sans Bengali", sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Instrument surfaces: one ramp from void to lit glass, plus the rim that makes an edge read. */
+  --ink-0: #04070e;
+  --ink-1: #070c16;
+  --ink-2: #0b1322;
+  --rim-cyan: rgba(94, 231, 255, 0.5);
+  --rim-violet: rgba(167, 139, 250, 0.34);
+  --rim-hair: rgba(255, 255, 255, 0.08);
+  --specular: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  --text-bright: #f7faff;
 
   --dur-press: 120ms;
   --dur-select: 160ms;

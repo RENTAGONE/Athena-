@@ -8,7 +8,7 @@ import { evidenceIndex, masteryTier, nodeByCode, prerequisiteCount, todayView, M
 import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
 import { useApp } from "./context.ts";
 import { ApertureMark } from "./ApertureMark.tsx";
-import { Empty, Head, StatusTag, disciplineVar } from "./ui.tsx";
+import { Empty, PageHead, Ring, StatusTag, disciplineVar } from "./ui.tsx";
 import { ImportPanel } from "./studio.tsx";
 import { buildInbox } from "../app/engines/inbox.ts";
 import { buildRoutine, routineSummary } from "../app/engines/routine.ts";
@@ -42,18 +42,36 @@ export function Today(): ReactNode {
   const top = view.focus[0];
   const topMeta = top ? DISCIPLINE_BY_ID[top.discipline] : undefined;
   const empty = view.counts.nodes === 0;
+  // Real composition of the local store: one segment per discipline that holds records.
+  const composition = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const node of Object.values(state.nodes)) {
+      const id = node.owner_discipline_id ?? "";
+      if (id) counts.set(id, (counts.get(id) ?? 0) + 1);
+    }
+    return DISCIPLINES.map((d) => ({ ...d, count: counts.get(d.id) ?? 0 }))
+      .filter((d) => d.count > 0)
+      .sort((a, b) => b.count - a.count);
+  }, [state.nodes]);
+  const compositionTotal = composition.reduce((n, d) => n + d.count, 0);
 
   return (
-    <>
-      <Head label={view.localDate} title="Today" />
+    <div className="page page-today">
+      <PageHead
+        label={view.localDate}
+        title="Today"
+        meta={<>Today’s routine holds <b>{routine.blocks.length}</b> block{routine.blocks.length === 1 ? "" : "s"} inside a <b>{prefs.minutesTarget} min</b> budget. <b>{inbox.items.length}</b> item{inbox.items.length === 1 ? "" : "s"} are waiting in the inbox.</>}
+        actions={<a className="btn sm primary" href="#/knowledge">Open the atlas</a>}
+      />
       <div className="bento">
         <section className="panel hero-card span-7">
+          <div className="hero-rings" aria-hidden="true"><span /><span /><span /></div>
           <div className="hero-orb" aria-hidden="true">
-            <ApertureMark variant="primary" size={220} />
+            <ApertureMark variant="primary" size={260} />
           </div>
           <div className="hero-top">
-            <div>
-              <span className="label">Knowledge Atlas</span>
+            <div className="hero-copy">
+              <span className="eyebrow"><i aria-hidden="true" />Knowledge Atlas</span>
               <h2 className="hero-title">{empty ? "Your atlas is empty" : `${view.counts.nodes.toLocaleString()} records in your atlas`}</h2>
               <p className="hero-sub">
                 {empty
@@ -67,7 +85,30 @@ export function Today(): ReactNode {
             <div className="stat"><b>{view.counts.edges}</b><span>relations</span></div>
             <div className="stat"><b>{view.counts.domains}</b><span>domains</span></div>
           </div>
-          <div className="row wrap" style={{ marginTop: 16 }}>
+          {composition.length > 0 && (
+            <div className="composition">
+              <div
+                className="comp-bar"
+                role="img"
+                aria-label={`Records by discipline: ${composition.map((d) => `${d.short} ${d.count}`).join(", ")}`}
+              >
+                {composition.map((d) => (
+                  <span
+                    key={d.id}
+                    className="comp-seg"
+                    style={{ ["--c" as string]: d.color, width: `${((d.count / compositionTotal) * 100).toFixed(2)}%` }}
+                  />
+                ))}
+              </div>
+              <div className="comp-legend">
+                {composition.slice(0, 5).map((d) => (
+                  <span className="comp-key" key={d.id} style={{ ["--c" as string]: d.color }}><i />{d.short} <b>{d.count}</b></span>
+                ))}
+                {composition.length > 5 && <span className="comp-key"><i />+{composition.length - 5} more disciplines</span>}
+              </div>
+            </div>
+          )}
+          <div className="row wrap hero-cta">
             <a className="btn primary" href="#/knowledge">Open the atlas<ArrowRight size={15} strokeWidth={1.5} aria-hidden="true" /></a>
             {empty && <a className="btn" href="#/studio">Load the pack</a>}
           </div>
@@ -251,7 +292,7 @@ export function Today(): ReactNode {
           <ImportPanel seed />
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -339,7 +380,7 @@ export function SkillDetail({ code }: { code: string }): ReactNode {
   if (!node) {
     return (
       <>
-        <Head label="Knowledge" title="Record not found" />
+        <PageHead label="Knowledge" title="Record not found" />
         <p>No record has the code <code>{code}</code>. <a href="#/knowledge">Back to the atlas</a></p>
       </>
     );
@@ -362,10 +403,18 @@ export function SkillDetail({ code }: { code: string }): ReactNode {
     ? (((node.body["practice_protocol"] as Record<string, unknown>)["steps"] as unknown[]).filter((s): s is string => typeof s === "string"))
     : [];
 
+  const Glyph = meta?.Icon;
+
   return (
-    <>
+    <div className="page page-record">
       <PageBack href="#/knowledge" label="Atlas" />
-      <Head label={`${node.object_type.replace(/_/g, " ")} · ${meta?.short ?? "cross-cutting"}`} title={node.title} />
+      <PageHead
+        label={`${node.object_type.replace(/_/g, " ")} · ${meta?.short ?? "cross-cutting"}`}
+        title={node.title}
+        tone={disciplineVar(node.owner_discipline_id)}
+        meta={<>{node.code} · content v{node.content_version} · {prerequisiteCount(state, node.id)} prerequisite{prerequisiteCount(state, node.id) === 1 ? "" : "s"}</>}
+        glyph={Glyph ? <Glyph strokeWidth={1.5} /> : undefined}
+      />
       <div className="workspace">
         <div className="span-7">
           <section className="panel rail" style={{ ["--rail" as string]: disciplineVar(node.owner_discipline_id) }}>
@@ -482,7 +531,7 @@ export function SkillDetail({ code }: { code: string }): ReactNode {
           </details>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -491,20 +540,40 @@ function MasteryPanel({ node, comp, confirmed, evidenceCount }: { node: NodeReco
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const candidate = comp?.dimensions.mastery === "candidate";
+  // Four conservative clauses, each read straight from the rule engine. No invented percentage.
+  const clauses: [string, string, boolean][] = [
+    ["Exposure", comp?.dimensions.exposure.replace(/_/g, " ") ?? "—", comp?.dimensions.exposure === "exposed"],
+    ["Performance", comp?.dimensions.performance.replace(/_/g, " ") ?? "—", comp?.dimensions.performance === "independent_demonstrated" || comp?.dimensions.performance === "independent_partial"],
+    ["Retention", comp?.dimensions.retention ?? "—", comp?.dimensions.retention === "retained"],
+    ["Mastery", comp?.dimensions.mastery ?? "—", comp?.dimensions.mastery === "candidate" || comp?.dimensions.mastery === "confirmed"],
+  ];
+  const met = clauses.filter((c) => c[2]).length;
   return (
     <section className="panel rail" style={{ ["--rail" as string]: confirmed ? "var(--growth-teal)" : "var(--signal-blue)" }}>
-      <span className="label">Mastery decision</span>
-      <p style={{ marginTop: 8 }} className="empty">
-        Derived by rules {comp?.rules_version ?? "…"} from <span className="num">{evidenceCount}</span> stored record(s). A page visit never changes it.
-      </p>
+      <div className="mastery-top">
+        <div className="grow">
+          <span className="label">Mastery decision</span>
+          <p style={{ marginTop: 8 }} className="empty">
+            Derived by rules {comp?.rules_version ?? "…"} from <span className="num">{evidenceCount}</span> stored record(s). A page visit never changes it.
+          </p>
+        </div>
+        <Ring value={met} total={4} caption="clauses" tone={confirmed ? "var(--growth-teal)" : "var(--signal-blue)"} size={104} />
+      </div>
       {comp && (
-        <dl className="kv" style={{ marginTop: 10 }}>
-          <dt>Exposure</dt><dd>{comp.dimensions.exposure.replace(/_/g, " ")}</dd>
-          <dt>Performance</dt><dd>{comp.dimensions.performance.replace(/_/g, " ")}</dd>
-          <dt>Retention</dt><dd>{comp.dimensions.retention}</dd>
-          <dt>Mastery</dt><dd>{comp.dimensions.mastery}</dd>
-          <dt>State</dt><dd><strong>{comp.derived_learner_state.replace(/_/g, " ")}</strong></dd>
-        </dl>
+        <>
+          <div className="mastery-clauses">
+            {clauses.map(([name, state, isMet]) => (
+              <span className="clause" key={name} data-met={isMet ? "true" : "false"}>
+                <i aria-hidden="true" />
+                <span className="grow">{name}</span>
+                <span className="mono" style={{ color: "var(--text-muted)" }}>{state}</span>
+              </span>
+            ))}
+          </div>
+          <dl className="kv" style={{ marginTop: 12 }}>
+            <dt>State</dt><dd><strong>{comp.derived_learner_state.replace(/_/g, " ")}</strong></dd>
+          </dl>
+        </>
       )}
       <p style={{ marginTop: 10 }} className="mono">{comp?.explanation ?? "Computing…"}</p>
       {confirmed ? (

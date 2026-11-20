@@ -8,7 +8,7 @@ import { PageBack } from "./PageBack.tsx";
 import { useApp } from "./context.ts";
 import { useEngineInput } from "./use-engine-input.ts";
 import { usePrefs } from "./prefs.ts";
-import { Head } from "./ui.tsx";
+import { PageHead } from "./ui.tsx";
 
 /**
  * Architect. Composes a study path from the recorded graph: choose a discipline, see the frontier
@@ -32,9 +32,14 @@ export function ArchitectScreen(): ReactNode {
   const meta = discipline ? DISCIPLINE_BY_ID[discipline] : undefined;
 
   return (
-    <>
+    <div className="page page-architect">
       <PageBack href="#/studio/updates" label="Studio" />
-      <Head label="Architect Studio" title="Plan a path" />
+      <PageHead
+        label="Architect Studio"
+        title="Plan a path"
+        meta={<>Only <code>PREREQUISITE_FOR</code> links order a chain. A step counts as done only when stored evidence demonstrates it.</>}
+        glyph={<Route strokeWidth={1.4} />}
+      />
 
       <div className="workspace">
         <div className="span-7 stack">
@@ -132,6 +137,6 @@ export function ArchitectScreen(): ReactNode {
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 }
