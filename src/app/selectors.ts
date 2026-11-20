@@ -3,7 +3,7 @@
 import { CONSERVATIVE_V0 } from "../domain/competency.ts";
 import { deriveIndependence } from "../domain/evidence.ts";
 import type { DbState, EdgeRecord, EvidenceStored, NodeRecord, OutcomeValue } from "../domain/types.ts";
-import registry from "../../fixtures/pack-v1.0/DISCIPLINE_REGISTRY.json";
+import registry from "../../fixtures/pack-v1.0/DISCIPLINE_REGISTRY.json" with { type: "json" };
 
 export type MasteryTier = "unassessed" | "needs_revision" | "demonstrated" | "mastered";
 export const MASTERY_TIERS: MasteryTier[] = ["unassessed", "needs_revision", "demonstrated", "mastered"];
@@ -69,14 +69,26 @@ export function tierCounts(index: EvidenceIndex, ids: string[]): Record<MasteryT
   return out;
 }
 
-/** Skill-like records that can appear as moons in the atlas. */
+/** Skill-like records: the three competency levels the atlas keeps distinct. */
 const MOON_TYPES = new Set(["skill", "subskill", "micro_skill"]);
-const PLANET_TYPES = new Set(["domain", "skill_family"]);
 
 export interface GalaxyMoon {
   node: NodeRecord;
   tier: MasteryTier;
   order: number;
+  /** Component capability satellites (subskills) orbiting this moon. */
+  satellites: GalaxyMoon[];
+  /** Small observable action markers (micro-skills) orbiting this moon. */
+  asteroids: GalaxyMoon[];
+}
+
+export interface GalaxyConstellation {
+  node: NodeRecord;
+  tier: MasteryTier;
+  order: number;
+  /** Planet index when the family sits inside a domain; null when it hangs off the star. */
+  planet: number | null;
+  members: GalaxyMoon[];
 }
 
 export interface GalaxyPlanet {
@@ -92,43 +104,70 @@ export interface GalaxyStar {
   code: string;
   order: number;
   planets: GalaxyPlanet[];
+  /** Skills that hang off the star because no domain/family ancestor resolves. */
   moons: GalaxyMoon[];
+  /** Subskills without a skill parent, kept findable rather than hidden. */
+  satellites: GalaxyMoon[];
+  /** Unlinked micro-skills, still rendered as telemetry markers. */
+  asteroids: GalaxyMoon[];
+  constellations: GalaxyConstellation[];
+}
+
+export type CelestialKind = "star" | "planet" | "constellation" | "moon" | "satellite" | "asteroid";
+
+export interface GalaxyLocation {
+  star: number;
+  planet: number | null;
+  moon: number | null;
+  kind: CelestialKind;
 }
 
 export interface Galaxy {
   stars: GalaxyStar[];
   /** node id → where it lives, so a selection can be resolved without a second scan. */
-  location: Map<string, { star: number; planet: number | null; moon: number | null }>;
-  totals: { stars: number; planets: number; moons: number };
+  location: Map<string, GalaxyLocation>;
+  totals: { stars: number; planets: number; constellations: number; moons: number; satellites: number; asteroids: number };
 }
 
-function ancestorPlanet(state: DbState, node: NodeRecord): NodeRecord | null {
+const emptyBody = (node: NodeRecord, tier: MasteryTier, order: number): GalaxyMoon => ({ node, tier, order, satellites: [], asteroids: [] });
+
+function parentChain(state: DbState, node: NodeRecord): NodeRecord[] {
+  const out: NodeRecord[] = [];
   let cursor: NodeRecord | undefined = node;
-  const seen = new Set<string>();
-  while (cursor && cursor.parent_id && !seen.has(cursor.id)) {
-    seen.add(cursor.id);
+  const seen = new Set<string>([node.id]);
+  while (cursor && cursor.parent_id) {
     const parent: NodeRecord | undefined = state.nodes[cursor.parent_id];
-    if (!parent) return null;
-    if (PLANET_TYPES.has(parent.object_type)) return parent;
-    if (parent.object_type === "discipline") return null;
+    if (!parent || seen.has(parent.id)) break;
+    seen.add(parent.id);
+    out.push(parent);
     cursor = parent;
+  }
+  return out;
+}
+
+/** Nearest ancestor of one of the given types, walking CONTAINS parents only. */
+function nearestAncestor(state: DbState, node: NodeRecord, types: string[]): NodeRecord | null {
+  for (const p of parentChain(state, node)) if (types.includes(p.object_type)) return p;
+  return null;
+}
+
+/** A micro-skill may carry no CONTAINS parent: it attaches through SUPPORTS to a skill or subskill. */
+function supportsTarget(state: DbState, node: NodeRecord, types: string[]): NodeRecord | null {
+  for (const e of Object.values(state.edges)) {
+    if (e.relation_type !== "SUPPORTS" || e.source_id !== node.id) continue;
+    const target = state.nodes[e.target_id];
+    if (target && types.includes(target.object_type)) return target;
   }
   return null;
 }
 
-/** Micro-skills carry no CONTAINS parent: they attach through SUPPORTS to a skill, or to their owner's first planet. */
-function planetForMicro(state: DbState, node: NodeRecord, planetsOf: (disciplineId: string | null) => GalaxyPlanet[]): NodeRecord | null {
-  for (const e of Object.values(state.edges)) {
-    if (e.relation_type !== "SUPPORTS" || e.source_id !== node.id) continue;
-    const target = state.nodes[e.target_id];
-    if (!target) continue;
-    const planet = ancestorPlanet(state, target);
-    if (planet) return planet;
-  }
-  const fallback = planetsOf(node.owner_discipline_id);
-  return fallback[0]?.node ?? null;
-}
-
+/**
+ * The atlas projection. Six distinct celestial classes, never compressed:
+ *   discipline → star · domain → planet · skill_family → constellation · skill → moon ·
+ *   subskill → satellite · micro_skill → asteroid.
+ * A record with no resolvable parent is still placed (under its owner's star) and counted as an
+ * orphan by the ontology audit, so it can be found and repaired rather than disappear.
+ */
 export function buildGalaxy(state: DbState, index: EvidenceIndex = evidenceIndex(state)): Galaxy {
   const disciplines = Object.values(state.nodes)
     .filter((n) => n.object_type === "discipline")
@@ -139,53 +178,107 @@ export function buildGalaxy(state: DbState, index: EvidenceIndex = evidenceIndex
     });
   const starByCode = new Map<string, GalaxyStar>();
   const stars: GalaxyStar[] = disciplines.map((d, i) => {
-    const s: GalaxyStar = { discipline: d, code: d.code, order: i, planets: [], moons: [] };
+    const s: GalaxyStar = { discipline: d, code: d.code, order: i, planets: [], moons: [], satellites: [], asteroids: [], constellations: [] };
     starByCode.set(d.code, s);
     return s;
   });
-  const location = new Map<string, { star: number; planet: number | null; moon: number | null }>();
+  const location = new Map<string, GalaxyLocation>();
+  const planetByNode = new Map<string, { star: GalaxyStar; idx: number }>();
+  const familyByNode = new Map<string, GalaxyConstellation>();
+  const moonByNode = new Map<string, GalaxyMoon>();
+  const satelliteByNode = new Map<string, GalaxyMoon>();
 
-  const planetsOf = (disciplineId: string | null): GalaxyPlanet[] => {
-    if (!disciplineId) return [];
-    return starByCode.get(disciplineId)?.planets ?? [];
+  const starOf = (n: NodeRecord): GalaxyStar | undefined => {
+    const owner = n.owner_discipline_id ? starByCode.get(n.owner_discipline_id) : undefined;
+    if (owner) return owner;
+    const disc = nearestAncestor(state, n, ["discipline"]);
+    return disc ? starByCode.get(disc.code) : undefined;
   };
 
-  // Tier 2: domains and skill families. Parent discipline comes from the derived CONTAINS cache, then the explicit owner.
+  // Tier 1: planets are domains only. A skill family is a constellation, never a planet.
   for (const n of Object.values(state.nodes)) {
-    if (!PLANET_TYPES.has(n.object_type)) continue;
-    const parentDiscipline = n.parent_id ? state.nodes[n.parent_id] : undefined;
-    const ownerCode = parentDiscipline?.object_type === "discipline" ? parentDiscipline.code : n.owner_discipline_id;
-    const star = ownerCode ? starByCode.get(ownerCode) : undefined;
+    if (n.object_type !== "domain") continue;
+    const star = starOf(n);
     if (!star) continue;
-    star.planets.push({ node: n, tier: masteryTier(index, n.id), order: star.planets.length, moons: [] });
-    location.set(n.id, { star: star.order, planet: star.planets.length - 1, moon: null });
+    const idx = star.planets.length;
+    star.planets.push({ node: n, tier: masteryTier(index, n.id), order: idx, moons: [] });
+    planetByNode.set(n.id, { star, idx });
+    location.set(n.id, { star: star.order, planet: idx, moon: null, kind: "planet" });
   }
 
-  // Tier 3: skills, subskills and micro-skills, each under its nearest ancestor domain/family.
-  const moons = Object.values(state.nodes).filter((n) => MOON_TYPES.has(n.object_type));
-  moons.sort((a, b) => a.code.localeCompare(b.code));
-  for (const n of moons) {
-    const owner = n.owner_discipline_id;
-    const planet = n.object_type === "micro_skill" ? planetForMicro(state, n, planetsOf) : ancestorPlanet(state, n);
-    const starCode = planet ? (planet.owner_discipline_id ?? owner) : owner;
-    const star = starCode ? starByCode.get(starCode) : undefined;
+  // Tier 2: skill families are constellations. They can nest inside a domain or hang off the star.
+  const families = Object.values(state.nodes).filter((n) => n.object_type === "skill_family").sort((a, b) => a.code.localeCompare(b.code));
+  for (const n of families) {
+    const star = starOf(n);
     if (!star) continue;
-    const moon: GalaxyMoon = { node: n, tier: masteryTier(index, n.id), order: 0 };
-    const target = planet ? star.planets.find((p) => p.node.id === planet.id) : undefined;
-    if (target) {
-      moon.order = target.moons.length;
-      target.moons.push(moon);
-      const planetIdx = star.planets.indexOf(target);
-      location.set(n.id, { star: star.order, planet: planetIdx, moon: moon.order });
+    const domain = nearestAncestor(state, n, ["domain"]);
+    const planet = domain ? (planetByNode.get(domain.id)?.idx ?? null) : null;
+    const c: GalaxyConstellation = { node: n, tier: masteryTier(index, n.id), order: star.constellations.length, planet, members: [] };
+    star.constellations.push(c);
+    familyByNode.set(n.id, c);
+    location.set(n.id, { star: star.order, planet, moon: null, kind: "constellation" });
+  }
+
+  // Tier 3: skills are major moons. Their domain ancestor decides the orbit; a family-only skill still
+  // orbits the star and is listed as a constellation member.
+  const skills = Object.values(state.nodes).filter((n) => n.object_type === "skill").sort((a, b) => a.code.localeCompare(b.code));
+  for (const n of skills) {
+    const star = starOf(n);
+    if (!star) continue;
+    const domain = nearestAncestor(state, n, ["domain"]);
+    const family = nearestAncestor(state, n, ["skill_family"]);
+    const planet = domain ? planetByNode.get(domain.id) : undefined;
+    const moon = emptyBody(n, masteryTier(index, n.id), 0);
+    if (planet) {
+      moon.order = planet.star.planets[planet.idx]!.moons.length;
+      planet.star.planets[planet.idx]!.moons.push(moon);
+      location.set(n.id, { star: star.order, planet: planet.idx, moon: moon.order, kind: "moon" });
     } else {
       moon.order = star.moons.length;
       star.moons.push(moon);
-      location.set(n.id, { star: star.order, planet: null, moon: moon.order });
+      location.set(n.id, { star: star.order, planet: null, moon: moon.order, kind: "moon" });
     }
+    moonByNode.set(n.id, moon);
+    if (family) familyByNode.get(family.id)?.members.push(moon);
   }
+
+  // Tier 4: subskills are satellites, attached to their skill when one resolves.
+  const subskills = Object.values(state.nodes).filter((n) => n.object_type === "subskill").sort((a, b) => a.code.localeCompare(b.code));
+  for (const n of subskills) {
+    const star = starOf(n);
+    if (!star) continue;
+    const parent = nearestAncestor(state, n, ["skill"]) ?? supportsTarget(state, n, ["skill"]);
+    const moon = parent ? moonByNode.get(parent.id) : undefined;
+    const satellite = emptyBody(n, masteryTier(index, n.id), moon ? moon.satellites.length : star.satellites.length);
+    if (moon) moon.satellites.push(satellite);
+    else star.satellites.push(satellite);
+    satelliteByNode.set(n.id, satellite);
+    const host = parent ? location.get(parent.id) : undefined;
+    location.set(n.id, { star: star.order, planet: host?.planet ?? null, moon: host?.moon ?? null, kind: "satellite" });
+  }
+
+  // Tier 5: micro-skills are telemetry asteroid markers. They keep draft/review status and stay visible
+  // even when no parent edge exists.
+  const micros = Object.values(state.nodes).filter((n) => n.object_type === "micro_skill").sort((a, b) => a.code.localeCompare(b.code));
+  for (const n of micros) {
+    const star = starOf(n);
+    if (!star) continue;
+    const sub = nearestAncestor(state, n, ["subskill"]) ?? supportsTarget(state, n, ["subskill"]);
+    const skill = nearestAncestor(state, n, ["skill"]) ?? supportsTarget(state, n, ["skill"]);
+    const host = satelliteByNode.get(sub?.id ?? "") ?? moonByNode.get(skill?.id ?? "");
+    const asteroid = emptyBody(n, masteryTier(index, n.id), host ? host.asteroids.length : star.asteroids.length);
+    if (host) host.asteroids.push(asteroid);
+    else star.asteroids.push(asteroid);
+    const hostLoc = host ? location.get(host.node.id) : undefined;
+    location.set(n.id, { star: star.order, planet: hostLoc?.planet ?? null, moon: hostLoc?.moon ?? null, kind: "asteroid" });
+  }
+
   const planets = stars.reduce((sum, s) => sum + s.planets.length, 0);
+  const constellations = stars.reduce((sum, s) => sum + s.constellations.length, 0);
   const moonCount = stars.reduce((sum, s) => sum + s.moons.length + s.planets.reduce((m, p) => m + p.moons.length, 0), 0);
-  return { stars, location, totals: { stars: stars.length, planets, moons: moonCount } };
+  const satellites = stars.reduce((sum, s) => sum + s.satellites.length + s.moons.reduce((m, p) => m + p.satellites.length, 0) + s.planets.reduce((m, p) => m + p.moons.reduce((k, q) => k + q.satellites.length, 0), 0), 0);
+  const asteroids = stars.reduce((sum, s) => sum + s.asteroids.length + s.moons.reduce((m, p) => m + p.asteroids.length, 0) + s.planets.reduce((m, p) => m + p.moons.reduce((k, q) => k + q.asteroids.length + q.satellites.reduce((x, r) => x + r.asteroids.length, 0), 0), 0), 0);
+  return { stars, location, totals: { stars: stars.length, planets, constellations, moons: moonCount, satellites, asteroids } };
 }
 
 export interface EdgePartitions {

@@ -1358,3 +1358,111 @@ textarea {
 /* Studio: the import surface reads as a console, not a form. */
 .uplink textarea { min-height: 200px; }
 .uplink > .panel.rail { border-left-color: rgba(94, 231, 255, 0.35); }
+
+/* ============================================================================
+   ATHENA v2.1 · OPERATIONAL WORKSPACES (schedule, library, atlas tiers)
+   Dark glass instruments, not form dumps: every control is labelled, grouped and
+   sized for a 360 px thumb. Nothing here changes the knowledge-record styling.
+   ========================================================================== */
+
+.hint { color: var(--text-muted); font-size: 0.78rem; line-height: 1.45; margin: 0; }
+.list.compact { gap: 4px; }
+.list.compact li { padding: 4px 0; border-bottom: 0; font-size: 0.86rem; }
+.list.ordered { list-style: decimal; padding-left: 1.2em; }
+.list.ordered li { display: list-item; }
+.row.gap { gap: 2px; }
+.stat-grid.tight { margin-top: 12px; }
+
+.capture-field { display: grid; gap: 6px; }
+.capture-field textarea {
+  width: 100%; resize: vertical; min-height: 84px;
+  background: rgba(4, 8, 17, 0.55);
+  border: 1px solid var(--rim-line, rgba(126, 170, 255, 0.18));
+  border-radius: 12px; padding: 12px 14px;
+  color: var(--text-primary); font: inherit; line-height: 1.55;
+}
+.capture-field textarea:focus-visible { outline: 2px solid var(--atlas-cyan); outline-offset: 1px; }
+
+.preview-card {
+  margin-top: 14px; padding: 14px;
+  border: 1px solid rgba(53, 217, 255, 0.24);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(53, 217, 255, 0.06), rgba(167, 139, 250, 0.04));
+}
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px 14px; margin: 12px 0 0; }
+.kv div { display: grid; gap: 2px; }
+.kv dt { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+.kv dd { margin: 0; font-family: var(--font-brand); font-variant-numeric: tabular-nums; font-size: 0.88rem; }
+
+.timeline { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.timeline li { display: grid; grid-template-columns: 10px 1fr auto; gap: 4px 10px; align-items: center; padding: 8px 10px; border: 1px solid var(--rim-line, rgba(126,170,255,.14)); border-radius: 10px; background: rgba(8, 14, 26, 0.4); }
+.timeline .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); }
+.timeline .dot.commitment { background: var(--atlas-cyan); box-shadow: 0 0 8px rgba(53,217,255,.65); }
+.timeline .dot.routine { background: var(--discovery-violet); }
+.timeline .dot.task { background: var(--insight-amber); }
+.timeline .t { font-size: 0.88rem; }
+.timeline .hint { grid-column: 2 / -1; }
+
+.item-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 0; }
+.item-row .t { flex: 1 1 140px; min-width: 0; }
+.item-row .mono { font-size: 0.74rem; color: var(--text-secondary); }
+
+.library-rail .library-track {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  width: 100%; min-height: 48px; padding: 10px 12px;
+  border: 1px solid transparent; border-radius: 10px;
+  background: transparent; color: var(--text-secondary);
+  font: inherit; text-align: left; cursor: pointer;
+}
+.library-track:hover { background: rgba(53, 217, 255, 0.06); border-color: rgba(53, 217, 255, 0.2); }
+.library-track[aria-pressed="true"] { background: rgba(53, 217, 255, 0.1); border-color: rgba(53, 217, 255, 0.36); color: var(--text-primary); }
+.library-track .num { font-family: var(--font-brand); font-size: 0.66rem; letter-spacing: 0.08em; }
+.library-outcome { font-family: var(--font-display); font-size: clamp(1.15rem, 2.6vw, 1.6rem); line-height: 1.3; margin: 6px 0 16px; }
+.library-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px 22px; }
+.library-grid h3, .library-safety h3 { display: flex; align-items: center; gap: 6px; font-family: var(--font-brand); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--atlas-cyan); margin: 0 0 6px; }
+.library-grid p { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--text-secondary); }
+.library-safety { margin-top: 20px; padding: 14px; border: 1px solid rgba(53, 217, 255, 0.16); border-radius: 12px; background: rgba(53, 217, 255, 0.03); }
+.library-safety h3 { color: var(--growth-teal); }
+.library-links { margin-top: 18px; display: grid; gap: 8px; }
+.library-links ul { list-style: none; margin: 0; padding: 0; gap: 6px; }
+.library-links .chip { min-height: 36px; }
+.library-links .chip .mono { color: var(--text-muted); font-size: 0.62rem; }
+.error-line { color: var(--insight-amber); }
+.correction { display: block; color: var(--text-secondary); }
+
+/* Seven environments on a narrow rail: keep the bar scrollable instead of shrinking targets. */
+.nav { overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { flex: 1 0 48px; min-height: 48px; }
+
+.page-schedule .workspace + .workspace { margin-top: 16px; }
+@media (max-width: 640px) {
+  .library-grid { grid-template-columns: 1fr; }
+  .item-row .row.gap { margin-left: auto; }
+}
+
+/* KB pack forge: one column of labelled fields, not a wall of inputs. */
+.git-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.git-form label { display: grid; gap: 4px; min-width: 0; }
+.git-form label.wide { grid-column: 1 / -1; }
+.git-form input {
+  width: 100%; min-height: 44px; padding: 9px 11px;
+  background: rgba(4, 8, 17, 0.55);
+  border: 1px solid var(--rim-line, rgba(126, 170, 255, 0.18));
+  border-radius: 10px; color: var(--text-primary); font: inherit; font-size: 0.86rem;
+}
+.git-form input:focus-visible { outline: 2px solid var(--atlas-cyan); outline-offset: 1px; }
+@media (max-width: 560px) { .git-form { grid-template-columns: 1fr; } }
+
+/* The legend shares the bottom band with the reset control: reserve its width and clip the hint. */
+.atlas-legend { padding-right: 132px; }
+.atlas-legend .atlas-key { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Numeric legibility. Orbitron's slashed zero is striking at display size but ambiguous in a 10–26 px
+   count ("0" reads as "B"). Counts and instrument values therefore use the mono face with tabular
+   figures; Orbitron stays on the wordmark, eyebrows and stage numerals where it is unambiguous. */
+.num, .stat b, .ring-label b, .atlas-zoom b, .comp-key b, .tile strong, .routine-meta b, .index-count, .kv dd {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}

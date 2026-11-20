@@ -1,6 +1,10 @@
 // Hand-written 3D math for the Knowledge Atlas. No WebGL, no graph library: a camera, a perspective
 // projection, golden-angle star placement, tilted elliptical orbits and quadratic Bezier threads.
 // Everything is deterministic — the same state and the same clock always draw the same frame.
+//
+// v2 scale: the galaxy is a real 6,500-unit radius and the camera can be flown from 28 units above a
+// single asteroid out to 24,000 units for the multi-galaxy cluster. Zoom is exponential, so a wheel
+// notch feels the same at every scale and the view never snaps back on release.
 
 export interface Vec3 {
   x: number;
@@ -27,9 +31,19 @@ export interface Projected {
 /** Focal length in pixels (spec value). */
 export const FOCAL = 540;
 /** Galaxy radius in world units. */
-export const GALAXY_RADIUS = 440;
-/** Cube the stars wrap inside, so panning never runs out of sky. */
-export const WRAP_SIZE = 1400;
+export const GALAXY_RADIUS = 6500;
+/** Minimum separation the star placement keeps inside the core galaxy. */
+export const MIN_STAR_SEPARATION = 2400;
+/** Closest orbit: low-orbit inspection of an asteroid or satellite. */
+export const MIN_DISTANCE = 28;
+/** Furthest orbit: the multi-galaxy cluster view. */
+export const MAX_DISTANCE = 24_000;
+/** Beyond this the other galaxies are drawn as bodies in their own right. */
+export const MACRO_DISTANCE = 3200;
+/** Hyperspace warp duration, in milliseconds. */
+export const WARP_MS = 650;
+/** Cube the stars wrap inside at close range, so panning never runs out of sky. */
+export const WRAP_SIZE = 14_000;
 
 export function makeCamera(overrides: Partial<Camera> = {}): Camera {
   return { targetX: 0, targetY: 0, targetZ: 0, yaw: 0.35, pitch: 0.42, distance: 1250, ...overrides };
@@ -89,6 +103,31 @@ export function project(p: Vec3, cam: Camera, width: number, height: number): Pr
   return { sx: width / 2 + c.x * k, sy: height / 2 - c.y * k, scale: k, depth: c.z };
 }
 
+const clamp = (n: number, min: number, max: number): number => Math.max(min, Math.min(max, n));
+
+/**
+ * Logarithmic zoom. distance *= exp(delta * sensitivity), where delta is normalised wheel/pinch
+ * movement. Returns a clamped distance, so a hard scroll stops at the floor/ceiling instead of
+ * flipping past it, and a negative delta never produces a zero or negative camera distance.
+ */
+export function zoomDistance(distance: number, delta: number, sensitivity = 1): number {
+  const next = distance * Math.exp(delta * sensitivity);
+  return clamp(Number.isFinite(next) ? next : distance, MIN_DISTANCE, MAX_DISTANCE);
+}
+
+/** Meter readout for the HUD: 0 at the cluster, 1 at the surface. Log scale, so the bar is honest. */
+export function zoomFraction(distance: number): number {
+  const d = clamp(distance, MIN_DISTANCE, MAX_DISTANCE);
+  return 1 - Math.log(d / MIN_DISTANCE) / Math.log(MAX_DISTANCE / MIN_DISTANCE);
+}
+
+/** Dolly: moves both the camera orbit and its target along the view direction. */
+export function dolly(cam: Camera, units: number): Camera {
+  const dir = normalize(v3(Math.sin(cam.yaw) * Math.cos(cam.pitch), -Math.sin(cam.pitch), Math.cos(cam.yaw) * Math.cos(cam.pitch)));
+  const step = scale(dir, units);
+  return { ...cam, targetX: cam.targetX + step.x, targetY: cam.targetY + step.y, targetZ: cam.targetZ + step.z, distance: clamp(cam.distance - units, MIN_DISTANCE, MAX_DISTANCE) };
+}
+
 /** Golden angle: phi = pi * (3 - sqrt 5). Star i sits on a Fibonacci sphere of radius R. */
 export function goldenStarPositions(n: number, radius = GALAXY_RADIUS): Vec3[] {
   const phi = Math.PI * (3 - Math.sqrt(5));
@@ -98,6 +137,58 @@ export function goldenStarPositions(n: number, radius = GALAXY_RADIUS): Vec3[] {
     const r = Math.sqrt(Math.max(0, 1 - y * y));
     const theta = i * phi;
     out.push({ x: Math.cos(theta) * r * radius, y: y * radius, z: Math.sin(theta) * r * radius });
+  }
+  return out;
+}
+
+/**
+ * Star placement that guarantees a minimum separation: Fibonacci sphere, then a deterministic
+ * relaxation pass that pushes any pair closer than `minSeparation` apart without randomising the set.
+ */
+export function separatedStarPositions(n: number, radius = GALAXY_RADIUS, minSeparation = MIN_STAR_SEPARATION): Vec3[] {
+  const pts = goldenStarPositions(n, radius);
+  for (let pass = 0; pass < 24; pass += 1) {
+    for (let i = 0; i < pts.length; i += 1) {
+      for (let j = i + 1; j < pts.length; j += 1) {
+        const a = pts[i]!;
+        const b = pts[j]!;
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const dz = b.z - a.z;
+        const d = Math.hypot(dx, dy, dz);
+        if (d >= minSeparation || d === 0) continue;
+        const push = (minSeparation - d) * 0.5;
+        const ux = dx / d;
+        const uy = dy / d;
+        const uz = dz / d;
+        a.x -= ux * push;
+        a.y -= uy * push;
+        a.z -= uz * push;
+        b.x += ux * push;
+        b.y += uy * push;
+        b.z += uz * push;
+      }
+      const p = pts[i]!;
+      const l = Math.hypot(p.x, p.y, p.z) || 1;
+      if (l > radius) {
+        p.x = (p.x / l) * radius;
+        p.y = (p.y / l) * radius;
+        p.z = (p.z / l) * radius;
+      }
+    }
+  }
+  return pts;
+}
+
+/** A flat spiral arm, used for the secondary galaxies seen in the macro view. */
+export function spiralPositions(n: number, radius: number, arms = 2, twist = 0.55): Vec3[] {
+  const out: Vec3[] = [];
+  for (let i = 0; i < n; i += 1) {
+    const t = i / Math.max(1, n - 1);
+    const arm = i % arms;
+    const theta = t * Math.PI * 4 + (arm / arms) * Math.PI * 2;
+    const r = radius * (0.16 + t * 0.84);
+    out.push({ x: Math.cos(theta) * r, y: (hash01(i, 7) - 0.5) * radius * 0.06, z: Math.sin(theta) * r * twist });
   }
   return out;
 }
@@ -195,6 +286,12 @@ export function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - c, 3);
 }
 
+/** Warp easing: accelerate hard, then decelerate into the target. Used by the 650ms hyperspace jump. */
+export function easeInOutQuart(t: number): number {
+  const c = Math.max(0, Math.min(1, t));
+  return c < 0.5 ? 8 * c * c * c * c : 1 - Math.pow(-2 * c + 2, 4) / 2;
+}
+
 export function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t;
 }
@@ -206,7 +303,9 @@ export function mixCamera(from: Camera, to: Camera, t: number): Camera {
     targetZ: lerp(from.targetZ, to.targetZ, t),
     yaw: lerpAngle(from.yaw, to.yaw, t),
     pitch: lerp(from.pitch, to.pitch, t),
-    distance: lerp(from.distance, to.distance, t),
+    // Distance is interpolated in log space so a warp from the surface to the cluster does not spend
+    // most of its time in the near field.
+    distance: Math.exp(lerp(Math.log(from.distance), Math.log(to.distance), t)),
   };
 }
 

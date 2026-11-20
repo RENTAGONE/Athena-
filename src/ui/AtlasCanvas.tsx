@@ -21,7 +21,7 @@ import {
   bezierControl,
   distanceToPolyline,
   easeOutCubic,
-  goldenStarPositions,
+  separatedStarPositions,
   hash01,
   makeCamera,
   masteryRing,
@@ -94,14 +94,9 @@ export function Knowledge(): ReactNode {
   const groups = useMemo(() => indexGroups(state, index), [state, index]);
   // Three seeded shells instead of one hollow sphere: systems sit at different depths, so the galaxy has
   // front, middle and back rather than reading as a single bubble of dots.
-  const starsWorld = useMemo(
-    () =>
-      goldenStarPositions(galaxy.stars.length).map((p, i) => {
-        const shell = i % 3 === 0 ? 0.66 : i % 3 === 1 ? 0.9 : 1.1;
-        return { x: p.x * shell, y: p.y * shell * 1.18, z: p.z * shell };
-      }),
-    [galaxy.stars.length],
-  );
+  // True cosmic scale: separate star systems across a 6,500-unit galaxy with a 2,400-unit floor
+  // between neighbours. Systems are genuinely far apart rather than shells of one small sphere.
+  const starsWorld = useMemo(() => separatedStarPositions(galaxy.stars.length), [galaxy.stars.length]);
 
   // Constellation web: every star is linked to its two nearest neighbours, so the galaxy reads as
   // structure at a glance instead of a cloud of unconnected dots. Recomputed only when the systems do.
@@ -145,7 +140,7 @@ export function Knowledge(): ReactNode {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const sceneRef = useRef<Scene>({ galaxy, starsWorld, location: galaxy.location });
   const edgesRef = useRef(edges);
-  const cameraRef = useRef<Camera>(makeCamera({ distance: 1120 }));
+  const cameraRef = useRef<Camera>(makeCamera({ distance: 11_200 }));
   const flightRef = useRef<{ from: Camera; to: Camera; start: number; dur: number; isolate: number | null } | null>(null);
   const isolatedRef = useRef<number | null>(null);
   const selectedRef = useRef<string | null>(null);
@@ -157,7 +152,7 @@ export function Knowledge(): ReactNode {
   const threadsRef = useRef<ThreadHit[]>([]);
   const hoverRef = useRef<{ body: string | null; thread: string | null }>({ body: null, thread: null });
   const pointerRef = useRef<{ x: number; y: number; inside: boolean }>({ x: 0, y: 0, inside: false });
-  const frameDistanceRef = useRef(1120);
+  const frameDistanceRef = useRef(11_200);
   const clockRef = useRef(0);
   const cruiseRef = useRef(cruise);
   const tiltRef = useRef(tilt);
@@ -291,7 +286,7 @@ export function Knowledge(): ReactNode {
         const span = Math.min(rect.width, rect.height);
         // Stars sit on a 440-unit sphere and their planet clouds add ~160 units, so frame the outer extent.
         if (span > 0) {
-          cameraRef.current.distance = Math.min(1620, Math.max(700, ((GALAXY_RADIUS + 160) * FOCAL) / (0.4 * span)));
+          cameraRef.current.distance = Math.min(24_000, Math.max(2_400, ((GALAXY_RADIUS + 260) * FOCAL) / (0.4 * span)));
           frameDistanceRef.current = cameraRef.current.distance;
         }
       }
@@ -531,7 +526,7 @@ export function Knowledge(): ReactNode {
         const perBand = Math.max(1, Math.ceil(count / bands));
         const bandRadius = (b: number): number => 74 + b * (32 + Math.min(10, count * 0.6));
         const cloudR = bandRadius(bands - 1) + 26;
-        if (count > 0 && (iso === si || cam.distance < 1600)) {
+        if (count > 0 && (iso === si || cam.distance < 2600)) {
           const sysColor = meta?.color ?? "#648bff";
           const cloud = ctx.createRadialGradient(proj.sx, proj.sy, 6, proj.sx, proj.sy, (cloudR * FOCAL) / Math.max(1, cam.distance) * 0.55 + 40);
           cloud.addColorStop(0, rgba(sysColor, 0.09 * dim));
@@ -716,6 +711,30 @@ export function Knowledge(): ReactNode {
           bodies.push({ node: planet.node, kind: "planet", star: si, x: pp.sx, y: pp.sy, r: r + 4, depth: pp.depth });
           nodePos.set(planet.node.id, { p, x: pp.sx, y: pp.sy, r, tier: planet.tier, kind: "planet", node: planet.node, star: si });
 
+          // Tier 3: a skill family is a constellation — a small cluster of stars with a faint joining
+          // arc, never another planet. It reads as a pathway, not as a subject region.
+          for (const family of system.constellations) {
+            if (family.planet !== pi) continue;
+            const cAlpha = flt !== null && flt !== system.code ? 0.15 : 0.55;
+            const cx = pp.sx + r * 2.2;
+            const cy = pp.sy - r * 1.7;
+            ctx.save();
+            ctx.strokeStyle = rgba(pColor, 0.22 * cAlpha);
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.arc(cx, cy, Math.max(5, r * 0.9), 0, Math.PI * 2);
+            ctx.stroke();
+            for (let k = 0; k < 5; k += 1) {
+              const a = (k / 5) * Math.PI * 2 + hash01(surfaceSeed(family.node.code), k) * 0.5;
+              const rad = Math.max(5, r * 0.9) * (0.55 + hash01(k, surfaceSeed(family.node.code)) * 0.5);
+              const px = cx + Math.cos(a) * rad;
+              const py = cy + Math.sin(a) * rad * 0.7;
+              ctx.fillStyle = rgba(mix(pColor, "#ffffff", 0.5), cAlpha);
+              ctx.fillRect(px, py, 1.3, 1.3);
+            }
+            ctx.restore();
+          }
+
           planet.moons.forEach((moon: GalaxyMoon, mi: number) => {
             const moonCount = Math.max(1, planet.moons.length);
             const mr = 18 + (mi % 2) * 9 + moonCount * 1.2;
@@ -746,6 +765,42 @@ export function Knowledge(): ReactNode {
             drawMoon(ctx, mp.sx, mp.sy, mrPx, moon.tier, moon.node.id === sel, surfaceSeed(moon.node.code));
             bodies.push({ node: moon.node, kind: "moon", star: si, x: mp.sx, y: mp.sy, r: mrPx + 5, depth: mp.depth });
             nodePos.set(moon.node.id, { p: mPos, x: mp.sx, y: mp.sy, r: mrPx, tier: moon.tier, kind: "moon", node: moon.node, star: si });
+            // Tier 5 satellites and tier 6 asteroids keep their own bodies: a subskill is never drawn
+            // as a skill, and a micro-skill is a small telemetry marker rather than a moon.
+            moon.satellites.forEach((sat: GalaxyMoon, xi: number) => {
+              const satCount = Math.max(1, moon.satellites.length);
+              const sr0 = 11 + (xi % 2) * 6;
+              const sTheta = (xi / satCount) * Math.PI * 2 + phaseAt(xi * 0.6, 0.3, t);
+              const sWorld = orbitPoint(mPos, sr0, sr0 * 0.74, 0.34, mi * 0.7, sTheta);
+              const sp = project(sWorld, cam, width, height);
+              if (!sp || sp.sx < -24 || sp.sx > width + 24 || sp.sy < -24 || sp.sy > height + 24) return;
+              const sr = Math.max(1, Math.min(6, 3.6 * sp.scale));
+              drawMoon(ctx, sp.sx, sp.sy, sr, sat.tier, sat.node.id === sel, surfaceSeed(sat.node.code));
+              bodies.push({ node: sat.node, kind: "moon", star: si, x: sp.sx, y: sp.sy, r: sr + 4, depth: sp.depth });
+              nodePos.set(sat.node.id, { p: sWorld, x: sp.sx, y: sp.sy, r: sr, tier: sat.tier, kind: "moon", node: sat.node, star: si });
+              for (const ast of sat.asteroids) {
+                const aTheta = hash01(surfaceSeed(ast.node.code), 3) * Math.PI * 2 + phaseAt(0, 0.45, t);
+                const aWorld = orbitPoint(sWorld, 5.5, 4.4, 0.5, 0.8, aTheta);
+                const ap = project(aWorld, cam, width, height);
+                if (!ap) continue;
+                ctx.fillStyle = TIER_COLOR[ast.tier];
+                ctx.globalAlpha = 0.8;
+                ctx.fillRect(ap.sx, ap.sy, 1.5, 1.5);
+                ctx.globalAlpha = 1;
+                bodies.push({ node: ast.node, kind: "moon", star: si, x: ap.sx, y: ap.sy, r: 3.6, depth: ap.depth });
+              }
+            });
+            for (const ast of moon.asteroids) {
+              const aTheta = hash01(surfaceSeed(ast.node.code), 9) * Math.PI * 2 + phaseAt(0, 0.5, t);
+              const aWorld = orbitPoint(mPos, 8.5, 6.4, 0.42, 0.3, aTheta);
+              const ap = project(aWorld, cam, width, height);
+              if (!ap || ap.sx < -20 || ap.sx > width + 20 || ap.sy < -20 || ap.sy > height + 20) continue;
+              ctx.fillStyle = TIER_COLOR[ast.tier];
+              ctx.globalAlpha = 0.8;
+              ctx.fillRect(ap.sx, ap.sy, 1.4, 1.4);
+              ctx.globalAlpha = 1;
+              bodies.push({ node: ast.node, kind: "moon", star: si, x: ap.sx, y: ap.sy, r: 3.4, depth: ap.depth });
+            }
           });
         });
 
@@ -1038,7 +1093,7 @@ export function Knowledge(): ReactNode {
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
         const d = Math.hypot((a?.x ?? 0) - (b?.x ?? 0), (a?.y ?? 0) - (b?.y ?? 0));
-        if (pinchDistance > 0) cam.distance = Math.max(60, Math.min(3200, pinchStart * (pinchDistance / Math.max(1, d))));
+        if (pinchDistance > 0) cam.distance = Math.max(28, Math.min(24_000, pinchStart * (pinchDistance / Math.max(1, d))));
       } else if (mode === "pan" || e.shiftKey) {
         const k = (cam.distance / FOCAL) * 0.9;
         const cy = Math.cos(cam.yaw);
@@ -1072,7 +1127,7 @@ export function Knowledge(): ReactNode {
         setConfirm(null);
         if (hit.kind === "star") {
           // Clicking an already-isolated system releases it and flies back out.
-          if (isolatedRef.current === hit.star && cameraRef.current.distance <= 520) {
+          if (isolatedRef.current === hit.star && cameraRef.current.distance <= 260) {
             resetView();
           } else {
             setIsolated(hit.star);
@@ -1081,7 +1136,7 @@ export function Knowledge(): ReactNode {
         } else {
           // Zoom to the body itself, keeping both the system and the record in view.
           const w = worldAt(x, y);
-          const d = Math.max(80, Math.min(780, cameraRef.current.distance * 0.5));
+          const d = Math.max(60, Math.min(420, cameraRef.current.distance * 0.42));
           const to = makeCamera({ targetX: w.x, targetY: w.y, targetZ: w.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: d });
           flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 520, isolate: hit.star };
         }
@@ -1090,7 +1145,7 @@ export function Knowledge(): ReactNode {
       const thread = threadsRef.current.find((th) => distanceToPolyline(x, y, th.points) < 9);
       if (thread) {
         // A thread click flies to its midpoint and selects the far endpoint, so the relation is legible in place.
-        const to = makeCamera({ targetX: thread.mid.x, targetY: thread.mid.y, targetZ: thread.mid.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: 700 });
+        const to = makeCamera({ targetX: thread.mid.x, targetY: thread.mid.y, targetZ: thread.mid.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: 2600 });
         flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 640, isolate: null };
         setIsolated(null);
         setSelected(thread.targetId);
@@ -1104,7 +1159,7 @@ export function Knowledge(): ReactNode {
       e.preventDefault();
       const cam = cameraRef.current;
       const rect = canvas.getBoundingClientRect();
-      const next = Math.max(60, Math.min(3200, cam.distance * Math.exp(e.deltaY * 0.0013)));
+      const next = Math.max(28, Math.min(24_000, cam.distance * Math.exp(e.deltaY * 0.0013)));
       // Keep the point under the cursor fixed: invert the camera rotation on the cursor ray at target depth.
       const X = ((e.clientX - rect.left) - width / 2) * (cam.distance / FOCAL);
       const Y = -((e.clientY - rect.top) - height / 2) * (cam.distance / FOCAL);
@@ -1225,7 +1280,9 @@ export function Knowledge(): ReactNode {
       </div>
 
       <div className="atlas-chips" role="group" aria-label="Discipline filter">
-        <button className="chip" aria-pressed={filter === null} onClick={() => setFilter(null)}>All · <span className="num">{galaxy.totals.moons + galaxy.totals.planets}</span></button>
+        <button className="chip" aria-pressed={filter === null} onClick={() => setFilter(null)}>
+          All · <span className="num">{galaxy.totals.planets + galaxy.totals.constellations + galaxy.totals.moons + galaxy.totals.satellites + galaxy.totals.asteroids}</span>
+        </button>
         {DISCIPLINES.map((d) => (
           <button key={d.id} className="chip" aria-pressed={filter === d.id} onClick={() => setFilter(filter === d.id ? null : d.id)}>
             <d.Icon size={13} strokeWidth={1.5} aria-hidden="true" color={d.color} />{d.short}
@@ -1342,7 +1399,8 @@ export function Knowledge(): ReactNode {
           <span className="mono">{focus.code}</span>
           <strong>{DISCIPLINE_BY_ID[focus.code]?.name ?? "System"}</strong>
           <span className="num">
-            {focus.planets.length} domains · {focus.moons.length + focus.planets.reduce((n, p) => n + p.moons.length, 0)} skills
+            {focus.planets.length} domains · {focus.constellations.length} constellations · {focus.moons.length + focus.planets.reduce((n, p) => n + p.moons.length, 0)} skills ·{" "}
+            {focus.satellites.length + focus.planets.reduce((n, p) => n + p.moons.reduce((k, q) => k + q.satellites.length, 0), 0)} subskills
           </span>
         </div>
       )}
@@ -1352,7 +1410,7 @@ export function Knowledge(): ReactNode {
         <span><i style={{ borderColor: "#ffc66d", color: "#ffc66d" }} />needs revision</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4" }} />demonstrated</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4", background: "#42e6c4" }} />mastered</span>
-        <span className="atlas-key">drag · scroll to the surface · double-click to reset</span>
+        <span className="atlas-key">six tiers · drag to orbit · scroll from cluster to surface</span>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { Inbox as InboxIcon, Layers, Orbit, Settings, Sun } from "lucide-react";
+import { BookOpen, CalendarDays, Inbox as InboxIcon, Layers, Orbit, Settings, Sun } from "lucide-react";
 import { createRuntime, type Runtime } from "../app/runtime.ts";
 import type { DbState } from "../domain/types.ts";
 import { Ctx } from "./context.ts";
@@ -13,6 +13,8 @@ import { InboxScreen } from "./Inbox.tsx";
 import { LessonScreen } from "./Lesson.tsx";
 import { SettingsScreen } from "./Settings.tsx";
 import { ArchitectScreen } from "./Architect.tsx";
+import { ScheduleScreen } from "./ScheduleScreen.tsx";
+import { LibraryScreen } from "./LibraryScreen.tsx";
 import { getPrefs } from "./prefs.ts";
 import { applyUpdate, isUpdateReady, subscribeUpdate, watchForUpdate } from "./update.ts";
 
@@ -99,7 +101,11 @@ export function App(): ReactNode {
   ) : route.startsWith("/studio/architect") ? (
     <ArchitectScreen />
   ) : route.startsWith("/studio") ? (
-    <Studio tab={route.endsWith("/backup") ? "backup" : "updates"} />
+    <Studio tab={route.endsWith("/backup") ? "backup" : route.endsWith("/pack") ? "pack" : "updates"} />
+  ) : route.startsWith("/schedule") ? (
+    <ScheduleScreen />
+  ) : route.startsWith("/library") ? (
+    <LibraryScreen />
   ) : route.startsWith("/inbox") ? (
     <InboxScreen />
   ) : route.startsWith("/settings") ? (
@@ -149,11 +155,17 @@ export function App(): ReactNode {
           <a href="#/today" aria-current={pageIs("/today")}>
             <Sun aria-hidden="true" strokeWidth={1.5} />Today
           </a>
+          <a href="#/schedule" aria-current={pageIs("/schedule")}>
+            <CalendarDays aria-hidden="true" strokeWidth={1.5} />Schedule
+          </a>
           <a href="#/inbox" aria-current={pageIs("/inbox")}>
             <InboxIcon aria-hidden="true" strokeWidth={1.5} />Inbox
           </a>
           <a href="#/knowledge" aria-current={pageIs("/knowledge", "/learn")}>
             <Orbit aria-hidden="true" strokeWidth={1.5} />Knowledge
+          </a>
+          <a href="#/library" aria-current={pageIs("/library")}>
+            <BookOpen aria-hidden="true" strokeWidth={1.5} />Library
           </a>
           <a href="#/studio/updates" aria-current={pageIs("/studio")}>
             <Layers aria-hidden="true" strokeWidth={1.5} />Studio

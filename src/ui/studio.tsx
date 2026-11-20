@@ -7,23 +7,30 @@ import { createBackup, scratchRestoreCheck, shareOrDownload, type BackupFile, ty
 import { exportArchive, readArchive } from "../domain/archive.ts";
 import { checkIntegrity } from "../domain/integrity.ts";
 import { projectGroups } from "../app/selectors.ts";
+import { projectOntology, relationCounts } from "../app/ontology.ts";
 import type { Delta, Issue } from "../domain/types.ts";
 import { useApp } from "./context.ts";
 import { PageHead } from "./ui.tsx";
+import { KbPackPanel } from "./KbPackPanel.tsx";
 
-export function Studio({ tab }: { tab: "updates" | "backup" }): ReactNode {
+export function Studio({ tab }: { tab: "updates" | "backup" | "pack" }): ReactNode {
+  const title = tab === "updates" ? "Updates inbox" : tab === "backup" ? "Backup and restore" : "KB pack forge";
+  const meta =
+    tab === "updates" ? (
+      <>A package is previewed, tallied and then approved or rejected. Nothing is written before you approve the preview.</>
+    ) : tab === "backup" ? (
+      <>A backup is one compressed file holding your records, evidence and history. The only copy that survives a cleared browser is one you keep elsewhere.</>
+    ) : (
+      <>A KB pack bundles knowledge, evidence and operational records into one zip. Import shows a diff first; the GitHub push writes a snapshot to a repository you own.</>
+    );
   return (
     <div className="page page-studio">
-      <PageHead
-        label="Architect Studio"
-        title={tab === "updates" ? "Updates inbox" : "Backup and restore"}
-        meta={tab === "updates" ? <>A package is previewed, tallied and then approved or rejected. Nothing is written before you approve the preview.</> : <>A backup is one compressed file holding your records, evidence and history. The only copy that survives a cleared browser is one you keep elsewhere.</>}
-        glyph={<Layers strokeWidth={1.4} />}
-      />
-      <nav className="seg" aria-label="Studio sections" data-index={tab === "updates" ? "0" : "1"}>
+      <PageHead label="Architect Studio" title={title} meta={meta} glyph={<Layers strokeWidth={1.4} />} />
+      <nav className="seg" aria-label="Studio sections" data-index={tab === "updates" ? "0" : tab === "backup" ? "1" : "2"}>
         <span className="seg-thumb" aria-hidden="true" />
         <a href="#/studio/updates" aria-current={tab === "updates" ? "page" : undefined}>Updates</a>
         <a href="#/studio/backup" aria-current={tab === "backup" ? "page" : undefined}>Backup</a>
+        <a href="#/studio/pack" aria-current={tab === "pack" ? "page" : undefined}>KB pack</a>
       </nav>
       {tab === "updates" ? (
         <div className="workspace">
@@ -32,10 +39,13 @@ export function Studio({ tab }: { tab: "updates" | "backup" }): ReactNode {
           </div>
           <div className="span-5">
             <ProjectClasses />
+            <OntologyAudit />
           </div>
         </div>
-      ) : (
+      ) : tab === "backup" ? (
         <BackupPanel />
+      ) : (
+        <KbPackPanel />
       )}
     </div>
   );
@@ -67,6 +77,37 @@ function ProjectClasses(): ReactNode {
         ))}
       </div>
       <a className="btn" href="#/studio/architect" style={{ marginTop: 14 }}>Plan a path in the Architect</a>
+    </section>
+  );
+}
+
+function OntologyAudit(): ReactNode {
+  const { state } = useApp();
+  const projection = projectOntology(state);
+  const relations = relationCounts(state);
+  const c = projection.counts;
+  return (
+    <section className="panel" style={{ marginTop: 14 }}>
+      <span className="label">Semantic projection</span>
+      <p style={{ marginTop: 8 }}>Six celestial classes are projected separately. Attached systems are markers, not parent-child levels.</p>
+      <dl className="kv" style={{ marginTop: 10 }}>
+        <dt>Stars</dt><dd><span className="num">{c.stars}</span></dd>
+        <dt>Planets</dt><dd><span className="num">{c.planets}</span></dd>
+        <dt>Constellations</dt><dd><span className="num">{c.constellations}</span></dd>
+        <dt>Moons</dt><dd><span className="num">{c.moons}</span></dd>
+        <dt>Satellites</dt><dd><span className="num">{c.satellites}</span></dd>
+        <dt>Asteroids</dt><dd><span className="num">{c.asteroids}</span></dd>
+        <dt>Orphans</dt><dd><span className="num" style={{ color: projection.orphans.length > 0 ? "var(--insight-amber)" : undefined }}>{projection.orphans.length}</span></dd>
+      </dl>
+      <p className="hint" style={{ marginTop: 8 }}>
+        {Object.entries(relations).map(([k, v]) => `${v} ${k.replace(/_/g, " ").toLowerCase()}`).join(" · ") || "No relations in the store yet."}
+      </p>
+      {projection.orphans.length > 0 && (
+        <ul className="list" style={{ marginTop: 10 }}>
+          {projection.orphans.slice(0, 6).map((n) => <li key={n.id} className="mono">{n.code} · {n.title}</li>)}
+        </ul>
+      )}
+      <p className="hint" style={{ marginTop: 6 }}>Orphans stay visible in the atlas and the index; they are flagged here for repair rather than hidden.</p>
     </section>
   );
 }

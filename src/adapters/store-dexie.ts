@@ -1,14 +1,20 @@
-// Dexie (IndexedDB) implementation of the Store port. UNRUN in the authoring sandbox (Dexie could not be installed offline).
-// Contract: persist() applies a whole Delta in ONE transaction after checking the revision; any thrown error aborts everything.
+// Dexie (IndexedDB) implementation of the Store port, plus the operational tables added in v2.
+// The v2 schema is additive: the knowledge tables, receipts and changesets keep their exact shape and
+// every existing row survives the upgrade. Operational records are ordinary mutable rows (a schedule
+// event is meant to be edited); only evidence and the audit/actual logs are append-only by policy.
 import Dexie, { type Table } from "dexie";
 import { AppendOnlyViolation, RevisionConflict, type Store } from "../domain/store.ts";
 import { uuidv7 } from "../domain/ids.ts";
 import { emptyState, type ChangeSet, type CodeEntry, type DbState, type Delta, type EdgeRecord, type EvidenceStored, type NodeRecord, type PackageReceipt } from "../domain/types.ts";
+import { SYSTEM_INDEXES, SYSTEM_TABLES, type SystemRow, type SystemTable } from "../domain/system.ts";
 
 interface MetaRow {
   key: string;
   value: unknown;
 }
+
+type OperationalTable = Table<SystemRow, string>;
+
 export class AthenaDb extends Dexie {
   declare nodes: Table<NodeRecord, string>;
   declare edges: Table<EdgeRecord, string>;
@@ -17,6 +23,19 @@ export class AthenaDb extends Dexie {
   declare changesets: Table<ChangeSet, string>;
   declare receipts: Table<PackageReceipt, string>;
   declare meta: Table<MetaRow, string>;
+  declare scheduleEvents: OperationalTable;
+  declare routineTemplates: OperationalTable;
+  declare routineOccurrences: OperationalTable;
+  declare tasks: OperationalTable;
+  declare availabilityWindows: OperationalTable;
+  declare scheduleProposals: OperationalTable;
+  declare activityActuals: OperationalTable;
+  declare scheduleAuditEvents: OperationalTable;
+  declare projects: OperationalTable;
+  declare pclProgress: OperationalTable;
+  declare spatialOverrides: OperationalTable;
+  declare sideQuests: OperationalTable;
+
   constructor(name = "athena") {
     super(name);
     this.version(1).stores({
@@ -27,6 +46,17 @@ export class AthenaDb extends Dexie {
       changesets: "id",
       receipts: "package_id",
       meta: "key",
+    });
+    // v2: additive. No table is dropped or re-indexed, so an upgrade cannot lose a record.
+    this.version(2).stores({
+      nodes: "id, code, object_type, status",
+      edges: "id, relation_type, source_id, target_id",
+      codes: "code, id",
+      evidence: "id",
+      changesets: "id",
+      receipts: "package_id",
+      meta: "key",
+      ...SYSTEM_INDEXES,
     });
   }
 }
@@ -70,6 +100,31 @@ export class DexieStore implements Store {
       }
       await d.meta.put({ key: "revision", value: current + 1 });
       return { revision: current + 1 };
+    });
+  }
+
+  // --- Operational tables -------------------------------------------------------------------
+  async listRows<T = SystemRow>(table: SystemTable): Promise<T[]> {
+    return (await (this.db[table] as OperationalTable).toArray()) as T[];
+  }
+  async putRow(table: SystemTable, row: SystemRow): Promise<void> {
+    await (this.db[table] as OperationalTable).put(structuredClone(row));
+  }
+  async deleteRow(table: SystemTable, id: string): Promise<void> {
+    await (this.db[table] as OperationalTable).delete(id);
+  }
+  /** Append-only logs: refuses to overwrite an existing row instead of silently replacing history. */
+  async appendRow(table: "activityActuals" | "scheduleAuditEvents", row: SystemRow): Promise<void> {
+    const existing = await (this.db[table] as OperationalTable).get(row.id);
+    if (existing) throw new AppendOnlyViolation(row.id);
+    await (this.db[table] as OperationalTable).add(structuredClone(row));
+  }
+  async countRows(table: SystemTable): Promise<number> {
+    return (this.db[table] as OperationalTable).count();
+  }
+  async clearOperational(): Promise<void> {
+    await this.db.transaction("rw", SYSTEM_TABLES.map((t) => this.db[t] as OperationalTable), async () => {
+      await Promise.all(SYSTEM_TABLES.map((t) => (this.db[t] as OperationalTable).clear()));
     });
   }
 }
