@@ -38,6 +38,7 @@ import {
 } from "../app/atlas-graph.ts";
 import type { NodeRecord } from "../domain/types.ts";
 import { getPrefs } from "./prefs.ts";
+import { createSky, drawSky } from "./sky.ts";
 
 const TIER_LABEL: Record<MasteryTier, string> = {
   unassessed: "unassessed",
@@ -93,6 +94,29 @@ export function Knowledge(): ReactNode {
   const groups = useMemo(() => indexGroups(state, index), [state, index]);
   const starsWorld = useMemo(() => goldenStarPositions(galaxy.stars.length), [galaxy.stars.length]);
 
+  // Constellation web: every star is linked to its two nearest neighbours, so the galaxy reads as
+  // structure at a glance instead of a cloud of unconnected dots. Recomputed only when the systems do.
+  const constellation = useMemo(() => {
+    const links: [Vec3, Vec3][] = [];
+    for (let i = 0; i < starsWorld.length; i += 1) {
+      const a = starsWorld[i];
+      if (!a) continue;
+      const near: { j: number; d: number }[] = [];
+      for (let j = 0; j < starsWorld.length; j += 1) {
+        const b = starsWorld[j];
+        if (!b || j === i) continue;
+        near.push({ j, d: Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z) });
+      }
+      near.sort((p, q) => p.d - q.d);
+      for (const n of near.slice(0, 2)) {
+        if (n.j <= i) continue;
+        const b = starsWorld[n.j];
+        if (b) links.push([a, b]);
+      }
+    }
+    return links;
+  }, [starsWorld]);
+
   const [view, setView] = useState<"atlas" | "index">("atlas");
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<string | null>(null);
@@ -116,6 +140,7 @@ export function Knowledge(): ReactNode {
   const filterRef = useRef<string | null>(filter);
   const matchedRef = useRef<Set<string> | null>(null);
   const bodiesRef = useRef<Body[]>([]);
+  const linksRef = useRef<[Vec3, Vec3][]>(constellation);
   const threadsRef = useRef<ThreadHit[]>([]);
   const hoverRef = useRef<{ body: string | null; thread: string | null }>({ body: null, thread: null });
   const pointerRef = useRef<{ x: number; y: number; inside: boolean }>({ x: 0, y: 0, inside: false });
@@ -137,8 +162,9 @@ export function Knowledge(): ReactNode {
   useEffect(() => {
     sceneRef.current = { galaxy, starsWorld, location: galaxy.location };
     edgesRef.current = edges;
+    linksRef.current = constellation;
     dirtyRef.current = true;
-  }, [galaxy, starsWorld, edges]);
+  }, [galaxy, starsWorld, edges, constellation]);
 
   useEffect(() => {
     selectedRef.current = selected;
@@ -256,14 +282,7 @@ export function Knowledge(): ReactNode {
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
 
-    const field = Array.from({ length: 150 }, (_, i) => ({
-      x: hash01(i, 11),
-      y: hash01(i, 23),
-      size: 0.6 + hash01(i, 37) * 0.9,
-      depth: i % 2 === 0 ? 0.15 : 0.35,
-      alpha: 0.3 + hash01(i, 53) * 0.55,
-      streak: i % 7 === 0,
-    }));
+    const sky = createSky();
     const shootStart = 3_000 + hash01(9, 9) * 4_000;
 
     const draw = (now: number): void => {
@@ -291,40 +310,28 @@ export function Knowledge(): ReactNode {
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
 
-      // Drifting nebulae: soft light the glass HUD can sit on without a flat void behind it.
-      const nebula = (cx: number, cy: number, radius: number, tint: string): void => {
-        const g2 = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-        g2.addColorStop(0, tint);
-        g2.addColorStop(0.55, tint.replace(/[\d.]+\)$/, "0.03)"));
-        g2.addColorStop(1, "rgba(5,8,15,0)");
-        ctx.fillStyle = g2;
-        ctx.fillRect(cx - radius, cy - radius, radius * 2, radius * 2);
-      };
-      nebula(width * 0.2 - cam.targetX * 0.012, height * 0.22, Math.max(width, height) * 0.42, "rgba(53,217,255,0.09)");
-      nebula(width * 0.86 - cam.targetX * 0.008, height * 0.16, Math.max(width, height) * 0.38, "rgba(167,139,250,0.1)");
-      nebula(width * 0.64, height * 0.92, Math.max(width, height) * 0.4, "rgba(66,230,196,0.06)");
+      // The deep sky: a real star sphere, a galactic band and dust clouds that turn with the camera,
+      // so the background is 3D structure rather than a fixed wallpaper.
+      drawSky(ctx, sky, cam, width, height, t, reduceRef.current);
 
-      // Layers 1 & 2 — two parallax star depths.
-      for (const s of field) {
-        const par = s.depth;
-        const sx = ((s.x * width - cam.targetX * par * 0.12) % width + width) % width;
-        const sy = ((s.y * height + cam.targetY * par * 0.12) % height + height) % height;
-        ctx.globalAlpha = s.alpha;
-        ctx.fillStyle = s.streak ? "#a8b6d2" : "#f1f5ff";
-        ctx.fillRect(sx, sy, s.size, s.size);
+      // Constellation web: faint links between neighbouring systems, only in the far view where the
+      // whole galaxy is on screen.
+      if (iso === null && cam.distance > 700) {
+        const fade = Math.min(0.15, (cam.distance - 700) / 2600);
+        ctx.save();
+        ctx.strokeStyle = `rgba(96,138,220,${fade})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (const [a, b] of linksRef.current) {
+          const pa = project(reentryJitter(wrapPoint(a, cam), a), cam, width, height);
+          const pb = project(reentryJitter(wrapPoint(b, cam), b), cam, width, height);
+          if (!pa || !pb) continue;
+          ctx.moveTo(pa.sx, pa.sy);
+          ctx.lineTo(pb.sx, pb.sy);
+        }
+        ctx.stroke();
+        ctx.restore();
       }
-      ctx.globalAlpha = 1;
-
-      // Layer 3 — equatorial coordinate ring.
-      ctx.save();
-      ctx.translate(width * 0.5, height * 0.5);
-      ctx.rotate(-0.28);
-      ctx.strokeStyle = "rgba(38,56,88,0.2)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.ellipse(0, 0, Math.min(width, height) * 0.46, Math.min(width, height) * 0.17, 0, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.restore();
 
       // Sparse shooting star, silenced when the viewer asks for reduced motion.
       if (!reduceRef.current) {
@@ -444,6 +451,32 @@ export function Knowledge(): ReactNode {
 
           drawStarDetail(ctx, proj.sx, proj.sy, r, color, surfaceSeed(system.code), clockRef.current, dim, hovered);
 
+          // Some systems are binaries: a smaller companion with its own temperature, orbiting the
+          // primary. Seeded per system, so the same discipline always has the same companion.
+          const companion = hash01(si, 77);
+          if (companion > 0.6 && r > 5) {
+            const ang = si * 2.1 + clockRef.current * 0.18;
+            const dist = r * (2.4 + companion * 0.7);
+            const bx = proj.sx + Math.cos(ang) * dist;
+            const by = proj.sy + Math.sin(ang) * dist * 0.52;
+            const br = Math.max(1.4, r * (0.14 + companion * 0.1));
+            const bTint = companion > 0.86 ? "#ffd6a0" : companion > 0.74 ? "#cfe4ff" : "#9fd4ff";
+            const bglow = ctx.createRadialGradient(bx, by, 0, bx, by, br * 6);
+            bglow.addColorStop(0, rgba(bTint, 0.85 * dim));
+            bglow.addColorStop(0.22, rgba(bTint, 0.3 * dim));
+            bglow.addColorStop(1, rgba(bTint, 0));
+            ctx.fillStyle = bglow;
+            ctx.beginPath();
+            ctx.arc(bx, by, br * 6, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = "#ffffff";
+            ctx.globalAlpha = dim * 0.9;
+            ctx.beginPath();
+            ctx.arc(bx, by, br, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+          }
+
           if (sel === system.discipline.id || hovered) {
             ctx.beginPath();
             ctx.arc(proj.sx, proj.sy, r + 7, 0, Math.PI * 2);
@@ -500,6 +533,62 @@ export function Knowledge(): ReactNode {
             }
             ctx.restore();
           }
+          // Heliosphere: the bow shock where the system's wind meets the void.
+          const helio = ((cloudR * FOCAL) / Math.max(1, cam.distance)) * 0.62;
+          if (helio > 26) {
+            ctx.save();
+            ctx.strokeStyle = rgba(sysColor, 0.1 * dim);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.ellipse(proj.sx, proj.sy, helio * 1.14, helio * 0.36, si * 0.6 - 0.3, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+          }
+          // Debris belt: fine dust on the outermost band, so a system has an edge instead of a fade.
+          if (cam.distance < 1100) {
+            const beltR = bandRadius(bands - 1) + 18;
+            const debris = 22 + Math.min(58, Math.round(count * 0.6));
+            ctx.fillStyle = rgba(mix(sysColor, "#ffffff", 0.55), 1);
+            for (let d = 0; d < debris; d += 1) {
+              const ang = (d / debris) * Math.PI * 2 + hash01(si, d) * 0.09;
+              const rad = beltR + (hash01(d, si + 3) - 0.5) * 18;
+              const bp = project(orbitPoint(world, rad, rad * 0.72, si * 0.02 - 0.08, si * 0.6, ang), cam, width, height);
+              if (!bp) continue;
+              if (bp.sx < 0 || bp.sx > width || bp.sy < 0 || bp.sy > height) continue;
+              ctx.globalAlpha = dim * (0.1 + hash01(d, si + 9) * 0.3);
+              ctx.fillRect(bp.sx, bp.sy, 1.3, 1.3);
+            }
+            ctx.globalAlpha = 1;
+          }
+          // A long-period comet on a steep orbit: a bright nucleus and an ion tail trailing away.
+          const cometR = bandRadius(bands - 1) + 42;
+          const cTheta = si * 1.37 + t * 0.14;
+          const cOrbit = (th: number) => project(orbitPoint(world, cometR, cometR * 0.46, 0.62 + si * 0.04, si * 0.6 + 0.4, th), cam, width, height);
+          const head = cOrbit(cTheta);
+          if (head && head.sx > -40 && head.sx < width + 40 && head.sy > -40 && head.sy < height + 40) {
+            const tailEnd = cOrbit(cTheta - 0.22);
+            if (tailEnd) {
+              const tail = ctx.createLinearGradient(head.sx, head.sy, tailEnd.sx, tailEnd.sy);
+              tail.addColorStop(0, `rgba(214,238,255,${0.5 * dim})`);
+              tail.addColorStop(0.35, `rgba(150,200,255,${0.16 * dim})`);
+              tail.addColorStop(1, "rgba(120,170,255,0)");
+              ctx.strokeStyle = tail;
+              ctx.lineWidth = Math.max(1.4, Math.min(5, 90 / Math.max(1, head.depth)));
+              ctx.lineCap = "round";
+              ctx.beginPath();
+              ctx.moveTo(head.sx, head.sy);
+              ctx.lineTo(tailEnd.sx, tailEnd.sy);
+              ctx.stroke();
+              ctx.lineCap = "butt";
+            }
+            const coma = ctx.createRadialGradient(head.sx, head.sy, 0, head.sx, head.sy, 5);
+            coma.addColorStop(0, `rgba(255,255,255,${0.9 * dim})`);
+            coma.addColorStop(1, "rgba(150,200,255,0)");
+            ctx.fillStyle = coma;
+            ctx.beginPath();
+            ctx.arc(head.sx, head.sy, 5, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
         system.planets.forEach((planet: GalaxyPlanet, pi: number) => {
           const band = Math.min(bands - 1, Math.floor(pi / perBand));
@@ -548,6 +637,19 @@ export function Knowledge(): ReactNode {
           ctx.lineWidth = Math.max(0.7, Math.min(1.6, r * 0.03));
           ctx.stroke();
 
+          // Specular glint on the lit pole: the highlight that turns a shaded disc into a sphere.
+          if (r > 7) {
+            const gx = pp.sx - r * 0.3;
+            const gy = pp.sy - r * 0.34;
+            const glint = ctx.createRadialGradient(gx, gy, 0, gx, gy, r * 0.4);
+            glint.addColorStop(0, "rgba(255,255,255,0.5)");
+            glint.addColorStop(1, "rgba(255,255,255,0)");
+            ctx.fillStyle = glint;
+            ctx.beginPath();
+            ctx.arc(gx, gy, r * 0.4, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
           drawPlanetDetail(ctx, pp.sx, pp.sy, r, pColor, surfaceSeed(planet.node.code), clockRef.current, dimP, planet.node.object_type === "domain");
 
           if (r > 3.4 && r < 40) {
@@ -589,12 +691,27 @@ export function Knowledge(): ReactNode {
             const mTilt = ((mi % 3) - 1) * 0.35;
             const mYaw = pi * 0.7 + mi * 0.9;
             const mOmega = 0.2 + (mi % 3) * 0.025;
-            const mPos = orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, (mi / moonCount) * Math.PI * 2 + phaseAt(pi * 0.4, mOmega, t));
+            const mTheta = (mi / moonCount) * Math.PI * 2 + phaseAt(pi * 0.4, mOmega, t);
+            const mPos = orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, mTheta);
             const mp = project(mPos, cam, width, height);
             if (!mp) return;
             if (mp.sx < -40 || mp.sx > width + 40 || mp.sy < -40 || mp.sy > height + 40) return;
             if (cam.distance < 620 && mp.depth > starDepth && Math.hypot(mp.sx - proj.sx, mp.sy - proj.sy) < starRNow * 0.985) return;
             const mrPx = Math.max(1.6, Math.min(Math.max(30, Math.min(width, height) * 0.16), 7 * mp.scale));
+            // Close orbit: a short wake behind each moon so a moon reads as travelling, not parked.
+            if (iso === si && cam.distance < 900 && mrPx > 2.4) {
+              const tail = project(orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, mTheta - 0.42), cam, width, height);
+              if (tail) {
+                ctx.strokeStyle = "rgba(150,178,222,0.32)";
+                ctx.lineWidth = Math.max(0.8, mrPx * 0.55);
+                ctx.lineCap = "round";
+                ctx.beginPath();
+                ctx.moveTo(tail.sx, tail.sy);
+                ctx.lineTo(mp.sx, mp.sy);
+                ctx.stroke();
+                ctx.lineCap = "butt";
+              }
+            }
             drawMoon(ctx, mp.sx, mp.sy, mrPx, moon.tier, moon.node.id === sel, surfaceSeed(moon.node.code));
             bodies.push({ node: moon.node, kind: "moon", star: si, x: mp.sx, y: mp.sy, r: mrPx + 5, depth: mp.depth });
             nodePos.set(moon.node.id, { p: mPos, x: mp.sx, y: mp.sy, r: mrPx, tier: moon.tier, kind: "moon", node: moon.node, star: si });
@@ -683,6 +800,17 @@ export function Knowledge(): ReactNode {
       ctx.globalAlpha = 1;
       threadsRef.current = threads;
       bodiesRef.current = bodies;
+
+      // Selection pulse: a ring that breathes around the inspected body while the clock runs.
+      const pulsePos = sel ? nodePos.get(sel) : undefined;
+      if (pulsePos) {
+        const pulse = 0.5 + 0.5 * Math.sin(t * 2.6);
+        ctx.beginPath();
+        ctx.arc(pulsePos.x, pulsePos.y, pulsePos.r + 9 + pulse * 8, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(53,217,255,${0.5 * (1 - pulse)})`;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+      }
 
       // Labels with level-of-detail culling.
       // Greedy label placement: a label that would collide with one already drawn is culled, so 18
@@ -998,6 +1126,7 @@ export function Knowledge(): ReactNode {
   const selectedMeta = selectedNode ? DISCIPLINE_BY_ID[selectedNode.owner_discipline_id ?? ""] : undefined;
   const groupsShown = filter === null ? groups : groups.filter((g) => g.discipline === filter);
   const needle = q.trim().toLowerCase();
+  const focus = isolated !== null ? galaxy.stars[isolated] : undefined;
 
   return (
     <section className="atlas-root" aria-label="Knowledge Atlas">
@@ -1141,6 +1270,16 @@ export function Knowledge(): ReactNode {
         <div className="atlas-zoom" aria-label="Zoom level">
           <b>{zoom < 10 ? zoom.toFixed(1) : Math.round(zoom)}×</b>
           <small>{zoom > 2.4 ? "surface" : zoom > 1.15 ? "inner system" : "galaxy"}</small>
+        </div>
+      )}
+
+      {view === "atlas" && focus && (
+        <div className="atlas-system" aria-live="polite">
+          <span className="mono">{focus.code}</span>
+          <strong>{DISCIPLINE_BY_ID[focus.code]?.name ?? "System"}</strong>
+          <span className="num">
+            {focus.planets.length} domains · {focus.moons.length + focus.planets.reduce((n, p) => n + p.moons.length, 0)} skills
+          </span>
         </div>
       )}
 
@@ -1453,56 +1592,175 @@ function rgba(hex: string, alpha: number): string {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
+/** What a moon is made of. Seeded from its code, so the same skill always shows the same world. */
+type MoonClass = "ice" | "rock" | "volcanic" | "dust" | "metal";
+
+const MOON_LOOK: Record<MoonClass, { base: string; dark: string; light: string; haze: string }> = {
+  ice: { base: "#cfe6ff", dark: "#5c86ba", light: "#ffffff", haze: "rgba(150,205,255,0.40)" },
+  rock: { base: "#a9b1c1", dark: "#3a4254", light: "#e9eef8", haze: "rgba(158,175,205,0.18)" },
+  volcanic: { base: "#c98a6a", dark: "#35180f", light: "#ffd8a6", haze: "rgba(255,132,80,0.36)" },
+  dust: { base: "#d9c4a1", dark: "#4f4130", light: "#fff1d8", haze: "rgba(233,199,152,0.24)" },
+  metal: { base: "#a2b3cb", dark: "#283040", light: "#f5f9ff", haze: "rgba(196,216,246,0.28)" },
+};
+
+function moonClassOf(seed: number): MoonClass {
+  const k = hash01(seed, 301);
+  if (k < 0.3) return "ice";
+  if (k < 0.58) return "rock";
+  if (k < 0.76) return "volcanic";
+  if (k < 0.92) return "dust";
+  return "metal";
+}
+
+/**
+ * Moons are satellites, not dots: each one has a composition (ice, rock, volcanic, dust, metal) that
+ * decides its haze, its palette and its surface marks. Mastery still rides on top — the filled core
+ * and the arc around the limb — so looks never stand in for evidence.
+ */
 function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, tier: MasteryTier, selected: boolean, seed: number): void {
   const ring = masteryRing(tier);
-  if (ring.filled) {
-    const glow = ctx.createRadialGradient(x, y, 0, x, y, r * 3.2);
-    glow.addColorStop(0, rgba(ring.color, 0.5));
-    glow.addColorStop(1, "rgba(5,8,15,0)");
-    ctx.fillStyle = glow;
-    ctx.beginPath();
-    ctx.arc(x, y, r * 3.2, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  if (ring.filled) {
-    ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI * 2);
-    ctx.fillStyle = ring.color;
-    ctx.fill();
-  }
+  const kind = moonClassOf(seed);
+  const look = MOON_LOOK[kind];
+
+  // Its own haze, tinted by what it is made of; a volcanic moon breathes wider than an icy one.
+  const glowR = r * (kind === "volcanic" ? 3.8 : kind === "ice" ? 3.1 : 2.7);
+  const glow = ctx.createRadialGradient(x, y, r * 0.5, x, y, glowR);
+  glow.addColorStop(0, look.haze);
+  if (ring.filled) glow.addColorStop(0.25, rgba(ring.color, 0.4));
+  glow.addColorStop(1, "rgba(5,8,15,0)");
+  ctx.fillStyle = glow;
+  ctx.beginPath();
+  ctx.arc(x, y, glowR, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Shaded body: light falls from the upper left, so even a 4 px moon is a sphere.
+  const body = ctx.createRadialGradient(x - r * 0.36, y - r * 0.4, r * 0.06, x + r * 0.1, y + r * 0.12, r * 1.05);
+  body.addColorStop(0, look.light);
+  body.addColorStop(0.34, look.base);
+  body.addColorStop(0.78, look.dark);
+  body.addColorStop(1, "#05070f");
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
-  ctx.strokeStyle = tier === "unassessed" ? "rgba(113,129,159,0.85)" : "rgba(113,129,159,0.35)";
-  ctx.lineWidth = 1;
-  ctx.stroke();
-  // Close up, a moon is a rocky body with craters and a terminator, not a dot.
-  if (r > 4) {
+  ctx.fillStyle = body;
+  ctx.fill();
+
+  if (r > 3) {
     ctx.save();
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.arc(x, y, r * 0.99, 0, Math.PI * 2);
     ctx.clip();
-    const craters = Math.max(2, Math.min(14, Math.floor(r * 0.7)));
-    for (let i = 0; i < craters; i += 1) {
-      const a = hash01(seed, i) * Math.PI * 2;
-      const d = Math.sqrt(hash01(i, seed + 1)) * r * 0.8;
-      const cr = r * (0.06 + hash01(i, seed + 2) * 0.16);
-      ctx.fillStyle = "rgba(4,8,18,0.32)";
+
+    if (kind === "ice") {
+      // Fracture lines over a bright frost sheet.
+      for (let i = 0; i < 3 + Math.floor(hash01(seed, 310) * 4); i += 1) {
+        const a = hash01(seed, i + 311) * Math.PI * 2;
+        const d = Math.sqrt(hash01(i, seed + 312)) * r * 0.85;
+        ctx.strokeStyle = "rgba(255,255,255,0.34)";
+        ctx.lineWidth = Math.max(0.5, r * 0.05);
+        ctx.beginPath();
+        ctx.moveTo(x + Math.cos(a) * d, y + Math.sin(a) * d);
+        ctx.lineTo(x + Math.cos(a + 0.9) * d * 0.5, y + Math.sin(a + 0.9) * d * 0.5);
+        ctx.stroke();
+      }
+      ctx.fillStyle = "rgba(255,255,255,0.14)";
       ctx.beginPath();
-      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, 0, Math.PI * 2);
+      ctx.arc(x - r * 0.3, y - r * 0.26, r * 0.52, 0, Math.PI * 2);
       ctx.fill();
-      ctx.strokeStyle = "rgba(255,255,255,0.2)";
-      ctx.lineWidth = Math.max(0.4, cr * 0.2);
+    } else if (kind === "volcanic") {
+      // Fissures lit from inside, over a dull hot glow.
+      const vent = ctx.createRadialGradient(x, y, 0, x, y, r * 0.8);
+      vent.addColorStop(0, "rgba(255,120,60,0.3)");
+      vent.addColorStop(1, "rgba(255,120,60,0)");
+      ctx.fillStyle = vent;
       ctx.beginPath();
-      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, Math.PI * 0.95, Math.PI * 1.85);
-      ctx.stroke();
+      ctx.arc(x, y, r * 0.8, 0, Math.PI * 2);
+      ctx.fill();
+      for (let i = 0; i < 4; i += 1) {
+        const a = hash01(seed, i + 320) * Math.PI * 2;
+        const d0 = r * (0.1 + hash01(i, seed + 321) * 0.3);
+        const d1 = d0 + r * (0.35 + hash01(i, seed + 322) * 0.4);
+        ctx.strokeStyle = i % 2 === 0 ? "rgba(255,140,72,0.72)" : "rgba(255,196,120,0.5)";
+        ctx.lineWidth = Math.max(0.6, r * 0.06);
+        ctx.beginPath();
+        ctx.moveTo(x + Math.cos(a) * d0, y + Math.sin(a) * d0);
+        ctx.lineTo(x + Math.cos(a + 0.4) * d1, y + Math.sin(a + 0.4) * d1);
+        ctx.stroke();
+      }
+    } else if (kind === "metal") {
+      // Machined plates: bright seams and shadowed gaps instead of terrain.
+      for (let i = 0; i < 3; i += 1) {
+        const yy = y + (i / 3 - 0.5) * r * 1.4;
+        ctx.strokeStyle = i % 2 === 0 ? "rgba(255,255,255,0.22)" : "rgba(10,16,28,0.4)";
+        ctx.lineWidth = Math.max(0.6, r * 0.07);
+        ctx.beginPath();
+        ctx.ellipse(x, yy, r * 0.96, r * 0.14, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      const sheen = ctx.createLinearGradient(x - r, y - r, x + r, y + r);
+      sheen.addColorStop(0, "rgba(255,255,255,0.2)");
+      sheen.addColorStop(0.45, "rgba(255,255,255,0)");
+      sheen.addColorStop(1, "rgba(6,10,20,0.35)");
+      ctx.fillStyle = sheen;
+      ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    } else {
+      // Rock and dust: craters with a lit rim and a shadowed floor, denser on rock.
+      const craters = Math.max(2, Math.min(16, Math.floor(r * (kind === "rock" ? 0.85 : 0.5))));
+      for (let i = 0; i < craters; i += 1) {
+        const a = hash01(seed, i + 330) * Math.PI * 2;
+        const d = Math.sqrt(hash01(i, seed + 331)) * r * 0.82;
+        const cr = r * (0.05 + hash01(i, seed + 332) * 0.17);
+        ctx.fillStyle = kind === "dust" ? "rgba(60,44,26,0.22)" : "rgba(4,8,18,0.32)";
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255,255,255,0.2)";
+        ctx.lineWidth = Math.max(0.4, cr * 0.2);
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, Math.PI * 0.95, Math.PI * 1.85);
+        ctx.stroke();
+      }
+      if (kind === "dust") {
+        // Drifting regolith: soft mottling rather than sharp geology.
+        for (let i = 0; i < 5; i += 1) {
+          const a = hash01(i, seed + 340) * Math.PI * 2;
+          const d = hash01(seed, i + 341) * r * 0.6;
+          ctx.fillStyle = "rgba(255,240,215,0.08)";
+          ctx.beginPath();
+          ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, r * (0.2 + hash01(i, seed + 342) * 0.24), 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
     }
-    const shade = ctx.createLinearGradient(x - r, y - r, x + r, y + r);
-    shade.addColorStop(0, "rgba(255,255,255,0.04)");
-    shade.addColorStop(0.5, "rgba(0,0,0,0)");
-    shade.addColorStop(1, "rgba(2,5,12,0.8)");
+
+    // A gentle photographic vignette keeps the disc round against its own haze.
+    const shade = ctx.createRadialGradient(x - r * 0.1, y - r * 0.1, r * 0.2, x, y, r * 1.02);
+    shade.addColorStop(0, "rgba(0,0,0,0)");
+    shade.addColorStop(0.82, "rgba(3,7,16,0.16)");
+    shade.addColorStop(1, "rgba(2,5,12,0.62)");
     ctx.fillStyle = shade;
     ctx.fillRect(x - r, y - r, r * 2, r * 2);
     ctx.restore();
+
+    // Lit limb.
+    ctx.strokeStyle = "rgba(255,255,255,0.42)";
+    ctx.lineWidth = Math.max(0.6, r * 0.05);
+    ctx.beginPath();
+    ctx.arc(x, y, r * 0.9, Math.PI * 0.78, Math.PI * 1.6);
+    ctx.stroke();
+  } else {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.strokeStyle = tier === "unassessed" ? "rgba(113,129,159,0.85)" : "rgba(113,129,159,0.35)";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  // Mastery is the only thing allowed to fill a moon in.
+  if (ring.filled) {
+    ctx.beginPath();
+    ctx.arc(x, y, Math.max(1.4, r * 0.5), 0, Math.PI * 2);
+    ctx.fillStyle = ring.color;
+    ctx.fill();
   }
   if (ring.arc > 0 && ring.arc < 1) {
     ctx.beginPath();

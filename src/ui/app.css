@@ -663,4 +663,15 @@ html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="
 }
 .atlas-zoom b { font-size: 15px; color: var(--atlas-cyan); letter-spacing: 0; font-weight: 600; }
 @media (min-width: 900px) { .atlas-zoom { right: 18px; bottom: 64px; } }
+/* Isolated-system plate: which star is on screen, and how big it is. */
+.atlas-system {
+  position: absolute; left: 12px; bottom: calc(70px + env(safe-area-inset-bottom)); z-index: 6;
+  display: flex; flex-direction: column; gap: 2px; pointer-events: none; max-width: 220px;
+  background: rgba(8, 14, 28, 0.72); border: 1px solid var(--glass-edge); border-radius: 12px;
+  padding: 8px 12px; backdrop-filter: blur(14px);
+}
+.atlas-system .mono { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.12em; color: var(--atlas-cyan); }
+.atlas-system strong { font-size: 13px; line-height: 1.25; color: var(--text-primary); font-weight: 600; }
+.atlas-system .num { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-muted); }
+@media (min-width: 900px) { .atlas-system { left: 18px; bottom: 58px; } }
 
