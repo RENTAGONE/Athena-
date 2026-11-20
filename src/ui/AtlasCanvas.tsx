@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { Pause, Play, RotateCcw, Search, X } from "lucide-react";
+import { Pause, Play, RotateCcw, Rocket, Scan, Search, X } from "lucide-react";
 import { useApp } from "./context.ts";
 import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
 import {
@@ -92,7 +92,16 @@ export function Knowledge(): ReactNode {
   const galaxy = useMemo(() => buildGalaxy(state, index), [state, index]);
   const edges = useMemo(() => partitionEdges(state), [state]);
   const groups = useMemo(() => indexGroups(state, index), [state, index]);
-  const starsWorld = useMemo(() => goldenStarPositions(galaxy.stars.length), [galaxy.stars.length]);
+  // Three seeded shells instead of one hollow sphere: systems sit at different depths, so the galaxy has
+  // front, middle and back rather than reading as a single bubble of dots.
+  const starsWorld = useMemo(
+    () =>
+      goldenStarPositions(galaxy.stars.length).map((p, i) => {
+        const shell = i % 3 === 0 ? 0.66 : i % 3 === 1 ? 0.9 : 1.1;
+        return { x: p.x * shell, y: p.y * shell * 1.18, z: p.z * shell };
+      }),
+    [galaxy.stars.length],
+  );
 
   // Constellation web: every star is linked to its two nearest neighbours, so the galaxy reads as
   // structure at a glance instead of a cloud of unconnected dots. Recomputed only when the systems do.
@@ -125,6 +134,10 @@ export function Knowledge(): ReactNode {
     return p.motion && p.atlasOrbit;
   });
   const [zoom, setZoom] = useState(1);
+  /** Glide: fly straight ahead instead of orbiting, so the sky streams past and travel never stops. */
+  const [cruise, setCruise] = useState(false);
+  /** Map: tilt the camera towards a landscape survey, flattening the sphere into a readable plane. */
+  const [tilt, setTilt] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [isolated, setIsolated] = useState<number | null>(null);
   const [confirm, setConfirm] = useState<{ star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string } | null>(null);
@@ -146,6 +159,8 @@ export function Knowledge(): ReactNode {
   const pointerRef = useRef<{ x: number; y: number; inside: boolean }>({ x: 0, y: 0, inside: false });
   const frameDistanceRef = useRef(1120);
   const clockRef = useRef(0);
+  const cruiseRef = useRef(cruise);
+  const tiltRef = useRef(tilt);
   const dirtyRef = useRef(true);
   const reduceRef = useRef(false);
 
@@ -186,6 +201,16 @@ export function Knowledge(): ReactNode {
     playingRef.current = playing;
     dirtyRef.current = true;
   }, [playing]);
+
+  useEffect(() => {
+    cruiseRef.current = cruise;
+    dirtyRef.current = true;
+  }, [cruise]);
+
+  useEffect(() => {
+    tiltRef.current = tilt;
+    dirtyRef.current = true;
+  }, [tilt]);
 
   useEffect(() => {
     filterRef.current = filter;
@@ -299,6 +324,9 @@ export function Knowledge(): ReactNode {
       const hits = matchedRef.current;
       const hover = hoverRef.current;
       const t = clockRef.current;
+      // Landscape survey squashes the vertical axis so the sphere reads as a map of islands.
+      const flat = tiltRef.current ? 0.4 : 1;
+      const flatten = (p: Vec3): Vec3 => (flat === 1 ? p : { x: p.x, y: p.y * flat, z: p.z });
       ctx.clearRect(0, 0, width, height);
 
       // Layer 0 — void with a subtle deep-space falloff.
@@ -323,8 +351,10 @@ export function Knowledge(): ReactNode {
         ctx.lineWidth = 1;
         ctx.beginPath();
         for (const [a, b] of linksRef.current) {
-          const pa = project(reentryJitter(wrapPoint(a, cam), a), cam, width, height);
-          const pb = project(reentryJitter(wrapPoint(b, cam), b), cam, width, height);
+          const fa = flatten(a);
+          const fb = flatten(b);
+          const pa = project(reentryJitter(wrapPoint(fa, cam), fa), cam, width, height);
+          const pb = project(reentryJitter(wrapPoint(fb, cam), fb), cam, width, height);
           if (!pa || !pb) continue;
           ctx.moveTo(pa.sx, pa.sy);
           ctx.lineTo(pb.sx, pb.sy);
@@ -363,8 +393,9 @@ export function Knowledge(): ReactNode {
       const starScreen: { x: number; y: number; scale: number }[] = [];
 
       scene.galaxy.stars.forEach((system, si) => {
-        const base = scene.starsWorld[si];
-        if (!base) return;
+        const raw = scene.starsWorld[si];
+        if (!raw) return;
+        const base = flatten(raw);
         const world = iso === si ? base : reentryJitter(wrapPoint(base, cam), base);
         const proj = project(world, cam, width, height);
         const dimSystem = (iso !== null && iso !== si) || (flt !== null && flt !== system.code);
@@ -917,6 +948,21 @@ export function Knowledge(): ReactNode {
         clockRef.current += dt;
         dirtyRef.current = true;
       }
+      if (tiltRef.current && !flightRef.current) {
+        // Settle towards a landscape survey (looking down at ~69°) without snapping, so the switch
+        // reads as the camera leaning over the galaxy.
+        cameraRef.current.pitch += (1.2 - cameraRef.current.pitch) * Math.min(1, dt * 3.4);
+        dirtyRef.current = true;
+      }
+      if (cruiseRef.current && !flightRef.current) {
+        // Straight-ahead flight: yaw steers, and the periodic wrap brings new sky in forever.
+        const cam = cameraRef.current;
+        const speed = 240 * dt;
+        cam.targetX -= Math.sin(cam.yaw) * speed;
+        cam.targetZ -= Math.cos(cam.yaw) * speed;
+        cam.targetY -= Math.sin(cam.pitch) * speed * 0.45;
+        dirtyRef.current = true;
+      }
       if (dirtyRef.current) {
         draw(now);
         dirtyRef.current = false;
@@ -1151,6 +1197,24 @@ export function Knowledge(): ReactNode {
           >
             {playing ? <Pause size={15} strokeWidth={1.5} aria-hidden="true" /> : <Play size={15} strokeWidth={1.5} aria-hidden="true" />}
             <span>{playing ? "Pause" : "Orbit"}</span>
+          </button>
+          <button
+            className="btn sm ghost"
+            aria-label={cruise ? "Stop gliding" : "Glide straight ahead"}
+            aria-pressed={cruise}
+            onClick={() => setCruise((c) => !c)}
+          >
+            <Rocket size={15} strokeWidth={1.5} aria-hidden="true" />
+            <span>Glide</span>
+          </button>
+          <button
+            className="btn sm ghost"
+            aria-label={tilt ? "Return to orbit view" : "Landscape map view"}
+            aria-pressed={tilt}
+            onClick={() => setTilt((v) => !v)}
+          >
+            <Scan size={15} strokeWidth={1.5} aria-hidden="true" />
+            <span>Map</span>
           </button>
           <div className="pill" role="group" aria-label="Atlas view" data-index={view === "index" ? "1" : "0"}>
             <span className="pill-thumb" aria-hidden="true" />
