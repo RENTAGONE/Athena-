@@ -315,7 +315,7 @@ export function Knowledge(): ReactNode {
     return GALAXY_CLUSTERS.map((c) => ({
       ...c,
       count: c.key === "core" ? nodes.length - frontierCount - vaultCount : c.key === "frontier" ? frontierCount : vaultCount,
-      points: spiralPositions(c.key === "core" ? 560 : 300, c.radius, c.key === "vault" ? 2 : 3, c.key === "frontier" ? 0.8 : 0.55),
+      points: spiralPositions(c.key === "core" ? 560 : 440, c.radius, c.key === "vault" ? 2 : 3, c.key === "frontier" ? 0.8 : 0.55),
     }));
   }, [state.nodes]);
 
@@ -436,6 +436,36 @@ export function Knowledge(): ReactNode {
     setConfirm(null);
   }, []);
 
+  /**
+   * A discipline chip is a transport, not only a colour filter: choosing one locks the view onto that
+   * discipline's star and warps there; choosing it again releases the lock and flies back out. In the
+   * Index view the same chip filters the list without moving the camera.
+   */
+  const focusDiscipline = useCallback(
+    (id: string): void => {
+      if (filter === id) {
+        setFilter(null);
+        setIsolated(null);
+        resetView();
+        return;
+      }
+      setFilter(id);
+      // The chip carries the discipline code (ATH-DISC-*); the star carries the node id and the same code.
+      const si = galaxy.stars.findIndex((s) => s.discipline.code === id || s.discipline.id === id);
+      if (si < 0) {
+        setIsolated(null);
+        return;
+      }
+      setGalaxyView("core");
+      setSelected(null);
+      setConfirm(null);
+      setIsolated(si);
+      // The fly-in crosses real distance, so it is the 650 ms hyperspace jump rather than a drift.
+      flyToStar(si, 700);
+    },
+    [filter, galaxy.stars, flyToStar, resetView],
+  );
+
   /* ── Rendering loop ───────────────────────────────────────────────────── */
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -533,6 +563,28 @@ export function Knowledge(): ReactNode {
           ctx.beginPath();
           ctx.arc(pa.sx, pa.sy, rr * 1.3, 0, Math.PI * 2);
           ctx.fill();
+          // The mapped core gets a bright nucleus and two slow dust arms, so it reads as a galaxy
+          // seen from above instead of a cloud of points.
+          if (cl.key === "core") {
+            const nucleus = ctx.createRadialGradient(pa.sx, pa.sy, 0, pa.sx, pa.sy, rr * 0.55);
+            nucleus.addColorStop(0, rgba("#ffffff", 0.85 * fade));
+            nucleus.addColorStop(0.22, rgba(tint, 0.34 * fade));
+            nucleus.addColorStop(1, rgba(tint, 0));
+            ctx.fillStyle = nucleus;
+            ctx.beginPath();
+            ctx.arc(pa.sx, pa.sy, rr * 0.55, 0, Math.PI * 2);
+            ctx.fill();
+            for (const arm of [0, Math.PI]) {
+              ctx.save();
+              ctx.globalAlpha = 0.3 * fade;
+              ctx.strokeStyle = rgba(tint, 0.55);
+              ctx.lineWidth = Math.max(1, rr * 0.045);
+              ctx.beginPath();
+              ctx.ellipse(pa.sx, pa.sy, rr * 0.66, rr * 0.26, arm + 0.55 + clockRef.current * 0.015, 0, Math.PI * 1.15);
+              ctx.stroke();
+              ctx.restore();
+            }
+          }
           ctx.save();
           ctx.globalCompositeOperation = "lighter";
           for (let i = 0; i < cl.points.length; i += 1) {
@@ -715,8 +767,8 @@ export function Knowledge(): ReactNode {
           // A star is white-hot at the core with its discipline colour in the corona and limb, so it
           // reads as a star rather than as a coloured planet.
           core.addColorStop(0, "rgba(255,255,255,1)");
-          core.addColorStop(0.3, rgba(mix(color, "#ffffff", 0.82), 1));
-          core.addColorStop(0.62, rgba(mix(color, "#ffffff", 0.45), 1));
+          core.addColorStop(0.26, rgba(mix(color, "#ffffff", 0.58), 1));
+          core.addColorStop(0.62, rgba(mix(color, "#ffffff", 0.2), 1));
           core.addColorStop(0.88, rgba(mix(color, "#0b1020", 0.5), 1));
           core.addColorStop(1, "rgba(4,7,14,1)");
           ctx.globalAlpha = dim;
@@ -1633,11 +1685,25 @@ export function Knowledge(): ReactNode {
           All · <span className="num">{galaxy.totals.planets + galaxy.totals.constellations + galaxy.totals.moons + galaxy.totals.satellites + galaxy.totals.asteroids}</span>
         </button>
         {DISCIPLINES.map((d) => (
-          <button key={d.id} className="chip" aria-pressed={filter === d.id} onClick={() => setFilter(filter === d.id ? null : d.id)}>
+          <button
+            key={d.id}
+            className="chip"
+            aria-pressed={filter === d.id}
+            title={view === "atlas" ? `Fly to ${d.name}` : `Filter the index to ${d.name}`}
+            onClick={() => (view === "atlas" ? focusDiscipline(d.id) : setFilter(filter === d.id ? null : d.id))}
+          >
             <d.Icon size={13} strokeWidth={1.5} aria-hidden="true" color={d.color} />{d.short}
           </button>
         ))}
       </div>
+
+      {view === "atlas" && filter !== null && isolated !== null && (
+        <div className="atlas-lock" role="status">
+          <span className="dot" aria-hidden="true" style={{ background: DISCIPLINE_BY_ID[filter]?.color ?? "#7ea4ff" }} />
+          <span>Locked to <strong>{DISCIPLINE_BY_ID[filter]?.name ?? filter}</strong></span>
+          <button className="btn sm ghost" onClick={() => { setFilter(null); setIsolated(null); resetView(); }}>Release</button>
+        </div>
+      )}
 
       {view === "atlas" && (
         <div className="atlas-galaxies" role="group" aria-label="Galaxies">
@@ -1848,6 +1914,28 @@ function drawStarDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: 
     ctx.stroke();
   }
 
+  // Diffraction spikes: four long, soft rays that make a star read as a light source rather than a
+  // flat disc. Plain gradients, so the cost stays flat per frame.
+  if (r >= 9) {
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    for (let i = 0; i < 4; i += 1) {
+      const a = (i / 4) * Math.PI * 2 + 0.18;
+      const len = r * (hovered ? 3.1 : 2.4);
+      const spike = ctx.createLinearGradient(x, y, x + Math.cos(a) * len, y + Math.sin(a) * len);
+      spike.addColorStop(0, rgba(mix(color, "#ffffff", 0.6), 0.42));
+      spike.addColorStop(0.32, rgba(color, 0.14));
+      spike.addColorStop(1, rgba(color, 0));
+      ctx.strokeStyle = spike;
+      ctx.lineWidth = Math.max(1, r * 0.018);
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + Math.cos(a) * len, y + Math.sin(a) * len);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   if (r > 20) {
     ctx.save();
     ctx.beginPath();
@@ -1869,7 +1957,7 @@ function drawStarDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: 
     for (let i = 0; i < 34; i += 1) {
       const a = hash01(seed + 90, i) * Math.PI * 2;
       const d = Math.sqrt(hash01(i, seed + 91)) * r * 0.9;
-      ctx.fillStyle = hash01(i, seed + 92) > 0.5 ? "rgba(255,255,255,0.045)" : rgba(mix(color, "#05070f", 0.6), 0.05);
+      ctx.fillStyle = hash01(i, seed + 92) > 0.5 ? "rgba(255,255,255,0.03)" : rgba(mix(color, "#05070f", 0.6), 0.032);
       ctx.beginPath();
       ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, r * (0.05 + hash01(i, seed + 93) * 0.07), 0, Math.PI * 2);
       ctx.fill();

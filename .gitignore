@@ -6,3 +6,5 @@ src/generated/validators.js
 *.log
 athena.zip
 artifacts/
+test-results/
+*.zip

@@ -104,3 +104,42 @@ test("Pack v1.0 carries the KB v3.28 working tier without orphaning canonical re
   assert.ok(kbMicro.every((n) => (n.body["practice_protocol"] as any).steps.length >= 2), "each imported candidate keeps its authored practice steps");
   assert.ok(kbMicro.every((n) => n.status === "draft"), "candidates stay draft; authoring is not approval");
 });
+
+test("a revised draft body commits without a content_version bump; approved content still refuses", async () => {
+  const deps = makeDeps();
+  const store = new MemoryStore(emptyState("device-seed"));
+  await commitPlan(store, await buildPlan(await store.load(), pack(), deps), "approve", deps);
+
+  // The real failure mode: an authoring tool revises 18 micro-skills but leaves content_version alone.
+  const before = await store.load();
+  const revised = packToPackages(f, "pack-kb-revision", "2026-11-19T00:00:00Z");
+  const micros = (revised.micro_skills ?? []).slice(0, 18);
+  for (const m of micros) m["definition"] = `${m["definition"]} (revised protocol)`;
+  const strict = await buildPlan(await store.load(), revised, deps);
+  assert.equal(strict.ok, false, "a plain package import still refuses to overwrite a draft silently");
+  const plan = await buildPlan(await store.load(), revised, deps, { allowDraftRevision: true });
+  assert.equal(plan.ok, true, JSON.stringify(plan.issues.filter((i) => i.severity === "error").slice(0, 3)));
+  const updates = plan.items.filter((i) => i.table === "nodes" && i.action === "update");
+  assert.equal(updates.length, 18, "all 18 revised drafts are planned as updates");
+  assert.ok(plan.issues.some((i) => i.code === "draft_revision" && i.severity === "info"), "the preview says drafts were revised");
+  assert.equal((await commitPlan(store, plan, "approve", deps)).committed, true);
+
+  const after = await store.load();
+  for (const m of micros) {
+    const entry = after.codes[m["id"] as string]!;
+    const node = after.nodes[entry.id]!;
+    assert.match(String(node.body["definition"]), /revised protocol/);
+    assert.equal(node.content_version, before.nodes[before.codes[m["id"] as string]!.id]!.content_version + 1, "the stored content_version moves forward even without a bump");
+    assert.equal(node.status, "draft");
+  }
+
+  // Approved content is never overwritten silently: a different body at the same version is an error.
+  const approved = await store.load();
+  const disc = Object.values(approved.nodes).find((n) => n.object_type === "discipline")!;
+  const pkg = packToPackages(f, "pack-approved-change", "2026-11-19T00:00:00Z");
+  const rec = pkg.disciplines!.find((n) => n["id"] === disc.code)!;
+  rec["name"] = `${rec["name"]} (renamed)`;
+  const refused = await buildPlan(await store.load(), pkg, deps);
+  assert.equal(refused.ok, false);
+  assert.ok(refused.issues.some((i) => i.code === "content_conflict"), "an approved record needs a bumped content_version");
+});

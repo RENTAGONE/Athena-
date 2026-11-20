@@ -101,7 +101,7 @@ export function App(): ReactNode {
   ) : route.startsWith("/studio/architect") ? (
     <ArchitectScreen />
   ) : route.startsWith("/studio") ? (
-    <Studio tab={route.endsWith("/backup") ? "backup" : route.endsWith("/pack") ? "pack" : "updates"} />
+    <Studio tab={route.endsWith("/backup") ? "backup" : route.endsWith("/pack") ? "pack" : route.endsWith("/author") ? "author" : "updates"} />
   ) : route.startsWith("/schedule") ? (
     <ScheduleScreen />
   ) : route.startsWith("/library") ? (

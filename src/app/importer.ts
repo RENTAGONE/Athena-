@@ -134,7 +134,17 @@ function impliedEdges(w: Wanted): WantedEdge[] {
   return out;
 }
 
-export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: ImportDeps): Promise<ImportPlan> {
+/**
+ * Options for planning an import. `allowDraftRevision` is the authoring path, never the default: a
+ * package import that reuses a draft's code with different content is still a conflict, because a
+ * second package is not evidence that its author meant to replace the first one. Studio's authoring
+ * surface asks for this explicitly, so the preview can say which drafts would be revised.
+ */
+export interface PlanOptions {
+  allowDraftRevision?: boolean;
+}
+
+export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: ImportDeps, options: PlanOptions = {}): Promise<ImportPlan> {
   const issues: Issue[] = [];
   const err = (code: string, path: string, message: string): void => void issues.push({ severity: "error", code, path, message });
   const packageHash = await sha256Hex(canonicalJson(pkg));
@@ -185,6 +195,9 @@ export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: Impo
   // 2. Compare with existing state.
   const items: PlannedItem[] = [];
   const nodeActions = new Map<string, "create" | "update" | "noop">();
+  /** Drafts that differ without a version bump: real authoring revisions, counted for the preview. */
+  let draftRevisions = 0;
+  const isDraft = (v: unknown): boolean => String(v ?? "draft").toLowerCase() === "draft";
   for (const w of wanted) {
     const entry = state.codes[w.code];
     if (!entry) {
@@ -201,8 +214,23 @@ export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: Impo
       continue;
     }
     if (canonicalJson(existing.body) === canonicalJson(w.rec)) nodeActions.set(w.code, "noop");
+    // A draft is authoring work-in-progress: a revised draft body replaces an older draft body even
+    // when the package did not bump content_version (authoring tools routinely do not). The stored
+    // content_version is still incremented, so the change is a visible revision rather than a silent
+    // overwrite. Approved content keeps the strict no-last-write-wins rule below.
     else if (((w.rec["content_version"] as number | undefined) ?? 1) > existing.content_version) nodeActions.set(w.code, "update");
-    else err("content_conflict", `${w.path}`, `code '${w.code}' exists with different content and content_version ${(w.rec["content_version"] as number | undefined) ?? 1} does not exceed ${existing.content_version}; no last-write-wins`);
+    else if (options.allowDraftRevision === true && isDraft(existing.status) && isDraft(w.rec["status"])) {
+      nodeActions.set(w.code, "update");
+      draftRevisions += 1;
+    } else err("content_conflict", `${w.path}`, `code '${w.code}' exists with different content and content_version ${(w.rec["content_version"] as number | undefined) ?? 1} does not exceed ${existing.content_version}; no last-write-wins`);
+  }
+  if (draftRevisions > 0) {
+    issues.push({
+      severity: "info",
+      code: "draft_revision",
+      path: "$",
+      message: `${draftRevisions} draft record${draftRevisions === 1 ? " differs" : "s differ"} without a content_version bump; ${draftRevisions === 1 ? "it is" : "they are"} replaced and the stored content_version increments by one`,
+    });
   }
 
   // 3. Edges: explicit first, then implied.
@@ -386,7 +414,10 @@ export async function materialise(state: DbState, plan: ImportPlan, deps: Import
     } else {
       const old = state.nodes[existingEntry.id]!;
       if (canonicalJson(old.body) === canonicalJson(rec)) continue;
-      ops.push({ table: "nodes", key: old.id, before: old, after: { ...old, ...common, version: old.version + 1, provenance: prov, updated_at: now } });
+      // A draft revised without a version bump still moves forward: the stored content_version is
+      // incremented so the revision is real, never the same number over different content.
+      const contentVersion = Math.max(old.content_version + 1, common.content_version as number);
+      ops.push({ table: "nodes", key: old.id, before: old, after: { ...old, ...common, content_version: contentVersion, version: old.version + 1, provenance: prov, updated_at: now } });
     }
   }
   const resolveId = (code: string): string => codeToId.get(code)!;

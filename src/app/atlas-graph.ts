@@ -346,8 +346,9 @@ export interface GalaxyCluster {
 export const GALAXY_CLUSTERS: GalaxyCluster[] = [
   { key: "core", label: "ATHENA Core", anchor: v3(0, 0, 0), radius: GALAXY_RADIUS * 0.62 },
   // Kept just outside the core's 6,500-unit radius, so the three galaxies frame together at 0.5×.
-  { key: "frontier", label: "Frontier", anchor: v3(-GALAXY_RADIUS * 1.5, -900, -GALAXY_RADIUS * 0.7), radius: 1650 },
-  { key: "vault", label: "Vault", anchor: v3(GALAXY_RADIUS * 1.6, 1000, GALAXY_RADIUS * 0.6), radius: 1350 },
+  // Wide enough to read as a galaxy beside the core at cluster range, not as a smudge.
+  { key: "frontier", label: "Frontier", anchor: v3(-GALAXY_RADIUS * 1.5, -900, -GALAXY_RADIUS * 0.7), radius: 2400 },
+  { key: "vault", label: "Vault", anchor: v3(GALAXY_RADIUS * 1.6, 1000, GALAXY_RADIUS * 0.6), radius: 2000 },
 ];
 
 export function clusterByKey(key: GalaxyKey): GalaxyCluster {

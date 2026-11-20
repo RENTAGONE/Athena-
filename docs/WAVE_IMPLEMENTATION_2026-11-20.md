@@ -97,3 +97,15 @@ a real browser against the seeded Pack v1.0 store (1,201 records, 1,125 relation
 - No Bangla translation layer (explicitly out of scope for this pass).
 - Studio is a preview/approve/pack surface, not a node-by-node authoring editor, and the PCL duplicate audit of the 216 modules has not been run.
 - `npm run test:e2e` still cannot run in this sandbox: Playwright Chromium needs system libraries (`libnspr4`, `libnss3`, `libatk-1.0`, …) that cannot be installed here (`sudo` refuses due to the no-new-privileges flag).
+
+## Authoring desk, atlas-rule tests and the draft-revision fix (later pass)
+
+| Item | State | Evidence |
+| --- | --- | --- |
+| Unit tests for the Wave 2 rules | **Delivered** | `tests/atlas-graph.test.ts`: biome determinism and full coverage, stage-growth cap and monotonicity, city-light budget, black-hole/quasar thresholds, the 2,600-unit warp threshold, galaxy lookup and mastery rings. `npm test` (glob `tests/*.test.ts`) picks the file up. |
+| The "18 micro-skills will not commit" bug | **Fixed** | The KB revision carried new micro-skill bodies without a higher `content_version`, so the importer refused all 18 with `content_conflict`. `buildPlan` now takes `PlanOptions.allowDraftRevision`; a preview can accept changed **draft** records explicitly, each stored `content_version` increments, and approved content still refuses a same-version overwrite. Covered by `tests/pack-seed.test.ts`. |
+| Studio authoring surface | **Started, working** | New `#/studio/author` desk: filter by discipline or code, edit title/description/status/owner, save a revision, retire a record, or branch a micro-skill into a new draft. Every write becomes a one-record exchange package and goes through `buildPlan → commitPlan`, so schema, namespace, code and version rules all apply. |
+| Discipline chip as transport | **Delivered** | Choosing a discipline chip in the Atlas sets the filter, isolates that system and warps to it (1.0× → 171× measured); a lock pill names the held discipline and choosing the chip again (or Release) flies back out. In the Index view the chips only filter. |
+| Visual pass | **Delivered** | Star diffraction spikes, more saturated stellar cores, a bright nucleus and two slow dust arms on the mapped core galaxy, and Frontier/Vault sized so the cluster reads as three galaxies rather than one web plus a smudge. |
+
+Not done in this pass: creating records from a blank form (branching a micro-skill is the only create path), and the Playwright end-to-end suite still cannot run here (missing `libnspr4`/`libnss3` and no sudo).
