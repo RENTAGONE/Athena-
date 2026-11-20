@@ -16,10 +16,14 @@ import {
   type MasteryTier,
 } from "../app/selectors.ts";
 import {
+  DEEP_GALAXIES,
+  DEEP_HUES,
+  DEEP_WRAP,
   FOCAL,
   GALAXY_CLUSTERS,
   GALAXY_RADIUS,
   MACRO_DISTANCE,
+  UNIVERSE_DISTANCE,
   WARP_MS,
   add,
   bezierControl,
@@ -55,6 +59,7 @@ import type { NodeRecord } from "../domain/types.ts";
 import type { SpatialOverride } from "../domain/system.ts";
 import { getPrefs } from "./prefs.ts";
 import { createSky, drawSky } from "./sky.ts";
+import { drawTexturedDisc, moonMap, planetMap, starMap } from "./textures.ts";
 
 const TIER_LABEL: Record<MasteryTier, string> = {
   unassessed: "unassessed",
@@ -113,6 +118,12 @@ export function Knowledge(): ReactNode {
   // True cosmic scale: separate star systems across a 6,500-unit galaxy with a 2,400-unit floor
   // between neighbours. Systems are genuinely far apart rather than shells of one small sphere.
   const starsWorld = useMemo(() => separatedStarPositions(galaxy.stars.length), [galaxy.stars.length]);
+  // The deep field is drawn from pre-rendered sprites: 18 small canvases instead of thousands of
+  // per-frame gradients and point projections. That is what keeps the infinite sky smooth.
+  const deepSprites = useMemo(
+    () => DEEP_HUES.flatMap((hue, hi) => [2, 3, 4].map((arms, ai) => galaxySprite(hue, arms, 11 + hi * 7 + ai * 23))),
+    [],
+  );
 
   // Constellation web: every star is linked to its two nearest neighbours, so the galaxy reads as
   // structure at a glance instead of a cloud of unconnected dots. Recomputed only when the systems do.
@@ -158,12 +169,24 @@ export function Knowledge(): ReactNode {
   const [zen, setZen] = useState(false);
   /** Which galaxy the camera is framing in the macro view. */
   const [galaxyView, setGalaxyView] = useState<GalaxyKey>("core");
+  /** The deep field: the local cluster seen as one island among many galaxies. */
+  const [universe, setUniverse] = useState(false);
+  /** The star system a learner claimed as their own Athena. Persisted on this device. */
+  const [homeSystem, setHomeSystem] = useState<string | null>(() => {
+    try {
+      return window.localStorage.getItem("athena.home.system");
+    } catch {
+      return null;
+    }
+  });
   const [movedCount, setMovedCount] = useState(0);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const sceneRef = useRef<Scene>({ galaxy, starsWorld, location: galaxy.location });
   const edgesRef = useRef(edges);
   const cameraRef = useRef<Camera>(makeCamera({ distance: 11_200 }));
+  /** Where the wheel/pinch wants the camera distance to be; the loop eases toward it, so zoom is smooth. */
+  const distanceTargetRef = useRef(11_200);
   const flightRef = useRef<{ from: Camera; to: Camera; start: number; dur: number; isolate: number | null; warp: boolean } | null>(null);
   const isolatedRef = useRef<number | null>(null);
   const selectedRef = useRef<string | null>(null);
@@ -189,6 +212,7 @@ export function Knowledge(): ReactNode {
   const rtRef = useRef(rt.store);
   const evidenceRef = useRef<Map<string, number>>(new Map());
   const phenomenaRef = useRef<Map<number, SystemPhenomenon>>(new Map());
+  const homeRef = useRef<string | null>(homeSystem);
   const clustersRef = useRef<{ key: GalaxyKey; label: string; anchor: Vec3; radius: number; count: number; points: Vec3[] }[]>([]);
   const clusterHitsRef = useRef<{ key: GalaxyKey; x: number; y: number; r: number }[]>([]);
 
@@ -261,6 +285,11 @@ export function Knowledge(): ReactNode {
   }, [galaxyView]);
 
   useEffect(() => {
+    homeRef.current = homeSystem;
+    dirtyRef.current = true;
+  }, [homeSystem]);
+
+  useEffect(() => {
     rtRef.current = rt.store;
   }, [rt]);
 
@@ -315,7 +344,7 @@ export function Knowledge(): ReactNode {
     return GALAXY_CLUSTERS.map((c) => ({
       ...c,
       count: c.key === "core" ? nodes.length - frontierCount - vaultCount : c.key === "frontier" ? frontierCount : vaultCount,
-      points: spiralPositions(c.key === "core" ? 560 : 440, c.radius, c.key === "vault" ? 2 : 3, c.key === "frontier" ? 0.8 : 0.55),
+      points: spiralPositions(c.key === "core" ? 700 : 1200, c.radius, c.key === "vault" ? 2 : 3, c.key === "frontier" ? 0.8 : 0.55),
     }));
   }, [state.nodes]);
 
@@ -413,6 +442,19 @@ export function Knowledge(): ReactNode {
     setSelected(null);
     setConfirm(null);
     setGalaxyView("core");
+    setUniverse(false);
+  }, []);
+
+  /** Warp out past the local cluster: the deep field, where the three galaxies are one island. */
+  const flyToUniverse = useCallback((): void => {
+    const cam = cameraRef.current;
+    const to = makeCamera({ targetX: 0, targetY: 0, targetZ: 0, yaw: cam.yaw, pitch: 0.34, distance: UNIVERSE_DISTANCE });
+    flightRef.current = { from: { ...cam }, to, start: performance.now(), dur: WARP_MS + 280, isolate: null, warp: true };
+    setUniverse(true);
+    setGalaxyView("core");
+    setIsolated(null);
+    setSelected(null);
+    setConfirm(null);
   }, []);
 
   /** Warp between the three galaxies. Each jump is the same 650 ms hyperspace move. */
@@ -431,6 +473,7 @@ export function Knowledge(): ReactNode {
     });
     flightRef.current = { from: { ...cam }, to, start: performance.now(), dur: WARP_MS, isolate: null, warp: true };
     setGalaxyView(key);
+    setUniverse(false);
     setIsolated(null);
     setSelected(null);
     setConfirm(null);
@@ -450,6 +493,7 @@ export function Knowledge(): ReactNode {
         return;
       }
       setFilter(id);
+      setUniverse(false);
       // The chip carries the discipline code (ATH-DISC-*); the star carries the node id and the same code.
       const si = galaxy.stars.findIndex((s) => s.discipline.code === id || s.discipline.id === id);
       if (si < 0) {
@@ -490,7 +534,11 @@ export function Knowledge(): ReactNode {
         const span = Math.min(rect.width, rect.height);
         // Stars sit on a 440-unit sphere and their planet clouds add ~160 units, so frame the outer extent.
         if (span > 0) {
-          cameraRef.current.distance = Math.min(24_000, Math.max(2_400, ((GALAXY_RADIUS + 260) * FOCAL) / (0.4 * span)));
+          // Frame the whole local group, not only the Core: the default view is the three galaxies
+          // (Core, Frontier, Vault) together, so the atlas opens on a populated sky.
+          const extent = GALAXY_CLUSTERS.reduce((m, c) => Math.max(m, Math.hypot(c.anchor.x, c.anchor.z) + c.radius), GALAXY_RADIUS);
+          cameraRef.current.distance = Math.min(24_000, Math.max(2_400, (extent * 1.18 * FOCAL) / (0.5 * span)));
+          distanceTargetRef.current = cameraRef.current.distance;
           frameDistanceRef.current = cameraRef.current.distance;
         }
       }
@@ -540,6 +588,40 @@ export function Knowledge(): ReactNode {
       // The deep sky: a real star sphere, a galactic band and dust clouds that turn with the camera,
       // so the background is 3D structure rather than a fixed wallpaper.
       drawSky(ctx, sky, cam, width, height, t, reduceRef.current);
+      // Inside a system the star sphere is far behind the camera and almost nothing is left, so a
+      // near-field star volume fills the sky with real depth at surface range.
+      if (cam.distance < 9_000) drawLocalStars(ctx, cam, width, height, cam.distance);
+
+      // ── Infinite deep field ──────────────────────────────────────────────
+      // Past the local cluster the sky never ends: thousands of seeded galaxies tile a cube that
+      // wraps around the camera target, so panning or zooming out always reveals new ones. Each is a
+      // pre-rendered sprite scaled into place, which keeps the frame cheap enough to stay smooth.
+      if (cam.distance > 12_000) {
+        const fade = Math.min(1, (cam.distance - 12_000) / 20_000);
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        for (const g of DEEP_GALAXIES) {
+          const wrapped = wrapPoint(g.anchor, cam, DEEP_WRAP);
+          const pa = project(wrapped, cam, width, height);
+          // The field is a background: a galaxy that would sit in front of the local cluster is skipped,
+          // so a giant sprite never blots out the records being explored.
+          if (!pa || pa.depth < 30_000) continue;
+          const rr = (g.radius * FOCAL) / Math.max(1, pa.depth);
+          if (rr < 1.4) continue;
+          const d = rr * 3.1;
+          if (pa.sx < -d || pa.sx > width + d || pa.sy < -d || pa.sy > height + d) continue;
+          ctx.globalAlpha = fade * g.brightness * (rr < 3 ? 0.55 : 1);
+          ctx.drawImage(deepSprites[g.sprite]!, pa.sx - d / 2, pa.sy - d / 2, d, d);
+        }
+        ctx.globalAlpha = 1;
+        ctx.restore();
+      }
+
+      // ── Universe lattice ────────────────────────────────────────────────
+      // Zoom out past the local group and the local universe becomes one cell in a lattice of
+      // universes: each cell holds its own galaxies, and the cells keep repeating. Past ~140,000
+      // units the lattice draws itself as cubes, so the sky is seen as a three-dimensional grid.
+      if (cam.distance > 45_000) drawUniverseLattice(ctx, cam, width, height, clockRef.current);
 
       // ── Multi-galaxy macro view ──────────────────────────────────────────
       // Past the macro threshold the mapped core, the draft Frontier and the retired Vault are drawn as
@@ -556,7 +638,7 @@ export function Knowledge(): ReactNode {
           if (pa.sx < -rr || pa.sx > width + rr || pa.sy < -rr || pa.sy > height + rr) continue;
           const tint = cl.key === "core" ? "#7ea4ff" : cl.key === "frontier" ? "#ffc66d" : "#a78bfa";
           const halo = ctx.createRadialGradient(pa.sx, pa.sy, 0, pa.sx, pa.sy, rr * 1.3);
-          halo.addColorStop(0, rgba(tint, 0.14 * fade));
+          halo.addColorStop(0, rgba(tint, 0.22 * fade));
           halo.addColorStop(0.55, rgba(tint, 0.055 * fade));
           halo.addColorStop(1, "rgba(5,8,15,0)");
           ctx.fillStyle = halo;
@@ -595,10 +677,13 @@ export function Knowledge(): ReactNode {
             if (sp2.sx < 0 || sp2.sx > width || sp2.sy < 0 || sp2.sy > height) continue;
             ctx.globalAlpha = (0.16 + hash01(i, 41) * 0.5) * fade;
             ctx.fillStyle = hash01(i, 43) > 0.82 ? "#ffffff" : tint;
-            const dot = Math.max(0.7, Math.min(2.2, 120 / Math.max(1, sp2.depth)));
+            const dot = Math.max(0.9, Math.min(3.1, rr * 0.022));
             ctx.fillRect(sp2.sx, sp2.sy, dot, dot);
           }
           ctx.restore();
+          // Alpha is per-point inside the sprite loop; reset it so the next galaxy's halo and label are
+          // not drawn at the last point's opacity (that is what made the Frontier disappear).
+          ctx.globalAlpha = 1;
           // Dust lane so the core galaxy reads as a disc, not a blob of dots.
           ctx.save();
           ctx.globalAlpha = 0.22 * fade;
@@ -608,16 +693,24 @@ export function Knowledge(): ReactNode {
           ctx.ellipse(pa.sx, pa.sy, rr * 0.92, rr * 0.34, 0.5, 0, Math.PI * 2);
           ctx.stroke();
           ctx.restore();
-          ctx.font = '600 11px "JetBrains Mono", ui-monospace, monospace';
-          ctx.textAlign = "center";
-          // The core is labelled beneath its stars; the satellite galaxies above their discs, so no
-          // caption ever sits on top of a system.
-          const labelY = cl.key === "core" ? pa.sy + rr * 2.2 + 16 : pa.sy - rr * 1.35 - 12;
-          ctx.fillStyle = rgba(tint, 0.82 * fade);
-          ctx.fillText(`${cl.label.toUpperCase()} · ${cl.count}`, pa.sx, labelY);
-          ctx.fillStyle = rgba("#c9d7f2", 0.5 * fade);
-          ctx.font = '500 10px "JetBrains Mono", ui-monospace, monospace';
-          ctx.fillText(cl.key === "core" ? "mapped curriculum" : cl.key === "frontier" ? "draft records · tap to warp" : "retired records · tap to warp", pa.sx, labelY + 15);
+          // Every galaxy has a supermassive black hole at its centre: a hot accretion disc, a lensed
+          // photon ring and, on the youngest galaxy, relativistic jets.
+          drawGalaxyCore(ctx, pa.sx, pa.sy, Math.max(2.6, rr * 0.07), tint, fade, clockRef.current, cl.key === "frontier");
+          // Galaxy captions belong to galaxy range. In the universe lattice they would sit on the
+          // causal structure instead, so they fade out as the camera leaves the local group.
+          const labelFade = Math.max(0, 1 - (cam.distance - 20_000) / 30_000);
+          if (labelFade > 0.02) {
+            ctx.font = '600 11px "JetBrains Mono", ui-monospace, monospace';
+            ctx.textAlign = "center";
+            // The core is labelled beneath its stars; the satellite galaxies above their discs, so no
+            // caption ever sits on top of a system.
+            const labelY = cl.key === "core" ? pa.sy + rr * 2.2 + 16 : pa.sy - rr * 1.35 - 12;
+            ctx.fillStyle = rgba(tint, 0.82 * fade * labelFade);
+            ctx.fillText(`${cl.label.toUpperCase()} · ${cl.count}`, pa.sx, labelY);
+            ctx.fillStyle = rgba("#c9d7f2", 0.5 * fade * labelFade);
+            ctx.font = '500 10px "JetBrains Mono", ui-monospace, monospace';
+            ctx.fillText(cl.key === "core" ? "mapped curriculum" : cl.key === "frontier" ? "draft records · tap to warp" : "retired records · tap to warp", pa.sx, labelY + 15);
+          }
           clusterHitsRef.current.push({ key: cl.key, x: pa.sx, y: pa.sy, r: Math.max(38, rr * 0.7) });
         }
       }
@@ -634,28 +727,47 @@ export function Knowledge(): ReactNode {
         ctx.save();
         ctx.globalCompositeOperation = "lighter";
         ctx.lineCap = "round";
-        for (let i = 0; i < 110; i += 1) {
-          const a = hash01(i, 613) * Math.PI * 2;
-          const start = reach * (0.16 + hash01(i, 617) * 0.7);
-          const len = reach * (0.06 + hash01(i, 619) * 0.42) * k;
-          const x0 = cx + Math.cos(a) * start;
-          const y0 = cy + Math.sin(a) * start;
-          const x1 = cx + Math.cos(a) * (start + len);
-          const y1 = cy + Math.sin(a) * (start + len);
-          const grad2 = ctx.createLinearGradient(x0, y0, x1, y1);
-          const tint = i % 5 === 0 ? "255,255,255" : "126,164,255";
-          grad2.addColorStop(0, `rgba(${tint},0)`);
-          grad2.addColorStop(1, `rgba(${tint},${0.5 * k})`);
-          ctx.strokeStyle = grad2;
-          ctx.lineWidth = Math.max(0.8, 2.2 * k);
+        // Two streak layers: long white-blue lines and a shorter slower layer, so the tunnel has
+        // depth instead of reading as one fan of lines.
+        for (const layer of [0, 1]) {
+          const count = layer === 0 ? 120 : 70;
+          for (let i = 0; i < count; i += 1) {
+            const seed = i + layer * 131;
+            const a = hash01(seed, 613) * Math.PI * 2;
+            const start = reach * (0.1 + hash01(seed, 617) * 0.78);
+            const stretch = layer === 0 ? 0.5 : 0.22;
+            const len = reach * (0.05 + hash01(seed, 619) * stretch) * k;
+            const x0 = cx + Math.cos(a) * start;
+            const y0 = cy + Math.sin(a) * start;
+            const x1 = cx + Math.cos(a) * (start + len);
+            const y1 = cy + Math.sin(a) * (start + len);
+            const grad2 = ctx.createLinearGradient(x0, y0, x1, y1);
+            const tint = layer === 0 ? (i % 5 === 0 ? "255,255,255" : "126,164,255") : "167,139,250";
+            grad2.addColorStop(0, `rgba(${tint},0)`);
+            grad2.addColorStop(1, `rgba(${tint},${(layer === 0 ? 0.55 : 0.3) * k})`);
+            ctx.strokeStyle = grad2;
+            ctx.lineWidth = Math.max(0.7, (layer === 0 ? 2.4 : 1.4) * k);
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+            ctx.lineTo(x1, y1);
+            ctx.stroke();
+          }
+        }
+        // Shuttle rings rushing outward from the centre: cheap depth cue, no allocation per ring.
+        ctx.strokeStyle = `rgba(180,214,255,${0.2 * k})`;
+        for (let ring = 0; ring < 4; ring += 1) {
+          const rr = reach * (0.12 + ((wp * 1.6 + ring * 0.25) % 1) * 0.9);
+          ctx.globalAlpha = (1 - ((wp * 1.6 + ring * 0.25) % 1)) * 0.35 * k;
+          ctx.lineWidth = 1;
           ctx.beginPath();
-          ctx.moveTo(x0, y0);
-          ctx.lineTo(x1, y1);
+          ctx.ellipse(cx, cy, rr, rr * 0.72, 0, 0, Math.PI * 2);
           ctx.stroke();
         }
-        const flash = ctx.createRadialGradient(cx, cy, 0, cx, cy, reach * 0.5);
-        flash.addColorStop(0, `rgba(180,214,255,${0.16 * k})`);
-        flash.addColorStop(1, "rgba(180,214,255,0)");
+        ctx.globalAlpha = 1;
+        const flash = ctx.createRadialGradient(cx, cy, 0, cx, cy, reach * 0.55);
+        flash.addColorStop(0, `rgba(225,240,255,${0.3 * k})`);
+        flash.addColorStop(0.25, `rgba(150,190,255,${0.12 * k})`);
+        flash.addColorStop(1, "rgba(150,190,255,0)");
         ctx.fillStyle = flash;
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
@@ -712,6 +824,8 @@ export function Knowledge(): ReactNode {
       const starScreen: { x: number; y: number; scale: number }[] = [];
 
       scene.galaxy.stars.forEach((system, si) => {
+        // Beyond the local group a system is far below a pixel; keep the far sky cheap.
+        if (cam.distance > 40_000) return;
         const raw = scene.starsWorld[si];
         if (!raw) return;
         const base = flatten(raw);
@@ -780,6 +894,10 @@ export function Knowledge(): ReactNode {
           ctx.strokeStyle = "rgba(241,245,255,0.45)";
           ctx.stroke();
 
+          // Photosphere: at surface range a star is a granulated, boiling disc. The map is tinted by
+          // the discipline and lit from the same side as every other body in the system.
+          if (r > 26) drawTexturedDisc(ctx, proj.sx, proj.sy, r, starMap(surfaceSeed(system.code)), mix(color, "#ffffff", 0.62), clockRef.current * 0.006 + si * 0.13, dim * 0.85);
+
           // Inner plate and monogram: a lit badge, not a flat dot. Suppressed once the body is a
           // surface, where a giant monogram would cover the star itself.
           if (r >= 9 && r < 46) {
@@ -805,7 +923,9 @@ export function Knowledge(): ReactNode {
           // Wave 2 phenomena: an unmapped mass collapses into a black hole, concentrated mastery
           // fires a quasar. Both are derived from evidence counts, never from a page visit.
           const ph = phenomenaRef.current.get(si);
-          if (ph && r > 4) drawPhenomenon(ctx, proj.sx, proj.sy, r, ph, clockRef.current, dim);
+          // Phenomena are system-scale structure: at galaxy range a black hole would be a black ball
+          // glued to every star, so they appear once the camera is inside the local systems.
+          if (ph && cam.distance < 6_000) drawPhenomenon(ctx, proj.sx, proj.sy, r, ph, clockRef.current, dim);
 
           // Some systems are binaries: a smaller companion with its own temperature, orbiting the
           // primary. Seeded per system, so the same discipline always has the same companion.
@@ -842,9 +962,30 @@ export function Knowledge(): ReactNode {
             ctx.stroke();
           }
           ctx.globalAlpha = 1;
+          // The claimed system wears a gold ring and its name: this is the Athena a learner chose.
+          if (homeRef.current === system.code) {
+            ctx.save();
+            ctx.globalAlpha = dim * 0.9;
+            ctx.strokeStyle = "rgba(255,206,140,0.95)";
+            ctx.lineWidth = Math.max(1.2, r * 0.05);
+            ctx.setLineDash([Math.max(3, r * 0.22), Math.max(2, r * 0.14)]);
+            ctx.beginPath();
+            ctx.arc(proj.sx, proj.sy, r + 13, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.font = '700 9px "JetBrains Mono", ui-monospace, monospace';
+            ctx.textAlign = "center";
+            ctx.fillStyle = "rgba(255,214,160,0.95)";
+            ctx.fillText("MY ATHENA", proj.sx, proj.sy - r - 20);
+            ctx.restore();
+          }
           bodies.push({ node: system.discipline, kind: "star", star: si, x: proj.sx, y: proj.sy, r: r + 10, depth: proj.depth });
           nodePos.set(system.discipline.id, { p: world, x: proj.sx, y: proj.sy, r, tier: "unassessed", kind: "star", node: system.discipline, star: si });
         }
+
+        // At galaxy range planets, moons and constellation figures are sub-pixel: drawing a thousand of
+        // them every frame is what made the far view stutter. They appear once a system is worth a look.
+        if (cam.distance > 1_800) return;
 
         // Planets and their moons stay in motion even while a system is isolated.
         if (iso !== null && iso !== si) return;
@@ -961,20 +1102,26 @@ export function Knowledge(): ReactNode {
           if (!pp) return;
           const inView = pp.sx > -80 && pp.sx < width + 80 && pp.sy > -80 && pp.sy < height + 80;
           if (!inView) return;
-          // Inside a system up close, a planet on the far side of the star is hidden by its face.
-          if (cam.distance < 620 && pp.depth > starDepth && Math.hypot(pp.sx - proj.sx, pp.sy - proj.sy) < starRNow * 0.99) return;
+          // Inside a system up close, a planet whose screen centre lands on the star's face is hidden.
+          // Physically that is a transit or an occultation; visually it is a smudge on the star, so the
+          // system's own worlds are kept outside the photosphere's disc at close range.
+          if (cam.distance < 900 && Math.hypot(pp.sx - proj.sx, pp.sy - proj.sy) < starRNow * 0.995) return;
           const hoveredP = hover.body === planet.node.id;
           const planetMax = Math.max(56, Math.min(width, height) * 0.3);
           // Stage growth: a demonstrated body is visibly larger than an untouched one.
           const pEvidence = evidenceRef.current.get(planet.node.id) ?? 0;
-          const r = Math.max(2.2, Math.min(planetMax, 13 * pp.scale * stageGrowth(pEvidence))) * (system.planets.length > 30 ? 0.68 : 1) * (hoveredP ? 1.35 : 1);
+          // A planet is never drawn larger than a fraction of its star: past that it stops reading as
+          // a world in orbit and starts covering the star it belongs to.
+          const orbitCap = Math.max(14, starRNow * 0.24);
+          const r = Math.max(2.4, Math.min(planetMax, orbitCap, 15.5 * pp.scale * stageGrowth(pEvidence))) * (system.planets.length > 30 ? 0.68 : 1) * (hoveredP ? 1.35 : 1);
           const dimP = flt !== null && flt !== system.code ? 0.2 : 1;
           const pColor = meta?.color ?? "#648bff";
           // Soft bloom, then a lit sphere with a rim, then the honest mastery arc.
           // Close up, the bloom shrinks so the body reads as solid, not as a lit bubble.
-          const bloomR = r * (r > 18 ? 1.9 : 3.4);
-          const bloom = ctx.createRadialGradient(pp.sx, pp.sy, r * 0.8, pp.sx, pp.sy, bloomR);
-          bloom.addColorStop(0, rgba(pColor, (r > 18 ? 0.12 : 0.24) * dimP));
+          // Small bodies stay crisp: a wide bloom on a 2 px planet is what turns a world into a blob.
+          const bloomR = r * (r > 18 ? 1.7 : r > 6 ? 1.8 : 1.5);
+          const bloom = ctx.createRadialGradient(pp.sx, pp.sy, r * 0.92, pp.sx, pp.sy, bloomR);
+          bloom.addColorStop(0, rgba(pColor, (r > 18 ? 0.1 : r > 6 ? 0.12 : 0.08) * dimP));
           bloom.addColorStop(1, "rgba(5,8,15,0)");
           ctx.fillStyle = bloom;
           ctx.beginPath();
@@ -1010,7 +1157,9 @@ export function Knowledge(): ReactNode {
 
           drawPlanetDetail(ctx, pp.sx, pp.sy, r, pColor, surfaceSeed(planet.node.code), clockRef.current, dimP, planet.node.object_type === "domain", cityLightCount(pEvidence));
 
-          if (r > 3.4 && r < 40) {
+          // A ring belongs to a small world seen close up. Past ~26 px it would read as a glass hoop
+          // laid over the planet, so it is dropped instead.
+          if (r > 3.4 && r < 26) {
             ctx.save();
             ctx.globalAlpha = dimP * 0.4;
             ctx.strokeStyle = rgba(pColor, 0.7);
@@ -1045,7 +1194,7 @@ export function Knowledge(): ReactNode {
 
           // Tier 3: a skill family is a constellation — a small cluster of stars with a faint joining
           // arc, never another planet. It reads as a pathway, not as a subject region.
-          for (const family of system.constellations) {
+          for (const family of cam.distance < 2_400 ? system.constellations : []) {
             if (family.planet !== pi) continue;
             const cAlpha = flt !== null && flt !== system.code ? 0.15 : 0.55;
             const cx = pp.sx + r * 2.2;
@@ -1056,13 +1205,25 @@ export function Knowledge(): ReactNode {
             ctx.beginPath();
             ctx.arc(cx, cy, Math.max(5, r * 0.9), 0, Math.PI * 2);
             ctx.stroke();
+            // A constellation is a figure, not a handful of dots: its stars are joined by thin
+            // segments, so the pathway reads at a glance.
+            const cStars: { x: number; y: number }[] = [];
             for (let k = 0; k < 5; k += 1) {
               const a = (k / 5) * Math.PI * 2 + hash01(surfaceSeed(family.node.code), k) * 0.5;
               const rad = Math.max(5, r * 0.9) * (0.55 + hash01(k, surfaceSeed(family.node.code)) * 0.5);
               const px = cx + Math.cos(a) * rad;
               const py = cy + Math.sin(a) * rad * 0.7;
+              cStars.push({ x: px, y: py });
               ctx.fillStyle = rgba(mix(pColor, "#ffffff", 0.5), cAlpha);
-              ctx.fillRect(px, py, 1.3, 1.3);
+              ctx.fillRect(px - 0.65, py - 0.65, 1.6, 1.6);
+            }
+            if (cStars.length > 1) {
+              ctx.strokeStyle = rgba(mix(pColor, "#ffffff", 0.45), 0.34 * cAlpha);
+              ctx.lineWidth = 0.7;
+              ctx.beginPath();
+              ctx.moveTo(cStars[0]!.x, cStars[0]!.y);
+              for (let k = 1; k < cStars.length; k += 1) ctx.lineTo(cStars[k]!.x, cStars[k]!.y);
+              ctx.stroke();
             }
             ctx.restore();
           }
@@ -1079,7 +1240,7 @@ export function Knowledge(): ReactNode {
             if (!mp) return;
             if (mp.sx < -40 || mp.sx > width + 40 || mp.sy < -40 || mp.sy > height + 40) return;
             if (cam.distance < 620 && mp.depth > starDepth && Math.hypot(mp.sx - proj.sx, mp.sy - proj.sy) < starRNow * 0.985) return;
-            const mrPx = Math.max(1.6, Math.min(Math.max(30, Math.min(width, height) * 0.16), 7 * mp.scale));
+            const mrPx = Math.max(1.6, Math.min(Math.max(34, Math.min(width, height) * 0.18), Math.max(7, r * 0.26), 8.5 * mp.scale));
             // Close orbit: a short wake behind each moon so a moon reads as travelling, not parked.
             if (iso === si && cam.distance < 900 && mrPx > 2.4) {
               const tail = project(orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, mTheta - 0.42), cam, width, height);
@@ -1212,10 +1373,13 @@ export function Knowledge(): ReactNode {
           });
         }
       };
-      ctx.globalAlpha = iso === null && flt === null ? 1 : 0.55;
-      drawThreads(edgesRef.current.intra, "rgba(53,217,255,0.34)", 1, 26, false);
-      drawThreads(edgesRef.current.cross, "rgba(167,139,250,0.28)", 1, 60, true);
-      ctx.globalAlpha = 1;
+      // Threads are structure at system range; far out they are sub-pixel noise and cost real time.
+      if (cam.distance < 7000) {
+        ctx.globalAlpha = iso === null && flt === null ? 1 : 0.55;
+        drawThreads(edgesRef.current.intra, "rgba(53,217,255,0.34)", 1, 26, false);
+        drawThreads(edgesRef.current.cross, "rgba(167,139,250,0.28)", 1, 60, true);
+        ctx.globalAlpha = 1;
+      }
       threadsRef.current = threads;
       bodiesRef.current = bodies;
 
@@ -1326,10 +1490,23 @@ export function Knowledge(): ReactNode {
         cameraRef.current = mixCamera(flight.from, flight.to, flight.warp ? easeInOutQuart(p) : easeOutCubic(p));
         if (p >= 1) {
           cameraRef.current = flight.to;
+          distanceTargetRef.current = flight.to.distance;
           flightRef.current = null;
           if (flight.isolate !== null) setIsolated(flight.isolate);
         }
         dirtyRef.current = true;
+      } else {
+        // Wheel and pinch only move a target; the camera eases toward it at a frame-rate-independent
+        // rate, so zooming in and out is one continuous glide instead of a stack of jumps.
+        const want = distanceTargetRef.current;
+        const gap = want - cameraRef.current.distance;
+        if (Math.abs(gap) > 0.5) {
+          cameraRef.current.distance += gap * Math.min(1, dt * 10);
+          dirtyRef.current = true;
+        } else if (cameraRef.current.distance !== want) {
+          cameraRef.current.distance = want;
+          dirtyRef.current = true;
+        }
       }
       if (playingRef.current) {
         clockRef.current += dt;
@@ -1461,7 +1638,7 @@ export function Knowledge(): ReactNode {
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
         const d = Math.hypot((a?.x ?? 0) - (b?.x ?? 0), (a?.y ?? 0) - (b?.y ?? 0));
-        if (pinchDistance > 0) cam.distance = Math.max(28, Math.min(24_000, pinchStart * (pinchDistance / Math.max(1, d))));
+        if (pinchDistance > 0) distanceTargetRef.current = Math.max(28, Math.min(900_000, pinchStart * (pinchDistance / Math.max(1, d))));
       } else if (mode === "pan" || e.shiftKey) {
         const k = (cam.distance / FOCAL) * 0.9;
         const cy = Math.cos(cam.yaw);
@@ -1543,7 +1720,9 @@ export function Knowledge(): ReactNode {
       e.preventDefault();
       const cam = cameraRef.current;
       const rect = canvas.getBoundingClientRect();
-      const next = Math.max(28, Math.min(24_000, cam.distance * Math.exp(e.deltaY * 0.0013)));
+      // Zoom is requested against the current target, so a fast scroll keeps accelerating smoothly
+      // rather than re-reading a distance the loop is still easing toward.
+      const next = Math.max(28, Math.min(900_000, distanceTargetRef.current * Math.exp(e.deltaY * 0.0011)));
       // Keep the point under the cursor fixed: invert the camera rotation on the cursor ray at target depth.
       const X = ((e.clientX - rect.left) - width / 2) * (cam.distance / FOCAL);
       const Y = -((e.clientY - rect.top) - height / 2) * (cam.distance / FOCAL);
@@ -1556,7 +1735,7 @@ export function Knowledge(): ReactNode {
       cam.targetX += (X * cy + z1 * sy) * f;
       cam.targetY += Y * cp * f;
       cam.targetZ += (-X * sy + z1 * cy) * f;
-      cam.distance = next;
+      distanceTargetRef.current = next;
       dirtyRef.current = true;
     };
     const onLeave = (): void => {
@@ -1608,7 +1787,7 @@ export function Knowledge(): ReactNode {
       canvas.removeEventListener("dblclick", onDouble);
       window.removeEventListener("keydown", onKey);
     };
-  }, [flyToStar, resetView, flyToCluster, persistOverride]);
+  }, [flyToStar, resetView, flyToCluster, flyToUniverse, persistOverride]);
 
   const selectedNode = selected ? state.nodes[selected] : undefined;
   const selectedTier = selectedNode ? masteryTier(index, selectedNode.id) : null;
@@ -1720,6 +1899,15 @@ export function Knowledge(): ReactNode {
               {c.label} · <span className="num">{c.count}</span>
             </button>
           ))}
+          <button
+            className="chip galaxy-chip"
+            aria-pressed={universe}
+            onClick={flyToUniverse}
+            title="Warp out to the deep field"
+          >
+            <span className="dot" aria-hidden="true" data-galaxy="universe" />
+            Universe · <span className="num">{clusters.reduce((n, c) => n + c.count, 0)}</span>
+          </button>
         </div>
       )}
 
@@ -1822,8 +2010,10 @@ export function Knowledge(): ReactNode {
 
       {view === "atlas" && galaxy.stars.length > 0 && (
         <div className="atlas-zoom" aria-label="Zoom level">
-          <b>{zoom < 10 ? zoom.toFixed(1) : Math.round(zoom)}×</b>
-          <small>{zoom > 2.4 ? "surface" : zoom > 1.15 ? "inner system" : "galaxy"}</small>
+          <b>{zoom < 0.1 ? zoom.toFixed(2) : zoom < 10 ? zoom.toFixed(1) : Math.round(zoom)}×</b>
+          <small>
+            {zoom > 2.4 ? "surface" : zoom > 1.15 ? "inner system" : zoom > 0.5 ? "galaxy" : zoom > 0.18 ? "local group" : "universe lattice"}
+          </small>
         </div>
       )}
 
@@ -1835,6 +2025,22 @@ export function Knowledge(): ReactNode {
             {focus.planets.length} domains · {focus.constellations.length} constellations · {focus.moons.length + focus.planets.reduce((n, p) => n + p.moons.length, 0)} skills ·{" "}
             {focus.satellites.length + focus.planets.reduce((n, p) => n + p.moons.reduce((k, q) => k + q.satellites.length, 0), 0)} subskills
           </span>
+          <button
+            className="btn sm"
+            aria-pressed={homeSystem === focus.code}
+            onClick={() => {
+              const next = homeSystem === focus.code ? null : focus.code;
+              setHomeSystem(next);
+              try {
+                if (next) window.localStorage.setItem("athena.home.system", next);
+                else window.localStorage.removeItem("athena.home.system");
+              } catch {
+                /* storage can be blocked; the choice then lasts for this session only */
+              }
+            }}
+          >
+            {homeSystem === focus.code ? "My Athena · locked" : "Make this my Athena"}
+          </button>
         </div>
       )}
 
@@ -2027,9 +2233,11 @@ function drawPhenomenon(ctx: CanvasRenderingContext2D, x: number, y: number, r: 
   ctx.save();
   ctx.globalAlpha = alpha;
   if (ph.kind === "black_hole") {
-    const bx = x + r * 1.5;
-    const by = y + r * 0.6;
-    const bh = Math.max(3, r * 0.4);
+    // The companion sits just outside the photosphere: close enough to read as part of the system,
+    // far enough that its horizon never covers the star's own face.
+    const bx = x + Math.min(r * 1.7, r + 52);
+    const by = y + r * 0.55;
+    const bh = Math.max(3.6, r * 0.42);
     ctx.save();
     ctx.translate(bx, by);
     ctx.rotate(-0.34);
@@ -2069,7 +2277,7 @@ function drawPhenomenon(ctx: CanvasRenderingContext2D, x: number, y: number, r: 
     ctx.fill();
   } else {
     // Quasar: two polar jets, brightest at the base, fading into the void.
-    const jet = r * (1.5 + 2.1 * ph.intensity);
+    const jet = Math.max(11, r * (1.5 + 2.1 * ph.intensity));
     for (const dir of [-1, 1]) {
       const grad = ctx.createLinearGradient(x, y, x, y + dir * jet);
       grad.addColorStop(0, `rgba(198,226,255,${0.5 * ph.intensity})`);
@@ -2121,9 +2329,13 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
   ctx.arc(x, y, r * 0.985, 0, Math.PI * 2);
   ctx.clip();
 
-  if (banded) {
-    // Deeper atmosphere first, then alternating light and dark belts with a soft edge.
-    ctx.fillStyle = rgba(mix(color, "#050810", 0.42), 0.7);
+  // Real surface map first. While it decodes, the painted surface below stands in for a frame.
+  const painted = drawTexturedDisc(ctx, x, y, r, planetMap(seed, banded), color, spin * 0.35, 1);
+
+  if (!painted && banded) {
+    // Deeper atmosphere first, then alternating light and dark belts with a soft edge. The base fill
+    // is opaque: a translucent surface turns a world into a glass bubble when it overlaps the star.
+    ctx.fillStyle = rgba(mix(color, "#050810", 0.42), 1);
     ctx.fillRect(x - r, y - r, r * 2, r * 2);
     const bands = 8 + Math.floor(hash01(seed, 2) * 7);
     for (let i = 0; i < bands; i += 1) {
@@ -2148,9 +2360,10 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
     ctx.beginPath();
     ctx.ellipse(x, y + Math.sin(spin) * r * 0.22, r * 1.02, r * 0.16, 0, 0, Math.PI * 2);
     ctx.stroke();
-  } else {
-    // Rock and ocean: a darker sea for this biome, then lit continents over it.
-    ctx.fillStyle = rgba(mix(color, look.deep, 0.62), 0.62);
+  } else if (!painted) {
+    // Rock and ocean: a darker sea for this biome, then lit continents over it. Opaque base, so the
+    // world hides whatever is behind it instead of blending into the star.
+    ctx.fillStyle = rgba(mix(color, look.deep, 0.62), 1);
     ctx.fillRect(x - r, y - r, r * 2, r * 2);
     // Continents: irregular clusters of overlapping arcs, pushed around by the slow spin.
     const land = 4 + Math.floor(hash01(seed, 3) * 4);
@@ -2182,6 +2395,17 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
       ctx.beginPath();
       ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, Math.PI * 0.9, Math.PI * 1.9);
       ctx.stroke();
+    }
+  }
+
+  // Weather: thin cloud belts drifting at their own rate, so a zoomed world has an atmosphere.
+  if (r > 9) {
+    for (let i = 0; i < 2; i += 1) {
+      const cy = y + (hash01(seed, i + 61) - 0.5) * r * 1.1;
+      ctx.fillStyle = `rgba(255,255,255,${0.06 + hash01(i, seed) * 0.05})`;
+      ctx.beginPath();
+      ctx.ellipse(x + Math.sin(spin * 0.6 + i) * r * 0.18, cy, r * (0.72 + i * 0.12), r * 0.07, 0, 0, Math.PI * 2);
+      ctx.fill();
     }
   }
 
@@ -2264,12 +2488,14 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
   ctx.restore();
 
   // Atmosphere outside the disc.
-  const atmo = ctx.createRadialGradient(x, y, r * 0.96, x, y, r * 1.18);
-  atmo.addColorStop(0, rgba(mix(color, "#ffffff", 0.3), 0.5));
+  // A close-up world keeps a thin limb glow, not a bubble: the texture is the point at this range.
+  const atmoA = r > 40 ? 0.24 : 0.42;
+  const atmo = ctx.createRadialGradient(x, y, r * 0.96, x, y, r * 1.13);
+  atmo.addColorStop(0, rgba(mix(color, "#ffffff", 0.3), atmoA));
   atmo.addColorStop(1, "rgba(5,8,15,0)");
   ctx.fillStyle = atmo;
   ctx.beginPath();
-  ctx.arc(x, y, r * 1.16, 0, Math.PI * 2);
+  ctx.arc(x, y, r * 1.12, 0, Math.PI * 2);
   ctx.fill();
 
   // Some worlds carry a ring; the near half is drawn over the disc so it reads as a ring, not a halo.
@@ -2340,6 +2566,53 @@ function moonClassOf(seed: number): MoonClass {
  * decides its haze, its palette and its surface marks. Mastery still rides on top — the filled core
  * and the arc around the limb — so looks never stand in for evidence.
  */
+/**
+ * Pre-rendered galaxy sprite: a soft disc, a spiral of bright points and a hot nucleus. Eighteen of
+ * these are drawn once and blitted thousands of times, which is what makes an endless deep field
+ * cheap enough to stay smooth.
+ */
+function galaxySprite(hue: string, arms: number, seed: number): HTMLCanvasElement {
+  const size = 192;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const g = canvas.getContext("2d")!;
+  const cx = size / 2;
+  const cy = size / 2;
+  const halo = g.createRadialGradient(cx, cy, 0, cx, cy, size / 2);
+  halo.addColorStop(0, rgba(hue, 0.5));
+  halo.addColorStop(0.22, rgba(hue, 0.2));
+  halo.addColorStop(0.55, rgba(hue, 0.06));
+  halo.addColorStop(1, rgba(hue, 0));
+  g.fillStyle = halo;
+  g.beginPath();
+  g.arc(cx, cy, size / 2, 0, Math.PI * 2);
+  g.fill();
+
+  g.globalCompositeOperation = "lighter";
+  const dots = 760;
+  for (let i = 0; i < dots; i += 1) {
+    const t = Math.pow(hash01(i, seed), 0.55);
+    const arm = i % arms;
+    const theta = t * Math.PI * 5.2 + (arm / arms) * Math.PI * 2 + (hash01(i, seed + 1) - 0.5) * 0.55;
+    const rad = (0.07 + t * 0.93) * size * 0.45;
+    const x = cx + Math.cos(theta) * rad;
+    const y = cy + Math.sin(theta) * rad * 0.66;
+    g.fillStyle = hash01(i, seed + 2) > 0.9 ? "rgba(255,255,255,0.9)" : rgba(hue, 0.45 + hash01(i, seed + 3) * 0.45);
+    const s = 0.7 + hash01(i, seed + 4) * 1.3;
+    g.fillRect(x, y, s, s);
+  }
+  const core = g.createRadialGradient(cx, cy, 0, cx, cy, size * 0.15);
+  core.addColorStop(0, "rgba(255,255,255,0.95)");
+  core.addColorStop(0.35, rgba(hue, 0.55));
+  core.addColorStop(1, rgba(hue, 0));
+  g.fillStyle = core;
+  g.beginPath();
+  g.arc(cx, cy, size * 0.15, 0, Math.PI * 2);
+  g.fill();
+  return canvas;
+}
+
 function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, tier: MasteryTier, selected: boolean, seed: number): void {
   const ring = masteryRing(tier);
   const kind = moonClassOf(seed);
@@ -2367,7 +2640,11 @@ function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number
   ctx.fillStyle = body;
   ctx.fill();
 
-  if (r > 3) {
+  // A real moon map over the shaded body: craters, ice fractures and sulphur plains instead of
+  // painted marks. Small bodies keep the painted surface, where a texture cannot resolve.
+  const textured = r > 4.5 && drawTexturedDisc(ctx, x, y, r, moonMap(seed), look.base, hash01(seed, 3) * 6.28, 1);
+
+  if (r > 3 && !textured) {
     ctx.save();
     ctx.beginPath();
     ctx.arc(x, y, r * 0.99, 0, Math.PI * 2);
@@ -2512,4 +2789,212 @@ function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number
 /** Exposed for tests and the Index deep links. */
 export function tierOf(state: Parameters<typeof evidenceIndex>[0], id: string): MasteryTier {
   return masteryTier(evidenceIndex(state), id);
+}
+
+/**
+ * A galaxy's nucleus: a black hole with a tilted accretion disc, orbiting hot spots and a lensed
+ * photon ring. The youngest galaxy also fires relativistic jets, so a quasar reads differently from
+ * a quiet spiral at a glance.
+ */
+function drawGalaxyCore(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  r: number,
+  tint: string,
+  alpha: number,
+  t: number,
+  jets: boolean,
+): void {
+  if (alpha <= 0 || r < 1.2) return;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.globalAlpha = alpha;
+  if (jets) {
+    for (const dir of [-1, 1]) {
+      const reach = r * (5.5 + Math.sin(t * 0.6 + dir) * 0.4);
+      const jet = ctx.createLinearGradient(0, 0, 0, dir * reach);
+      jet.addColorStop(0, "rgba(214,232,255,0.55)");
+      jet.addColorStop(0.4, "rgba(140,178,255,0.22)");
+      jet.addColorStop(1, "rgba(140,178,255,0)");
+      ctx.fillStyle = jet;
+      ctx.beginPath();
+      ctx.moveTo(-r * 0.22, 0);
+      ctx.lineTo(0, dir * reach);
+      ctx.lineTo(r * 0.22, 0);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+  ctx.rotate(-0.34 + Math.sin(t * 0.04) * 0.05);
+  // Disc: an outer cool ring, an inner hot one, and a thin bright rim.
+  for (let i = 0; i < 3; i += 1) {
+    ctx.strokeStyle = i === 0 ? `rgba(255,196,124,${0.5})` : i === 1 ? `rgba(180,206,255,${0.34})` : rgba(tint, 0.26);
+    ctx.lineWidth = Math.max(0.5, r * (0.16 - i * 0.04));
+    ctx.beginPath();
+    ctx.ellipse(0, 0, r * (2.1 + i * 0.55), r * (0.52 + i * 0.15), 0, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+  for (let i = 0; i < 7; i += 1) {
+    const a = t * 0.5 + (i / 7) * Math.PI * 2;
+    const rad = r * (1.5 + hash01(i, 41) * 1.1);
+    ctx.fillStyle = `rgba(255,${205 + Math.round(hash01(i, 43) * 45)},170,0.55)`;
+    ctx.beginPath();
+    ctx.arc(Math.cos(a) * rad, Math.sin(a) * rad * 0.3, Math.max(0.4, r * 0.075), 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.strokeStyle = "rgba(255,244,224,0.85)";
+  ctx.lineWidth = Math.max(0.5, r * 0.06);
+  ctx.beginPath();
+  ctx.ellipse(0, 0, r * 1.16, r * 0.8, 0, 0, Math.PI * 2);
+  ctx.stroke();
+  const hole = ctx.createRadialGradient(0, 0, 0, 0, 0, r);
+  hole.addColorStop(0, "rgba(0,0,0,1)");
+  hole.addColorStop(0.8, "rgba(2,3,9,1)");
+  hole.addColorStop(1, "rgba(22,28,52,0.92)");
+  ctx.fillStyle = hole;
+  ctx.beginPath();
+  ctx.arc(0, 0, r, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+const UNIVERSE_CELL = 900_000;
+const UNIVERSE_WRAP = 2_700_000;
+const UNIVERSE_EDGE = 330_000;
+
+/**
+ * The lattice one step above galaxies. Each cell is a universe holding a cluster of galaxies; the
+ * cells repeat in every direction, and past ~140,000 units each one draws as a wireframe cube, so
+ * continuing to zoom out shows a three-dimensional lattice instead of empty space.
+ */
+function drawUniverseLattice(
+  ctx: CanvasRenderingContext2D,
+  cam: Camera,
+  width: number,
+  height: number,
+  t: number,
+): void {
+  const fade = Math.min(1, (cam.distance - 45_000) / 35_000);
+  if (fade <= 0) return;
+  ctx.save();
+  for (let i = -1; i <= 1; i += 1) {
+    for (let j = -1; j <= 1; j += 1) {
+      for (let k = -1; k <= 1; k += 1) {
+        const anchor = wrapPoint({ x: i * UNIVERSE_CELL, y: j * UNIVERSE_CELL, z: k * UNIVERSE_CELL }, cam, UNIVERSE_WRAP);
+        const p = project(anchor, cam, width, height);
+        if (!p) continue;
+        const radius = (UNIVERSE_EDGE * FOCAL) / Math.max(1, p.depth);
+        if (radius < 3) continue;
+        if (p.sx < -radius * 3 || p.sx > width + radius * 3 || p.sy < -radius * 3 || p.sy > height + radius * 3) continue;
+        const salt = (i + 2) * 17 + (j + 2) * 31 + (k + 2) * 53;
+        // The galaxies inside this universe: a cluster of bright points, denser at the core.
+        ctx.globalCompositeOperation = "lighter";
+        for (let g = 0; g < 34; g += 1) {
+          const a = hash01(g, salt + 7) * Math.PI * 2;
+          const d = Math.pow(hash01(g, salt + 11), 0.62) * radius * 0.8;
+          const gx = p.sx + Math.cos(a) * d;
+          const gy = p.sy + Math.sin(a) * d * 0.7;
+          const hue = DEEP_HUES[g % DEEP_HUES.length] ?? "#7ea4ff";
+          ctx.globalAlpha = fade * (0.28 + hash01(g, salt + 13) * 0.45);
+          ctx.fillStyle = hue;
+          ctx.beginPath();
+          ctx.arc(gx, gy, Math.max(0.7, radius * 0.014), 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.globalCompositeOperation = "source-over";
+        ctx.globalAlpha = fade * 0.7;
+        const birth = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, radius * 0.3);
+        birth.addColorStop(0, "rgba(255,255,255,0.5)");
+        birth.addColorStop(1, "rgba(255,255,255,0)");
+        ctx.fillStyle = birth;
+        ctx.beginPath();
+        ctx.arc(p.sx, p.sy, radius * 0.3, 0, Math.PI * 2);
+        ctx.fill();
+        // Cube: the next zoom step. Twelve edges, projected, faint enough to sit behind the galaxies.
+        if (radius > 26) {
+          const corners: { x: number; y: number }[] = [];
+          for (const sx of [-1, 1]) {
+            for (const sy of [-1, 1]) {
+              for (const sz of [-1, 1]) {
+                const cp = project(
+                  { x: anchor.x + sx * UNIVERSE_EDGE, y: anchor.y + sy * UNIVERSE_EDGE, z: anchor.z + sz * UNIVERSE_EDGE },
+                  cam,
+                  width,
+                  height,
+                );
+                corners.push(cp ? { x: cp.sx, y: cp.sy } : { x: p.sx, y: p.sy });
+              }
+            }
+          }
+          const idx = (a: number, b: number, c: number): number => (a * 4 + b * 2 + c);
+          const edges: [number, number][] = [];
+          for (let a1 = 0; a1 < 2; a1 += 1) {
+            for (let b1 = 0; b1 < 2; b1 += 1) {
+              for (let c1 = 0; c1 < 2; c1 += 1) {
+                if (a1 === 0) edges.push([idx(0, b1, c1), idx(1, b1, c1)]);
+                if (b1 === 0) edges.push([idx(a1, 0, c1), idx(a1, 1, c1)]);
+                if (c1 === 0) edges.push([idx(a1, b1, 0), idx(a1, b1, 1)]);
+              }
+            }
+          }
+          ctx.strokeStyle = "rgba(140,178,255,0.16)";
+          ctx.lineWidth = Math.max(0.6, Math.min(1.6, radius * 0.012));
+          ctx.beginPath();
+          for (const [a1, b1] of edges) {
+            const ca = corners[a1];
+            const cb = corners[b1];
+            if (!ca || !cb) continue;
+            ctx.moveTo(ca.x, ca.y);
+            ctx.lineTo(cb.x, cb.y);
+          }
+          ctx.stroke();
+        }
+        if (i === 0 && j === 0 && k === 0) {
+          ctx.globalAlpha = fade * 0.8;
+          ctx.fillStyle = "rgba(200,216,246,0.75)";
+          ctx.font = '600 10px "JetBrains Mono", ui-monospace, monospace';
+          ctx.textAlign = "center";
+          ctx.fillText("THIS UNIVERSE", p.sx, p.sy + radius * 1.5 + 14 + Math.sin(t * 0.8) * 1.5);
+        }
+        ctx.globalAlpha = 1;
+      }
+    }
+  }
+  ctx.restore();
+}
+
+/**
+ * Near-field stars. A cube of points that wraps around the camera target, so approaching a system
+ * adds parallax and depth instead of leaving a black sheet behind the planets.
+ */
+function drawLocalStars(
+  ctx: CanvasRenderingContext2D,
+  cam: Camera,
+  width: number,
+  height: number,
+  distance: number,
+): void {
+  const wrap = 24_000;
+  const fade = Math.min(1, Math.max(0, (9_000 - distance) / 5_000));
+  if (fade <= 0) return;
+  ctx.save();
+  ctx.globalCompositeOperation = "lighter";
+  for (let i = 0; i < 520; i += 1) {
+    const anchor = {
+      x: (hash01(i, 601) - 0.5) * wrap,
+      y: (hash01(i, 607) - 0.5) * wrap,
+      z: (hash01(i, 613) - 0.5) * wrap,
+    };
+    const p = project(wrapPoint(anchor, cam, wrap), cam, width, height);
+    if (!p || p.depth < 40) continue;
+    if (p.sx < 0 || p.sx > width || p.sy < 0 || p.sy > height) continue;
+    const bright = 0.2 + Math.pow(hash01(i, 617), 2.2) * 0.8;
+    ctx.globalAlpha = fade * bright * Math.min(1, 900 / p.depth);
+    ctx.fillStyle = hash01(i, 619) > 0.86 ? "#ffe9c9" : hash01(i, 623) > 0.7 ? "#cfe0ff" : "#ffffff";
+    const s = hash01(i, 629) > 0.94 ? 2 : 1.2;
+    ctx.fillRect(p.sx, p.sy, s, s);
+  }
+  ctx.globalAlpha = 1;
+  ctx.restore();
 }

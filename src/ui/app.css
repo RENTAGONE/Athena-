@@ -1587,3 +1587,4 @@ html.athena-zen .main.full { inset: 0; }
 .atlas-lock .dot { width: 7px; height: 7px; border-radius: 50%; box-shadow: 0 0 9px currentColor; }
 .atlas-lock strong { color: var(--text-primary); font-weight: 600; }
 @media (max-width: 720px) { .atlas-lock { top: auto; bottom: 96px; left: 12px; right: 12px; justify-content: space-between; z-index: 9; } }
+.galaxy-chip .dot[data-galaxy="universe"] { background: #e9f0ff; color: #e9f0ff; }

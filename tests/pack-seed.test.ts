@@ -143,3 +143,28 @@ test("a revised draft body commits without a content_version bump; approved cont
   assert.equal(refused.ok, false);
   assert.ok(refused.issues.some((i) => i.code === "content_conflict"), "an approved record needs a bumped content_version");
 });
+
+test("a revised draft relationship commits as a revision, with its stored version moved forward", async () => {
+  const deps = makeDeps();
+  const store = new MemoryStore(emptyState("device-seed"));
+  await commitPlan(store, await buildPlan(await store.load(), pack(), deps), "approve", deps);
+
+  // The other half of the 18-micro-skill bug: a revised record also revises the links shipped with it.
+  // Those links carry the same content_version, so they must be accepted by the same authoring path.
+  const revised = packToPackages(f, "pack-kb-edge-revision", "2026-11-19T00:00:00Z");
+  const rel = (revised.relationships ?? [])[0]!;
+  rel["rationale"] = "revised rationale from the KB revision";
+  const strict = await buildPlan(await store.load(), revised, deps);
+  assert.equal(strict.ok, false, "a plain import still refuses to overwrite a draft link silently");
+  assert.ok(strict.issues.some((i) => i.code === "content_conflict"));
+
+  const plan = await buildPlan(await store.load(), revised, deps, { allowDraftRevision: true });
+  assert.equal(plan.ok, true, JSON.stringify(plan.issues.filter((i) => i.severity === "error").slice(0, 3)));
+  assert.ok(plan.items.some((i) => i.table === "edges" && i.action === "update"), "the revised link is planned as an update");
+  assert.equal((await commitPlan(store, plan, "approve", deps)).committed, true);
+
+  const after = await store.load();
+  const found = Object.values(after.edges).find((e) => e.body["rationale"] === "revised rationale from the KB revision");
+  assert.ok(found, "the revised link is stored");
+  assert.equal(found!.content_version, 2, "the stored link version moves forward even without a bump");
+});

@@ -197,7 +197,12 @@ export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: Impo
   const nodeActions = new Map<string, "create" | "update" | "noop">();
   /** Drafts that differ without a version bump: real authoring revisions, counted for the preview. */
   let draftRevisions = 0;
-  const isDraft = (v: unknown): boolean => String(v ?? "draft").toLowerCase() === "draft";
+  /**
+   * Authoring may revise anything that is not yet published. A record in review, marked for revision
+   * or still a draft is work in progress; approved, retired, deprecated and archived content is not,
+   * and still needs a bumped content_version before it can be replaced.
+   */
+  const isAuthorable = (v: unknown): boolean => !/^(approved|retired|deprecated|archived)$/.test(String(v ?? "draft").toLowerCase());
   for (const w of wanted) {
     const entry = state.codes[w.code];
     if (!entry) {
@@ -219,18 +224,10 @@ export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: Impo
     // content_version is still incremented, so the change is a visible revision rather than a silent
     // overwrite. Approved content keeps the strict no-last-write-wins rule below.
     else if (((w.rec["content_version"] as number | undefined) ?? 1) > existing.content_version) nodeActions.set(w.code, "update");
-    else if (options.allowDraftRevision === true && isDraft(existing.status) && isDraft(w.rec["status"])) {
+    else if (options.allowDraftRevision === true && isAuthorable(existing.status) && isAuthorable(w.rec["status"])) {
       nodeActions.set(w.code, "update");
       draftRevisions += 1;
     } else err("content_conflict", `${w.path}`, `code '${w.code}' exists with different content and content_version ${(w.rec["content_version"] as number | undefined) ?? 1} does not exceed ${existing.content_version}; no last-write-wins`);
-  }
-  if (draftRevisions > 0) {
-    issues.push({
-      severity: "info",
-      code: "draft_revision",
-      path: "$",
-      message: `${draftRevisions} draft record${draftRevisions === 1 ? " differs" : "s differ"} without a content_version bump; ${draftRevisions === 1 ? "it is" : "they are"} replaced and the stored content_version increments by one`,
-    });
   }
 
   // 3. Edges: explicit first, then implied.
@@ -380,9 +377,23 @@ export async function buildPlan(state: DbState, pkg: ExchangePackage, deps: Impo
     if (ex) {
       if (canonicalJson(ex.body) === canonicalJson(e.rec)) action = "noop";
       else if (((e.rec["content_version"] as number | undefined) ?? 1) > ex.content_version) action = "update";
-      else err("content_conflict", e.path, `relationship ${e.type} ${e.src} -> ${e.tgt} exists with different content and content_version does not exceed ${ex.content_version}`);
+      // A revised draft also revises the links embedded in it: a micro-skill whose skill_links change
+      // yields different SUPPORTS edges at the same version. The authoring path accepts those too, so
+      // "18 revised drafts" cannot leave 18 unfixable edge conflicts behind after the nodes are accepted.
+      else if (options.allowDraftRevision === true && isAuthorable(ex.status) && isAuthorable(e.rec["status"])) {
+        action = "update";
+        draftRevisions += 1;
+      } else err("content_conflict", e.path, `relationship ${e.type} ${e.src} -> ${e.tgt} exists with different content and content_version does not exceed ${ex.content_version}`);
     }
     items.push({ action, table: "edges", code: e.code, label: `${e.type}: ${e.src} -> ${e.tgt}${e.implied ? " (from embedded link)" : ""}` });
+  }
+  if (draftRevisions > 0) {
+    issues.push({
+      severity: "info",
+      code: "draft_revision",
+      path: "$",
+      message: `${draftRevisions} draft record${draftRevisions === 1 ? " differs" : "s differ"} without a content_version bump; ${draftRevisions === 1 ? "it is" : "they are"} replaced and the stored content_version increments by one`,
+    });
   }
   evList.forEach((ev, i) => items.push({ action: evActions[i] ?? "noop", table: "evidence", code: null, label: `${ev.evidence_class} on ${(ev.target_ids ?? []).join(", ")}` }));
   const ok = !issues.some((i) => i.severity === "error");
@@ -438,7 +449,10 @@ export async function materialise(state: DbState, plan: ImportPlan, deps: Import
     if (found && canonicalJson(found.body) === canonicalJson(r)) continue;
     const base = { relation_type: e.type, source_id: src, target_id: tgt, status: String(r["status"] ?? "draft").toLowerCase(), strength: s(r["strength"]), gating: String(r["gating"] ?? "none"), owner_discipline_id: e.owner, rationale: s(r["rationale"]), hard_gate_justification: s(r["hard_gate_justification"]), content_version: (r["content_version"] as number | undefined) ?? 1, is_sample: isSample, extensions: {}, body: r };
     if (found) {
-      ops.push({ table: "edges", key: found.id, before: found, after: { ...found, ...base, version: found.version + 1, provenance: prov, updated_at: now } });
+      // An accepted draft revision still moves the stored version forward, exactly like a node, so
+      // the same number never stands for two different bodies.
+      const edgeVersion = Math.max(found.content_version + 1, base.content_version);
+      ops.push({ table: "edges", key: found.id, before: found, after: { ...found, ...base, content_version: edgeVersion, version: found.version + 1, provenance: prov, updated_at: now } });
       continue;
     }
     const id = deps.ids.next();

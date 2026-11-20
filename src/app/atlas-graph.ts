@@ -36,8 +36,10 @@ export const GALAXY_RADIUS = 6500;
 export const MIN_STAR_SEPARATION = 2400;
 /** Closest orbit: low-orbit inspection of an asteroid or satellite. */
 export const MIN_DISTANCE = 28;
-/** Furthest orbit: the multi-galaxy cluster view. */
-export const MAX_DISTANCE = 24_000;
+/** Furthest orbit: the deep field has no edge, so the camera may keep going out. */
+export const MAX_DISTANCE = 900_000;
+/** Orbit where the three local galaxies are individual islands inside the deep field. */
+export const UNIVERSE_DISTANCE = 52_000;
 /** Beyond this the other galaxies are drawn as bodies in their own right. */
 export const MACRO_DISTANCE = 3200;
 /** Hyperspace warp duration, in milliseconds. */
@@ -354,6 +356,44 @@ export const GALAXY_CLUSTERS: GalaxyCluster[] = [
 export function clusterByKey(key: GalaxyKey): GalaxyCluster {
   return GALAXY_CLUSTERS.find((c) => c.key === key) ?? GALAXY_CLUSTERS[0]!;
 }
+
+export interface DeepGalaxy {
+  anchor: Vec3;
+  radius: number;
+  tilt: number;
+  yaw: number;
+  hue: string;
+  /** Which pre-rendered sprite variant draws this galaxy (hue × arm count). */
+  sprite: number;
+  brightness: number;
+}
+
+export const DEEP_HUES = ["#7ea4ff", "#a78bfa", "#63d2b8", "#ffc66d", "#f29bd0", "#8fa8c8"];
+/** The deep field tiles inside this cube, wrapped around the camera target, so it never runs out. */
+export const DEEP_WRAP = 260_000;
+
+/**
+ * The deep field: deterministic galaxies beyond the local cluster, so scrolling out never ends in
+ * empty sky. Positions, sizes and spins are seeded, so the same sky comes back every visit; nothing
+ * here stands in for a record count and nothing is claimed about the learner.
+ */
+export const DEEP_GALAXIES: DeepGalaxy[] = Array.from({ length: 1000 }, (_, i) => {
+  const radius = 700 + Math.pow(hash01(i, 304), 2.6) * 3600;
+  return {
+    // Uniform inside the wrap cube: panning or zooming out always reveals more sky, never an edge.
+    anchor: v3(
+      (hash01(i, 301) - 0.5) * DEEP_WRAP,
+      (hash01(i, 302) - 0.5) * DEEP_WRAP * 0.62,
+      (hash01(i, 303) - 0.5) * DEEP_WRAP,
+    ),
+    radius,
+    tilt: (hash01(i, 305) - 0.5) * 1.3,
+    yaw: hash01(i, 306) * Math.PI * 2,
+    hue: DEEP_HUES[i % DEEP_HUES.length]!,
+    sprite: (i % DEEP_HUES.length) * 3 + (i % 3),
+    brightness: 0.3 + hash01(i, 307) * 0.42,
+  };
+});
 
 /** A jump is a warp only when it crosses a real distance, not when it nudges the camera. */
 export function isHyperspaceJump(from: Vec3, to: Vec3): boolean {

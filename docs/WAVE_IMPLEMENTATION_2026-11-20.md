@@ -109,3 +109,47 @@ a real browser against the seeded Pack v1.0 store (1,201 records, 1,125 relation
 | Visual pass | **Delivered** | Star diffraction spikes, more saturated stellar cores, a bright nucleus and two slow dust arms on the mapped core galaxy, and Frontier/Vault sized so the cluster reads as three galaxies rather than one web plus a smudge. |
 
 Not done in this pass: creating records from a blank form (branching a micro-skill is the only create path), and the Playwright end-to-end suite still cannot run here (missing `libnspr4`/`libnss3` and no sudo).
+
+## Deep-field zoom, smooth camera and readable worlds (second visual pass)
+
+- Zoom range: `MAX_DISTANCE` is now 90,000 units and there is an explicit **Universe** chip that warps to
+  52,000, where the local cluster sits inside a seeded deep field of 56 galaxies (each with its own tilt,
+  hue and spiral points). Wheel and pinch now move a target that the render loop eases toward, so zooming
+  in and out is a continuous glide rather than a stack of jumps.
+- Phenomena keep a minimum pixel size, so black holes and quasars are visible at cluster range instead of
+  collapsing into a two-pixel smudge; their companion offset is capped so the horizon never covers the star.
+- Planets get opaque surfaces (translucent worlds read as glass when they overlap), cloud belts, a size cap
+  relative to their star, no giant "glass hoop" rings past 26 px, and no transit smudges across the
+  photosphere at close range. Moons are capped relative to their planet.
+- Constellations are drawn as figures: five stars joined by thin segments inside their ring, not loose dots.
+- Hyperspace warp: two streak layers plus outward shuttle rings and a brighter core flash.
+
+## Pass 4 — texturing, scale ladder, and the revision rule completed (2026-11-20)
+
+**Body textures.** Forty generated surface maps ship in `src/assets/textures` (15 worlds, 10 moons,
+15 stellar photospheres, 852 KB as 320 px WebP). `src/ui/textures.ts` wraps each flat map onto a lit
+disc: the map is tinted in the record's discipline colour (canvas `color` + `multiply`, cached per
+map + tint), scrolled sideways for rotation, then given limb darkening and a terminator. Planets,
+moons and — at surface range — stars use them; the painted surfaces remain as the fallback for the
+first frames while a map decodes and for bodies too small to resolve a texture.
+
+**Scale ladder.** Galaxy nuclei now draw as supermassive black holes: tilted accretion disc, orbiting
+hot spots, lensed photon ring, and relativistic jets on the Frontier (quasar). Past 45,000 units the
+camera leaves the local group and `drawUniverseLattice` draws 27 wrapping universe cells, each with
+its own cluster of galaxies; past ~140,000 units each cell draws its wireframe cube, so continuing to
+zoom out shows a three-dimensional lattice instead of a single blob. A 520-star near-field volume
+fills the sky at surface range, where the far star sphere is behind the camera.
+
+**Claim a system.** Selecting a system offers *Make this my Athena*; the choice is stored in
+`localStorage` as `athena.home.system`, and that star draws a gold ring labelled MY ATHENA on every
+later visit.
+
+**The 18-micro-skill revision bug, finished.** The node rule was fixed in pass 3, but a revised
+record also revises the links embedded in it (`SUPPORTS`, `PREREQUISITE_FOR`), and those edges still
+failed at the same `content_version`. `allowDraftRevision` now accepts draft edges too, and the
+stored edge version is bumped on write, so the version number never stands for two different bodies.
+The rule is "not yet published", not just "draft": records in review or marked for revision can be
+revised; approved, retired, deprecated and archived records still require a bumped version. The
+bundled seed also takes its package id from its own content hash, so a rebuilt bundle is a new
+package rather than a reused id with different content, and Studio previews it with revisions
+already allowed. Covered by `tests/pack-seed.test.ts` (draft node revisions and draft edge revisions).

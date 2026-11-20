@@ -43,5 +43,15 @@ export async function loadSeedPackage(): Promise<ExchangePackage> {
     relationTypes: relationTypes as unknown as Record<string, unknown>,
     namespaces: namespaces as unknown as Record<string, unknown>,
   };
-  return packToPackages(files, "pack-v1.0-kb-v3.28", "2026-11-17T00:00:00Z");
+  const pkg = packToPackages(files, "pack-v1.0-kb-v3.28", "2026-11-17T00:00:00Z");
+  // The seed's package id carries its own content hash. A rebuilt bundle is therefore a new package
+  // rather than a reused id with different bodies, while an unchanged bundle keeps the same id and
+  // re-imports as a no-op.
+  let h = 2166136261;
+  const text = JSON.stringify(pkg);
+  for (let i = 0; i < text.length; i += 1) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619) >>> 0;
+  }
+  return { ...pkg, package_id: `pack-v1.0-kb-v3.28-${h.toString(36)}` };
 }

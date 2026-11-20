@@ -180,7 +180,7 @@ export function ImportPanel({ seed = false }: { seed?: boolean }): ReactNode {
         <div className="panel rail">
           <span className="label">Bundled Pack v1.0 seed</span>
           <p style={{ marginTop: 8 }}>The content owner’s canonical pack plus the KB v3.28 working tier ships inside the app. Preview it to see the exact create/update tally before anything is written.</p>
-          <button className="btn primary" disabled={busy} onClick={() => void loadSeedPackage().then(preview)}>Preview the draft seed</button>
+          <button className="btn primary" disabled={busy} onClick={() => void loadSeedPackage().then((p) => preview(p, true))}>Preview the draft seed</button>
         </div>
       )}
       <p>Paste a package produced by ChatGPT, Gemini or any other tool, or choose a file. ATHENA validates it and shows a preview. Nothing is written until you approve.</p>
@@ -197,9 +197,9 @@ export function ImportPanel({ seed = false }: { seed?: boolean }): ReactNode {
           <IssueList issues={plan.issues} />
           {!plan.ok && plan.issues.some((i) => i.code === "content_conflict") && (
             <div className="panel flat" style={{ marginTop: 10 }}>
-              <p style={{ margin: 0 }}>Some records differ from the stored copy without a higher content_version. A package never overwrites silently — but if these are revisions of drafts you authored, you can accept them explicitly.</p>
+              <p style={{ margin: 0 }}>Some records differ from the stored copy without a higher content_version. A package never overwrites silently — but if these are revisions of drafts, you can accept them explicitly. This covers the links embedded in a revised record too, so accepting 18 revised micro-skills also accepts their changed SUPPORTS and PREREQUISITE_FOR edges.</p>
               <button className="btn" disabled={busy} style={{ marginTop: 10 }} onClick={() => void preview(plan.pkg!, true)}>Accept changed drafts as revisions</button>
-              <p className="hint" style={{ marginTop: 8 }}>Only draft records are revised and each stored content_version increments. Approved records still require a bumped content_version.</p>
+              <p className="hint" style={{ marginTop: 8 }}>Only draft records and their draft links are revised, and each stored content_version increments. Approved records still require a bumped content_version.</p>
             </div>
           )}
           {plan.issues.some((i) => i.code === "draft_revision") && (
