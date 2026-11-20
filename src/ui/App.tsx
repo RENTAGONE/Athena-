@@ -1,13 +1,20 @@
 import { useCallback, useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { Layers, Orbit, Sun } from "lucide-react";
+import { Inbox as InboxIcon, Layers, Orbit, Settings, Sun } from "lucide-react";
 import { createRuntime, type Runtime } from "../app/runtime.ts";
 import type { DbState } from "../domain/types.ts";
 import { Ctx } from "./context.ts";
 import { ApertureMark } from "./ApertureMark.tsx";
+import { Boot } from "./Boot.tsx";
 import { Today, SkillDetail } from "./screens.tsx";
 import { Knowledge } from "./AtlasCanvas.tsx";
 import { Studio } from "./studio.tsx";
+import { InboxScreen } from "./Inbox.tsx";
+import { LessonScreen } from "./Lesson.tsx";
+import { SettingsScreen } from "./Settings.tsx";
+import { ArchitectScreen } from "./Architect.tsx";
+import { getPrefs } from "./prefs.ts";
+import { applyUpdate, isUpdateReady, subscribeUpdate, watchForUpdate } from "./update.ts";
 
 function useHashRoute(): string {
   const read = (): string => window.location.hash.slice(1) || "/today";
@@ -25,7 +32,19 @@ export function App(): ReactNode {
   const [rt, setRt] = useState<Runtime | null>(null);
   const [state, setState] = useState<DbState | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [updateReady, setUpdateReady] = useState(false);
+  const [updateReady, setUpdateReady] = useState(isUpdateReady);
+  const [updateDismissed, setUpdateDismissed] = useState(false);
+  const [boot, setBoot] = useState(() => {
+    const prefs = getPrefs();
+    if (!prefs.boot || !prefs.motion) return false;
+    try {
+      if (window.sessionStorage.getItem("athena.booted") === "1") return false;
+      window.sessionStorage.setItem("athena.booted", "1");
+    } catch {
+      return false;
+    }
+    return true;
+  });
 
   useEffect(() => {
     createRuntime()
@@ -34,9 +53,18 @@ export function App(): ReactNode {
         setState(await r.store.load());
       })
       .catch((e: Error) => setError(e.message));
-    const f = (): void => setUpdateReady(true);
+    const f = (): void => setUpdateReady(isUpdateReady());
     window.addEventListener("athena-update-ready", f);
-    return () => window.removeEventListener("athena-update-ready", f);
+    const unsubscribe = subscribeUpdate(f);
+    let stopWatching = (): void => {};
+    void watchForUpdate().then((stop) => {
+      stopWatching = stop;
+    });
+    return () => {
+      window.removeEventListener("athena-update-ready", f);
+      unsubscribe();
+      stopWatching();
+    };
   }, []);
 
   const refresh = useCallback(async (): Promise<void> => {
@@ -61,49 +89,77 @@ export function App(): ReactNode {
   }
 
   const isAtlas = route === "/knowledge" || route === "/knowledge/";
+  const learnCode = route.startsWith("/learn/") ? decodeURIComponent(route.slice("/learn/".length)) : null;
   const page = route.startsWith("/knowledge/") ? (
     <SkillDetail code={decodeURIComponent(route.slice("/knowledge/".length))} />
-  ) : route.startsWith("/knowledge") ? (
+  ) : isAtlas ? (
     <Knowledge />
+  ) : learnCode ? (
+    <LessonScreen code={learnCode} />
+  ) : route.startsWith("/studio/architect") ? (
+    <ArchitectScreen />
   ) : route.startsWith("/studio") ? (
     <Studio tab={route.endsWith("/backup") ? "backup" : "updates"} />
+  ) : route.startsWith("/inbox") ? (
+    <InboxScreen />
+  ) : route.startsWith("/settings") ? (
+    <SettingsScreen />
   ) : (
     <Today />
   );
-  const cur = (p: string): "page" | undefined => (route.startsWith(p) ? "page" : undefined);
+  const pageIs = (...prefixes: string[]): "page" | undefined => (prefixes.some((p) => route.startsWith(p)) ? "page" : undefined);
 
   return (
     <Ctx.Provider value={{ rt, state, refresh }}>
-      <div className="shell">
-        {updateReady && (
+      <div className="shell" data-atlas={isAtlas ? "true" : undefined}>
+        {boot && <Boot onDone={() => setBoot(false)} />}
+        {updateReady && !updateDismissed && (
           <div className="banner" role="status">
             <span className="grow">A new version is ready. Updating does not change your data.</span>
-            <button className="btn" onClick={() => void window.__athenaUpdate?.()}>Update now</button>
+            <button className="btn primary" onClick={() => void applyUpdate()}>Update now</button>
+            <button className="btn ghost sm" onClick={() => setUpdateDismissed(true)}>Later</button>
           </div>
         )}
         <header className="brandrail">
           <a href="#/today" aria-label="ATHENA home">
-            <ApertureMark variant="primary" size={46} />
+            <ApertureMark variant="primary" size={44} />
           </a>
-          <span className="rail-sub">Cognitive Atlas</span>
+          <span className="rail-sub">Cognitive Atlas<br />Know · Learn · Achieve</span>
           <span className="rail-foot">
-            v1.0 pack · <span className="num">{Object.keys(state.nodes).length}</span> records
+            <span className="tag ok">v1.0 pack</span>
+            <br />
+            <span className="num">{Object.keys(state.nodes).length}</span> records ·{' '}
+            <span className="num">{Object.keys(state.edges).length}</span> links
           </span>
         </header>
         <div className="topbar">
-          <ApertureMark variant="compact" size={28} />
-          <span className="label">ATHENA · Cognitive Atlas</span>
+          <ApertureMark variant="compact" size={30} />
+          <span className="mark-word">
+            <span className="mark-name">ATHENA</span>
+            <span className="mark-tagline">Know · Learn · Achieve</span>
+          </span>
+          <span className="label">
+            <span className="num">{Object.keys(state.nodes).length}</span> records
+            <br />
+            <span className="num">{Object.keys(state.edges).length}</span> links
+          </span>
         </div>
         <main className={isAtlas ? "main full" : "main"}>{page}</main>
         <nav className="nav" aria-label="Environments">
-          <a href="#/today" aria-current={cur("/today")}>
+          <a href="#/today" aria-current={pageIs("/today")}>
             <Sun aria-hidden="true" strokeWidth={1.5} />Today
           </a>
-          <a href="#/knowledge" aria-current={cur("/knowledge")}>
+          <a href="#/inbox" aria-current={pageIs("/inbox")}>
+            <InboxIcon aria-hidden="true" strokeWidth={1.5} />Inbox
+          </a>
+          <a href="#/knowledge" aria-current={pageIs("/knowledge", "/learn")}>
             <Orbit aria-hidden="true" strokeWidth={1.5} />Knowledge
           </a>
-          <a href="#/studio/updates" aria-current={cur("/studio")}>
+          <a href="#/studio/updates" aria-current={pageIs("/studio")}>
             <Layers aria-hidden="true" strokeWidth={1.5} />Studio
+          </a>
+          <a href="#/settings" aria-current={pageIs("/settings")}>
+            <Settings aria-hidden="true" strokeWidth={1.5} />Settings
           </a>
         </nav>
       </div>

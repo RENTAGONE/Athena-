@@ -1,14 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Boxes, Check, ClipboardCheck, Clock, Database, Share2 } from "lucide-react";
 import { deriveCompetency, type CompetencyState } from "../domain/competency.ts";
 import type { EvidenceStored, NodeRecord, OutcomeValue } from "../domain/types.ts";
 import { confirmMastery, recordPractice } from "../app/activity.ts";
 import { evidenceIndex, masteryTier, nodeByCode, prerequisiteCount, todayView, MASTERY_TIERS, type MasteryTier } from "../app/selectors.ts";
-import { DISCIPLINE_BY_ID } from "./disciplines.ts";
+import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
 import { useApp } from "./context.ts";
+import { ApertureMark } from "./ApertureMark.tsx";
 import { Empty, Head, StatusTag, disciplineVar } from "./ui.tsx";
 import { ImportPanel } from "./studio.tsx";
+import { buildInbox } from "../app/engines/inbox.ts";
+import { buildRoutine, routineSummary } from "../app/engines/routine.ts";
+import { useEngineInput } from "./use-engine-input.ts";
+import { usePrefs } from "./prefs.ts";
+import { PageBack } from "./PageBack.tsx";
 
 const TIER_COLOR: Record<MasteryTier, string> = {
   unassessed: "var(--text-muted)",
@@ -23,126 +29,227 @@ const TIER_LABEL: Record<MasteryTier, string> = {
   mastered: "mastered",
 };
 
+const ROUTINE_KIND: Record<string, string> = { review: "retry", retention: "retention", practice: "practice", explore: "new" };
+
 export function Today(): ReactNode {
   const { state } = useApp();
   const index = useMemo(() => evidenceIndex(state), [state]);
   const view = useMemo(() => todayView(state, index), [state, index]);
+  const input = useEngineInput();
+  const prefs = usePrefs();
+  const routine = useMemo(() => buildRoutine(input, { minutes: prefs.minutesTarget }), [input, prefs.minutesTarget]);
+  const inbox = useMemo(() => buildInbox(input, state.receipts), [input, state.receipts]);
   const top = view.focus[0];
   const topMeta = top ? DISCIPLINE_BY_ID[top.discipline] : undefined;
+  const empty = view.counts.nodes === 0;
 
   return (
     <>
       <Head label={view.localDate} title="Today" />
-      <div className="workspace">
-        <div className="span-7">
-          <section className="panel rail">
-            <div className="row between">
-              <span className="label">Primary focus</span>
-              <span className="mono" style={{ color: "var(--text-muted)" }}>{view.isoDate}</span>
+      <div className="bento">
+        <section className="panel hero-card span-7">
+          <div className="hero-orb" aria-hidden="true">
+            <ApertureMark variant="primary" size={220} />
+          </div>
+          <div className="hero-top">
+            <div>
+              <span className="label">Knowledge Atlas</span>
+              <h2 className="hero-title">{empty ? "Your atlas is empty" : `${view.counts.nodes.toLocaleString()} records in your atlas`}</h2>
+              <p className="hero-sub">
+                {empty
+                  ? "Load the bundled pack to start: 18 disciplines, their domains, skill families and 156 practice protocols. Nothing is written until you approve the preview."
+                  : "Every record is local to this device. Mastery is derived from evidence you record, never from opening a page."}
+              </p>
             </div>
-            {top && topMeta ? (
-              <>
-                <h2 style={{ marginTop: 8 }}>{topMeta.name}</h2>
-                <p style={{ marginTop: 6 }}>
-                  <span className="num">{top.needsRevision}</span> records need revision · <span className="num">{top.demonstrated}</span> demonstrated · <span className="num">{top.total}</span> skills tracked.
-                </p>
-                <a className="btn" href="#/knowledge">Open the atlas<ArrowRight size={15} strokeWidth={1.5} aria-hidden="true" /></a>
-              </>
-            ) : (
-              <>
-                <h2 style={{ marginTop: 8 }}>No learning evidence yet</h2>
-                <p>Focus is derived from stored evidence, not from opening a page. Record a practice session on any skill and it appears here.</p>
-                <a className="btn" href="#/knowledge">Browse the catalogue</a>
-              </>
-            )}
-          </section>
+          </div>
+          <div className="stat-grid">
+            <div className="stat"><b>{view.counts.nodes.toLocaleString()}</b><span>records</span></div>
+            <div className="stat"><b>{view.counts.edges}</b><span>relations</span></div>
+            <div className="stat"><b>{view.counts.domains}</b><span>domains</span></div>
+          </div>
+          <div className="row wrap" style={{ marginTop: 16 }}>
+            <a className="btn primary" href="#/knowledge">Open the atlas<ArrowRight size={15} strokeWidth={1.5} aria-hidden="true" /></a>
+            {empty && <a className="btn" href="#/studio">Load the pack</a>}
+          </div>
+        </section>
 
-          <section className="panel">
-            <span className="label">Needs revision · <span className="num">{view.review.length}</span></span>
-            {view.review.length === 0 ? (
-              <p style={{ marginTop: 8 }} className="empty">Nothing is waiting for revision. A record enters this queue only when its latest scored outcome is “not demonstrated” or only partial.</p>
-            ) : (
-              <ul className="list" style={{ marginTop: 10 }}>
-                {view.review.slice(0, 8).map((it) => (
-                  <li key={it.node.id}>
-                    <a className="item" href={`#/knowledge/${encodeURIComponent(it.node.code)}`} style={{ ["--rail" as string]: disciplineVar(it.node.owner_discipline_id) }}>
-                      <span className="t">{it.node.title}</span>
-                      <span className="code mono">{it.node.code}</span>
-                      <span className="tag draft">{TIER_LABEL[it.tier]}</span>
+        <section className="panel rail span-5" style={{ ["--rail" as string]: topMeta ? topMeta.color : "var(--signal-blue)" }}>
+          <div className="row between">
+            <span className="label">Primary focus</span>
+            <span className="mono" style={{ color: "var(--text-muted)" }}>{view.isoDate}</span>
+          </div>
+          {top && topMeta ? (
+            <>
+              <h2 style={{ marginTop: 8 }}>{topMeta.name}</h2>
+              <p style={{ marginTop: 6 }}>
+                {top.needsRevision === 0 && top.demonstrated === 0
+                  ? <><span className="num">{top.total}</span> tracked records, none with evidence yet. A focus appears here once you record an outcome.</>
+                  : <><span className="num">{top.needsRevision}</span> need revision · <span className="num">{top.demonstrated}</span> demonstrated · <span className="num">{top.total}</span> tracked.</>}
+              </p>
+              <div className="chip-row">
+                {view.focus.slice(1, 5).map((f) => {
+                  const meta = DISCIPLINE_BY_ID[f.discipline];
+                  return <span className="disc-chip" key={f.discipline} style={{ ["--c" as string]: meta?.color }}><i />{meta?.short ?? f.discipline.replace("ATH-DISC-", "")}</span>;
+                })}
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 style={{ marginTop: 8 }}>{empty ? "No records yet" : "No learning evidence yet"}</h2>
+              <p>{empty ? "Preview and approve the bundled Pack v1.0 seed to load the catalogue." : "Focus is derived from stored evidence, not from opening a page. Record a practice session on any record and it appears here."}</p>
+              <a className="btn" href={empty ? "#/studio" : "#/knowledge"}>{empty ? "Load the pack" : "Browse the catalogue"}</a>
+            </>
+          )}
+        </section>
+
+        <section className="panel span-8 routine-card">
+          <div className="row between wrap">
+            <span className="label">Routine · {routineSummary(routine)}</span>
+            <span className="row" style={{ gap: 8 }}>
+              <span className="tag"><Clock size={12} strokeWidth={1.6} aria-hidden="true" /> {routine.date}</span>
+              <a className="btn sm ghost" href="#/settings">Length</a>
+            </span>
+          </div>
+          {routine.blocks.length === 0 ? (
+            <p className="empty" style={{ marginTop: 10 }}>{routine.note}</p>
+          ) : (
+            <>
+              <ol className="routine-list">
+                {routine.blocks.map((b) => (
+                  <li key={b.id}>
+                    <a className={`routine-row kind-${b.kind}`} href={`#/learn/${encodeURIComponent(b.code)}`}>
+                      <span className="routine-dot" aria-hidden="true" />
+                      <span className="routine-main">
+                        <strong>{b.title}</strong>
+                        <span className="empty">{b.reason}</span>
+                      </span>
+                      <span className="routine-meta">
+                        <b>{b.minutes}<small>min</small></b>
+                        <span>{ROUTINE_KIND[b.kind] ?? b.kind}</span>
+                      </span>
                     </a>
                   </li>
                 ))}
-              </ul>
-            )}
-          </section>
+              </ol>
+              <div className="row between wrap" style={{ marginTop: 12 }}>
+                <span className="empty">{routine.note}</span>
+                <a className="btn primary sm" href={`#/learn/${encodeURIComponent(routine.blocks[0]!.code)}`}>
+                  Start first block<ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />
+                </a>
+              </div>
+            </>
+          )}
+        </section>
 
-          <section className="panel">
-            <span className="label">Active learning · <span className="num">{view.active.length}</span></span>
-            {view.active.length === 0 ? (
-              <p style={{ marginTop: 8 }} className="empty">No skill has an independent demonstration yet. The conservative rules need evidence you produced without help.</p>
-            ) : (
-              <ul className="list" style={{ marginTop: 10 }}>
-                {view.active.slice(0, 8).map((it) => (
-                  <li key={it.node.id}>
-                    <a className="item" href={`#/knowledge/${encodeURIComponent(it.node.code)}`} style={{ ["--rail" as string]: disciplineVar(it.node.owner_discipline_id) }}>
-                      <span className="t">{it.node.title}</span>
-                      <span className="code mono">{it.node.code}</span>
-                      <span className="tag ok">{TIER_LABEL[it.tier]}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        </div>
+        <section className="panel span-4">
+          <div className="row between">
+            <span className="label">Inbox · <span className="num">{inbox.items.length}</span></span>
+            <a className="btn sm ghost" href="#/inbox">Open</a>
+          </div>
+          <ul className="inbox-mini">
+            <li><span>Retry</span><span className="num">{inbox.counts.revision}</span></li>
+            <li><span>Retention</span><span className="num">{inbox.counts.retention}</span></li>
+            <li><span>Review flags</span><span className="num">{inbox.counts.safety}</span></li>
+            <li><span>Draft records</span><span className="num">{inbox.counts.draft}</span></li>
+            <li><span>Import notices</span><span className="num">{inbox.counts.import}</span></li>
+          </ul>
+          <p className="empty" style={{ marginTop: 10 }}>Derived from evidence and receipts, never from page visits.</p>
+        </section>
 
-        <div className="span-5">
-          <section className="panel">
-            <span className="label">Local store · honest counts</span>
-            <dl className="kv" style={{ marginTop: 10 }}>
-              <dt>Records</dt><dd><span className="num">{view.counts.nodes}</span> knowledge records</dd>
-              <dt>Relations</dt><dd><span className="num">{view.counts.edges}</span> edges</dd>
-              <dt>Disciplines</dt><dd><span className="num">{view.counts.disciplines}</span> canonical</dd>
-              <dt>Domains</dt><dd><span className="num">{view.counts.domains}</span></dd>
-              <dt>Skills</dt><dd><span className="num">{view.counts.skills}</span> skill, subskill and micro-skill records</dd>
-              <dt>Evidence</dt><dd><span className="num">{view.counts.evidence}</span> records · <span className="num">{view.counts.scoredEvidence}</span> outcome-scored</dd>
-              <dt>Draft</dt><dd><span className="num">{view.counts.draft}</span> of <span className="num">{view.counts.nodes}</span> records</dd>
-              <dt>Last import</dt>
-              <dd>{view.lastImport ? `${new Date(view.lastImport.at).toLocaleString()} · ${view.lastImport.state}` : "none yet"}</dd>
-            </dl>
-          </section>
-
-          <section className="panel">
-            <span className="label">Projects by class</span>
-            <div className="stack" style={{ marginTop: 10 }}>
-              {view.projects.map((g) => (
-                <div key={g.key}>
-                  <div className="row between">
-                    <strong>{g.label}</strong>
-                    <span className="num" style={{ color: "var(--text-muted)" }}>{g.projects.length}</span>
-                  </div>
-                  <p style={{ margin: "2px 0 0" }}>{g.description}</p>
-                  {g.projects.length > 0 && (
-                    <ul className="list" style={{ marginTop: 6 }}>
-                      {g.projects.map((p) => (
-                        <li key={p.id} className="mono">{p.code} · {p.title}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+        <section className="panel span-6">
+          <span className="label">Needs revision · <span className="num">{view.review.length}</span></span>
+          {view.review.length === 0 ? (
+            <p style={{ marginTop: 8 }} className="empty">Nothing is waiting for revision. A record enters this queue only when its latest scored outcome is “not demonstrated” or only partial.</p>
+          ) : (
+            <ul className="list" style={{ marginTop: 12 }}>
+              {view.review.slice(0, 6).map((it) => (
+                <li key={it.node.id}>
+                  <a className="item" href={`#/knowledge/${encodeURIComponent(it.node.code)}`} style={{ ["--rail" as string]: disciplineVar(it.node.owner_discipline_id) }}>
+                    <span className="t">{it.node.title}</span>
+                    <span className="code mono">{it.node.code}</span>
+                    <span className="tag draft">{TIER_LABEL[it.tier]}</span>
+                  </a>
+                </li>
               ))}
-            </div>
-            <p style={{ marginTop: 12 }} className="empty">
-              Projects appear here once a package imports them with a <code>project_class</code>. The bundled seed contains none.
-            </p>
-          </section>
+            </ul>
+          )}
+        </section>
 
-          <section className="panel">
-            <span className="label">Load content</span>
-            <p style={{ marginTop: 8 }}>The Pack v1.0 seed ships with the app. Preview it first: nothing is written until you approve.</p>
-            <ImportPanel seed />
-          </section>
-        </div>
+        <section className="panel span-6">
+          <span className="label">Active learning · <span className="num">{view.active.length}</span></span>
+          {view.active.length === 0 ? (
+            <p style={{ marginTop: 8 }} className="empty">No record has an independent demonstration yet. The conservative rules need evidence you produced without help.</p>
+          ) : (
+            <ul className="list" style={{ marginTop: 12 }}>
+              {view.active.slice(0, 6).map((it) => (
+                <li key={it.node.id}>
+                  <a className="item" href={`#/knowledge/${encodeURIComponent(it.node.code)}`} style={{ ["--rail" as string]: disciplineVar(it.node.owner_discipline_id) }}>
+                    <span className="t">{it.node.title}</span>
+                    <span className="code mono">{it.node.code}</span>
+                    <span className="tag ok">{TIER_LABEL[it.tier]}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+
+        <section className="panel span-5">
+          <span className="label">Local store</span>
+          <div className="tile-grid" style={{ marginTop: 12 }}>
+            <div className="tile"><Database size={18} strokeWidth={1.5} aria-hidden="true" /><strong>{view.counts.nodes}</strong><small>knowledge records</small></div>
+            <div className="tile"><Share2 size={18} strokeWidth={1.5} aria-hidden="true" /><strong>{view.counts.edges}</strong><small>edges between them</small></div>
+            <div className="tile"><Boxes size={18} strokeWidth={1.5} aria-hidden="true" /><strong>{view.counts.skills}</strong><small>skill, subskill and micro-skill</small></div>
+            <div className="tile"><ClipboardCheck size={18} strokeWidth={1.5} aria-hidden="true" /><strong>{view.counts.evidence}</strong><small>{view.counts.scoredEvidence} outcome-scored</small></div>
+          </div>
+          <p style={{ marginTop: 12 }} className="empty">
+            <span className="num">{view.counts.draft}</span> of <span className="num">{view.counts.nodes}</span> records are draft. Last import:{" "}
+            {view.lastImport ? `${new Date(view.lastImport.at).toLocaleString()} · ${view.lastImport.state}` : "none yet"}.
+          </p>
+        </section>
+
+        <section className="panel span-7">
+          <span className="label">Explore by discipline</span>
+          <div className="chip-row" style={{ marginTop: 12 }}>
+            {DISCIPLINES.map((d) => (
+              <a className="disc-chip" key={d.id} href="#/knowledge" style={{ ["--c" as string]: d.color }}>
+                <i />{d.short}
+              </a>
+            ))}
+          </div>
+          <p style={{ marginTop: 12 }} className="empty">
+            The atlas groups records under their discipline star; open a system to isolate it, then zoom to its planets.
+          </p>
+        </section>
+
+        <section className="panel span-4">
+          <span className="label">Projects by class</span>
+          <div className="stack" style={{ marginTop: 12 }}>
+            {view.projects.map((g) => (
+              <div key={g.key}>
+                <div className="row between">
+                  <strong>{g.label}</strong>
+                  <span className="num" style={{ color: "var(--text-muted)" }}>{g.projects.length}</span>
+                </div>
+                <p style={{ margin: "2px 0 0" }}>{g.description}</p>
+                {g.projects.length > 0 && (
+                  <ul className="list" style={{ marginTop: 6 }}>
+                    {g.projects.map((p) => (
+                      <li key={p.id} className="mono">{p.code} · {p.title}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+          <p style={{ marginTop: 12 }} className="empty">Projects appear once a package imports them with a <code>project_class</code>. The bundled pack carries none.</p>
+        </section>
+
+        <section className="panel span-8">
+          <span className="label">Add knowledge</span>
+          <p style={{ marginTop: 8 }}>The Pack v1.0 seed ships with the app. Preview it first: nothing is written until you approve.</p>
+          <ImportPanel seed />
+        </section>
       </div>
     </>
   );
@@ -257,6 +364,7 @@ export function SkillDetail({ code }: { code: string }): ReactNode {
 
   return (
     <>
+      <PageBack href="#/knowledge" label="Atlas" />
       <Head label={`${node.object_type.replace(/_/g, " ")} · ${meta?.short ?? "cross-cutting"}`} title={node.title} />
       <div className="workspace">
         <div className="span-7">
@@ -426,7 +534,7 @@ function MasteryPanel({ node, comp, confirmed, evidenceCount }: { node: NodeReco
   );
 }
 
-function PracticeSession({ node, steps }: { node: NodeRecord; steps: string[] }): ReactNode {
+export function PracticeSession({ node, steps }: { node: NodeRecord; steps: string[] }): ReactNode {
   const { state, rt, refresh } = useApp();
   const [done, setDone] = useState<Record<number, boolean>>({});
   const [evidenceClass, setEvidenceClass] = useState<string>(() => {

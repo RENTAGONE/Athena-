@@ -60,6 +60,7 @@ function ProjectClasses(): ReactNode {
           </div>
         ))}
       </div>
+      <a className="btn" href="#/studio/architect" style={{ marginTop: 14 }}>Plan a path in the Architect</a>
     </section>
   );
 }

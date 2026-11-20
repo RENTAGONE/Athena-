@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { Pause, Play, Search, X } from "lucide-react";
+import { Pause, Play, RotateCcw, Search, X } from "lucide-react";
 import { useApp } from "./context.ts";
 import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
 import {
@@ -37,6 +37,7 @@ import {
   type Vec3,
 } from "../app/atlas-graph.ts";
 import type { NodeRecord } from "../domain/types.ts";
+import { getPrefs } from "./prefs.ts";
 
 const TIER_LABEL: Record<MasteryTier, string> = {
   unassessed: "unassessed",
@@ -62,6 +63,21 @@ interface Body {
   depth: number;
 }
 
+interface ThreadHit {
+  id: string;
+  star: number;
+  title: string;
+  code: string;
+  relation: string;
+  sourceTitle: string;
+  sourceCode: string;
+  targetTitle: string;
+  points: ScreenPoint[];
+  mid: Vec3;
+  sourceId: string;
+  targetId: string;
+}
+
 interface Scene {
   galaxy: Galaxy;
   starsWorld: Vec3[];
@@ -80,7 +96,11 @@ export function Knowledge(): ReactNode {
   const [view, setView] = useState<"atlas" | "index">("atlas");
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<string | null>(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(() => {
+    const p = getPrefs();
+    return p.motion && p.atlasOrbit;
+  });
+  const [zoom, setZoom] = useState(1);
   const [selected, setSelected] = useState<string | null>(null);
   const [isolated, setIsolated] = useState<number | null>(null);
   const [confirm, setConfirm] = useState<{ star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string } | null>(null);
@@ -96,10 +116,23 @@ export function Knowledge(): ReactNode {
   const filterRef = useRef<string | null>(filter);
   const matchedRef = useRef<Set<string> | null>(null);
   const bodiesRef = useRef<Body[]>([]);
-  const threadsRef = useRef<{ id: string; star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string; points: ScreenPoint[] }[]>([]);
+  const threadsRef = useRef<ThreadHit[]>([]);
+  const hoverRef = useRef<{ body: string | null; thread: string | null }>({ body: null, thread: null });
+  const pointerRef = useRef<{ x: number; y: number; inside: boolean }>({ x: 0, y: 0, inside: false });
+  const frameDistanceRef = useRef(1120);
   const clockRef = useRef(0);
   const dirtyRef = useRef(true);
   const reduceRef = useRef(false);
+
+  // The camera moves in the animation loop, so the readout samples it instead of re-rendering React
+  // on every frame.
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      const z = frameDistanceRef.current / Math.max(1, cameraRef.current.distance);
+      setZoom((prev) => (Math.abs(prev - z) > 0.02 ? z : prev));
+    }, 180);
+    return () => window.clearInterval(id);
+  }, []);
 
   useEffect(() => {
     sceneRef.current = { galaxy, starsWorld, location: galaxy.location };
@@ -167,11 +200,21 @@ export function Knowledge(): ReactNode {
     (starIdx: number, dur: number): void => {
       const target = starsWorld[starIdx];
       if (!target) return;
-      const to = makeCamera({ targetX: target.x, targetY: target.y, targetZ: target.z, yaw: 0.55, pitch: 0.5, distance: 540 });
+      const to = makeCamera({ targetX: target.x, targetY: target.y, targetZ: target.z, yaw: 0.55, pitch: 0.5, distance: 140 });
       flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur, isolate: starIdx };
     },
     [starsWorld],
   );
+
+  /** Fly back to the framed galaxy and release any isolation. Double-click, Escape and the reset control share this. */
+  const resetView = useCallback((): void => {
+    const cam = cameraRef.current;
+    const to = makeCamera({ targetX: 0, targetY: 0, targetZ: 0, yaw: cam.yaw, pitch: cam.pitch, distance: frameDistanceRef.current });
+    flightRef.current = { from: { ...cam }, to, start: performance.now(), dur: 620, isolate: null };
+    setIsolated(null);
+    setSelected(null);
+    setConfirm(null);
+  }, []);
 
   /* ── Rendering loop ───────────────────────────────────────────────────── */
   useEffect(() => {
@@ -196,7 +239,10 @@ export function Knowledge(): ReactNode {
         // Frame the whole galaxy (stars plus their planet clouds) inside the smaller viewport axis.
         const span = Math.min(rect.width, rect.height);
         // Stars sit on a 440-unit sphere and their planet clouds add ~160 units, so frame the outer extent.
-        if (span > 0) cameraRef.current.distance = Math.min(1900, Math.max(760, ((GALAXY_RADIUS + 160) * FOCAL) / (0.34 * span)));
+        if (span > 0) {
+          cameraRef.current.distance = Math.min(1620, Math.max(700, ((GALAXY_RADIUS + 160) * FOCAL) / (0.4 * span)));
+          frameDistanceRef.current = cameraRef.current.distance;
+        }
       }
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = Math.max(1, rect.width);
@@ -232,6 +278,7 @@ export function Knowledge(): ReactNode {
       const sel = selectedRef.current;
       const flt = filterRef.current;
       const hits = matchedRef.current;
+      const hover = hoverRef.current;
       const t = clockRef.current;
       ctx.clearRect(0, 0, width, height);
 
@@ -243,6 +290,19 @@ export function Knowledge(): ReactNode {
       grad.addColorStop(1, "rgba(7,11,24,0)");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
+
+      // Drifting nebulae: soft light the glass HUD can sit on without a flat void behind it.
+      const nebula = (cx: number, cy: number, radius: number, tint: string): void => {
+        const g2 = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+        g2.addColorStop(0, tint);
+        g2.addColorStop(0.55, tint.replace(/[\d.]+\)$/, "0.03)"));
+        g2.addColorStop(1, "rgba(5,8,15,0)");
+        ctx.fillStyle = g2;
+        ctx.fillRect(cx - radius, cy - radius, radius * 2, radius * 2);
+      };
+      nebula(width * 0.2 - cam.targetX * 0.012, height * 0.22, Math.max(width, height) * 0.42, "rgba(53,217,255,0.09)");
+      nebula(width * 0.86 - cam.targetX * 0.008, height * 0.16, Math.max(width, height) * 0.38, "rgba(167,139,250,0.1)");
+      nebula(width * 0.64, height * 0.92, Math.max(width, height) * 0.4, "rgba(66,230,196,0.06)");
 
       // Layers 1 & 2 — two parallax star depths.
       for (const s of field) {
@@ -298,7 +358,7 @@ export function Knowledge(): ReactNode {
       scene.galaxy.stars.forEach((system, si) => {
         const base = scene.starsWorld[si];
         if (!base) return;
-        const world = reentryJitter(wrapPoint(base, cam), base);
+        const world = iso === si ? base : reentryJitter(wrapPoint(base, cam), base);
         const proj = project(world, cam, width, height);
         const dimSystem = (iso !== null && iso !== si) || (flt !== null && flt !== system.code);
         if (!proj) {
@@ -306,103 +366,236 @@ export function Knowledge(): ReactNode {
           return;
         }
         starScreen.push({ x: proj.sx, y: proj.sy, scale: proj.scale });
+        // Screen size and depth of the star, so bodies behind its face can be occluded at close range.
+        const starRNow = Math.max(5.2, Math.min(Math.max(140, Math.min(width, height) * 0.46), 38 * proj.scale));
+        const starDepth = proj.depth;
         const meta = DISCIPLINE_BY_ID[system.code];
-        const dim = dimSystem ? 0.12 : 1;
+        const dim = dimSystem ? (iso !== null ? 0.05 : 0.12) : 1;
         const visible = proj.sx > -160 && proj.sx < width + 160 && proj.sy > -160 && proj.sy < height + 160;
 
         if (visible) {
-          const r = Math.max(3.2, Math.min(13, 26 * proj.scale));
-          // Restrained radial corona: light falls off into the void, no glow loop.
-          const corona = ctx.createRadialGradient(proj.sx, proj.sy, r * 0.5, proj.sx, proj.sy, r * 4.4);
-          corona.addColorStop(0, rgba(meta?.color ?? "#648bff", 0.3 * dim));
-          corona.addColorStop(1, "rgba(7,11,24,0)");
-          ctx.fillStyle = corona;
+          const color = meta?.color ?? "#648bff";
+          const hovered = hover.body === system.discipline.id;
+          // At close range the body keeps growing until it fills the viewport, so a wheel inside a
+          // system ends on a surface rather than on a small disc.
+          const maxR = Math.max(140, Math.min(width, height) * 0.46);
+          const r = Math.max(5.2, Math.min(maxR, 38 * proj.scale)) * (hovered ? 1.14 : 1);
+
+          // Wide halo, then two tilted orbit rings, then the lit core.
+          const haloR = Math.min(r * 6.6, r + 320);
+          const halo = ctx.createRadialGradient(proj.sx, proj.sy, r * 0.4, proj.sx, proj.sy, haloR);
+          halo.addColorStop(0, rgba(color, 0.34 * dim));
+          halo.addColorStop(0.4, rgba(color, 0.12 * dim));
+          halo.addColorStop(1, "rgba(5,8,15,0)");
+          ctx.fillStyle = halo;
           ctx.beginPath();
-          ctx.arc(proj.sx, proj.sy, r * 4.4, 0, Math.PI * 2);
+          ctx.arc(proj.sx, proj.sy, haloR, 0, Math.PI * 2);
           ctx.fill();
+
+          ctx.save();
+          // Close to a star, its own orbit rings would sweep across the photosphere; they belong to
+          // the far view, so they thin out at surface range.
+          ctx.globalAlpha = dim * (cam.distance < 620 ? 0.1 : 0.55);
+          ctx.strokeStyle = rgba(color, 0.55);
+          ctx.lineWidth = Math.max(0.6, Math.min(2.4, r * 0.03));
+          for (const k of [1.6, 2.2]) {
+            ctx.beginPath();
+            ctx.ellipse(proj.sx, proj.sy, r * k, r * k * 0.4, si * 0.5 - 0.3, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          ctx.restore();
+
+          const core = ctx.createRadialGradient(proj.sx - r * 0.3, proj.sy - r * 0.34, r * 0.1, proj.sx, proj.sy, r * 1.02);
+          // A star is white-hot at the core with its discipline colour in the corona and limb, so it
+          // reads as a star rather than as a coloured planet.
+          core.addColorStop(0, "rgba(255,255,255,1)");
+          core.addColorStop(0.3, rgba(mix(color, "#ffffff", 0.82), 1));
+          core.addColorStop(0.62, rgba(mix(color, "#ffffff", 0.45), 1));
+          core.addColorStop(0.88, rgba(mix(color, "#0b1020", 0.5), 1));
+          core.addColorStop(1, "rgba(4,7,14,1)");
           ctx.globalAlpha = dim;
           ctx.beginPath();
           ctx.arc(proj.sx, proj.sy, r, 0, Math.PI * 2);
-          ctx.fillStyle = meta?.color ?? "#648bff";
+          ctx.fillStyle = core;
           ctx.fill();
-          ctx.lineWidth = 1;
-          ctx.strokeStyle = "rgba(241,245,255,0.75)";
+          ctx.lineWidth = Math.max(0.8, Math.min(2.6, r * 0.045));
+          ctx.strokeStyle = "rgba(241,245,255,0.45)";
           ctx.stroke();
-          if (sel === system.discipline.id) {
+
+          // Inner plate and monogram: a lit badge, not a flat dot. Suppressed once the body is a
+          // surface, where a giant monogram would cover the star itself.
+          if (r >= 9 && r < 46) {
+            ctx.save();
+            ctx.globalAlpha = dim;
             ctx.beginPath();
-            ctx.arc(proj.sx, proj.sy, r + 5, 0, Math.PI * 2);
-            ctx.strokeStyle = "#35d9ff";
-            ctx.lineWidth = 1.5;
+            ctx.arc(proj.sx, proj.sy, r * 0.66, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(5,8,16,0.88)";
+            ctx.fill();
+            ctx.strokeStyle = rgba(color, 0.85);
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            ctx.fillStyle = "#eef5ff";
+            ctx.font = `700 ${Math.round(r * 0.6)}px "JetBrains Mono", ui-monospace, monospace`;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText((meta?.short ?? "?").slice(0, 2).toUpperCase(), proj.sx, proj.sy + r * 0.03);
+            ctx.restore();
+          }
+
+          drawStarDetail(ctx, proj.sx, proj.sy, r, color, surfaceSeed(system.code), clockRef.current, dim, hovered);
+
+          if (sel === system.discipline.id || hovered) {
+            ctx.beginPath();
+            ctx.arc(proj.sx, proj.sy, r + 7, 0, Math.PI * 2);
+            ctx.strokeStyle = hovered ? "#ffffff" : "#35d9ff";
+            ctx.lineWidth = 1.6;
+            ctx.globalAlpha = dim * (hovered ? 0.95 : 0.7);
             ctx.stroke();
           }
           ctx.globalAlpha = 1;
-          bodies.push({ node: system.discipline, kind: "star", star: si, x: proj.sx, y: proj.sy, r: r + 5, depth: proj.depth });
+          bodies.push({ node: system.discipline, kind: "star", star: si, x: proj.sx, y: proj.sy, r: r + 10, depth: proj.depth });
           nodePos.set(system.discipline.id, { p: world, x: proj.sx, y: proj.sy, r, tier: "unassessed", kind: "star", node: system.discipline, star: si });
         }
 
         // Planets and their moons stay in motion even while a system is isolated.
         if (iso !== null && iso !== si) return;
 
-        // With hundreds of planets per galaxy, spread them over up to seven rings instead of three.
-        const rings = Math.max(1, Math.min(7, Math.ceil(system.planets.length / 8)));
+        // Cluster: a few concentric bands, planets spaced evenly around their band. Structure first,
+        // motion second — a system reads as one object instead of loose dots.
+        const count = system.planets.length;
+        const bands = Math.max(1, Math.min(4, Math.ceil(count / 6)));
+        const perBand = Math.max(1, Math.ceil(count / bands));
+        const bandRadius = (b: number): number => 74 + b * (32 + Math.min(10, count * 0.6));
+        const cloudR = bandRadius(bands - 1) + 26;
+        if (count > 0 && (iso === si || cam.distance < 1600)) {
+          const sysColor = meta?.color ?? "#648bff";
+          const cloud = ctx.createRadialGradient(proj.sx, proj.sy, 6, proj.sx, proj.sy, (cloudR * FOCAL) / Math.max(1, cam.distance) * 0.55 + 40);
+          cloud.addColorStop(0, rgba(sysColor, 0.09 * dim));
+          cloud.addColorStop(0.7, rgba(sysColor, 0.03 * dim));
+          cloud.addColorStop(1, "rgba(5,8,15,0)");
+          ctx.fillStyle = cloud;
+          ctx.beginPath();
+          ctx.arc(proj.sx, proj.sy, (cloudR * FOCAL) / Math.max(1, cam.distance) * 0.55 + 40, 0, Math.PI * 2);
+          ctx.fill();
+          // Inside a system the bands would cut straight across the star's face and read as glass;
+          // they are a far-view structure, so they fade out at surface range.
+          if (cam.distance >= 620) {
+            ctx.save();
+            ctx.strokeStyle = rgba(sysColor, 0.2 * dim);
+            ctx.lineWidth = 1;
+            for (let b = 0; b < bands; b += 1) {
+              const br = bandRadius(b);
+              let broken = false;
+              ctx.beginPath();
+              for (let k = 0; k <= 44; k += 1) {
+                const rp = project(orbitPoint(world, br, br * 0.72, si * 0.03, si * 0.6, (k / 44) * Math.PI * 2), cam, width, height);
+                if (!rp) {
+                  broken = true;
+                  break;
+                }
+                if (k === 0) ctx.moveTo(rp.sx, rp.sy);
+                else ctx.lineTo(rp.sx, rp.sy);
+              }
+              if (!broken) ctx.stroke();
+            }
+            ctx.restore();
+          }
+        }
         system.planets.forEach((planet: GalaxyPlanet, pi: number) => {
-          const rx = 64 + (pi % rings) * 14;
-          const rz = rx * 0.74;
-          const tilt = ((pi % 5) - 2) * 0.2 + si * 0.03;
-          const orbitYaw = si * 0.6 + pi * 0.9;
-          const omega = 0.035 + (pi % 3) * 0.012;
-          const theta = phaseAt(pi * 2.399, omega, t);
+          const band = Math.min(bands - 1, Math.floor(pi / perBand));
+          const slot = pi % perBand;
+          const inBand = Math.min(perBand, count - band * perBand);
+          const rx = bandRadius(band);
+          const rz = rx * 0.72;
+          const tilt = ((band % 3) - 1) * 0.12 + si * 0.02;
+          const orbitYaw = si * 0.6 + band * 0.4;
+          const omega = 0.04 + band * 0.012;
+          const theta = (slot / Math.max(1, inBand)) * Math.PI * 2 + phaseAt(pi * 0.7, omega, t);
           const p = orbitPoint(world, rx, rz, tilt, orbitYaw, theta);
           const pp = project(p, cam, width, height);
           if (!pp) return;
           const inView = pp.sx > -80 && pp.sx < width + 80 && pp.sy > -80 && pp.sy < height + 80;
           if (!inView) return;
-          const r = Math.max(2.2, Math.min(9, 13 * pp.scale)) * (system.planets.length > 30 ? 0.68 : 1);
+          // Inside a system up close, a planet on the far side of the star is hidden by its face.
+          if (cam.distance < 620 && pp.depth > starDepth && Math.hypot(pp.sx - proj.sx, pp.sy - proj.sy) < starRNow * 0.99) return;
+          const hoveredP = hover.body === planet.node.id;
+          const planetMax = Math.max(56, Math.min(width, height) * 0.3);
+          const r = Math.max(2.2, Math.min(planetMax, 13 * pp.scale)) * (system.planets.length > 30 ? 0.68 : 1) * (hoveredP ? 1.35 : 1);
           const dimP = flt !== null && flt !== system.code ? 0.2 : 1;
-          // Razor-thin orbital ring, projected point by point so it tilts in 3D.
-          if (iso === si || cam.distance < 1050) {
-            let broken = false;
-            ctx.beginPath();
-            for (let k = 0; k <= 40; k += 1) {
-              const rp = project(orbitPoint(world, rx, rz, tilt, orbitYaw, (k / 40) * Math.PI * 2), cam, width, height);
-              if (!rp) {
-                broken = true;
-                break;
-              }
-              if (k === 0) ctx.moveTo(rp.sx, rp.sy);
-              else ctx.lineTo(rp.sx, rp.sy);
-            }
-            if (!broken) {
-              ctx.strokeStyle = iso === si ? "rgba(38,56,88,0.72)" : "rgba(38,56,88,0.34)";
-              ctx.lineWidth = 1;
-              ctx.stroke();
-            }
-          }
+          const pColor = meta?.color ?? "#648bff";
+          // Soft bloom, then a lit sphere with a rim, then the honest mastery arc.
+          // Close up, the bloom shrinks so the body reads as solid, not as a lit bubble.
+          const bloomR = r * (r > 18 ? 1.9 : 3.4);
+          const bloom = ctx.createRadialGradient(pp.sx, pp.sy, r * 0.8, pp.sx, pp.sy, bloomR);
+          bloom.addColorStop(0, rgba(pColor, (r > 18 ? 0.12 : 0.24) * dimP));
+          bloom.addColorStop(1, "rgba(5,8,15,0)");
+          ctx.fillStyle = bloom;
+          ctx.beginPath();
+          ctx.arc(pp.sx, pp.sy, bloomR, 0, Math.PI * 2);
+          ctx.fill();
+
+          const sphere = ctx.createRadialGradient(pp.sx - r * 0.34, pp.sy - r * 0.38, r * 0.06, pp.sx + r * 0.12, pp.sy + r * 0.14, r * 1.06);
+          sphere.addColorStop(0, rgba(mix(pColor, "#ffffff", 0.3), 1));
+          sphere.addColorStop(0.3, pColor);
+          sphere.addColorStop(0.74, rgba(mix(pColor, "#04070f", 0.58), 1));
+          sphere.addColorStop(1, "rgba(3,6,12,1)");
           ctx.globalAlpha = dimP;
           ctx.beginPath();
           ctx.arc(pp.sx, pp.sy, r, 0, Math.PI * 2);
-          ctx.fillStyle = meta?.color ?? "#648bff";
-          ctx.globalAlpha = dimP * 0.85;
+          ctx.fillStyle = sphere;
           ctx.fill();
-          ctx.globalAlpha = dimP;
-          ctx.strokeStyle = "rgba(7,11,24,0.8)";
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = rgba(pColor, 0.3);
+          ctx.lineWidth = Math.max(0.7, Math.min(1.6, r * 0.03));
           ctx.stroke();
+
+          drawPlanetDetail(ctx, pp.sx, pp.sy, r, pColor, surfaceSeed(planet.node.code), clockRef.current, dimP, planet.node.object_type === "domain");
+
+          if (r > 3.4 && r < 40) {
+            ctx.save();
+            ctx.globalAlpha = dimP * 0.4;
+            ctx.strokeStyle = rgba(pColor, 0.7);
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.ellipse(pp.sx, pp.sy, r * 1.9, r * 0.55, -0.35 + (pi % 4) * 0.3, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+          }
+
+          const pRing = masteryRing(planet.tier);
+          if (pRing.arc > 0) {
+            ctx.beginPath();
+            ctx.arc(pp.sx, pp.sy, r + 2.4, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * pRing.arc);
+            ctx.strokeStyle = pRing.color;
+            ctx.lineWidth = 1.5;
+            ctx.lineCap = "round";
+            ctx.stroke();
+            ctx.lineCap = "butt";
+          }
+          if (planet.node.id === sel || hoveredP) {
+            ctx.beginPath();
+            ctx.arc(pp.sx, pp.sy, r + 4.5, 0, Math.PI * 2);
+            ctx.strokeStyle = hoveredP ? "#ffffff" : "#35d9ff";
+            ctx.lineWidth = 1.3;
+            ctx.globalAlpha = dimP * 0.85;
+            ctx.stroke();
+          }
           ctx.globalAlpha = 1;
           bodies.push({ node: planet.node, kind: "planet", star: si, x: pp.sx, y: pp.sy, r: r + 4, depth: pp.depth });
           nodePos.set(planet.node.id, { p, x: pp.sx, y: pp.sy, r, tier: planet.tier, kind: "planet", node: planet.node, star: si });
 
           planet.moons.forEach((moon: GalaxyMoon, mi: number) => {
-            const mr = 22 + (mi % 3) * 8;
-            const mTilt = ((mi % 4) - 1.5) * 0.55;
-            const mYaw = pi * 1.4 + mi * 1.7;
-            const mOmega = 0.17 + (mi % 4) * 0.03;
-            const mPos = orbitPoint(p, mr, mr * 0.85, mTilt, mYaw, phaseAt(mi * 2.1 + pi, mOmega, t));
+            const moonCount = Math.max(1, planet.moons.length);
+            const mr = 18 + (mi % 2) * 9 + moonCount * 1.2;
+            const mTilt = ((mi % 3) - 1) * 0.35;
+            const mYaw = pi * 0.7 + mi * 0.9;
+            const mOmega = 0.2 + (mi % 3) * 0.025;
+            const mPos = orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, (mi / moonCount) * Math.PI * 2 + phaseAt(pi * 0.4, mOmega, t));
             const mp = project(mPos, cam, width, height);
             if (!mp) return;
             if (mp.sx < -40 || mp.sx > width + 40 || mp.sy < -40 || mp.sy > height + 40) return;
-            const mrPx = Math.max(1.6, Math.min(6, 7 * mp.scale));
-            drawMoon(ctx, mp.sx, mp.sy, mrPx, moon.tier, moon.node.id === sel);
+            if (cam.distance < 620 && mp.depth > starDepth && Math.hypot(mp.sx - proj.sx, mp.sy - proj.sy) < starRNow * 0.985) return;
+            const mrPx = Math.max(1.6, Math.min(Math.max(30, Math.min(width, height) * 0.16), 7 * mp.scale));
+            drawMoon(ctx, mp.sx, mp.sy, mrPx, moon.tier, moon.node.id === sel, surfaceSeed(moon.node.code));
             bodies.push({ node: moon.node, kind: "moon", star: si, x: mp.sx, y: mp.sy, r: mrPx + 5, depth: mp.depth });
             nodePos.set(moon.node.id, { p: mPos, x: mp.sx, y: mp.sy, r: mrPx, tier: moon.tier, kind: "moon", node: moon.node, star: si });
           });
@@ -410,19 +603,20 @@ export function Knowledge(): ReactNode {
 
         // Moons with no domain parent orbit their star directly.
         system.moons.forEach((moon: GalaxyMoon, mi: number) => {
-          const mr = 46 + (mi % 4) * 14;
-          const p = orbitPoint(world, mr, mr * 0.8, ((mi % 3) - 1) * 0.4, si + mi, phaseAt(mi * 1.7, 0.11 + (mi % 3) * 0.02, t));
+          const moonCount = Math.max(1, system.moons.length);
+          const mr = 40 + (mi % 2) * 16;
+          const p = orbitPoint(world, mr, mr * 0.78, ((mi % 3) - 1) * 0.3, si * 0.5, (mi / moonCount) * Math.PI * 2 + phaseAt(mi * 0.5, 0.09, t));
           const mp = project(p, cam, width, height);
           if (!mp || mp.sx < -40 || mp.sx > width + 40 || mp.sy < -40 || mp.sy > height + 40) return;
-          const mrPx = Math.max(1.6, Math.min(6, 7 * mp.scale));
-          drawMoon(ctx, mp.sx, mp.sy, mrPx, moon.tier, moon.node.id === sel);
+          const mrPx = Math.max(1.6, Math.min(Math.max(30, Math.min(width, height) * 0.16), 7 * mp.scale));
+          drawMoon(ctx, mp.sx, mp.sy, mrPx, moon.tier, moon.node.id === sel, surfaceSeed(moon.node.code));
           bodies.push({ node: moon.node, kind: "moon", star: si, x: mp.sx, y: mp.sy, r: mrPx + 5, depth: mp.depth });
           nodePos.set(moon.node.id, { p, x: mp.sx, y: mp.sy, r: mrPx, tier: moon.tier, kind: "moon", node: moon.node, star: si });
         });
       });
 
       // Threads — intra-system cyan, cross-domain violet at 28%.
-      const threads: { id: string; star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string; points: ScreenPoint[] }[] = [];
+      const threads: ThreadHit[] = [];
       const systemStar = (code: string): number => scene.galaxy.stars.findIndex((s) => s.code === code);
       const drawThreads = (list: typeof edgesRef.current.intra, color: string, widthPx: number, curve: number, cross: boolean): void => {
         for (const e of list) {
@@ -443,13 +637,44 @@ export function Knowledge(): ReactNode {
             pts.push({ x: q3.sx, y: q3.sy });
           }
           if (clipped || pts.length < 2) continue;
-          ctx.beginPath();
-          ctx.moveTo(pts[0]!.x, pts[0]!.y);
-          for (let i = 1; i < pts.length; i += 1) ctx.lineTo(pts[i]!.x, pts[i]!.y);
-          ctx.strokeStyle = color;
-          ctx.lineWidth = widthPx;
-          ctx.stroke();
-          if (cross) threads.push({ id: e.id, star: b.star, title: DISCIPLINE_BY_ID[scene.galaxy.stars[b.star]?.code ?? ""]?.name ?? "another discipline", code: scene.galaxy.stars[b.star]?.code ?? "", relation: e.relation_type, sourceTitle: a.node.title, sourceCode: a.node.code, targetTitle: b.node.title, points: pts });
+          const active = hover.thread === e.id;
+          const path = new Path2D();
+          path.moveTo(pts[0]!.x, pts[0]!.y);
+          for (let i = 1; i < pts.length; i += 1) path.lineTo(pts[i]!.x, pts[i]!.y);
+          const stroke = ctx.createLinearGradient(pts[0]!.x, pts[0]!.y, pts[pts.length - 1]!.x, pts[pts.length - 1]!.y);
+          const ca = DISCIPLINE_BY_ID[scene.galaxy.stars[a.star]?.code ?? ""]?.color ?? "#35d9ff";
+          const cb = DISCIPLINE_BY_ID[scene.galaxy.stars[b.star]?.code ?? ""]?.color ?? "#a78bfa";
+          stroke.addColorStop(0, active ? "#ffffff" : rgba(ca, 0.72));
+          stroke.addColorStop(1, active ? "#ffffff" : rgba(cb, 0.72));
+          if (active) {
+            ctx.strokeStyle = rgba(cb, 0.28);
+            ctx.lineWidth = widthPx + 9;
+            ctx.stroke(path);
+          }
+          ctx.strokeStyle = active ? "rgba(255,255,255,0.92)" : stroke;
+          ctx.lineWidth = active ? widthPx + 1.4 : widthPx;
+          ctx.stroke(path);
+          if (cross) {
+            // Travelling dots make a cross-domain link read as a live connection rather than a hairline.
+            ctx.save();
+            ctx.setLineDash([2, 16]);
+            ctx.lineDashOffset = -((t * 26) % 18);
+            ctx.strokeStyle = rgba(cb, active ? 0.95 : 0.5);
+            ctx.lineWidth = 1.6;
+            ctx.stroke(path);
+            ctx.restore();
+          }
+          if (cross) threads.push({
+            id: e.id, star: b.star,
+            title: DISCIPLINE_BY_ID[scene.galaxy.stars[b.star]?.code ?? ""]?.name ?? "another discipline",
+            code: scene.galaxy.stars[b.star]?.code ?? "",
+            relation: e.relation_type,
+            sourceTitle: a.node.title, sourceCode: a.node.code,
+            targetTitle: b.node.title,
+            points: pts,
+            mid: { x: a.p.x * 0.25 + c.x * 0.5 + b.p.x * 0.25, y: a.p.y * 0.25 + c.y * 0.5 + b.p.y * 0.25, z: a.p.z * 0.25 + c.z * 0.5 + b.p.z * 0.25 },
+            sourceId: e.source_id, targetId: e.target_id,
+          });
         }
       };
       ctx.globalAlpha = iso === null && flt === null ? 1 : 0.55;
@@ -494,10 +719,11 @@ export function Knowledge(): ReactNode {
         const alpha = dimAll ? 0.22 : sel === system.discipline.id ? 0.95 : matchedNow === null || matchedNow.has(system.discipline.id) ? 0.86 : 0.34;
         const r = Math.max(3.2, Math.min(13, 26 * screen.scale));
         const moonTotal = system.moons.length + system.planets.reduce((m, p) => m + p.moons.length, 0);
-        if (screen.scale > 0.16 || iso === si) label(`${meta?.short.toUpperCase() ?? system.code} · ${moonTotal}`, screen.x, screen.y - r - 10, meta?.color ?? "#f1f5ff", alpha, sel === system.discipline.id);
+        // The selected record already gets its full title label below; skip the short duplicate.
+        if (sel !== system.discipline.id && (screen.scale > 0.16 || iso === si)) label(`${meta?.short.toUpperCase() ?? system.code} · ${moonTotal}`, screen.x, screen.y - r - 10, meta?.color ?? "#f1f5ff", alpha, false);
       });
       // Planet labels appear once the camera is close enough to read them.
-      if (cam.distance < 900) {
+      if (cam.distance < 900 && cam.distance > 280) {
         scene.galaxy.stars.forEach((system, si) => {
           if (iso !== null && iso !== si) return;
           for (const planet of system.planets) {
@@ -510,6 +736,39 @@ export function Knowledge(): ReactNode {
       }
       const selectedPos = sel ? nodePos.get(sel) : undefined;
       if (selectedPos) label(selectedPos.node.title, selectedPos.x, selectedPos.y - selectedPos.r - 10, "#f1f5ff", 1, true);
+
+      // Hover readout: the code, title and honest mastery tier of the body under the pointer, placed
+      // beside the body so a deep zoom never loses track of what is on screen.
+      const hoverPos = hover.body && hover.body !== sel ? nodePos.get(hover.body) : undefined;
+      if (hoverPos) {
+        const title = hoverPos.node.title.length > 30 ? `${hoverPos.node.title.slice(0, 29)}…` : hoverPos.node.title;
+        const tier = TIER_LABEL[hoverPos.tier];
+        ctx.font = '600 12px "Inter", ui-sans-serif, system-ui, sans-serif';
+        const tw = ctx.measureText(title).width;
+        ctx.font = '500 10px "JetBrains Mono", ui-monospace, monospace';
+        const cw = ctx.measureText(`${hoverPos.node.code} · ${tier}`).width;
+        const bw = Math.max(tw, cw) + 22;
+        const bh = 44;
+        let bx = hoverPos.x + hoverPos.r + 14;
+        let by = hoverPos.y - bh / 2;
+        if (bx + bw > width - 10) bx = hoverPos.x - hoverPos.r - bw - 14;
+        bx = Math.max(10, Math.min(width - bw - 10, bx));
+        by = Math.max(12, Math.min(height - bh - 12, by));
+        roundRect(ctx, bx, by, bw, bh, 10);
+        ctx.fillStyle = "rgba(7, 13, 26, 0.92)";
+        ctx.fill();
+        ctx.strokeStyle = "rgba(126, 170, 255, 0.35)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.textAlign = "left";
+        ctx.textBaseline = "alphabetic";
+        ctx.fillStyle = "#f1f5ff";
+        ctx.font = '600 12px "Inter", ui-sans-serif, system-ui, sans-serif';
+        ctx.fillText(title, bx + 11, by + 19);
+        ctx.fillStyle = TIER_COLOR[hoverPos.tier];
+        ctx.font = '500 10px "JetBrains Mono", ui-monospace, monospace';
+        ctx.fillText(`${hoverPos.node.code} · ${tier}`, bx + 11, by + 34);
+      }
     };
 
     const loop = (now: number): void => {
@@ -548,7 +807,21 @@ export function Knowledge(): ReactNode {
     let pinchStart = 0;
     let pinchDistance = 0;
 
+    /** World point under a screen coordinate at the camera's target depth, used to fly to any body. */
+    const worldAt = (sx: number, sy: number): { x: number; y: number; z: number } => {
+      const cam = cameraRef.current;
+      const X = ((sx - width / 2) * cam.distance) / FOCAL;
+      const Y = (-(sy - height / 2) * cam.distance) / FOCAL;
+      const cy = Math.cos(cam.yaw);
+      const sy2 = Math.sin(cam.yaw);
+      const cp = Math.cos(cam.pitch);
+      const sp = Math.sin(cam.pitch);
+      const z1 = -Y * sp;
+      return { x: cam.targetX + X * cy + z1 * sy2, y: cam.targetY + Y * cp, z: cam.targetZ - X * sy2 + z1 * cy };
+    };
+
     const onDown = (e: PointerEvent): void => {
+      canvas.classList.add("dragging");
       canvas.setPointerCapture(e.pointerId);
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       dragging = true;
@@ -564,7 +837,23 @@ export function Knowledge(): ReactNode {
       }
     };
     const onMove = (e: PointerEvent): void => {
-      if (!dragging) return;
+      if (!dragging) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        pointerRef.current = { x, y, inside: true };
+        const body = [...bodiesRef.current]
+          .filter((b) => Math.hypot(b.x - x, b.y - y) <= b.r + 6)
+          .sort((a, b) => (a.kind === "star" ? -1 : 0) - (b.kind === "star" ? -1 : 0) || b.depth - a.depth)[0];
+        const thread = body ? undefined : threadsRef.current.find((th) => distanceToPolyline(x, y, th.points) < 9);
+        const next = { body: body?.node.id ?? null, thread: thread?.id ?? null };
+        if (next.body !== hoverRef.current.body || next.thread !== hoverRef.current.thread) {
+          hoverRef.current = next;
+          dirtyRef.current = true;
+          canvas.classList.toggle("over-body", Boolean(next.body || next.thread));
+        }
+        return;
+      }
       const prev = pointers.get(e.pointerId);
       if (!prev) return;
       const dx = e.clientX - prev.x;
@@ -575,7 +864,7 @@ export function Knowledge(): ReactNode {
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
         const d = Math.hypot((a?.x ?? 0) - (b?.x ?? 0), (a?.y ?? 0) - (b?.y ?? 0));
-        if (pinchDistance > 0) cam.distance = Math.max(260, Math.min(2600, pinchStart * (pinchDistance / Math.max(1, d))));
+        if (pinchDistance > 0) cam.distance = Math.max(60, Math.min(3200, pinchStart * (pinchDistance / Math.max(1, d))));
       } else if (mode === "pan" || e.shiftKey) {
         const k = (cam.distance / FOCAL) * 0.9;
         const cy = Math.cos(cam.yaw);
@@ -594,26 +883,43 @@ export function Knowledge(): ReactNode {
     };
     const onUp = (e: PointerEvent): void => {
       pointers.delete(e.pointerId);
+      canvas.classList.remove("dragging");
       if (pointers.size > 0) return;
       dragging = false;
       if (moved > 8) return;
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      const hit = [...bodiesRef.current].sort((a, b) => b.depth - a.depth).find((b) => Math.hypot(b.x - x, b.y - y) <= b.r + 6);
+      const hit = [...bodiesRef.current]
+        .filter((b) => Math.hypot(b.x - x, b.y - y) <= b.r + 6)
+        .sort((a, b) => (a.kind === "star" ? -1 : 0) - (b.kind === "star" ? -1 : 0) || b.depth - a.depth)[0];
       if (hit) {
         setSelected(hit.node.id);
         setConfirm(null);
         if (hit.kind === "star") {
-          setIsolated(hit.star);
-          flyToStar(hit.star, 220);
+          // Clicking an already-isolated system releases it and flies back out.
+          if (isolatedRef.current === hit.star && cameraRef.current.distance <= 520) {
+            resetView();
+          } else {
+            setIsolated(hit.star);
+            flyToStar(hit.star, 720);
+          }
         } else {
-          setIsolated(hit.star);
+          // Zoom to the body itself, keeping both the system and the record in view.
+          const w = worldAt(x, y);
+          const d = Math.max(80, Math.min(780, cameraRef.current.distance * 0.5));
+          const to = makeCamera({ targetX: w.x, targetY: w.y, targetZ: w.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: d });
+          flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 520, isolate: hit.star };
         }
         return;
       }
-      const thread = threadsRef.current.find((t) => distanceToPolyline(x, y, t.points) < 9);
+      const thread = threadsRef.current.find((th) => distanceToPolyline(x, y, th.points) < 9);
       if (thread) {
+        // A thread click flies to its midpoint and selects the far endpoint, so the relation is legible in place.
+        const to = makeCamera({ targetX: thread.mid.x, targetY: thread.mid.y, targetZ: thread.mid.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: 700 });
+        flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 640, isolate: null };
+        setIsolated(null);
+        setSelected(thread.targetId);
         setConfirm({ star: thread.star, title: thread.title, code: thread.code, relation: thread.relation, sourceTitle: thread.sourceTitle, sourceCode: thread.sourceCode, targetTitle: thread.targetTitle });
         return;
       }
@@ -623,8 +929,42 @@ export function Knowledge(): ReactNode {
     const onWheel = (e: WheelEvent): void => {
       e.preventDefault();
       const cam = cameraRef.current;
-      cam.distance = Math.max(260, Math.min(2600, cam.distance * Math.exp(e.deltaY * 0.0012)));
+      const rect = canvas.getBoundingClientRect();
+      const next = Math.max(60, Math.min(3200, cam.distance * Math.exp(e.deltaY * 0.0013)));
+      // Keep the point under the cursor fixed: invert the camera rotation on the cursor ray at target depth.
+      const X = ((e.clientX - rect.left) - width / 2) * (cam.distance / FOCAL);
+      const Y = -((e.clientY - rect.top) - height / 2) * (cam.distance / FOCAL);
+      const cy = Math.cos(cam.yaw);
+      const sy = Math.sin(cam.yaw);
+      const cp = Math.cos(cam.pitch);
+      const sp = Math.sin(cam.pitch);
+      const z1 = -Y * sp;
+      const f = 1 - next / cam.distance;
+      cam.targetX += (X * cy + z1 * sy) * f;
+      cam.targetY += Y * cp * f;
+      cam.targetZ += (-X * sy + z1 * cy) * f;
+      cam.distance = next;
       dirtyRef.current = true;
+    };
+    const onLeave = (): void => {
+      pointerRef.current.inside = false;
+      if (hoverRef.current.body || hoverRef.current.thread) {
+        hoverRef.current = { body: null, thread: null };
+        canvas.classList.remove("over-body");
+        dirtyRef.current = true;
+      }
+    };
+    const onDouble = (e: MouseEvent): void => {
+      e.preventDefault();
+      resetView();
+    };
+    const onKey = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") {
+        setConfirm(null);
+        setSelected(null);
+        setIsolated(null);
+        resetView();
+      }
     };
     const onContext = (e: Event): void => e.preventDefault();
 
@@ -634,6 +974,9 @@ export function Knowledge(): ReactNode {
     canvas.addEventListener("pointercancel", onUp);
     canvas.addEventListener("wheel", onWheel, { passive: false });
     canvas.addEventListener("contextmenu", onContext);
+    canvas.addEventListener("pointerleave", onLeave);
+    canvas.addEventListener("dblclick", onDouble);
+    window.addEventListener("keydown", onKey);
 
     return () => {
       cancelAnimationFrame(raf);
@@ -644,8 +987,11 @@ export function Knowledge(): ReactNode {
       canvas.removeEventListener("pointercancel", onUp);
       canvas.removeEventListener("wheel", onWheel);
       canvas.removeEventListener("contextmenu", onContext);
+      canvas.removeEventListener("pointerleave", onLeave);
+      canvas.removeEventListener("dblclick", onDouble);
+      window.removeEventListener("keydown", onKey);
     };
-  }, [flyToStar]);
+  }, [flyToStar, resetView]);
 
   const selectedNode = selected ? state.nodes[selected] : undefined;
   const selectedTier = selectedNode ? masteryTier(index, selectedNode.id) : null;
@@ -784,18 +1130,18 @@ export function Knowledge(): ReactNode {
         </div>
       )}
 
-      {isolated !== null && view === "atlas" && (
-        <button
-          className="btn sm atlas-reset"
-          onClick={() => {
-            setIsolated(null);
-            setSelected(null);
-            const target = makeCamera({ distance: 1120 });
-            flightRef.current = { from: { ...cameraRef.current }, to: target, start: performance.now(), dur: 400, isolate: null };
-          }}
-        >
-          All systems
+      {view === "atlas" && galaxy.stars.length > 0 && (
+        <button className="btn sm atlas-reset" onClick={resetView} aria-label="Reset atlas view">
+          <RotateCcw size={13} strokeWidth={1.6} aria-hidden="true" />
+          {isolated !== null ? "All systems" : "Reset view"}
         </button>
+      )}
+
+      {view === "atlas" && galaxy.stars.length > 0 && (
+        <div className="atlas-zoom" aria-label="Zoom level">
+          <b>{zoom < 10 ? zoom.toFixed(1) : Math.round(zoom)}×</b>
+          <small>{zoom > 2.4 ? "surface" : zoom > 1.15 ? "inner system" : "galaxy"}</small>
+        </div>
       )}
 
       <div className="atlas-legend" aria-label="Mastery encoding">
@@ -803,9 +1149,298 @@ export function Knowledge(): ReactNode {
         <span><i style={{ borderColor: "#ffc66d", color: "#ffc66d" }} />needs revision</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4" }} />demonstrated</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4", background: "#42e6c4" }} />mastered</span>
+        <span className="atlas-key">drag · scroll to the surface · double-click to reset</span>
       </div>
     </section>
   );
+}
+
+/** Deterministic per-record seed for surface features. Same code, same surface, every frame. */
+function surfaceSeed(code: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < code.length; i += 1) {
+    h ^= code.charCodeAt(i);
+    h = Math.imul(h, 16777619) >>> 0;
+  }
+  return h >>> 0;
+}
+
+function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number): void {
+  const k = Math.min(r, w / 2, h / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + k, y);
+  ctx.lineTo(x + w - k, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + k);
+  ctx.lineTo(x + w, y + h - k);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - k, y + h);
+  ctx.lineTo(x + k, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - k);
+  ctx.lineTo(x, y + k);
+  ctx.quadraticCurveTo(x, y, x + k, y);
+  ctx.closePath();
+}
+
+/**
+ * Star surface. Below ~10 px this is a glow; above it a corona grows out of the limb, then a
+ * granulated photosphere with limb darkening, spots and prominences once the body fills real pixels.
+ * Everything is seeded, so a star does not shimmer into a different star between frames.
+ */
+function drawStarDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, seed: number, t: number, alpha: number, hovered: boolean): void {
+  if (r < 7 || alpha <= 0) return;
+  ctx.save();
+  ctx.globalAlpha = alpha;
+
+  // Corona filaments, tapering outwards. They rotate very slowly with the clock.
+  const rays = 34 + Math.floor(hash01(seed, 2) * 22);
+  for (let i = 0; i < rays; i += 1) {
+    const a = (i / rays) * Math.PI * 2 + t * 0.01 + hash01(seed, i) * 0.18;
+    const len = r * (1.02 + hash01(i, seed) * (hovered ? 0.24 : 0.16));
+    ctx.strokeStyle = rgba(color, 0.1 + hash01(i, seed + 11) * 0.22);
+    ctx.lineWidth = Math.max(0.4, r * 0.004);
+    ctx.beginPath();
+    ctx.moveTo(x + Math.cos(a) * r * 0.99, y + Math.sin(a) * r * 0.99);
+    ctx.lineTo(x + Math.cos(a) * len, y + Math.sin(a) * len);
+    ctx.stroke();
+  }
+
+  if (r > 20) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(x, y, r * 0.985, 0, Math.PI * 2);
+    ctx.clip();
+
+    // Granulation: bright convective cells and cooler lanes, strong enough to read as a surface.
+    const cells = Math.max(30, Math.min(420, Math.floor(r * 1.6)));
+    for (let i = 0; i < cells; i += 1) {
+      const a = hash01(seed, i) * Math.PI * 2;
+      const d = Math.sqrt(hash01(i, seed + 1)) * r * 0.97;
+      const cr = r * (0.003 + hash01(i, seed + 2) * 0.016);
+      ctx.fillStyle = hash01(i, seed + 3) > 0.5 ? "rgba(255,255,255,0.14)" : rgba(mix(color, "#05070f", 0.55), 0.14);
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // Supergranulation: a slower layer of larger, softer cells under the fine grain.
+    for (let i = 0; i < 34; i += 1) {
+      const a = hash01(seed + 90, i) * Math.PI * 2;
+      const d = Math.sqrt(hash01(i, seed + 91)) * r * 0.9;
+      ctx.fillStyle = hash01(i, seed + 92) > 0.5 ? "rgba(255,255,255,0.045)" : rgba(mix(color, "#05070f", 0.6), 0.05);
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, r * (0.05 + hash01(i, seed + 93) * 0.07), 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Limb darkening — the edge of a star is cooler and darker than its face.
+    const limb = ctx.createRadialGradient(x, y, r * 0.5, x, y, r);
+    limb.addColorStop(0, "rgba(0,0,0,0)");
+    limb.addColorStop(0.78, "rgba(4,8,18,0.24)");
+    limb.addColorStop(1, "rgba(3,6,13,0.92)");
+    ctx.fillStyle = limb;
+    ctx.fillRect(x - r, y - r, r * 2, r * 2);
+
+    // A few starspots, seeded and clustered.
+    const spots = 2 + Math.floor(hash01(seed, 7) * 4);
+    for (let i = 0; i < spots; i += 1) {
+      const a = hash01(seed + i, 4) * Math.PI * 2;
+      const d = hash01(seed + i, 5) * r * 0.6;
+      ctx.fillStyle = "rgba(6,10,22,0.13)";
+      ctx.beginPath();
+      ctx.ellipse(x + Math.cos(a) * d, y + Math.sin(a) * d, r * 0.05, r * 0.03, a, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Prominences: short bright arcs that leave the limb.
+    if (r > 80) {
+      for (let i = 0; i < 3; i += 1) {
+        const a = hash01(seed, i + 21) * Math.PI * 2;
+        const lift = r * (1.03 + hash01(i, seed + 5) * 0.12);
+        ctx.strokeStyle = rgba(color, 0.35);
+        ctx.lineWidth = Math.max(1, r * 0.008);
+        ctx.beginPath();
+        ctx.arc(x, y, lift, a - 0.16, a + 0.16);
+        ctx.stroke();
+      }
+    }
+
+    // Chromosphere: a soft band of light just outside the photosphere.
+    ctx.strokeStyle = rgba(mix(color, "#ffffff", 0.55), 0.16);
+    ctx.lineWidth = Math.max(1, r * 0.035);
+    ctx.beginPath();
+    ctx.arc(x, y, r * 1.005, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Rim light: a thin, hot edge rather than a plain circle stroke.
+    const rim = ctx.createLinearGradient(x - r, y - r, x + r, y + r);
+    rim.addColorStop(0, "rgba(255,255,255,0.95)");
+    rim.addColorStop(0.5, rgba(mix(color, "#ffffff", 0.7), 0.85));
+    rim.addColorStop(1, "rgba(255,255,255,0.18)");
+    ctx.strokeStyle = rim;
+    ctx.lineWidth = Math.max(1, r * 0.012);
+    ctx.beginPath();
+    ctx.arc(x, y, r * 0.995, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+/**
+ * Planet surface. Domains read as banded giants, skill families as rocky worlds with continents and
+ * craters. Both get a terminator, polar caps, an atmosphere rim and, sometimes, a ring.
+ */
+function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, seed: number, t: number, alpha: number, banded: boolean): void {
+  if (r < 5 || alpha <= 0) return;
+  const spin = t * 0.015 + hash01(seed, 1) * 6.28;
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.beginPath();
+  ctx.arc(x, y, r * 0.985, 0, Math.PI * 2);
+  ctx.clip();
+
+  if (banded) {
+    // Deeper atmosphere first, then alternating light and dark belts with a soft edge.
+    ctx.fillStyle = rgba(mix(color, "#050810", 0.42), 0.7);
+    ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    const bands = 8 + Math.floor(hash01(seed, 2) * 7);
+    for (let i = 0; i < bands; i += 1) {
+      const by = y - r + ((i + 0.5) / bands) * 2 * r + Math.sin(spin + i) * r * 0.02;
+      const bh = (2 * r / bands) * 0.68;
+      ctx.fillStyle = i % 2 === 0 ? rgba(mix(color, "#ffffff", 0.42), 0.4) : rgba(mix(color, "#04070f", 0.62), 0.55);
+      ctx.beginPath();
+      ctx.ellipse(x, by, r * 1.1, bh, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // Storm ovals and one bright band edge drifting through the belts.
+    for (let i = 0; i < 2; i += 1) {
+      const oy = y + (hash01(seed, i + 8) - 0.5) * r * 1.2;
+      const ox = x + Math.sin(spin * 0.7 + i) * r * 0.35;
+      ctx.fillStyle = rgba(mix(color, "#ffffff", 0.6), 0.5);
+      ctx.beginPath();
+      ctx.ellipse(ox, oy, r * 0.24, r * 0.1, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.strokeStyle = "rgba(255,255,255,0.18)";
+    ctx.lineWidth = Math.max(0.6, r * 0.012);
+    ctx.beginPath();
+    ctx.ellipse(x, y + Math.sin(spin) * r * 0.22, r * 1.02, r * 0.16, 0, 0, Math.PI * 2);
+    ctx.stroke();
+  } else {
+    // Rock and ocean: a darker sea, then lit continents over it.
+    ctx.fillStyle = rgba(mix(color, "#04121c", 0.52), 0.55);
+    ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    // Continents: irregular clusters of overlapping arcs, pushed around by the slow spin.
+    const land = 4 + Math.floor(hash01(seed, 3) * 4);
+    for (let i = 0; i < land; i += 1) {
+      const a = hash01(seed, i + 4) * Math.PI * 2 + spin * 0.4;
+      const d = hash01(i, seed + 6) * r * 0.66;
+      const cx = x + Math.cos(a) * d;
+      const cy = y + Math.sin(a) * d * 0.8;
+      const cr = r * (0.12 + hash01(i, seed + 7) * 0.2);
+      ctx.fillStyle = rgba(mix(color, "#e8f6ff", 0.3), 0.38);
+      for (let k = 0; k < 3; k += 1) {
+        ctx.beginPath();
+        ctx.arc(cx + Math.cos(k * 2.1) * cr * 0.6, cy + Math.sin(k * 2.1) * cr * 0.5, cr * (0.7 - k * 0.14), 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    // Craters with a lit rim and a shadowed floor.
+    const craters = Math.max(3, Math.min(22, Math.floor(r * 0.14)));
+    for (let i = 0; i < craters; i += 1) {
+      const a = hash01(seed, i + 30) * Math.PI * 2;
+      const d = Math.sqrt(hash01(i, seed + 31)) * r * 0.78;
+      const cr = r * (0.02 + hash01(i, seed + 32) * 0.06);
+      ctx.fillStyle = "rgba(3,7,15,0.3)";
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255,255,255,0.16)";
+      ctx.lineWidth = Math.max(0.5, cr * 0.22);
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, Math.PI * 0.9, Math.PI * 1.9);
+      ctx.stroke();
+    }
+  }
+
+  // Polar caps.
+  const capA = 0.16 + hash01(seed, 9) * 0.14;
+  ctx.fillStyle = "rgba(240,248,255,0.5)";
+  ctx.beginPath();
+  ctx.ellipse(x, y - r * 0.92, r * 0.42, r * capA, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(x, y + r * 0.94, r * 0.36, r * capA * 0.8, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Terminator: light falls from the upper left, the lower right goes dark.
+  const shade = ctx.createLinearGradient(x - r * 0.95, y - r * 0.95, x + r * 0.8, y + r * 0.95);
+  shade.addColorStop(0, "rgba(255,255,255,0.13)");
+  shade.addColorStop(0.3, "rgba(255,255,255,0.02)");
+  shade.addColorStop(0.5, "rgba(0,0,0,0)");
+  shade.addColorStop(0.68, "rgba(2,5,12,0.46)");
+  shade.addColorStop(1, "rgba(1,3,8,0.96)");
+  ctx.fillStyle = shade;
+  ctx.fillRect(x - r, y - r, r * 2, r * 2);
+
+  // Crescent of light along the lit limb.
+  ctx.strokeStyle = "rgba(255,255,255,0.45)";
+  ctx.lineWidth = Math.max(0.8, r * 0.016);
+  ctx.beginPath();
+  ctx.arc(x, y, r * 0.9, Math.PI * 0.72, Math.PI * 1.58);
+  ctx.stroke();
+
+  // Thin cloud bands over the lit face, only when the body is large enough to read them.
+  if (r > 26) {
+    for (let i = 0; i < 3; i += 1) {
+      const cy = y + (hash01(seed, i + 41) - 0.5) * r * 1.1;
+      ctx.strokeStyle = "rgba(255,255,255,0.12)";
+      ctx.lineWidth = Math.max(1, r * 0.03);
+      ctx.beginPath();
+      ctx.ellipse(x, cy, r * 0.72, r * 0.08, 0, Math.PI * 0.1, Math.PI * 0.9);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+
+  // Atmosphere outside the disc.
+  const atmo = ctx.createRadialGradient(x, y, r * 0.96, x, y, r * 1.18);
+  atmo.addColorStop(0, rgba(mix(color, "#ffffff", 0.3), 0.5));
+  atmo.addColorStop(1, "rgba(5,8,15,0)");
+  ctx.fillStyle = atmo;
+  ctx.beginPath();
+  ctx.arc(x, y, r * 1.16, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Some worlds carry a ring; the near half is drawn over the disc so it reads as a ring, not a halo.
+  if (hash01(seed, 12) > 0.68 && r > 12) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(-0.3 + hash01(seed, 13) * 0.6);
+    ctx.strokeStyle = rgba(color, 0.4);
+    ctx.lineWidth = Math.max(1, r * 0.06);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, r * 1.7, r * 0.42, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.strokeStyle = "rgba(255,255,255,0.18)";
+    ctx.lineWidth = Math.max(0.6, r * 0.02);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, r * 1.95, r * 0.5, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+  }
+  ctx.globalAlpha = 1;
+}
+
+/** Mix two #rrggbb colours; used to build light and shadow from one discipline hue. */
+function mix(hex: string, target: string, t: number): string {
+  const a = hex.replace("#", "");
+  const b = target.replace("#", "");
+  if (a.length !== 6 || b.length !== 6) return hex;
+  const ch = (i: number): string => {
+    const x = parseInt(a.slice(i, i + 2), 16);
+    const y = parseInt(b.slice(i, i + 2), 16);
+    return Math.round(x + (y - x) * t).toString(16).padStart(2, "0");
+  };
+  return `#${ch(0)}${ch(2)}${ch(4)}`;
 }
 
 /** #rrggbb → rgba() so the corona can fade a discipline colour into the void. */
@@ -818,8 +1453,17 @@ function rgba(hex: string, alpha: number): string {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, tier: MasteryTier, selected: boolean): void {
+function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, tier: MasteryTier, selected: boolean, seed: number): void {
   const ring = masteryRing(tier);
+  if (ring.filled) {
+    const glow = ctx.createRadialGradient(x, y, 0, x, y, r * 3.2);
+    glow.addColorStop(0, rgba(ring.color, 0.5));
+    glow.addColorStop(1, "rgba(5,8,15,0)");
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(x, y, r * 3.2, 0, Math.PI * 2);
+    ctx.fill();
+  }
   if (ring.filled) {
     ctx.beginPath();
     ctx.arc(x, y, r, 0, Math.PI * 2);
@@ -831,6 +1475,35 @@ function drawMoon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number
   ctx.strokeStyle = tier === "unassessed" ? "rgba(113,129,159,0.85)" : "rgba(113,129,159,0.35)";
   ctx.lineWidth = 1;
   ctx.stroke();
+  // Close up, a moon is a rocky body with craters and a terminator, not a dot.
+  if (r > 4) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.clip();
+    const craters = Math.max(2, Math.min(14, Math.floor(r * 0.7)));
+    for (let i = 0; i < craters; i += 1) {
+      const a = hash01(seed, i) * Math.PI * 2;
+      const d = Math.sqrt(hash01(i, seed + 1)) * r * 0.8;
+      const cr = r * (0.06 + hash01(i, seed + 2) * 0.16);
+      ctx.fillStyle = "rgba(4,8,18,0.32)";
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255,255,255,0.2)";
+      ctx.lineWidth = Math.max(0.4, cr * 0.2);
+      ctx.beginPath();
+      ctx.arc(x + Math.cos(a) * d, y + Math.sin(a) * d, cr, Math.PI * 0.95, Math.PI * 1.85);
+      ctx.stroke();
+    }
+    const shade = ctx.createLinearGradient(x - r, y - r, x + r, y + r);
+    shade.addColorStop(0, "rgba(255,255,255,0.04)");
+    shade.addColorStop(0.5, "rgba(0,0,0,0)");
+    shade.addColorStop(1, "rgba(2,5,12,0.8)");
+    ctx.fillStyle = shade;
+    ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    ctx.restore();
+  }
   if (ring.arc > 0 && ring.arc < 1) {
     ctx.beginPath();
     ctx.arc(x, y, r + 1.2, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * ring.arc);

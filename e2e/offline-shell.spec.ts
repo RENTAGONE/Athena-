@@ -14,7 +14,7 @@ test("shell loads, installs its service worker, and reopens offline", async ({ p
 });
 
 test("no horizontal scroll at 360 px on each route", async ({ page }: { page: any }) => {
-  for (const route of ["#/today", "#/knowledge", "#/studio/updates", "#/studio/backup"]) {
+  for (const route of ["#/today", "#/inbox", "#/knowledge", "#/learn/ATH-DOM-ENG-PROG", "#/studio/updates", "#/studio/backup", "#/studio/architect", "#/settings"]) {
     await page.goto("/" + route);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow, route).toBeLessThanOrEqual(0);

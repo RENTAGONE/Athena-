@@ -26,11 +26,17 @@ export default defineConfig({
       },
       workbox: {
       mode: "development",
+        // Do not leave superseded precaches behind: they are what makes an install look stale.
+        cleanupOutdatedCaches: true,
         globPatterns: ["**/*.{js,css,html,woff2,svg,png,json}"],
         navigateFallback: "/index.html",
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
     }),
   ],
+  define: {
+    // Stamped at build time so a running copy can say which build it actually is.
+    __BUILD_STAMP__: JSON.stringify(new Date().toISOString().slice(0, 16).replace("T", " ") + "Z"),
+  },
   build: { target: "es2022", sourcemap: false },
 });

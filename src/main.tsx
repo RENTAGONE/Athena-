@@ -11,6 +11,7 @@ import "@fontsource/jetbrains-mono/latin-600.css";
 import "./ui/tokens.css";
 import "./ui/app.css";
 import { App } from "./ui/App.tsx";
+import { escapeStaleShell, markUpdateReady, setUpdateAction } from "./ui/update.ts";
 
 declare global {
   interface Window {
@@ -20,10 +21,17 @@ declare global {
 // A new service worker waits until the learner accepts it (ADR-011). The update banner in App.tsx calls this.
 const updateSW = registerSW({
   onNeedRefresh() {
+    // Recorded, not just announced: this fires before React mounts, so a listener alone loses it.
+    markUpdateReady();
     window.dispatchEvent(new CustomEvent("athena-update-ready"));
   },
 });
+setUpdateAction(() => updateSW(true));
 window.__athenaUpdate = () => updateSW(true);
+
+// A worker controlling the dev server can only be a leftover from an earlier preview or production
+// build on this origin, and it would keep answering with that old shell for as long as it lives.
+if (import.meta.env.DEV) void escapeStaleShell();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
