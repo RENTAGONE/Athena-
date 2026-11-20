@@ -1466,3 +1466,60 @@ textarea {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0;
 }
+
+/* ── Wave 2: macro galaxies, Move Bodies, Zen View ───────────────────────────────────────────── */
+.atlas-galaxies {
+  position: absolute; top: 108px; left: 0; right: 0; z-index: 4;
+  display: flex; gap: 6px; padding: 0 12px; overflow-x: auto; scrollbar-width: none;
+}
+.atlas-galaxies::-webkit-scrollbar { display: none; }
+.galaxy-chip {
+  display: inline-flex; align-items: center; gap: 7px; min-height: 28px;
+  padding: 3px 10px; font-size: 11px; letter-spacing: 0.01em;
+  background: rgba(9, 16, 31, 0.74); border-color: rgba(126, 170, 255, 0.14);
+  color: var(--text-secondary); backdrop-filter: blur(14px);
+}
+.galaxy-chip[aria-pressed="true"] { border-color: rgba(94, 231, 255, 0.45); color: var(--text-primary); }
+.galaxy-chip .dot { width: 6px; height: 6px; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
+.galaxy-chip .dot[data-galaxy="core"] { background: #7ea4ff; color: #7ea4ff; }
+.galaxy-chip .dot[data-galaxy="frontier"] { background: #ffc66d; color: #ffc66d; }
+.galaxy-chip .dot[data-galaxy="vault"] { background: #a78bfa; color: #a78bfa; }
+
+.atlas-canvas.move-mode { cursor: grab; }
+.atlas-canvas.move-mode.dragging { cursor: grabbing; }
+
+.atlas-movebar {
+  position: absolute; left: 12px; right: 12px; bottom: calc(148px + env(safe-area-inset-bottom)); z-index: 7;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 12px; border-radius: var(--radius-card, 14px);
+  background: rgba(8, 15, 29, 0.92); border: 1px solid rgba(94, 231, 255, 0.28);
+  box-shadow: var(--shadow-lift); backdrop-filter: blur(18px);
+  font-size: 11.5px; color: var(--text-secondary);
+}
+.atlas-movebar span { flex: 1; min-width: 180px; }
+.atlas-movebar .btn { flex: 0 0 auto; }
+
+.atlas-zen-exit { position: absolute; top: 14px; right: 12px; z-index: 9; background: rgba(8, 15, 29, 0.7); backdrop-filter: blur(12px); }
+
+.atlas-root[data-zen="true"] .atlas-hud,
+.atlas-root[data-zen="true"] .atlas-chips,
+.atlas-root[data-zen="true"] .atlas-galaxies,
+.atlas-root[data-zen="true"] .atlas-legend,
+.atlas-root[data-zen="true"] .atlas-reset,
+.atlas-root[data-zen="true"] .atlas-zoom,
+.atlas-root[data-zen="true"] .atlas-system,
+.atlas-root[data-zen="true"] .drawer,
+.atlas-root[data-zen="true"] .confirm-card,
+.atlas-root[data-zen="true"] .atlas-index { opacity: 0; pointer-events: none; }
+
+html.athena-zen .nav,
+html.athena-zen .topbar,
+html.athena-zen .brandrail { opacity: 0; pointer-events: none; }
+html.athena-zen .main.full { inset: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .atlas-hud, .atlas-chips, .atlas-galaxies, .atlas-legend, .nav, .topbar, .brandrail { transition: opacity 220ms var(--ease-out, ease-out); }
+}
+@media (min-width: 900px) {
+  .atlas-galaxies { top: 116px; padding: 0 18px; }
+  .atlas-movebar { left: auto; right: 18px; bottom: 76px; max-width: 460px; }
+}

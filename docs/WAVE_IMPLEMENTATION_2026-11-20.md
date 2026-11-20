@@ -68,3 +68,32 @@ tables for spatial overrides and side quests exist, but those interactions are n
 - PCL cards match canonical records by title/code hints; the disposition ledger is reported in the Library
   header, but a full duplicate audit of all 216 modules was not performed here.
 - Studio is still not a full authoring environment; this pass added the pack forge, not node-by-node editing.
+
+## Wave 2 completion — 2026-11-20 (second pass)
+
+The atlas items that were listed as partial in the first pass are now implemented and were exercised in
+a real browser against the seeded Pack v1.0 store (1,201 records, 1,125 relations).
+
+| Item | Where | What is actually there |
+| --- | --- | --- |
+| Procedural biomes | `src/app/atlas-graph.ts` `biomeFor`, `src/ui/AtlasCanvas.tsx` `BIOME_LOOK` | Six biomes (ocean, verdant, desert, ice, volcanic, barren) chosen by a stable hash of the record code. Domains stay banded giants, skills stay rocky worlds; the biome sets sea, ground and land colours. |
+| Day/night shading | `drawPlanetDetail` | Terminator gradient, cool night tint, a lit limb crescent and a specular highlight. Light falls from the upper left on every body. |
+| Evidence-driven stage growth | `stageGrowth()` | A body's drawn radius grows with its own evidence count, up to +55%; hit targets and labels follow the drawn radius. No evidence, no growth. |
+| City lights | `cityLightCount()` + `drawPlanetDetail` | One settlement per piece of evidence (capped at 56), placed only on the night hemisphere, so a lit world is a record of demonstrated work. |
+| Black holes / quasars | `systemPhenomenon()` + `drawPhenomenon()` | A discipline with at least 12 records and zero evidence collapses into a black hole with a tilted accretion disc, photon ring and horizon. Three or more confirmed masteries over at least a quarter evidenced fires bipolar quasar jets. Anything in between stays an ordinary star. |
+| Multi-galaxy zoom | `GALAXY_CLUSTERS`, `clusterByKey`, macro block in the canvas | Past 3,200 units the Core, Frontier (draft records) and Vault (retired records) are drawn as three spiral galaxies sized from real counts, each with its own label, dust lane and tap target. Empty galaxies are not drawn. |
+| Hyperspace warp | `WARP_MS`, `isHyperspaceJump`, warp block in the canvas | Any jump over 2,600 world units — cluster to system, galaxy to galaxy, or a long thread midpoint — plays 650 ms of radial star streaks with `easeInOutQuart`, not the normal easing. |
+| Move Bodies → Dexie | `spatialOverrides`, `overridesRef`, drag branch in the pointer handlers | Move mode drags any star, planet, moon, satellite or asteroid. The offset is written to the `spatialOverrides` table on pointer-up, restored on mount, applied on every frame, and cleared by Reset moves. |
+| Zen View | `zen` state, `html.athena-zen` | Hides HUD, chips, galaxy rail, legend, drawer and the app chrome; Escape or Exit Zen returns. |
+
+### Verified in the browser
+- Pack seeded (1,201 records / 1,125 relations) and the atlas opened on the Knowledge route with no console errors.
+- Macro view at 0.5× shows the Core star field and the Frontier spiral labelled from live counts.
+- Flying into Electronics & Hardware isolated the system and its planets; the HUD reported 8 domains, 44 constellations, 2 skills, 2 subskills.
+- Move mode dragged a body, `Reset moves (1)` appeared, a reload restored the override, Reset cleared it and the row stayed cleared after another reload.
+- Zen applied `athena-zen` to the document and Escape removed it.
+
+### Still not done (unchanged from the first pass, stated plainly)
+- No Bangla translation layer (explicitly out of scope for this pass).
+- Studio is a preview/approve/pack surface, not a node-by-node authoring editor, and the PCL duplicate audit of the 216 modules has not been run.
+- `npm run test:e2e` still cannot run in this sandbox: Playwright Chromium needs system libraries (`libnspr4`, `libnss3`, `libatk-1.0`, …) that cannot be installed here (`sudo` refuses due to the no-new-privileges flag).

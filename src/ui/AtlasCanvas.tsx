@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { Pause, Play, RotateCcw, Rocket, Scan, Search, X } from "lucide-react";
+import { Eye, Move, Pause, Play, RotateCcw, Rocket, Scan, Search, X } from "lucide-react";
 import { useApp } from "./context.ts";
 import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
 import {
@@ -17,12 +17,21 @@ import {
 } from "../app/selectors.ts";
 import {
   FOCAL,
+  GALAXY_CLUSTERS,
   GALAXY_RADIUS,
+  MACRO_DISTANCE,
+  WARP_MS,
+  add,
   bezierControl,
+  biomeFor,
+  cityLightCount,
+  clusterByKey,
   distanceToPolyline,
+  easeInOutQuart,
   easeOutCubic,
   separatedStarPositions,
   hash01,
+  isHyperspaceJump,
   makeCamera,
   masteryRing,
   mixCamera,
@@ -31,12 +40,19 @@ import {
   project,
   quadraticPoint,
   reentryJitter,
+  spiralPositions,
+  stageGrowth,
+  systemPhenomenon,
+  v3,
   wrapPoint,
   type Camera,
+  type GalaxyKey,
   type ScreenPoint,
+  type SystemPhenomenon,
   type Vec3,
 } from "../app/atlas-graph.ts";
 import type { NodeRecord } from "../domain/types.ts";
+import type { SpatialOverride } from "../domain/system.ts";
 import { getPrefs } from "./prefs.ts";
 import { createSky, drawSky } from "./sky.ts";
 
@@ -87,7 +103,7 @@ interface Scene {
 }
 
 export function Knowledge(): ReactNode {
-  const { state } = useApp();
+  const { state, rt } = useApp();
   const index = useMemo(() => evidenceIndex(state), [state]);
   const galaxy = useMemo(() => buildGalaxy(state, index), [state, index]);
   const edges = useMemo(() => partitionEdges(state), [state]);
@@ -136,12 +152,19 @@ export function Knowledge(): ReactNode {
   const [selected, setSelected] = useState<string | null>(null);
   const [isolated, setIsolated] = useState<number | null>(null);
   const [confirm, setConfirm] = useState<{ star: number; title: string; code: string; relation: string; sourceTitle: string; sourceCode: string; targetTitle: string } | null>(null);
+  /** Move Bodies: drag any body to reposition it; the offset persists in Dexie. */
+  const [moving, setMoving] = useState(false);
+  /** Zen View: the galaxy alone, with the interface out of the way until Escape. */
+  const [zen, setZen] = useState(false);
+  /** Which galaxy the camera is framing in the macro view. */
+  const [galaxyView, setGalaxyView] = useState<GalaxyKey>("core");
+  const [movedCount, setMovedCount] = useState(0);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const sceneRef = useRef<Scene>({ galaxy, starsWorld, location: galaxy.location });
   const edgesRef = useRef(edges);
   const cameraRef = useRef<Camera>(makeCamera({ distance: 11_200 }));
-  const flightRef = useRef<{ from: Camera; to: Camera; start: number; dur: number; isolate: number | null } | null>(null);
+  const flightRef = useRef<{ from: Camera; to: Camera; start: number; dur: number; isolate: number | null; warp: boolean } | null>(null);
   const isolatedRef = useRef<number | null>(null);
   const selectedRef = useRef<string | null>(null);
   const playingRef = useRef(playing);
@@ -158,6 +181,16 @@ export function Knowledge(): ReactNode {
   const tiltRef = useRef(tilt);
   const dirtyRef = useRef(true);
   const reduceRef = useRef(false);
+  /** node id → persisted world offset, loaded from the spatialOverrides table. */
+  const overridesRef = useRef<Map<string, Vec3>>(new Map());
+  const movingRef = useRef(moving);
+  const zenRef = useRef(zen);
+  const galaxyRef = useRef<GalaxyKey>(galaxyView);
+  const rtRef = useRef(rt.store);
+  const evidenceRef = useRef<Map<string, number>>(new Map());
+  const phenomenaRef = useRef<Map<number, SystemPhenomenon>>(new Map());
+  const clustersRef = useRef<{ key: GalaxyKey; label: string; anchor: Vec3; radius: number; count: number; points: Vec3[] }[]>([]);
+  const clusterHitsRef = useRef<{ key: GalaxyKey; x: number; y: number; r: number }[]>([]);
 
   // The camera moves in the animation loop, so the readout samples it instead of re-rendering React
   // on every frame.
@@ -212,6 +245,121 @@ export function Knowledge(): ReactNode {
     dirtyRef.current = true;
   }, [filter]);
 
+  useEffect(() => {
+    movingRef.current = moving;
+    dirtyRef.current = true;
+  }, [moving]);
+
+  useEffect(() => {
+    zenRef.current = zen;
+    dirtyRef.current = true;
+  }, [zen]);
+
+  useEffect(() => {
+    galaxyRef.current = galaxyView;
+    dirtyRef.current = true;
+  }, [galaxyView]);
+
+  useEffect(() => {
+    rtRef.current = rt.store;
+  }, [rt]);
+
+  /** Zen View hides the chrome itself, not just the canvas overlays. */
+  useEffect(() => {
+    document.documentElement.classList.toggle("athena-zen", zen);
+    return () => document.documentElement.classList.remove("athena-zen");
+  }, [zen]);
+
+  /** Evidence per node: drives body growth, night-side settlement lights and the phenomenon checks. */
+  const evidenceCount = useMemo(() => {
+    const out = new Map<string, number>();
+    for (const [id, list] of index.byTarget) out.set(id, list.length);
+    return out;
+  }, [index]);
+
+  /** Black holes and quasars are decided only from stored evidence, never from page views. */
+  const phenomena = useMemo(() => {
+    const out = new Map<number, SystemPhenomenon>();
+    galaxy.stars.forEach((s, si) => {
+      const ids = [s.discipline.id];
+      for (const m of s.moons) ids.push(m.node.id);
+      for (const p of s.planets) {
+        ids.push(p.node.id);
+        for (const m of p.moons) {
+          ids.push(m.node.id);
+          for (const x of m.satellites) {
+            ids.push(x.node.id);
+            for (const a of x.asteroids) ids.push(a.node.id);
+          }
+          for (const a of m.asteroids) ids.push(a.node.id);
+        }
+      }
+      let evidenced = 0;
+      let mastered = 0;
+      for (const id of ids) {
+        if ((evidenceCount.get(id) ?? 0) > 0) evidenced += 1;
+        if (masteryTier(index, id) === "mastered") mastered += 1;
+      }
+      const ph = systemPhenomenon({ total: ids.length, evidenced, mastered });
+      if (ph) out.set(si, ph);
+    });
+    return out;
+  }, [galaxy, index, evidenceCount]);
+
+  /** The macro cluster: the mapped core, the draft Frontier and the retired Vault, from real counts. */
+  const clusters = useMemo(() => {
+    const nodes = Object.values(state.nodes);
+    const isVault = (s: string): boolean => /retired|archived|deprecated/.test(s);
+    const frontierCount = nodes.filter((n) => n.status === "draft").length;
+    const vaultCount = nodes.filter((n) => isVault(n.status)).length;
+    return GALAXY_CLUSTERS.map((c) => ({
+      ...c,
+      count: c.key === "core" ? nodes.length - frontierCount - vaultCount : c.key === "frontier" ? frontierCount : vaultCount,
+      points: spiralPositions(c.key === "core" ? 560 : 300, c.radius, c.key === "vault" ? 2 : 3, c.key === "frontier" ? 0.8 : 0.55),
+    }));
+  }, [state.nodes]);
+
+  useEffect(() => {
+    evidenceRef.current = evidenceCount;
+    phenomenaRef.current = phenomena;
+    clustersRef.current = clusters;
+    dirtyRef.current = true;
+  }, [evidenceCount, phenomena, clusters]);
+
+  /** Restore any body the learner has moved. Offsets are the only thing this screen writes. */
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      try {
+        const rows = await rt.store.listRows<SpatialOverride>("spatialOverrides");
+        if (!alive) return;
+        const map = new Map<string, Vec3>();
+        for (const r of rows) map.set(r.nodeId, v3(r.x, r.y, r.z));
+        overridesRef.current = map;
+        setMovedCount(map.size);
+        dirtyRef.current = true;
+      } catch {
+        // A locked database leaves the atlas where the seed put it; nothing is invented to replace it.
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [rt]);
+
+  const persistOverride = useCallback((nodeId: string, p: Vec3): void => {
+    const row: Record<string, unknown> & { id: string } = { id: nodeId, nodeId, x: p.x, y: p.y, z: p.z, updatedAt: new Date().toISOString() };
+    void rtRef.current?.putRow("spatialOverrides", row);
+  }, []);
+
+  const resetMoves = useCallback((): void => {
+    const ids = [...overridesRef.current.keys()];
+    overridesRef.current = new Map();
+    setMovedCount(0);
+    dirtyRef.current = true;
+    for (const id of ids) void rtRef.current?.deleteRow("spatialOverrides", id);
+  }, []);
+
   const matched = useMemo(() => {
     const needle = q.trim().toLowerCase();
     if (!needle) return null;
@@ -247,7 +395,10 @@ export function Knowledge(): ReactNode {
       const target = starsWorld[starIdx];
       if (!target) return;
       const to = makeCamera({ targetX: target.x, targetY: target.y, targetZ: target.z, yaw: 0.55, pitch: 0.5, distance: 140 });
-      flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur, isolate: starIdx };
+      const from = cameraRef.current;
+      // A jump from the cluster into a system crosses real distance: that is the 650 ms warp.
+      const warp = isHyperspaceJump(v3(from.targetX, from.targetY, from.targetZ), target) || from.distance > 2400;
+      flightRef.current = { from: { ...from }, to, start: performance.now(), dur: warp ? WARP_MS : dur, isolate: starIdx, warp };
     },
     [starsWorld],
   );
@@ -256,7 +407,30 @@ export function Knowledge(): ReactNode {
   const resetView = useCallback((): void => {
     const cam = cameraRef.current;
     const to = makeCamera({ targetX: 0, targetY: 0, targetZ: 0, yaw: cam.yaw, pitch: cam.pitch, distance: frameDistanceRef.current });
-    flightRef.current = { from: { ...cam }, to, start: performance.now(), dur: 620, isolate: null };
+    const warp = Math.hypot(cam.targetX, cam.targetY, cam.targetZ) > 2600;
+    flightRef.current = { from: { ...cam }, to, start: performance.now(), dur: warp ? WARP_MS : 620, isolate: null, warp };
+    setIsolated(null);
+    setSelected(null);
+    setConfirm(null);
+    setGalaxyView("core");
+  }, []);
+
+  /** Warp between the three galaxies. Each jump is the same 650 ms hyperspace move. */
+  const flyToCluster = useCallback((key: GalaxyKey): void => {
+    const c = clusterByKey(key);
+    const cam = cameraRef.current;
+    const span = Math.min(window.innerWidth, window.innerHeight);
+    const to = makeCamera({
+      targetX: c.anchor.x,
+      targetY: c.anchor.y,
+      targetZ: c.anchor.z,
+      yaw: key === "core" ? cam.yaw : 0.62,
+      pitch: 0.4,
+      // Stay outside the macro threshold, or the galaxy that was flown to would not be drawn.
+      distance: key === "core" ? frameDistanceRef.current : Math.max(MACRO_DISTANCE + 1400, Math.min(11_000, (c.radius * 2.6 * FOCAL) / (0.85 * Math.max(320, span)))),
+    });
+    flightRef.current = { from: { ...cam }, to, start: performance.now(), dur: WARP_MS, isolate: null, warp: true };
+    setGalaxyView(key);
     setIsolated(null);
     setSelected(null);
     setConfirm(null);
@@ -337,6 +511,104 @@ export function Knowledge(): ReactNode {
       // so the background is 3D structure rather than a fixed wallpaper.
       drawSky(ctx, sky, cam, width, height, t, reduceRef.current);
 
+      // ── Multi-galaxy macro view ──────────────────────────────────────────
+      // Past the macro threshold the mapped core, the draft Frontier and the retired Vault are drawn as
+      // three galaxies in their own right, sized from their real record counts.
+      clusterHitsRef.current = [];
+      if (cam.distance > MACRO_DISTANCE) {
+        const fade = Math.min(1, (cam.distance - MACRO_DISTANCE) / 3600);
+        for (const cl of clustersRef.current) {
+          // An empty galaxy is not drawn: a cloud of points standing in for no records would lie.
+          if (cl.count === 0 && cl.key !== "core") continue;
+          const pa = project(cl.anchor, cam, width, height);
+          if (!pa) continue;
+          const rr = Math.max(26, (cl.radius * FOCAL) / Math.max(1, pa.depth));
+          if (pa.sx < -rr || pa.sx > width + rr || pa.sy < -rr || pa.sy > height + rr) continue;
+          const tint = cl.key === "core" ? "#7ea4ff" : cl.key === "frontier" ? "#ffc66d" : "#a78bfa";
+          const halo = ctx.createRadialGradient(pa.sx, pa.sy, 0, pa.sx, pa.sy, rr * 1.3);
+          halo.addColorStop(0, rgba(tint, 0.14 * fade));
+          halo.addColorStop(0.55, rgba(tint, 0.055 * fade));
+          halo.addColorStop(1, "rgba(5,8,15,0)");
+          ctx.fillStyle = halo;
+          ctx.beginPath();
+          ctx.arc(pa.sx, pa.sy, rr * 1.3, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+          for (let i = 0; i < cl.points.length; i += 1) {
+            const pt = cl.points[i]!;
+            const wp = { x: cl.anchor.x + pt.x, y: cl.anchor.y + pt.y, z: cl.anchor.z + pt.z };
+            const sp2 = project(wp, cam, width, height);
+            if (!sp2) continue;
+            if (sp2.sx < 0 || sp2.sx > width || sp2.sy < 0 || sp2.sy > height) continue;
+            ctx.globalAlpha = (0.16 + hash01(i, 41) * 0.5) * fade;
+            ctx.fillStyle = hash01(i, 43) > 0.82 ? "#ffffff" : tint;
+            const dot = Math.max(0.7, Math.min(2.2, 120 / Math.max(1, sp2.depth)));
+            ctx.fillRect(sp2.sx, sp2.sy, dot, dot);
+          }
+          ctx.restore();
+          // Dust lane so the core galaxy reads as a disc, not a blob of dots.
+          ctx.save();
+          ctx.globalAlpha = 0.22 * fade;
+          ctx.strokeStyle = rgba(tint, 0.4);
+          ctx.lineWidth = Math.max(1, rr * 0.022);
+          ctx.beginPath();
+          ctx.ellipse(pa.sx, pa.sy, rr * 0.92, rr * 0.34, 0.5, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.restore();
+          ctx.font = '600 11px "JetBrains Mono", ui-monospace, monospace';
+          ctx.textAlign = "center";
+          // The core is labelled beneath its stars; the satellite galaxies above their discs, so no
+          // caption ever sits on top of a system.
+          const labelY = cl.key === "core" ? pa.sy + rr * 2.2 + 16 : pa.sy - rr * 1.35 - 12;
+          ctx.fillStyle = rgba(tint, 0.82 * fade);
+          ctx.fillText(`${cl.label.toUpperCase()} · ${cl.count}`, pa.sx, labelY);
+          ctx.fillStyle = rgba("#c9d7f2", 0.5 * fade);
+          ctx.font = '500 10px "JetBrains Mono", ui-monospace, monospace';
+          ctx.fillText(cl.key === "core" ? "mapped curriculum" : cl.key === "frontier" ? "draft records · tap to warp" : "retired records · tap to warp", pa.sx, labelY + 15);
+          clusterHitsRef.current.push({ key: cl.key, x: pa.sx, y: pa.sy, r: Math.max(38, rr * 0.7) });
+        }
+      }
+
+      // ── Hyperspace warp ─────────────────────────────────────────────────
+      // 650 ms of star streaks while the camera crosses between galaxies or into a system.
+      const travelling = flightRef.current;
+      if (travelling?.warp) {
+        const wp = Math.min(1, Math.max(0, (now - travelling.start) / travelling.dur));
+        const k = Math.sin(Math.PI * wp);
+        const cx = width / 2;
+        const cy = height / 2;
+        const reach = Math.hypot(width, height) * 0.55;
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        ctx.lineCap = "round";
+        for (let i = 0; i < 110; i += 1) {
+          const a = hash01(i, 613) * Math.PI * 2;
+          const start = reach * (0.16 + hash01(i, 617) * 0.7);
+          const len = reach * (0.06 + hash01(i, 619) * 0.42) * k;
+          const x0 = cx + Math.cos(a) * start;
+          const y0 = cy + Math.sin(a) * start;
+          const x1 = cx + Math.cos(a) * (start + len);
+          const y1 = cy + Math.sin(a) * (start + len);
+          const grad2 = ctx.createLinearGradient(x0, y0, x1, y1);
+          const tint = i % 5 === 0 ? "255,255,255" : "126,164,255";
+          grad2.addColorStop(0, `rgba(${tint},0)`);
+          grad2.addColorStop(1, `rgba(${tint},${0.5 * k})`);
+          ctx.strokeStyle = grad2;
+          ctx.lineWidth = Math.max(0.8, 2.2 * k);
+          ctx.beginPath();
+          ctx.moveTo(x0, y0);
+          ctx.lineTo(x1, y1);
+          ctx.stroke();
+        }
+        const flash = ctx.createRadialGradient(cx, cy, 0, cx, cy, reach * 0.5);
+        flash.addColorStop(0, `rgba(180,214,255,${0.16 * k})`);
+        flash.addColorStop(1, "rgba(180,214,255,0)");
+        ctx.fillStyle = flash;
+        ctx.fillRect(0, 0, width, height);
+        ctx.restore();
+      }
+
       // Constellation web: faint links between neighbouring systems, only in the far view where the
       // whole galaxy is on screen.
       if (iso === null && cam.distance > 700) {
@@ -391,7 +663,8 @@ export function Knowledge(): ReactNode {
         const raw = scene.starsWorld[si];
         if (!raw) return;
         const base = flatten(raw);
-        const world = iso === si ? base : reentryJitter(wrapPoint(base, cam), base);
+        // A moved system keeps its saved offset on every frame; a move is data, not a camera trick.
+        const world = add(iso === si ? base : reentryJitter(wrapPoint(base, cam), base), overridesRef.current.get(system.discipline.id) ?? v3());
         const proj = project(world, cam, width, height);
         const dimSystem = (iso !== null && iso !== si) || (flt !== null && flt !== system.code);
         if (!proj) {
@@ -476,6 +749,11 @@ export function Knowledge(): ReactNode {
           }
 
           drawStarDetail(ctx, proj.sx, proj.sy, r, color, surfaceSeed(system.code), clockRef.current, dim, hovered);
+
+          // Wave 2 phenomena: an unmapped mass collapses into a black hole, concentrated mastery
+          // fires a quasar. Both are derived from evidence counts, never from a page visit.
+          const ph = phenomenaRef.current.get(si);
+          if (ph && r > 4) drawPhenomenon(ctx, proj.sx, proj.sy, r, ph, clockRef.current, dim);
 
           // Some systems are binaries: a smaller companion with its own temperature, orbiting the
           // primary. Seeded per system, so the same discipline always has the same companion.
@@ -626,7 +904,7 @@ export function Knowledge(): ReactNode {
           const orbitYaw = si * 0.6 + band * 0.4;
           const omega = 0.04 + band * 0.012;
           const theta = (slot / Math.max(1, inBand)) * Math.PI * 2 + phaseAt(pi * 0.7, omega, t);
-          const p = orbitPoint(world, rx, rz, tilt, orbitYaw, theta);
+          const p = add(orbitPoint(world, rx, rz, tilt, orbitYaw, theta), overridesRef.current.get(planet.node.id) ?? v3());
           const pp = project(p, cam, width, height);
           if (!pp) return;
           const inView = pp.sx > -80 && pp.sx < width + 80 && pp.sy > -80 && pp.sy < height + 80;
@@ -635,7 +913,9 @@ export function Knowledge(): ReactNode {
           if (cam.distance < 620 && pp.depth > starDepth && Math.hypot(pp.sx - proj.sx, pp.sy - proj.sy) < starRNow * 0.99) return;
           const hoveredP = hover.body === planet.node.id;
           const planetMax = Math.max(56, Math.min(width, height) * 0.3);
-          const r = Math.max(2.2, Math.min(planetMax, 13 * pp.scale)) * (system.planets.length > 30 ? 0.68 : 1) * (hoveredP ? 1.35 : 1);
+          // Stage growth: a demonstrated body is visibly larger than an untouched one.
+          const pEvidence = evidenceRef.current.get(planet.node.id) ?? 0;
+          const r = Math.max(2.2, Math.min(planetMax, 13 * pp.scale * stageGrowth(pEvidence))) * (system.planets.length > 30 ? 0.68 : 1) * (hoveredP ? 1.35 : 1);
           const dimP = flt !== null && flt !== system.code ? 0.2 : 1;
           const pColor = meta?.color ?? "#648bff";
           // Soft bloom, then a lit sphere with a rim, then the honest mastery arc.
@@ -676,7 +956,7 @@ export function Knowledge(): ReactNode {
             ctx.fill();
           }
 
-          drawPlanetDetail(ctx, pp.sx, pp.sy, r, pColor, surfaceSeed(planet.node.code), clockRef.current, dimP, planet.node.object_type === "domain");
+          drawPlanetDetail(ctx, pp.sx, pp.sy, r, pColor, surfaceSeed(planet.node.code), clockRef.current, dimP, planet.node.object_type === "domain", cityLightCount(pEvidence));
 
           if (r > 3.4 && r < 40) {
             ctx.save();
@@ -742,7 +1022,7 @@ export function Knowledge(): ReactNode {
             const mYaw = pi * 0.7 + mi * 0.9;
             const mOmega = 0.2 + (mi % 3) * 0.025;
             const mTheta = (mi / moonCount) * Math.PI * 2 + phaseAt(pi * 0.4, mOmega, t);
-            const mPos = orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, mTheta);
+            const mPos = add(orbitPoint(p, mr, mr * 0.82, mTilt, mYaw, mTheta), overridesRef.current.get(moon.node.id) ?? v3());
             const mp = project(mPos, cam, width, height);
             if (!mp) return;
             if (mp.sx < -40 || mp.sx > width + 40 || mp.sy < -40 || mp.sy > height + 40) return;
@@ -771,7 +1051,7 @@ export function Knowledge(): ReactNode {
               const satCount = Math.max(1, moon.satellites.length);
               const sr0 = 11 + (xi % 2) * 6;
               const sTheta = (xi / satCount) * Math.PI * 2 + phaseAt(xi * 0.6, 0.3, t);
-              const sWorld = orbitPoint(mPos, sr0, sr0 * 0.74, 0.34, mi * 0.7, sTheta);
+              const sWorld = add(orbitPoint(mPos, sr0, sr0 * 0.74, 0.34, mi * 0.7, sTheta), overridesRef.current.get(sat.node.id) ?? v3());
               const sp = project(sWorld, cam, width, height);
               if (!sp || sp.sx < -24 || sp.sx > width + 24 || sp.sy < -24 || sp.sy > height + 24) return;
               const sr = Math.max(1, Math.min(6, 3.6 * sp.scale));
@@ -808,7 +1088,7 @@ export function Knowledge(): ReactNode {
         system.moons.forEach((moon: GalaxyMoon, mi: number) => {
           const moonCount = Math.max(1, system.moons.length);
           const mr = 40 + (mi % 2) * 16;
-          const p = orbitPoint(world, mr, mr * 0.78, ((mi % 3) - 1) * 0.3, si * 0.5, (mi / moonCount) * Math.PI * 2 + phaseAt(mi * 0.5, 0.09, t));
+          const p = add(orbitPoint(world, mr, mr * 0.78, ((mi % 3) - 1) * 0.3, si * 0.5, (mi / moonCount) * Math.PI * 2 + phaseAt(mi * 0.5, 0.09, t)), overridesRef.current.get(moon.node.id) ?? v3());
           const mp = project(p, cam, width, height);
           if (!mp || mp.sx < -40 || mp.sx > width + 40 || mp.sy < -40 || mp.sy > height + 40) return;
           const mrPx = Math.max(1.6, Math.min(Math.max(30, Math.min(width, height) * 0.16), 7 * mp.scale));
@@ -991,7 +1271,7 @@ export function Knowledge(): ReactNode {
       const flight = flightRef.current;
       if (flight) {
         const p = Math.min(1, (now - flight.start) / flight.dur);
-        cameraRef.current = mixCamera(flight.from, flight.to, easeOutCubic(p));
+        cameraRef.current = mixCamera(flight.from, flight.to, flight.warp ? easeInOutQuart(p) : easeOutCubic(p));
         if (p >= 1) {
           cameraRef.current = flight.to;
           flightRef.current = null;
@@ -1032,6 +1312,8 @@ export function Knowledge(): ReactNode {
     let lastX = 0;
     let lastY = 0;
     let mode: "orbit" | "pan" = "orbit";
+    /** The body currently being dragged in Move Bodies mode. */
+    let dragBody: { id: string; depth: number; lastX: number; lastY: number } | null = null;
     const pointers = new Map<number, { x: number; y: number }>();
     let pinchStart = 0;
     let pinchDistance = 0;
@@ -1058,6 +1340,16 @@ export function Knowledge(): ReactNode {
       lastX = e.clientX;
       lastY = e.clientY;
       mode = e.shiftKey || e.button === 2 || pointers.size > 1 ? "pan" : "orbit";
+      if (movingRef.current) {
+        // Move Bodies: grab the nearest body and write its offset instead of orbiting the camera.
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        const hit = [...bodiesRef.current]
+          .filter((b) => Math.hypot(b.x - mx, b.y - my) <= b.r + 8)
+          .sort((a, b) => b.depth - a.depth)[0];
+        if (hit) dragBody = { id: hit.node.id, depth: hit.depth, lastX: e.clientX, lastY: e.clientY };
+      }
       if (pointers.size === 2) {
         const [a, b] = [...pointers.values()];
         pinchDistance = Math.hypot((a?.x ?? 0) - (b?.x ?? 0), (a?.y ?? 0) - (b?.y ?? 0));
@@ -1085,6 +1377,30 @@ export function Knowledge(): ReactNode {
       }
       const prev = pointers.get(e.pointerId);
       if (!prev) return;
+      if (dragBody) {
+        const dx = e.clientX - dragBody.lastX;
+        const dy = e.clientY - dragBody.lastY;
+        dragBody.lastX = e.clientX;
+        dragBody.lastY = e.clientY;
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        moved += Math.abs(dx) + Math.abs(dy);
+        const cam = cameraRef.current;
+        // World units per screen pixel at the depth the body actually sits at.
+        const wpp = dragBody.depth / FOCAL;
+        const rightX = Math.cos(cam.yaw);
+        const rightZ = -Math.sin(cam.yaw);
+        const upX = Math.sin(cam.yaw) * Math.sin(cam.pitch);
+        const upY = Math.cos(cam.pitch);
+        const upZ = Math.cos(cam.yaw) * Math.sin(cam.pitch);
+        const cur = overridesRef.current.get(dragBody.id) ?? v3();
+        overridesRef.current.set(dragBody.id, {
+          x: cur.x + dx * wpp * rightX - dy * wpp * upX,
+          y: cur.y + dy * wpp * upY,
+          z: cur.z + dx * wpp * rightZ - dy * wpp * upZ,
+        });
+        dirtyRef.current = true;
+        return;
+      }
       const dx = e.clientX - prev.x;
       const dy = e.clientY - prev.y;
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
@@ -1115,6 +1431,14 @@ export function Knowledge(): ReactNode {
       canvas.classList.remove("dragging");
       if (pointers.size > 0) return;
       dragging = false;
+      if (dragBody) {
+        // Persist the move so the body is where the learner left it after a reload.
+        const id = dragBody.id;
+        dragBody = null;
+        persistOverride(id, overridesRef.current.get(id) ?? v3());
+        setMovedCount(overridesRef.current.size);
+        return;
+      }
       if (moved > 8) return;
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -1122,6 +1446,14 @@ export function Knowledge(): ReactNode {
       const hit = [...bodiesRef.current]
         .filter((b) => Math.hypot(b.x - x, b.y - y) <= b.r + 6)
         .sort((a, b) => (a.kind === "star" ? -1 : 0) - (b.kind === "star" ? -1 : 0) || b.depth - a.depth)[0];
+      if (!hit && cameraRef.current.distance > MACRO_DISTANCE) {
+        // A tap on another galaxy is a hyperspace jump, not a selection.
+        const cl = clusterHitsRef.current.find((c) => Math.hypot(c.x - x, c.y - y) <= c.r);
+        if (cl) {
+          flyToCluster(cl.key);
+          return;
+        }
+      }
       if (hit) {
         setSelected(hit.node.id);
         setConfirm(null);
@@ -1138,7 +1470,7 @@ export function Knowledge(): ReactNode {
           const w = worldAt(x, y);
           const d = Math.max(60, Math.min(420, cameraRef.current.distance * 0.42));
           const to = makeCamera({ targetX: w.x, targetY: w.y, targetZ: w.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: d });
-          flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 520, isolate: hit.star };
+          flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 520, isolate: hit.star, warp: false };
         }
         return;
       }
@@ -1146,7 +1478,7 @@ export function Knowledge(): ReactNode {
       if (thread) {
         // A thread click flies to its midpoint and selects the far endpoint, so the relation is legible in place.
         const to = makeCamera({ targetX: thread.mid.x, targetY: thread.mid.y, targetZ: thread.mid.z, yaw: cameraRef.current.yaw, pitch: cameraRef.current.pitch, distance: 2600 });
-        flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 640, isolate: null };
+        flightRef.current = { from: { ...cameraRef.current }, to, start: performance.now(), dur: 640, isolate: null, warp: isHyperspaceJump(v3(cameraRef.current.targetX, cameraRef.current.targetY, cameraRef.current.targetZ), thread.mid) };
         setIsolated(null);
         setSelected(thread.targetId);
         setConfirm({ star: thread.star, title: thread.title, code: thread.code, relation: thread.relation, sourceTitle: thread.sourceTitle, sourceCode: thread.sourceCode, targetTitle: thread.targetTitle });
@@ -1189,6 +1521,10 @@ export function Knowledge(): ReactNode {
     };
     const onKey = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
+        if (zenRef.current) {
+          setZen(false);
+          return;
+        }
         setConfirm(null);
         setSelected(null);
         setIsolated(null);
@@ -1220,7 +1556,7 @@ export function Knowledge(): ReactNode {
       canvas.removeEventListener("dblclick", onDouble);
       window.removeEventListener("keydown", onKey);
     };
-  }, [flyToStar, resetView]);
+  }, [flyToStar, resetView, flyToCluster, persistOverride]);
 
   const selectedNode = selected ? state.nodes[selected] : undefined;
   const selectedTier = selectedNode ? masteryTier(index, selectedNode.id) : null;
@@ -1230,8 +1566,8 @@ export function Knowledge(): ReactNode {
   const focus = isolated !== null ? galaxy.stars[isolated] : undefined;
 
   return (
-    <section className="atlas-root" aria-label="Knowledge Atlas">
-      <canvas ref={canvasRef} className="atlas-canvas" aria-hidden={view === "index"} />
+    <section className="atlas-root" aria-label="Knowledge Atlas" data-zen={zen ? "true" : undefined} data-move={moving ? "true" : undefined}>
+      <canvas ref={canvasRef} className={`atlas-canvas${moving ? " move-mode" : ""}`} aria-hidden={view === "index"} />
       <div className="atlas-hud">
         <div className="hud-search">
           <Search aria-hidden="true" size={16} strokeWidth={1.5} />
@@ -1271,6 +1607,19 @@ export function Knowledge(): ReactNode {
             <Scan size={15} strokeWidth={1.5} aria-hidden="true" />
             <span>Map</span>
           </button>
+          <button
+            className="btn sm ghost"
+            aria-label={moving ? "Stop moving bodies" : "Move bodies"}
+            aria-pressed={moving}
+            onClick={() => setMoving((m) => !m)}
+          >
+            <Move size={15} strokeWidth={1.5} aria-hidden="true" />
+            <span>Move</span>
+          </button>
+          <button className="btn sm ghost" aria-label="Zen view" aria-pressed={zen} onClick={() => setZen(true)}>
+            <Eye size={15} strokeWidth={1.5} aria-hidden="true" />
+            <span>Zen</span>
+          </button>
           <div className="pill" role="group" aria-label="Atlas view" data-index={view === "index" ? "1" : "0"}>
             <span className="pill-thumb" aria-hidden="true" />
             <button aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>Atlas</button>
@@ -1289,6 +1638,24 @@ export function Knowledge(): ReactNode {
           </button>
         ))}
       </div>
+
+      {view === "atlas" && (
+        <div className="atlas-galaxies" role="group" aria-label="Galaxies">
+          {clusters.map((c) => (
+            <button
+              key={c.key}
+              className="chip galaxy-chip"
+              aria-pressed={galaxyView === c.key}
+              onClick={() => flyToCluster(c.key)}
+              disabled={c.count === 0 && c.key !== "core"}
+              title={c.count === 0 && c.key !== "core" ? `${c.label} is empty` : `Warp to ${c.label}`}
+            >
+              <span className="dot" aria-hidden="true" data-galaxy={c.key} />
+              {c.label} · <span className="num">{c.count}</span>
+            </button>
+          ))}
+        </div>
+      )}
 
       {galaxy.stars.length === 0 && view === "atlas" && (
         <div className="atlas-empty" role="status">
@@ -1412,6 +1779,23 @@ export function Knowledge(): ReactNode {
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4", background: "#42e6c4" }} />mastered</span>
         <span className="atlas-key">six tiers · drag to orbit · scroll from cluster to surface</span>
       </div>
+
+      {moving && (
+        <div className="atlas-movebar" role="status">
+          <span>Move bodies · drag a body to reposition it. Offsets are stored on this device.</span>
+          <button className="btn sm" onClick={resetMoves} disabled={movedCount === 0}>
+            <RotateCcw size={13} strokeWidth={1.6} aria-hidden="true" />
+            Reset moves{movedCount > 0 ? ` (${movedCount})` : ""}
+          </button>
+        </div>
+      )}
+
+      {zen && (
+        <button className="btn sm atlas-zen-exit" onClick={() => setZen(false)} aria-label="Leave Zen view">
+          <X size={14} strokeWidth={1.6} aria-hidden="true" />
+          Exit Zen
+        </button>
+      )}
     </section>
   );
 }
@@ -1546,12 +1930,103 @@ function drawStarDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: 
 }
 
 /**
- * Planet surface. Domains read as banded giants, skill families as rocky worlds with continents and
- * craters. Both get a terminator, polar caps, an atmosphere rim and, sometimes, a ring.
+ * Wave 2 phenomena. A black hole is drawn as a companion with a tilted accretion disc, a photon ring
+ * and a light-swallowing horizon; a quasar fires bipolar jets from the star's poles. Both are only
+ * ever produced by `systemPhenomenon`, which reads stored evidence counts.
  */
-function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, seed: number, t: number, alpha: number, banded: boolean): void {
+function drawPhenomenon(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, ph: SystemPhenomenon, t: number, alpha: number): void {
+  if (alpha <= 0) return;
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  if (ph.kind === "black_hole") {
+    const bx = x + r * 1.5;
+    const by = y + r * 0.6;
+    const bh = Math.max(3, r * 0.4);
+    ctx.save();
+    ctx.translate(bx, by);
+    ctx.rotate(-0.34);
+    // Accretion disc: an outer cool ring and an inner hot one, both tilted into the same plane.
+    for (let i = 0; i < 3; i += 1) {
+      const hot = i === 0;
+      ctx.strokeStyle = hot ? `rgba(255,186,116,${0.55 * ph.intensity})` : `rgba(126,164,255,${0.34 * ph.intensity})`;
+      ctx.lineWidth = Math.max(0.8, bh * (0.18 - i * 0.045));
+      ctx.beginPath();
+      ctx.ellipse(0, 0, bh * (2.5 + i * 0.5), bh * (0.6 + i * 0.16), 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    // Orbiting hot spots in the disc, using the shared clock so the disc turns.
+    for (let i = 0; i < 6; i += 1) {
+      const a = t * 0.6 + (i / 6) * Math.PI * 2;
+      const rad = bh * (1.7 + hash01(i, 71) * 1.2);
+      ctx.fillStyle = `rgba(255,${210 + Math.round(hash01(i, 73) * 40)},170,${0.5 * ph.intensity})`;
+      ctx.beginPath();
+      ctx.arc(Math.cos(a) * rad, Math.sin(a) * rad * 0.34, Math.max(0.6, bh * 0.09), 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // Photon ring: light bent right around the horizon.
+    ctx.strokeStyle = `rgba(255,244,224,${0.8 * ph.intensity})`;
+    ctx.lineWidth = Math.max(0.7, bh * 0.07);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, bh * 1.18, bh * 0.78, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+    // The horizon itself: nothing is drawn inside it, not even a star's own light.
+    const hole = ctx.createRadialGradient(bx, by, 0, bx, by, bh);
+    hole.addColorStop(0, "rgba(0,0,0,1)");
+    hole.addColorStop(0.82, "rgba(2,3,9,1)");
+    hole.addColorStop(1, "rgba(20,26,48,0.9)");
+    ctx.fillStyle = hole;
+    ctx.beginPath();
+    ctx.arc(bx, by, bh, 0, Math.PI * 2);
+    ctx.fill();
+  } else {
+    // Quasar: two polar jets, brightest at the base, fading into the void.
+    const jet = r * (1.5 + 2.1 * ph.intensity);
+    for (const dir of [-1, 1]) {
+      const grad = ctx.createLinearGradient(x, y, x, y + dir * jet);
+      grad.addColorStop(0, `rgba(198,226,255,${0.5 * ph.intensity})`);
+      grad.addColorStop(0.35, `rgba(126,164,255,${0.3 * ph.intensity})`);
+      grad.addColorStop(1, "rgba(126,164,255,0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(x - r * 0.2, y + dir * r * 0.9);
+      ctx.lineTo(x, y + dir * jet);
+      ctx.lineTo(x + r * 0.2, y + dir * r * 0.9);
+      ctx.closePath();
+      ctx.fill();
+    }
+    const flare = ctx.createRadialGradient(x, y, r * 0.8, x, y, r * 2.6);
+    flare.addColorStop(0, `rgba(186,220,255,${0.4 * ph.intensity})`);
+    flare.addColorStop(0.4, `rgba(96,150,255,${0.16 * ph.intensity})`);
+    flare.addColorStop(1, "rgba(96,150,255,0)");
+    ctx.fillStyle = flare;
+    ctx.beginPath();
+    ctx.arc(x, y, r * 2.6, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+/** Six biomes, each a shallow/deep ground and a lit land colour. Chosen by the record's own seed. */
+const BIOME_LOOK: Record<ReturnType<typeof biomeFor>, { shallow: string; deep: string; land: string }> = {
+  ocean: { shallow: "#1c6f93", deep: "#041f33", land: "#63d6a8" },
+  verdant: { shallow: "#2a7a5e", deep: "#07261d", land: "#a8e07c" },
+  desert: { shallow: "#b98f56", deep: "#3a2413", land: "#f0c88c" },
+  ice: { shallow: "#bcdcf5", deep: "#203d59", land: "#eaf6ff" },
+  volcanic: { shallow: "#954430", deep: "#240b07", land: "#ffb066" },
+  barren: { shallow: "#8f96a6", deep: "#232936", land: "#cdd6e6" },
+};
+
+/**
+ * Planet surface. Domains read as banded giants, skill families as rocky worlds. The biome decides
+ * ground, sea and land colours; the terminator is the day/night line; settlements appear only on the
+ * night side and only where evidence exists.
+ */
+function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, seed: number, t: number, alpha: number, banded: boolean, lights: number): void {
   if (r < 5 || alpha <= 0) return;
   const spin = t * 0.015 + hash01(seed, 1) * 6.28;
+  const biome = biomeFor(seed);
+  const look = BIOME_LOOK[biome];
   ctx.save();
   ctx.globalAlpha = alpha;
   ctx.beginPath();
@@ -1566,7 +2041,7 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
     for (let i = 0; i < bands; i += 1) {
       const by = y - r + ((i + 0.5) / bands) * 2 * r + Math.sin(spin + i) * r * 0.02;
       const bh = (2 * r / bands) * 0.68;
-      ctx.fillStyle = i % 2 === 0 ? rgba(mix(color, "#ffffff", 0.42), 0.4) : rgba(mix(color, "#04070f", 0.62), 0.55);
+      ctx.fillStyle = i % 2 === 0 ? rgba(mix(mix(color, look.land, 0.28), "#ffffff", 0.4), 0.42) : rgba(mix(color, look.deep, 0.55), 0.55);
       ctx.beginPath();
       ctx.ellipse(x, by, r * 1.1, bh, 0, 0, Math.PI * 2);
       ctx.fill();
@@ -1586,8 +2061,8 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
     ctx.ellipse(x, y + Math.sin(spin) * r * 0.22, r * 1.02, r * 0.16, 0, 0, Math.PI * 2);
     ctx.stroke();
   } else {
-    // Rock and ocean: a darker sea, then lit continents over it.
-    ctx.fillStyle = rgba(mix(color, "#04121c", 0.52), 0.55);
+    // Rock and ocean: a darker sea for this biome, then lit continents over it.
+    ctx.fillStyle = rgba(mix(color, look.deep, 0.62), 0.62);
     ctx.fillRect(x - r, y - r, r * 2, r * 2);
     // Continents: irregular clusters of overlapping arcs, pushed around by the slow spin.
     const land = 4 + Math.floor(hash01(seed, 3) * 4);
@@ -1597,7 +2072,7 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
       const cx = x + Math.cos(a) * d;
       const cy = y + Math.sin(a) * d * 0.8;
       const cr = r * (0.12 + hash01(i, seed + 7) * 0.2);
-      ctx.fillStyle = rgba(mix(color, "#e8f6ff", 0.3), 0.38);
+      ctx.fillStyle = rgba(mix(look.land, color, 0.22), 0.5);
       for (let k = 0; k < 3; k += 1) {
         ctx.beginPath();
         ctx.arc(cx + Math.cos(k * 2.1) * cr * 0.6, cy + Math.sin(k * 2.1) * cr * 0.5, cr * (0.7 - k * 0.14), 0, Math.PI * 2);
@@ -1649,6 +2124,15 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
   ctx.arc(x, y, r * 0.9, Math.PI * 0.72, Math.PI * 1.58);
   ctx.stroke();
 
+  // Night side: a cool tint over the unlit hemisphere, so the day/night line reads as a terminator
+  // rather than as a shadow gradient.
+  const night = ctx.createLinearGradient(x - r * 0.95, y - r * 0.95, x + r * 0.8, y + r * 0.95);
+  night.addColorStop(0, "rgba(20,40,70,0)");
+  night.addColorStop(0.58, "rgba(12,26,52,0.14)");
+  night.addColorStop(1, "rgba(6,14,32,0.4)");
+  ctx.fillStyle = night;
+  ctx.fillRect(x - r, y - r, r * 2, r * 2);
+
   // Thin cloud bands over the lit face, only when the body is large enough to read them.
   if (r > 26) {
     for (let i = 0; i < 3; i += 1) {
@@ -1659,6 +2143,35 @@ function drawPlanetDetail(ctx: CanvasRenderingContext2D, x: number, y: number, r
       ctx.ellipse(x, cy, r * 0.72, r * 0.08, 0, Math.PI * 0.1, Math.PI * 0.9);
       ctx.stroke();
     }
+  }
+
+  // Settlements: one light per piece of evidence, placed only on the night side, so a lit world is a
+  // record of demonstrated work and an untouched world stays dark.
+  if (lights > 0 && r > 8) {
+    const count = Math.min(56, lights);
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    for (let i = 0; i < count; i += 1) {
+      const a = hash01(seed, i + 501) * Math.PI * 2;
+      const d = Math.sqrt(hash01(i, seed + 502)) * r * 0.86;
+      const lx = Math.cos(a) * d;
+      const ly = Math.sin(a) * d;
+      // Light falls from the upper left; only the lower-right hemisphere carries lights.
+      if (lx * 0.58 + ly * 0.72 < -r * 0.06) continue;
+      const warm = hash01(i, seed + 503) > 0.7 ? "255,206,140" : "255,238,196";
+      const dot = Math.max(0.55, r * (0.01 + hash01(i, seed + 504) * 0.018));
+      // Two plain arcs rather than a per-light gradient: a settlement keeps its glow at a cost the
+      // frame budget can carry when a whole system is on screen.
+      ctx.fillStyle = `rgba(${warm},0.14)`;
+      ctx.beginPath();
+      ctx.arc(x + lx, y + ly, dot * 3.2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = `rgba(${warm},0.9)`;
+      ctx.beginPath();
+      ctx.arc(x + lx, y + ly, dot, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
   }
   ctx.restore();
 

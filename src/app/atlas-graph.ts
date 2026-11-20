@@ -322,6 +322,94 @@ export function phaseAt(phase0: number, omega: number, seconds: number): number 
   return phase0 + omega * seconds;
 }
 
+/* ── Wave 2: galaxies, phenomena, biomes and stage growth ─────────────────────────────────────
+ * Everything below is a pure function of stored data. A black hole is not decoration: it is drawn
+ * only when a discipline holds a real body of records and none of them carries evidence. A quasar is
+ * drawn only where mastery is actually concentrated. Neither can be produced by browsing.
+ */
+
+export type GalaxyKey = "core" | "frontier" | "vault";
+
+export interface GalaxyCluster {
+  key: GalaxyKey;
+  label: string;
+  /** Where the cluster sits in the 24,000-unit macro view. */
+  anchor: Vec3;
+  radius: number;
+}
+
+/**
+ * The macro view is a cluster of three galaxies, not one galaxy on its own. The core holds the
+ * mapped curriculum; the Frontier holds records still in draft and the Vault holds retired records.
+ * Anchors are fixed so a flight between them is repeatable.
+ */
+export const GALAXY_CLUSTERS: GalaxyCluster[] = [
+  { key: "core", label: "ATHENA Core", anchor: v3(0, 0, 0), radius: GALAXY_RADIUS * 0.62 },
+  // Kept just outside the core's 6,500-unit radius, so the three galaxies frame together at 0.5×.
+  { key: "frontier", label: "Frontier", anchor: v3(-GALAXY_RADIUS * 1.5, -900, -GALAXY_RADIUS * 0.7), radius: 1650 },
+  { key: "vault", label: "Vault", anchor: v3(GALAXY_RADIUS * 1.6, 1000, GALAXY_RADIUS * 0.6), radius: 1350 },
+];
+
+export function clusterByKey(key: GalaxyKey): GalaxyCluster {
+  return GALAXY_CLUSTERS.find((c) => c.key === key) ?? GALAXY_CLUSTERS[0]!;
+}
+
+/** A jump is a warp only when it crosses a real distance, not when it nudges the camera. */
+export function isHyperspaceJump(from: Vec3, to: Vec3): boolean {
+  return length(sub(to, from)) > 2600;
+}
+
+export type SystemPhenomenonKind = "black_hole" | "quasar";
+
+export interface SystemPhenomenon {
+  kind: SystemPhenomenonKind;
+  /** 0..1, used for glow and jet length. Never a performance score. */
+  intensity: number;
+}
+
+/**
+ * A discipline's phenomenon, derived from its own records:
+ *  · black hole — at least twelve records, not one of them carrying evidence (a large unmapped mass);
+ *  · quasar     — at least three confirmed masteries and a quarter of the system evidenced (energy
+ *                 leaving the core because the learner actually demonstrated it).
+ * A system with some evidence and no mastery reads as a normal star, because that is what it is.
+ */
+export function systemPhenomenon(counts: { total: number; evidenced: number; mastered: number }): SystemPhenomenon | null {
+  if (counts.total < 12) return null;
+  const density = counts.evidenced / Math.max(1, counts.total);
+  if (counts.evidenced === 0) return { kind: "black_hole", intensity: 1 };
+  if (counts.mastered >= 3 && density >= 0.25) return { kind: "quasar", intensity: Math.min(1, counts.mastered / 6) };
+  if (density < 0.06) return { kind: "black_hole", intensity: 1 - density / 0.06 };
+  return null;
+}
+
+export type Biome = "ocean" | "verdant" | "desert" | "ice" | "volcanic" | "barren";
+
+/** Deterministic biome: the same record always has the same world. */
+export function biomeFor(seed: number): Biome {
+  const k = hash01(seed, 901);
+  if (k < 0.24) return "ocean";
+  if (k < 0.44) return "verdant";
+  if (k < 0.6) return "desert";
+  if (k < 0.74) return "ice";
+  if (k < 0.86) return "volcanic";
+  return "barren";
+}
+
+/**
+ * Stage growth from evidence: a body that has been demonstrated grows, up to 55%, and never shrinks
+ * below its base size when evidence is absent. Labels and hit targets follow the drawn radius.
+ */
+export function stageGrowth(evidenceCount: number): number {
+  if (evidenceCount <= 0) return 1;
+  return 1 + Math.min(0.55, Math.log1p(evidenceCount) * 0.17);
+}
+
+/** City lights on the night side: one settlement per piece of evidence, capped so a body stays a body. */
+export function cityLightCount(evidenceCount: number): number {
+  return Math.max(0, Math.min(56, Math.round(evidenceCount * 1.6)));
+}
+
 /** Ring geometry for a mastery state: arc fraction and whether the core is filled. */
 export function masteryRing(tier: "unassessed" | "needs_revision" | "demonstrated" | "mastered"): { arc: number; filled: boolean; color: string } {
   switch (tier) {
