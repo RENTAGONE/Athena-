@@ -95,6 +95,75 @@ const SOFT_DOT = (() => {
   return tex;
 })();
 
+/** One unit sphere shared by every body; meshes scale it instead of duplicating segment buffers. */
+const UNIT_SPHERE = new THREE.SphereGeometry(1, 40, 28);
+const UNIT_SPHERE_LO = new THREE.SphereGeometry(1, 24, 16);
+const SHARED_GEOMETRY = new Set<THREE.BufferGeometry>([UNIT_SPHERE, UNIT_SPHERE_LO]);
+
+/** Stellar rays: soft cross + radial streaks, drawn as one additive quad around a star. */
+const STELLAR_RAYS = (() => {
+  const size = 256;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const g = canvas.getContext("2d");
+  if (g) {
+    g.translate(size / 2, size / 2);
+    const halo = g.createRadialGradient(0, 0, 0, 0, 0, size / 2);
+    halo.addColorStop(0, "rgba(255,250,240,0.55)");
+    halo.addColorStop(0.25, "rgba(255,240,220,0.16)");
+    halo.addColorStop(1, "rgba(255,240,220,0)");
+    g.fillStyle = halo;
+    g.fillRect(-size / 2, -size / 2, size, size);
+    for (let i = 0; i < 22; i += 1) {
+      const a = (i / 22) * Math.PI * 2 + 0.2;
+      const len = size * (0.2 + ((i * 37) % 11) / 44);
+      g.strokeStyle = `rgba(255,246,232,${0.05 + ((i * 13) % 7) / 90})`;
+      g.lineWidth = i % 3 === 0 ? 1.6 : 0.8;
+      g.beginPath();
+      g.moveTo(Math.cos(a) * size * 0.04, Math.sin(a) * size * 0.04);
+      g.lineTo(Math.cos(a) * len, Math.sin(a) * len);
+      g.stroke();
+    }
+  }
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+})();
+
+/** Wispy procedural cloud deck, generated once and shared: the alpha map for every planet cloud layer. */
+const CLOUD_MAP = (() => {
+  const w = 512;
+  const h = 256;
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const g = canvas.getContext("2d");
+  if (g) {
+    g.clearRect(0, 0, w, h);
+    for (let i = 0; i < 260; i += 1) {
+      const x = hash01(i, 71) * w;
+      const y = (0.06 + hash01(i, 72) * 0.88) * h;
+      const rx = 16 + hash01(i, 73) * 62;
+      const ry = 4 + hash01(i, 74) * 12;
+      const grad = g.createRadialGradient(x, y, 0, x, y, rx);
+      grad.addColorStop(0, `rgba(255,255,255,${0.16 + hash01(i, 75) * 0.3})`);
+      grad.addColorStop(1, "rgba(255,255,255,0)");
+      g.save();
+      g.translate(x, y);
+      g.scale(1, ry / rx);
+      g.translate(-x, -y);
+      g.fillStyle = grad;
+      g.fillRect(x - rx, y - rx, rx * 2, rx * 2);
+      g.restore();
+    }
+  }
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.wrapS = THREE.RepeatWrapping;
+  return tex;
+})();
+
 const textureCache = new Map<string, THREE.Texture>();
 function loadTexture(url: string): THREE.Texture {
   const hit = textureCache.get(url);
@@ -183,12 +252,20 @@ export class AtlasScene {
   private pickables: THREE.Object3D[] = [];
   private motions: OrbitMotion[] = [];
   private bodyObject = new Map<string, THREE.Object3D>();
+  private spinMats: THREE.ShaderMaterial[] = [];
+  private clouds: { mesh: THREE.Mesh; speed: number }[] = [];
+  private binaries: { pivot: THREE.Object3D; bridge: THREE.Mesh; phase: number }[] = [];
+  private moonRingMats: { mat: THREE.LineBasicMaterial; system: number }[] = [];
 
   /* camera rig */
   private target = new THREE.Vector3(0, 0, 0);
   private yaw = 0.62;
   private pitch = 1.06;
   private distance = 20_000;
+  /* Inertial targets: pointer input moves these, the frame damps the camera toward them. */
+  private yawGoal = 0.62;
+  private pitchGoal = 1.06;
+  private distanceGoal = 20_000;
   private follow: string | null = null;
   private followPrev = new THREE.Vector3();
   private glide: {
@@ -307,6 +384,10 @@ export class AtlasScene {
     this.motions = [];
     this.bodyObject.clear();
     this.systems = [];
+    this.spinMats = [];
+    this.clouds = [];
+    this.binaries = [];
+    this.moonRingMats = [];
     if (galaxy.stars.length === 0) return;
 
     const anchors = separatedStarPositions(galaxy.stars.length, SYSTEM_SPHERE, SYSTEM_SEPARATION);
@@ -323,20 +404,53 @@ export class AtlasScene {
     group.position.set(anchor.x, anchor.y, anchor.z);
     const color = new THREE.Color(disciplineColor(system.code));
 
-    const starGeo = new THREE.SphereGeometry(STAR_RADIUS, 48, 32);
-    const starTexture = loadTexture(starMap(surfaceSeed(system.code)));
-    starTexture.repeat.set(1, 1);
-    // A star is self-luminous: the map carries granulation, the warm tint keeps it from reading as a
-    // planet wearing a dark crust, and the additive shell guarantees it never looks lit from outside.
-    const starMat = new THREE.MeshBasicMaterial({ map: starTexture, color: 0xfff3e2, transparent: true });
-    const star = new THREE.Mesh(starGeo, starMat);
+    // Animated photosphere: the map drifts, a convection term modulates it, and a physical limb law
+    // darkens the edge while the outermost shell warms into chromosphere colour.
+    const starMat = new THREE.ShaderMaterial({
+      uniforms: {
+        uMap: { value: loadTexture(starMap(surfaceSeed(system.code))) },
+        uSpin: { value: hash01(index, 3) },
+        uTint: { value: new THREE.Color(0xfff3e2) },
+      },
+      vertexShader:
+        "varying vec2 vUv; varying vec3 vN; varying vec3 vV;\n" +
+        "void main() {\n" +
+        "  vUv = uv; vN = normalize(normalMatrix * normal);\n" +
+        "  vec4 mv = modelViewMatrix * vec4(position, 1.0); vV = normalize(-mv.xyz);\n" +
+        "  gl_Position = projectionMatrix * mv;\n" +
+        "}",
+      fragmentShader:
+        "uniform sampler2D uMap; uniform float uSpin; uniform vec3 uTint;\n" +
+        "varying vec2 vUv; varying vec3 vN; varying vec3 vV;\n" +
+        "void main() {\n" +
+        "  vec2 uv = vec2(fract(vUv.x + uSpin), vUv.y);\n" +
+        "  vec3 c = texture2D(uMap, uv).rgb * uTint;\n" +
+        "  float gran = 0.9 + 0.1 * sin(uv.x * 34.0 + uSpin * 90.0) * cos(uv.y * 21.0 - uSpin * 55.0);\n" +
+        "  c *= gran;\n" +
+        "  float mu = clamp(dot(normalize(vN), normalize(vV)), 0.0, 1.0);\n" +
+        "  c *= 0.42 + 0.58 * pow(mu, 0.55);\n" +
+        "  c += vec3(0.55, 0.32, 0.16) * pow(1.0 - mu, 3.2) * 0.55;\n" +
+        "  gl_FragColor = vec4(c, 1.0);\n" +
+        "}",
+    });
+    const star = new THREE.Mesh(UNIT_SPHERE, starMat);
+    star.scale.setScalar(STAR_RADIUS);
     star.userData.bodyId = system.discipline.id;
     group.add(star);
-    const core = new THREE.Mesh(
-      new THREE.SphereGeometry(STAR_RADIUS * 1.015, 32, 24),
-      new THREE.MeshBasicMaterial({ color: 0xfff8ee, transparent: true, opacity: 0.22, blending: THREE.AdditiveBlending, depthWrite: false }),
+    this.spinMats.push(starMat);
+
+    // Chromosphere shell just above the photosphere, then the wide volumetric corona.
+    const chromo = new THREE.Mesh(
+      UNIT_SPHERE_LO,
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffd9b0).lerp(color, 0.35), transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false }),
     );
-    group.add(core);
+    chromo.scale.setScalar(STAR_RADIUS * 1.03);
+    group.add(chromo);
+    const rays = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: STELLAR_RAYS, transparent: true, opacity: 0.3, blending: THREE.AdditiveBlending, depthWrite: false }),
+    );
+    rays.scale.setScalar(STAR_RADIUS * 7.5);
+    group.add(rays);
 
     const corona = new THREE.Sprite(new THREE.SpriteMaterial({
       map: radialSprite("rgba(255,255,255,0.95)", `${hex(color)}aa`),
@@ -363,6 +477,34 @@ export class AtlasScene {
 
     const light = new THREE.PointLight(color.clone().lerp(new THREE.Color(0xffffff), 0.6), 18, 0, 0.35);
     group.add(light);
+
+    // Binary systems: a discipline with ten or more domains gets a 22-unit companion on a 135-unit
+    // barycentric orbit, joined to the primary by a plasma bridge that tracks it every frame.
+    if (system.planets.length >= 8) {
+      const companionMat = new THREE.ShaderMaterial({
+        uniforms: { uMap: { value: loadTexture(starMap(surfaceSeed(`${system.code}-B`))) }, uSpin: { value: 0.4 }, uTint: { value: new THREE.Color(0xffe8d0) } },
+        vertexShader: starMat.vertexShader,
+        fragmentShader: starMat.fragmentShader,
+      });
+      const companion = new THREE.Mesh(UNIT_SPHERE, companionMat);
+      companion.scale.setScalar(22);
+      companion.userData.bodyId = system.discipline.id;
+      this.spinMats.push(companionMat);
+      const pivot = new THREE.Object3D();
+      const holder = new THREE.Object3D();
+      holder.position.set(135, 0, 0);
+      holder.add(companion);
+      pivot.add(holder);
+      pivot.rotation.y = hash01(index, 91) * Math.PI * 2;
+      group.add(pivot);
+      const bridge = new THREE.Mesh(
+        new THREE.CylinderGeometry(2.2, 2.2, 1, 8, 1, true),
+        new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffcf9a), transparent: true, opacity: 0.16, blending: THREE.AdditiveBlending, depthWrite: false }),
+      );
+      bridge.rotation.z = Math.PI / 2;
+      group.add(bridge);
+      this.binaries.push({ pivot, bridge, phase: hash01(index, 92) * Math.PI * 2 });
+    }
 
     const planets = new THREE.Group();
     const moons = new THREE.Group();
@@ -404,19 +546,60 @@ export class AtlasScene {
       const banded = pi % 4 === 1;
       const radius = 1.6 + hash01(index, pi, 7) * (banded ? 2 : 1.4);
       const seed = surfaceSeed(planet.node.code);
+      // Seeded surface character: oceans and crystal crusts catch a specular sun-glint, rock does not.
+      const wet = hash01(seed, 4);
+      const crystal = hash01(seed, 5) > 0.82;
       const mesh = new THREE.Mesh(
-        new THREE.SphereGeometry(radius, banded ? 40 : 32, banded ? 28 : 24),
+        UNIT_SPHERE,
         new THREE.MeshStandardMaterial({
           map: loadTexture(planetMap(seed, banded)),
-          color: color.clone().lerp(new THREE.Color(0xffffff), 0.32),
-          roughness: 0.92,
-          metalness: 0.02,
+          color: color.clone().lerp(new THREE.Color(0xffffff), 0.28 + wet * 0.2),
+          roughness: crystal ? 0.18 : banded ? 0.88 : 0.96 - wet * 0.44,
+          metalness: crystal ? 0.42 : banded ? 0.04 : 0.02 + wet * 0.06,
+          envMapIntensity: 0.6,
         }),
       );
-      mesh.rotation.z = (hash01(index, pi, 8) * 35 * Math.PI) / 180;
+      mesh.scale.setScalar(radius);
+      // Axial tilt is seeded 4°–32° and never shared between two worlds.
+      const axial = ((4 + hash01(seed, 6) * 28) * Math.PI) / 180;
+      mesh.rotation.z = axial;
       mesh.userData.bodyId = planet.node.id;
       holder.add(mesh);
-      holder.add(this.atmosphere(radius, color));
+      mesh.userData.spin = 0.08 + hash01(seed, 7) * 0.22;
+
+      // Rotating cloud deck, a hair above the terrain and turning slightly faster.
+      const clouds = new THREE.Mesh(
+        UNIT_SPHERE_LO,
+        new THREE.MeshStandardMaterial({
+          map: CLOUD_MAP,
+          transparent: true,
+          opacity: banded ? 0.72 : 0.42,
+          depthWrite: false,
+          roughness: 1,
+          metalness: 0,
+          color: 0xffffff,
+        }),
+      );
+      clouds.scale.setScalar(radius * 1.016);
+      clouds.rotation.z = axial;
+      clouds.rotation.y = hash01(seed, 8) * Math.PI * 2;
+      holder.add(clouds);
+      this.clouds.push({ mesh: clouds, speed: 0.12 + hash01(seed, 9) * 0.2 });
+
+      holder.add(this.atmosphere(radius, color, group.position));
+
+      // Gas and ice giants carry tilted concentric rings with a Cassini-style gap.
+      if ((banded && hash01(seed, 10) > 0.28) || hash01(seed, 11) > 0.86) {
+        const ringTilt = axial + 0.12 + hash01(seed, 12) * 0.3;
+        const ringGroup = new THREE.Object3D();
+        ringGroup.rotation.set(Math.PI / 2 + ringTilt, hash01(seed, 13) * Math.PI, 0);
+        const ringMat = (opacity: number): THREE.MeshBasicMaterial =>
+          new THREE.MeshBasicMaterial({ color: color.clone().lerp(new THREE.Color(0xe8eefc), 0.6), transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
+        const inner = new THREE.Mesh(new THREE.RingGeometry(radius * 1.45, radius * 1.95, 96, 1), ringMat(0.42));
+        const outer = new THREE.Mesh(new THREE.RingGeometry(radius * 2.08, radius * 2.55, 96, 1), ringMat(0.26));
+        ringGroup.add(inner, outer);
+        holder.add(ringGroup);
+      }
 
       // A faint halo makes a 2-unit world readable beside a 42-unit star without pretending to be bigger.
       const halo = new THREE.Sprite(
@@ -465,10 +648,12 @@ export class AtlasScene {
         const mHolder = new THREE.Object3D();
         mHolder.position.set(orbitR0, 0, 0);
         mPivot.add(mHolder);
-        mPivot.add(this.orbitLine(orbitR0, 0.82, 0x35d9ff, 0.22));
+        const moonRing = this.orbitLine(orbitR0, 0.82, 0x35d9ff, 0.22);
+        mPivot.add(moonRing);
+        this.moonRingMats.push({ mat: moonRing.material as THREE.LineBasicMaterial, system: index });
 
         const moonMesh = new THREE.Mesh(
-          new THREE.SphereGeometry(mRadius, 24, 18),
+          UNIT_SPHERE_LO,
           new THREE.MeshStandardMaterial({
             map: loadTexture(moonMap(surfaceSeed(moon.node.code))),
             color: color.clone().lerp(new THREE.Color(0xdfe8f7), 0.55),
@@ -476,6 +661,7 @@ export class AtlasScene {
             metalness: 0.02,
           }),
         );
+        moonMesh.scale.setScalar(mRadius);
         moonMesh.userData.bodyId = moon.node.id;
         mHolder.add(moonMesh);
 
@@ -640,40 +826,71 @@ export class AtlasScene {
     void evidence;
   }
 
+  /**
+   * An orbital wake. The ring is a child of the orbit pivot, so a vertex-colour gradient that is
+   * brightest just behind the body (at angle −0.35) rotates with it and always reads as a trail.
+   */
   private orbitLine(radius: number, flatten: number, color: number, opacity: number): THREE.LineLoop {
     const pts: THREE.Vector3[] = [];
+    const colors: number[] = [];
     const segments = 128;
+    const base = new THREE.Color(color);
     for (let i = 0; i < segments; i += 1) {
       const a = (i / segments) * Math.PI * 2;
       pts.push(new THREE.Vector3(Math.cos(a) * radius, 0, Math.sin(a) * radius * flatten));
+      let d = a + 0.35;
+      if (d > Math.PI) d -= Math.PI * 2;
+      if (d < -Math.PI) d += Math.PI * 2;
+      const w = 0.05 + 0.95 * Math.exp(-(d * d) / 0.16);
+      colors.push(base.r * w, base.g * w, base.b * w);
     }
-    const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity, depthWrite: false });
-    return new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), mat);
+    const geo = new THREE.BufferGeometry().setFromPoints(pts);
+    geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+    const mat = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity, depthWrite: false, blending: THREE.AdditiveBlending });
+    return new THREE.LineLoop(geo, mat);
   }
 
-  private atmosphere(radius: number, color: THREE.Color): THREE.Mesh {
+  /**
+   * Rayleigh-style scattering rim: brightest along the sunlit limb, shifting to warm amber as the
+   * view crosses the terminator, so a close pass reads as atmosphere rather than a painted outline.
+   */
+  private atmosphere(radius: number, color: THREE.Color, starPosition: THREE.Vector3): THREE.Mesh {
     const mat = new THREE.ShaderMaterial({
-      uniforms: { uColor: { value: color.clone() }, uStrength: { value: 0.5 } },
+      uniforms: {
+        uColor: { value: color.clone().lerp(new THREE.Color(0x9fd4ff), 0.35) },
+        uWarm: { value: new THREE.Color(0xffb26b) },
+        uSun: { value: starPosition.clone() },
+        uStrength: { value: 0.62 },
+      },
       vertexShader:
-        "varying vec3 vNormal; varying vec3 vView;\n" +
+        "varying vec3 vNormal; varying vec3 vView; varying vec3 vWorld;\n" +
         "void main() {\n" +
         "  vNormal = normalize(normalMatrix * normal);\n" +
-        "  vec4 mv = modelViewMatrix * vec4(position, 1.0);\n" +
+        "  vec4 world = modelMatrix * vec4(position, 1.0);\n" +
+        "  vWorld = world.xyz;\n" +
+        "  vec4 mv = viewMatrix * world;\n" +
         "  vView = normalize(-mv.xyz);\n" +
         "  gl_Position = projectionMatrix * mv;\n" +
         "}",
       fragmentShader:
-        "uniform vec3 uColor; uniform float uStrength; varying vec3 vNormal; varying vec3 vView;\n" +
+        "uniform vec3 uColor; uniform vec3 uWarm; uniform vec3 uSun; uniform float uStrength;\n" +
+        "varying vec3 vNormal; varying vec3 vView; varying vec3 vWorld;\n" +
         "void main() {\n" +
         "  float rim = pow(1.0 - abs(dot(normalize(vNormal), normalize(vView))), 2.6);\n" +
-        "  gl_FragColor = vec4(uColor * rim * uStrength, rim * uStrength * 0.9);\n" +
+        "  float lit = clamp(dot(normalize(vNormal), normalize(uSun - vWorld)), 0.0, 1.0);\n" +
+        "  float term = smoothstep(0.55, 0.0, lit);\n" +
+        "  vec3 c = mix(uColor, uWarm, term * 0.55);\n" +
+        "  float a = rim * uStrength * (0.35 + 0.65 * lit);\n" +
+        "  gl_FragColor = vec4(c * a, a * 0.85);\n" +
         "}",
       transparent: true,
       blending: THREE.AdditiveBlending,
       side: THREE.BackSide,
       depthWrite: false,
     });
-    return new THREE.Mesh(new THREE.SphereGeometry(radius * 1.06, 32, 24), mat);
+    const mesh = new THREE.Mesh(UNIT_SPHERE_LO, mat);
+    mesh.scale.setScalar(radius * 1.048);
+    return mesh;
   }
 
   private satelliteMesh(radius: number, color: THREE.Color): THREE.Group {
@@ -837,8 +1054,9 @@ export class AtlasScene {
       if (this.dragMode === "pan" || e.shiftKey) {
         this.pan(dx, dy);
       } else {
-        this.yaw -= dx * 0.005;
-        this.pitch = clamp(this.pitch - dy * 0.005, 0.05, Math.PI - 0.05);
+        // Target angles only: the frame loop damps the camera toward them, so a flick keeps gliding.
+        this.yawGoal -= dx * 0.005;
+        this.pitchGoal = clamp(this.pitchGoal - dy * 0.005, 0.05, Math.PI - 0.05);
         this.glide = null;
       }
     };
@@ -871,7 +1089,11 @@ export class AtlasScene {
     const context = (e: Event): void => e.preventDefault();
     const double = (e: MouseEvent): void => {
       e.preventDefault();
-      this.reset();
+      // Double-tap dives straight into close inspection; empty space still resets the view.
+      const p = local(e as unknown as PointerEvent);
+      const hit = this.pick(p.x, p.y);
+      if (hit) this.dive(hit.id);
+      else this.reset();
     };
 
     canvas.addEventListener("pointerdown", down);
@@ -944,9 +1166,23 @@ export class AtlasScene {
     this.raycaster.setFromCamera(this.pointer, this.camera);
     const shift = this.distance - nd;
     this.target.addScaledVector(this.raycaster.ray.direction, shift * 0.9);
-    this.distance = nd;
+    // The distance itself is damped toward the goal, so a wheel kick carries momentum.
+    this.distanceGoal = nd;
     this.glide = null;
     if (nd < 4) this.follow = this.pick(at.x, at.y)?.id ?? this.follow;
+  }
+
+  /** Double-tap dive: 2.8× the body radius, reference-frame lock kept alive. */
+  dive(id: string): void {
+    const body = this.bodies.get(id);
+    const object = this.bodyObject.get(id);
+    if (!body || !object) return;
+    const pos = new THREE.Vector3();
+    object.getWorldPosition(pos);
+    const dist = Math.max(MIN_CAMERA_DISTANCE + 0.1, body.radius * 2.8);
+    this.glideTo(pos, dist, this.yaw, clamp(this.pitch, 0.4, Math.PI - 0.4), 700);
+    this.follow = id;
+    this.followPrev.copy(pos);
   }
 
   /* ── public controls ──────────────────────────────────────────────────── */
@@ -983,6 +1219,9 @@ export class AtlasScene {
     // Framed wide enough that the inner orbits and their worlds are in shot, not just the photosphere.
     this.glideTo(anchor, 1250, 0.55, 1.16, instant ? 0 : 620);
     this.follow = null;
+    this.yawGoal = 0.55;
+    this.pitchGoal = 1.16;
+    this.distanceGoal = 1250;
   }
 
   focus(id: string, instant = false): void {
@@ -1027,6 +1266,9 @@ export class AtlasScene {
       this.distance = clamp(distance, MIN_CAMERA_DISTANCE, MAX_CAMERA_DISTANCE);
       this.yaw = yaw;
       this.pitch = pitch;
+      this.yawGoal = yaw;
+      this.pitchGoal = pitch;
+      this.distanceGoal = this.distance;
       this.glide = null;
       return;
     }
@@ -1077,6 +1319,15 @@ export class AtlasScene {
       this.yaw = this.glide.from.yaw + dy * k;
       this.pitch = this.glide.from.pitch + (this.glide.to.pitch - this.glide.from.pitch) * k;
       if (raw >= 1) this.glide = null;
+      this.yawGoal = this.yaw;
+      this.pitchGoal = this.pitch;
+      this.distanceGoal = this.distance;
+    } else {
+      // Inertial damping: orbit, pan and zoom all approach their targets instead of snapping.
+      const k = 0.075;
+      this.yaw += (this.yawGoal - this.yaw) * k;
+      this.pitch += (this.pitchGoal - this.pitch) * k;
+      this.distance += (this.distanceGoal - this.distance) * k;
     }
 
     // Keyboard thrust, in the camera's own frame.
@@ -1133,10 +1384,30 @@ export class AtlasScene {
     this.camera.far = Math.max(120_000, this.distance * 40);
     this.camera.updateProjectionMatrix();
 
+    // Photosphere convection, cloud drift and the binary pair are animated on the same clock, so 0x
+    // really freezes everything and 100x speeds it up rather than only moving orbits.
+    for (const mat of this.spinMats) mat.uniforms.uSpin!.value = (mat.uniforms.uSpin!.value as number) + dt * 0.01 * Math.max(0.2, this.timeScale);
+    for (const c of this.clouds) {
+      c.mesh.rotation.y += dt * c.speed * this.timeScale;
+      const terrain = c.mesh.parent?.children[0] as THREE.Mesh | undefined;
+      if (terrain) terrain.rotation.y += dt * ((terrain.userData.spin as number | undefined) ?? 0.1) * this.timeScale;
+    }
+    for (const b of this.binaries) {
+      const angle = b.phase + this.elapsed * 0.28;
+      b.pivot.rotation.y = angle;
+      const dir = new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle));
+      b.bridge.position.copy(dir).multiplyScalar(67.5);
+      b.bridge.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+      b.bridge.scale.set(1, 135, 1);
+    }
+
     // Level of detail, measured from the camera to each system's own star.
     const camPos = this.camera.position;
     for (const s of this.systems) {
       const d = camPos.distanceTo(s.group.position);
+      // Moon and satellite rings fade out smoothly past system scale (no popping).
+      const ringFade = clamp((d - 450) / 250, 0, 1);
+      for (const r of this.moonRingMats) if (r.system === s.index) r.mat.opacity = 0.22 * (1 - ringFade);
       // Level of detail is what keeps a phone at 60 FPS: only the system being flown stays fully
       // populated, and its moons and satellites appear as the camera closes on them.
       s.planets.visible = d < 4800;
@@ -1275,7 +1546,9 @@ export class AtlasScene {
     this.scene.remove(this.root);
     this.root.traverse((obj) => {
       const mesh = obj as THREE.Mesh;
-      if (mesh.geometry) mesh.geometry.dispose();
+      // Shared unit spheres and generated sprites survive a rebuild; disposing them would blank every
+      // later system.
+      if (mesh.geometry && !SHARED_GEOMETRY.has(mesh.geometry)) mesh.geometry.dispose();
       const mat = (mesh as THREE.Mesh).material;
       if (Array.isArray(mat)) for (const m of mat) m.dispose();
       else if (mat) mat.dispose();
