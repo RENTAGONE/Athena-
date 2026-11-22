@@ -216,6 +216,69 @@ export function wrapPoint(p: Vec3, cam: Camera, size = WRAP_SIZE): Vec3 {
   return { x: wrap(p.x, cam.targetX), y: wrap(p.y, cam.targetY), z: wrap(p.z, cam.targetZ) };
 }
 
+/**
+ * A uniform 3D spatial hash. Points are bucketed into cubic cells, so a neighbourhood query touches a
+ * handful of buckets instead of the whole field. The atlas uses it to keep the dense 35,000-star
+ * galaxy clouds from stacking coincident points, and to answer "what is near this cell" without a
+ * linear scan over 100,000 stars.
+ */
+export class SpatialHash3D<T> {
+  private readonly cells = new Map<string, { x: number; y: number; z: number; item: T }[]>();
+  private readonly cellSize: number;
+  constructor(cellSize = 1000) {
+    this.cellSize = cellSize;
+  }
+
+  private key(x: number, y: number, z: number): string {
+    return `${Math.floor(x / this.cellSize)},${Math.floor(y / this.cellSize)},${Math.floor(z / this.cellSize)}`;
+  }
+
+  insert(item: T, x: number, y: number, z: number): void {
+    const k = this.key(x, y, z);
+    const bucket = this.cells.get(k);
+    if (bucket) bucket.push({ x, y, z, item });
+    else this.cells.set(k, [{ x, y, z, item }]);
+  }
+
+  /** Every item within `radius` of (x, y, z), checked exactly after the bucket scan. */
+  query(x: number, y: number, z: number, radius: number): T[] {
+    const out: T[] = [];
+    const r2 = radius * radius;
+    const span = Math.ceil(radius / this.cellSize);
+    const cx = Math.floor(x / this.cellSize);
+    const cy = Math.floor(y / this.cellSize);
+    const cz = Math.floor(z / this.cellSize);
+    for (let ix = -span; ix <= span; ix += 1) {
+      for (let iy = -span; iy <= span; iy += 1) {
+        for (let iz = -span; iz <= span; iz += 1) {
+          const bucket = this.cells.get(`${cx + ix},${cy + iy},${cz + iz}`);
+          if (!bucket) continue;
+          for (const p of bucket) {
+            const dx = p.x - x;
+            const dy = p.y - y;
+            const dz = p.z - z;
+            if (dx * dx + dy * dy + dz * dz <= r2) out.push(p.item);
+          }
+        }
+      }
+    }
+    return out;
+  }
+
+  clear(): void {
+    this.cells.clear();
+  }
+
+  get size(): number {
+    let n = 0;
+    for (const bucket of this.cells.values()) n += bucket.length;
+    return n;
+  }
+}
+
+/** Dense procedural stars drawn inside each local galaxy. One Points draw call per galaxy. */
+export const DENSE_STARS_PER_GALAXY = 35_000;
+
 /** Stable 0..1 hash for a set of integers (used for per-cell jitter). */
 export function hash01(...values: number[]): number {
   let h = 2166136261;

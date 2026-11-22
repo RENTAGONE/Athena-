@@ -126,6 +126,8 @@ export interface Galaxy {
   stars: GalaxyStar[];
   /** node id → where it lives, so a selection can be resolved without a second scan. */
   location: Map<string, GalaxyLocation>;
+  /** Custom/frontier records with no resolved discipline: rogue wanderer stars on the rim. */
+  rogues: GalaxyMoon[];
   totals: { stars: number; planets: number; constellations: number; moons: number; satellites: number; asteroids: number };
 }
 
@@ -273,12 +275,22 @@ export function buildGalaxy(state: DbState, index: EvidenceIndex = evidenceIndex
     location.set(n.id, { star: star.order, planet: hostLoc?.planet ?? null, moon: hostLoc?.moon ?? null, kind: "asteroid" });
   }
 
+  // Rogue wanderers: real records that resolve to no discipline sector. They are not dropped — the
+  // atlas draws them drifting along the galactic rim until the learner assigns one.
+  const rogues: GalaxyMoon[] = [];
+  for (const n of Object.values(state.nodes)) {
+    if (n.object_type === "discipline") continue;
+    if (!["domain", "skill_family", "skill", "subskill", "micro_skill"].includes(n.object_type)) continue;
+    if (starOf(n)) continue;
+    rogues.push(emptyBody(n, masteryTier(index, n.id), rogues.length));
+  }
+
   const planets = stars.reduce((sum, s) => sum + s.planets.length, 0);
   const constellations = stars.reduce((sum, s) => sum + s.constellations.length, 0);
   const moonCount = stars.reduce((sum, s) => sum + s.moons.length + s.planets.reduce((m, p) => m + p.moons.length, 0), 0);
   const satellites = stars.reduce((sum, s) => sum + s.satellites.length + s.moons.reduce((m, p) => m + p.satellites.length, 0) + s.planets.reduce((m, p) => m + p.moons.reduce((k, q) => k + q.satellites.length, 0), 0), 0);
   const asteroids = stars.reduce((sum, s) => sum + s.asteroids.length + s.moons.reduce((m, p) => m + p.asteroids.length, 0) + s.planets.reduce((m, p) => m + p.moons.reduce((k, q) => k + q.asteroids.length + q.satellites.reduce((x, r) => x + r.asteroids.length, 0), 0), 0), 0);
-  return { stars, location, totals: { stars: stars.length, planets, constellations, moons: moonCount, satellites, asteroids } };
+  return { stars, location, rogues, totals: { stars: stars.length, planets, constellations, moons: moonCount, satellites, asteroids } };
 }
 
 export interface EdgePartitions {

@@ -17,7 +17,7 @@
  */
 import * as THREE from "three";
 import type { Galaxy, GalaxyStar, MasteryTier } from "../app/selectors.ts";
-import { hash01, separatedStarPositions, type Vec3 } from "../app/atlas-graph.ts";
+import { DENSE_STARS_PER_GALAXY, hash01, separatedStarPositions, SpatialHash3D, type Vec3 } from "../app/atlas-graph.ts";
 import { moonMap, planetMap, starMap } from "./textures.ts";
 import { DISCIPLINE_BY_ID } from "./disciplines.ts";
 import type { NodeRecord } from "../domain/types.ts";
@@ -51,7 +51,7 @@ export interface CosmicBody {
   detail?: string[];
 }
 
-export type BodyKind = "star" | "planet" | "moon" | "satellite" | "asteroid";
+export type BodyKind = "star" | "planet" | "moon" | "satellite" | "asteroid" | "constellation";
 
 export interface AtlasBody {
   id: string;
@@ -64,6 +64,8 @@ export interface AtlasBody {
   label: string;
   /** The node that owns this body, used for the breadcrumb chain. */
   parentId: string | null;
+  /** An unassigned custom/frontier record drawn as a violet wanderer on the rim. */
+  rogue?: boolean;
 }
 
 export interface AtlasViewState {
@@ -84,6 +86,15 @@ export interface AtlasSceneCallbacks {
 }
 
 const clamp = (n: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, n));
+
+/** A gentle 8 ms haptic on lock or warp. Silently absent on desktop and on browsers without it. */
+function pulse(ms = 8): void {
+  try {
+    if (typeof navigator !== "undefined") navigator.vibrate?.(ms);
+  } catch {
+    /* vibration can be blocked by policy; never let it break a gesture */
+  }
+}
 
 /** WebGL availability, checked before a renderer is constructed so a headless browser gets a clean
  *  message instead of an exception on mount. */
@@ -266,6 +277,10 @@ function radialSprite(inner: string, outer: string, size = 128): THREE.Texture {
   return tex;
 }
 
+/** One shared constellation haze texture: creating a canvas per family would cost hundreds of textures. */
+const CONSTELLATION_HAZE = radialSprite("rgba(53,217,255,0.34)", "rgba(70,80,200,0.05)");
+const ROGUE_AURA = radialSprite("rgba(167,139,250,0.55)", "rgba(255,198,109,0.12)");
+
 function surfaceSeed(code: string): number {
   let h = 2166136261;
   for (let i = 0; i < code.length; i += 1) {
@@ -304,6 +319,10 @@ interface SystemNode {
   /** Belts, comets and megastructures: hidden together with the planets at galaxy range. */
   small: THREE.Group;
   label: string;
+  /** Tier-C spectral beacon: a constant-screen-size point that survives past 7,500 units. */
+  beacon: THREE.Sprite;
+  /** Mastery heatmap halo: shown only while the Heatmap chip is on. */
+  heat: THREE.Sprite;
 }
 
 /**
@@ -348,6 +367,17 @@ export class AtlasScene {
   private progress = new Map<string, number>();
   private nightShaders: { mat: THREE.ShaderMaterial; body: AtlasBody }[] = [];
   private ringShaders: { mat: THREE.ShaderMaterial; mesh: THREE.Mesh }[] = [];
+
+  /* constellation threads, rogue wanderers and the infinite dense field */
+  private constellationTags: { pos: THREE.Vector3; label: string; color: string }[] = [];
+  private rogues: { holder: THREE.Object3D; angle: number; radius: number; y: number; speed: number }[] = [];
+  private infinitePoints: THREE.Points | null = null;
+  private infiniteCell = "";
+  private readonly infiniteHash = new SpatialHash3D<number>(2600);
+  /** Frame-time guardian: rolling average and the current render quality multiplier. */
+  private frameAvg = 16;
+  private quality = 1;
+  private guardClock = 0;
 
   /* multiverse scale, built once and never rebuilt with the galaxy */
   private readonly cosmos = new THREE.Group();
@@ -405,8 +435,12 @@ export class AtlasScene {
   private pinchStart = 0;
   private pinchDistanceValue = 0;
   private pointerAt = { x: 0, y: 0 };
-  /** The invisible left-thumb flight stick: shown only while a thumb is down. */
-  private stick: { id: number; origin: { x: number; y: number }; vector: { x: number; y: number } } | null = null;
+  /** The steady bottom-left flight stick: armed on touch, live only after an 8 px drag. */
+  private stick: { id: number; origin: { x: number; y: number }; vector: { x: number; y: number }; active: boolean } | null = null;
+  /** Mastery heatmap state and the live tier map it colours from. */
+  private heatmap = false;
+  private heatTiers = new Map<string, MasteryTier>();
+  private readonly tetherFlashes: { line: THREE.Line; born: number }[] = [];
   private hovered: string | null = null;
   private selected: string | null = null;
   private filter: string | null = null;
@@ -439,6 +473,7 @@ export class AtlasScene {
     this.scene.add(new THREE.AmbientLight(0x9db4e0, 0.14));
     this.scene.add(this.camera);
     this.buildBackdrop();
+    this.buildInfiniteField();
     this.buildCosmos();
     this.buildWarpTunnel();
 
@@ -504,6 +539,80 @@ export class AtlasScene {
     this.scene.add(new THREE.Points(geo, mat));
   }
 
+  /**
+   * The infinite cosmos: 27 spatial-hash cells of seeded stars tile around the camera, and a new ring
+   * of cells is built only when the camera crosses a cell boundary. Panning or zooming out never
+   * reaches an edge, and the hash prevents two cells from stacking a star on the same point.
+   */
+  private buildInfiniteField(): void {
+    const perCell = 480;
+    const cells = 27;
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(perCell * cells * 3), 3));
+    geo.setAttribute("color", new THREE.BufferAttribute(new Float32Array(perCell * cells * 3), 3));
+    const points = new THREE.Points(
+      geo,
+      new THREE.PointsMaterial({
+        size: 150,
+        sizeAttenuation: true,
+        vertexColors: true,
+        map: CRISP_STAR,
+        transparent: true,
+        opacity: 0.72,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    );
+    points.frustumCulled = false;
+    points.renderOrder = -1;
+    this.scene.add(points);
+    this.infinitePoints = points;
+    this.ensureInfiniteField(new THREE.Vector3(0, 0, 0), true);
+  }
+
+  private ensureInfiniteField(at: THREE.Vector3, force = false): void {
+    const size = 18_000;
+    const cx = Math.round(at.x / size);
+    const cy = Math.round(at.y / size);
+    const cz = Math.round(at.z / size);
+    const key = `${cx},${cy},${cz}`;
+    if (!force && key === this.infiniteCell) return;
+    this.infiniteCell = key;
+    this.infiniteHash.clear();
+    const geo = this.infinitePoints?.geometry;
+    if (!geo) return;
+    const pos = geo.getAttribute("position") as THREE.BufferAttribute;
+    const col = geo.getAttribute("color") as THREE.BufferAttribute;
+    const perCell = 480;
+    const tints = [new THREE.Color(0xcfe0ff), new THREE.Color(0xffffff), new THREE.Color(0x9fc0ff), new THREE.Color(0xffe0bd)];
+    let w = 0;
+    for (let ix = -1; ix <= 1; ix += 1) {
+      for (let iy = -1; iy <= 1; iy += 1) {
+        for (let iz = -1; iz <= 1; iz += 1) {
+          const gx = cx + ix;
+          const gy = cy + iy;
+          const gz = cz + iz;
+          for (let i = 0; i < perCell; i += 1) {
+            const px = gx * size + (hash01(gx, gy, gz, i, 1) - 0.5) * size;
+            const py = gy * size + (hash01(gx, gy, gz, i, 2) - 0.5) * size * 0.8;
+            const pz = gz * size + (hash01(gx, gy, gz, i, 3) - 0.5) * size;
+            // Spatial hash: keep the field free of coincident stars when two cell builds overlap.
+            if (this.infiniteHash.query(px, py, pz, 20).length > 0) continue;
+            this.infiniteHash.insert(w, px, py, pz);
+            pos.setXYZ(w, px, py, pz);
+            const tint = tints[i % tints.length]!;
+            const b = 0.35 + hash01(i, w, 7) * 0.65;
+            col.setXYZ(w, tint.r * b, tint.g * b, tint.b * b);
+            w += 1;
+          }
+        }
+      }
+    }
+    geo.setDrawRange(0, w);
+    pos.needsUpdate = true;
+    col.needsUpdate = true;
+  }
+
   /** Rebuild every body from the stored galaxy. Positions, maps, tilts and phases are seeded. */
   setGalaxy(galaxy: Galaxy, evidence: Map<string, number>, progress: Map<string, number> = new Map()): void {
     this.progress = progress;
@@ -525,6 +634,8 @@ export class AtlasScene {
     this.nightShaders = [];
     this.ringShaders = [];
     this.clusterGlows = [];
+    this.constellationTags = [];
+    this.rogues = [];
     this.stations = [];
     this.cosmicBodies = this.cosmicBodies.filter(
       (b) =>
@@ -541,6 +652,7 @@ export class AtlasScene {
       this.buildSystem(system, si, anchor, evidence);
     });
     this.addClusterHaze();
+    this.buildRogues(galaxy);
     this.frameGalaxy();
   }
 
@@ -736,6 +848,17 @@ export class AtlasScene {
     haze.scale.setScalar(1650);
     haze.position.set(0, 0, -280);
     group.add(haze);
+
+    // Tier C: beyond 7,500 units the textured sphere, corona and rings collapse into one spectral
+    // beacon that keeps the discipline's exact colour and stays raycastable. A star never pops out.
+    const beacon = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: CRISP_STAR, color: color.clone().lerp(new THREE.Color(0xffffff), 0.35), transparent: true, opacity: 0.92, blending: THREE.AdditiveBlending, depthWrite: false }),
+    );
+    beacon.scale.setScalar(220);
+    beacon.visible = false;
+    beacon.userData.bodyId = starBody.id;
+    group.add(beacon);
+    this.buildConstellationThreads(system, index, group, anchor);
 
     // Relativistic quasar at a synthesis hub: a major cross-discipline bridge fires twin opposing
     // cyan/violet jets 1,200 units out, perpendicular to the accretion disk.
@@ -1173,9 +1296,144 @@ export class AtlasScene {
       this.motions.push({ pivot, holder, phase: hash01(index, mi, 44) * 6.28, omega: 0.28, body });
     });
 
+    // Mastery heatmap halo: one shared soft dot per discipline star, tinted from live Dexie tiers.
+    const heat = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: SOFT_DOT, transparent: true, opacity: 0.46, depthWrite: false, blending: THREE.AdditiveBlending }),
+    );
+    heat.scale.setScalar(STAR_RADIUS * 11);
+    heat.visible = false;
+    group.add(heat);
+
     this.root.add(group);
-    this.systems.push({ index, code: system.code, color, group, star, corona, light, planets, moons, satellites, small, label: system.discipline.title });
+    this.systems.push({ index, code: system.code, color, group, star, corona, light, planets, moons, satellites, small, label: system.discipline.title, beacon, heat });
     void evidence;
+  }
+
+  /**
+   * Real 3D constellation mesh: every skill family becomes a closed `LineSegments` ring in
+   * `#35D9FF` at 0.28 opacity, backed by a translucent nebula cell and one deduplicated name tag.
+   * Members are the family's skills; the ring radius grows with the member count so a large family
+   * reads as a larger constellation rather than a denser scribble.
+   */
+  private buildConstellationThreads(system: GalaxyStar, index: number, group: THREE.Group, anchor: Vec3): void {
+    system.constellations.forEach((c, ci) => {
+      if (c.members.length === 0 && !c.planet) return;
+      const count = Math.max(4, Math.min(11, c.members.length + 3));
+      const radius = 520 + ci * 62 + Math.min(160, c.members.length * 18);
+      const tilt = (hash01(index, ci, 81) - 0.5) * 0.75;
+      const spin = hash01(index, ci, 82) * Math.PI * 2;
+      const axisX = new THREE.Vector3(1, 0, 0);
+      const axisY = new THREE.Vector3(0, 1, 0);
+      const pts: THREE.Vector3[] = [];
+      for (let i = 0; i < count; i += 1) {
+        const a = (i / count) * Math.PI * 2;
+        const r = radius + Math.sin(i * 2.1 + ci) * radius * 0.12;
+        pts.push(
+          new THREE.Vector3(Math.cos(a) * r, Math.sin(a * 2 + ci) * 46, Math.sin(a) * r)
+            .applyAxisAngle(axisX, tilt)
+            .applyAxisAngle(axisY, spin),
+        );
+      }
+      const positions: number[] = [];
+      for (let i = 0; i < pts.length; i += 1) {
+        const a = pts[i]!;
+        const b = pts[(i + 1) % pts.length]!;
+        positions.push(a.x, a.y, a.z, b.x, b.y, b.z);
+      }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+      const threads = new THREE.LineSegments(
+        geo,
+        new THREE.LineBasicMaterial({ color: 0x35d9ff, transparent: true, opacity: 0.28, depthWrite: false }),
+      );
+      group.add(threads);
+
+      // Subtle volumetric nebula backing behind the family, so the threads sit in gas rather than void.
+      const nebula = new THREE.Sprite(
+        new THREE.SpriteMaterial({
+          map: CONSTELLATION_HAZE,
+          transparent: true,
+          opacity: 0.13,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        }),
+      );
+      nebula.scale.setScalar(radius * 1.35);
+      nebula.position.copy(pts[0]!).multiplyScalar(0.2);
+      group.add(nebula);
+
+      // A small selectable node anchors the family, with its own single label.
+      const hub = new THREE.Object3D();
+      hub.position.copy(pts[0]!);
+      group.add(hub);
+      const marker = new THREE.Mesh(
+        new THREE.OctahedronGeometry(6, 0),
+        new THREE.MeshBasicMaterial({ color: 0x9fe9ff, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false }),
+      );
+      marker.userData.bodyId = c.node.id;
+      hub.add(marker);
+      this.pickables.push(marker, this.proxy(marker, 24, c.node.id));
+      this.bodies.set(c.node.id, {
+        id: c.node.id,
+        node: c.node,
+        kind: "constellation",
+        system: index,
+        tier: c.tier,
+        radius: 6,
+        label: c.node.title,
+        parentId: system.discipline.id,
+      });
+      this.bodyObject.set(c.node.id, marker);
+      this.constellationTags.push({
+        pos: new THREE.Vector3(anchor.x + pts[0]!.x, anchor.y + pts[0]!.y, anchor.z + pts[0]!.z),
+        label: c.node.title,
+        color: "#35D9FF",
+      });
+    });
+  }
+
+  /** Rogue wanderers: unassigned frontier records drift along the rim in violet with a gold aura. */
+  private buildRogues(galaxy: Galaxy): void {
+    // Cap the drawn wanderers so a large unassigned frontier still holds 60 FPS; every rogue remains
+    // reachable in the Index, and the first 96 keep their own pickable body and assignment card.
+    const drawn = galaxy.rogues.slice(0, 96);
+    const rogueMat = new THREE.MeshStandardMaterial({ color: 0xa78bfa, emissive: 0x5b21b6, emissiveIntensity: 0.75, roughness: 0.42, metalness: 0.18 });
+    const haloMat = new THREE.SpriteMaterial({ map: CRISP_STAR, color: 0xffc66d, transparent: true, opacity: 0.4, blending: THREE.AdditiveBlending, depthWrite: false });
+    drawn.forEach((rogue, ri) => {
+      const holder = new THREE.Object3D();
+      const angle = (ri / Math.max(1, drawn.length)) * Math.PI * 2 + hash01(ri, 501) * 0.4;
+      const rim = SYSTEM_SPHERE * (0.92 + hash01(ri, 502) * 0.12);
+      holder.position.set(Math.cos(angle) * rim, (hash01(ri, 503) - 0.5) * SYSTEM_SPHERE * 0.34, Math.sin(angle) * rim);
+      holder.rotation.z = hash01(ri, 504) * 0.6;
+      const mesh = new THREE.Mesh(UNIT_SPHERE_LO, rogueMat);
+      mesh.scale.setScalar(26);
+      mesh.userData.bodyId = rogue.node.id;
+      holder.add(mesh);
+      // Violet-gold orbital aura: two offset sprites that slowly pulse against each other.
+      const aura = new THREE.Sprite(
+        new THREE.SpriteMaterial({ map: ROGUE_AURA, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false }),
+      );
+      aura.scale.setScalar(150);
+      holder.add(aura);
+      const halo = new THREE.Sprite(haloMat);
+      halo.scale.setScalar(90);
+      holder.add(halo);
+      this.root.add(holder);
+      this.pickables.push(mesh, this.proxy(mesh, 34, rogue.node.id));
+      this.bodies.set(rogue.node.id, {
+        id: rogue.node.id,
+        node: rogue.node,
+        kind: "star",
+        system: -1,
+        tier: rogue.tier,
+        radius: 26,
+        label: rogue.node.title,
+        parentId: null,
+        rogue: true,
+      });
+      this.bodyObject.set(rogue.node.id, mesh);
+      this.rogues.push({ holder, angle, radius: rim, y: holder.position.y, speed: 0.008 + hash01(ri, 505) * 0.012 });
+    });
   }
 
   /**
@@ -1394,10 +1652,13 @@ export class AtlasScene {
 
   private addClusterHaze(): void {
     // The two sibling galaxies are real dust clouds, not labels: the camera can fly to them.
+    // Every galaxy is a real dense stellar population: 35,000 seeded stars, drawn as one Points
+    // draw call. Spectral colour is per-vertex, so the arm structure is carried by real stars rather
+    // than a photograph of a galaxy.
     const clusters = [
-      { anchor: new THREE.Vector3(0, 0, 0), radius: SYSTEM_SPHERE * 1.05, color: 0x7ea4ff, count: 2400 },
-      { anchor: new THREE.Vector3(-SYSTEM_SPHERE * 1.5, -900, -SYSTEM_SPHERE * 0.7), radius: 2600, color: 0xffc66d, count: 1400 },
-      { anchor: new THREE.Vector3(SYSTEM_SPHERE * 1.6, 1000, SYSTEM_SPHERE * 0.6), radius: 2200, color: 0xa78bfa, count: 1200 },
+      { anchor: new THREE.Vector3(0, 0, 0), radius: SYSTEM_SPHERE * 1.05, color: 0x7ea4ff, count: DENSE_STARS_PER_GALAXY },
+      { anchor: new THREE.Vector3(-SYSTEM_SPHERE * 1.5, -900, -SYSTEM_SPHERE * 0.7), radius: 2600, color: 0xffc66d, count: DENSE_STARS_PER_GALAXY },
+      { anchor: new THREE.Vector3(SYSTEM_SPHERE * 1.6, 1000, SYSTEM_SPHERE * 0.6), radius: 2200, color: 0xa78bfa, count: DENSE_STARS_PER_GALAXY },
     ];
     for (const [ci, c] of clusters.entries()) {
       const positions = new Float32Array(c.count * 3);
@@ -1422,16 +1683,17 @@ export class AtlasScene {
       const points = new THREE.Points(
         geo,
         new THREE.PointsMaterial({
-          size: 30,
+          size: 13,
           sizeAttenuation: true,
           vertexColors: true,
           map: CRISP_STAR,
           transparent: true,
-          opacity: ci === 0 ? 0.4 : 0.26,
+          opacity: ci === 0 ? 0.55 : 0.4,
           depthWrite: false,
           blending: THREE.AdditiveBlending,
         }),
       );
+      points.frustumCulled = true;
       points.position.copy(c.anchor);
       this.root.add(points);
 
@@ -1488,9 +1750,19 @@ export class AtlasScene {
         this.dragMode = "pan";
         this.stick = null;
       }
-      // The left 38% of a touch screen is an invisible flight stick: no permanent UI, no chrome.
-      if (this.pointers.size === 1 && touch(e) && p.x < this.width * 0.38) {
-        this.stick = { id: e.pointerId, origin: p, vector: { x: 0, y: 0 } };
+      // ONE steady flight-stick anchor: a 124×124 zone at left 28 px / bottom 64 px. The 28 px inset
+      // keeps a leftward drag clear of Android's edge Back gesture, and the zone sits above the
+      // bottom chrome so the thumb never fights a HUD button. It arms on touch, goes live after an
+      // 8 px drag, and is invisible the rest of the time.
+      if (
+        this.pointers.size === 1 &&
+        touch(e) &&
+        p.x >= 28 &&
+        p.x <= 152 &&
+        p.y >= this.height - 188 &&
+        p.y <= this.height - 64
+      ) {
+        this.stick = { id: e.pointerId, origin: p, vector: { x: 0, y: 0 }, active: false };
         this.glide = null;
         this.warp = null;
       }
@@ -1510,8 +1782,19 @@ export class AtlasScene {
       this.pointers.set(e.pointerId, p);
       this.draggedDistance += Math.abs(dx) + Math.abs(dy);
       if (this.stick && this.stick.id === e.pointerId) {
-        this.stick.vector.x = clamp((p.x - this.stick.origin.x) / 70, -1, 1);
-        this.stick.vector.y = clamp((p.y - this.stick.origin.y) / 70, -1, 1);
+        const sx = p.x - this.stick.origin.x;
+        const sy = p.y - this.stick.origin.y;
+        if (!this.stick.active && Math.hypot(sx, sy) >= 8) this.stick.active = true;
+        if (this.stick.active) {
+          // Quadratic precision curve: tiny thumb movements give fine control around satellites and
+          // stations, while full deflection still cruises a whole sector.
+          const curve = (v: number): number => {
+            const c = clamp(v / 62, -1, 1);
+            return Math.sign(c) * c * c;
+          };
+          this.stick.vector.x = curve(sx);
+          this.stick.vector.y = curve(sy);
+        }
         return;
       }
       if (this.pointers.size === 2) {
@@ -1536,7 +1819,16 @@ export class AtlasScene {
     const up = (e: PointerEvent): void => {
       const wasStick = this.stick?.id === e.pointerId;
       this.pointers.delete(e.pointerId);
-      if (wasStick) this.stick = null;
+      if (wasStick) {
+        // Instant stop: the thumb lift zeroes thrust in the same frame, leaving 0 residual drift.
+        if (this.stick) {
+          this.stick.vector.x = 0;
+          this.stick.vector.y = 0;
+          this.stick.active = false;
+        }
+        this.stick = null;
+        this.halt();
+      }
       if (this.pointers.size === 0) {
         canvas.classList.remove("dragging");
         // Strict zero-drift: the instant the last finger lifts, every goal snaps to where the camera is.
@@ -1550,6 +1842,8 @@ export class AtlasScene {
         this.callbacks.onInspect?.(null);
         return;
       }
+      // A subtle 8 ms haptic confirms a lock without buzzing through a whole drag.
+      pulse(8);
       if (hit.cosmic) {
         this.callbacks.onSelect(null);
         this.callbacks.onInspect?.(hit.cosmic);
@@ -1663,8 +1957,9 @@ export class AtlasScene {
     // never has to land on a two-pixel hull.
     const projected = new THREE.Vector3();
     let near: { id: string; body: AtlasBody; px: number } | null = null;
+    // Universal tap-to-select: every kind of body carries a screen-space collider, so a thumb never
+    // has to land exactly on a hull. Small hardware gets the widest allowance.
     for (const body of this.bodies.values()) {
-      if (body.kind !== "satellite" && body.kind !== "moon") continue;
       const object = this.bodyObject.get(body.id);
       if (!object) continue;
       object.getWorldPosition(projected);
@@ -1673,7 +1968,8 @@ export class AtlasScene {
       const dx = ((projected.x + 1) / 2) * this.width - x;
       const dy = ((1 - projected.y) / 2) * this.height - y;
       const px = Math.hypot(dx, dy);
-      if (px > 28) continue;
+      const limit = body.kind === "satellite" || body.kind === "moon" ? 28 : body.kind === "asteroid" ? 20 : 34;
+      if (px > limit) continue;
       if (!near || px < near.px) near = { id: body.id, body, px };
     }
     if (near) return { id: near.id, body: near.body, cosmic: null };
@@ -1744,6 +2040,26 @@ export class AtlasScene {
 
   setSelected(id: string | null): void {
     this.selected = id;
+  }
+
+  /**
+   * Mastery heatmap: emerald-gold for mastered/demonstrated disciplines, amber warning rings for
+   * needs-revision bottlenecks, cool slate for anything never assessed. Reads only real Dexie tiers.
+   */
+  setHeat(tiers: Map<string, MasteryTier>): void {
+    this.heatTiers = tiers;
+    if (!this.heatmap) return;
+    for (const s of this.systems) {
+      const tier = tiers.get(s.code) ?? "unassessed";
+      const mat = s.heat.material as THREE.SpriteMaterial;
+      mat.color.setHex(tier === "needs_revision" ? 0xffc66d : tier === "unassessed" ? 0x71819f : tier === "mastered" ? 0x42e6c4 : 0x9fe8d8);
+    }
+  }
+
+  setHeatmap(on: boolean): void {
+    this.heatmap = on;
+    for (const s of this.systems) s.heat.visible = on;
+    if (on) this.setHeat(this.heatTiers);
   }
 
   setHomeSystem(code: string | null): void {
@@ -1830,6 +2146,26 @@ export class AtlasScene {
   }
 
   /** A public transport: any body id, near or far, routed through the warp lane. */
+  /**
+   * A rogue star anchoring into its sector: a brief #A78BFA → #35D9FF tether from wherever the
+   * wanderer drifted to the galaxy core, fading out over 0.9 s.
+   */
+  anchorFlash(id: string): void {
+    const object = this.bodyObject.get(id);
+    if (!object) return;
+    const from = new THREE.Vector3();
+    object.getWorldPosition(from);
+    const geo = new THREE.BufferGeometry().setFromPoints([from, new THREE.Vector3(0, 0, 0)]);
+    geo.setAttribute("color", new THREE.BufferAttribute(new Float32Array([0.65, 0.55, 0.98, 0.21, 0.85, 1]), 3));
+    const line = new THREE.Line(
+      geo,
+      new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false }),
+    );
+    line.renderOrder = 5;
+    this.scene.add(line);
+    this.tetherFlashes.push({ line, born: typeof performance === "undefined" ? Date.now() : performance.now() });
+  }
+
   travel(id: string): void {
     if (this.cosmicBodies.some((c) => c.id === id)) {
       this.focusCosmic(id);
@@ -1893,7 +2229,7 @@ export class AtlasScene {
     const rect = canvas.getBoundingClientRect();
     this.width = Math.max(1, rect.width);
     this.height = Math.max(1, rect.height);
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.dpr = Math.min(window.devicePixelRatio || 1, 2) * this.quality;
     this.renderer.setPixelRatio(this.dpr);
     this.renderer.setSize(this.width, this.height, false);
     this.camera.aspect = this.width / this.height;
@@ -1960,10 +2296,13 @@ export class AtlasScene {
 
     // Left-thumb flight stick: thrust along the camera's look direction and strafe laterally. Speed
     // scales with the current cosmic altitude, and it stops dead the instant the thumb lifts.
-    if (this.stick && !this.warp) {
+    if (this.stick && this.stick.active && !this.warp) {
       const { x, y } = this.stick.vector;
       if (Math.abs(x) > 0.04 || Math.abs(y) > 0.04) {
-        const speed = clamp(this.distance * 0.42, 3, 9000);
+        // Flight velocity is linked to the speed selector: 0x still flies (at 1x precision), 10x is
+        // 2.4× and 100x is 4.6× thrust. Pausing orbits must never strand the pilot.
+        const factor = this.timeScale >= 100 ? 4.6 : this.timeScale >= 10 ? 2.4 : 1;
+        const speed = clamp(this.distance * 0.42, 3, 9000) * factor;
         const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(this.camera.quaternion);
         const right = new THREE.Vector3(1, 0, 0).applyQuaternion(this.camera.quaternion);
         this.target.addScaledVector(forward, -y * speed * dt).addScaledVector(right, x * speed * dt);
@@ -2057,12 +2396,48 @@ export class AtlasScene {
       for (const r of this.moonRingMats) if (r.system === s.index) r.mat.opacity = 0.22 * (1 - ringFade);
       // Level of detail is what keeps a phone at 60 FPS: only the system being flown stays fully
       // populated, and its moons and satellites appear as the camera closes on them.
-      s.planets.visible = d < 4800;
-      s.small.visible = d < 4800;
-      s.moons.visible = d < 700;
-      s.satellites.visible = d < 60;
+      // Four LOD tiers. A: full geometry. B: spheres and tracks. C: one spectral beacon that keeps
+      // the exact colour and stays pickable. D: beyond 95,000 units, only the galaxy it belongs to.
+      const tier = d < 1800 ? "A" : d < 7500 ? "B" : d < 95_000 ? "C" : "D";
+      s.planets.visible = tier === "A" || tier === "B";
+      s.small.visible = tier === "A";
+      s.moons.visible = tier === "A" && d < 700;
+      s.satellites.visible = tier === "A" && d < 60;
+      s.star.visible = tier === "A" || tier === "B";
+      s.corona.visible = tier === "A" || tier === "B";
+      s.beacon.visible = tier === "C";
+      if (s.beacon.visible) s.beacon.scale.setScalar(Math.max(60, d * 0.017));
+      if (this.heatmap && s.heat.visible) {
+        // Mastered sectors breathe emerald-gold; revision bottlenecks pulse an amber warning ring.
+        const beat = 0.5 + 0.5 * Math.sin(this.elapsed * 0.0022 + s.index * 1.7);
+        s.heat.scale.setScalar(STAR_RADIUS * (9 + beat * 3));
+        (s.heat.material as THREE.SpriteMaterial).opacity = 0.28 + beat * 0.26;
+      }
       s.star.rotation.y += dt * 0.02;
     }
+
+    // Rogue anchoring tethers: fade in violet→cyan, then dispose without leaking geometries.
+    for (let i = this.tetherFlashes.length - 1; i >= 0; i -= 1) {
+      const flash = this.tetherFlashes[i]!;
+      const age = (performance.now() - flash.born) / 900;
+      if (age >= 1) {
+        this.scene.remove(flash.line);
+        flash.line.geometry.dispose();
+        (flash.line.material as THREE.Material).dispose();
+        this.tetherFlashes.splice(i, 1);
+      } else {
+        (flash.line.material as THREE.LineBasicMaterial).opacity = 0.9 * (1 - age);
+      }
+    }
+
+    // Rogue wanderers drift along the galactic rim, slower at 0x, faster at 100x.
+    for (const r of this.rogues) {
+      r.angle += dt * r.speed * Math.max(0.15, this.timeScale);
+      r.holder.position.set(Math.cos(r.angle) * r.radius, r.y + Math.sin(r.angle * 1.7) * 260, Math.sin(r.angle) * r.radius);
+      r.holder.rotation.y += dt * 0.05;
+    }
+    // Infinite field: only rebuild the 27-cell block when the camera crosses a cell boundary.
+    this.ensureInfiniteField(camPos);
 
     // Scale 1 and 0: the surrounding galaxy field fades in with the local universe, and the lattice
     // cube only appears once the camera pulls back past the universe's edge.
@@ -2089,6 +2464,20 @@ export class AtlasScene {
     for (const r of this.ringShaders) {
       r.mesh.getWorldPosition(wp);
       (r.mat.uniforms.uPlanet!.value as THREE.Vector3).copy(wp);
+    }
+
+    // Frame-time guardian: if the rolling average exceeds 22 ms, scale the pixel ratio down in
+    // steps; when the device recovers under 14 ms, restore it. This is what holds 60 FPS on Android.
+    this.frameAvg = this.frameAvg * 0.92 + Math.min(60, dt * 1000) * 0.08;
+    if (now - this.guardClock > 1000) {
+      this.guardClock = now;
+      if (this.frameAvg > 22 && this.quality > 0.6) {
+        this.quality = Math.max(0.6, this.quality - 0.08);
+        this.resize();
+      } else if (this.frameAvg < 14 && this.quality < 1) {
+        this.quality = Math.min(1, this.quality + 0.04);
+        this.resize();
+      }
     }
 
     this.renderer.render(this.scene, this.camera);
@@ -2156,6 +2545,15 @@ export class AtlasScene {
       ctx.globalAlpha = 1;
     };
 
+    // Constellation name tags: one per skill family, deduplicated by label, only at sector range.
+    if (this.distance < 11_000) {
+      for (const t of this.constellationTags) {
+        const p = this.projectAt(t.pos);
+        if (!p) continue;
+        label(t.label, p.x, p.y - 8, t.color, 0.55, 500, `con-${t.label}`);
+      }
+    }
+
     // Star systems are labelled from galaxy range in: they are the map's landmarks, and at multiverse
     // scale they are pinpricks that must not bury the universe names.
     for (const s of this.systems) {
@@ -2191,6 +2589,7 @@ export class AtlasScene {
     for (const body of this.bodies.values()) {
       if (this.distance > 14_000) break;
       if (body.kind === "star" || body.kind === "asteroid") continue;
+      if (body.kind === "constellation") continue;
       const object = this.bodyObject.get(body.id);
       if (!object) continue;
       const p = project(object);
@@ -2271,23 +2670,29 @@ export class AtlasScene {
     }
 
     // The invisible flight stick: a 48 px translucent cyan ring under the live thumb, and nothing at all
-    // when the thumb lifts.
+    // when the thumb lifts. The puck rides the quadratic curve, so it hugs the centre until the
+    // thumb commits to a direction.
     const stick = this.stick;
-    if (stick) {
+    if (stick && stick.active) {
       const o = stick.origin;
       ctx.save();
-      ctx.strokeStyle = "rgba(53,217,255,0.5)";
+      ctx.strokeStyle = "rgba(53,217,255,0.55)";
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(o.x, o.y, 24, 0, Math.PI * 2);
+      ctx.arc(o.x, o.y, 48, 0, Math.PI * 2);
       ctx.stroke();
-      ctx.fillStyle = "rgba(53,217,255,0.16)";
+      ctx.fillStyle = "rgba(53,217,255,0.10)";
       ctx.beginPath();
-      ctx.arc(o.x, o.y, 24, 0, Math.PI * 2);
+      ctx.arc(o.x, o.y, 48, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = "rgba(126,232,255,0.85)";
+      ctx.strokeStyle = "rgba(126,232,255,0.35)";
+      ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.arc(o.x + stick.vector.x * 20, o.y + stick.vector.y * 20, 6, 0, Math.PI * 2);
+      ctx.arc(o.x, o.y, 12, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(126,232,255,0.9)";
+      ctx.beginPath();
+      ctx.arc(o.x + stick.vector.x * 38, o.y + stick.vector.y * 38, 8, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
@@ -2814,6 +3219,7 @@ export class AtlasScene {
       this.warpJitter.set(0, 0, 0);
       this.callbacks.canvas.parentElement?.classList.remove("warping");
       this.warp = null;
+      pulse(8);
       this.follow = w.follow;
       if (w.follow) {
         const object = this.bodyObject.get(w.follow);
@@ -3011,9 +3417,16 @@ function ringMaterial(inner: number, outer: number, tint: THREE.Color, sun: THRE
       "  float cassini = smoothstep(0.43, 0.47, t) * smoothstep(0.57, 0.53, t);\n" +
       "  float gap = 1.0 - cassini * 0.92;\n" +
       "  float edge = smoothstep(0.0, 0.05, t) * smoothstep(1.0, 0.92, t);\n" +
-      "  vec3 toSun = normalize(uSun - vWorld);\n" +
-      "  float behind = smoothstep(0.15, 0.9, dot(normalize(vWorld - uPlanet), -toSun));\n" +
-      "  float shadow = 1.0 - behind * 0.7;\n" +
+      // A true shadow cylinder: project each ring fragment onto the planet→star axis. Anything behind\n      // the planet and inside its radius is in umbra, so the eclipse is a crisp curved band rather\n      // than a soft gradient. The penumbra widens slightly with distance.\n" +
+      "  vec3 sunDir = normalize(uSun - uPlanet);\n" +
+      "  vec3 rel = vWorld - uPlanet;\n" +
+      "  float along = dot(rel, sunDir);\n" +
+      "  float rAxis = length(rel - sunDir * along);\n" +
+      "  float planetR = uInner / 1.45;\n" +
+      "  float penumbra = planetR * (1.0 + max(0.0, -along) * 0.0008);\n" +
+      "  float inCyl = smoothstep(penumbra * 1.12, penumbra * 0.94, rAxis);\n" +
+      "  float behind = smoothstep(0.02, -0.06, along);\n" +
+      "  float shadow = 1.0 - behind * inCyl * 0.86;\n" +
       "  vec3 c = mix(uTint, vec3(1.0), bands * 0.4);\n" +
       "  float a = edge * gap * (0.26 + 0.34 * bands) * shadow;\n" +
       "  gl_FragColor = vec4(c * (0.6 + 0.5 * bands) * shadow, a * 0.5);\n" +

@@ -1,5 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import Dexie from "dexie";
+
+/** Dexie 4 exposes liveQuery on the default export at runtime; the wrapper's d.ts omits the named one. */
+const liveQuery = (
+  Dexie as unknown as {
+    liveQuery: <T>(querier: () => T | Promise<T>) => { subscribe(observer: { next: (value: T) => void; error?: () => void }): { unsubscribe(): void } };
+  }
+).liveQuery;
 import { Eye, Menu, RotateCcw, Search, X } from "lucide-react";
 import { useApp } from "./context.ts";
 import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
@@ -31,6 +39,24 @@ const TIER_COLOR: Record<MasteryTier, string> = {
 
 const SPEEDS = [0, 1, 10, 100] as const;
 
+/** A saved coordinate: a knowledge record or a procedural universe, galaxy, core or station. */
+type Waypoint = { id: string; name: string; kind: "node" | "cosmic" };
+
+const WAYPOINT_KEY = "athena.atlas.pins";
+
+function readWaypoints(): Waypoint[] {
+  try {
+    const raw = window.localStorage.getItem(WAYPOINT_KEY);
+    const parsed: unknown = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((p): p is Waypoint => Boolean(p) && typeof p.id === "string" && typeof p.name === "string" && (p.kind === "node" || p.kind === "cosmic"))
+      .slice(0, 6);
+  } catch {
+    return [];
+  }
+}
+
 /** Declared atlas scale: 1 AU is the 1,650-unit outer orbit. Nothing here is a learner metric. */
 function scaleReadout(distance: number): { value: string; unit: string } {
   const au = distance / UNITS_PER_AU;
@@ -40,7 +66,7 @@ function scaleReadout(distance: number): { value: string; unit: string } {
 }
 
 export function Knowledge(): ReactNode {
-  const { state } = useApp();
+  const { state, rt, refresh } = useApp();
   const index = useMemo(() => evidenceIndex(state), [state]);
   const galaxy = useMemo(() => buildGalaxy(state, index), [state, index]);
   const groups = useMemo(() => indexGroups(state, index), [state, index]);
@@ -60,6 +86,10 @@ export function Knowledge(): ReactNode {
   /** A universe, galaxy, black hole or station: inspected without a knowledge record behind it. */
   const [core, setCore] = useState<CosmicBody | null>(null);
   const [controls, setControls] = useState(false);
+  /** Mastery heatmap: real Dexie tiers painted across the galaxy. */
+  const [heatmap, setHeatmap] = useState(false);
+  const [waypoints, setWaypoints] = useState<Waypoint[]>([]);
+  const [pinsOpen, setPinsOpen] = useState(false);
   const [webgl, setWebgl] = useState(true);
   const [homeSystem, setHomeSystem] = useState<string | null>(() => {
     try {
@@ -72,6 +102,7 @@ export function Knowledge(): ReactNode {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const labelRef = useRef<HTMLCanvasElement | null>(null);
   const sceneRef = useRef<AtlasScene | null>(null);
+  const liveKey = useRef("");
   const galaxyRef = useRef(galaxy);
   galaxyRef.current = galaxy;
 
@@ -114,6 +145,61 @@ export function Knowledge(): ReactNode {
 
   useEffect(() => {
     setWebgl(webglAvailable());
+    setWaypoints(readWaypoints());
+  }, []);
+
+  /** Every discipline star's real mastery tier, keyed both by code and by its discipline id. */
+  const heat = useMemo(() => {
+    const out = new Map<string, MasteryTier>();
+    for (const star of galaxy.stars) {
+      const tier = masteryTier(index, star.discipline.id);
+      out.set(star.code, tier);
+      out.set(star.discipline.id, tier);
+    }
+    return out;
+  }, [galaxy, index]);
+
+  useEffect(() => {
+    sceneRef.current?.setHeat(heat);
+  }, [heat]);
+
+  useEffect(() => {
+    sceneRef.current?.setHeatmap(heatmap);
+  }, [heatmap]);
+
+  const saveWaypoints = useCallback((next: Waypoint[]) => {
+    setWaypoints(next);
+    try {
+      window.localStorage.setItem(WAYPOINT_KEY, JSON.stringify(next));
+    } catch {
+      /* storage can be blocked; the pins then last for this session only */
+    }
+  }, []);
+
+  const pin = useCallback(
+    (point: Waypoint) => {
+      setWaypoints((current) => {
+        const next = [point, ...current.filter((p) => p.id !== point.id)].slice(0, 6);
+        try {
+          window.localStorage.setItem(WAYPOINT_KEY, JSON.stringify(next));
+        } catch {
+          /* session-only fallback */
+        }
+        return next;
+      });
+      setPinsOpen(true);
+    },
+    [],
+  );
+
+  const goTo = useCallback((point: Waypoint) => {
+    setPinsOpen(false);
+    if (point.kind === "cosmic") {
+      sceneRef.current?.focusCosmic(point.id);
+      return;
+    }
+    setSelected(point.id);
+    sceneRef.current?.travel(point.id);
   }, []);
 
   // One renderer for the life of the screen. React never owns a per-frame value: the rig keeps its
@@ -156,6 +242,51 @@ export function Knowledge(): ReactNode {
   useEffect(() => {
     sceneRef.current?.setGalaxy(galaxy, evidence, progress);
   }, [galaxy, evidence, progress]);
+
+  /**
+   * Dexie live subscription. A KB .zip import, a JSON pack, captured evidence or a rogue-star
+   * assignment commits a delta; liveQuery observes the store and reloads it, which rebuilds the
+   * galaxy and repopulates stars, planets, constellations, moons and satellites without a reload.
+   */
+  useEffect(() => {
+    if (!rt) return;
+    const db = rt.store.db;
+    const sub = liveQuery(async () => {
+      const [nodes, edges, evidenceCount, changesets] = await Promise.all([db.nodes.count(), db.edges.count(), db.evidence.count(), db.changesets.count()]);
+      return `${nodes}:${edges}:${evidenceCount}:${changesets}:${db.meta ? "1" : "0"}`;
+    }).subscribe({
+      next: (key: string) => {
+        const first = liveKey.current === "";
+        if (liveKey.current === key) return;
+        liveKey.current = key;
+        if (!first) void refresh();
+      },
+      error: () => undefined,
+    });
+    return () => sub.unsubscribe();
+  }, [rt, refresh]);
+
+  /** Assign a discipline to a rogue star: persist the node, then the live query re-anchors it. */
+  const assignDiscipline = useCallback(
+    async (id: string, code: string): Promise<void> => {
+      if (!rt || !code) return;
+      const node = state.nodes[id];
+      if (!node) return;
+      try {
+        await rt.store.persist({
+          expectedRevision: state.meta.revision,
+          puts: [{ table: "nodes", key: id, record: { ...node, owner_discipline_id: code, updated_at: new Date().toISOString() } }],
+        });
+        await refresh();
+        // Let the live rebuild place the star, then draw its violet→cyan anchoring tether.
+        window.setTimeout(() => sceneRef.current?.anchorFlash(id), 220);
+        navigator.vibrate?.(8);
+      } catch {
+        /* a concurrent write bumps the revision; the live subscription will reload the winner */
+      }
+    },
+    [rt, state.nodes, state.meta.revision, refresh],
+  );
 
   useEffect(() => {
     sceneRef.current?.setSelected(selected);
@@ -330,6 +461,29 @@ export function Knowledge(): ReactNode {
               <Menu size={17} strokeWidth={1.6} aria-hidden="true" />
             </button>
           )}
+          {view === "atlas" && (
+            <button
+              className="btn sm ghost"
+              aria-label="Mastery heatmap"
+              aria-pressed={heatmap}
+              onClick={() => setHeatmap((on) => !on)}
+            >
+              <span className="heat-dot" aria-hidden="true" />
+              <span>Heatmap</span>
+            </button>
+          )}
+          {view === "atlas" && (
+            <button
+              className="btn sm ghost"
+              aria-label="Pinned coordinates"
+              aria-expanded={pinsOpen}
+              onClick={() => setPinsOpen((open) => !open)}
+            >
+              <span aria-hidden="true">◈</span>
+              <span>Waypoints</span>
+              {waypoints.length > 0 && <span className="num">{waypoints.length}</span>}
+            </button>
+          )}
           <button className="btn sm ghost" aria-label="Zen view" aria-pressed={zen} onClick={() => setZen(true)}>
             <Eye size={15} strokeWidth={1.5} aria-hidden="true" />
             <span>Zen</span>
@@ -483,6 +637,31 @@ export function Knowledge(): ReactNode {
               <span className="num">{prerequisiteCount(state, selectedNode.id)}</span> prerequisites
             </span>
           </div>
+          <button
+            className="btn ghost pin-btn"
+            onClick={() => pin({ id: selectedNode.id, name: selectedNode.title, kind: "node" })}
+          >
+            ◈ {waypoints.some((p) => p.id === selectedNode.id) ? "Pinned" : "Pin Location"}
+          </button>
+          {!selectedNode.owner_discipline_id && (
+            <label className="assign-discipline">
+              <span className="label">
+                <span className="rogue-dot" aria-hidden="true" /> Rogue wanderer · unassigned
+              </span>
+              <select
+                aria-label={`Assign a discipline to ${selectedNode.title}`}
+                value=""
+                onChange={(e: { target: HTMLSelectElement }) => void assignDiscipline(selectedNode.id, e.target.value)}
+              >
+                <option value="">Assign Discipline…</option>
+                {DISCIPLINES.map((d) => (
+                  <option key={d.id} value={d.id}>
+                    {d.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
           <a className="btn primary" href={`#/knowledge/${encodeURIComponent(selectedNode.code)}`} style={{ marginTop: 14 }}>
             Inspect Skill Detail
           </a>
@@ -526,6 +705,9 @@ export function Knowledge(): ReactNode {
               Start Revision Session
             </a>
           )}
+          <button className="btn ghost pin-btn" onClick={() => pin({ id: core.id, name: core.name, kind: "cosmic" })}>
+            ◈ {waypoints.some((p) => p.id === core.id) ? "Pinned" : "Pin Location"}
+          </button>
           <code className="drawer-code">{core.id}</code>
           {core.kind === "blackhole" ? (
             <>
@@ -561,6 +743,39 @@ export function Knowledge(): ReactNode {
             </button>
           )}
         </aside>
+      )}
+
+      {pinsOpen && view === "atlas" && (
+        <div className="waypoints" role="dialog" aria-label="Pinned coordinates">
+          <div className="row between">
+            <strong>Pinned coordinates</strong>
+            <button className="icon-btn" aria-label="Close pinned coordinates" onClick={() => setPinsOpen(false)}>
+              <X size={14} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          </div>
+          {waypoints.length === 0 ? (
+            <p className="hint">Open any record, star, galaxy or singularity and choose <strong>Pin Location</strong> to save it here.</p>
+          ) : (
+            <ul>
+              {waypoints.map((point) => (
+                <li key={point.id}>
+                  <button className="waypoint" onClick={() => goTo(point)} title={`Return to ${point.name}`}>
+                    <span aria-hidden="true">{point.kind === "cosmic" ? "✧" : "◆"}</span>
+                    <span className="name">{point.name}</span>
+                  </button>
+                  <button
+                    className="icon-btn"
+                    aria-label={`Remove ${point.name}`}
+                    onClick={() => saveWaypoints(waypoints.filter((p) => p.id !== point.id))}
+                  >
+                    <X size={12} strokeWidth={1.6} aria-hidden="true" />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          <p className="hint">Up to 6 coordinates · saved on this device</p>
+        </div>
       )}
 
       {view === "atlas" && galaxy.stars.length > 0 && (
@@ -623,7 +838,7 @@ export function Knowledge(): ReactNode {
             </button>
           </div>
           <ul>
-            <li><b>Left thumb</b> invisible flight stick: push to thrust, slide to strafe</li>
+            <li><b>Left thumb</b> invisible flight stick (28 px from the edge, clear of Android Back): push to thrust, slide to strafe, lift to stop</li>
             <li><b>Right drag</b> orbit 360° around the focal point</li>
             <li><b>Pinch / wheel</b> zoom, clamped to 1.45× the focused body</li>
             <li><b>Double-tap</b> dive into close orbit</li>
