@@ -1588,3 +1588,103 @@ html.athena-zen .main.full { inset: 0; }
 .atlas-lock strong { color: var(--text-primary); font-weight: 600; }
 @media (max-width: 720px) { .atlas-lock { top: auto; bottom: 96px; left: 12px; right: 12px; justify-content: space-between; z-index: 9; } }
 .galaxy-chip .dot[data-galaxy="universe"] { background: #e9f0ff; color: #e9f0ff; }
+
+/* ── Desktop navigation rail: fixed 42px rows ────────────────────────────── */
+/* The links used to stretch to fill the viewport height. Each one is now a fixed row at the top of
+   the rail, which keeps the seven destinations readable and leaves the space below for the footer. */
+@media (min-width: 900px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 4px;
+    padding: 14px 12px;
+  }
+  .nav a {
+    flex: 0 0 42px;
+    height: 42px;
+    min-height: 42px;
+    max-height: 42px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0 12px;
+  }
+  .nav a[aria-current="page"] {
+    background: #101B33;
+    border: 1px solid #35D9FF;
+    color: #F1F5FF;
+    box-shadow: none;
+  }
+}
+
+/* ── 3D cockpit ──────────────────────────────────────────────────────────── */
+.atlas-stage { position: absolute; inset: 0; }
+.atlas-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+.atlas-canvas.dragging { cursor: grabbing; }
+.atlas-canvas.over-body { cursor: pointer; }
+.atlas-label-canvas { position: absolute; inset: 0; pointer-events: none; }
+.atlas-nogl {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(380px, calc(100% - 40px)); padding: 20px; z-index: 8;
+  background: rgba(10, 18, 34, 0.94); border: 1px solid var(--glass-edge-strong);
+  border-radius: var(--radius-panel); box-shadow: var(--shadow-lift);
+}
+.atlas-nogl h2 { font-size: 18px; margin-bottom: 8px; }
+.atlas-nogl p { font-size: 13px; margin-bottom: 14px; }
+.atlas-crumbs {
+  position: absolute; top: 148px; left: 0; right: 0; z-index: 4;
+  display: flex; align-items: center; gap: 6px; padding: 0 12px;
+  overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.atlas-crumbs::-webkit-scrollbar { display: none; }
+.atlas-crumbs .crumb { display: inline-flex; align-items: center; gap: 6px; }
+.atlas-crumbs button {
+  appearance: none; background: rgba(9, 16, 31, 0.62); border: 1px solid transparent;
+  color: var(--text-secondary); border-radius: 8px; padding: 3px 7px; cursor: pointer;
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  backdrop-filter: blur(12px);
+}
+.atlas-crumbs button:hover { color: var(--text-primary); border-color: rgba(53, 217, 255, 0.4); }
+.atlas-crumbs button[aria-current="true"] { color: var(--atlas-cyan); border-color: rgba(53, 217, 255, 0.5); }
+.pill.warp { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.pill.warp button { min-width: 34px; }
+@media (min-width: 900px) { .atlas-crumbs { top: 152px; padding: 0 18px; } }
+
+/* Sideways cockpit. With no platform orientation lock (desktop, most WebViews) the stage becomes a
+   rotated full-viewport surface; offsetX/offsetY stay in element pixels, so taps are still exact. */
+.atlas-root[data-landscape-css="true"] {
+  position: fixed; top: 0; left: 0; z-index: 60;
+  width: 100vh; height: 100vw;
+  transform-origin: 0 0;
+  transform: translateX(100vw) rotate(90deg);
+  border-radius: 0;
+}
+/* The cockpit is the whole screen: the app chrome would be sideways beside it. */
+html.athena-cockpit .brandrail,
+html.athena-cockpit .nav,
+html.athena-cockpit .topbar { display: none; }
+html.athena-cockpit body { padding-left: 0; }
+.atlas-root[data-landscape="true"] .atlas-hud { flex-wrap: wrap; }
+.atlas-root[data-landscape="true"] .hud-search { flex: 1 1 220px; }
+.atlas-root[data-landscape="true"] .atlas-crumbs { top: 140px; }
+.atlas-root[data-landscape="true"] .atlas-chips { top: 62px; }
+.atlas-root[data-landscape="true"] .atlas-galaxies { top: 62px; left: auto; right: 12px; width: min(52%, 560px); justify-content: flex-end; }
+
+/* Phone cockpit: the search field is a row of its own, never squeezed to a bare icon. */
+@media (max-width: 899px) {
+  .atlas-hud { flex-wrap: wrap; gap: 6px; }
+  .atlas-hud .hud-search { order: -1; flex: 1 1 100%; }
+  .atlas-chips { top: 112px; }
+  .atlas-galaxies { top: 156px; }
+  .atlas-crumbs { top: 196px; }
+  .atlas-root[data-landscape="true"] .atlas-chips { top: 62px; }
+  .atlas-root[data-landscape="true"] .atlas-galaxies { top: 62px; }
+  .atlas-root[data-landscape="true"] .atlas-crumbs { top: 132px; }
+}
