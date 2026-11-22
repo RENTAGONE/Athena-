@@ -36,6 +36,14 @@ export function App(): ReactNode {
   const [error, setError] = useState<string | null>(null);
   const [updateReady, setUpdateReady] = useState(isUpdateReady);
   const [updateDismissed, setUpdateDismissed] = useState(false);
+  /** The navigation rail folds away entirely, leaving the 3D surface unobstructed. */
+  const [railCollapsed, setRailCollapsed] = useState(() => {
+    try {
+      return window.localStorage.getItem("athena.rail") === "collapsed";
+    } catch {
+      return false;
+    }
+  });
   const [boot, setBoot] = useState(() => {
     const prefs = getPrefs();
     if (!prefs.boot || !prefs.motion) return false;
@@ -47,6 +55,11 @@ export function App(): ReactNode {
     }
     return true;
   });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("athena-rail-collapsed", railCollapsed);
+    return () => document.documentElement.classList.remove("athena-rail-collapsed");
+  }, [railCollapsed]);
 
   useEffect(() => {
     createRuntime()
@@ -117,7 +130,7 @@ export function App(): ReactNode {
 
   return (
     <Ctx.Provider value={{ rt, state, refresh }}>
-      <div className="shell" data-atlas={isAtlas ? "true" : undefined}>
+      <div className="shell" data-atlas={isAtlas ? "true" : undefined} data-rail={railCollapsed ? "collapsed" : undefined}>
         {boot && <Boot onDone={() => setBoot(false)} />}
         {updateReady && !updateDismissed && (
           <div className="banner" role="status">
@@ -152,6 +165,21 @@ export function App(): ReactNode {
         </div>
         <main className={isAtlas ? "main full" : "main"}>{page}</main>
         <nav className="nav" aria-label="Environments">
+          <button
+            className="rail-collapse"
+            aria-label="Collapse sidebar"
+            aria-expanded={!railCollapsed}
+            onClick={() => {
+              setRailCollapsed(true);
+              try {
+                window.localStorage.setItem("athena.rail", "collapsed");
+              } catch {
+                /* storage may be blocked; the choice lasts for this session */
+              }
+            }}
+          >
+            «
+          </button>
           <a href="#/today" aria-current={pageIs("/today")}>
             <Sun aria-hidden="true" strokeWidth={1.5} />Today
           </a>
@@ -174,6 +202,22 @@ export function App(): ReactNode {
             <Settings aria-hidden="true" strokeWidth={1.5} />Settings
           </a>
         </nav>
+        {railCollapsed && (
+          <button
+            className="rail-open"
+            aria-label="Open sidebar"
+            onClick={() => {
+              setRailCollapsed(false);
+              try {
+                window.localStorage.setItem("athena.rail", "open");
+              } catch {
+                /* storage may be blocked */
+              }
+            }}
+          >
+            ☰<span>Menu</span>
+          </button>
+        )}
       </div>
     </Ctx.Provider>
   );

@@ -28,9 +28,26 @@ export const SYSTEM_SEPARATION = 4200;
 export const SYSTEM_SPHERE = 8600;
 export const STAR_RADIUS = 42;
 export const MIN_CAMERA_DISTANCE = 0.9;
-export const MAX_CAMERA_DISTANCE = 22_000;
+export const MAX_CAMERA_DISTANCE = 96_000;
 /** One astronomical unit, declared as the outer orbital radius of the atlas. */
 export const UNITS_PER_AU = 1650;
+/** Half-edge of the multiverse containment cube, in world units. */
+export const MULTIVERSE_HALF = 30_000;
+/** The cube fades in only once the camera pulls back past this distance. */
+export const MULTIVERSE_REVEAL = 32_000;
+export const UNIVERSE_COUNT = 24;
+export const FIELD_GALAXY_COUNT = 184;
+export const BASE_FOV = 55;
+
+/** A body that is not a knowledge record: a universe, galaxy, black hole or orbital station. */
+export interface CosmicBody {
+  id: string;
+  kind: "universe" | "galaxy" | "blackhole" | "station";
+  name: string;
+  center: THREE.Vector3;
+  /** Pick radius in world units. */
+  radius: number;
+}
 
 export type BodyKind = "star" | "planet" | "moon" | "satellite" | "asteroid";
 
@@ -60,6 +77,8 @@ export interface AtlasSceneCallbacks {
   onSelect: (id: string | null) => void;
   onHover: (id: string | null) => void;
   onState: (state: AtlasViewState) => void;
+  /** A universe, galaxy, black hole or station was tapped. */
+  onInspect?: (body: CosmicBody | null) => void;
 }
 
 const clamp = (n: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, n));
@@ -99,6 +118,21 @@ const SOFT_DOT = (() => {
 const UNIT_SPHERE = new THREE.SphereGeometry(1, 40, 28);
 const UNIT_SPHERE_LO = new THREE.SphereGeometry(1, 24, 16);
 const SHARED_GEOMETRY = new Set<THREE.BufferGeometry>([UNIT_SPHERE, UNIT_SPHERE_LO]);
+
+/** One set of station parts shared by every orbital station in the scene. */
+const STATION_PARTS = {
+  ring: new THREE.TorusGeometry(0.62, 0.055, 10, 40),
+  ring2: new THREE.TorusGeometry(0.42, 0.036, 8, 32),
+  truss: new THREE.BoxGeometry(0.95, 0.05, 0.05),
+  hub: new THREE.SphereGeometry(0.15, 14, 10),
+  bay: new THREE.BoxGeometry(0.2, 0.09, 0.11),
+  wing: new THREE.BoxGeometry(0.62, 0.012, 0.2),
+  dock: new THREE.CylinderGeometry(0.13, 0.15, 0.34, 14, 1, true),
+  pylon: new THREE.BoxGeometry(0.05, 0.05, 0.46),
+  beacon: new THREE.SphereGeometry(0.028, 8, 6),
+};
+SHARED_GEOMETRY.add(STATION_PARTS.ring).add(STATION_PARTS.ring2).add(STATION_PARTS.truss).add(STATION_PARTS.hub).add(STATION_PARTS.bay)
+  .add(STATION_PARTS.wing).add(STATION_PARTS.dock).add(STATION_PARTS.pylon).add(STATION_PARTS.beacon);
 
 /** Stellar rays: soft cross + radial streaks, drawn as one additive quad around a star. */
 const STELLAR_RAYS = (() => {
@@ -257,6 +291,22 @@ export class AtlasScene {
   private binaries: { pivot: THREE.Object3D; bridge: THREE.Mesh; phase: number }[] = [];
   private moonRingMats: { mat: THREE.LineBasicMaterial; system: number }[] = [];
 
+  /* multiverse scale, built once and never rebuilt with the galaxy */
+  private readonly cosmos = new THREE.Group();
+  private readonly multiverse = new THREE.Group();
+  private readonly galaxyField = new THREE.Group();
+  private cosmicBodies: CosmicBody[] = [];
+  private stations: {
+    holder: THREE.Object3D;
+    craft: THREE.Object3D;
+    cosmic: CosmicBody;
+    rings: THREE.Object3D[];
+    beacons: { mat: THREE.MeshBasicMaterial; phase: number }[];
+    bay: THREE.Mesh;
+  }[] = [];
+  private diskMats: THREE.ShaderMaterial[] = [];
+  private clusterGlows: { sprite: THREE.Sprite; center: THREE.Vector3 }[] = [];
+
   /* camera rig */
   private target = new THREE.Vector3(0, 0, 0);
   private yaw = 0.62;
@@ -275,6 +325,21 @@ export class AtlasScene {
     dur: number;
   } | null = null;
 
+  /* hyperspace */
+  private warp: {
+    from: { target: THREE.Vector3; distance: number; yaw: number; pitch: number };
+    to: { target: THREE.Vector3; distance: number; yaw: number; pitch: number };
+    start: number;
+    dur: number;
+    follow: string | null;
+    reticle: THREE.Vector3;
+  } | null = null;
+  private warpLines!: THREE.LineSegments;
+  private warpShock!: THREE.Group;
+  private warpShockMats: THREE.MeshBasicMaterial[] = [];
+  private warpJitter = new THREE.Vector3();
+  private warpSeed: { a: number; r: number; z: number; len: number; speed: number }[] = [];
+
   /* interaction */
   private pointers = new Map<number, { x: number; y: number }>();
   private dragMode: "orbit" | "pan" = "orbit";
@@ -282,6 +347,8 @@ export class AtlasScene {
   private pinchStart = 0;
   private pinchDistanceValue = 0;
   private pointerAt = { x: 0, y: 0 };
+  /** The invisible left-thumb flight stick: shown only while a thumb is down. */
+  private stick: { id: number; origin: { x: number; y: number }; vector: { x: number; y: number } } | null = null;
   private hovered: string | null = null;
   private selected: string | null = null;
   private filter: string | null = null;
@@ -307,12 +374,15 @@ export class AtlasScene {
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
-    this.camera = new THREE.PerspectiveCamera(50, 1, 0.05, 900_000);
+    this.camera = new THREE.PerspectiveCamera(BASE_FOV, 1, 0.05, 2_400_000);
     this.labelCtx = callbacks.labelCanvas.getContext("2d");
     this.scene.background = new THREE.Color(0x05080f);
     this.scene.add(this.root);
     this.scene.add(new THREE.AmbientLight(0x9db4e0, 0.14));
+    this.scene.add(this.camera);
     this.buildBackdrop();
+    this.buildCosmos();
+    this.buildWarpTunnel();
 
     this.ro = new ResizeObserver(() => this.resize());
     this.ro.observe(canvas);
@@ -349,7 +419,7 @@ export class AtlasScene {
     for (let i = 0; i < count; i += 1) {
       const u = hash01(i, 11) * 2 - 1;
       const a = hash01(i, 12) * Math.PI * 2;
-      const r = 80_000 + hash01(i, 13) * 40_000;
+      const r = 260_000 + hash01(i, 13) * 140_000;
       const s = Math.sqrt(Math.max(0, 1 - u * u));
       positions[i * 3] = Math.cos(a) * s * r;
       positions[i * 3 + 1] = u * r;
@@ -364,7 +434,7 @@ export class AtlasScene {
     geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
     const mat = new THREE.PointsMaterial({
-      size: 340,
+      size: 2_200,
       sizeAttenuation: true,
       vertexColors: true,
       map: SOFT_DOT,
@@ -388,6 +458,9 @@ export class AtlasScene {
     this.clouds = [];
     this.binaries = [];
     this.moonRingMats = [];
+    this.clusterGlows = [];
+    this.stations = [];
+    this.cosmicBodies = this.cosmicBodies.filter((b) => b.kind !== "station" && !b.id.startsWith("CORE-BH-"));
     if (galaxy.stars.length === 0) return;
 
     const anchors = separatedStarPositions(galaxy.stars.length, SYSTEM_SPHERE, SYSTEM_SEPARATION);
@@ -525,6 +598,8 @@ export class AtlasScene {
     this.bodyObject.set(starBody.id, star);
     this.pickables.push(star);
     this.pickables.push(this.proxy(star, STAR_RADIUS * 1.6, starBody.id));
+    // A rotating ring-and-truss station orbits every discipline star, ready for the Chunk 5 cockpit.
+    this.addStation(system.code, group, 0.65, 130 + hash01(index, 51) * 90);
 
     const planetCount = Math.max(1, system.planets.length);
     system.planets.forEach((planet, pi) => {
@@ -629,6 +704,7 @@ export class AtlasScene {
       this.bodyObject.set(body.id, mesh);
       this.pickables.push(mesh);
       this.pickables.push(this.proxy(mesh, Math.max(radius * 1.8, 0.8), body.id));
+      if (planet.tier === "mastered") this.addStation(`${planet.node.code}-STN`, holder, 0.65, radius * 3.2);
       this.motions.push({
         pivot,
         holder,
@@ -963,12 +1039,12 @@ export class AtlasScene {
       const points = new THREE.Points(
         geo,
         new THREE.PointsMaterial({
-          size: 90,
+          size: 46,
           sizeAttenuation: true,
           vertexColors: true,
           map: SOFT_DOT,
           transparent: true,
-          opacity: ci === 0 ? 0.5 : 0.3,
+          opacity: ci === 0 ? 0.4 : 0.26,
           depthWrite: false,
           blending: THREE.AdditiveBlending,
         }),
@@ -976,25 +1052,23 @@ export class AtlasScene {
       points.position.copy(c.anchor);
       this.root.add(points);
 
-      // Every galaxy has a supermassive black hole at its centre.
+      // Every galaxy has a relativistic supermassive black hole at its centre.
       const holeRadius = ci === 0 ? 150 : 90;
-      const hole = new THREE.Mesh(
-        new THREE.SphereGeometry(holeRadius, 24, 16),
-        new THREE.MeshBasicMaterial({ color: 0x000000 }),
-      );
+      const hole = this.relativisticBlackHole(holeRadius);
       hole.position.copy(c.anchor);
       this.root.add(hole);
-      const disc = new THREE.Mesh(
-        new THREE.RingGeometry(holeRadius * 1.4, holeRadius * 4.2, 64),
-        new THREE.MeshBasicMaterial({ color: 0xffb066, transparent: true, opacity: 0.55, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }),
-      );
-      disc.rotation.x = Math.PI / 2 - 0.28;
-      disc.position.copy(c.anchor);
-      this.root.add(disc);
-      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: radialSprite("rgba(255,226,190,0.9)", "rgba(126,164,255,0.35)"), transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false }));
-      glow.scale.setScalar(ci === 0 ? 2600 : 1500);
+      this.cosmicBodies.push({
+        id: ci === 0 ? "CORE-BH-ATHENA" : `CORE-BH-${ci}`,
+        kind: "blackhole",
+        name: ci === 0 ? "ATHENA Core Singularity" : `${ci === 1 ? "Frontier" : "Vault"} Core Singularity`,
+        center: c.anchor.clone(),
+        radius: holeRadius,
+      });
+      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: radialSprite("rgba(255,226,190,0.55)", "rgba(126,164,255,0.18)"), transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false }));
+      glow.scale.setScalar(ci === 0 ? 1400 : 900);
       glow.position.copy(c.anchor);
       this.root.add(glow);
+      this.clusterGlows.push({ sprite: glow, center: c.anchor.clone() });
     }
   }
 
@@ -1014,6 +1088,8 @@ export class AtlasScene {
       return { x: e.offsetX, y: e.offsetY };
     };
 
+    const touch = (e: PointerEvent): boolean => e.pointerType === "touch" || e.pointerType === "pen";
+
     const down = (e: PointerEvent): void => {
       canvas.setPointerCapture(e.pointerId);
       const p = local(e);
@@ -1026,6 +1102,13 @@ export class AtlasScene {
         this.pinchDistanceValue = Math.hypot((a?.x ?? 0) - (b?.x ?? 0), (a?.y ?? 0) - (b?.y ?? 0));
         this.pinchStart = this.distance;
         this.dragMode = "pan";
+        this.stick = null;
+      }
+      // The left 38% of a touch screen is an invisible flight stick: no permanent UI, no chrome.
+      if (this.pointers.size === 1 && touch(e) && p.x < this.width * 0.38) {
+        this.stick = { id: e.pointerId, origin: p, vector: { x: 0, y: 0 } };
+        this.glide = null;
+        this.warp = null;
       }
       canvas.classList.add("dragging");
     };
@@ -1042,6 +1125,11 @@ export class AtlasScene {
       const dy = p.y - prev.y;
       this.pointers.set(e.pointerId, p);
       this.draggedDistance += Math.abs(dx) + Math.abs(dy);
+      if (this.stick && this.stick.id === e.pointerId) {
+        this.stick.vector.x = clamp((p.x - this.stick.origin.x) / 70, -1, 1);
+        this.stick.vector.y = clamp((p.y - this.stick.origin.y) / 70, -1, 1);
+        return;
+      }
       if (this.pointers.size === 2) {
         const [a, b] = [...this.pointers.values()];
         const d = Math.hypot((a?.x ?? 0) - (b?.x ?? 0), (a?.y ?? 0) - (b?.y ?? 0));
@@ -1062,19 +1150,38 @@ export class AtlasScene {
     };
 
     const up = (e: PointerEvent): void => {
+      const wasStick = this.stick?.id === e.pointerId;
       this.pointers.delete(e.pointerId);
-      if (this.pointers.size === 0) canvas.classList.remove("dragging");
-      if (this.draggedDistance > 6) return;
+      if (wasStick) this.stick = null;
+      if (this.pointers.size === 0) {
+        canvas.classList.remove("dragging");
+        // Strict zero-drift: the instant the last finger lifts, every goal snaps to where the camera is.
+        this.halt();
+      }
+      if (wasStick || this.draggedDistance > 6) return;
       const p = local(e);
       const hit = this.pick(p.x, p.y);
-      this.callbacks.onSelect(hit ? hit.id : null);
-      if (hit) this.focus(hit.id);
+      if (!hit) {
+        this.callbacks.onSelect(null);
+        this.callbacks.onInspect?.(null);
+        return;
+      }
+      if (hit.cosmic) {
+        this.callbacks.onSelect(null);
+        this.callbacks.onInspect?.(hit.cosmic);
+        this.focusCosmic(hit.id);
+        return;
+      }
+      this.callbacks.onInspect?.(null);
+      this.callbacks.onSelect(hit.id);
+      if (hit.body) this.focus(hit.id);
     };
 
     const wheel = (e: WheelEvent): void => {
       e.preventDefault();
       const rect = canvas.getBoundingClientRect();
-      const next = clamp(this.distance * Math.exp(e.deltaY * 0.0012), MIN_CAMERA_DISTANCE, MAX_CAMERA_DISTANCE);
+      // Zoom steps scale with the current distance, so a wheel notch is gentle up close and long-range far out.
+      const next = clamp(this.distance * Math.exp(e.deltaY * 0.0012), this.floorDistance(), MAX_CAMERA_DISTANCE);
       this.dolly(next, { x: e.clientX - rect.left, y: e.clientY - rect.top });
     };
 
@@ -1092,7 +1199,8 @@ export class AtlasScene {
       // Double-tap dives straight into close inspection; empty space still resets the view.
       const p = local(e as unknown as PointerEvent);
       const hit = this.pick(p.x, p.y);
-      if (hit) this.dive(hit.id);
+      if (hit?.cosmic) this.focusCosmic(hit.id);
+      else if (hit) this.dive(hit.id);
       else this.reset();
     };
 
@@ -1129,7 +1237,7 @@ export class AtlasScene {
     this.callbacks.onHover(id);
   }
 
-  private pick(x: number, y: number): AtlasBody | null {
+  private pick(x: number, y: number): { id: string; body: AtlasBody | null; cosmic: CosmicBody | null } | null {
     const n = this.ndc(x, y);
     this.pointer.set(n.x, n.y);
     this.raycaster.setFromCamera(this.pointer, this.camera);
@@ -1138,9 +1246,26 @@ export class AtlasScene {
       const id = hit.object.userData.bodyId as string | undefined;
       if (id) {
         const body = this.bodies.get(id);
-        if (body) return body;
+        if (body) return { id, body, cosmic: null };
       }
     }
+    // Cosmic bodies are picked with generous analytic hit-spheres, so a 0.65-unit station or a distant
+    // galaxy still registers under a thumb. No invisible meshes needed at all.
+    const sphere = new THREE.Sphere();
+    const point = new THREE.Vector3();
+    let best: { body: CosmicBody; distance: number } | null = null;
+    for (const body of this.cosmicBodies) {
+      // Never let a container swallow taps from inside it: the camera is already inside that universe
+      // or galaxy, and empty space there must deselect rather than warp.
+      const inside = this.camera.position.distanceTo(body.center);
+      if ((body.kind === "universe" || body.kind === "galaxy") && inside < body.radius * 1.08) continue;
+      const slack = body.kind === "station" ? 8 : body.kind === "galaxy" ? 1.35 : body.kind === "universe" ? 1.05 : 1.25;
+      sphere.set(body.center, Math.max(body.radius * slack, body.kind === "station" ? 0.9 : 0));
+      if (!this.raycaster.ray.intersectSphere(sphere, point)) continue;
+      const distance = point.distanceTo(this.camera.position);
+      if (!best || distance < best.distance) best = { body, distance };
+    }
+    if (best) return { id: best.body.id, body: null, cosmic: best.body };
     return null;
   }
 
@@ -1160,7 +1285,7 @@ export class AtlasScene {
   /** Dolly toward a screen point: the target moves along the pointer's own ray, so the thing under
    *  the cursor grows instead of the scene sliding sideways. */
   private dolly(nextDistance: number, at: { x: number; y: number }): void {
-    const nd = clamp(nextDistance, MIN_CAMERA_DISTANCE, MAX_CAMERA_DISTANCE);
+    const nd = clamp(nextDistance, this.floorDistance(), MAX_CAMERA_DISTANCE);
     const n = this.ndc(at.x, at.y);
     this.pointer.set(n.x, n.y);
     this.raycaster.setFromCamera(this.pointer, this.camera);
@@ -1180,6 +1305,10 @@ export class AtlasScene {
     const pos = new THREE.Vector3();
     object.getWorldPosition(pos);
     const dist = Math.max(MIN_CAMERA_DISTANCE + 0.1, body.radius * 2.8);
+    if (this.camera.position.distanceTo(pos) > 3000) {
+      this.warpTo(pos, dist, this.yaw, clamp(this.pitch, 0.4, Math.PI - 0.4), id);
+      return;
+    }
     this.glideTo(pos, dist, this.yaw, clamp(this.pitch, 0.4, Math.PI - 0.4), 700);
     this.follow = id;
     this.followPrev.copy(pos);
@@ -1217,6 +1346,10 @@ export class AtlasScene {
     if (!s) return;
     const anchor = s.group.position.clone();
     // Framed wide enough that the inner orbits and their worlds are in shot, not just the photosphere.
+    if (!instant && this.camera.position.distanceTo(anchor) > 6000) {
+      this.warpTo(anchor, 1250, 0.55, 1.16, null);
+      return;
+    }
     this.glideTo(anchor, 1250, 0.55, 1.16, instant ? 0 : 620);
     this.follow = null;
     this.yawGoal = 0.55;
@@ -1234,6 +1367,11 @@ export class AtlasScene {
       MIN_CAMERA_DISTANCE + 0.4,
       body.kind === "star" ? 1100 : body.radius * (body.kind === "planet" ? 7 : 9),
     );
+    // Distant targets take the 900 ms hyperspace lane; nearby ones keep the short orbital glide.
+    if (!instant && this.camera.position.distanceTo(pos) > 2600) {
+      this.warpTo(pos, dist, this.yaw, clamp(this.pitch, 0.5, Math.PI - 0.5), id);
+      return;
+    }
     this.glideTo(pos, dist, this.yaw, clamp(this.pitch, 0.5, Math.PI - 0.5), instant ? 0 : 600);
     this.follow = id;
     this.followPrev.copy(pos);
@@ -1244,10 +1382,15 @@ export class AtlasScene {
     this.glideTo(new THREE.Vector3(0, 0, 0), 20_500, 0.62, 1.06, 620);
   }
 
-  /** Fly to one of the three galaxies, or out to the whole local group. */
-  focusCluster(key: "core" | "frontier" | "vault" | "universe"): void {
+  /** Fly to one of the three galaxies, out to the local group, or out to the multiverse box. */
+  focusCluster(key: "core" | "frontier" | "vault" | "universe" | "multiverse"): void {
+    this.follow = null;
+    if (key === "multiverse") {
+      this.warpTo(new THREE.Vector3(0, 0, 0), 64_000, 0.62, 1.08, null);
+      return;
+    }
     if (key === "universe") {
-      this.glideTo(new THREE.Vector3(0, 0, 0), MAX_CAMERA_DISTANCE, 0.62, 1.06, 760);
+      this.warpTo(new THREE.Vector3(0, 0, 0), 26_500, 0.62, 1.06, null);
       return;
     }
     const anchors = {
@@ -1255,9 +1398,55 @@ export class AtlasScene {
       frontier: new THREE.Vector3(-SYSTEM_SPHERE * 1.5, -900, -SYSTEM_SPHERE * 0.7),
       vault: new THREE.Vector3(SYSTEM_SPHERE * 1.6, 1000, SYSTEM_SPHERE * 0.6),
     };
-    const anchor = anchors[key];
-    this.glideTo(anchor, key === "core" ? 20_500 : 5200, 0.62, 1.04, 720);
-    this.follow = null;
+    this.warpTo(anchors[key], key === "core" ? 20_500 : 5200, 0.62, 1.04, null);
+  }
+
+  /** Fly to any universe, galaxy, black hole or station. */
+  focusCosmic(id: string): void {
+    const body = this.cosmicBodies.find((c) => c.id === id);
+    if (!body) return;
+    const dist =
+      body.kind === "universe"
+        ? Math.max(3200, body.radius * 2.4)
+        : body.kind === "galaxy"
+          ? Math.max(240, body.radius * 4)
+          : body.kind === "blackhole"
+            ? Math.max(520, body.radius * 6)
+            : Math.max(6, body.radius * 10);
+    this.warpTo(body.center.clone(), dist, this.yaw, clamp(this.pitch, 0.42, Math.PI - 0.42), null);
+  }
+
+  /** A public transport: any body id, near or far, routed through the warp lane. */
+  travel(id: string): void {
+    if (this.cosmicBodies.some((c) => c.id === id)) {
+      this.focusCosmic(id);
+      return;
+    }
+    const object = this.bodyObject.get(id);
+    if (!object) return;
+    const pos = new THREE.Vector3();
+    object.getWorldPosition(pos);
+    this.warpTo(pos, Math.max(120, this.distance), this.yaw, clamp(this.pitch, 0.4, Math.PI - 0.4), id);
+  }
+
+  /** Zero every autonomous velocity: no drift survives a lifted finger. */
+  private halt(): void {
+    this.yawGoal = this.yaw;
+    this.pitchGoal = this.pitch;
+    this.distanceGoal = this.distance;
+    this.stick = null;
+  }
+
+  /** Closest the camera may come: 1.45× the focused body's radius, never inside its hull. */
+  private floorDistance(): number {
+    const id = this.follow ?? this.selected;
+    if (id) {
+      const body = this.bodies.get(id);
+      if (body) return Math.max(MIN_CAMERA_DISTANCE, body.radius * 1.45);
+      const cosmic = this.cosmicBodies.find((c) => c.id === id);
+      if (cosmic && cosmic.kind !== "universe" && cosmic.kind !== "galaxy") return Math.max(MIN_CAMERA_DISTANCE, cosmic.radius * 1.45);
+    }
+    return MIN_CAMERA_DISTANCE;
   }
 
   private glideTo(target: THREE.Vector3, distance: number, yaw: number, pitch: number, dur: number): void {
@@ -1306,7 +1495,9 @@ export class AtlasScene {
     const dt = Math.min(0.05, (now - this.lastFrame) / 1000);
     this.lastFrame = now;
 
-    if (this.glide) {
+    if (this.warp) {
+      this.updateWarp(now);
+    } else if (this.glide) {
       const raw = clamp((now - this.glide.start) / Math.max(1, this.glide.dur), 0, 1);
       const k = 1 - Math.pow(1 - raw, 3);
       this.target.lerpVectors(this.glide.from.target, this.glide.to.target, k);
@@ -1350,6 +1541,20 @@ export class AtlasScene {
       }
     }
 
+    // Left-thumb flight stick: thrust along the camera's look direction and strafe laterally. Speed
+    // scales with the current cosmic altitude, and it stops dead the instant the thumb lifts.
+    if (this.stick && !this.warp) {
+      const { x, y } = this.stick.vector;
+      if (Math.abs(x) > 0.04 || Math.abs(y) > 0.04) {
+        const speed = clamp(this.distance * 0.42, 3, 9000);
+        const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(this.camera.quaternion);
+        const right = new THREE.Vector3(1, 0, 0).applyQuaternion(this.camera.quaternion);
+        this.target.addScaledVector(forward, -y * speed * dt).addScaledVector(right, x * speed * dt);
+        this.follow = null;
+        this.glide = null;
+      }
+    }
+
     this.elapsed += dt * this.timeScale;
 
     // Orbits, then the reference-frame lock: the camera rides the focused body's displacement.
@@ -1380,8 +1585,9 @@ export class AtlasScene {
       this.target.z + Math.sin(this.pitch) * Math.cos(this.yaw) * this.distance,
     );
     this.camera.lookAt(this.target);
+    if (this.warpJitter.lengthSq() > 0) this.camera.position.add(this.warpJitter);
     this.camera.near = Math.max(0.02, this.distance * 0.00025);
-    this.camera.far = Math.max(120_000, this.distance * 40);
+    this.camera.far = Math.max(420_000, this.distance * 40);
     this.camera.updateProjectionMatrix();
 
     // Photosphere convection, cloud drift and the binary pair are animated on the same clock, so 0x
@@ -1416,6 +1622,27 @@ export class AtlasScene {
       s.star.rotation.y += dt * 0.02;
     }
 
+    // Scale 1 and 0: the surrounding galaxy field fades in with the local universe, and the lattice
+    // cube only appears once the camera pulls back past the universe's edge.
+    this.galaxyField.visible = this.distance < 36_000;
+    this.multiverse.visible = this.distance > MULTIVERSE_REVEAL;
+    const stime = this.elapsed * Math.max(0.2, this.timeScale);
+    for (const st of this.stations) {
+      st.holder.getWorldPosition(st.cosmic.center);
+      st.craft.rotation.y += dt * 0.65 * Math.max(0.2, this.timeScale);
+      // Counter-rotating rings, a slow bay pulse and hard navigation strobes.
+      st.rings[0]!.rotation.z += dt * 0.55;
+      st.rings[1]!.rotation.z -= dt * 0.9;
+      (st.bay.material as THREE.MeshBasicMaterial).color.setHSL(0.52, 0.95, 0.55 + 0.12 * Math.sin(stime * 2.2));
+      for (const b of st.beacons) {
+        const strobe = Math.sin(stime * 5.2 + b.phase);
+        b.mat.opacity = strobe > 0.55 ? 1 : 0.12;
+      }
+    }
+    // The galactic glow is a galaxy-scale cue; up close it would white out an inspection.
+    for (const g of this.clusterGlows) g.sprite.visible = this.camera.position.distanceTo(g.center) > 3200;
+    for (const mat of this.diskMats) mat.uniforms.uTime!.value = now * 0.001;
+
     this.renderer.render(this.scene, this.camera);
     this.drawLabels();
     this.emitState(now);
@@ -1444,6 +1671,8 @@ export class AtlasScene {
     ctx.clearRect(0, 0, this.width, this.height);
     if (this.width < 2) return;
     const placed: { x0: number; y0: number; x1: number; y1: number }[] = [];
+    // One clean label per visible object: a body can never be captioned twice in a frame.
+    const seen = new Set<string>();
     const fits = (x: number, y: number, w: number): boolean => {
       const box = { x0: x - w / 2 - 4, y0: y - 9, x1: x + w / 2 + 4, y1: y + 4 };
       for (const b of placed) if (box.x0 < b.x1 && box.x1 > b.x0 && box.y0 < b.y1 && box.y1 > b.y0) return false;
@@ -1459,7 +1688,11 @@ export class AtlasScene {
       return { x: (p.x * 0.5 + 0.5) * this.width, y: (-p.y * 0.5 + 0.5) * this.height, scale: depth };
     };
 
-    const label = (text: string, x: number, y: number, color: string, alpha: number, weight = 600): void => {
+    const label = (text: string, x: number, y: number, color: string, alpha: number, weight = 600, id?: string): void => {
+      if (id) {
+        if (seen.has(id)) return;
+        seen.add(id);
+      }
       ctx.font = `${weight} 11px "JetBrains Mono", ui-monospace, monospace`;
       const w = ctx.measureText(text).width;
       // The top 132px belong to the search bar and the chips; a label under them is unreadable.
@@ -1475,14 +1708,16 @@ export class AtlasScene {
       ctx.globalAlpha = 1;
     };
 
-    // Star systems are labelled from galaxy range in: they are the map's landmarks.
+    // Star systems are labelled from galaxy range in: they are the map's landmarks, and at multiverse
+    // scale they are pinpricks that must not bury the universe names.
     for (const s of this.systems) {
+      if (this.distance > MULTIVERSE_REVEAL - 2000) break;
       const p = project(s.star);
       if (!p || p.x < -80 || p.x > this.width + 80) continue;
       const dim = this.filter !== null && this.filter !== s.code;
       const alpha = dim ? 0.18 : this.selected === s.star.userData.bodyId ? 0.95 : 0.8;
       const offset = clamp((STAR_RADIUS / p.scale) * (this.height / 2) / Math.tan((this.camera.fov * Math.PI) / 360), 6, 90);
-      label(s.code, p.x, p.y - offset - 6, hex(s.color), alpha);
+      label(s.code, p.x, p.y - offset - 6, hex(s.color), alpha, 600, `star-${s.code}`);
     }
 
     // Selected body: pulse ring + its name, always legible.
@@ -1499,13 +1734,14 @@ export class AtlasScene {
           ctx.beginPath();
           ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
           ctx.stroke();
-          label(body.label, p.x, p.y - r - 8, "#f1f5ff", 1, 600);
+          label(body.label, p.x, p.y - r - 8, "#f1f5ff", 1, 600, body.id);
         }
       }
     }
 
     // Planet, moon and satellite names appear as their orbit comes into readable range.
     for (const body of this.bodies.values()) {
+      if (this.distance > 14_000) break;
       if (body.kind === "star" || body.kind === "asteroid") continue;
       const object = this.bodyObject.get(body.id);
       if (!object) continue;
@@ -1515,11 +1751,12 @@ export class AtlasScene {
       if (p.scale > limit) continue;
       if (p.x < 0 || p.x > this.width || p.y < 0 || p.y > this.height) continue;
       const px = (body.radius / Math.max(0.001, p.scale)) * (this.height / 2) / Math.tan((this.camera.fov * Math.PI) / 360);
-      label(body.label, p.x, p.y - Math.max(7, px * 1.5) - 5, body.kind === "planet" ? "#a8b6d2" : "#8fa3c4", body.kind === "planet" ? 0.8 : 0.62, 500);
+      label(body.label, p.x, p.y - Math.max(7, px * 1.5) - 5, body.kind === "planet" ? "#a8b6d2" : "#8fa3c4", body.kind === "planet" ? 0.8 : 0.62, 500, body.id);
     }
 
     // The claimed system wears a gold dashed ring, drawn in 3D-safe screen space.
     for (const s of this.systems) {
+      if (this.distance > MULTIVERSE_REVEAL - 2000) break;
       if (s.code !== this.home) continue;
       const p = project(s.star);
       if (!p) continue;
@@ -1538,6 +1775,587 @@ export class AtlasScene {
       ctx.textAlign = "center";
       ctx.fillText("MY ATHENA", p.x, p.y - r - 6);
     }
+
+    // Universes and galaxies are labelled only while the camera is out at their scale.
+    if (this.multiverse.visible) {
+      for (const body of this.cosmicBodies) {
+        if (body.kind !== "universe") continue;
+        const d = this.camera.position.distanceTo(body.center);
+        if (d > 120_000 || d < body.radius * 1.4) continue;
+        const p = this.projectAt(body.center);
+        if (!p) continue;
+        label(body.name, p.x, p.y - 16, body.id === "UNI-0" ? "#eafcff" : "#9fb6d8", 0.72, 600, `uni-${body.id}`);
+      }
+    }
+    if (this.galaxyField.visible) {
+      for (const body of this.cosmicBodies) {
+        if (body.kind !== "galaxy") continue;
+        const d = this.camera.position.distanceTo(body.center);
+        if (d > 14_000) continue;
+        const p = this.projectAt(body.center);
+        if (!p) continue;
+        label(body.name, p.x, p.y - 12, "#b9cbe8", 0.55, 500, `gal-${body.id}`);
+        if (seen.size > 40) break;
+      }
+    }
+
+    // Hyperspace: a target reticle locks on while the camera stretches its field of view.
+    if (this.warp) {
+      const p = this.projectAt(this.warp.reticle);
+      if (p) {
+        const t = (performance.now() - this.warp.start) / this.warp.dur;
+        const r = 18 + clamp(t, 0, 1) * 26;
+        ctx.strokeStyle = "rgba(255,243,209,0.95)";
+        ctx.lineWidth = 1.6;
+        const corners: [number, number][] = [[-1, -1], [1, -1], [-1, 1], [1, 1]];
+        for (const [sx, sy] of corners) {
+          ctx.beginPath();
+          ctx.moveTo(p.x + sx * r, p.y + sy * (r - 9));
+          ctx.lineTo(p.x + sx * r, p.y + sy * r);
+          ctx.lineTo(p.x + sx * (r - 9), p.y + sy * r);
+          ctx.stroke();
+        }
+        ctx.font = '700 9px "JetBrains Mono", ui-monospace, monospace';
+        ctx.fillStyle = "rgba(255,243,209,0.9)";
+        ctx.textAlign = "center";
+        ctx.fillText("TARGET LOCK", p.x, p.y + r + 14);
+      }
+    }
+
+    // The invisible flight stick: a 48 px translucent cyan ring under the live thumb, and nothing at all
+    // when the thumb lifts.
+    const stick = this.stick;
+    if (stick) {
+      const o = stick.origin;
+      ctx.save();
+      ctx.strokeStyle = "rgba(53,217,255,0.5)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(o.x, o.y, 24, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(53,217,255,0.16)";
+      ctx.beginPath();
+      ctx.arc(o.x, o.y, 24, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "rgba(126,232,255,0.85)";
+      ctx.beginPath();
+      ctx.arc(o.x + stick.vector.x * 20, o.y + stick.vector.y * 20, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  /** Project a world point to screen pixels, used by labels and the warp reticle. */
+  private projectAt(point: THREE.Vector3): { x: number; y: number } | null {
+    const p = point.clone().project(this.camera);
+    if (p.z > 1 || p.z < -1) return null;
+    return { x: (p.x * 0.5 + 0.5) * this.width, y: (-p.y * 0.5 + 0.5) * this.height };
+  }
+
+  /* ── multiverse, galaxies and hyperspace ──────────────────────────────── */
+
+  /** Scale 0 and 1: the lattice cube, 24 universes, the surrounding galaxy field, web and nebulae. */
+  private buildCosmos(): void {
+    this.scene.add(this.cosmos);
+    this.cosmos.add(this.multiverse, this.galaxyField);
+
+    const h = MULTIVERSE_HALF;
+    const edges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(new THREE.BoxGeometry(h * 2, h * 2, h * 2)),
+      new THREE.LineBasicMaterial({ color: 0x35d9ff, transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending }),
+    );
+    this.multiverse.add(edges);
+    for (const shrink of [0.34, 0.67]) {
+      const lattice = new THREE.LineSegments(
+        new THREE.EdgesGeometry(new THREE.BoxGeometry(h * 2 * shrink, h * 2 * shrink, h * 2 * shrink)),
+        new THREE.LineBasicMaterial({ color: 0x263858, transparent: true, opacity: 0.9, depthWrite: false }),
+      );
+      this.multiverse.add(lattice);
+    }
+    // Corner coordinate ticks: three short axes at each vertex of the box.
+    const ticks: number[] = [];
+    for (const sx of [-1, 1]) {
+      for (const sy of [-1, 1]) {
+        for (const sz of [-1, 1]) {
+          const x = sx * h;
+          const y = sy * h;
+          const z = sz * h;
+          ticks.push(x, y, z, x - sx * 1500, y, z, x, y, z, x, y - sy * 1500, z, x, y, z, x, y, z - sz * 1500);
+        }
+      }
+    }
+    const tickGeo = new THREE.BufferGeometry();
+    tickGeo.setAttribute("position", new THREE.Float32BufferAttribute(ticks, 3));
+    this.multiverse.add(new THREE.LineSegments(tickGeo, new THREE.LineBasicMaterial({ color: 0x7fe9ff, transparent: true, opacity: 0.5, depthWrite: false })));
+
+    // 24 procedural universes, spread through the volume with a real minimum separation.
+    const centres: THREE.Vector3[] = [new THREE.Vector3(0, 0, 0)];
+    for (let i = 1; i < UNIVERSE_COUNT; i += 1) {
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        const p = new THREE.Vector3(
+          (hash01(i, attempt, 61) - 0.5) * h * 1.56,
+          (hash01(i, attempt, 62) - 0.5) * h * 1.56,
+          (hash01(i, attempt, 63) - 0.5) * h * 1.56,
+        );
+        if (centres.every((c) => c.distanceTo(p) > 7600)) {
+          centres.push(p);
+          break;
+        }
+      }
+    }
+    const tints = [0x7ce8ff, 0xffc66d, 0xa78bfa, 0x42e6c4, 0xff8fb1, 0x9fb6ff];
+    const uniPos: number[] = [];
+    const uniCol: number[] = [];
+    for (let i = 0; i < centres.length; i += 1) {
+      const centre = centres[i]!;
+      const radius = i === 0 ? 8800 : 2200 + hash01(i, 64) * 1500;
+      const cloud = galaxyPoints(i * 131 + 7, i === 0 ? 900 : 560, radius, i % 4);
+      const tint = new THREE.Color(tints[i % tints.length]!);
+      for (let v = 0; v < cloud.positions.length; v += 3) {
+        uniPos.push(cloud.positions[v]! + centre.x, cloud.positions[v + 1]! + centre.y, cloud.positions[v + 2]! + centre.z);
+        uniCol.push(cloud.colors[v]! * tint.r, cloud.colors[v + 1]! * tint.g, cloud.colors[v + 2]! * tint.b);
+      }
+      this.cosmicBodies.push({ id: `UNI-${i}`, kind: "universe", name: universeName(i), center: centre, radius });
+    }
+    const uniGeo = new THREE.BufferGeometry();
+    uniGeo.setAttribute("position", new THREE.Float32BufferAttribute(uniPos, 3));
+    uniGeo.setAttribute("color", new THREE.Float32BufferAttribute(uniCol, 3));
+    this.multiverse.add(
+      new THREE.Points(
+        uniGeo,
+        new THREE.PointsMaterial({ size: 130, sizeAttenuation: true, vertexColors: true, map: SOFT_DOT, transparent: true, opacity: 0.75, depthWrite: false, blending: THREE.AdditiveBlending }),
+      ),
+    );
+
+    // Inter-universe filaments: every universe threads to its two nearest neighbours along a bowed
+    // path, giving the lattice cube visible large-scale structure instead of a bare wireframe.
+    const filPos: number[] = [];
+    const filCol: number[] = [];
+    for (let i = 0; i < centres.length; i += 1) {
+      const near = centres
+        .map((c, j) => ({ j, d: centres[i]!.distanceTo(c) }))
+        .filter((o) => o.j !== i)
+        .sort((a, b) => a.d - b.d)
+        .slice(0, 2);
+      for (const n of near) {
+        const a = centres[i]!;
+        const b = centres[n.j]!;
+        const mid = a
+          .clone()
+          .add(b)
+          .multiplyScalar(0.5)
+          .add(new THREE.Vector3(0, (hash01(i, n.j, 65) - 0.5) * 2200, 0));
+        const tint = new THREE.Color(tints[i % tints.length]!);
+        filPos.push(a.x, a.y, a.z, mid.x, mid.y, mid.z, mid.x, mid.y, mid.z, b.x, b.y, b.z);
+        for (let v = 0; v < 4; v += 1) filCol.push(tint.r * 0.32, tint.g * 0.32, tint.b * 0.32);
+      }
+    }
+    const filGeo = new THREE.BufferGeometry();
+    filGeo.setAttribute("position", new THREE.Float32BufferAttribute(filPos, 3));
+    filGeo.setAttribute("color", new THREE.Float32BufferAttribute(filCol, 3));
+    this.multiverse.add(
+      new THREE.LineSegments(
+        filGeo,
+        new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending }),
+      ),
+    );
+
+    // Scale 1 — 184 galaxies in every direction, merged into one draw call of glowing arms.
+    const galPos: number[] = [];
+    const galCol: number[] = [];
+    const galaxies: { center: THREE.Vector3; radius: number }[] = [];
+    for (let i = 0; i < FIELD_GALAXY_COUNT; i += 1) {
+      const a = hash01(i, 71) * Math.PI * 2;
+      const shell = 13_000 + hash01(i, 72) * 13_000;
+      const centre = new THREE.Vector3(Math.cos(a) * shell, (hash01(i, 73) - 0.5) * 11_000, Math.sin(a) * shell);
+      const radius = 300 + hash01(i, 74) * 640;
+      const variant = i % 4;
+      const cloud = galaxyPoints(i * 97 + 13, 240 + (i % 5) * 46, radius, variant);
+      for (let v = 0; v < cloud.positions.length; v += 3) {
+        galPos.push(cloud.positions[v]! + centre.x, cloud.positions[v + 1]! + centre.y, cloud.positions[v + 2]! + centre.z);
+        galCol.push(cloud.colors[v]!, cloud.colors[v + 1]!, cloud.colors[v + 2]!);
+      }
+      galaxies.push({ center: centre, radius });
+      this.cosmicBodies.push({ id: `GAL-${i}`, kind: "galaxy", name: galaxyName(i), center: centre, radius });
+    }
+    const galGeo = new THREE.BufferGeometry();
+    galGeo.setAttribute("position", new THREE.Float32BufferAttribute(galPos, 3));
+    galGeo.setAttribute("color", new THREE.Float32BufferAttribute(galCol, 3));
+    this.galaxyField.add(
+      new THREE.Points(
+        galGeo,
+        new THREE.PointsMaterial({ size: 40, sizeAttenuation: true, vertexColors: true, map: SOFT_DOT, transparent: true, opacity: 0.6, depthWrite: false, blending: THREE.AdditiveBlending }),
+      ),
+    );
+
+    // Cosmic web filaments between nearby galaxies: faint structure, never a black wall.
+    const web: number[] = [];
+    let links = 0;
+    for (let i = 0; i < galaxies.length && links < 150; i += 1) {
+      for (let j = i + 1; j < galaxies.length && links < 150; j += 1) {
+        const a = galaxies[i]!;
+        const b = galaxies[j]!;
+        if (a.center.distanceTo(b.center) > 9500) continue;
+        web.push(a.center.x, a.center.y, a.center.z, b.center.x, b.center.y, b.center.z);
+        links += 1;
+      }
+    }
+    const webGeo = new THREE.BufferGeometry();
+    webGeo.setAttribute("position", new THREE.Float32BufferAttribute(web, 3));
+    this.galaxyField.add(new THREE.LineSegments(webGeo, new THREE.LineBasicMaterial({ color: 0x3d5c96, transparent: true, opacity: 0.22, depthWrite: false })));
+
+    // Volumetric nebulae: three deep hues layered at different scales, so 360° flight reads as a
+    // galaxy rather than a scatter plot. Colour is additive and low-opacity to keep stars legible.
+    const nebulaTints = ["rgba(30,58,95,0.95)", "rgba(45,27,78,0.95)", "rgba(19,56,58,0.95)"];
+    const nebulaCores = ["rgba(96,164,255,0.5)", "rgba(168,120,255,0.45)", "rgba(96,235,214,0.4)"];
+    for (let i = 0; i < 18; i += 1) {
+      const a = hash01(i, 76) * Math.PI * 2;
+      const r = 9000 + hash01(i, 77) * 18_000;
+      const hue = i % 3;
+      const sprite = new THREE.Sprite(
+        new THREE.SpriteMaterial({
+          map: radialSprite(nebulaCores[hue]!, nebulaTints[hue]!),
+          transparent: true,
+          opacity: 0.2,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        }),
+      );
+      sprite.scale.setScalar(6000 + hash01(i, 78) * 15_000);
+      sprite.position.set(Math.cos(a) * r, (hash01(i, 79) - 0.5) * 11_000, Math.sin(a) * r);
+      this.galaxyField.add(sprite);
+    }
+
+    // Every galaxy has a supermassive black hole at its centre, drawn as three instanced meshes.
+    this.buildInstancedCores([...galaxies, ...centres.slice(1).map((c, i) => ({ center: c, radius: 2200 + i * 40 }))]);
+  }
+
+  private buildInstancedCores(cores: { center: THREE.Vector3; radius: number }[]): void {
+    if (cores.length === 0) return;
+    const n = cores.length;
+    const horizon = new THREE.InstancedMesh(UNIT_SPHERE_LO, new THREE.MeshBasicMaterial({ color: 0x000000 }), n);
+    const photon = new THREE.InstancedMesh(
+      new THREE.RingGeometry(1.0, 1.1, 40),
+      new THREE.MeshBasicMaterial({ color: 0xfff3d1, transparent: true, opacity: 0.9, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }),
+      n,
+    );
+    const diskMat = blackHoleDiskMaterial(3.4);
+    this.diskMats.push(diskMat);
+    const disk = new THREE.InstancedMesh(new THREE.RingGeometry(1.35, 3.4, 56), diskMat, n);
+    const m = new THREE.Matrix4();
+    const q = new THREE.Quaternion();
+    const pos = new THREE.Vector3();
+    const scl = new THREE.Vector3();
+    const tilt = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2 - 0.3);
+    cores.forEach((core, i) => {
+      const scale = Math.max(14, core.radius * 0.06);
+      pos.copy(core.center);
+      q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), hash01(i, 81) * Math.PI * 2);
+      m.compose(pos, q, scl.setScalar(scale));
+      horizon.setMatrixAt(i, m);
+      photon.setMatrixAt(i, m);
+      q.multiply(tilt);
+      m.compose(pos, q, scl.setScalar(scale));
+      disk.setMatrixAt(i, m);
+    });
+    for (const mesh of [horizon, photon, disk]) {
+      mesh.instanceMatrix.needsUpdate = true;
+      mesh.frustumCulled = false;
+      this.galaxyField.add(mesh);
+    }
+  }
+
+  /** A relativistic black hole: pitch-black shadow, omnidirectional photon ring, lensed halo and a
+   *  turbulent Doppler-beamed accretion disk. */
+  private relativisticBlackHole(scale: number): THREE.Group {
+    const group = new THREE.Group();
+    // Schwarzschild shadow: unlit, so it reads as a hole punched in the star field.
+    const horizon = new THREE.Mesh(UNIT_SPHERE, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+    horizon.scale.setScalar(scale);
+    group.add(horizon);
+    // The photon ring is drawn in three orthogonal planes: whichever way you orbit, one faces you.
+    const photonMat = new THREE.MeshBasicMaterial({
+      color: 0xfff7dc,
+      transparent: true,
+      opacity: 0.95,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    });
+    for (const [rx, ry] of [[0, 0], [Math.PI / 2, 0], [0, Math.PI / 2]] as const) {
+      const photon = new THREE.Mesh(new THREE.RingGeometry(scale * 1.015, scale * 1.048, 160), photonMat);
+      photon.rotation.set(rx, ry, 0);
+      group.add(photon);
+    }
+    // Lensing shells: additive, view-dependent, and slightly larger than the shadow so the far side
+    // of the disk appears bent over the top and under the bottom of the horizon.
+    for (const [factor, opacity] of [[1.22, 1], [1.62, 0.55]] as const) {
+      const mat = lensingHaloMaterial();
+      mat.uniforms.uTime!.value = 0;
+      this.diskMats.push(mat);
+      const shell = new THREE.Mesh(UNIT_SPHERE, mat);
+      shell.scale.setScalar(scale * factor);
+      shell.renderOrder = 2 - opacity;
+      group.add(shell);
+    }
+    // Curved lensed arcs, doubled in yaw so the halo bends from every viewing angle.
+    for (const turn of [0, Math.PI / 2]) {
+      for (const start of [0.08, 1.08]) {
+        const arc = new THREE.Mesh(
+          new THREE.RingGeometry(scale * 1.13, scale * 1.215, 96, 1, Math.PI * start, Math.PI * 0.84),
+          new THREE.MeshBasicMaterial({ color: 0xfff0d4, transparent: true, opacity: 0.17, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }),
+        );
+        arc.rotation.y = turn;
+        group.add(arc);
+      }
+    }
+    const diskMat = blackHoleDiskMaterial(scale * 4);
+    this.diskMats.push(diskMat);
+    const disk = new THREE.Mesh(new THREE.RingGeometry(scale * 1.42, scale * 4.0, 192, 3), diskMat);
+    disk.rotation.x = Math.PI / 2 - 0.34;
+    group.add(disk);
+    // A second, thinner counter-tilted sheet fakes the disk's own lensed underside.
+    const underMat = blackHoleDiskMaterial(scale * 3.1);
+    underMat.opacity = 0.5;
+    this.diskMats.push(underMat);
+    const under = new THREE.Mesh(new THREE.RingGeometry(scale * 1.38, scale * 2.4, 128, 2), underMat);
+    under.rotation.x = Math.PI / 2 + 0.46;
+    group.add(under);
+    const halo = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: radialSprite("rgba(255,247,220,0.9)", "rgba(124,232,255,0.28)"),
+        transparent: true,
+        opacity: 0.18,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
+    );
+    halo.scale.setScalar(scale * 2.6);
+    group.add(halo);
+    return group;
+  }
+
+  /** A multi-part outpost: counter-rotating habitation rings, solar wings, strobe beacons and an open
+   *  lit docking tunnel. Built from shared geometry so 20 stations cost almost nothing. */
+  private stationMesh(scale: number): { craft: THREE.Group; rings: THREE.Object3D[]; beacons: { mat: THREE.MeshBasicMaterial; phase: number }[]; bay: THREE.Mesh } {
+    const craft = new THREE.Group();
+    const metal = new THREE.MeshStandardMaterial({ color: 0xc8d6ec, roughness: 0.42, metalness: 0.85 });
+    const hull = new THREE.MeshStandardMaterial({ color: 0x8fa2c4, roughness: 0.55, metalness: 0.7 });
+    // Two habitat rings turning against each other, the classic spin-gravity silhouette.
+    const rings: THREE.Object3D[] = [];
+    const ringA = new THREE.Object3D();
+    ringA.add(new THREE.Mesh(STATION_PARTS.ring, metal));
+    for (let i = 0; i < 8; i += 1) {
+      const spoke = new THREE.Mesh(STATION_PARTS.pylon, hull);
+      spoke.rotation.y = (i / 8) * Math.PI * 2;
+      spoke.scale.set(0.8, 0.8, 0.8);
+      ringA.add(spoke);
+    }
+    const ringB = new THREE.Object3D();
+    ringB.add(new THREE.Mesh(STATION_PARTS.ring2, hull));
+    ringB.rotation.set(Math.PI / 2.6, 0.3, 0);
+    rings.push(ringA, ringB);
+    craft.add(ringA, ringB);
+    craft.add(new THREE.Mesh(STATION_PARTS.hub, metal));
+    const truss = new THREE.Mesh(STATION_PARTS.truss, hull);
+    craft.add(truss);
+    // Solar collector wings on outriggers, dark blue cells catching the local star.
+    const cell = new THREE.MeshStandardMaterial({ color: 0x1d3a63, roughness: 0.3, metalness: 0.55, emissive: 0x0b2340, emissiveIntensity: 0.8 });
+    for (const dir of [-1, 1]) {
+      const arm = new THREE.Mesh(STATION_PARTS.pylon, hull);
+      arm.position.set(dir * 0.5, 0, 0);
+      craft.add(arm);
+      const wing = new THREE.Mesh(STATION_PARTS.wing, cell);
+      wing.position.set(dir * 0.82, 0, 0);
+      wing.rotation.z = dir * 0.18;
+      craft.add(wing);
+    }
+    // Open docking tunnel through the hub, glowing at the mouth for approach.
+    const bayMat = new THREE.MeshBasicMaterial({ color: 0x8be9fd, side: THREE.DoubleSide });
+    const bay = new THREE.Mesh(STATION_PARTS.dock, bayMat);
+    bay.rotation.z = Math.PI / 2;
+    craft.add(bay);
+    const rimMat = new THREE.MeshBasicMaterial({ color: 0xbdf6ff, transparent: true, opacity: 0.9, side: THREE.DoubleSide });
+    for (const dir of [-1, 1]) {
+      const lip = new THREE.Mesh(new THREE.RingGeometry(0.115, 0.17, 20), rimMat);
+      lip.rotation.y = Math.PI / 2;
+      lip.position.x = dir * 0.17;
+      craft.add(lip);
+      const light = new THREE.Mesh(STATION_PARTS.bay, new THREE.MeshBasicMaterial({ color: 0x7ce8ff, transparent: true, opacity: 0.8 }));
+      light.position.set(dir * 0.3, 0.14, 0);
+      craft.add(light);
+    }
+    // Navigation strobes: red on the port wing tip, cyan on starboard and the dorsal mast.
+    const beacons: { mat: THREE.MeshBasicMaterial; phase: number }[] = [];
+    const spots: [number, number, number, number, number][] = [
+      [-0.98, 0, 0, 0xff4d5e, 0],
+      [0.98, 0, 0, 0x8be9fd, 1.7],
+      [0, 0.52, 0, 0x9cf7ff, 3.1],
+    ];
+    for (const [x, y, z, color, phase] of spots) {
+      const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 1 });
+      const beacon = new THREE.Mesh(STATION_PARTS.beacon, mat);
+      beacon.position.set(x, y, z);
+      craft.add(beacon);
+      beacons.push({ mat, phase });
+    }
+    craft.scale.setScalar(scale);
+    return { craft, rings, beacons, bay };
+  }
+
+  private addStation(id: string, parent: THREE.Object3D, scale: number, orbit: number): void {
+    const pivot = new THREE.Object3D();
+    pivot.rotation.set((hash01(id.length, 91) - 0.5) * 0.5, hash01(id.length, 92) * Math.PI * 2, 0.12);
+    const holder = new THREE.Object3D();
+    holder.position.set(orbit, 0, 0);
+    pivot.add(holder);
+    const { craft, rings, beacons, bay } = this.stationMesh(scale);
+    holder.add(craft);
+    parent.add(pivot);
+    const cosmic: CosmicBody = { id, kind: "station", name: "Orbital Station", center: new THREE.Vector3(), radius: scale };
+    this.cosmicBodies.push(cosmic);
+    this.stations.push({ holder, craft, cosmic, rings, beacons, bay });
+  }
+
+  /** The tunnel is a child of the camera, so it always streaks straight ahead. */
+  private buildWarpTunnel(): void {
+    const count = 520;
+    const positions = new Float32Array(count * 6);
+    const colors = new Float32Array(count * 6);
+    const palette = [new THREE.Color(0x7ce8ff), new THREE.Color(0xffd27c), new THREE.Color(0xa78bfa)];
+    for (let i = 0; i < count; i += 1) {
+      const a = hash01(i, 31) * Math.PI * 2;
+      const r = 0.5 + hash01(i, 32) * 7;
+      const z = -2 - hash01(i, 33) * 42;
+      const len = 1.6 + hash01(i, 34) * 5;
+      const c = palette[i % 3]!;
+      positions.set([Math.cos(a) * r, Math.sin(a) * r, z, Math.cos(a) * r, Math.sin(a) * r, z - len], i * 6);
+      colors.set([c.r, c.g, c.b, c.r * 0.15, c.g * 0.15, c.b * 0.15], i * 6);
+      this.warpSeed.push({ a, r, z, len, speed: 26 + hash01(i, 35) * 46 });
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+    this.warpLines = new THREE.LineSegments(
+      geo,
+      new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false }),
+    );
+    this.warpLines.visible = false;
+    this.warpLines.frustumCulled = false;
+    this.camera.add(this.warpLines);
+
+    // Arrival shockwave: two concentric rings (cyan outside, gold inside) expanding in the camera's
+    // own frame as the ship drops out of hyperspace.
+    this.warpShock = new THREE.Group();
+    this.warpShockMats = [];
+    for (const [color, z] of [[0x9beeff, -3.2], [0xffd79a, -3.0]] as const) {
+      const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false });
+      const ring = new THREE.Mesh(new THREE.RingGeometry(0.86, 1, 96), mat);
+      ring.position.z = z;
+      ring.visible = false;
+      this.warpShockMats.push(mat);
+      this.warpShock.add(ring);
+    }
+    this.warpShock.visible = false;
+    this.warpShock.frustumCulled = false;
+    this.camera.add(this.warpShock);
+  }
+
+  /** 900 ms, three stages: lock-on (FOV 55→94), hyper-tunnel with micro-shake, then the deceleration
+   *  drop-in and expanding arrival shockwave (94→55). */
+  warpTo(position: THREE.Vector3, distance: number, yaw: number, pitch: number, follow: string | null): void {
+    this.warp = {
+      from: { target: this.target.clone(), distance: this.distance, yaw: this.yaw, pitch: this.pitch },
+      to: { target: position.clone(), distance: clamp(distance, MIN_CAMERA_DISTANCE, MAX_CAMERA_DISTANCE), yaw, pitch },
+      start: performance.now(),
+      dur: 900,
+      follow,
+      reticle: position.clone(),
+    };
+    this.glide = null;
+    this.stick = null;
+    this.callbacks.canvas.parentElement?.classList.add("warping");
+  }
+
+  private updateWarp(now: number): void {
+    const w = this.warp;
+    if (!w) return;
+    const raw = clamp((now - w.start) / w.dur, 0, 1);
+    const peak = 94;
+    const fov = raw < 0.2 ? BASE_FOV + (peak - BASE_FOV) * Math.pow(raw / 0.2, 0.7) : raw < 0.8 ? peak : peak + (BASE_FOV - peak) * Math.pow((raw - 0.8) / 0.2, 0.55);
+    // High-velocity micro-shake, strongest mid-tunnel and gone before the drop-in settles.
+    if (raw > 0.18 && raw < 0.82) {
+      const amp = 0.045 * Math.sin(Math.PI * clamp((raw - 0.18) / 0.64, 0, 1));
+      this.warpJitter.set(Math.sin(now * 0.077) * amp, Math.cos(now * 0.093) * amp, 0);
+    } else {
+      this.warpJitter.multiplyScalar(0.8);
+    }
+    // Arrival ring: expands from the reticle and fades over the last 260 ms.
+    const shock = clamp((raw - 0.76) / 0.24, 0, 1);
+    this.warpShock.visible = shock > 0 && shock < 1;
+    this.warpShock.children.forEach((child, i) => {
+      const mesh = child as THREE.Mesh;
+      mesh.visible = this.warpShock.visible;
+      const k = clamp(shock * 1.25 - i * 0.18, 0, 1);
+      mesh.scale.setScalar(0.35 + k * 11);
+      this.warpShockMats[i]!.opacity = (1 - shock) * 0.65;
+    });
+    this.camera.fov = fov;
+    this.camera.updateProjectionMatrix();
+    if (raw < 0.8) {
+      // Hold the origin while the tunnel conveys the distance, with a slight pull-back for scale.
+      this.target.copy(w.from.target);
+      this.distance = w.from.distance * (1 - 0.1 * clamp((raw - 0.2) / 0.6, 0, 1));
+      this.yaw = w.from.yaw + raw * 0.16;
+      this.pitch = w.from.pitch;
+    } else {
+      const k = 1 - Math.pow(1 - (raw - 0.8) / 0.2, 3);
+      this.target.lerpVectors(w.from.target, w.to.target, k);
+      this.distance = Math.exp(Math.log(w.from.distance) + (Math.log(w.to.distance) - Math.log(w.from.distance)) * k);
+      let dy = (w.to.yaw - w.from.yaw) % (Math.PI * 2);
+      if (dy > Math.PI) dy -= Math.PI * 2;
+      if (dy < -Math.PI) dy += Math.PI * 2;
+      this.yaw = w.from.yaw + dy * k;
+      this.pitch = w.from.pitch + (w.to.pitch - w.from.pitch) * k;
+    }
+    this.yawGoal = this.yaw;
+    this.pitchGoal = this.pitch;
+    this.distanceGoal = this.distance;
+    this.warpLines.visible = raw >= 0.18 && raw < 0.86;
+    if (this.warpLines.visible) this.streakTunnel(1);
+    if (raw >= 1) {
+      this.camera.fov = BASE_FOV;
+      this.camera.updateProjectionMatrix();
+      this.warpLines.visible = false;
+      this.warpShock.visible = false;
+      this.warpJitter.set(0, 0, 0);
+      this.callbacks.canvas.parentElement?.classList.remove("warping");
+      this.warp = null;
+      this.follow = w.follow;
+      if (w.follow) {
+        const object = this.bodyObject.get(w.follow);
+        if (object) this.followPrev.setFromMatrixPosition(object.matrixWorld);
+      }
+    }
+  }
+
+  private streakTunnel(step: number): void {
+    const attr = this.warpLines.geometry.getAttribute("position") as THREE.BufferAttribute;
+    const array = attr.array as Float32Array;
+    for (let i = 0; i < this.warpSeed.length; i += 1) {
+      const s = this.warpSeed[i]!;
+      s.z += s.speed * step;
+      if (s.z > -1.2) s.z -= 44;
+      const x = Math.cos(s.a) * s.r;
+      const y = Math.sin(s.a) * s.r;
+      array[i * 6] = x;
+      array[i * 6 + 1] = y;
+      array[i * 6 + 2] = s.z;
+      array[i * 6 + 3] = x;
+      array[i * 6 + 4] = y;
+      array[i * 6 + 5] = s.z - s.len;
+    }
+    attr.needsUpdate = true;
   }
 
   /* ── teardown ─────────────────────────────────────────────────────────── */
@@ -1565,6 +2383,183 @@ export class AtlasScene {
     this.disposeRoot();
     this.renderer.dispose();
   }
+}
+
+/** Doppler-beamed accretion disk: blue-white on the approaching side, gold-amber on the receding side. */
+function blackHoleDiskMaterial(radius: number): THREE.ShaderMaterial {
+  return new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uR: { value: radius } },
+    vertexShader:
+      "varying vec2 vP;\n" +
+      "void main() { vP = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
+    fragmentShader:
+      "uniform float uTime; uniform float uR; varying vec2 vP;\n" +
+      "float hash21(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }\n" +
+      "float vnoise(vec2 p) {\n" +
+      "  vec2 i = floor(p); vec2 f = fract(p); f = f * f * (3.0 - 2.0 * f);\n" +
+      "  return mix(mix(hash21(i), hash21(i + vec2(1.0, 0.0)), f.x),\n" +
+      "             mix(hash21(i + vec2(0.0, 1.0)), hash21(i + vec2(1.0, 1.0)), f.x), f.y);\n" +
+      "}\n" +
+      "void main() {\n" +
+      "  vec2 p = vP / uR;\n" +
+      "  float r = length(p);\n" +
+      "  float a = atan(p.y, p.x);\n" +
+      // Differential rotation: the inner disk laps the outer disk, shearing the plasma into spiral arms.
+      "  float spin = uTime * (0.6 + 1.7 / max(r, 0.14));\n" +
+      "  float arms = sin(a * 3.0 + r * 15.0 - spin * 2.4);\n" +
+      "  float fine = vnoise(vec2(a * 2.6 + uTime * 0.24, r * 10.0 - uTime * 0.85));\n" +
+      "  float turb = 0.5 + 0.32 * arms + 0.42 * fine;\n" +
+      "  turb *= 0.7 + 0.3 * vnoise(vec2(a * 7.0 - uTime * 0.4, r * 22.0 + uTime * 0.3));\n" +
+      // Relativistic beaming: the approaching limb blueshifts and brightens, the receding limb redshifts.
+      "  float dopp = smoothstep(-0.9, 0.9, cos(a));\n" +
+      "  float beam = pow(dopp, 2.4);\n" +
+      "  vec3 blue = vec3(0.545, 0.914, 0.992);\n" +
+      "  vec3 white = vec3(1.0, 0.988, 0.965);\n" +
+      "  vec3 amber = vec3(1.0, 0.616, 0.231);\n" +
+      "  vec3 crimson = vec3(0.851, 0.306, 0.157);\n" +
+      "  vec3 hot = mix(blue, white, clamp(beam * 1.2, 0.0, 1.0));\n" +
+      "  vec3 cool = mix(crimson, amber, 1.0 - smoothstep(0.2, 1.0, r));\n" +
+      "  vec3 c = mix(cool, hot, dopp);\n" +
+      "  float edge = smoothstep(0.32, 0.44, r) * smoothstep(1.0, 0.6, r);\n" +
+      "  float alpha = edge * (0.18 + 0.82 * turb) * (0.55 + 0.45 * smoothstep(0.3, 0.7, fine));\n" +
+      "  gl_FragColor = vec4(c * (0.42 + 1.55 * beam * turb), alpha * 0.72);\n" +
+      "}",
+    transparent: true,
+    side: THREE.DoubleSide,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+}
+
+/** View-dependent Einstein halo: brightens at grazing angles so the lensed shell wraps the shadow
+ *  from every orbit position, bending the disk's far side above and below the horizon. */
+function lensingHaloMaterial(): THREE.ShaderMaterial {
+  return new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 } },
+    vertexShader:
+      "varying vec3 vN; varying vec3 vV; varying vec3 vP;\n" +
+      "void main() {\n" +
+      "  vec4 wp = modelMatrix * vec4(position, 1.0);\n" +
+      "  vN = normalize(mat3(modelMatrix) * normal);\n" +
+      "  vV = normalize(cameraPosition - wp.xyz);\n" +
+      "  vP = position;\n" +
+      "  gl_Position = projectionMatrix * viewMatrix * wp;\n" +
+      "}",
+    fragmentShader:
+      "uniform float uTime; varying vec3 vN; varying vec3 vV; varying vec3 vP;\n" +
+      "void main() {\n" +
+      "  float rim = 1.0 - abs(dot(normalize(vN), normalize(vV)));\n" +
+      "  float ring = pow(rim, 6.0);\n" +
+      "  float bend = pow(rim, 2.0) * 0.2;\n" +
+      "  float bands = 0.78 + 0.22 * sin(vP.y * 8.0 + uTime * 0.9);\n" +
+      "  vec3 tint = mix(vec3(1.0, 0.945, 0.86), vec3(0.545, 0.855, 1.0), smoothstep(0.35, 1.0, rim));\n" +
+      "  gl_FragColor = vec4(tint * (ring * 1.3 + bend) * bands, ring * 0.55 + bend * 0.55);\n" +
+      "}",
+    transparent: true,
+    side: THREE.DoubleSide,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+}
+
+/** One procedural galaxy shape: spiral, barred spiral, elliptical or ring. */
+function galaxyPoints(seed: number, count: number, radius: number, variant: number): { positions: Float32Array; colors: Float32Array } {
+  const positions = new Float32Array(count * 3);
+  const colors = new Float32Array(count * 3);
+  const arms = 2 + Math.floor(hash01(seed, 4) * 2);
+  const cyan = new THREE.Color(0x8be9fd);
+  const magenta = new THREE.Color(0xff7ad9);
+  const gold = new THREE.Color(0xffd08a);
+  const blue = new THREE.Color(0x9fd4ff);
+  const white = new THREE.Color(0xffffff);
+  const dust = new THREE.Color(0x101725);
+  const c = new THREE.Color();
+  for (let i = 0; i < count; i += 1) {
+    let x = 0;
+    let y = 0;
+    let z = 0;
+    if (variant === 2) {
+      // Golden elliptical: dense triaxial spheroid, hottest at the core, no arms at all.
+      const a = hash01(i, seed, 2) * Math.PI * 2;
+      const b = Math.acos(hash01(i, seed, 3) * 2 - 1);
+      const rr = radius * Math.pow(hash01(i, seed, 4), 0.42);
+      x = Math.sin(b) * Math.cos(a) * rr * 1.24;
+      y = Math.cos(b) * rr * 0.52;
+      z = Math.sin(b) * Math.sin(a) * rr * 0.72;
+      c.copy(gold).lerp(white, Math.pow(hash01(i, seed, 11), 2) * 0.5);
+    } else if (variant === 3) {
+      // Polar ring: a compact blue-white core wrapped by a ring of young stars tilted ~90°.
+      if (i % 4 === 0) {
+        const a = hash01(i, seed, 2) * Math.PI * 2;
+        const b = Math.acos(hash01(i, seed, 3) * 2 - 1);
+        const rr = radius * 0.17 * Math.cbrt(hash01(i, seed, 4));
+        x = Math.sin(b) * Math.cos(a) * rr;
+        y = Math.cos(b) * rr;
+        z = Math.sin(b) * Math.sin(a) * rr;
+        c.copy(white).lerp(gold, hash01(i, seed, 6) * 0.45);
+      } else {
+        const a = hash01(i, seed, 5) * Math.PI * 2;
+        const rr = radius * (0.6 + (hash01(i, seed, 7) - 0.5) * 0.22);
+        x = Math.cos(a) * rr * 0.16;
+        y = Math.sin(a) * rr;
+        z = Math.cos(a) * rr * 0.95;
+        c.copy(blue).lerp(cyan, 0.35).lerp(white, hash01(i, seed, 8) * 0.4);
+      }
+    } else if (variant === 1) {
+      // Barred spiral: stars crowd a luminous bar, then sweep out of both ends.
+      const t = Math.pow(hash01(i, seed, 1), 0.7);
+      if (t < 0.3) {
+        const u = (hash01(i, seed, 12) - 0.5) * 2;
+        x = u * radius * 0.36;
+        y = (hash01(i, seed, 13) - 0.5) * radius * 0.06;
+        z = (hash01(i, seed, 14) - 0.5) * radius * 0.09;
+        c.copy(gold).lerp(white, Math.abs(u) * 0.3);
+      } else {
+        const s = (t - 0.3) / 0.7;
+        const side = i % 2 === 0 ? 1 : -1;
+        const a = side * (0.3 + s * 3.6) + (hash01(i, seed, 15) - 0.5) * 0.6;
+        const rr = radius * (0.26 + s * 0.74);
+        x = Math.cos(a) * rr + (hash01(i, seed, 8) - 0.5) * radius * 0.12 * s;
+        z = Math.sin(a) * rr * 0.84 + (hash01(i, seed, 9) - 0.5) * radius * 0.12 * s;
+        y = (hash01(i, seed, 10) - 0.5) * radius * 0.1 * (1.15 - s);
+        c.copy(blue).lerp(white, 0.2 + hash01(i, seed, 11) * 0.35).lerp(magenta, s * 0.2);
+      }
+    } else {
+      // Grand-design spiral: logarithmic arms, dust lanes and cyan/magenta H-II knots.
+      const t = Math.pow(hash01(i, seed, 1), 0.72);
+      const arm = i % arms;
+      const a = t * Math.PI * 3.3 + (arm / arms) * Math.PI * 2 + t * 2.5;
+      const rr = radius * (0.09 + t * 0.91);
+      x = Math.cos(a) * rr + (hash01(i, seed, 8) - 0.5) * radius * 0.18 * (1 - t);
+      z = Math.sin(a) * rr * 0.87 + (hash01(i, seed, 9) - 0.5) * radius * 0.18 * (1 - t);
+      y = (hash01(i, seed, 10) - 0.5) * radius * 0.12 * (1.25 - t);
+      if (Math.sin(a * 2 + t * 5) < -0.6) c.copy(dust);
+      else if (hash01(i, seed, 16) > 0.93) c.copy(hash01(i, seed, 17) > 0.5 ? cyan : magenta);
+      else c.copy(blue).lerp(white, hash01(i, seed, 11) * 0.35);
+    }
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
+    positions[i * 3 + 2] = z;
+    colors[i * 3] = c.r;
+    colors[i * 3 + 1] = c.g;
+    colors[i * 3 + 2] = c.b;
+  }
+  return { positions, colors };
+}
+
+const UNIVERSE_NAMES = [
+  "ATHENA", "AURORA", "CASSIOPEIA", "DRACO", "ERIDANUS", "FORNAX", "GEMINI", "HALCYON",
+  "INDUS", "JANUS", "KEPLER", "LYRA", "MORPHEUS", "NEREID", "ORION", "PERSEUS",
+  "QUASAR", "RHEA", "SERPENS", "TITAN", "UMBRA", "VESPER", "WRAITH", "XENON",
+];
+
+function universeName(i: number): string {
+  return i === 0 ? "ATHENA Universe" : `${UNIVERSE_NAMES[i % UNIVERSE_NAMES.length]} Universe`;
+}
+
+function galaxyName(i: number): string {
+  const kinds = ["Spiral", "Barred Spiral", "Elliptical", "Ring"];
+  return `${UNIVERSE_NAMES[(i * 7 + 3) % UNIVERSE_NAMES.length]} ${kinds[i % 4]}`;
 }
 
 function disciplineColor(code: string): string {

@@ -13,7 +13,7 @@ import {
 } from "../app/selectors.ts";
 import type { NodeRecord } from "../domain/types.ts";
 import { getPrefs } from "./prefs.ts";
-import { AtlasScene, UNITS_PER_AU, webglAvailable, type AtlasViewState } from "./atlas-scene.ts";
+import { AtlasScene, MULTIVERSE_REVEAL, UNITS_PER_AU, webglAvailable, type AtlasViewState, type CosmicBody } from "./atlas-scene.ts";
 
 const TIER_LABEL: Record<MasteryTier, string> = {
   unassessed: "unassessed",
@@ -55,6 +55,9 @@ export function Knowledge(): ReactNode {
   const [cssRotate, setCssRotate] = useState(false);
   const [zen, setZen] = useState(false);
   const [distance, setDistance] = useState(20_500);
+  /** A universe, galaxy, black hole or station: inspected without a knowledge record behind it. */
+  const [core, setCore] = useState<CosmicBody | null>(null);
+  const [controls, setControls] = useState(false);
   const [webgl, setWebgl] = useState(true);
   const [homeSystem, setHomeSystem] = useState<string | null>(() => {
     try {
@@ -102,6 +105,10 @@ export function Knowledge(): ReactNode {
       },
       onState: (s: AtlasViewState) => {
         setDistance((prev) => (Math.abs(prev - s.distance) / Math.max(1, s.distance) > 0.01 ? s.distance : prev));
+      },
+      onInspect: (body) => {
+        setCore(body);
+        if (body) setSelected(null);
       },
     });
     sceneRef.current = scene;
@@ -225,6 +232,12 @@ export function Knowledge(): ReactNode {
   }, [selectedNode, state.nodes]);
 
   const scale = scaleReadout(distance);
+  const bottlenecks = useMemo(
+    () => Object.values(state.nodes).filter((node) => masteryTier(index, node.id) === "needs_revision").length,
+    [state.nodes, index],
+  );
+  const recordCount = Object.keys(state.nodes).length;
+  const health = recordCount === 0 ? 100 : Math.round((1 - bottlenecks / recordCount) * 1000) / 10;
 
   return (
     <section
@@ -237,6 +250,11 @@ export function Knowledge(): ReactNode {
       <div className="atlas-stage">
         <canvas ref={canvasRef} className="atlas-canvas" aria-hidden={view === "index"} />
         <canvas ref={labelRef} className="atlas-label-canvas" aria-hidden="true" />
+        <div className="warp-overlay" aria-hidden="true">
+          <div className="warp-streaks" />
+          <div className="warp-reticle"><i /><i /><i /><i /></div>
+          <span className="warp-lock">LOCK · HYPERSPACE</span>
+        </div>
         {!webgl && (
           <div className="atlas-nogl" role="status">
             <h2>The 3D atlas needs WebGL</h2>
@@ -283,11 +301,16 @@ export function Knowledge(): ReactNode {
             <button aria-pressed={view === "atlas"} onClick={() => setView("atlas")}>Atlas</button>
             <button aria-pressed={view === "index"} onClick={() => setView("index")}>Index</button>
           </div>
+          <button className="chip atlas-help" aria-expanded={controls} aria-label="Controls" onClick={() => setControls((v) => !v)}>
+            ?<span>Controls</span>
+          </button>
         </div>
       </div>
 
       <nav className="atlas-crumbs" aria-label="Scale path">
-        <button onClick={() => { sceneRef.current?.focusCluster("universe"); }}>Universe</button>
+        <button onClick={() => { sceneRef.current?.focusCluster("multiverse"); }}>Multiverse</button>
+        <span aria-hidden="true">›</span>
+        <button onClick={() => { sceneRef.current?.focusCluster("universe"); }}>ATHENA Universe</button>
         <span aria-hidden="true">›</span>
         <button onClick={() => { sceneRef.current?.focusCluster("core"); }}>Core Galaxy</button>
         {crumbs.map((node) => (
@@ -349,10 +372,18 @@ export function Knowledge(): ReactNode {
           <button
             className="chip galaxy-chip"
             onClick={() => { sceneRef.current?.focusCluster("universe"); setIsolated(null); }}
-            title="Pull back to the whole local group"
+            title="Pull back to the whole ATHENA universe"
           >
             <span className="dot" aria-hidden="true" data-galaxy="universe" />
-            Universe · <span className="num">{Object.keys(state.nodes).length}</span>
+            ATHENA Universe · <span className="num">{Object.keys(state.nodes).length}</span>
+          </button>
+          <button
+            className="chip galaxy-chip"
+            onClick={() => { sceneRef.current?.focusCluster("multiverse"); setIsolated(null); }}
+            title="Pull back to the multiverse lattice"
+          >
+            <span className="dot" aria-hidden="true" data-galaxy="multiverse" />
+            Multiverse · <span className="num">24</span>
           </button>
         </div>
       )}
@@ -417,6 +448,45 @@ export function Knowledge(): ReactNode {
           <a className="btn primary" href={`#/knowledge/${encodeURIComponent(selectedNode.code)}`} style={{ marginTop: 14 }}>
             Inspect Skill Detail
           </a>
+          <button className="btn ghost" style={{ marginTop: 8 }} onClick={() => sceneRef.current?.travel(selectedNode.id)}>
+            Fly There
+          </button>
+        </aside>
+      )}
+
+      {core && view === "atlas" && (
+        <aside className="drawer core-card" aria-label="Galactic core inspection">
+          <div className="row between">
+            <span className="label">{core.kind === "blackhole" ? "supermassive black hole" : core.kind}</span>
+            <button className="icon-btn" aria-label="Close core inspection" onClick={() => setCore(null)}>
+              <X size={16} strokeWidth={1.5} aria-hidden="true" />
+            </button>
+          </div>
+          <h2>{core.kind === "blackhole" ? "Galactic Core Singularity" : core.name}</h2>
+          <code className="drawer-code">{core.id}</code>
+          {core.kind === "blackhole" ? (
+            <>
+              <dl className="kv core-kv">
+                <div><dt>Event horizon</dt><dd>{Math.round(core.radius)} u</dd></div>
+                <div><dt>Photon ring</dt><dd className="core-photon">#FFF3D1</dd></div>
+                <div><dt>Bottlenecks</dt><dd className="core-hot">{bottlenecks}</dd></div>
+                <div><dt>Structural health</dt><dd>{health.toFixed(1)}%</dd></div>
+              </dl>
+              <div className="core-meter" role="img" aria-label={`Structural health ${health.toFixed(1)} percent`}>
+                <span style={{ width: `${health}%` }} />
+              </div>
+              <p className="hint">
+                {bottlenecks} record{bottlenecks === 1 ? "" : "s"} flagged <strong>needs revision</strong>. Resolving them raises structural health across the core.
+              </p>
+            </>
+          ) : (
+            <p className="hint">
+              {core.kind === "galaxy" ? "A procedural barred spiral with a lensed core. Fly inside to orbit its singularity." : core.kind === "universe" ? "A sealed universe in the multiverse box. Fly in to survey its galaxies." : "An orbital station with lit docking bays, holding position for the Chunk 5 cockpit."}
+            </p>
+          )}
+          <button className="btn primary" style={{ marginTop: 12 }} onClick={() => sceneRef.current?.focusCosmic(core.id)}>
+            Fly There
+          </button>
         </aside>
       )}
 
@@ -430,7 +500,10 @@ export function Knowledge(): ReactNode {
       {view === "atlas" && galaxy.stars.length > 0 && (
         <div className="atlas-zoom" aria-label="Scale readout">
           <b>{scale.value}</b>
-          <small>{scale.unit} · {distance < 3 ? "hull" : distance < 90 ? "satellite belt" : distance < 900 ? "planetary" : distance < 14_000 ? "system" : "local group"}</small>
+          <small>
+            {scale.unit} ·{" "}
+            {distance < 3 ? "hull" : distance < 90 ? "satellite belt" : distance < 900 ? "planetary" : distance < 14_000 ? "system" : distance < MULTIVERSE_REVEAL ? "galaxy field" : "multiverse"}
+          </small>
         </div>
       )}
 
@@ -466,8 +539,26 @@ export function Knowledge(): ReactNode {
         <span><i style={{ borderColor: "#ffc66d", color: "#ffc66d" }} />needs revision</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4" }} />demonstrated</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4", background: "#42e6c4" }} />mastered</span>
-        <span className="atlas-key">drag to orbit 360° · scroll to fly · WASD to thrust</span>
       </div>
+
+      {controls && (
+        <div className="atlas-controls" role="dialog" aria-label="Flight controls">
+          <div className="row between">
+            <strong>Flight controls</strong>
+            <button className="icon-btn" aria-label="Close controls" onClick={() => setControls(false)}>
+              <X size={14} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          </div>
+          <ul>
+            <li><b>Left thumb</b> invisible flight stick: push to thrust, slide to strafe</li>
+            <li><b>Right drag</b> orbit 360° around the focal point</li>
+            <li><b>Pinch / wheel</b> zoom, clamped to 1.45× the focused body</li>
+            <li><b>Double-tap</b> dive into close orbit</li>
+            <li><b>W A S D</b> thrust · <b>Q E</b> rise and fall · <b>Esc</b> reset</li>
+            <li><b>Tap a body</b> warp there and inspect it</li>
+          </ul>
+        </div>
+      )}
 
       {zen && (
         <button className="btn sm atlas-zen-exit" onClick={() => setZen(false)} aria-label="Leave Zen view">
