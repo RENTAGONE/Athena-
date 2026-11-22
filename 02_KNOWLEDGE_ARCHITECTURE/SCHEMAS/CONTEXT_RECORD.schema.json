@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-context-record.schema.json",
+  "title": "ATHENA_CONTEXT_RECORD",
+  "description": "",
+  "type": "object",
+  "required": [
+    "id",
+    "object_type",
+    "context_type",
+    "title",
+    "description",
+    "status",
+    "owner_discipline_id",
+    "aliases",
+    "content_version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-CTX-[A-Z0-9-]+$"
+    },
+    "object_type": {
+      "const": "context"
+    },
+    "context_type": {
+      "enum": [
+        "external_application_context",
+        "application_context",
+        "practice_context",
+        "assessment_context"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated",
+        "archived"
+      ]
+    },
+    "owner_discipline_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

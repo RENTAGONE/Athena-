@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "status": "draft",
+  "shared_project_lifecycle": [
+    "Intent and class selection",
+    "Problem/question and scope",
+    "Objective and evidence alignment",
+    "Resource/material discovery if needed",
+    "Plan and milestones",
+    "Make/investigate/practise",
+    "Check against acceptance criteria",
+    "Revise or stop",
+    "Capture evidence and reflection"
+  ],
+  "class_specific_differences": {
+    "personal_use": {
+      "starting_point": "A real personal friction or need.",
+      "planning_emphasis": "Current-state baseline, learner context, usability, sustainability and actual benefit.",
+      "review_question": "Did this make the learner's real situation better, and at what cost or trade-off?",
+      "audience": "Usually learner and optionally trusted household/person; no public audience needed."
+    },
+    "product_business_foundation": {
+      "starting_point": "A user/problem hypothesis and possible future offer.",
+      "planning_emphasis": "Problem discovery, prototype, quality, unit economics, capacity, distribution assumptions, risk and stop rules.",
+      "review_question": "What evidence justifies the next investment of effort, and what remains unproven?",
+      "audience": "A test user or guardian-approved stakeholder where appropriate; public launch is not required."
+    },
+    "intrinsic_exploration": {
+      "starting_point": "Curiosity, expressive intention, puzzle, fascination or play.",
+      "planning_emphasis": "Freedom, experimentation, iteration, noticing, surprise, and following unexpected questions.",
+      "review_question": "What did the learner discover, make, notice or become curious about?",
+      "audience": "The learner; sharing is optional and never a condition of completion."
+    }
+  },
+  "shared_evidence_layers": [
+    "Intent statement",
+    "Process traces",
+    "Artefact or observation",
+    "Decision/revision history",
+    "Learner explanation",
+    "Reflection and open questions"
+  ],
+  "assessment_separation": {
+    "project_quality": "Assesses whether the project was well-scoped, responsibly executed and evaluated.",
+    "module_competence": "Assesses the learner against each selected module's own Wave 08 instrument.",
+    "transfer": "Requires a changed context and explicit explanation; never inferred from a cross-discipline link.",
+    "retention": "Requires delayed evidence; project completion does not prove retention."
+  },
+  "resource_discovery_rule": "Start with the project's target objectives and the learner's current gap. Search for material that directly teaches or enables the objective, compare authority, relevance, level, access, currency and safety, then use only the parts needed. Existing resource registers are leads, not whitelists. Paid sources may be optional; an accessible substitute should be used when it can teach the same outcome. Do not copy restricted content.",
+  "scope_rule": "Default to the smallest complete experiment that answers the driving question. Expand only when evidence or genuine curiosity justifies it.",
+  "anti_slop_rule": "No generic project filler, arbitrary deliverable count, fake customer validation, invented impact, fake metrics, forced public showcase, or overbuilt technology."
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+  "title": "ATHENA_BASELINE_MODULE_v1.1",
+  "type": "object",
+  "required": [
+    "id",
+    "discipline_code",
+    "discipline",
+    "sequence",
+    "title",
+    "stage",
+    "status",
+    "learning_objective",
+    "core_concepts",
+    "core_model",
+    "guided_and_independent_practice",
+    "assessment_task",
+    "success_criteria",
+    "common_misconception",
+    "transfer_bridge",
+    "recommended_sequence_predecessor",
+    "hard_prerequisites",
+    "assessment_modes",
+    "retention_profile",
+    "safety_review",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^BASE-[A-Z]+-[0-9]{3}$"
+    },
+    "discipline_code": {
+      "type": "string",
+      "pattern": "^[A-Z]+$"
+    },
+    "discipline": {
+      "type": "string",
+      "minLength": 2
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "stage": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "learning_objective": {
+      "type": "string",
+      "minLength": 15
+    },
+    "core_concepts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "core_model": {
+      "type": "string",
+      "minLength": 3
+    },
+    "guided_and_independent_practice": {
+      "type": "string",
+      "minLength": 10
+    },
+    "assessment_task": {
+      "type": "string",
+      "minLength": 10
+    },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 15
+      }
+    },
+    "common_misconception": {
+      "type": "string"
+    },
+    "transfer_bridge": {
+      "type": "string"
+    },
+    "recommended_sequence_predecessor": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^BASE-[A-Z]+-[0-9]{3}$"
+      }
+    },
+    "hard_prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^BASE-[A-Z]+-[0-9]{3}$"
+      }
+    },
+    "assessment_modes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "retention_profile": {
+      "type": "string",
+      "minLength": 8
+    },
+    "safety_review": {
+      "type": "string",
+      "minLength": 20
+    },
+    "provenance": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,327 @@
+{
+  "version": "1.0",
+  "standard_target": "WCAG 2.2 AA as design target; not yet tested or claimed conformant",
+  "status": "not_executed",
+  "checks": [
+    {
+      "id": "ACC-001",
+      "area": "Text scaling",
+      "testable_expectation": "At 200% text size, essential content and controls remain available without clipped text or lost actions.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-002",
+      "area": "Reflow",
+      "testable_expectation": "At narrow mobile width, content reflows without horizontal scrolling except genuinely two-dimensional content.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-003",
+      "area": "Contrast",
+      "testable_expectation": "Normal text and essential UI states meet WCAG 2.2 AA contrast thresholds.",
+      "test_method": "automated_plus_manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-004",
+      "area": "Non-colour cues",
+      "testable_expectation": "Status, errors and charts do not rely on colour alone.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-005",
+      "area": "Focus visibility",
+      "testable_expectation": "Keyboard focus is clearly visible and not obscured by sticky UI.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-006",
+      "area": "Keyboard operation",
+      "testable_expectation": "All essential actions can be completed with keyboard only.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-007",
+      "area": "Focus order",
+      "testable_expectation": "Focus order follows logical reading and task order.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-008",
+      "area": "Accessible names",
+      "testable_expectation": "Buttons, fields, icons and custom controls expose meaningful accessible names and roles.",
+      "test_method": "screen_reader",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-009",
+      "area": "Error identification",
+      "testable_expectation": "Errors identify the field, issue and corrective action in text.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-010",
+      "area": "Touch target size",
+      "testable_expectation": "Touch targets meet WCAG 2.2 target-size minimum or documented exception; practical spacing avoids accidental taps.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-011",
+      "area": "No forced time",
+      "testable_expectation": "Timed tasks can be paused, extended or disabled unless timing is essential to the construct.",
+      "test_method": "manual",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-012",
+      "area": "Motion preference",
+      "testable_expectation": "Reduced-motion preference disables non-essential animation and parallax.",
+      "test_method": "device_test",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-013",
+      "area": "Screen reader order",
+      "testable_expectation": "TalkBack/VoiceOver announces heading, label, state and action in a useful order.",
+      "test_method": "screen_reader",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-014",
+      "area": "Captions",
+      "testable_expectation": "Instructional video has accurate captions; meaningful audio information also has text alternative.",
+      "test_method": "content_audit",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-015",
+      "area": "Transcript",
+      "testable_expectation": "Audio-only learning material has a transcript.",
+      "test_method": "content_audit",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-016",
+      "area": "Alt text",
+      "testable_expectation": "Informative images have purpose-equivalent alt text; decorative images are ignored by assistive technology.",
+      "test_method": "content_audit",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-017",
+      "area": "No text in images",
+      "testable_expectation": "Essential instructions are not embedded only in images.",
+      "test_method": "content_audit",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-018",
+      "area": "Language metadata",
+      "testable_expectation": "Page and passage language are programmatically identified; Bangla passages use correct language metadata.",
+      "test_method": "code_audit",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-019",
+      "area": "Bangla rendering",
+      "testable_expectation": "Bangla conjuncts, vowel signs, punctuation and line wrapping render correctly on target Android devices.",
+      "test_method": "device_test",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-020",
+      "area": "Font fallback",
+      "testable_expectation": "Missing glyphs fall back without tofu boxes or broken shaping.",
+      "test_method": "device_test",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-021",
+      "area": "Plain language",
+      "testable_expectation": "Instructions define unfamiliar terms and use one main action per step.",
+      "test_method": "editorial_review",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-022",
+      "area": "Terminology consistency",
+      "testable_expectation": "Glossary terms remain consistent across UI, teaching content and assessments.",
+      "test_method": "editorial_review",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-023",
+      "area": "Multiple response modes",
+      "testable_expectation": "Learners can use oral, written, diagrammatic or practical modes when the modality is not itself being assessed.",
+      "test_method": "content_audit",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-024",
+      "area": "Construct preservation",
+      "testable_expectation": "Alternative response modes do not remove the skill being assessed.",
+      "test_method": "subject_review",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-025",
+      "area": "Low-bandwidth text mode",
+      "testable_expectation": "Core reading, attempt capture and schedule view work with images/video blocked.",
+      "test_method": "network_throttle",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-026",
+      "area": "Offline core",
+      "testable_expectation": "Previously downloaded learning content and local capture remain usable without network.",
+      "test_method": "airplane_mode",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-027",
+      "area": "Deferred sync",
+      "testable_expectation": "Offline writes queue locally and sync later without duplicate or silent loss.",
+      "test_method": "network_test",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-028",
+      "area": "Conflict visibility",
+      "testable_expectation": "Conflicting edits are shown for user resolution; no silent last-write-wins for authored content/evidence.",
+      "test_method": "integration_test",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-029",
+      "area": "Data saver",
+      "testable_expectation": "Media is user-triggered, compressed and has a text alternative; no autoplay.",
+      "test_method": "network_throttle",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-030",
+      "area": "Battery/performance",
+      "testable_expectation": "Core flows remain responsive on low/mid-range Android hardware; expensive motion is optional.",
+      "test_method": "device_test",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-031",
+      "area": "RTL/LTR mixed text",
+      "testable_expectation": "Bangla, English, numbers, formulas and code retain correct direction and order.",
+      "test_method": "device_test",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-032",
+      "area": "Math/symbol access",
+      "testable_expectation": "Equations have accessible reading alternatives and do not depend only on a raster image.",
+      "test_method": "screen_reader",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-033",
+      "area": "Focus after errors",
+      "testable_expectation": "After validation failure, focus moves to or announces the error summary and affected field.",
+      "test_method": "manual",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-034",
+      "area": "No seizure triggers",
+      "testable_expectation": "No flashing content exceeds accepted thresholds; avoid rapid flashing entirely.",
+      "test_method": "content_audit",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-035",
+      "area": "User control",
+      "testable_expectation": "Users can pause, stop, hide or disable non-essential animation, audio and auto-advance.",
+      "test_method": "manual",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-036",
+      "area": "Accessible charts",
+      "testable_expectation": "Charts have text summaries and data tables or equivalent descriptions.",
+      "test_method": "content_audit",
+      "priority": "P1",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-037",
+      "area": "Plain-language legal/safety",
+      "testable_expectation": "Safety and privacy notices are concise, understandable and available in Bangla/English.",
+      "test_method": "editorial_review",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-038",
+      "area": "Privacy controls accessible",
+      "testable_expectation": "Consent, export, delete and sharing controls are discoverable and operable with assistive tech.",
+      "test_method": "screen_reader",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-039",
+      "area": "No shame mechanics",
+      "testable_expectation": "No punitive streak loss, public ranking by default or inaccessible urgency-only signals.",
+      "test_method": "product_review",
+      "priority": "P0",
+      "status": "not_executed"
+    },
+    {
+      "id": "ACC-040",
+      "area": "Usability with fatigue",
+      "testable_expectation": "Critical flows remain understandable with low cognitive load and allow save/resume.",
+      "test_method": "learner_test",
+      "priority": "P1",
+      "status": "not_executed"
+    }
+  ]
+}

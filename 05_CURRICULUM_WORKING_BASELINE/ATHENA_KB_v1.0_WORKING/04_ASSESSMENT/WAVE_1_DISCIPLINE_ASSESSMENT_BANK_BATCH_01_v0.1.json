@@ -1,0 +1,357 @@
+{
+  "registry_id": "ATHENA-WAVE1-ASSESSMENT-BANK-M09",
+  "version": "0.1",
+  "status": "draft_pending_subject_review_and_pilot",
+  "production_message": 9,
+  "policy": {
+    "assessment_is_evidence_not_automatic_mastery": true,
+    "learner_generated_reasoning_required": true,
+    "ai_assistance_must_be_disclosed": true,
+    "delayed_transfer_required_for_mastery_claim": true,
+    "safety_critical_errors_can_block_practical_pass": true
+  },
+  "coverage": {
+    "disciplines": [
+      "MATH",
+      "ENG",
+      "ELEC",
+      "RES",
+      "LANG",
+      "COMM"
+    ],
+    "items_per_discipline": 5,
+    "total_items": 30
+  },
+  "items": [
+    {
+      "item_id": "ATH-ASSESS-001",
+      "discipline_code": "MATH",
+      "unit_or_scope": "MATH-LA-017",
+      "item_type": "calculation_and_interpretation",
+      "cognitive_level": "application",
+      "prompt": "Given u=(3,−1), v=(2,4), calculate u+v, u·v and explain what a zero dot product would mean geometrically.",
+      "expected_evidence_or_answer_guidance": "u+v=(5,3); dot=3×2+(−1)×4=2. Zero dot product indicates perpendicular non-zero vectors.",
+      "scoring_criteria": "Correct operations 2; interpretation 1; working 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-002",
+      "discipline_code": "MATH",
+      "unit_or_scope": "MATH-LA-017",
+      "item_type": "dimension_check",
+      "cognitive_level": "application",
+      "prompt": "Can a 3×2 matrix multiply a 2×4 matrix? State the resulting dimensions and explain why the reverse order is not defined.",
+      "expected_evidence_or_answer_guidance": "Yes, result is 3×4; reverse 2×4 times 3×2 is undefined because inner dimensions 4 and 3 differ.",
+      "scoring_criteria": "Dimension reasoning 2; output 1; reverse check 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-003",
+      "discipline_code": "MATH",
+      "unit_or_scope": "MATH-LA-017",
+      "item_type": "error_analysis",
+      "cognitive_level": "application",
+      "prompt": "A learner says matrix multiplication is commutative because 2×3=3×2. Diagnose the reasoning error and give a 2D transformation example where order matters.",
+      "expected_evidence_or_answer_guidance": "Scalar multiplication commutes; matrix transformations generally do not. A rotation followed by non-uniform scaling can differ from scaling then rotation.",
+      "scoring_criteria": "Distinguishes scalars/matrices 1; valid example 2; explanation 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-004",
+      "discipline_code": "MATH",
+      "unit_or_scope": "MATH-MOD-015",
+      "item_type": "model_critique",
+      "cognitive_level": "application",
+      "prompt": "A linear model predicts a population will grow by the same number every year indefinitely. Identify assumptions and at least two reasons the model may fail.",
+      "expected_evidence_or_answer_guidance": "Constant absolute increment assumption; resource limits, changing rates, migration, policy, measurement limits; model valid only over stated range.",
+      "scoring_criteria": "Assumptions 1; limitations 2; bounded conclusion 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-005",
+      "discipline_code": "MATH",
+      "unit_or_scope": "MATH-REASON-016",
+      "item_type": "proof_or_counterexample",
+      "cognitive_level": "application",
+      "prompt": "Evaluate the claim: “The sum of two odd integers is odd.” Prove or refute it with a general argument.",
+      "expected_evidence_or_answer_guidance": "Refute: (2a+1)+(2b+1)=2(a+b+1), which is even for integers a,b.",
+      "scoring_criteria": "General representation 1; algebra 1; valid conclusion 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-006",
+      "discipline_code": "ENG",
+      "unit_or_scope": "ENG-TEST-004",
+      "item_type": "test_design",
+      "cognitive_level": "application",
+      "prompt": "A function accepts integers from 1 through 100 inclusive. Design normal, boundary and invalid tests, including expected outcomes.",
+      "expected_evidence_or_answer_guidance": "Test 1, 50, 100 valid; 0 and 101 invalid; non-integer behaviour specified (reject or documented conversion).",
+      "scoring_criteria": "Boundary coverage 2; invalid coverage 1; expected outcomes 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-007",
+      "discipline_code": "ENG",
+      "unit_or_scope": "ENG-TEST-004",
+      "item_type": "debugging_trace",
+      "cognitive_level": "application",
+      "prompt": "A bug occurs only when a list has one element. Describe a controlled debugging sequence and the evidence you would preserve.",
+      "expected_evidence_or_answer_guidance": "Reproduce with minimal one-element input; compare expected/actual; inspect loop/index boundaries; hypothesise; test; fix; regression suite; preserve environment, steps, logs and test.",
+      "scoring_criteria": "Reproducibility 1; hypothesis/testing 2; regression/documentation 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-008",
+      "discipline_code": "ENG",
+      "unit_or_scope": "ENG-ALGO-003",
+      "item_type": "complexity_reasoning",
+      "cognitive_level": "application",
+      "prompt": "An algorithm compares every pair of n records using nested loops. Explain the likely growth in comparisons and why input size matters.",
+      "expected_evidence_or_answer_guidance": "Approximately n(n−1)/2 comparisons, Θ(n²); doubling n roughly quadruples large-n work.",
+      "scoring_criteria": "Count reasoning 2; asymptotic interpretation 1; caveat constants/lower-order 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-009",
+      "discipline_code": "ENG",
+      "unit_or_scope": "ENG-SWE-002",
+      "item_type": "workflow_scenario",
+      "cognitive_level": "application",
+      "prompt": "A teammate changes the same lines you changed. Explain a safe merge-conflict workflow and why blindly accepting one side is risky.",
+      "expected_evidence_or_answer_guidance": "Inspect diff and intent; understand both changes; resolve semantically; run tests; review diff; commit resolution.",
+      "scoring_criteria": "Process 2; semantic risk 1; verification 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-010",
+      "discipline_code": "ENG",
+      "unit_or_scope": "ENG-ARCH-001",
+      "item_type": "requirements_test",
+      "cognitive_level": "application",
+      "prompt": "Write one testable acceptance criterion for a login form that must reject invalid credentials without revealing whether the username exists.",
+      "expected_evidence_or_answer_guidance": "Criterion specifies invalid credentials, generic message, no account enumeration through response differences; rate limits/security requirements may be separate.",
+      "scoring_criteria": "Observable condition 2; privacy/security concern 1; testability 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-011",
+      "discipline_code": "ELEC",
+      "unit_or_scope": "ELEC-ANA-004",
+      "item_type": "calculation",
+      "cognitive_level": "application",
+      "prompt": "An RC circuit uses R=2.2 kΩ and C=470 µF. Calculate the ideal time constant and estimate charging voltage after one time constant from 5 V.",
+      "expected_evidence_or_answer_guidance": "τ=2200×0.000470=1.034 s; V≈0.632×5=3.16 V.",
+      "scoring_criteria": "Unit conversion 1; tau 1; voltage estimate 1; explanation 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-012",
+      "discipline_code": "ELEC",
+      "unit_or_scope": "ELEC-MEAS-002",
+      "item_type": "safety_decision",
+      "cognitive_level": "application",
+      "prompt": "You are asked to measure resistance across a circuit that may still be powered. State what you do and why.",
+      "expected_evidence_or_answer_guidance": "Do not measure resistance on energised circuit; disconnect power, verify de-energised state using safe procedure, discharge capacitors appropriately under supervision.",
+      "scoring_criteria": "Reject unsafe action 2; safe verification 1; capacitor caution 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-013",
+      "discipline_code": "ELEC",
+      "unit_or_scope": "ELEC-DIG-003",
+      "item_type": "logic_reasoning",
+      "cognitive_level": "application",
+      "prompt": "For inputs A and B, output Y is 1 only when both are 1. Give the Boolean expression and complete truth table.",
+      "expected_evidence_or_answer_guidance": "Y=A AND B; rows 00→0, 01→0, 10→0, 11→1.",
+      "scoring_criteria": "Expression 1; four rows 2; interpretation 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-014",
+      "discipline_code": "ELEC",
+      "unit_or_scope": "ELEC-DEV-001",
+      "item_type": "fault_diagnosis",
+      "cognitive_level": "application",
+      "prompt": "An LED is connected directly across a 5 V source with no current-limiting element. Explain the risk and the design correction.",
+      "expected_evidence_or_answer_guidance": "Excess current can damage LED/source; use correctly calculated series resistor or suitable current driver based on supply, forward voltage and desired current; verify ratings.",
+      "scoring_criteria": "Risk 1; correction 2; parameter/rating awareness 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-015",
+      "discipline_code": "ELEC",
+      "unit_or_scope": "ELEC-ANA-004",
+      "item_type": "model_vs_measurement",
+      "cognitive_level": "application",
+      "prompt": "A measured RC response differs from the ideal curve. Name three plausible causes and one safe way to investigate.",
+      "expected_evidence_or_answer_guidance": "R/C tolerance, source resistance, capacitor leakage, meter loading, timing/reading error; compare tolerances and use simulator or supervised extra-low-voltage setup.",
+      "scoring_criteria": "Three causes 2; safe investigation 1; uncertainty 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-016",
+      "discipline_code": "RES",
+      "unit_or_scope": "RES-SYN-004",
+      "item_type": "search_strategy",
+      "cognitive_level": "application",
+      "prompt": "Create a reproducible search strategy for “Does spaced retrieval improve vocabulary retention in beginner language learners?”",
+      "expected_evidence_or_answer_guidance": "Concept blocks for spacing/retrieval, vocabulary, beginner/additional-language learners, retention; synonyms with OR, blocks with AND; log databases, date, exact query and criteria.",
+      "scoring_criteria": "Concepts 1; Boolean strategy 1; reproducibility 2.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-017",
+      "discipline_code": "RES",
+      "unit_or_scope": "RES-METHOD-002",
+      "item_type": "design_critique",
+      "cognitive_level": "application",
+      "prompt": "A survey shared only in one class is used to claim what all teenagers in a country believe. Identify the inference problem and a more defensible claim.",
+      "expected_evidence_or_answer_guidance": "Convenience sample and coverage/selection bias; claim limited to respondents/class context, not national population.",
+      "scoring_criteria": "Bias identified 2; bounded claim 1; improvement 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-018",
+      "discipline_code": "RES",
+      "unit_or_scope": "RES-DATA-003",
+      "item_type": "data_quality",
+      "cognitive_level": "application",
+      "prompt": "A dataset has missing ages and one age of 240. Describe a transparent cleaning plan without silently deleting inconvenient records.",
+      "expected_evidence_or_answer_guidance": "Inspect source/range/units; mark missing; investigate 240 as possible error; preserve raw data; document exclusion/correction rule; sensitivity analysis if needed.",
+      "scoring_criteria": "Preservation 1; diagnosis 1; documented handling 2.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-019",
+      "discipline_code": "RES",
+      "unit_or_scope": "RES-EVAL-001",
+      "item_type": "source_evaluation",
+      "cognitive_level": "application",
+      "prompt": "A viral infographic cites “a university study” but gives no title, date or link. What can you responsibly conclude and what verification steps follow?",
+      "expected_evidence_or_answer_guidance": "Cannot verify from attribution alone; locate original study, authors, methods, sample, publication, exact claim and context; treat as unverified meanwhile.",
+      "scoring_criteria": "Calibrated conclusion 1; verification trail 2; no overclaim 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-020",
+      "discipline_code": "RES",
+      "unit_or_scope": "RES-SYN-004",
+      "item_type": "synthesis",
+      "cognitive_level": "application",
+      "prompt": "Two studies report different effects. List at least four methodological/contextual differences to inspect before calling them contradictory.",
+      "expected_evidence_or_answer_guidance": "Population, sample, operational definitions, outcome measure, design, intervention, follow-up, context, uncertainty, analysis.",
+      "scoring_criteria": "Four relevant factors 2; synthesis not cherry-pick 1; bounded conclusion 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-021",
+      "discipline_code": "LANG",
+      "unit_or_scope": "LANG-PRAG-004",
+      "item_type": "context_analysis",
+      "cognitive_level": "application",
+      "prompt": "Interpret “It is getting late” in three possible contexts and explain how the likely communicative function changes.",
+      "expected_evidence_or_answer_guidance": "Could be observation, indirect request to leave/finish, or warning about schedule; context supports but does not prove intention.",
+      "scoring_criteria": "Three plausible contexts 2; literal/pragmatic distinction 1; uncertainty 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-022",
+      "discipline_code": "LANG",
+      "unit_or_scope": "LANG-STRUCT-001",
+      "item_type": "linguistic_analysis",
+      "cognitive_level": "application",
+      "prompt": "Explain how changing word order or punctuation can change interpretation in a short sentence of your choice.",
+      "expected_evidence_or_answer_guidance": "Learner supplies example and explains syntactic grouping, focus or ambiguity; accept multiple languages with accurate analysis.",
+      "scoring_criteria": "Valid example 1; structural explanation 2; clarity 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-023",
+      "discipline_code": "LANG",
+      "unit_or_scope": "LANG-ACQ-002",
+      "item_type": "learning_plan",
+      "cognitive_level": "application",
+      "prompt": "Design a one-week plan to move ten useful phrases from recognition to usable speaking.",
+      "expected_evidence_or_answer_guidance": "Meaningful input, retrieval without prompt, spaced review, varied contexts, spoken output, feedback and delayed transfer; separate recognition from production.",
+      "scoring_criteria": "Retrieval 1; output/feedback 1; spacing/transfer 2.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-024",
+      "discipline_code": "LANG",
+      "unit_or_scope": "LANG-READ-003",
+      "item_type": "inference_and_evidence",
+      "cognitive_level": "application",
+      "prompt": "A passage implies that a character is worried but never states it. Identify two textual clues and distinguish inference from explicit fact.",
+      "expected_evidence_or_answer_guidance": "Cite observable language/actions; label worry as inference, not direct statement.",
+      "scoring_criteria": "Evidence 2; inference distinction 1; alternative possible reading 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-025",
+      "discipline_code": "LANG",
+      "unit_or_scope": "LANG-PRAG-004",
+      "item_type": "register_rewrite",
+      "cognitive_level": "application",
+      "prompt": "Rewrite an informal request for a school administrator and explain what changed without altering the request itself.",
+      "expected_evidence_or_answer_guidance": "Appropriate greeting, clear request, context and courteous register; no change in factual request.",
+      "scoring_criteria": "Meaning preserved 1; register fit 2; explanation 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-026",
+      "discipline_code": "COMM",
+      "unit_or_scope": "COMM-MEDIA-004",
+      "item_type": "claim_verification",
+      "cognitive_level": "application",
+      "prompt": "A post says “This method makes students 200% smarter.” List the questions and evidence needed before repeating the claim.",
+      "expected_evidence_or_answer_guidance": "Define smarter/outcome, baseline, denominator, sample, study design, comparator, measure validity, source/date, effect size and independent replication.",
+      "scoring_criteria": "Operational definition 1; design/data questions 2; calibrated stance 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-027",
+      "discipline_code": "COMM",
+      "unit_or_scope": "COMM-NEG-003",
+      "item_type": "negotiation_scenario",
+      "cognitive_level": "application",
+      "prompt": "Two project partners disagree about a deadline. Show how to identify positions, underlying interests and objective criteria.",
+      "expected_evidence_or_answer_guidance": "Positions are stated demands; interests are reasons/constraints; criteria include workload, dependencies, quality and agreed milestones; propose options.",
+      "scoring_criteria": "Distinctions 2; criteria 1; feasible option 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-028",
+      "discipline_code": "COMM",
+      "unit_or_scope": "COMM-PRES-002",
+      "item_type": "presentation_design",
+      "cognitive_level": "application",
+      "prompt": "Plan a 3-minute presentation recommending one improvement to a familiar process. Include audience, takeaway, evidence, structure and one uncertainty.",
+      "expected_evidence_or_answer_guidance": "Audience and purpose; one-sentence takeaway; logical opening/body/conclusion; evidence; uncertainty and next test.",
+      "scoring_criteria": "Audience/message 1; structure 1; evidence 1; uncertainty 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-029",
+      "discipline_code": "COMM",
+      "unit_or_scope": "COMM-ARG-001",
+      "item_type": "argument_analysis",
+      "cognitive_level": "application",
+      "prompt": "Construct a claim, two reasons, supporting evidence and one serious counterargument for a low-stakes school policy proposal.",
+      "expected_evidence_or_answer_guidance": "Argument is coherent; evidence relevant and traceable; counterargument fairly represented; response does not strawman.",
+      "scoring_criteria": "Claim/reasons 1; evidence 1; counterargument 1; fair response 1.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    },
+    {
+      "item_id": "ATH-ASSESS-030",
+      "discipline_code": "COMM",
+      "unit_or_scope": "COMM-MEDIA-004",
+      "item_type": "visual_literacy",
+      "cognitive_level": "application",
+      "prompt": "A chart begins its vertical axis at 95 rather than 0 and shows values 96 and 99. Explain how the display affects perception and what additional context is needed.",
+      "expected_evidence_or_answer_guidance": "Truncated axis magnifies apparent difference; inspect absolute values, scale, units, uncertainty, sample and reason for axis choice.",
+      "scoring_criteria": "Visual effect 2; context needs 2.",
+      "tool_policy": "Tools may be used only when the task permits them; disclose assistance and explain reasoning. An AI-generated answer alone is not learner evidence."
+    }
+  ]
+}

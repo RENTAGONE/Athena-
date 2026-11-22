@@ -1,0 +1,146 @@
+{
+  "registry": "ATHENA_REPEATED_SKILL_FAMILY_NAME_SEMANTIC_REVIEW",
+  "version": "0.1",
+  "status": "11_groups_semantically_triaged_preserve_distinct_ids_owner_review_pending",
+  "group_count": 11,
+  "records": [
+    {
+      "normalized_name": "ethical persuasion",
+      "working_family_ids": [
+        "SF-BIZ-03-04",
+        "SF-COMM-04-03"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Business ethical persuasion concerns transparent value communication and non-coercive customer decisions; communication ethical persuasion concerns argument construction, audience influence and rhetorical responsibility. Shared ethics, different task contexts and assessment.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "quality control",
+      "working_family_ids": [
+        "SF-BIZ-05-03",
+        "SF-LEAD-04-05"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Business operations quality control concerns process/product consistency and defect handling; leadership quality control concerns governance, accountability and team-level oversight. Related but different levels of analysis.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "hazard recognition",
+      "working_family_ids": [
+        "SF-ELEC-01-01",
+        "SF-INDEP-06-01"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Electrical hazard recognition requires domain-specific understanding of shock, stored energy, isolation and equipment boundaries; practical-independence hazard recognition is broader scene awareness and safe escalation. Do not collapse specialist electrical risk into generic safety.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "budgeting",
+      "working_family_ids": [
+        "SF-FIN-01-02",
+        "SF-INDEP-05-02"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Finance budgeting concerns income/expense planning, allocation, forecasts and trade-offs; everyday consumer budgeting concerns routine spending, bills, comparison and household decisions. Shared arithmetic but different scope.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "measurement validity",
+      "working_family_ids": [
+        "SF-BODY-08-02",
+        "SF-RES-03-04"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Body-science measurement validity concerns human measurement protocols, biological variability and instrument/observer limitations; research measurement validity concerns construct operationalisation, instrument validity and study design. Cross-domain methods transfer, not identity.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "framing",
+      "working_family_ids": [
+        "SF-AEST-05-04",
+        "SF-COMM-04-02"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Photography framing concerns boundaries, crop, viewpoint and visual emphasis; rhetorical framing concerns how language and selection shape interpretation. Same term, different perceptual and communicative mechanisms.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "spatial composition",
+      "working_family_ids": [
+        "SF-AEST-07-05",
+        "SF-ART-02-05"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Three-dimensional design spatial composition concerns volume, spatial relationships, structure and object/environment arrangement; artistic perspective/space concerns depiction of depth and spatial illusion on a representational surface.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "prioritization",
+      "working_family_ids": [
+        "SF-WORK-02-03",
+        "SF-LEAD-06-02"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Workflow prioritisation allocates personal attention across tasks and deadlines; leadership prioritisation allocates team capacity and strategic resources under stakeholder constraints. Shared decision logic, different authority and consequences.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "active listening",
+      "working_family_ids": [
+        "SF-PERF-04-01",
+        "SF-LEAD-02-02"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Performance listening and musicianship concerns auditory attention to timing, pitch, cues and ensemble response; leadership active listening concerns interpersonal meaning, paraphrase, empathy and shared understanding. Some transferable attention habits, distinct assessments.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "audience awareness",
+      "working_family_ids": [
+        "SF-PERF-05-03",
+        "SF-COMM-01-04"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Performance audience awareness concerns live room feedback, stage presence and adapting delivery in real time; communication audience awareness concerns audience analysis, prior knowledge, needs and message design.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    },
+    {
+      "normalized_name": "cross-cultural pragmatics",
+      "working_family_ids": [
+        "SF-LANG-06-04",
+        "SF-COMM-07-03"
+      ],
+      "decision": "preserve_separate",
+      "relationship_candidate": "RELATED_TO",
+      "relationship_status": "proposed_not_approved",
+      "rationale": "Language cross-cultural pragmatics concerns linguistic conventions, speech acts, politeness and contextual meaning across languages; communication cross-cultural pragmatics concerns broader intercultural interaction, norms, channel and relationship context.",
+      "merge_recommendation": "do_not_merge_or_alias_at_this_stage"
+    }
+  ],
+  "governance": {
+    "no_ids_changed": true,
+    "no_aliases_assigned": true,
+    "no_merges_performed": true,
+    "related_to_edges_are_candidates_only": true
+  }
+}

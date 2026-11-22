@@ -1,0 +1,22 @@
+{
+  "batch": "SIX_DISCIPLINE_DEEPENING_BATCH_01",
+  "version": "1.1-working",
+  "unit_count": 18,
+  "discipline_count": 6,
+  "checks": {
+    "unique_unit_ids": true,
+    "worked_examples_at_least_2_each": true,
+    "guided_practice_at_least_3_each": true,
+    "independent_exercises_at_least_5_each": true,
+    "four_level_rubric_each": true,
+    "diagnostic_each": true,
+    "transfer_each": true
+  },
+  "not_claimed": [
+    "expert review",
+    "pilot validation",
+    "canonical prerequisite integration",
+    "resource verification",
+    "app importer compatibility"
+  ]
+}

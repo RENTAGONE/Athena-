@@ -1,0 +1,1721 @@
+{
+  "registry": "ATHENA_SKILL_FAMILY_SPECIFICATION_BATCH_WAVE1_CORE",
+  "version": "0.1",
+  "status": "59_skill_family_specs_authored_draft_review_required",
+  "discipline_count": 6,
+  "domain_count": 12,
+  "family_count": 59,
+  "canonical_domain_mapping_approved": false,
+  "records": [
+    {
+      "working_skill_family_id": "SF-MATH-01-01",
+      "name": "Place Value",
+      "working_domain_id": "DOM-MATH-01",
+      "working_domain_name": "Numeracy and Arithmetic",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-MATH-NUM-PLACE",
+          "title": "Place Value & Number Sense",
+          "similarity_score": 0.611
+        }
+      ],
+      "scope_statement": "Represent quantities using base-ten place relationships, expanded form, regrouping and magnitude comparison. Include whole numbers and decimal place value at a level appropriate to the learner.",
+      "observable_outcome": "Given a multi-digit quantity, represent it in standard, expanded and verbal forms, compare its magnitude, and explain the value contributed by a selected digit.",
+      "success_criteria": [
+        "Correctly identifies digit value by position.",
+        "Converts between standard and expanded forms without changing magnitude.",
+        "Uses place-value reasoning to justify comparisons and regrouping."
+      ],
+      "assessment_evidence_examples": "Number decomposition task; explain why moving a digit one place changes its value by a factor of ten.",
+      "scope_boundary": "Excludes fraction operations and general estimation strategy, which have separate family scopes.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-01-02",
+      "name": "Integer Operations",
+      "working_domain_id": "DOM-MATH-01",
+      "working_domain_name": "Numeracy and Arithmetic",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-MATH-NUM-OPS",
+          "title": "Arithmetic Operations",
+          "similarity_score": 0.718
+        },
+        {
+          "id": "ATH-FAM-MATH-NUM-SIGN",
+          "title": "Signed Numbers & Order of Operations",
+          "similarity_score": 0.604
+        },
+        {
+          "id": "ATH-FAM-MATH-NUM-PCT",
+          "title": "Percentages & Ratios",
+          "similarity_score": 0.595
+        }
+      ],
+      "scope_statement": "Compute with whole numbers and signed integers using place-value, number-line and inverse-operation models. Include operation choice, order and reasonableness checks.",
+      "observable_outcome": "Solve multi-step integer calculations, select an appropriate representation, explain the sign and operation choices, and verify the result with an inverse or estimate.",
+      "success_criteria": [
+        "Accurate operations across positive and negative values.",
+        "Explains sign changes rather than relying only on memorised rules.",
+        "Checks results using inverse operations or magnitude."
+      ],
+      "assessment_evidence_examples": "Number-line explanation; multi-step calculation with a reasonableness check.",
+      "scope_boundary": "Excludes fraction/decimal arithmetic and algebraic manipulation.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-01-03",
+      "name": "Fractions Decimals Percentages",
+      "working_domain_id": "DOM-MATH-01",
+      "working_domain_name": "Numeracy and Arithmetic",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-MATH-NUM-FRAC",
+          "title": "Fractions & Decimals",
+          "similarity_score": 0.735
+        }
+      ],
+      "scope_statement": "Understand equivalent fractions, decimal notation and percentage as linked representations of rational quantities. Include comparison, conversion and context-appropriate operations.",
+      "observable_outcome": "Convert among fraction, decimal and percentage forms, compare rational quantities, and solve a contextual problem while preserving equivalence.",
+      "success_criteria": [
+        "Conversions preserve value.",
+        "Comparison uses a valid common representation or benchmark.",
+        "Calculations are interpreted in the original context."
+      ],
+      "assessment_evidence_examples": "Representation-conversion set; discount or proportion problem with an explanation.",
+      "scope_boundary": "Excludes general ratio/rate reasoning beyond fraction equivalence and percent applications.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-01-04",
+      "name": "Ratio And Proportion",
+      "working_domain_id": "DOM-MATH-01",
+      "working_domain_name": "Numeracy and Arithmetic",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Model multiplicative relationships using ratios, rates, unit rates, scale factors and proportional reasoning. Distinguish proportional from additive relationships.",
+      "observable_outcome": "Set up and solve a ratio or rate problem, identify the unit rate or scale factor, track units, and test whether proportional reasoning is justified.",
+      "success_criteria": [
+        "Uses multiplicative rather than additive scaling where appropriate.",
+        "Maintains consistent units and ratio order.",
+        "Checks whether the relationship is actually proportional."
+      ],
+      "assessment_evidence_examples": "Recipe/scale comparison; speed or price-per-unit problem.",
+      "scope_boundary": "Excludes broad financial planning and advanced function modelling.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-01-05",
+      "name": "Estimation And Units",
+      "working_domain_id": "DOM-MATH-01",
+      "working_domain_name": "Numeracy and Arithmetic",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Estimate quantities, select and convert units, interpret scale and use bounds or benchmarks to judge numerical reasonableness.",
+      "observable_outcome": "Choose suitable units and a defensible estimation method, state an approximate range, and use the estimate to detect an implausible exact result.",
+      "success_criteria": [
+        "Unit choice matches the quantity and required precision.",
+        "Estimate is supported by a benchmark or decomposition.",
+        "Exact result is checked against expected magnitude."
+      ],
+      "assessment_evidence_examples": "Estimate room area before calculation; identify a unit or decimal-place error.",
+      "scope_boundary": "Excludes formal measurement uncertainty analysis, which is treated in statistics/science.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-02-01",
+      "name": "Expressions",
+      "working_domain_id": "DOM-MATH-02",
+      "working_domain_name": "Pre-Algebra and Algebra",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-ALG"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-MATH-ALG-EXPR",
+          "title": "Expressions & Variables",
+          "similarity_score": 0.667
+        }
+      ],
+      "scope_statement": "Translate verbal and contextual relationships into algebraic expressions, identify variables and coefficients, and preserve operation structure with grouping.",
+      "observable_outcome": "Construct and interpret an algebraic expression for a stated relationship, explain each term and evaluate it for a permitted input.",
+      "success_criteria": [
+        "Variable meaning is stated.",
+        "Expression structure matches the verbal relationship.",
+        "Substitution and evaluation preserve order of operations."
+      ],
+      "assessment_evidence_examples": "Translate a perimeter or cost rule into an expression; compare two expressions for equivalence.",
+      "scope_boundary": "Excludes solving equations and polynomial factorisation.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-02-02",
+      "name": "Linear Equations",
+      "working_domain_id": "DOM-MATH-02",
+      "working_domain_name": "Pre-Algebra and Algebra",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-ALG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Represent equality as a balance relationship and solve linear equations using inverse operations and equivalent transformations.",
+      "observable_outcome": "Solve a linear equation, justify each transformation as preserving equality, and verify the solution in the original equation.",
+      "success_criteria": [
+        "Transformations preserve equality.",
+        "Solution is checked by substitution.",
+        "The learner can explain why an operation is applied to both sides."
+      ],
+      "assessment_evidence_examples": "One-step to multi-step equation ladder; error diagnosis in a worked solution.",
+      "scope_boundary": "Excludes nonlinear equations and systems unless explicitly introduced in a later family.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-02-03",
+      "name": "Inequalities",
+      "working_domain_id": "DOM-MATH-02",
+      "working_domain_name": "Pre-Algebra and Algebra",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-ALG"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-MATH-ALG-EQ",
+          "title": "Equations & Inequalities",
+          "similarity_score": 0.686
+        }
+      ],
+      "scope_statement": "Represent and solve inequalities, interpret solution sets and connect symbolic statements to number lines and contextual constraints.",
+      "observable_outcome": "Solve a linear inequality, represent its solution set correctly, and explain when multiplying or dividing by a negative reverses the inequality sign.",
+      "success_criteria": [
+        "Correct direction and endpoint inclusion.",
+        "Number-line representation matches the symbolic solution.",
+        "Contextual restrictions are applied."
+      ],
+      "assessment_evidence_examples": "Inequality solve-and-graph task; explain a sign-reversal error.",
+      "scope_boundary": "Excludes optimisation and systems of inequalities beyond introductory cases.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-02-04",
+      "name": "Exponents And Roots",
+      "working_domain_id": "DOM-MATH-02",
+      "working_domain_name": "Pre-Algebra and Algebra",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-ALG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Interpret integer exponents, roots and scientific notation through repeated multiplication, inverse operations and magnitude scaling.",
+      "observable_outcome": "Rewrite quantities using exponent and root notation, simplify valid expressions, and interpret scientific notation as a magnitude representation.",
+      "success_criteria": [
+        "Distinguishes exponent from multiplication by the base.",
+        "Applies exponent laws only under valid conditions.",
+        "Converts scientific notation with correct scale and significant magnitude."
+      ],
+      "assessment_evidence_examples": "Compare powers and roots; convert large/small measurements to scientific notation.",
+      "scope_boundary": "Excludes logarithmic functions and advanced complex exponent theory.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-MATH-02-05",
+      "name": "Polynomials And Factoring",
+      "working_domain_id": "DOM-MATH-02",
+      "working_domain_name": "Pre-Algebra and Algebra",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "canonical_domain_candidates": [
+        "ATH-DOM-MATH-ALG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Operate on polynomials, collect like terms, multiply structured expressions and factor common or standard forms while preserving equivalence.",
+      "observable_outcome": "Simplify, expand or factor a polynomial and demonstrate equivalence by substitution or reverse expansion.",
+      "success_criteria": [
+        "Like terms are identified by matching variable powers.",
+        "Expansion and factorisation preserve all terms and signs.",
+        "The result is checked by an alternate representation."
+      ],
+      "assessment_evidence_examples": "Area-model multiplication; factorisation and verification task.",
+      "scope_boundary": "Excludes abstract ring theory and advanced polynomial roots.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-01-01",
+      "name": "Decomposition",
+      "working_domain_id": "DOM-ENG-01",
+      "working_domain_name": "Computational Thinking",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-COMPUTE"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Break a complex task into smaller, testable subproblems with explicit inputs, outputs and dependencies.",
+      "observable_outcome": "Decompose a problem into ordered subproblems, state each subproblem’s input/output contract, and identify dependencies or independent work.",
+      "success_criteria": [
+        "Subproblems are small enough to reason about and test.",
+        "Interfaces and dependencies are explicit.",
+        "The decomposition preserves the original goal and constraints."
+      ],
+      "assessment_evidence_examples": "Decompose a simple app feature; compare two decomposition strategies.",
+      "scope_boundary": "Excludes code architecture and team project planning at scale.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-01-02",
+      "name": "Abstraction",
+      "working_domain_id": "DOM-ENG-01",
+      "working_domain_name": "Computational Thinking",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-COMPUTE"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Construct simplified representations that retain the details relevant to a particular computational question while deliberately omitting irrelevant complexity.",
+      "observable_outcome": "Choose an abstraction for a stated problem, identify what it preserves and discards, and explain how that choice affects the solution.",
+      "success_criteria": [
+        "Relevant state and behaviour are represented.",
+        "Omitted detail is named and justified.",
+        "The abstraction is not mistaken for the full real system."
+      ],
+      "assessment_evidence_examples": "Model a queue or map; explain what a simplified simulation leaves out.",
+      "scope_boundary": "Excludes object-oriented design as a specific programming paradigm.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-01-03",
+      "name": "Pattern Recognition",
+      "working_domain_id": "DOM-ENG-01",
+      "working_domain_name": "Computational Thinking",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-COMPUTE"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Recognise repeated structures, invariants and recurring problem forms across examples, then use them to predict or reuse a solution pattern.",
+      "observable_outcome": "Identify a meaningful pattern across examples, state the invariant or repeated structure, and apply it to a new case without overgeneralising.",
+      "success_criteria": [
+        "Pattern is supported by multiple examples.",
+        "The invariant is stated precisely.",
+        "Transfer to a new case is tested against counterexamples."
+      ],
+      "assessment_evidence_examples": "Find a loop pattern in data; identify common substructure in two algorithms.",
+      "scope_boundary": "Excludes visual pattern recognition unrelated to computational structure.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-01-04",
+      "name": "Algorithm Design",
+      "working_domain_id": "DOM-ENG-01",
+      "working_domain_name": "Computational Thinking",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-COMPUTE"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Design finite, precise procedures that transform defined inputs into outputs, including sequencing, selection, repetition and termination.",
+      "observable_outcome": "Write or explain an algorithm for a defined task, trace it on representative inputs, and justify correctness and termination at an introductory level.",
+      "success_criteria": [
+        "Steps are unambiguous and complete.",
+        "Control structure matches the problem.",
+        "Edge cases and termination are considered."
+      ],
+      "assessment_evidence_examples": "Pseudocode for a search or calculation; trace an algorithm by hand.",
+      "scope_boundary": "Excludes formal proof of complex algorithms and language-specific syntax.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-01-05",
+      "name": "Debugging And Tracing",
+      "working_domain_id": "DOM-ENG-01",
+      "working_domain_name": "Computational Thinking",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-COMPUTE"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Trace program state and control flow to locate mismatches between intended and actual behaviour. Use minimal reproducible cases and systematic hypothesis testing.",
+      "observable_outcome": "Diagnose a faulty algorithm or program by tracing state, isolating a minimal failing case, and explaining the root cause rather than patching symptoms.",
+      "success_criteria": [
+        "Reproduction steps are reliable.",
+        "Trace records relevant state changes.",
+        "Fix addresses root cause and is retested."
+      ],
+      "assessment_evidence_examples": "Debug a loop boundary error; trace variable values through branches.",
+      "scope_boundary": "Excludes advanced profiling and production incident response.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-02-01",
+      "name": "Variables And Types",
+      "working_domain_id": "DOM-ENG-02",
+      "working_domain_name": "Programming Foundations",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Represent data with variables and choose types that match the intended meaning, allowed operations and precision requirements.",
+      "observable_outcome": "Declare and use variables with appropriate types, explain type constraints, and predict or diagnose conversions and type errors.",
+      "success_criteria": [
+        "Names communicate meaning.",
+        "Types fit the data and operations.",
+        "Conversions are explicit where precision or behaviour changes."
+      ],
+      "assessment_evidence_examples": "Build a small input/compute/output program; diagnose a type mismatch.",
+      "scope_boundary": "Excludes memory layout and low-level representation, covered in computer systems.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-02-02",
+      "name": "Control Flow",
+      "working_domain_id": "DOM-ENG-02",
+      "working_domain_name": "Programming Foundations",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Control program execution using sequence, conditional branching, loops and clear termination conditions.",
+      "observable_outcome": "Implement a small task using suitable control structures and trace its behaviour across normal, boundary and invalid inputs.",
+      "success_criteria": [
+        "Branch conditions cover intended cases.",
+        "Loops make progress and terminate.",
+        "Repeated logic is not used where a simpler structure is clearer."
+      ],
+      "assessment_evidence_examples": "Menu or validation loop; boundary-case trace.",
+      "scope_boundary": "Excludes concurrency and event-driven architecture.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-02-03",
+      "name": "Functions And Modularity",
+      "working_domain_id": "DOM-ENG-02",
+      "working_domain_name": "Programming Foundations",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Encapsulate reusable behaviour in functions with clear parameters, return values, side-effect expectations and single responsibilities.",
+      "observable_outcome": "Design and use functions that expose clear contracts, reduce unnecessary duplication and can be tested independently.",
+      "success_criteria": [
+        "Inputs and outputs are explicit.",
+        "Function responsibility is cohesive.",
+        "Side effects and error behaviour are documented or controlled."
+      ],
+      "assessment_evidence_examples": "Refactor repeated calculations into functions; unit-test a pure function.",
+      "scope_boundary": "Excludes large-scale service architecture and distributed APIs.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-02-04",
+      "name": "Data Structures",
+      "working_domain_id": "DOM-ENG-02",
+      "working_domain_name": "Programming Foundations",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Select and use basic data structures according to access, update, ordering and relationship requirements.",
+      "observable_outcome": "Choose a suitable list, map/dictionary, set, stack, queue or record structure for a task and explain the trade-offs.",
+      "success_criteria": [
+        "Structure matches the operations required.",
+        "Data invariants are maintained.",
+        "Basic time/space implications are recognised."
+      ],
+      "assessment_evidence_examples": "Represent a contact list; choose a queue for first-in-first-out work.",
+      "scope_boundary": "Excludes advanced trees, graphs and specialised databases.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ENG-02-05",
+      "name": "Errors And Testing",
+      "working_domain_id": "DOM-ENG-02",
+      "working_domain_name": "Programming Foundations",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Distinguish syntax, runtime and logic failures; design tests that check expected behaviour, boundaries and invalid inputs.",
+      "observable_outcome": "Classify a failure, write a test that reproduces it, correct the underlying cause and verify that the fix does not break existing behaviour.",
+      "success_criteria": [
+        "Failure class is identified correctly.",
+        "Tests include normal and boundary cases.",
+        "Fix is regression-tested."
+      ],
+      "assessment_evidence_examples": "Write tests for a function; distinguish a syntax error from a wrong result.",
+      "scope_boundary": "Excludes formal verification and large-scale test automation strategy.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-01-01",
+      "name": "Hazard Recognition",
+      "working_domain_id": "DOM-ELEC-01",
+      "working_domain_name": "Electrical Safety and Measurement",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-MEAS"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Recognise common electrical hazards, stored-energy risks, exposed conductors, damaged equipment and unsafe work conditions. Prioritise distance, isolation by qualified persons and escalation.",
+      "observable_outcome": "Given a scenario, identify visible warning signs, state what must not be touched or attempted, and choose a safe stop-and-escalate response.",
+      "success_criteria": [
+        "Hazards are identified without approaching or handling them.",
+        "No unsafe troubleshooting or live-work advice is given.",
+        "Escalation and qualified-person boundaries are explicit."
+      ],
+      "assessment_evidence_examples": "Photo/scenario hazard classification; safe response sequence.",
+      "scope_boundary": "Does not certify electrical work, isolation, repair or live measurement.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-01-02",
+      "name": "Multimeter Operation",
+      "working_domain_id": "DOM-ELEC-01",
+      "working_domain_name": "Electrical Safety and Measurement",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-MEAS"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Understand multimeter functions, lead placement, measurement modes, ranges, input terminals and limitations. Practical operation is restricted to safe, supervised low-voltage contexts.",
+      "observable_outcome": "Explain how to select a suitable measurement mode and range for an approved low-voltage exercise, identify common setup errors, and state when measurement is unsafe.",
+      "success_criteria": [
+        "Mode and terminal selection match the quantity.",
+        "Meter limits and ratings are checked before use.",
+        "No current/voltage measurement is attempted on mains or unknown circuits."
+      ],
+      "assessment_evidence_examples": "Meter control identification; supervised battery/circuit measurement plan.",
+      "scope_boundary": "No mains probing, high-energy circuits or unsupervised live measurement.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-01-03",
+      "name": "Units And Measurement",
+      "working_domain_id": "DOM-ELEC-01",
+      "working_domain_name": "Electrical Safety and Measurement",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-MEAS"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Use SI units, prefixes, significant figures and instrument resolution to record electrical measurements clearly.",
+      "observable_outcome": "Record voltage, current, resistance or power with correct units and sensible precision, and explain instrument resolution and uncertainty limits.",
+      "success_criteria": [
+        "Quantity and unit are paired correctly.",
+        "Prefix conversion is accurate.",
+        "Reported precision does not exceed the instrument capability."
+      ],
+      "assessment_evidence_examples": "Convert mA to A; record repeated low-voltage measurements.",
+      "scope_boundary": "Excludes advanced metrology and calibration procedures.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-01-04",
+      "name": "Power And Energy Safety",
+      "working_domain_id": "DOM-ELEC-01",
+      "working_domain_name": "Electrical Safety and Measurement",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-MEAS"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Understand electrical power, energy, heating and stored energy at a conceptual level, including why ratings, isolation and discharge procedures matter.",
+      "observable_outcome": "Interpret a low-voltage component or supply rating and explain the risks of overload, heating and stored energy without attempting unsafe handling.",
+      "success_criteria": [
+        "Power and energy are distinguished.",
+        "Ratings and operating limits are respected.",
+        "Stored-energy hazards trigger safe distance and qualified escalation."
+      ],
+      "assessment_evidence_examples": "Read a low-voltage supply label; explain why a capacitor can retain charge.",
+      "scope_boundary": "Does not teach mains repair, capacitor discharge or high-energy battery servicing.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-02-01",
+      "name": "Voltage Current Resistance",
+      "working_domain_id": "DOM-ELEC-02",
+      "working_domain_name": "Circuit Fundamentals",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-ELEC-FUND-VIR",
+          "title": "Voltage, Current & Resistance",
+          "similarity_score": 0.981
+        }
+      ],
+      "scope_statement": "Model voltage, current and resistance in simple DC circuits, including polarity, reference points and the distinction between series path and potential difference.",
+      "observable_outcome": "Explain the role of voltage, current and resistance in a simple low-voltage circuit and predict qualitative changes when a component or supply changes.",
+      "success_criteria": [
+        "Voltage and current are not conflated.",
+        "Reference direction/polarity is stated.",
+        "Predictions are consistent with a circuit model."
+      ],
+      "assessment_evidence_examples": "Explain current through a series loop; predict effect of changing resistance.",
+      "scope_boundary": "Excludes AC phasors and nonlinear device modelling.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-02-02",
+      "name": "Ohms Law",
+      "working_domain_id": "DOM-ELEC-02",
+      "working_domain_name": "Circuit Fundamentals",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Apply Ohm’s law to appropriate resistive components in valid operating regions, track units and check power or rating constraints.",
+      "observable_outcome": "Calculate one unknown among voltage, current and resistance for a simple resistive circuit and verify that the result is physically plausible.",
+      "success_criteria": [
+        "Equation is rearranged correctly.",
+        "Units are consistent.",
+        "Power and component ratings are checked before interpreting the result."
+      ],
+      "assessment_evidence_examples": "Solve a low-voltage resistor example; identify invalid assumptions for a diode.",
+      "scope_boundary": "Ohm’s law is not treated as a universal linear model for every component.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-02-03",
+      "name": "Series And Parallel Circuits",
+      "working_domain_id": "DOM-ELEC-02",
+      "working_domain_name": "Circuit Fundamentals",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Analyse simple series and parallel resistor networks using equivalent resistance, current/voltage relationships and clear circuit diagrams.",
+      "observable_outcome": "Calculate equivalent resistance and predict branch/series behaviour for a simple low-voltage network.",
+      "success_criteria": [
+        "Series and parallel rules are applied to the correct topology.",
+        "Equivalent resistance is checked against limiting cases.",
+        "Branch quantities are interpreted correctly."
+      ],
+      "assessment_evidence_examples": "Compare two resistor networks; predict what happens when a branch opens.",
+      "scope_boundary": "Excludes complex bridge networks and AC impedance.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-02-04",
+      "name": "Kirchhoff Laws",
+      "working_domain_id": "DOM-ELEC-02",
+      "working_domain_name": "Circuit Fundamentals",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Apply Kirchhoff’s current and voltage laws as conservation statements to simple circuit nodes and loops.",
+      "observable_outcome": "Write and solve current or voltage balance equations for a simple DC network, with signs and reference directions stated consistently.",
+      "success_criteria": [
+        "Node currents balance.",
+        "Loop voltage sum is consistent with chosen signs.",
+        "Equations match the drawn topology."
+      ],
+      "assessment_evidence_examples": "Label a simple two-loop network; solve one unknown using a node equation.",
+      "scope_boundary": "Excludes advanced network theorem methods and high-energy practical work.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-ELEC-02-05",
+      "name": "Circuit Diagrams",
+      "working_domain_id": "DOM-ELEC-02",
+      "working_domain_name": "Circuit Fundamentals",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "canonical_domain_candidates": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Read and produce basic circuit diagrams using standard symbols, reference labels, polarity and connection conventions.",
+      "observable_outcome": "Translate a simple circuit between a physical low-voltage layout and a clear schematic, preserving electrical connectivity.",
+      "success_criteria": [
+        "Symbols and labels are legible and conventional.",
+        "Connections and junctions are unambiguous.",
+        "Diagram matches the intended circuit topology."
+      ],
+      "assessment_evidence_examples": "Redraw a battery-resistor-LED circuit; find a mismatch between schematic and layout.",
+      "scope_boundary": "Excludes PCB layout and complex industrial electrical drawings.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-01-01",
+      "name": "Question Formulation",
+      "working_domain_id": "DOM-RES-01",
+      "working_domain_name": "Question and Search Design",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-INFO"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Turn a broad curiosity into a focused, answerable question with defined concepts, population/context, scope and intended evidence type.",
+      "observable_outcome": "Formulate a research question whose terms, boundaries and answer requirements are explicit enough to guide a search or investigation.",
+      "success_criteria": [
+        "Question is neither too broad nor falsely precise.",
+        "Key terms and scope are defined.",
+        "Question type matches the evidence that could answer it."
+      ],
+      "assessment_evidence_examples": "Convert a broad topic into two focused questions; identify missing operational definitions.",
+      "scope_boundary": "Excludes full experimental protocol design.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-01-02",
+      "name": "Search Operators",
+      "working_domain_id": "DOM-RES-01",
+      "working_domain_name": "Question and Search Design",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-INFO"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Use search operators, phrase matching, Boolean logic, field filters and query syntax to improve retrieval precision and recall.",
+      "observable_outcome": "Construct and iteratively refine a search query using appropriate operators, then explain how each change affects likely result coverage.",
+      "success_criteria": [
+        "Operators are syntactically correct for the platform.",
+        "Query balances precision and recall.",
+        "Search changes are documented and justified."
+      ],
+      "assessment_evidence_examples": "Build a web/database query; compare exact phrase vs broad terms.",
+      "scope_boundary": "Excludes platform-specific database searching beyond operator fundamentals.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-01-03",
+      "name": "Database Searching",
+      "working_domain_id": "DOM-RES-01",
+      "working_domain_name": "Question and Search Design",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-INFO"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Search structured scholarly or specialist databases using fields, controlled vocabulary, filters, citation chaining and exportable search histories.",
+      "observable_outcome": "Run a reproducible database search, record database and query details, and retrieve relevant records without confusing database coverage with universal coverage.",
+      "success_criteria": [
+        "Database scope is appropriate.",
+        "Search fields and filters are recorded.",
+        "Search history can be repeated and limitations stated."
+      ],
+      "assessment_evidence_examples": "Search a scholarly database; trace one relevant citation backward and forward.",
+      "scope_boundary": "Excludes general search engine use and formal systematic-review appraisal.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-01-04",
+      "name": "Search Iteration",
+      "working_domain_id": "DOM-RES-01",
+      "working_domain_name": "Question and Search Design",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-INFO"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Iteratively improve a search by inspecting result quality, identifying vocabulary gaps, testing synonyms and recording why queries change.",
+      "observable_outcome": "Evaluate a result set, diagnose why it is too broad or narrow, and refine the query while retaining a reproducible search log.",
+      "success_criteria": [
+        "Refinement is based on observed result quality.",
+        "Synonyms and alternate terms are tested.",
+        "Search decisions and stopping criteria are documented."
+      ],
+      "assessment_evidence_examples": "Search iteration log; compare two successive query versions.",
+      "scope_boundary": "Excludes arbitrary repeated searching without an information need.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-01-05",
+      "name": "Scope Control",
+      "working_domain_id": "DOM-RES-01",
+      "working_domain_name": "Question and Search Design",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-INFO"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Define inclusion/exclusion boundaries, time windows, populations, languages and source types appropriate to a question.",
+      "observable_outcome": "State a defensible scope for an investigation and apply it consistently to borderline sources or records.",
+      "success_criteria": [
+        "Boundaries are explicit and question-aligned.",
+        "Exclusions are justified rather than convenient.",
+        "Scope limitations are disclosed."
+      ],
+      "assessment_evidence_examples": "Create a search inclusion rule; decide borderline cases and explain why.",
+      "scope_boundary": "Excludes selective exclusion intended to force a preferred conclusion.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-02-01",
+      "name": "Authority And Expertise",
+      "working_domain_id": "DOM-RES-02",
+      "working_domain_name": "Source Evaluation",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-RES-SOURCES-AUTH",
+          "title": "Authority & Expertise",
+          "similarity_score": 0.93
+        }
+      ],
+      "scope_statement": "Evaluate author expertise, institutional role, relevant experience, accountability and corroboration without treating prestige as proof.",
+      "observable_outcome": "Assess whether a source is suitably qualified for a particular claim and identify what independent corroboration is still needed.",
+      "success_criteria": [
+        "Expertise is relevant to the specific claim.",
+        "Institutional authority is checked rather than assumed.",
+        "Conflicts and limits are acknowledged."
+      ],
+      "assessment_evidence_examples": "Compare sources with different expertise; trace an author’s credentials.",
+      "scope_boundary": "Excludes identity-based trust and popularity as substitutes for evidence.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-02-02",
+      "name": "Primary And Secondary Sources",
+      "working_domain_id": "DOM-RES-02",
+      "working_domain_name": "Source Evaluation",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-RES-SOURCES-PRIMARY",
+          "title": "Primary & Secondary Sources",
+          "similarity_score": 0.945
+        }
+      ],
+      "scope_statement": "Distinguish original records/data from interpretations, summaries and tertiary overviews; trace claims toward the closest available source.",
+      "observable_outcome": "Classify a source by its role in the evidence chain and explain when a primary source is necessary or when a secondary synthesis is more appropriate.",
+      "success_criteria": [
+        "Source role is classified accurately.",
+        "Original evidence is not confused with commentary.",
+        "Source choice matches the research question."
+      ],
+      "assessment_evidence_examples": "Trace a statistic to its original dataset; compare a study with a review.",
+      "scope_boundary": "Excludes the assumption that primary sources are always more reliable.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-02-03",
+      "name": "Bias And Incentives",
+      "working_domain_id": "DOM-RES-02",
+      "working_domain_name": "Source Evaluation",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-RES-SOURCES-BIAS",
+          "title": "Bias, Incentives & Conflicts",
+          "similarity_score": 0.667
+        }
+      ],
+      "scope_statement": "Identify incentives, selection effects, conflicts of interest, framing and omitted evidence that may influence a source’s claims.",
+      "observable_outcome": "Describe plausible sources of bias and explain how they could affect the evidence, while separating demonstrated conflict from speculation.",
+      "success_criteria": [
+        "Bias mechanisms are specific and evidence-based.",
+        "Conflict disclosures are interpreted carefully.",
+        "Alternative explanations and omitted data are considered."
+      ],
+      "assessment_evidence_examples": "Compare funding disclosures; identify selection bias in a report.",
+      "scope_boundary": "Excludes dismissing a claim solely because the source has an incentive.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-02-04",
+      "name": "Evidence Quality",
+      "working_domain_id": "DOM-RES-02",
+      "working_domain_name": "Source Evaluation",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "canonical_family_candidates": [
+        {
+          "id": "ATH-FAM-RES-SOURCES-QUALITY",
+          "title": "Evidence Quality & Limitations",
+          "similarity_score": 0.711
+        }
+      ],
+      "scope_statement": "Judge evidence quality using method fit, sample, measurement, uncertainty, consistency, directness and limitations.",
+      "observable_outcome": "Evaluate whether the evidence is strong enough for the claim and calibrate the strength of the conclusion to the evidence.",
+      "success_criteria": [
+        "Method fits the claim.",
+        "Limitations and uncertainty are surfaced.",
+        "Conclusion does not exceed the evidence."
+      ],
+      "assessment_evidence_examples": "Appraise a small study; compare evidence quality across two claims.",
+      "scope_boundary": "Excludes treating citation count or confident language as evidence quality.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-RES-02-05",
+      "name": "Claim Verification",
+      "working_domain_id": "DOM-RES-02",
+      "working_domain_name": "Source Evaluation",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Trace a claim to supporting evidence, inspect the exact passage/data, preserve context and check whether the source actually supports the wording.",
+      "observable_outcome": "Verify a claim by locating its original support and report whether the evidence directly supports, partially supports or fails to support it.",
+      "success_criteria": [
+        "Exact source passage or data is located.",
+        "Context and qualifications are retained.",
+        "Claim wording is revised when support is weaker than stated."
+      ],
+      "assessment_evidence_examples": "Fact-check a numerical claim; trace a quotation to the source document.",
+      "scope_boundary": "Excludes relying on search snippets or copied quotations without context.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-01-01",
+      "name": "Phonetics And Phonology",
+      "working_domain_id": "DOM-LANG-01",
+      "working_domain_name": "Language Foundations",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-LING",
+        "ATH-DOM-LANG-VOCAB"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Understand speech sounds, articulatory features, phoneme contrasts, syllable structure, stress and intonation in a language.",
+      "observable_outcome": "Identify and produce selected sound contrasts and prosodic patterns, using listening evidence and intelligibility rather than accent imitation as the criterion.",
+      "success_criteria": [
+        "Sound distinctions are heard and produced with improving consistency.",
+        "Stress and intonation support meaning.",
+        "Feedback is specific to intelligibility and target features."
+      ],
+      "assessment_evidence_examples": "Minimal-pair listening; record and compare a short phrase.",
+      "scope_boundary": "Excludes medical diagnosis or claims that one accent is inherently superior.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-01-02",
+      "name": "Vocabulary Acquisition",
+      "working_domain_id": "DOM-LANG-01",
+      "working_domain_name": "Language Foundations",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-LING",
+        "ATH-DOM-LANG-VOCAB"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Acquire and retain vocabulary through meaning, morphology, collocation, context, retrieval and spaced encounters.",
+      "observable_outcome": "Use a target word accurately in context, explain its meaning and relevant forms, and retrieve it after a delay without relying only on recognition.",
+      "success_criteria": [
+        "Meaning is precise enough for context.",
+        "Collocation and grammatical behaviour are appropriate.",
+        "Delayed retrieval and productive use are demonstrated."
+      ],
+      "assessment_evidence_examples": "Define-and-use task; contrast near-synonyms in context.",
+      "scope_boundary": "Excludes memorising isolated translations as the sole measure.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-01-03",
+      "name": "Grammar And Syntax",
+      "working_domain_id": "DOM-LANG-01",
+      "working_domain_name": "Language Foundations",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-LING",
+        "ATH-DOM-LANG-VOCAB"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Understand how words combine into phrases and sentences through grammatical categories, agreement, tense/aspect, clause structure and word order.",
+      "observable_outcome": "Parse and produce sentences with appropriate grammatical structure and explain how a change in form affects meaning.",
+      "success_criteria": [
+        "Sentence structure is grammatical for the target variety.",
+        "Agreement and tense/aspect are controlled.",
+        "Errors are diagnosed by structure, not vague intuition alone."
+      ],
+      "assessment_evidence_examples": "Sentence transformation; identify clause relationships.",
+      "scope_boundary": "Excludes prescriptive correction of valid dialect or register variation.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-01-04",
+      "name": "Semantics And Pragmatics",
+      "working_domain_id": "DOM-LANG-01",
+      "working_domain_name": "Language Foundations",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-LING",
+        "ATH-DOM-LANG-VOCAB"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Interpret literal meaning, implication, reference, context, speech acts, politeness and ambiguity in language use.",
+      "observable_outcome": "Explain how context changes interpretation and choose wording that communicates the intended meaning without unintended pragmatic force.",
+      "success_criteria": [
+        "Literal and implied meaning are distinguished.",
+        "Contextual cues are used appropriately.",
+        "Ambiguity or pragmatic risk is identified."
+      ],
+      "assessment_evidence_examples": "Interpret an indirect request; compare wording across formal/informal contexts.",
+      "scope_boundary": "Excludes assuming all pragmatic norms transfer across cultures.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-01-05",
+      "name": "Language Learning Strategies",
+      "working_domain_id": "DOM-LANG-01",
+      "working_domain_name": "Language Foundations",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-LING",
+        "ATH-DOM-LANG-VOCAB"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Select learning strategies for listening, speaking, reading, writing, retrieval, feedback and sustained language exposure.",
+      "observable_outcome": "Plan and carry out a language-learning cycle using comprehensible input, retrieval, output and feedback, then adjust it based on observed gaps.",
+      "success_criteria": [
+        "Strategy matches the current skill gap.",
+        "Practice includes retrieval and meaningful use.",
+        "Progress is checked with delayed performance, not exposure count."
+      ],
+      "assessment_evidence_examples": "Design a weekly practice loop; diagnose why recognition exceeds production.",
+      "scope_boundary": "Excludes guaranteeing fluency through a fixed app or universal schedule.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-02-01",
+      "name": "Reading Comprehension",
+      "working_domain_id": "DOM-LANG-02",
+      "working_domain_name": "English Mastery",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Read informational, narrative and argumentative texts by identifying main ideas, structure, inference, evidence and author purpose.",
+      "observable_outcome": "Summarise a text accurately, distinguish explicit statements from inference, and support an interpretation with relevant textual evidence.",
+      "success_criteria": [
+        "Summary preserves the author’s meaning.",
+        "Inference is separated from direct statement.",
+        "Evidence is quoted or paraphrased in context."
+      ],
+      "assessment_evidence_examples": "Annotate a short article; compare two interpretations with evidence.",
+      "scope_boundary": "Excludes speed reading as a proxy for comprehension.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-02-02",
+      "name": "Precise Writing",
+      "working_domain_id": "DOM-LANG-02",
+      "working_domain_name": "English Mastery",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Write precise English for a defined purpose by choosing accurate vocabulary, clear syntax, coherent structure and appropriate tone.",
+      "observable_outcome": "Produce a concise text that communicates the intended meaning with minimal ambiguity and revise wording where terms or references are imprecise.",
+      "success_criteria": [
+        "Key terms are used accurately.",
+        "Sentence structure supports the intended meaning.",
+        "Ambiguous pronouns, vague claims and unnecessary words are revised."
+      ],
+      "assessment_evidence_examples": "Rewrite a vague paragraph; produce a concise explanation of a process.",
+      "scope_boundary": "Excludes ornate vocabulary or length as substitutes for precision.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-02-03",
+      "name": "Grammar In Use",
+      "working_domain_id": "DOM-LANG-02",
+      "working_domain_name": "English Mastery",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Apply grammar in authentic writing and speech, including tense, agreement, articles, prepositions, clauses and punctuation.",
+      "observable_outcome": "Edit a text for grammatical clarity and explain the rule or meaning distinction behind important corrections.",
+      "success_criteria": [
+        "Corrections preserve intended meaning.",
+        "Recurring patterns are identified.",
+        "Valid stylistic variation is not marked as error."
+      ],
+      "assessment_evidence_examples": "Edit a short text; explain a tense or article choice.",
+      "scope_boundary": "Excludes treating every informal construction as incorrect.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-02-04",
+      "name": "Academic And Technical English",
+      "working_domain_id": "DOM-LANG-02",
+      "working_domain_name": "English Mastery",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Understand and produce English used in academic, scientific and technical settings, including definitions, explanations, cautious claims and discipline-specific vocabulary.",
+      "observable_outcome": "Explain a technical concept in accurate English, define specialist terms and qualify claims in proportion to evidence.",
+      "success_criteria": [
+        "Terms are defined at the reader’s level.",
+        "Causal and quantitative claims are precise.",
+        "Uncertainty and limitations are expressed appropriately."
+      ],
+      "assessment_evidence_examples": "Write a short science explanation; paraphrase a technical source accurately.",
+      "scope_boundary": "Excludes jargon-heavy writing that obscures meaning.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-LANG-02-05",
+      "name": "Rhetoric And Register",
+      "working_domain_id": "DOM-LANG-02",
+      "working_domain_name": "English Mastery",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "canonical_domain_candidates": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Choose register and rhetorical style according to audience, genre, relationship and purpose while maintaining clarity and respect.",
+      "observable_outcome": "Adapt the same message for different audiences or genres and explain which language choices changed and why.",
+      "success_criteria": [
+        "Register matches context.",
+        "Tone is consistent and respectful.",
+        "Meaning remains accurate across versions."
+      ],
+      "assessment_evidence_examples": "Rewrite an explanation for a teacher, peer and public audience.",
+      "scope_boundary": "Excludes stereotyping audiences or assuming one universal formal style.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-01-01",
+      "name": "Listening",
+      "working_domain_id": "DOM-COMM-01",
+      "working_domain_name": "Foundational Communication",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Attend to a speaker’s content, intent and relevant emotional/contextual cues; paraphrase accurately and check understanding before responding.",
+      "observable_outcome": "Listen to a short message, restate its key meaning without distortion, and ask a check question where uncertainty remains.",
+      "success_criteria": [
+        "Paraphrase preserves the speaker’s meaning.",
+        "Interruption and premature judgement are controlled.",
+        "Clarification is used when necessary."
+      ],
+      "assessment_evidence_examples": "Listen-and-paraphrase exercise; identify what was not yet understood.",
+      "scope_boundary": "Excludes pretending to agree or inferring hidden motives as facts.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-01-02",
+      "name": "Clarifying Questions",
+      "working_domain_id": "DOM-COMM-01",
+      "working_domain_name": "Foundational Communication",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Ask open, closed, probing and clarifying questions to resolve ambiguity and obtain relevant information.",
+      "observable_outcome": "Formulate a neutral clarifying question that targets a specific uncertainty without leading the respondent toward a preferred answer.",
+      "success_criteria": [
+        "Question targets a genuine information gap.",
+        "Wording is neutral and understandable.",
+        "Follow-up adapts to the response."
+      ],
+      "assessment_evidence_examples": "Clarify an ambiguous instruction; distinguish open from leading questions.",
+      "scope_boundary": "Excludes interrogation or manipulative questioning.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-01-03",
+      "name": "Concise Expression",
+      "working_domain_id": "DOM-COMM-01",
+      "working_domain_name": "Foundational Communication",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Express a message with the minimum detail needed for accurate understanding, using explicit referents, logical order and audience-appropriate wording.",
+      "observable_outcome": "Deliver a concise explanation or request that preserves all essential information and can be accurately restated by the listener.",
+      "success_criteria": [
+        "Main point is identifiable early.",
+        "Essential context is retained.",
+        "Unnecessary repetition and ambiguous references are removed."
+      ],
+      "assessment_evidence_examples": "30-second summary; convert a long message into a precise instruction.",
+      "scope_boundary": "Excludes oversimplifying safety-critical or nuanced information.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-01-04",
+      "name": "Audience Awareness",
+      "working_domain_id": "DOM-COMM-01",
+      "working_domain_name": "Foundational Communication",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Identify an audience’s likely knowledge, needs, constraints and decision context without stereotyping individuals.",
+      "observable_outcome": "Adapt an explanation to a specified audience by selecting relevant context, terminology and level of detail, then justify those choices.",
+      "success_criteria": [
+        "Audience assumptions are explicit and revisable.",
+        "Terminology and examples fit the audience.",
+        "Important information is not withheld or distorted."
+      ],
+      "assessment_evidence_examples": "Explain a concept to a beginner and an informed peer.",
+      "scope_boundary": "Excludes demographic stereotypes and manipulative tailoring.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-01-05",
+      "name": "Nonverbal Communication",
+      "working_domain_id": "DOM-COMM-01",
+      "working_domain_name": "Foundational Communication",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Interpret and use facial expression, gesture, posture, eye contact, distance and vocal cues with cultural and situational sensitivity.",
+      "observable_outcome": "Describe observable nonverbal cues cautiously and choose a context-appropriate delivery behaviour without treating any single cue as proof of intent.",
+      "success_criteria": [
+        "Observation is separated from interpretation.",
+        "Cultural/contextual variation is acknowledged.",
+        "Behaviour supports rather than replaces verbal clarity."
+      ],
+      "assessment_evidence_examples": "Video observation log; practice a clear, comfortable presentation stance.",
+      "scope_boundary": "Excludes lie detection or confident personality inference from body language.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-02-01",
+      "name": "Sentence Clarity",
+      "working_domain_id": "DOM-COMM-02",
+      "working_domain_name": "Writing and Explanation",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-WRITE",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Construct sentences with clear subjects, actions, referents and logical relationships; reduce ambiguity and unnecessary syntactic load.",
+      "observable_outcome": "Revise a sentence so a reader can identify who did what, under which conditions and with what qualification.",
+      "success_criteria": [
+        "Agent and action are clear.",
+        "Pronouns and modifiers have unambiguous references.",
+        "Complexity is appropriate to the reader and purpose."
+      ],
+      "assessment_evidence_examples": "Edit ambiguous sentences; convert passive/nominalised phrasing when clarity improves.",
+      "scope_boundary": "Excludes simplistic bans on passive voice or complex sentences.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-02-02",
+      "name": "Paragraph Structure",
+      "working_domain_id": "DOM-COMM-02",
+      "working_domain_name": "Writing and Explanation",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-WRITE",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Organise paragraphs around a controlling idea, logical progression, supporting detail and a clear relation to the larger message.",
+      "observable_outcome": "Write a coherent paragraph whose topic, support and transition make the reasoning easy to follow.",
+      "success_criteria": [
+        "One controlling idea is evident.",
+        "Evidence/examples support rather than distract.",
+        "Transitions reveal the logical relation between sentences."
+      ],
+      "assessment_evidence_examples": "Reorder a fragmented paragraph; write a claim-support-explanation paragraph.",
+      "scope_boundary": "Excludes formulaic paragraph templates where another structure serves better.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-02-03",
+      "name": "Structured Explanation",
+      "working_domain_id": "DOM-COMM-02",
+      "working_domain_name": "Writing and Explanation",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-WRITE",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Explain a concept or process in a sequence that connects prior knowledge, definitions, causal/mechanical steps and a check for understanding.",
+      "observable_outcome": "Deliver a structured explanation that a listener can accurately summarise or apply to a simple new example.",
+      "success_criteria": [
+        "Terms are introduced before use.",
+        "Steps or causal links are logically ordered.",
+        "A check/example reveals whether the explanation transferred."
+      ],
+      "assessment_evidence_examples": "One-minute explanation; explain a process with an example and boundary case.",
+      "scope_boundary": "Excludes persuasive argument where explanation alone is not the goal.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-02-04",
+      "name": "Technical Writing",
+      "working_domain_id": "DOM-COMM-02",
+      "working_domain_name": "Writing and Explanation",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-WRITE",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Write technical instructions and explanations with precise terminology, assumptions, procedures, warnings and verification steps.",
+      "observable_outcome": "Produce a technical description or procedure that a competent reader can follow or inspect without guessing critical steps.",
+      "success_criteria": [
+        "Audience and prerequisites are stated.",
+        "Steps and expected results are explicit.",
+        "Warnings and limitations are placed where relevant."
+      ],
+      "assessment_evidence_examples": "Write a setup guide; document a small program or circuit.",
+      "scope_boundary": "Excludes replacing qualified safety procedures with informal advice.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    },
+    {
+      "working_skill_family_id": "SF-COMM-02-05",
+      "name": "Editing And Revision",
+      "working_domain_id": "DOM-COMM-02",
+      "working_domain_name": "Writing and Explanation",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "canonical_domain_candidates": [
+        "ATH-DOM-COMM-WRITE",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_family_candidates": [],
+      "scope_statement": "Revise communication for accuracy, structure, tone, completeness and audience fit using a deliberate edit cycle.",
+      "observable_outcome": "Use a checklist or feedback to identify and improve substantive and surface-level weaknesses while preserving the author’s intended meaning.",
+      "success_criteria": [
+        "Revision addresses meaning before cosmetic polish.",
+        "Changes are justified against purpose and reader.",
+        "Final text is proofread for avoidable errors."
+      ],
+      "assessment_evidence_examples": "Before/after revision with change rationale; peer-edit a short explanation.",
+      "scope_boundary": "Excludes editing that changes a source’s meaning or fabricates claims.",
+      "prerequisite_candidates": [],
+      "prerequisite_decision": "not_assigned_in_family_specification_batch; dependency review must use explicit evidence and must not invent gates",
+      "status": "draft_specification_authored_review_required",
+      "subject_review_status": "not_reviewed",
+      "learner_validation_status": "not_validated",
+      "authoring_note": "Authored from the working family title and parent-domain context; candidate mappings are not canonical approvals."
+    }
+  ],
+  "governance": {
+    "working_ids_preserved": true,
+    "no_canonical_family_ids_minted": true,
+    "no_prerequisite_edges_created": true,
+    "subject_review_required": true,
+    "learner_validation_required": true,
+    "scope_outcomes_are_draft": true
+  }
+}

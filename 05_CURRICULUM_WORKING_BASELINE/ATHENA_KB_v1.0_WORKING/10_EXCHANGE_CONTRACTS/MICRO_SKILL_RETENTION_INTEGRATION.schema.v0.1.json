@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+  "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+  "type": "object",
+  "required": [
+    "registry",
+    "version",
+    "status",
+    "record_count",
+    "profile_counts",
+    "policy",
+    "records"
+  ],
+  "properties": {
+    "registry": {
+      "const": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "record_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "profile_counts": {
+      "type": "object"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "micro_skill_id",
+          "skill_name",
+          "retention_profile",
+          "profile_definition",
+          "delayed_check",
+          "lapse_and_relearning",
+          "maintenance_milestone",
+          "evidence_to_record",
+          "safety_notes",
+          "status",
+          "schedule_policy"
+        ],
+        "properties": {
+          "micro_skill_id": {
+            "type": "string",
+            "pattern": "^MS-[0-9]{2}-[0-9]{3}$"
+          },
+          "skill_name": {
+            "type": "string"
+          },
+          "retention_profile": {
+            "enum": [
+              "D1",
+              "D2",
+              "D3",
+              "D4"
+            ]
+          },
+          "profile_definition": {
+            "type": "string"
+          },
+          "delayed_check": {
+            "type": "string"
+          },
+          "lapse_and_relearning": {
+            "type": "string"
+          },
+          "maintenance_milestone": {
+            "type": "string"
+          },
+          "evidence_to_record": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "safety_notes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "schedule_policy": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "additionalProperties": true
+  }
+}

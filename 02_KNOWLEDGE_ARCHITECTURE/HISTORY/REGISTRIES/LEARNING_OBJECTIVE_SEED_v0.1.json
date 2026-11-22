@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1.0",
+  "registry_status": "illustrative_draft",
+  "objectives": [
+    {
+      "id": "ATH-OBJ-MATH-BASELINE-DIAGNOSIS",
+      "object_type": "learning_objective",
+      "title": "Demonstrate current mathematical baseline",
+      "summary": "Identify current strengths and gaps across selected foundational mathematics topics.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "parent_id": null,
+      "content_version": 1,
+      "primary_outcome_class": "INTERPRET",
+      "observable_action": "solve and explain",
+      "target_object": "selected number, fraction, ratio, algebra and graph-reading tasks",
+      "conditions": [
+        "Complete independently under recorded diagnostic conditions.",
+        "Mark confidence separately for selected answers."
+      ],
+      "success_criteria": [
+        "Item-level accuracy is recorded.",
+        "Selected methods are explained clearly enough to identify misconceptions.",
+        "Confidence is recorded separately from correctness."
+      ],
+      "assessment_methods": [
+        "problem_performance",
+        "explanation"
+      ],
+      "evidence_dimensions": [
+        "ACCURACY",
+        "EXPLANATION",
+        "JUDGEMENT"
+      ],
+      "prerequisite_ids": [],
+      "source_refs": [],
+      "misconceptions": [
+        "A single diagnostic score represents complete mathematical ability."
+      ],
+      "review_notes": "Draft diagnostic objective; it routes learning and is not a gate or mastery claim."
+    }
+  ]
+}

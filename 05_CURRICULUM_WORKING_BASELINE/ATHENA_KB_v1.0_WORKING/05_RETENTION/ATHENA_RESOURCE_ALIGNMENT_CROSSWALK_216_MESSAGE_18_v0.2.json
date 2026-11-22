@@ -1,0 +1,3042 @@
+{
+  "registry": "ATHENA_RESOURCE_ALIGNMENT_CROSSWALK_216",
+  "schema_version": "0.1.0",
+  "status": "candidate_resource_alignment_message18_review_required",
+  "module_count": 216,
+  "mapped_module_count": 215,
+  "unmapped_module_count": 1,
+  "discipline_count": 18,
+  "mapping_policy": "Mappings are candidate relevance links, not proof that the source fully teaches the module or that the module is complete. Direct means topic fit appears close; supplementary means supporting context only; safety_guardrail means safety boundary/escalation reference, not instruction to perform hazardous work.",
+  "baseline_id_policy": "Baseline module IDs use BASE-* and are not accepted by RESOURCE_RECORD.schema.json linked_object_ids. To preserve schema conformance, resource records link to ATH-DISC-* only; this separate crosswalk carries BASE-* candidate links. Do not change the schema or mint canonical module IDs silently.",
+  "rows": [
+    {
+      "module_id": "BASE-ENG-001",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Problem decomposition",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "direct",
+          "alignment_rationale": "CS50x explicitly teaches problem solving both with and without code; use its problem-decomposition and correctness framing."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-002",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Algorithms and pseudocode",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "direct",
+          "alignment_rationale": "CS50x includes a dedicated algorithms week and problem-solving exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-003",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Variables and data types",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-PYTHON-TUTORIAL",
+          "fit": "direct",
+          "alignment_rationale": "Python tutorial covers variables, numbers, text and core language structures; learner needs a gentle programming introduction first."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-004",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Control flow",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "direct",
+          "alignment_rationale": "CS50x teaches programming foundations in C and Python; select the relevant control-flow material."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-005",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Functions and contracts",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "related",
+          "alignment_rationale": "CS50x includes programming and software design; its full course is more advanced than a first functions lesson."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-006",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Collections and data structures",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "direct",
+          "alignment_rationale": "CS50x includes a dedicated data-structures week."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-007",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Debugging and testing",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "related",
+          "alignment_rationale": "CS50x emphasizes correctness, design and style and uses problem sets; it is not a standalone testing curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-008",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Files and command line",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "related",
+          "alignment_rationale": "CS50x uses a developer environment and command-line workflow; supplement with platform-specific documentation."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-009",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Version control foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-PRO-GIT",
+          "fit": "direct",
+          "alignment_rationale": "Pro Git is a dedicated version-control text; use selected introductory chapters."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-010",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Web and HTTP foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-MDN-WEB-DEV",
+          "fit": "direct",
+          "alignment_rationale": "MDN Learn Web Development provides structured web foundations; use its HTTP/web platform material as a guided reference."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-011",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Relational data foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+          "fit": "direct",
+          "alignment_rationale": "CS50x includes a dedicated SQL week and database work."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ENG-012",
+      "discipline_id": "ATH-DISC-ENG",
+      "module_title": "Security and reliability basics",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-CISCO-NETACAD",
+          "fit": "related",
+          "alignment_rationale": "Cisco offers introductory cybersecurity learning; this is a broad security context, not a complete software reliability course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-001",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Problem and customer discovery",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENLEARN-SWOT",
+          "fit": "direct",
+          "alignment_rationale": "Introductory case-analysis and SWOT practice supports customer/market problem framing; use real customer evidence separately."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-002",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Market research foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENLEARN-SWOT",
+          "fit": "direct",
+          "alignment_rationale": "Introductory case-analysis and SWOT practice supports customer/market problem framing; use real customer evidence separately."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-003",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Value proposition",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENLEARN-SWOT",
+          "fit": "direct",
+          "alignment_rationale": "Introductory case-analysis and SWOT practice supports customer/market problem framing; use real customer evidence separately."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-004",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Offer and pricing basics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENLEARN-SWOT",
+          "fit": "direct",
+          "alignment_rationale": "Introductory case-analysis and SWOT practice supports customer/market problem framing; use real customer evidence separately."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-005",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Ethical sales conversations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-USAGOV-START-BUSINESS",
+          "fit": "supplementary",
+          "alignment_rationale": "General business planning and operating context; all legal, funding and tax examples require Bangladesh-specific replacement."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-006",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Marketing and positioning",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-USAGOV-START-BUSINESS",
+          "fit": "supplementary",
+          "alignment_rationale": "General business planning and operating context; all legal, funding and tax examples require Bangladesh-specific replacement."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-007",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Funnel and measurement",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-USAGOV-START-BUSINESS",
+          "fit": "supplementary",
+          "alignment_rationale": "General business planning and operating context; all legal, funding and tax examples require Bangladesh-specific replacement."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-008",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Bookkeeping and cash flow",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-USAGOV-START-BUSINESS",
+          "fit": "supplementary",
+          "alignment_rationale": "General business planning and operating context; all legal, funding and tax examples require Bangladesh-specific replacement."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-009",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Unit economics",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENSTAX-BUSINESS-TEXTS",
+          "fit": "related",
+          "alignment_rationale": "OpenStax Entrepreneurship and Introduction to Business provide business-model and business-finance context; unit-economics calculations still need ATHENA-authored practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-010",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Operations and fulfilment",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENSTAX-BUSINESS-TEXTS",
+          "fit": "related",
+          "alignment_rationale": "Introduction to Business and Organizational Behavior provide management/operations context; local fulfilment practices need Bangladesh-specific examples."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-011",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Customer support and retention",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENSTAX-BUSINESS-TEXTS",
+          "fit": "direct",
+          "alignment_rationale": "Introduction to Business explicitly covers customer satisfaction; apply the material to service recovery and retention scenarios."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BIZ-012",
+      "discipline_id": "ATH-DISC-BIZ",
+      "module_title": "Business ethics and strategy",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BIZ-OPENSTAX-BUSINESS-TEXTS",
+          "fit": "direct",
+          "alignment_rationale": "OpenStax lists a dedicated Business Ethics textbook with case studies and real-world application scenarios."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-001",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Electrical safety",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-ESF-DIY-SAFETY",
+          "fit": "safety_guardrail",
+          "alignment_rationale": "Safety-only reference; UK legal details are not transferable to Bangladesh."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-002",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Units and circuit quantities",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Introductory electrical quantities and measurement concepts; practical tasks must remain low-voltage and supervised."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-003",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Measurement instruments",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Introductory electrical quantities and measurement concepts; practical tasks must remain low-voltage and supervised."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-004",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Circuit diagrams",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Introductory electrical quantities and measurement concepts; practical tasks must remain low-voltage and supervised."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-005",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Ohm’s law",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Introductory electrical quantities and measurement concepts; practical tasks must remain low-voltage and supervised."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-006",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Series and parallel networks",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Introductory electrical quantities and measurement concepts; practical tasks must remain low-voltage and supervised."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-007",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Resistors and LEDs",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "All About Circuits is a free electronics textbook with introductory component and circuit coverage; select resistor/LED chapters."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-008",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Diode behaviour",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Use the textbook diode/semiconductor material; compare device polarity and datasheet limits."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-009",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Transistor switching",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Use transistor and switching chapters; only simulation or supervised extra-low-voltage circuits are permitted."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-010",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Capacitors and time response",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Use capacitor and time-response chapters; verify component ratings and polarity."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-011",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Breadboard prototyping",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "direct",
+          "alignment_rationale": "Use introductory circuit-building/breadboard material; keep work extra-low-voltage and supervised."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ELEC-012",
+      "discipline_id": "ATH-DISC-ELEC",
+      "module_title": "Digital logic and microcontrollers",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+          "fit": "related",
+          "alignment_rationale": "The textbook provides digital-electronics foundations; microcontroller programming requires additional dedicated resources."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-001",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Money numeracy",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+          "fit": "direct",
+          "alignment_rationale": "Age-aware foundational money decisions; adapt examples to Bangladesh and guardian-supported financial practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-002",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Personal budgeting",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+          "fit": "direct",
+          "alignment_rationale": "Age-aware foundational money decisions; adapt examples to Bangladesh and guardian-supported financial practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-003",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Cash flow",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+          "fit": "direct",
+          "alignment_rationale": "Age-aware foundational money decisions; adapt examples to Bangladesh and guardian-supported financial practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-004",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Interest and compounding",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+          "fit": "direct",
+          "alignment_rationale": "Age-aware foundational money decisions; adapt examples to Bangladesh and guardian-supported financial practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-005",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Inflation and purchasing power",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+          "fit": "direct",
+          "alignment_rationale": "Age-aware foundational money decisions; adapt examples to Bangladesh and guardian-supported financial practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-006",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Accounting foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+          "fit": "direct",
+          "alignment_rationale": "Age-aware foundational money decisions; adapt examples to Bangladesh and guardian-supported financial practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-007",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Financial statements",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+          "fit": "supplementary",
+          "alignment_rationale": "Conceptual investing, compounding and risk education; US-specific products and regulations must not be applied locally."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-008",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Risk and uncertainty",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+          "fit": "supplementary",
+          "alignment_rationale": "Conceptual investing, compounding and risk education; US-specific products and regulations must not be applied locally."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-009",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Markets and institutions",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+          "fit": "supplementary",
+          "alignment_rationale": "Conceptual investing, compounding and risk education; US-specific products and regulations must not be applied locally."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-010",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Diversification and allocation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+          "fit": "supplementary",
+          "alignment_rationale": "Conceptual investing, compounding and risk education; US-specific products and regulations must not be applied locally."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-011",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Fraud and consumer protection",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+          "fit": "supplementary",
+          "alignment_rationale": "Conceptual investing, compounding and risk education; US-specific products and regulations must not be applied locally."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-FIN-012",
+      "discipline_id": "ATH-DISC-FIN",
+      "module_title": "Economic reasoning",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+          "fit": "supplementary",
+          "alignment_rationale": "Conceptual investing, compounding and risk education; US-specific products and regulations must not be applied locally."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-001",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Biological organization",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-002",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Cell and tissue basics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-003",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Anatomical orientation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-004",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Homeostasis",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-005",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Nervous system basics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-006",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Cardiorespiratory function",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-007",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Musculoskeletal function",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+          "fit": "direct",
+          "alignment_rationale": "Anatomy and physiology reference for body systems; college-level sections require prerequisite selection."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-008",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Nutrition and digestion",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-WHO-HEALTHY-DIET",
+          "fit": "direct",
+          "alignment_rationale": "Population-level nutrition principles; not an individual prescription."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-009",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Sleep and recovery",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-CDC-ADOLESCENT-SLEEP",
+          "fit": "direct",
+          "alignment_rationale": "CDC summarizes adolescent sleep duration and its relationship to attention, health and safety; use as general education, not individual diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-010",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Exercise adaptation",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "CDC provides age-group physical-activity recommendations and activity categories; it is not a personalized training plan."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-011",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Health information literacy",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-BODY-MEDLINEPLUS-HEALTH-INFO",
+          "fit": "direct",
+          "alignment_rationale": "MedlinePlus teaches how to evaluate health websites, authorship, funding, evidence, dates and privacy."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-BODY-012",
+      "discipline_id": "ATH-DISC-BODY",
+      "module_title": "Human variation and ethics",
+      "mapping_status": "resource_gap_unresearched",
+      "resource_links": [],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-001",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Psychology as an evidence discipline",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-002",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Attention and cognitive load",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-003",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Memory systems",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-004",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Learning and behaviour",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-005",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Emotion and regulation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-006",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Motivation and habits",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-007",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Biases and heuristics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-008",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Decision-making",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-009",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Social psychology",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-010",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Communication and conflict",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "Introductory evidence-based psychology text covers this topic area; avoid diagnosis or self-diagnosis."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-011",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Strategic interaction",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "direct",
+          "alignment_rationale": "OpenStax Psychology 2e includes social psychology, group processes and situational influences relevant to strategic interaction."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PSY-012",
+      "discipline_id": "ATH-DISC-PSY",
+      "module_title": "Systems and causal reasoning",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+          "fit": "related",
+          "alignment_rationale": "OpenStax Psychology 2e includes research methods and social psychology; systems thinking and causal modelling need additional practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-001",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Visual perception",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-002",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Composition and framing",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-003",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Hierarchy and information design",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-004",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Colour foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-005",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Typography foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-006",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Layout systems",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-007",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Brand foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-008",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Interface states",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-009",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Accessibility foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-010",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Photography foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-011",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Critique and iteration",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-AEST-012",
+      "discipline_id": "ATH-DISC-AEST",
+      "module_title": "Design systems",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+          "fit": "direct",
+          "alignment_rationale": "Design guidance on typography, hierarchy, spacing and layout; heuristic rather than universal standard."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-001",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "File and folder literacy",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-MICROSOFT-FILE-EXPLORER",
+          "fit": "direct",
+          "alignment_rationale": "Microsoft explains file/folder navigation, organization, copy/move and file extensions in Windows; platform-specific."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-002",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Notes and knowledge capture",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+          "fit": "direct",
+          "alignment_rationale": "Google Workspace Learning Center includes Drive, Docs and Keep-related workflows for capturing and organizing information."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-003",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Task capture and triage",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+          "fit": "related",
+          "alignment_rationale": "Google Workspace training includes Tasks and Calendar; task triage principles still require ATHENA-authored practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-004",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Planning and estimation",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+          "fit": "related",
+          "alignment_rationale": "Calendar and Tasks support scheduling and planning; estimation methods are not fully taught by this product guide."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-005",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Time and attention management",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+          "fit": "related",
+          "alignment_rationale": "Calendar and Tasks support time planning; attention management requires additional learning and self-observation."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-006",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Typing and text entry",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-TYPINGCLUB",
+          "fit": "direct",
+          "alignment_rationale": "TypingClub offers structured touch-typing lessons and posture guidance; select a keyboard-based practice mode."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-007",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Terminal foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-PRO-GIT",
+          "fit": "supplementary",
+          "alignment_rationale": "Pro Git introduces command-line interaction but is not a general terminal course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-008",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Git workflow",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-PRO-GIT",
+          "fit": "direct",
+          "alignment_rationale": "Core Git version-control concepts, history and command-line workflows."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-009",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Spreadsheet foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+          "fit": "direct",
+          "alignment_rationale": "Google Workspace training includes Sheets tutorials and exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-010",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Documents and communication tools",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+          "fit": "direct",
+          "alignment_rationale": "Google Workspace training includes Docs and related communication tools."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-011",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Automation foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-GOOGLE-APPS-SCRIPT",
+          "fit": "direct",
+          "alignment_rationale": "Google Apps Script samples include quickstarts, codelabs and automation solutions; test with non-sensitive data and review permissions."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-WORK-012",
+      "discipline_id": "ATH-DISC-WORK",
+      "module_title": "Workflow improvement",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-WORK-PRO-GIT",
+          "fit": "supplementary",
+          "alignment_rationale": "Versioning and collaboration practices can support workflow improvement; not a general productivity framework."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-001",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Observation and visual analysis",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+          "fit": "supplementary",
+          "alignment_rationale": "Expert-authored visual and historical reference supports observation and context, not step-by-step drawing instruction."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-002",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Line and mark control",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "direct",
+          "alignment_rationale": "The tool has line and stroke-control exercises with immediate on-device feedback."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-003",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Shape and form",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "direct",
+          "alignment_rationale": "The tool includes shapes, ellipses and form exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-004",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Proportion and measurement",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "direct",
+          "alignment_rationale": "The tool includes overall proportion, midpoint, angle and line-ratio exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-005",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Perspective foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "direct",
+          "alignment_rationale": "The tool includes perspective cubes and spatial-positioning exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-006",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Value and light",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "direct",
+          "alignment_rationale": "The tool includes value and sphere-value exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-007",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Colour foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "direct",
+          "alignment_rationale": "The tool includes colour matching and value/color exercises."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-008",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Composition",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+          "fit": "supplementary",
+          "alignment_rationale": "Expert-authored visual and historical reference supports observation and context, not step-by-step drawing instruction."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-009",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Figure and anatomy foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+          "fit": "related",
+          "alignment_rationale": "The tool includes anatomy models and body-part studies; it is not a complete figure-drawing or anatomy curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-010",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Visual storytelling",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+          "fit": "supplementary",
+          "alignment_rationale": "Expert-authored visual and historical reference supports observation and context, not step-by-step drawing instruction."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-011",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Reference and study practice",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+          "fit": "supplementary",
+          "alignment_rationale": "Expert-authored visual and historical reference supports observation and context, not step-by-step drawing instruction."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ART-012",
+      "discipline_id": "ATH-DISC-ART",
+      "module_title": "Critique and deliberate practice",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+          "fit": "supplementary",
+          "alignment_rationale": "Expert-authored visual and historical reference supports observation and context, not step-by-step drawing instruction."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-001",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Movement literacy",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "Age-group public-health activity guidance; not an individual programme."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-002",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Warm-up and readiness",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "Age-group public-health activity guidance; not an individual programme."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-003",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Mobility and flexibility",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "Age-group public-health activity guidance; not an individual programme."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-004",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Coordination and balance",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "Age-group public-health activity guidance; not an individual programme."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-005",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Strength foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "Age-group public-health activity guidance; not an individual programme."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-006",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Aerobic conditioning",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+          "fit": "direct",
+          "alignment_rationale": "Age-group public-health activity guidance; not an individual programme."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-007",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Speed and acceleration",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+          "fit": "direct",
+          "alignment_rationale": "Youth football athleticism and technical-tactical balance; adapt to individual readiness and coaching context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-008",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Agility and deceleration",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+          "fit": "direct",
+          "alignment_rationale": "Youth football athleticism and technical-tactical balance; adapt to individual readiness and coaching context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-009",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Sport skill acquisition",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+          "fit": "direct",
+          "alignment_rationale": "Youth football athleticism and technical-tactical balance; adapt to individual readiness and coaching context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-010",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Recovery and load management",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+          "fit": "direct",
+          "alignment_rationale": "Youth football athleticism and technical-tactical balance; adapt to individual readiness and coaching context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-011",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Training design",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+          "fit": "direct",
+          "alignment_rationale": "Youth football athleticism and technical-tactical balance; adapt to individual readiness and coaching context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-ATH-012",
+      "discipline_id": "ATH-DISC-ATH",
+      "module_title": "Performance analysis",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+          "fit": "direct",
+          "alignment_rationale": "Youth football athleticism and technical-tactical balance; adapt to individual readiness and coaching context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-001",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Vocal health",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-002",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Breath coordination",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-003",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Pitch foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-004",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Rhythm and timing",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-005",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Listening and ear training",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-006",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Articulation and diction",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-007",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Resonance and tone",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-008",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Phrasing and expression",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-009",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Practice design",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-010",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Recording and self-review",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-011",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Stagecraft foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-PERF-012",
+      "discipline_id": "ATH-DISC-PERF",
+      "module_title": "Repertoire and interpretation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+          "fit": "direct",
+          "alignment_rationale": "Course scope includes this vocal/performance skill; course is paid and not a required resource."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-001",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Number sense",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-002",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Arithmetic operations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-003",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Fractions and decimals",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-004",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Percentages and proportional change",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-005",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Ratios and rates",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-006",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Negative numbers and number lines",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-007",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Algebraic expressions",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-008",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Equations and inequalities",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-009",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Exponents, powers and roots",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-010",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Geometry, spatial reasoning and measurement",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-011",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Coordinate graphs, relations and functions",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-MATH-012",
+      "discipline_id": "ATH-DISC-MATH",
+      "module_title": "Mathematical reasoning, problem solving and proof",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-MATH-KHAN-MATH",
+          "fit": "direct",
+          "alignment_rationale": "Self-paced practice pathway for foundational mathematics; map level to diagnostic evidence."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-001",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Digital safety and privacy",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-NIST-800-50R1",
+          "fit": "supplementary",
+          "alignment_rationale": "Programme-design reference supports awareness, privacy and evaluation concepts; not a learner lab."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-002",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Operating system foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-CISCO-LINUX-ESSENTIALS",
+          "fit": "related",
+          "alignment_rationale": "Linux Essentials introduces an operating system and command-line workflow; general OS concepts need broader coverage."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-003",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Network foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-CISCO-NETACAD",
+          "fit": "direct",
+          "alignment_rationale": "Cisco Networking Academy offers a beginner Networking Basics course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-004",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Authentication and authorization",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-NIST-800-50R1",
+          "fit": "supplementary",
+          "alignment_rationale": "Programme-design reference supports awareness, privacy and evaluation concepts; not a learner lab."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-005",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Permissions and least privilege",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-NIST-800-50R1",
+          "fit": "supplementary",
+          "alignment_rationale": "Programme-design reference supports awareness, privacy and evaluation concepts; not a learner lab."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-006",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Backup and recovery",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-GOOGLE-DRIVE-RESTORE",
+          "fit": "related",
+          "alignment_rationale": "Google documents one cloud-file recovery mechanism; this does not replace a complete backup, restore-test and offline-copy strategy."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-007",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Shell and Linux basics",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-CISCO-LINUX-ESSENTIALS",
+          "fit": "direct",
+          "alignment_rationale": "Linux Essentials includes command-line and virtual-machine practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-008",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Web security basics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-OWASP-TOP10-2025",
+          "fit": "direct",
+          "alignment_rationale": "Web application risk awareness; defensive learning only and practice restricted to authorised labs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-009",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Secure coding foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-OWASP-TOP10-2025",
+          "fit": "direct",
+          "alignment_rationale": "Web application risk awareness; defensive learning only and practice restricted to authorised labs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-010",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Threat modelling",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-OWASP-TOP10-2025",
+          "fit": "direct",
+          "alignment_rationale": "Web application risk awareness; defensive learning only and practice restricted to authorised labs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-011",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Defensive monitoring",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-NIST-800-50R1",
+          "fit": "supplementary",
+          "alignment_rationale": "Programme-design reference supports awareness, privacy and evaluation concepts; not a learner lab."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-CYBER-012",
+      "discipline_id": "ATH-DISC-CYBER",
+      "module_title": "Authorized lab practice",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-CYBER-OWASP-TOP10-2025",
+          "fit": "direct",
+          "alignment_rationale": "Web application risk awareness; defensive learning only and practice restricted to authorised labs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-001",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Language learning strategy",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-002",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Sound and phonology",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-003",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Vocabulary acquisition",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-004",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Grammar as structure",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-005",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Reading comprehension",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-006",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Listening comprehension",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-007",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Writing foundations",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-BRITISH-COUNCIL-WRITING",
+          "fit": "direct",
+          "alignment_rationale": "British Council writing lessons provide CEFR-level model texts, writing tips and interactive practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-008",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Speaking and interaction",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-009",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Bangla-English technical bridging",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-BANGLA-ACCESSIBLE-DICTIONARY",
+          "fit": "related",
+          "alignment_rationale": "The government dictionary supports Bengali-English lookup; technical meanings must be checked in discipline-specific sources and context."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-010",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Rhetoric and argument",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+          "fit": "related",
+          "alignment_rationale": "Purdue OWL provides general writing and argument resources; rhetoric and live argumentation need additional practice."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-011",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Second-language pathway design",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LANG-012",
+      "discipline_id": "ATH-DISC-LANG",
+      "module_title": "Linguistic awareness",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+          "fit": "supplementary",
+          "alignment_rationale": "German-specific multilingual practice example; not a generic second-language curriculum."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-001",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Question formation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-002",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Search strategy",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-003",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Source credibility",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-004",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Claims and evidence",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-005",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Citation and provenance",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-006",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Bias and misinformation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-007",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Research design basics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-008",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Data collection and quality",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-009",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Evidence synthesis",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-010",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Research writing",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-011",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Reproducibility",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-RES-012",
+      "discipline_id": "ATH-DISC-RES",
+      "module_title": "Research ethics",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-RES-UNESCO-MIL",
+          "fit": "direct",
+          "alignment_rationale": "Information and media literacy framework covers research, source evaluation, misinformation, privacy and intellectual property."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-001",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Personal safety and boundaries",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+          "fit": "safety_guardrail",
+          "alignment_rationale": "Electrical hazard recognition and escalation; observe/report only, never attempt repairs."
+        },
+        {
+          "resource_id": "ATH-RES-INDEP-DDM-AWARE",
+          "fit": "related",
+          "alignment_rationale": "The Department of Disaster Management AWARE portal exposes Bangladesh hazard and emergency information; it complements but does not replace an individualized, guardian-approved emergency plan."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-002",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Hygiene and self-care systems",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-BFSA-FOOD-SAFETY",
+          "fit": "related",
+          "alignment_rationale": "BFSA search result includes handwashing and hygiene in food handling; it does not cover all personal-care routines and page-level verification remains pending."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-003",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Cooking foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-USDA-FOOD-SAFETY",
+          "fit": "direct",
+          "alignment_rationale": "Food hygiene and foodborne illness prevention; adapt temperature specifics to local guidance."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-004",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Food safety",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-USDA-FOOD-SAFETY",
+          "fit": "direct",
+          "alignment_rationale": "Food hygiene and foodborne illness prevention; adapt temperature specifics to local guidance."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-005",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Cleaning and household systems",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+          "fit": "safety_guardrail",
+          "alignment_rationale": "Electrical hazard recognition and escalation; observe/report only, never attempt repairs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-006",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Clothing and garment care",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-ACCC-CARE-LABELS",
+          "fit": "related",
+          "alignment_rationale": "ACCC explains common garment-care symbols; Australian regulatory context does not transfer to Bangladesh."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-007",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Money administration",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-CAB-CONSUMER-RIGHTS",
+          "fit": "related",
+          "alignment_rationale": "CAB provides consumer-rights context including fair information and service standards; it is not a personal-budgeting or legal-advice course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-008",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Navigation and travel planning",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-BANGLADESH-RAILWAY",
+          "fit": "direct",
+          "alignment_rationale": "Official Bangladesh Railway site provides schedules, station information and fares for rail-trip planning."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-009",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Basic tools and repairs",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+          "fit": "safety_guardrail",
+          "alignment_rationale": "Electrical hazard recognition and escalation; observe/report only, never attempt repairs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-010",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Household troubleshooting",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+          "fit": "safety_guardrail",
+          "alignment_rationale": "Electrical hazard recognition and escalation; observe/report only, never attempt repairs."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-011",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "First-aid literacy",
+      "mapping_status": "candidate_resource_linked_review_required",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-BDRCS-FIRST-AID",
+          "fit": "direct",
+          "alignment_rationale": "BDRCS describes a provider-led first-aid training course; course enrollment and hands-on assessment must be confirmed with a guardian and BDRCS."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-INDEP-012",
+      "discipline_id": "ATH-DISC-INDEP",
+      "module_title": "Emergency planning",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+          "fit": "safety_guardrail",
+          "alignment_rationale": "Electrical hazard recognition and escalation; observe/report only, never attempt repairs."
+        },
+        {
+          "resource_id": "ATH-RES-INDEP-DDM-AWARE",
+          "fit": "direct",
+          "alignment_rationale": "The official DDM portal lists hazard-warning and emergency-service information relevant to local emergency planning; verify current details before use."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-001",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Self-management",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-002",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Reliability and ownership",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-003",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Listening and understanding",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-004",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Teamwork foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-005",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Goal setting",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-006",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Feedback and coaching",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-007",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Delegation",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-008",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Project coordination",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-009",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Conflict resolution",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-010",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Decision and accountability",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-011",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Meeting and coordination hygiene",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-LEAD-012",
+      "discipline_id": "ATH-DISC-LEAD",
+      "module_title": "Ethical leadership",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+          "fit": "direct",
+          "alignment_rationale": "Leadership challenges, collaboration, inclusion and prioritisation; apply critically to small-team contexts."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-001",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Audience and purpose",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-002",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Active listening",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+          "fit": "direct",
+          "alignment_rationale": "Writing reference supports grammar, argument, academic writing and visual rhetoric; adapt conventions to audience."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-003",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Clarity and concision",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-004",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Message structure",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-005",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Explanation and teaching",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+          "fit": "direct",
+          "alignment_rationale": "Writing reference supports grammar, argument, academic writing and visual rhetoric; adapt conventions to audience."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-006",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Questioning skills",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+          "fit": "direct",
+          "alignment_rationale": "Writing reference supports grammar, argument, academic writing and visual rhetoric; adapt conventions to audience."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-007",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Writing for purpose",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-008",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Argument and reasoning",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-009",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Persuasion and ethical influence",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-010",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Feedback and disagreement",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-011",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Public speaking foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+          "fit": "direct",
+          "alignment_rationale": "Writing reference supports grammar, argument, academic writing and visual rhetoric; adapt conventions to audience."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    },
+    {
+      "module_id": "BASE-COMM-012",
+      "discipline_id": "ATH-DISC-COMM",
+      "module_title": "Negotiation foundations",
+      "mapping_status": "candidate_resource_linked",
+      "resource_links": [
+        {
+          "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+          "fit": "supplementary",
+          "alignment_rationale": "Business report and recommendation writing practice; not a complete interpersonal communication course."
+        }
+      ],
+      "review_state": "draft_mapping_requires_content_owner_review"
+    }
+  ],
+  "message_18_note": "21 new resource records were added from publisher, government, nonprofit and tool pages checked on 2026-11-17. Candidate links are scope-matched and explicitly labelled direct or related; no source is treated as expert-approved or fully reviewed. Five modules remain unmapped."
+}

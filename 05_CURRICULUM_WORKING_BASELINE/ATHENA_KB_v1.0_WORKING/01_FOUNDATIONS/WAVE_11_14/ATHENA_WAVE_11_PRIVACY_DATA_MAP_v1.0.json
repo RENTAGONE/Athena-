@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "status": "design_policy_not_legal_compliance_certification",
+  "records": [
+    {
+      "data_class": "Core learning records",
+      "examples": [
+        "module progress",
+        "attempt timestamps",
+        "criterion-level evidence",
+        "user-created notes"
+      ],
+      "purpose": "Deliver learning continuity and evidence-linked adaptation",
+      "default_storage": "local encrypted/private storage where available",
+      "retention": "user-controlled; provide export and deletion workflow",
+      "sharing": "off by default; no secondary use without separate consent",
+      "sensitivity": "ordinary personal data; context may increase sensitivity"
+    },
+    {
+      "data_class": "Schedule and routine records",
+      "examples": [
+        "school blocks",
+        "events",
+        "locations typed by user",
+        "actual start/end times"
+      ],
+      "purpose": "User-directed planning and time estimation",
+      "default_storage": "on-device first; sync only if user enables it",
+      "retention": "user-controlled; history supports undo and estimation but can be pruned",
+      "sharing": "never share with peers, advertisers or project collaborators by default",
+      "sensitivity": "can reveal movements, relationships and daily patterns; treat as high sensitivity"
+    },
+    {
+      "data_class": "Health and performance records",
+      "examples": [
+        "pain notes",
+        "sleep reflections",
+        "exercise performance",
+        "body metrics"
+      ],
+      "purpose": "Only the specific user-requested learning or safety function",
+      "default_storage": "local-only by default; collect the minimum",
+      "retention": "shortest practical period; explicit delete/export",
+      "sharing": "no coach/guardian/AI sharing without deliberate user action except emergency/legal duty handled by humans",
+      "sensitivity": "sensitive; no diagnosis or trait inference"
+    },
+    {
+      "data_class": "Identity and contact data",
+      "examples": [
+        "name",
+        "phone",
+        "email",
+        "school",
+        "exact location"
+      ],
+      "purpose": "Only where essential to an explicitly requested feature",
+      "default_storage": "separate from learning evidence; avoid collection where possible",
+      "retention": "delete when no longer needed",
+      "sharing": "explicit audience and purpose; never public by default",
+      "sensitivity": "high; exact location and contact details should be excluded from analytics"
+    },
+    {
+      "data_class": "Images, audio and video",
+      "examples": [
+        "face",
+        "voice",
+        "classroom recording",
+        "project demonstration"
+      ],
+      "purpose": "Evidence only when modality is necessary or user chooses it",
+      "default_storage": "local/private; no automatic upload",
+      "retention": "user-set expiry and deletion",
+      "sharing": "item-level permission; child assent plus guardian approval where required",
+      "sensitivity": "high; biometric identification or public dissemination is out of scope"
+    },
+    {
+      "data_class": "Credentials and secrets",
+      "examples": [
+        "passwords",
+        "API keys",
+        "session tokens",
+        "recovery codes"
+      ],
+      "purpose": "Not required by ATHENA learning records",
+      "default_storage": "do not collect or store",
+      "retention": "never retain; if accidentally submitted, advise immediate rotation/revocation",
+      "sharing": "prohibited",
+      "sensitivity": "critical"
+    },
+    {
+      "data_class": "Human-subject research data",
+      "examples": [
+        "interview transcripts",
+        "survey responses",
+        "photos of participants"
+      ],
+      "purpose": "Only approved learning/research activity with consent and minimisation",
+      "default_storage": "separate project store; anonymise/pseudonymise",
+      "retention": "defined before collection; delete on schedule",
+      "sharing": "restricted to named approved people",
+      "sensitivity": "high; minors and sensitive topics require additional safeguards"
+    },
+    {
+      "data_class": "AI interaction metadata",
+      "examples": [
+        "whether AI helped",
+        "which aid was used",
+        "user-approved feedback reference"
+      ],
+      "purpose": "Evidence provenance and transparency",
+      "default_storage": "store minimal metadata, not full prompt by default",
+      "retention": "user-controlled and linked to evidence record",
+      "sharing": "not used to infer intelligence, diagnosis or personality",
+      "sensitivity": "contextual; avoid prompt dumps containing private data"
+    }
+  ]
+}

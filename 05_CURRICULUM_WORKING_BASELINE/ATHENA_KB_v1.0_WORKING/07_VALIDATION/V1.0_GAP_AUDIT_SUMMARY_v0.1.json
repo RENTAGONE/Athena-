@@ -1,0 +1,39 @@
+{
+  "audit": "ATHENA v1.0 structural gap audit",
+  "version": "0.1-working",
+  "date": "2026-11-17",
+  "micro_skills": {
+    "candidate_count": 155,
+    "unique_ids": 155,
+    "ids_in_protocol_documents": 155,
+    "fuller_stepwise_drafts": 155,
+    "compact_outlines_requiring_expansion": 0,
+    "missing_protocol_ids": 0,
+    "expert_reviewed": 0,
+    "learner_validated": 0,
+    "authoring_coverage_status": "complete_structural_audit_passed_review_pending"
+  },
+  "ontology": {
+    "canonical_domains": 113,
+    "canonical_skill_family_clusters": 40,
+    "working_domains": 145,
+    "working_skill_family_entries": 733,
+    "canonical_micro_skill_records": 20,
+    "working_micro_skill_candidates": 155,
+    "semantic_reconciliation": "not_done"
+  },
+  "curriculum": {
+    "disciplines": 18,
+    "baseline_modules": 216,
+    "deepening_batch_01_units": 18,
+    "integrated_projects": 24
+  },
+  "critical_gaps": [
+    "domain_and_skill_family_ontology_reconciliation",
+    "actual_application_import_export_rollback_test",
+    "canonical_prerequisite_graph_validation",
+    "micro_skill_subject_and_safety_review",
+    "micro_skill_learner_validation"
+  ],
+  "release_decision": "not_ready"
+}

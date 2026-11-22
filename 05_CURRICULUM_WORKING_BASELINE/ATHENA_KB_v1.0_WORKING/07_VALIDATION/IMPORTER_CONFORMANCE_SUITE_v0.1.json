@@ -1,0 +1,197 @@
+{
+  "suite": "ATHENA_IMPORTER_CONFORMANCE_SUITE",
+  "version": "0.1",
+  "status": "test_specification_not_executed",
+  "source_contract": "02_KNOWLEDGE_ARCHITECTURE/EXCHANGE_AND_STORAGE_MAPPING_v0.2.md and versioned exchange schemas",
+  "default_transaction_policy": "atomic_all_or_nothing",
+  "case_count": 22,
+  "cases": [
+    {
+      "id": "IMP-001",
+      "name": "Valid new record",
+      "input_condition": "A schema-valid new exchange record with an unused ATHENA code and valid references.",
+      "expected_outcome": "preview_then_commit",
+      "acceptance_assertion": "Create one object; allocate internal UUID and register code only at commit; preserve provenance.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-002",
+      "name": "Valid update",
+      "input_condition": "A valid update to an existing code with expected content version/hash.",
+      "expected_outcome": "preview_then_commit",
+      "acceptance_assertion": "Show field-level diff and impact; update atomically; preserve stable code and append audit event.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-003",
+      "name": "Idempotent re-import",
+      "input_condition": "Import the exact same package twice using stable package identity and client_ref.",
+      "expected_outcome": "second_import_noop",
+      "acceptance_assertion": "Second import creates no duplicate object/edge and reports idempotent no-op.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-004",
+      "name": "Conflicting duplicate code",
+      "input_condition": "Two records in one package or registry target the same stable code with different semantic content.",
+      "expected_outcome": "reject_conflict",
+      "acceptance_assertion": "Reject with both record paths; never silently choose last-write-wins.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-005",
+      "name": "Dangling reference",
+      "input_condition": "A record points to an ATHENA code absent from active and permitted tombstone registries.",
+      "expected_outcome": "reject_dangling_reference",
+      "acceptance_assertion": "Precise JSON path and unresolved code returned; no partial writes.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-006",
+      "name": "Tombstoned reference",
+      "input_condition": "A record references a code marked tombstoned or superseded.",
+      "expected_outcome": "reject_or_require_explicit_migration",
+      "acceptance_assertion": "Do not silently recreate or redirect; require explicit migration/alias rule.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-007",
+      "name": "Schema-required field missing",
+      "input_condition": "A learning unit omits a required field such as objective_ids or completion_criteria.",
+      "expected_outcome": "reject_schema",
+      "acceptance_assertion": "Return schema path and requirement; no mutation.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-008",
+      "name": "Invalid lifecycle enum",
+      "input_condition": "A record supplies an unknown status such as complete_forever.",
+      "expected_outcome": "reject_schema",
+      "acceptance_assertion": "Reject unsupported enum and provide allowed values.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-009",
+      "name": "Hard prerequisite without justification",
+      "input_condition": "A relationship uses gating=hard but lacks a meaningful hard_gate_justification or is not PREREQUISITE_FOR/required.",
+      "expected_outcome": "reject_semantic_validation",
+      "acceptance_assertion": "Reject before graph commit; explain hard-gate invariant.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-010",
+      "name": "Hard prerequisite cycle",
+      "input_condition": "A->B, B->C and C->A are all hard prerequisite edges.",
+      "expected_outcome": "reject_graph_cycle",
+      "acceptance_assertion": "Return the cycle path; no edges or records committed.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-011",
+      "name": "Non-gating relationship cycle",
+      "input_condition": "A related_to B and B related_to A, or a transfer cycle, is present.",
+      "expected_outcome": "allow_if_type_valid",
+      "acceptance_assertion": "Permit valid non-prerequisite cycles; do not impose DAG constraint on the whole semantic graph.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-012",
+      "name": "Duplicate client_ref",
+      "input_condition": "Two edge operations in one package reuse the same package-scoped client_ref with different endpoints or types.",
+      "expected_outcome": "reject_package_conflict",
+      "acceptance_assertion": "Reject ambiguous correlation key; client_ref is not a permanent ATH-EDGE code.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-013",
+      "name": "AI attempts to mint permanent ID",
+      "input_condition": "Incoming AI-authored payload supplies a new internal UUID or invents a permanent ATHENA code outside the approved code registry.",
+      "expected_outcome": "reject_or_ignore_untrusted_id",
+      "acceptance_assertion": "Application allocates internal UUID and approved stable code at commit; AI cannot mint either.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-014",
+      "name": "Partial package failure",
+      "input_condition": "A package contains several valid records and one invalid record.",
+      "expected_outcome": "atomic_rollback",
+      "acceptance_assertion": "No subset is committed unless a separately approved partial-import mode exists; default is all-or-nothing.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-015",
+      "name": "Evidence append-only",
+      "input_condition": "An update attempts to overwrite or delete an earlier evidence record.",
+      "expected_outcome": "reject_mutation_append_new",
+      "acceptance_assertion": "Preserve prior evidence; corrections create a superseding/correction event with provenance.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-016",
+      "name": "Export/import round trip",
+      "input_condition": "Export a dataset containing records, edges, aliases, tombstones, provenance and content hashes, then import into a clean test store.",
+      "expected_outcome": "round_trip_equivalent",
+      "acceptance_assertion": "Stable codes, edge semantics, tombstones and provenance remain equivalent; internal UUIDs may differ.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-017",
+      "name": "Checksum or archive tampering",
+      "input_condition": "A package checksum does not match the bytes or the archive contains a modified manifest.",
+      "expected_outcome": "reject_integrity",
+      "acceptance_assertion": "Reject before parsing/commit and preserve the prior database hash.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-018",
+      "name": "Schema-version migration dry run",
+      "input_condition": "Import a supported older schema version with an explicit migration path.",
+      "expected_outcome": "preview_migration",
+      "acceptance_assertion": "Show deterministic migration diff, warnings and rollback point; require user approval before commit.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-019",
+      "name": "Unknown relationship type",
+      "input_condition": "A relationship uses an unregistered relation_type.",
+      "expected_outcome": "reject_schema",
+      "acceptance_assertion": "Reject unknown relation type; never coerce to RELATED_TO.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-020",
+      "name": "New code collision at commit",
+      "input_condition": "Two concurrent transactions attempt to register the same new stable code.",
+      "expected_outcome": "serialize_or_reject_conflict",
+      "acceptance_assertion": "One atomic commit wins; the other re-previews or fails cleanly. Never create duplicate code mappings.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-021",
+      "name": "Cross-discipline ownership mismatch",
+      "input_condition": "A record owner discipline conflicts with the discipline/domain relationship constraints.",
+      "expected_outcome": "reject_semantic_validation",
+      "acceptance_assertion": "Show owner and referenced discipline path; require corrected ownership or an explicit shared-scope rule.",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "IMP-022",
+      "name": "User rejects preview",
+      "input_condition": "A valid package is previewed but the user declines.",
+      "expected_outcome": "no_commit",
+      "acceptance_assertion": "No data changes; discard staged IDs and preserve current database hash.",
+      "execution_status": "not_run"
+    }
+  ],
+  "global_invariants": [
+    "No AI-created internal UUIDs.",
+    "No silent stable-code minting or reassignment.",
+    "No last-write-wins for conflicting content.",
+    "Evidence history is append-only.",
+    "Only hard prerequisite edges must be acyclic.",
+    "Non-prerequisite semantic relationships may form cycles.",
+    "Preview is non-mutating.",
+    "Rejected or failed transactions leave the prior database hash unchanged.",
+    "Export/import preserves semantic content, provenance, aliases and tombstones."
+  ]
+}

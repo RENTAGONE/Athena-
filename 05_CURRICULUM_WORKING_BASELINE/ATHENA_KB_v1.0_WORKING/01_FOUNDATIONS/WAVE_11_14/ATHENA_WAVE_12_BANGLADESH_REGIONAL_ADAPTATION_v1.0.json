@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "status": "draft_for_local_review",
+  "items": [
+    {
+      "area": "Currency",
+      "baseline": "Bangladeshi taka (BDT/৳) for Bangladesh examples.",
+      "rule": "Store numeric amount and ISO currency code separately; never hardcode currency into numeric value."
+    },
+    {
+      "area": "Units",
+      "baseline": "SI units by default; include common local units only with explicit conversion.",
+      "rule": "Show unit beside every measurement; preserve exact source units and conversion formula."
+    },
+    {
+      "area": "Date and time",
+      "baseline": "Asia/Dhaka, 24-hour display as user preference; store timestamps with timezone/offset.",
+      "rule": "Do not infer date from device locale alone; handle DST/time-zone changes even if Bangladesh currently uses one national time zone."
+    },
+    {
+      "area": "Language",
+      "baseline": "Bangla (bn) and English (en) supported; user can switch per content.",
+      "rule": "Keep stable IDs and technical source names; do not translate code, API identifiers or standard acronyms."
+    },
+    {
+      "area": "Emergency services",
+      "baseline": "Bangladesh official numbers are sourced but must be rechecked before release. Current evidence in this research pass: 999 general emergency; 102 Fire Service; 1098 Child Helpline.",
+      "rule": "Display jurisdiction, source, last-verified date and offline warning. Verify all numbers with official agencies before release."
+    },
+    {
+      "area": "Financial examples",
+      "baseline": "Bangladesh regulator/consumer sources and BDT examples.",
+      "rule": "No individual investment advice; legal/tax content requires current Bangladesh professional review."
+    },
+    {
+      "area": "Education",
+      "baseline": "Avoid assuming one curriculum, school calendar or exam structure.",
+      "rule": "Make curriculum mapping configurable; examples may reference NCTB only when a specific match is verified."
+    },
+    {
+      "area": "Public services and law",
+      "baseline": "Bangladesh official government sources preferred.",
+      "rule": "Do not assert law from a draft, news summary or third-party tracker; record exact act, section, gazette and verification date."
+    },
+    {
+      "area": "Connectivity",
+      "baseline": "Phone-first, intermittent mobile data, optional offline mode.",
+      "rule": "No core task requires video streaming, always-on sync or large downloads."
+    },
+    {
+      "area": "Local examples",
+      "baseline": "Use familiar Bangladesh contexts without stereotyping or assuming all users live in Dhaka.",
+      "rule": "Allow region-specific examples and avoid exposing exact home/school locations."
+    }
+  ]
+}

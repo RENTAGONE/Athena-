@@ -1,0 +1,638 @@
+{
+  "registry_id": "ATHENA_CROSS_DISCIPLINE_INTEGRATION_MAP_MESSAGE_14",
+  "version": "0.1.0",
+  "production_message": 14,
+  "status": "draft_hypotheses_for_semantic_review",
+  "policy": {
+    "edge_semantics": "These are transfer hypotheses, not canonical prerequisites or proof of competence.",
+    "gating": "No transfer edge creates an automatic hard prerequisite.",
+    "evidence_contract": "A transfer claim requires the learner to use the source capability in a distinct target context, explain what changed, identify limits and produce an observable artefact or performance.",
+    "approval": "Promote only after discipline-owner review and a successful learner task; app owner approval is required before canonical import."
+  },
+  "discipline_nodes": [
+    {
+      "code": "ENG",
+      "name": "Engineering & Computer Science"
+    },
+    {
+      "code": "BIZ",
+      "name": "Business & Entrepreneurship"
+    },
+    {
+      "code": "ELEC",
+      "name": "Electronics & Hardware"
+    },
+    {
+      "code": "FIN",
+      "name": "Finance & Economics"
+    },
+    {
+      "code": "BODY",
+      "name": "Body Science & Anatomy"
+    },
+    {
+      "code": "PSY",
+      "name": "Psychology & Strategy"
+    },
+    {
+      "code": "AEST",
+      "name": "Aesthetics & Visual Design"
+    },
+    {
+      "code": "WORK",
+      "name": "Workflow & Productivity"
+    },
+    {
+      "code": "ART",
+      "name": "Artistic Development"
+    },
+    {
+      "code": "ATH",
+      "name": "Athletics & Physical Performance"
+    },
+    {
+      "code": "PERF",
+      "name": "Vocal & Performance Arts"
+    },
+    {
+      "code": "MATH",
+      "name": "Mathematics & Scientific Reasoning"
+    },
+    {
+      "code": "CYBER",
+      "name": "Cybersecurity & Digital Infrastructure"
+    },
+    {
+      "code": "LANG",
+      "name": "Language & Linguistic Intelligence"
+    },
+    {
+      "code": "RES",
+      "name": "Research & Information Intelligence"
+    },
+    {
+      "code": "INDEP",
+      "name": "Practical Independence"
+    },
+    {
+      "code": "LEAD",
+      "name": "Leadership & Management"
+    },
+    {
+      "code": "COMM",
+      "name": "Communication & Rhetoric"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "ATH-XFER-M14-001",
+      "source_discipline": "MATH",
+      "target_discipline": "ENG",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "mathematical",
+      "mechanism": "Quantitative modelling supports algorithm analysis, complexity intuition and performance measurement.",
+      "non_equivalence_boundary": "A mathematical model is not executable software; implementation constraints and testing remain separate competencies.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-002",
+      "source_discipline": "MATH",
+      "target_discipline": "ELEC",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "mathematical",
+      "mechanism": "Ratios, equations, graphs and measurement uncertainty support circuit prediction and analysis.",
+      "non_equivalence_boundary": "Correct algebra does not establish electrical safety or component knowledge.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-003",
+      "source_discipline": "MATH",
+      "target_discipline": "FIN",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "quantitative",
+      "mechanism": "Probability, statistics and percentage reasoning support risk, inflation and unit-economics analysis.",
+      "non_equivalence_boundary": "A numerical model cannot predict markets with certainty or substitute for financial judgement.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-004",
+      "source_discipline": "MATH",
+      "target_discipline": "RES",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "methodological",
+      "mechanism": "Statistics, sampling and uncertainty support research design and interpretation.",
+      "non_equivalence_boundary": "Statistical significance does not by itself establish causation, importance or source credibility.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-005",
+      "source_discipline": "MATH",
+      "target_discipline": "ATH",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "quantitative",
+      "mechanism": "Measurement, rates and basic statistics support training logs and performance analysis.",
+      "non_equivalence_boundary": "Performance metrics do not capture all tactical, technical or health dimensions.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-006",
+      "source_discipline": "ENG",
+      "target_discipline": "CYBER",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "technical",
+      "mechanism": "Software design and system knowledge support secure development and defensive analysis.",
+      "non_equivalence_boundary": "Building software does not confer authorization to test systems; scope and permission are independent gates.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-007",
+      "source_discipline": "ENG",
+      "target_discipline": "WORK",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "technical",
+      "mechanism": "Version control, automation and structured workflows support reproducible work.",
+      "non_equivalence_boundary": "Tool proficiency does not guarantee sound prioritisation or operational judgement.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-008",
+      "source_discipline": "ENG",
+      "target_discipline": "BIZ",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "technical",
+      "mechanism": "Product engineering enables prototypes and service delivery.",
+      "non_equivalence_boundary": "A working prototype does not prove demand, product-market fit or commercial viability.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-009",
+      "source_discipline": "ELEC",
+      "target_discipline": "MATH",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "applied",
+      "mechanism": "Circuit models create applied contexts for algebra, functions and measurement.",
+      "non_equivalence_boundary": "Circuit behaviour also depends on physical components, tolerances and safe setup.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-010",
+      "source_discipline": "ELEC",
+      "target_discipline": "ENG",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "technical",
+      "mechanism": "Embedded systems combine hardware, software and constrained computation.",
+      "non_equivalence_boundary": "Code simulation alone cannot validate physical hardware behaviour.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-011",
+      "source_discipline": "BIZ",
+      "target_discipline": "FIN",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "operational",
+      "mechanism": "Customer and offer decisions connect to costs, pricing, cash flow and risk.",
+      "non_equivalence_boundary": "Revenue is not profit; a business model is not a personal investment recommendation.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-012",
+      "source_discipline": "BIZ",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "communication",
+      "mechanism": "Customer discovery and ethical sales require listening, explanation and negotiation.",
+      "non_equivalence_boundary": "Persuasion cannot justify deception, pressure or unsupported product claims.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-013",
+      "source_discipline": "BIZ",
+      "target_discipline": "RES",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "methodological",
+      "mechanism": "Market discovery benefits from careful sampling and evidence evaluation.",
+      "non_equivalence_boundary": "A small convenience sample cannot establish broad market demand.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-014",
+      "source_discipline": "FIN",
+      "target_discipline": "MATH",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "quantitative",
+      "mechanism": "Financial statements and risk analysis use arithmetic, ratios and statistics.",
+      "non_equivalence_boundary": "A calculation is only as reliable as assumptions, data quality and context.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-015",
+      "source_discipline": "FIN",
+      "target_discipline": "INDEP",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "applied",
+      "mechanism": "Budgeting and consumer judgement support everyday money decisions.",
+      "non_equivalence_boundary": "Personal finance learning is not authority to make unsupervised high-risk transactions.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-016",
+      "source_discipline": "BODY",
+      "target_discipline": "ATH",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "scientific",
+      "mechanism": "Anatomy, physiology, biomechanics and recovery inform training principles.",
+      "non_equivalence_boundary": "General physiology knowledge is not diagnosis, treatment or individualized medical clearance.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-017",
+      "source_discipline": "BODY",
+      "target_discipline": "RES",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "methodological",
+      "mechanism": "Health information literacy uses evidence appraisal and uncertainty reasoning.",
+      "non_equivalence_boundary": "A single study or online claim is not a personal diagnosis.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-018",
+      "source_discipline": "ATH",
+      "target_discipline": "PSY",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "conceptual",
+      "mechanism": "Attention, motivation and decision science can inform practice and performance reflection.",
+      "non_equivalence_boundary": "Psychological concepts do not diagnose athletes or explain every performance outcome.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-019",
+      "source_discipline": "ATH",
+      "target_discipline": "MATH",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "quantitative",
+      "mechanism": "Training logs use rates, workload summaries and comparisons.",
+      "non_equivalence_boundary": "Load metrics require context and must not override pain, fatigue or safety signals.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-020",
+      "source_discipline": "PSY",
+      "target_discipline": "WORK",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "methodological",
+      "mechanism": "Learning science can inform planning, retrieval and feedback routines.",
+      "non_equivalence_boundary": "Productivity routines are hypotheses to test, not universal prescriptions.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-021",
+      "source_discipline": "PSY",
+      "target_discipline": "LEAD",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "conceptual",
+      "mechanism": "Social and decision psychology can inform team communication and group decisions.",
+      "non_equivalence_boundary": "Group behaviour is context-dependent; psychological labels should not be used to manipulate people.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-022",
+      "source_discipline": "PSY",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "communication",
+      "mechanism": "Audience, cognition and emotion concepts can inform clearer communication.",
+      "non_equivalence_boundary": "Audience modelling cannot replace listening to actual people or respecting consent.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-023",
+      "source_discipline": "AEST",
+      "target_discipline": "ENG",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "design",
+      "mechanism": "Interface design and visual hierarchy inform usable software experiences.",
+      "non_equivalence_boundary": "Visual polish does not establish functionality, accessibility or security.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-024",
+      "source_discipline": "AEST",
+      "target_discipline": "ART",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "design",
+      "mechanism": "Design systems and visual communication connect to composition, form and critique.",
+      "non_equivalence_boundary": "Applied design constraints and expressive art goals are related but not identical.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-025",
+      "source_discipline": "AEST",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "communication",
+      "mechanism": "Information design supports audience comprehension and message structure.",
+      "non_equivalence_boundary": "A readable graphic can still communicate false or misleading information.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-026",
+      "source_discipline": "ART",
+      "target_discipline": "PERF",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "creative",
+      "mechanism": "Visual storytelling and performance both use timing, expression and audience interpretation.",
+      "non_equivalence_boundary": "Visual composition skills do not establish vocal technique or performance readiness.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-027",
+      "source_discipline": "ART",
+      "target_discipline": "AEST",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "creative",
+      "mechanism": "Observation, composition and visual craft support design production.",
+      "non_equivalence_boundary": "Artistic intent and user/task constraints may require different evaluation criteria.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-028",
+      "source_discipline": "PERF",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "communication",
+      "mechanism": "Voice, diction and expressive delivery support spoken communication.",
+      "non_equivalence_boundary": "Performance quality is not equivalent to argument quality or factual accuracy.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-029",
+      "source_discipline": "PERF",
+      "target_discipline": "LANG",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "linguistic",
+      "mechanism": "Listening, phonology and speech production can support language learning.",
+      "non_equivalence_boundary": "Accent imitation is not a measure of language competence or intelligence.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-030",
+      "source_discipline": "LANG",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "linguistic",
+      "mechanism": "Vocabulary, grammar and discourse knowledge support communication across contexts.",
+      "non_equivalence_boundary": "Knowing language forms does not ensure audience awareness or ethical communication.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-031",
+      "source_discipline": "LANG",
+      "target_discipline": "RES",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "linguistic",
+      "mechanism": "Reading strategies and terminology support source comprehension.",
+      "non_equivalence_boundary": "Fluent reading does not guarantee source reliability or correct interpretation.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-032",
+      "source_discipline": "RES",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "methodological",
+      "mechanism": "Evidence synthesis and uncertainty support accurate explanation and argument.",
+      "non_equivalence_boundary": "Communication skill cannot repair weak evidence or missing provenance.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-033",
+      "source_discipline": "RES",
+      "target_discipline": "LEAD",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "methodological",
+      "mechanism": "Evidence review supports transparent decisions and post-action learning.",
+      "non_equivalence_boundary": "Evidence rarely removes value judgements or stakeholder trade-offs.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-034",
+      "source_discipline": "WORK",
+      "target_discipline": "INDEP",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "operational",
+      "mechanism": "Planning, checklists and information management support reliable household and personal tasks.",
+      "non_equivalence_boundary": "A workflow cannot replace adult supervision or qualified help for hazards.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-035",
+      "source_discipline": "WORK",
+      "target_discipline": "LEAD",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "operational",
+      "mechanism": "Coordination tools and review cycles support team execution.",
+      "non_equivalence_boundary": "Process compliance is not leadership quality or accountability.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-036",
+      "source_discipline": "INDEP",
+      "target_discipline": "BODY",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "applied",
+      "mechanism": "Food hygiene, sleep and basic health literacy connect to safe daily routines.",
+      "non_equivalence_boundary": "Self-management does not replace medical advice or adult support for health concerns.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-037",
+      "source_discipline": "INDEP",
+      "target_discipline": "ELEC",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "safety",
+      "mechanism": "Hazard awareness supports recognising when household electrical work must stop and be escalated.",
+      "non_equivalence_boundary": "Recognition is not permission or competence to repair mains electricity.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-038",
+      "source_discipline": "LEAD",
+      "target_discipline": "BIZ",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "operational",
+      "mechanism": "Planning, delegation and accountability support small-team delivery.",
+      "non_equivalence_boundary": "Leadership process does not prove customer value or ethical business conduct.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-039",
+      "source_discipline": "LEAD",
+      "target_discipline": "COMM",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "communication",
+      "mechanism": "Feedback, listening and conflict handling depend on clear respectful communication.",
+      "non_equivalence_boundary": "Communication frameworks do not guarantee agreement or eliminate power differences.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-040",
+      "source_discipline": "COMM",
+      "target_discipline": "LANG",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "linguistic",
+      "mechanism": "Audience-aware explanation depends on language choice, register and comprehension.",
+      "non_equivalence_boundary": "Translation is not automatically culturally or technically equivalent.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-041",
+      "source_discipline": "COMM",
+      "target_discipline": "PSY",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "communication",
+      "mechanism": "Attention and cognitive load concepts can improve message structure.",
+      "non_equivalence_boundary": "Simplification must not distort evidence or patronise the audience.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-042",
+      "source_discipline": "CYBER",
+      "target_discipline": "BIZ",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "risk",
+      "mechanism": "Threat modelling and privacy awareness inform responsible product operations.",
+      "non_equivalence_boundary": "Security controls cannot guarantee safety or justify collecting unnecessary user data.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-043",
+      "source_discipline": "CYBER",
+      "target_discipline": "WORK",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "risk",
+      "mechanism": "Access control, backups and safe device practices support reliable workflows.",
+      "non_equivalence_boundary": "A checklist cannot replace technical testing or incident response expertise.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-M14-044",
+      "source_discipline": "CYBER",
+      "target_discipline": "INDEP",
+      "relation_type": "SUPPORTS_TRANSFER",
+      "transfer_type": "safety",
+      "mechanism": "Privacy and scam awareness support safer personal digital behaviour.",
+      "non_equivalence_boundary": "Awareness does not make every platform or transaction safe.",
+      "status": "draft",
+      "review_state": "needs_discipline_review",
+      "evidence_refs": []
+    }
+  ],
+  "non_transfer_rules": [
+    {
+      "rule": "No mastery inheritance",
+      "statement": "Competence in one discipline never automatically awards competence in another."
+    },
+    {
+      "rule": "No prerequisite by association",
+      "statement": "A transfer relationship is not a hard prerequisite; hard gates require task necessity and a documented safety or conceptual rationale."
+    },
+    {
+      "rule": "No context-free transfer",
+      "statement": "Every transfer claim must name the changed context, constraints, vocabulary and domain-specific knowledge still required."
+    },
+    {
+      "rule": "No proxy evidence",
+      "statement": "A polished artefact, high score in a neighbouring discipline or AI explanation cannot substitute for direct evidence of the target capability."
+    },
+    {
+      "rule": "No unsafe escalation",
+      "statement": "Safety-sensitive transfer is limited to recognition, explanation and supervised practice unless qualified instruction/certification is explicitly required."
+    }
+  ]
+}

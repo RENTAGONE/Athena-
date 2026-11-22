@@ -1,0 +1,104 @@
+{
+  "registry": "ATHENA_PROJECT_CLASS_CONTRACT_WAVE_09",
+  "version": "1.0",
+  "status": "draft",
+  "exactly_three_classes": [
+    {
+      "id": "personal_use",
+      "name": "Personal-use projects",
+      "purpose": "Solve an actual problem, need or friction in the learner's own life, study, sport, creative workflow, household role or personal system.",
+      "success_test": "The learner's original problem is measurably or demonstrably better addressed; the learner can explain the change and its limits.",
+      "must_have": [
+        "A real learner-owned problem observed or stated before solution design",
+        "A defined user (normally the learner) and context",
+        "A baseline or current-state description",
+        "A practical artefact, process or demonstrated change",
+        "A review of whether the solution actually helps"
+      ],
+      "must_not_require": [
+        "Sale or monetisation",
+        "Public release or audience approval",
+        "A client or external customer",
+        "A polished product or commercial viability"
+      ],
+      "valid_stop_conditions": [
+        "Problem turns out to be unimportant",
+        "Existing solution is already adequate",
+        "Trial causes extra burden or risk",
+        "A smaller non-digital change solves it better"
+      ]
+    },
+    {
+      "id": "product_business_foundation",
+      "name": "Product/business-foundation projects",
+      "purpose": "Build something useful with a credible path to later improvement, packaging, distribution and potential sale, while testing assumptions before committing resources.",
+      "success_test": "A bounded product/service prototype or operational foundation is tested against a real task, with evidence about problem fit, quality, delivery, cost, capacity, risk and next decision.",
+      "must_have": [
+        "A defined user/problem hypothesis",
+        "A useful artefact or service prototype",
+        "Testable acceptance criteria and failure cases",
+        "Basic operational and unit-economics reasoning appropriate to scope",
+        "Privacy, safety, legal/platform and ethical boundaries",
+        "An explicit continue/change/stop decision"
+      ],
+      "must_not_require": [
+        "A sale",
+        "Revenue or profit",
+        "Public launch",
+        "Paid tools or hosting",
+        "Premature company/legal structure",
+        "Claims of product-market fit from small samples"
+      ],
+      "valid_stop_conditions": [
+        "Insufficient problem evidence",
+        "Delivery cost/capacity is not viable",
+        "Risk or legal/platform conditions are unsuitable",
+        "Prototype fails the core user task",
+        "A different approach is more proportionate"
+      ]
+    },
+    {
+      "id": "intrinsic_exploration",
+      "name": "Intrinsic/for-its-own-sake projects",
+      "purpose": "Explore, investigate, make, play, compose, collect, experiment or create because the subject itself is interesting or meaningful to the learner.",
+      "success_test": "The learner has genuinely explored a chosen question or creative direction and can describe observations, choices, discoveries, uncertainty or new curiosity.",
+      "must_have": [
+        "A learner-chosen curiosity, fascination, expressive intention or puzzle",
+        "Freedom to follow unexpected directions",
+        "Some trace of exploration, iteration or observation",
+        "A reflection on what was discovered or what remains open"
+      ],
+      "must_not_require": [
+        "Practical utility",
+        "Commercial potential",
+        "Customer demand",
+        "A public audience or publication",
+        "A finished/polished artefact",
+        "Transfer to another discipline"
+      ],
+      "valid_stop_conditions": [
+        "Curiosity is satisfied",
+        "The direction becomes uninteresting",
+        "The exploration reveals a better question",
+        "The learner chooses to pause or abandon it"
+      ]
+    }
+  ],
+  "separation_rules": [
+    "Do not classify by subject matter alone; classify by the project's primary reason for existing and its success condition.",
+    "A digital app can be personal-use if it solves the learner's own problem; product/business-foundation only if it is designed and tested as a useful offer for a defined user beyond the learner.",
+    "A research project can be intrinsic exploration if driven by curiosity; personal-use if it informs an actual personal decision; product/business-foundation if it tests a product/service opportunity.",
+    "An art project remains intrinsic when no client or utility is required, even if the finished work could later be sold.",
+    "Projects may produce transferable skills, but transfer is evidence to capture, not a requirement imposed on intrinsic projects.",
+    "Teamwork, research, design, software, writing and public presentation are methods or formats, not additional project classes.",
+    "Never merge the three classes into one generic project template. Shared metadata may exist, but purpose, success criteria, risk model and assessment emphasis remain class-specific."
+  ],
+  "selection_algorithm": [
+    "Ask why the learner wants to do this project.",
+    "Identify the primary beneficiary and success condition.",
+    "If the primary beneficiary is the learner and success means improving their own real context, choose personal_use.",
+    "If the purpose is to build a useful offer/system for a defined user and test its future delivery/commercial path, choose product_business_foundation.",
+    "If the purpose is curiosity, expression, experimentation or creation without a utility requirement, choose intrinsic_exploration.",
+    "If more than one purpose is genuinely present, split into separate linked projects or choose one primary class and record secondary motivations; do not blend class criteria."
+  ]
+}

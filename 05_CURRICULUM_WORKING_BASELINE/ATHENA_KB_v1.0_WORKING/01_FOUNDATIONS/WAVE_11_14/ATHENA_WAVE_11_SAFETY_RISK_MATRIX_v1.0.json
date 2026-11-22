@@ -1,0 +1,305 @@
+{
+  "version": "1.0",
+  "status": "draft_for_qualified_review",
+  "discipline_count": 18,
+  "discipline_risks": [
+    {
+      "discipline_code": "ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "inherent_risk_band": "moderate_to_high",
+      "risk_domains": "Code, data handling, web security, automation and deployment.",
+      "required_controls": "Sandbox accounts, synthetic data, least privilege, secure defaults; test edge cases; do not expose customer data.",
+      "supervision_rule": "Adult/qualified review for public deployment, real user data or security testing.",
+      "prohibited_or_stop_conditions": "No credential collection, unauthorized access, malware, exploit deployment or public deployment with unresolved data risks.",
+      "qualified_review_required": "Software/security reviewer; privacy reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "inherent_risk_band": "high",
+      "risk_domains": "Pricing, sales, customer interviews, payments, contracts and financial projections.",
+      "required_controls": "Use mock transactions; guardian-approved channels; truthful claims; protect customer data; distinguish education from legal/tax advice.",
+      "supervision_rule": "Guardian review for real transactions, contracts, customer data, payment accounts or public offers.",
+      "prohibited_or_stop_conditions": "No borrowing, leveraged trading, investment solicitation or handling other people’s money without guardian and qualified advice.",
+      "qualified_review_required": "Business educator; Bangladesh legal/tax/consumer reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "inherent_risk_band": "high",
+      "risk_domains": "Circuits, soldering, batteries, motors, tools and electrical measurements.",
+      "required_controls": "Only documented extra-low-voltage battery circuits for independent practice; inspect heat/shorts; tool-specific instruction.",
+      "supervision_rule": "Competent adult supervision for soldering, cutting, drilling, high-current batteries or powered tools; professional for mains.",
+      "prohibited_or_stop_conditions": "No mains electricity, high-voltage capacitors, damaged lithium cells, improvised chargers, puncturing cells or unsupervised power tools.",
+      "qualified_review_required": "Electrical engineer/technician; workshop safety reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "FIN",
+      "discipline_name": "Finance & Economics",
+      "inherent_risk_band": "high",
+      "risk_domains": "Saving, budgeting, payments, investing, crypto, tax and financial decisions.",
+      "required_controls": "Hypothetical examples by default; disclose risk/fees; use regulated local sources; guardian-controlled real accounts.",
+      "supervision_rule": "Guardian review for any real money/account/transfer/contract; qualified financial/tax professional for personal decisions.",
+      "prohibited_or_stop_conditions": "No leverage, borrowing, gambling-like trading, crypto custody for others or using another person’s account.",
+      "qualified_review_required": "Financial educator; Bangladesh regulated-finance/legal reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "inherent_risk_band": "high",
+      "risk_domains": "Anatomy, physiology, health claims, nutrition, sleep, injury and body metrics.",
+      "required_controls": "Non-diagnostic educational framing; avoid body-shaming; no personalised treatment/diet/supplement prescriptions; include referral boundaries.",
+      "supervision_rule": "Guardian involvement for minors; clinician/physio/dietitian for injury, persistent symptoms or personalised plans.",
+      "prohibited_or_stop_conditions": "No diagnosis, extreme dieting, supplement experimentation or ignoring concerning symptoms.",
+      "qualified_review_required": "Clinician; physiotherapist; qualified health educator",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "PSY",
+      "discipline_name": "Psychology & Strategy",
+      "inherent_risk_band": "moderate_to_high",
+      "risk_domains": "Psychology, strategy, self-reflection, motivation, interpersonal behaviour and sensitive topics.",
+      "required_controls": "Educational not diagnostic; avoid manipulation and trait labels; use supportive language; do not solicit trauma disclosures.",
+      "supervision_rule": "Guardian/qualified support for persistent distress, abuse disclosures or mental-health concerns.",
+      "prohibited_or_stop_conditions": "No diagnosis, therapy claims, coercive experiments, personality ranking or investigation of abuse by AI.",
+      "qualified_review_required": "Psychology educator; clinician/safeguarding reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "inherent_risk_band": "moderate",
+      "risk_domains": "Visual design, perception, aesthetics, visual communication and public display.",
+      "required_controls": "Use non-identifying sample assets; credit sources; check colour contrast and avoid culturally loaded assumptions.",
+      "supervision_rule": "Adult review for public portfolio display or use of identifiable people.",
+      "prohibited_or_stop_conditions": "No non-consensual portrait use, doxxing through location clues or unlicensed commercial reuse.",
+      "qualified_review_required": "Design educator; copyright/accessibility reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "WORK",
+      "discipline_name": "Workflow & Productivity",
+      "inherent_risk_band": "moderate",
+      "risk_domains": "Workflow, productivity, routines, schedules, notifications and personal records.",
+      "required_controls": "User-controlled suggestions; no silent rescheduling; local-first records; sleep/recovery protection; visible undo and history.",
+      "supervision_rule": "Guardian involvement for sharing location/schedule or commitments involving other people.",
+      "prohibited_or_stop_conditions": "No surveillance, public schedule sharing by default, punitive streaks, backlog debt or coercive productivity scoring.",
+      "qualified_review_required": "Human-factors/product reviewer; privacy/safeguarding reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "ART",
+      "discipline_name": "Artistic Development",
+      "inherent_risk_band": "moderate",
+      "risk_domains": "Drawing, craft, materials, blades, pigments, photography and exhibition.",
+      "required_controls": "Age-safe materials; tool instruction; ventilation; consent for portraits; source/licence records.",
+      "supervision_rule": "Adult supervision for blades, solvents, heat tools or public exhibition involving minors.",
+      "prohibited_or_stop_conditions": "No hazardous solvents, unsafe cutting tools, non-consensual photography or unlicensed commercial reuse.",
+      "qualified_review_required": "Art educator; workshop/copyright reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "inherent_risk_band": "high",
+      "risk_domains": "Sports drills, conditioning, competition, contact, heat and outdoor activity.",
+      "required_controls": "Progress gradually; warm up; hydration/rest; inspect surface/weather; default to non-contact; do not train through pain.",
+      "supervision_rule": "Guardian/coach supervision for organised training, contact drills, strength equipment, heat exposure or unfamiliar venues.",
+      "prohibited_or_stop_conditions": "No dangerous stunts, deliberate head impacts, dehydration/weight-cutting, unsupervised heavy lifting or play in unsafe conditions.",
+      "qualified_review_required": "Qualified youth coach; sports medicine/physio reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "inherent_risk_band": "moderate",
+      "risk_domains": "Voice, music, performance, hearing exposure, recording and public presentation.",
+      "required_controls": "Safe volume, warm-up/rest, recording consent, copyright and accessible alternatives.",
+      "supervision_rule": "Adult supervision for amplified equipment, high volume or public performance/recording involving minors.",
+      "prohibited_or_stop_conditions": "No prolonged high-volume exposure or non-consensual publication of recordings.",
+      "qualified_review_required": "Voice/music educator; hearing-health/privacy reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "inherent_risk_band": "low_to_moderate",
+      "risk_domains": "Mathematics, scientific reasoning, statistics, models and experiments.",
+      "required_controls": "Teach units, assumptions, uncertainty, sample bias and correlation/causation; physical experiments require separate activity risk overlay.",
+      "supervision_rule": "Adult/qualified supervision for physical experiments, hazardous materials or sensitive datasets.",
+      "prohibited_or_stop_conditions": "No hazardous experiments, unsafe field sampling or consequential inference about people from biased/small datasets.",
+      "qualified_review_required": "Math/statistics/science reviewer; lab safety reviewer where relevant",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "inherent_risk_band": "high",
+      "risk_domains": "Account security, networks, penetration testing, digital privacy and incident response.",
+      "required_controls": "Owned lab systems, local VMs, synthetic data, explicit written scope; never store credentials or tokens.",
+      "supervision_rule": "Qualified review for labs; guardian involvement for real account incidents or reports.",
+      "prohibited_or_stop_conditions": "No credential theft, phishing deployment, malware, persistence, evasion or unauthorised public-target testing.",
+      "qualified_review_required": "Cybersecurity professional; privacy reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "inherent_risk_band": "low_to_moderate",
+      "risk_domains": "Language learning, translation, dialects, voice and identity-linked examples.",
+      "required_controls": "Respect dialects; mark translation uncertainty; do not publish identifiable recordings; allow text alternatives when pronunciation is not target.",
+      "supervision_rule": "Consent and guardian review before recording/sharing a minor’s voice or image.",
+      "prohibited_or_stop_conditions": "No public posting of identifying recordings or sensitive personal stories without appropriate consent.",
+      "qualified_review_required": "Language educator; privacy reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "RES",
+      "discipline_name": "Research & Information Intelligence",
+      "inherent_risk_band": "moderate_to_high",
+      "risk_domains": "Research, surveys, interviews, source evaluation, human subjects and personal data.",
+      "required_controls": "Prefer open data; consent; minimise and anonymise; explain sampling bias; distinguish fact/inference/opinion.",
+      "supervision_rule": "Guardian/teacher approval before surveying/interviewing minors or collecting identifiable data.",
+      "prohibited_or_stop_conditions": "No covert recording, sensitive-data collection or publication of identifiable responses without approval.",
+      "qualified_review_required": "Research methods reviewer; ethics/privacy reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "INDEP",
+      "discipline_name": "Practical Independence",
+      "inherent_risk_band": "moderate_to_high",
+      "risk_domains": "Cooking, repairs, household tools, travel, public services and independent tasks.",
+      "required_controls": "Teach hazard checks, food hygiene, permission, safe lifting, route planning and adult escalation; no risky repair instructions.",
+      "supervision_rule": "Adult supervision for knives, heat, gas, electrical repair, unfamiliar travel or public-facing tasks.",
+      "prohibited_or_stop_conditions": "No gas/electrical repair, unsafe road crossings, entering restricted spaces, handling unknown chemicals or unsupervised fire.",
+      "qualified_review_required": "Life-skills educator; food/workshop/field safety reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "LEAD",
+      "discipline_name": "Leadership & Management",
+      "inherent_risk_band": "moderate",
+      "risk_domains": "Team leadership, project coordination, group decisions and responsibility.",
+      "required_controls": "Use opt-in roles, fair workload, transparent decisions, conflict escalation and private feedback.",
+      "supervision_rule": "Adult oversight for public events, money, travel or disputes involving minors.",
+      "prohibited_or_stop_conditions": "No coercion, hazing, retaliation, public ranking/shaming or pressure to disclose private information.",
+      "qualified_review_required": "Leadership educator; safeguarding reviewer",
+      "status": "draft_controls_not_signoff"
+    },
+    {
+      "discipline_code": "COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "inherent_risk_band": "moderate",
+      "risk_domains": "Public speaking, persuasion, interviews, conflict and online interaction.",
+      "required_controls": "Teach consent, respectful disagreement, truthful representation and boundaries; anonymise roleplay recordings.",
+      "supervision_rule": "Adult support for threats, harassment, abuse or power imbalance.",
+      "prohibited_or_stop_conditions": "No coercive persuasion, impersonation, public shaming or unsafe contact with strangers.",
+      "qualified_review_required": "Communication educator; safeguarding reviewer",
+      "status": "draft_controls_not_signoff"
+    }
+  ],
+  "cross_cutting_controls": [
+    {
+      "id": "SAFE-01",
+      "control": "Age and capability fit",
+      "rule": "Assume a learner may be under 18 unless age is explicitly established. Match instructions, tools, exposure and public interaction to age, maturity, setting and demonstrated competence; do not infer legal capacity."
+    },
+    {
+      "id": "SAFE-02",
+      "control": "Stop-first design",
+      "rule": "Every physical, health, electrical, chemical, field or first-aid activity must state stop conditions before the activity. If danger, pain, distress or uncertainty appears, stop and involve a responsible adult or qualified professional."
+    },
+    {
+      "id": "SAFE-03",
+      "control": "No credential substitution",
+      "rule": "Course completion, a quiz, simulation or ATHENA mastery state never substitutes for a licence, regulated qualification, medical diagnosis, first-aid certification or professional competence."
+    },
+    {
+      "id": "SAFE-04",
+      "control": "Guardian and qualified adult",
+      "rule": "For minors, guardian/teacher/coach involvement is required for real money, contracts, public publication, contact with unknown adults, physical hazards, fieldwork and collection of identifiable human-subject data."
+    },
+    {
+      "id": "SAFE-05",
+      "control": "Emergency precedence",
+      "rule": "In a real emergency, stop the lesson and seek immediate local emergency assistance. The app must not interpose a quiz, AI conversation or long disclaimer before the emergency action."
+    },
+    {
+      "id": "SAFE-06",
+      "control": "Consent and recording",
+      "rule": "Obtain informed, specific, revocable permission before capturing or sharing a person’s image, voice, name, location, work or story. For minors, apply guardian consent and child assent; do not treat assent as a substitute for required guardian approval."
+    },
+    {
+      "id": "SAFE-07",
+      "control": "Privacy minimisation",
+      "rule": "Collect only what is necessary for the stated learning function. Prefer local storage, synthetic or anonymised data; avoid exact location, government IDs, passwords, biometrics, health details and sensitive identity attributes."
+    },
+    {
+      "id": "SAFE-08",
+      "control": "No public-by-default",
+      "rule": "Learner evidence, portfolios, recordings, schedules and reflections are private by default. Sharing requires a deliberate per-item action, audience preview and clear withdrawal path."
+    },
+    {
+      "id": "SAFE-09",
+      "control": "No AI authority in high-risk domains",
+      "rule": "AI output may assist explanation but cannot independently approve safety, diagnose, certify, adjudicate safeguarding disclosures or make consequential financial/health decisions."
+    },
+    {
+      "id": "SAFE-10",
+      "control": "Incident response",
+      "rule": "Provide a clear route to stop, preserve only necessary facts, contact a trusted adult/appropriate authority and escalate imminent danger. Do not investigate alleged abuse through the app or promise absolute confidentiality."
+    },
+    {
+      "id": "SAFE-11",
+      "control": "No harmful optimisation",
+      "rule": "Do not reward pain tolerance, sleep restriction, overtraining, risky stunts, public exposure, financial risk-taking or invasive data collection as productivity or mastery."
+    },
+    {
+      "id": "SAFE-12",
+      "control": "Versioned local law",
+      "rule": "Jurisdiction-specific law, emergency numbers and regulated guidance require a named source, last-verified date, owner and expiry/recheck date. Unverified legal claims must be withheld or labelled pending review."
+    }
+  ],
+  "activity_overlays": [
+    {
+      "id": "ACT-OVERLAY-01",
+      "activity": "First aid / CPR / AED / choking / severe bleeding",
+      "risk_band": "critical",
+      "rule": "Awareness and emergency escalation only until recognised first-aid instructor and medical reviewer approve exact current local protocol. Never delay emergency services. Reading is not competence or certification."
+    },
+    {
+      "id": "ACT-OVERLAY-02",
+      "activity": "Chemistry / biological / heat / pressure experiments",
+      "risk_band": "high_to_critical",
+      "rule": "Simulation or safe observation by default. Any physical activity requires activity-specific risk assessment and competent adult/lab supervision. No unknown mixing, ingestion, culturing unknown organisms or improvised pressure/heat apparatus."
+    },
+    {
+      "id": "ACT-OVERLAY-03",
+      "activity": "Public field activity / road / water / weather / animals",
+      "risk_band": "high",
+      "rule": "Permission, adult supervision, route/weather check and buddy system. No entering floodwater, drains, construction sites, restricted land or handling unknown animals/materials."
+    },
+    {
+      "id": "ACT-OVERLAY-04",
+      "activity": "Human-subject work with minors or sensitive topics",
+      "risk_band": "high",
+      "rule": "No collection until teacher/guardian/ethics approval, consent/assent, data minimisation, retention plan and safeguarding lead are in place."
+    },
+    {
+      "id": "ACT-OVERLAY-05",
+      "activity": "Food handling / cooking",
+      "risk_band": "moderate_to_high",
+      "rule": "Age-appropriate adult supervision for heat, knives, gas and allergens; follow current Bangladesh food safety guidance; do not teach unsafe preservation or tasting of unknown substances."
+    },
+    {
+      "id": "ACT-OVERLAY-06",
+      "activity": "Public product launch / real users / payments",
+      "risk_band": "high",
+      "rule": "Synthetic data and test payments first; guardian/owner approval; privacy, security, consumer claims, refund and rollback review before real deployment."
+    }
+  ]
+}

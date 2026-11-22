@@ -42,11 +42,13 @@ export const BASE_FOV = 55;
 /** A body that is not a knowledge record: a universe, galaxy, black hole or orbital station. */
 export interface CosmicBody {
   id: string;
-  kind: "universe" | "galaxy" | "blackhole" | "station";
+  kind: "universe" | "galaxy" | "blackhole" | "quasar" | "bottleneck" | "station";
   name: string;
   center: THREE.Vector3;
   /** Pick radius in world units. */
   radius: number;
+  /** Related record titles shown in the inspector (quasar transfer bridges, overdue skills). */
+  detail?: string[];
 }
 
 export type BodyKind = "star" | "planet" | "moon" | "satellite" | "asteroid";
@@ -115,6 +117,42 @@ const SOFT_DOT = (() => {
 })();
 
 /** One unit sphere shared by every body; meshes scale it instead of duplicating segment buffers. */
+/*
+ * A crisp stellar point, not a grey blur: a white-hot core inside a sharp spectral glow, crossed by
+ * a four-point diffraction flare. Points are the far LOD, so this texture is what the sky actually
+ * looks like at galaxy and multiverse range.
+ */
+const CRISP_STAR = (() => {
+  const size = 128;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d")!;
+  const c = size / 2;
+  const halo = ctx.createRadialGradient(c, c, 0, c, c, c);
+  halo.addColorStop(0, "rgba(255,255,255,1)");
+  halo.addColorStop(0.09, "rgba(255,252,240,0.98)");
+  halo.addColorStop(0.2, "rgba(200,230,255,0.5)");
+  halo.addColorStop(0.42, "rgba(120,175,255,0.12)");
+  halo.addColorStop(1, "rgba(60,110,220,0)");
+  ctx.fillStyle = halo;
+  ctx.fillRect(0, 0, size, size);
+  // Diffraction spikes: long horizontal and vertical needles, brightest at the core.
+  ctx.globalCompositeOperation = "lighter";
+  for (const [w, h] of [[1.6, size * 0.96], [size * 0.96, 1.6]] as const) {
+    const g = ctx.createLinearGradient(0, 0, w > h ? size : 0, w > h ? 0 : size);
+    g.addColorStop(0, "rgba(180,220,255,0)");
+    g.addColorStop(0.5, "rgba(255,255,255,0.85)");
+    g.addColorStop(1, "rgba(180,220,255,0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(c - w / 2, c - h / 2, w, h);
+  }
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.needsUpdate = true;
+  return tex;
+})();
+
 const UNIT_SPHERE = new THREE.SphereGeometry(1, 40, 28);
 const UNIT_SPHERE_LO = new THREE.SphereGeometry(1, 24, 16);
 const SHARED_GEOMETRY = new Set<THREE.BufferGeometry>([UNIT_SPHERE, UNIT_SPHERE_LO]);
@@ -263,6 +301,8 @@ interface SystemNode {
   planets: THREE.Group;
   moons: THREE.Group;
   satellites: THREE.Group;
+  /** Belts, comets and megastructures: hidden together with the planets at galaxy range. */
+  small: THREE.Group;
   label: string;
 }
 
@@ -288,8 +328,26 @@ export class AtlasScene {
   private bodyObject = new Map<string, THREE.Object3D>();
   private spinMats: THREE.ShaderMaterial[] = [];
   private clouds: { mesh: THREE.Mesh; speed: number }[] = [];
-  private binaries: { pivot: THREE.Object3D; bridge: THREE.Mesh; phase: number }[] = [];
+  private binaries: { pivot: THREE.Object3D; bridge: THREE.Mesh; phase: number; separation: number }[] = [];
   private moonRingMats: { mat: THREE.LineBasicMaterial; system: number }[] = [];
+  private starFlares: { mesh: THREE.Object3D; mat: THREE.MeshBasicMaterial; phase: number; speed: number }[] = [];
+  private belts: { holder: THREE.Object3D; spin: number }[] = [];
+  private comets: {
+    holder: THREE.Object3D;
+    tail: THREE.Object3D;
+    coma: THREE.Sprite;
+    tailMat: THREE.MeshBasicMaterial;
+    a: number;
+    e: number;
+    phase: number;
+    speed: number;
+    yaw: number;
+  }[] = [];
+  private megaStructures: { mesh: THREE.Object3D; speed: number }[] = [];
+  private dysonSwarms: { group: THREE.Object3D; speed: number }[] = [];
+  private progress = new Map<string, number>();
+  private nightShaders: { mat: THREE.ShaderMaterial; body: AtlasBody }[] = [];
+  private ringShaders: { mat: THREE.ShaderMaterial; mesh: THREE.Mesh }[] = [];
 
   /* multiverse scale, built once and never rebuilt with the galaxy */
   private readonly cosmos = new THREE.Group();
@@ -447,7 +505,8 @@ export class AtlasScene {
   }
 
   /** Rebuild every body from the stored galaxy. Positions, maps, tilts and phases are seeded. */
-  setGalaxy(galaxy: Galaxy, evidence: Map<string, number>): void {
+  setGalaxy(galaxy: Galaxy, evidence: Map<string, number>, progress: Map<string, number> = new Map()): void {
+    this.progress = progress;
     this.disposeRoot();
     this.bodies.clear();
     this.pickables = [];
@@ -458,9 +517,22 @@ export class AtlasScene {
     this.clouds = [];
     this.binaries = [];
     this.moonRingMats = [];
+    this.starFlares = [];
+    this.belts = [];
+    this.comets = [];
+    this.megaStructures = [];
+    this.dysonSwarms = [];
+    this.nightShaders = [];
+    this.ringShaders = [];
     this.clusterGlows = [];
     this.stations = [];
-    this.cosmicBodies = this.cosmicBodies.filter((b) => b.kind !== "station" && !b.id.startsWith("CORE-BH-"));
+    this.cosmicBodies = this.cosmicBodies.filter(
+      (b) =>
+        b.kind !== "station" &&
+        !b.id.startsWith("CORE-BH-") &&
+        !b.id.startsWith("QSO-") &&
+        !b.id.startsWith("WELL-"),
+    );
     if (galaxy.stars.length === 0) return;
 
     const anchors = separatedStarPositions(galaxy.stars.length, SYSTEM_SPHERE, SYSTEM_SEPARATION);
@@ -502,8 +574,8 @@ export class AtlasScene {
         "  c *= gran;\n" +
         "  float mu = clamp(dot(normalize(vN), normalize(vV)), 0.0, 1.0);\n" +
         "  c *= 0.42 + 0.58 * pow(mu, 0.55);\n" +
-        "  c += vec3(0.55, 0.32, 0.16) * pow(1.0 - mu, 3.2) * 0.55;\n" +
-        "  gl_FragColor = vec4(c, 1.0);\n" +
+        "  c += vec3(0.55, 0.32, 0.16) * pow(1.0 - mu, 3.2) * 0.5;\n" +
+        "  gl_FragColor = vec4(c * 0.68, 1.0);\n" +
         "}",
     });
     const star = new THREE.Mesh(UNIT_SPHERE, starMat);
@@ -515,74 +587,123 @@ export class AtlasScene {
     // Chromosphere shell just above the photosphere, then the wide volumetric corona.
     const chromo = new THREE.Mesh(
       UNIT_SPHERE_LO,
-      new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffd9b0).lerp(color, 0.35), transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false }),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffd9b0).lerp(color, 0.35), transparent: true, opacity: 0.12, blending: THREE.AdditiveBlending, depthWrite: false }),
     );
     chromo.scale.setScalar(STAR_RADIUS * 1.03);
     group.add(chromo);
     const rays = new THREE.Sprite(
-      new THREE.SpriteMaterial({ map: STELLAR_RAYS, transparent: true, opacity: 0.3, blending: THREE.AdditiveBlending, depthWrite: false }),
+      new THREE.SpriteMaterial({ map: STELLAR_RAYS, transparent: true, opacity: 0.18, blending: THREE.AdditiveBlending, depthWrite: false }),
     );
-    rays.scale.setScalar(STAR_RADIUS * 7.5);
+    rays.scale.setScalar(STAR_RADIUS * 5.4);
     group.add(rays);
 
     const corona = new THREE.Sprite(new THREE.SpriteMaterial({
       map: radialSprite("rgba(255,255,255,0.95)", `${hex(color)}aa`),
       color: 0xffffff,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.32,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }));
-    corona.scale.setScalar(STAR_RADIUS * 3.6);
+    corona.scale.setScalar(STAR_RADIUS * 3.2);
     group.add(corona);
     const bloom = new THREE.Sprite(
       new THREE.SpriteMaterial({
         map: SOFT_DOT,
         color: new THREE.Color(0xfff6e8),
         transparent: true,
-        opacity: 0.55,
+        opacity: 0.28,
         blending: THREE.AdditiveBlending,
         depthWrite: false,
       }),
     );
-    bloom.scale.setScalar(STAR_RADIUS * 2.9);
+    bloom.scale.setScalar(STAR_RADIUS * 2.2);
     group.add(bloom);
 
-    const light = new THREE.PointLight(color.clone().lerp(new THREE.Color(0xffffff), 0.6), 18, 0, 0.35);
+    // Coronal flare loops: magnetic prominences along the equator, each an arc that rises, brightens
+    // and fades on its own phase. Additive and unlit, so they read as plasma rather than geometry.
+    const flareMat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(0xff8a4a).lerp(color, 0.3),
+      transparent: true,
+      opacity: 0.3,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    });
+    const flareGeo = new THREE.TorusGeometry(STAR_RADIUS * 1.05, STAR_RADIUS * 0.013, 5, 44, Math.PI * 0.62);
+    for (let f = 0; f < 4; f += 1) {
+      const mat = flareMat.clone();
+      const loop = new THREE.Mesh(flareGeo, mat);
+      loop.rotation.set(Math.PI / 2 + (hash01(index, f, 71) - 0.5) * 0.9, hash01(index, f, 72) * Math.PI * 2, (hash01(index, f, 73) - 0.5) * 1.2);
+      group.add(loop);
+      this.starFlares.push({ mesh: loop, mat, phase: hash01(index, f, 74) * Math.PI * 2, speed: 0.5 + hash01(index, f, 75) * 0.8 });
+    }
+
+    const light = new THREE.PointLight(color.clone().lerp(new THREE.Color(0xffffff), 0.6), 8, 0, 0.4);
     group.add(light);
 
-    // Binary systems: a discipline with ten or more domains gets a 22-unit companion on a 135-unit
-    // barycentric orbit, joined to the primary by a plasma bridge that tracks it every frame.
-    if (system.planets.length >= 8) {
+    // Stellar multiplicity from the domain count: 10–13 domains form a binary (primary 38 + companion
+    // 24 at 140 units), 14+ adds a wide trinary companion at 260 units. A plasma stream links the pair.
+    const multiplicity = system.planets.length >= 14 ? 3 : system.planets.length >= 10 ? 2 : 1;
+    if (multiplicity >= 2) {
+      star.scale.setScalar(38);
       const companionMat = new THREE.ShaderMaterial({
-        uniforms: { uMap: { value: loadTexture(starMap(surfaceSeed(`${system.code}-B`))) }, uSpin: { value: 0.4 }, uTint: { value: new THREE.Color(0xffe8d0) } },
+        uniforms: { uMap: { value: loadTexture(starMap(surfaceSeed(`${system.code}-B`))) }, uSpin: { value: 0.4 }, uTint: { value: new THREE.Color(0xffe2c4) } },
         vertexShader: starMat.vertexShader,
         fragmentShader: starMat.fragmentShader,
       });
       const companion = new THREE.Mesh(UNIT_SPHERE, companionMat);
-      companion.scale.setScalar(22);
-      companion.userData.bodyId = system.discipline.id;
+      companion.scale.setScalar(24);
       this.spinMats.push(companionMat);
       const pivot = new THREE.Object3D();
       const holder = new THREE.Object3D();
-      holder.position.set(135, 0, 0);
+      holder.position.set(140, 0, 0);
       holder.add(companion);
       pivot.add(holder);
       pivot.rotation.y = hash01(index, 91) * Math.PI * 2;
       group.add(pivot);
+      // Mass-transfer stream: a thin additive cylinder stretched between the two photospheres each frame.
       const bridge = new THREE.Mesh(
-        new THREE.CylinderGeometry(2.2, 2.2, 1, 8, 1, true),
-        new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffcf9a), transparent: true, opacity: 0.16, blending: THREE.AdditiveBlending, depthWrite: false }),
+        new THREE.CylinderGeometry(1.9, 3.2, 1, 8, 1, true),
+        new THREE.MeshBasicMaterial({ color: new THREE.Color(0xffd6a8), transparent: true, opacity: 0.22, blending: THREE.AdditiveBlending, depthWrite: false }),
       );
       bridge.rotation.z = Math.PI / 2;
       group.add(bridge);
-      this.binaries.push({ pivot, bridge, phase: hash01(index, 92) * Math.PI * 2 });
+      this.binaries.push({ pivot, bridge, phase: hash01(index, 92) * Math.PI * 2, separation: 140 });
+    }
+    if (multiplicity === 3) {
+      const thirdMat = new THREE.ShaderMaterial({
+        uniforms: { uMap: { value: loadTexture(starMap(surfaceSeed(`${system.code}-C`))) }, uSpin: { value: 0.7 }, uTint: { value: new THREE.Color(0xffd2b0) } },
+        vertexShader: starMat.vertexShader,
+        fragmentShader: starMat.fragmentShader,
+      });
+      const third = new THREE.Mesh(UNIT_SPHERE_LO, thirdMat);
+      third.scale.setScalar(17);
+      this.spinMats.push(thirdMat);
+      const wide = new THREE.Object3D();
+      const wideHolder = new THREE.Object3D();
+      wideHolder.position.set(260, 0, 0);
+      wideHolder.add(third);
+      wide.add(wideHolder);
+      wide.rotation.set(0.22, hash01(index, 93) * Math.PI * 2, 0.1);
+      group.add(wide);
+      const orbit = this.orbitLine(260, 0.94, 0xffc66d, 0.16);
+      orbit.rotation.x = 0.22;
+      group.add(orbit);
+      this.motions.push({
+        pivot: wide,
+        holder: wideHolder,
+        phase: 0,
+        omega: 0.05,
+        body: { id: `${system.code}-TRINARY`, node: system.discipline, kind: "star", system: index, tier: "unassessed", radius: 17, label: "Wide Companion", parentId: system.discipline.id },
+      });
     }
 
     const planets = new THREE.Group();
     const moons = new THREE.Group();
     const satellites = new THREE.Group();
-    group.add(planets, moons, satellites);
+    const small = new THREE.Group();
+    group.add(planets, moons, satellites, small);
 
     const starBody: AtlasBody = {
       id: system.discipline.id,
@@ -590,7 +711,7 @@ export class AtlasScene {
       kind: "star",
       system: index,
       tier: "unassessed",
-      radius: STAR_RADIUS,
+      radius: multiplicity >= 2 ? 38 : STAR_RADIUS,
       label: system.discipline.title,
       parentId: null,
     };
@@ -600,6 +721,53 @@ export class AtlasScene {
     this.pickables.push(this.proxy(star, STAR_RADIUS * 1.6, starBody.id));
     // A rotating ring-and-truss station orbits every discipline star, ready for the Chunk 5 cockpit.
     this.addStation(system.code, group, 0.65, 130 + hash01(index, 51) * 90);
+
+    // Volumetric nebula behind the sector: dense family clusters read as star-forming clouds rather
+    // than a scatter plot, and the haze separates one system's volume from its neighbour's.
+    const haze = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: radialSprite("rgba(96,160,255,0.30)", "rgba(96,60,180,0.05)"),
+        transparent: true,
+        opacity: 0.20,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
+    );
+    haze.scale.setScalar(1650);
+    haze.position.set(0, 0, -280);
+    group.add(haze);
+
+    // Relativistic quasar at a synthesis hub: a major cross-discipline bridge fires twin opposing
+    // cyan/violet jets 1,200 units out, perpendicular to the accretion disk.
+    if (system.planets.length >= 8) {
+      const qso = this.quasar(70);
+      qso.position.set(0, 330, 0);
+      group.add(qso);
+      this.cosmicBodies.push({
+        id: `QSO-${system.code}`,
+        kind: "quasar",
+        name: `${system.discipline.title} Synthesis Quasar`,
+        center: new THREE.Vector3(anchor.x, anchor.y + 330, anchor.z),
+        radius: 70,
+        detail: system.constellations.slice(0, 12).map((c) => c.node.title),
+      });
+    }
+
+    // A stellar-mass well forms wherever revision debt concentrates: nearby orbital tracks visibly
+    // bend toward it until the flagged records are cleared.
+    const systemRatio = this.progress.get(system.discipline.id) ?? 0;
+    if (systemRatio > 0 && systemRatio < 0.3) {
+      const well = this.relativisticBlackHole(26);
+      well.position.set(0, -430, 0);
+      group.add(well);
+      this.cosmicBodies.push({
+        id: `WELL-${system.code}`,
+        kind: "bottleneck",
+        name: `${system.discipline.title} Revision Well`,
+        center: new THREE.Vector3(anchor.x, anchor.y - 430, anchor.z),
+        radius: 26,
+      });
+    }
 
     const planetCount = Math.max(1, system.planets.length);
     system.planets.forEach((planet, pi) => {
@@ -621,22 +789,25 @@ export class AtlasScene {
       const banded = pi % 4 === 1;
       const radius = 1.6 + hash01(index, pi, 7) * (banded ? 2 : 1.4);
       const seed = surfaceSeed(planet.node.code);
-      // Seeded surface character: oceans and crystal crusts catch a specular sun-glint, rock does not.
-      const wet = hash01(seed, 4);
-      const crystal = hash01(seed, 5) > 0.82;
+      // Seeded biome class: one of seven worlds, each with its own gloss, tint and atmosphere. The
+      // surface map is chosen by the same seed, so a domain always wears the same face.
+      const biome = planetBiome(seed, banded);
+      const surface = loadTexture(planetMap(seed, banded));
       const mesh = new THREE.Mesh(
         UNIT_SPHERE,
         new THREE.MeshStandardMaterial({
-          map: loadTexture(planetMap(seed, banded)),
-          color: color.clone().lerp(new THREE.Color(0xffffff), 0.28 + wet * 0.2),
-          roughness: crystal ? 0.18 : banded ? 0.88 : 0.96 - wet * 0.44,
-          metalness: crystal ? 0.42 : banded ? 0.04 : 0.02 + wet * 0.06,
-          envMapIntensity: 0.6,
+          map: surface,
+          bumpMap: surface,
+          bumpScale: radius * 0.02,
+          color: biome.tint.clone().multiplyScalar(0.72).lerp(color, 0.2),
+          roughness: biome.roughness,
+          metalness: biome.metalness,
+          envMapIntensity: biome.glint,
         }),
       );
       mesh.scale.setScalar(radius);
-      // Axial tilt is seeded 4°–32° and never shared between two worlds.
-      const axial = ((4 + hash01(seed, 6) * 28) * Math.PI) / 180;
+      // Axial tilt is seeded 4°–35° and never shared between two worlds.
+      const axial = ((4 + hash01(seed, 6) * 31) * Math.PI) / 180;
       mesh.rotation.z = axial;
       mesh.userData.bodyId = planet.node.id;
       holder.add(mesh);
@@ -648,11 +819,11 @@ export class AtlasScene {
         new THREE.MeshStandardMaterial({
           map: CLOUD_MAP,
           transparent: true,
-          opacity: banded ? 0.72 : 0.42,
+          opacity: biome.clouds,
           depthWrite: false,
           roughness: 1,
           metalness: 0,
-          color: 0xffffff,
+          color: biome.cloudTint,
         }),
       );
       clouds.scale.setScalar(radius * 1.016);
@@ -661,19 +832,30 @@ export class AtlasScene {
       holder.add(clouds);
       this.clouds.push({ mesh: clouds, speed: 0.12 + hash01(seed, 9) * 0.2 });
 
-      holder.add(this.atmosphere(radius, color, group.position));
+      holder.add(this.atmosphere(radius, biome.atmosphere, group.position));
 
-      // Gas and ice giants carry tilted concentric rings with a Cassini-style gap.
-      if ((banded && hash01(seed, 10) > 0.28) || hash01(seed, 11) > 0.86) {
-        const ringTilt = axial + 0.12 + hash01(seed, 12) * 0.3;
+      // Night-side civilisation: an additive shader shell that only lights the hemisphere facing away
+      // from the star, scaled by this domain's real mastery ratio.
+      const ratio = this.progress.get(planet.node.id) ?? 0;
+      const nightMat = nightLightsMaterial(group.position);
+      nightMat.uniforms.uProgress!.value = clamp(ratio, 0, 1);
+      const night = new THREE.Mesh(UNIT_SPHERE, nightMat);
+      night.scale.setScalar(radius * 1.004);
+      holder.add(night);
+      this.nightShaders.push({ mat: nightMat, body: { id: planet.node.id, node: planet.node, kind: "planet", system: index, tier: planet.tier, radius, label: planet.node.title, parentId: system.discipline.id } });
+
+      // Concentric rings: a single shader draws every band, the Cassini division, and the planet's own
+      // shadow falling across the far side of the ring.
+      if (biome.rings) {
+        const ringMat = ringMaterial(radius * 1.45, radius * 2.65, color.clone().lerp(new THREE.Color(0xe8eefc), 0.55), group.position);
+        const ringGeo = new THREE.RingGeometry(radius * 1.45, radius * 2.65, 160, 4);
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
         const ringGroup = new THREE.Object3D();
-        ringGroup.rotation.set(Math.PI / 2 + ringTilt, hash01(seed, 13) * Math.PI, 0);
-        const ringMat = (opacity: number): THREE.MeshBasicMaterial =>
-          new THREE.MeshBasicMaterial({ color: color.clone().lerp(new THREE.Color(0xe8eefc), 0.6), transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
-        const inner = new THREE.Mesh(new THREE.RingGeometry(radius * 1.45, radius * 1.95, 96, 1), ringMat(0.42));
-        const outer = new THREE.Mesh(new THREE.RingGeometry(radius * 2.08, radius * 2.55, 96, 1), ringMat(0.26));
-        ringGroup.add(inner, outer);
+        ringGroup.rotation.set(Math.PI / 2 + axial + 0.14 + hash01(seed, 12) * 0.26, hash01(seed, 13) * Math.PI, 0);
+        ringMesh.rotation.z = 0.2;
+        ringGroup.add(ringMesh);
         holder.add(ringGroup);
+        this.ringShaders.push({ mat: ringMat, mesh: ringMesh });
       }
 
       // A faint halo makes a 2-unit world readable beside a 42-unit star without pretending to be bigger.
@@ -705,6 +887,20 @@ export class AtlasScene {
       this.pickables.push(mesh);
       this.pickables.push(this.proxy(mesh, Math.max(radius * 1.8, 0.8), body.id));
       if (planet.tier === "mastered") this.addStation(`${planet.node.code}-STN`, holder, 0.65, radius * 3.2);
+      // 100% domain mastery: a luminous orbital ring plus a space-elevator tether.
+      if (ratio >= 0.995) {
+        const mega = new THREE.Group();
+        const megaMat = new THREE.MeshBasicMaterial({ color: 0x9beeff, transparent: true, opacity: 0.72, blending: THREE.AdditiveBlending, depthWrite: false });
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(radius * 1.95, radius * 0.035, 8, 96), megaMat);
+        ring.rotation.x = Math.PI / 2 + axial;
+        mega.add(ring);
+        const tether = new THREE.Mesh(new THREE.CylinderGeometry(radius * 0.012, radius * 0.02, radius * 1.9, 6), megaMat);
+        tether.position.y = radius * 0.95;
+        mega.add(tether);
+        holder.add(mega);
+        this.megaStructures.push({ mesh: ring, speed: 0.4 });
+        this.megaStructures.push({ mesh: tether, speed: -0.15 });
+      }
       this.motions.push({
         pivot,
         holder,
@@ -773,7 +969,7 @@ export class AtlasScene {
           sHolder.position.set(satOrbit, 0, 0);
           sPivot.add(sHolder);
           const sRadius = 0.12 + hash01(seed, mi, xi + 10) * 0.12;
-          const craft = this.satelliteMesh(sRadius, color);
+          const craft = this.satelliteMesh(sRadius, color, Math.floor(hash01(seed, mi, xi + 40) * 10));
           craft.userData.bodyId = sat.node.id;
           sHolder.add(craft);
           const satBody: AtlasBody = {
@@ -860,6 +1056,86 @@ export class AtlasScene {
       });
     });
 
+    // Instanced asteroid belt: one draw call per system, a tilted torus of tumbling irregular rocks
+    // between the inner rocky worlds and the outer giants.
+    const beltCount = 180 + Math.floor(hash01(index, 61) * 80);
+    const beltMesh = new THREE.InstancedMesh(
+      new THREE.IcosahedronGeometry(1, 0),
+      new THREE.MeshStandardMaterial({ color: 0x5d6675, roughness: 1, metalness: 0.04, flatShading: true }),
+      beltCount,
+    );
+    const bm = new THREE.Matrix4();
+    const bq = new THREE.Quaternion();
+    const bp = new THREE.Vector3();
+    const bs = new THREE.Vector3();
+    for (let i = 0; i < beltCount; i += 1) {
+      const a = hash01(index, i, 62) * Math.PI * 2;
+      const r = 520 + hash01(index, i, 63) * 120;
+      bp.set(Math.cos(a) * r, (hash01(index, i, 64) - 0.5) * 26, Math.sin(a) * r);
+      bq.setFromEuler(new THREE.Euler(hash01(index, i, 65) * 6.28, hash01(index, i, 66) * 6.28, hash01(index, i, 67) * 6.28));
+      const size = 0.8 + hash01(index, i, 68) * 1.9;
+      bs.set(size, size * (0.6 + hash01(index, i, 69) * 0.7), size);
+      bm.compose(bp, bq, bs);
+      beltMesh.setMatrixAt(i, bm);
+    }
+    beltMesh.instanceMatrix.needsUpdate = true;
+    beltMesh.frustumCulled = false;
+    const beltTilt = new THREE.Object3D();
+    beltTilt.rotation.set((hash01(index, 70) - 0.5) * 0.4, 0, (hash01(index, 71) - 0.5) * 0.3);
+    beltTilt.add(beltMesh);
+    small.add(beltTilt);
+    this.belts.push({ holder: beltMesh, spin: 0.6 + hash01(index, 72) * 0.8 });
+
+    // Two long-period comets per system: eccentric ellipse, glowing coma, and a tail that is aimed
+    // radially outward every frame and stretches as the comet nears perihelion.
+    for (let ci = 0; ci < 2; ci += 1) {
+      const holder = new THREE.Object3D();
+      const nucleus = new THREE.Mesh(new THREE.SphereGeometry(1.1, 10, 8), new THREE.MeshBasicMaterial({ color: 0xeafcff }));
+      holder.add(nucleus);
+      const coma = new THREE.Sprite(new THREE.SpriteMaterial({ map: SOFT_DOT, color: 0xbfefff, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false }));
+      holder.add(coma);
+      const tailMat = new THREE.MeshBasicMaterial({ color: 0x9fe7ff, transparent: true, opacity: 0.25, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+      const tailGeo = new THREE.ConeGeometry(6, 1, 14, 1, true);
+      tailGeo.translate(0, 0.5, 0);
+      const tail = new THREE.Mesh(tailGeo, tailMat);
+      holder.add(tail);
+      small.add(holder);
+      this.comets.push({ holder, tail, coma, tailMat, a: 900 + hash01(index, ci, 73) * 620, e: 0.58 + hash01(index, ci, 74) * 0.16, phase: hash01(index, ci, 75) * Math.PI * 2, speed: 0.16 + hash01(index, ci, 76) * 0.08, yaw: hash01(index, ci, 77) * Math.PI * 2 });
+    }
+
+    // 100% discipline mastery: a Dyson swarm of golden collectors encircling the star.
+    const disciplineRatio = system.planets.length === 0 ? 0 : system.planets.reduce((sum, p) => sum + (this.progress.get(p.node.id) ?? 0), 0) / system.planets.length;
+    if (disciplineRatio >= 0.995) {
+      const swarm = new THREE.Object3D();
+      swarm.rotation.set(0.3, 0, 0.14);
+      const nodeCount = 72;
+      const collectors = new THREE.InstancedMesh(
+        new THREE.OctahedronGeometry(4.4, 0),
+        new THREE.MeshStandardMaterial({ color: 0xffd27c, emissive: 0xffa63b, emissiveIntensity: 1.5, metalness: 0.9, roughness: 0.25 }),
+        nodeCount,
+      );
+      const dm = new THREE.Matrix4();
+      const dq = new THREE.Quaternion();
+      const dp = new THREE.Vector3();
+      const ds = new THREE.Vector3(1, 1, 1);
+      const axis = new THREE.Vector3(0, 1, 0);
+      for (let i = 0; i < nodeCount; i += 1) {
+        const a = (i / nodeCount) * Math.PI * 2;
+        dp.set(Math.cos(a) * 250, Math.sin(a * 3) * 7, Math.sin(a) * 250);
+        dq.setFromAxisAngle(axis, -a);
+        dm.compose(dp, dq, ds);
+        collectors.setMatrixAt(i, dm);
+      }
+      collectors.instanceMatrix.needsUpdate = true;
+      collectors.frustumCulled = false;
+      swarm.add(collectors);
+      const dish = new THREE.Mesh(new THREE.TorusGeometry(250, 0.9, 6, 128), new THREE.MeshBasicMaterial({ color: 0xffd27c, transparent: true, opacity: 0.25, blending: THREE.AdditiveBlending, depthWrite: false }));
+      dish.rotation.x = Math.PI / 2;
+      swarm.add(dish);
+      small.add(swarm);
+      this.dysonSwarms.push({ group: swarm, speed: 0.05 });
+    }
+
     // Skills with no domain parent still orbit their star, as real moons do.
     system.moons.forEach((moon, mi) => {
       const orbitR = 64 + mi * 22;
@@ -898,7 +1174,7 @@ export class AtlasScene {
     });
 
     this.root.add(group);
-    this.systems.push({ index, code: system.code, color, group, star, corona, light, planets, moons, satellites, label: system.discipline.title });
+    this.systems.push({ index, code: system.code, color, group, star, corona, light, planets, moons, satellites, small, label: system.discipline.title });
     void evidence;
   }
 
@@ -969,32 +1245,139 @@ export class AtlasScene {
     return mesh;
   }
 
-  private satelliteMesh(radius: number, color: THREE.Color): THREE.Group {
+  /** Ten distinct probe archetypes, assigned deterministically by record. Shared geometries and
+   *  materials keep a few hundred satellites to a handful of buffers. */
+  private satelliteMesh(radius: number, color: THREE.Color, variant: number): THREE.Group {
+    const r = radius;
     const group = new THREE.Group();
-    const bus = new THREE.Mesh(
-      new THREE.BoxGeometry(radius * 1.5, radius * 1.9, radius * 1.5),
-      new THREE.MeshStandardMaterial({ color: 0xd7e2f4, roughness: 0.55, metalness: 0.7 }),
-    );
-    group.add(bus);
-    const panelMat = new THREE.MeshStandardMaterial({ color: 0x2a4c8f, roughness: 0.35, metalness: 0.8, emissive: 0x0a1630, emissiveIntensity: 0.6 });
-    for (const dir of [-1, 1]) {
-      const wing = new THREE.Mesh(new THREE.BoxGeometry(radius * 2.6, radius * 1.35, radius * 0.09), panelMat);
-      wing.position.set(dir * radius * 2.2, 0, 0);
-      group.add(wing);
+    const add = (geo: THREE.BufferGeometry, mat: THREE.Material, x = 0, y = 0, z = 0): THREE.Mesh => {
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(x, y, z);
+      group.add(mesh);
+      return mesh;
+    };
+    const bus = new THREE.BoxGeometry(r * 1.5, r * 1.8, r * 1.5);
+    const wingGeo = new THREE.BoxGeometry(r * 2.2, r * 1.25, r * 0.08);
+    const rodGeo = new THREE.CylinderGeometry(r * 0.035, r * 0.035, r * 1.8, 5);
+    const beaconMat = new THREE.MeshBasicMaterial({ color: color.clone().lerp(new THREE.Color(0xffffff), 0.55) });
+    const panel = new THREE.MeshStandardMaterial({ color: 0x24457f, roughness: 0.3, metalness: 0.85, emissive: 0x0a1a33, emissiveIntensity: 0.7 });
+    const foil = new THREE.MeshStandardMaterial({ color: 0xd9b45a, roughness: 0.38, metalness: 0.9 });
+    const ti = new THREE.MeshStandardMaterial({ color: 0xb8c4d8, roughness: 0.45, metalness: 0.85 });
+    const mirror = new THREE.MeshStandardMaterial({ color: 0xe8f4ff, roughness: 0.12, metalness: 1 });
+    const dark = new THREE.MeshStandardMaterial({ color: 0x2a3346, roughness: 0.7, metalness: 0.6 });
+
+    switch (variant % 10) {
+      case 0: {
+        // Twin-wing solar communications relay: gold bus, articulated blue wings, small relay horn.
+        add(bus, foil);
+        for (const dir of [-1, 1]) {
+          add(wingGeo, panel, dir * r * 2.1, 0, 0);
+          add(new THREE.BoxGeometry(r * 0.5, r * 0.1, r * 0.1), ti, dir * r * 1.1, 0, 0);
+        }
+        add(new THREE.SphereGeometry(r * 0.34, 12, 9), beaconMat, 0, r * 1.05, 0);
+        break;
+      }
+      case 1: {
+        // Deep-space parabolic dish orbiter: high-gain dish, feed horn, thruster pod.
+        add(new THREE.BoxGeometry(r * 1.1, r * 1.1, r * 1.1), ti);
+        const dish = add(new THREE.SphereGeometry(r * 1.15, 18, 12, 0, Math.PI * 2, 0, Math.PI / 2), mirror, 0, -r * 0.55, 0);
+        dish.rotation.x = Math.PI;
+        add(new THREE.CylinderGeometry(r * 0.06, r * 0.06, r * 1.5, 6), ti, 0, -r * 1.5, 0);
+        add(new THREE.SphereGeometry(r * 0.26, 10, 8), beaconMat, 0, -r * 2.2, 0);
+        add(new THREE.ConeGeometry(r * 0.28, r * 0.6, 10), dark, 0, r * 0.9, 0);
+        break;
+      }
+      case 2: {
+        // Octagonal telemetry bus with whip antennas and a strobe.
+        const oct = add(new THREE.CylinderGeometry(r * 0.85, r * 0.85, r * 1.9, 8), foil);
+        oct.rotation.z = 0.2;
+        for (const [x, z] of [[0.5, 0], [-0.5, 0], [0, 0.5], [0, -0.5]] as const) {
+          const whip = add(rodGeo, ti, x * r, r * 1.2, z * r);
+          whip.rotation.z = x * 0.5;
+          whip.rotation.x = -z * 0.5;
+        }
+        add(new THREE.SphereGeometry(r * 0.24, 10, 8), beaconMat, 0, r * 1.85, 0);
+        break;
+      }
+      case 3: {
+        // Centrifuge habitat ring around a central docking hub.
+        add(new THREE.TorusGeometry(r * 1.5, r * 0.2, 10, 40), ti).rotation.x = Math.PI / 2;
+        add(new THREE.CylinderGeometry(r * 0.3, r * 0.3, r * 1.5, 10), foil);
+        for (let i = 0; i < 4; i += 1) {
+          const spoke = add(new THREE.BoxGeometry(r * 1.25, r * 0.07, r * 0.07), ti);
+          spoke.rotation.y = (i / 4) * Math.PI;
+        }
+        add(new THREE.SphereGeometry(r * 0.28, 12, 9), beaconMat, 0, r * 0.85, 0);
+        break;
+      }
+      case 4: {
+        // Magnetometer boom surveyor: sensor core, long truss boom, twin paddles.
+        add(new THREE.BoxGeometry(r * 1.2, r * 1.2, r * 1.2), foil);
+        const boom = add(new THREE.CylinderGeometry(r * 0.05, r * 0.05, r * 6, 6), ti);
+        boom.rotation.z = Math.PI / 2;
+        boom.position.x = r * 3;
+        add(new THREE.SphereGeometry(r * 0.3, 10, 8), beaconMat, r * 6.1, 0, 0);
+        for (const dir of [-1, 1]) add(wingGeo, panel, 0, 0, dir * r * 1.7).rotation.x = Math.PI / 2;
+        break;
+      }
+      case 5: {
+        // Hex-array solar collector: six mirror petals around a hub.
+        add(new THREE.CylinderGeometry(r * 0.42, r * 0.42, r * 0.7, 8), ti);
+        const petal = new THREE.CylinderGeometry(r * 0.62, r * 0.62, r * 0.05, 6);
+        for (let i = 0; i < 6; i += 1) {
+          const a = (i / 6) * Math.PI * 2;
+          const p = add(petal, mirror, Math.cos(a) * r * 1.25, 0, Math.sin(a) * r * 1.25);
+          p.rotation.z = 0.55;
+          p.rotation.y = a;
+        }
+        add(new THREE.SphereGeometry(r * 0.22, 8, 6), beaconMat, 0, r * 0.55, 0);
+        break;
+      }
+      case 6: {
+        // Atmospheric weather scanner: nadir sensor turret and radiator fins.
+        add(new THREE.BoxGeometry(r * 1.4, r * 1.5, r * 1.4), ti);
+        const turret = add(new THREE.CylinderGeometry(r * 0.42, r * 0.5, r * 0.6, 12), dark, 0, -r * 1.05, 0);
+        turret.rotation.x = Math.PI;
+        add(new THREE.SphereGeometry(r * 0.26, 10, 8), new THREE.MeshBasicMaterial({ color: 0x7ce8ff }), 0, -r * 1.42, 0);
+        for (const dir of [-1, 1]) add(new THREE.BoxGeometry(r * 0.05, r * 0.9, r * 1.1), dark, dir * r * 0.85, 0, 0);
+        break;
+      }
+      case 7: {
+        // Laser optical relay: gimbaled cyan transceivers under a sunshield.
+        add(new THREE.CylinderGeometry(r * 0.6, r * 0.6, r * 1.4, 10), foil);
+        for (const dir of [-1, 1]) {
+          const lens = add(new THREE.CylinderGeometry(r * 0.34, r * 0.34, r * 0.3, 14), new THREE.MeshBasicMaterial({ color: 0x8be9fd }), dir * r * 0.8, r * 0.3, 0);
+          lens.rotation.z = Math.PI / 2;
+        }
+        add(new THREE.BoxGeometry(r * 2.1, r * 0.06, r * 1.3), mirror, 0, r * 0.95, 0).rotation.z = 0.2;
+        add(new THREE.SphereGeometry(r * 0.22, 8, 6), beaconMat, 0, -r * 0.9, 0);
+        break;
+      }
+      case 8: {
+        // CubeSat constellation: three units in formation with deployable antennas.
+        const cube = new THREE.BoxGeometry(r * 0.75, r * 0.75, r * 0.75);
+        const offsets: [number, number, number][] = [[0, r * 0.95, 0], [-r * 0.9, -r * 0.55, 0], [r * 0.9, -r * 0.55, 0]];
+        for (const [x, y, z] of offsets) {
+          add(cube, panel, x, y, z);
+          const ant = add(new THREE.CylinderGeometry(r * 0.03, r * 0.03, r * 0.9, 5), ti, x, y + r * 0.7, z);
+          ant.rotation.z = x > 0 ? -0.4 : x < 0 ? 0.4 : 0;
+        }
+        add(new THREE.SphereGeometry(r * 0.2, 8, 6), beaconMat, 0, r * 2, 0);
+        break;
+      }
+      default: {
+        // Tri-panel deep-orbit sentinel: three radial wings and a nuclear RTG fin.
+        add(new THREE.CylinderGeometry(r * 0.55, r * 0.55, r * 1.6, 10), foil);
+        for (let i = 0; i < 3; i += 1) {
+          const a = (i / 3) * Math.PI * 2;
+          const w = add(wingGeo, panel, Math.cos(a) * r * 1.85, 0, Math.sin(a) * r * 1.85);
+          w.rotation.y = -a;
+        }
+        add(new THREE.BoxGeometry(r * 0.16, r * 1.3, r * 0.9), dark, 0, -r * 1.35, 0);
+        add(new THREE.SphereGeometry(r * 0.26, 10, 8), beaconMat, 0, r * 0.95, 0);
+        break;
+      }
     }
-    const dish = new THREE.Mesh(
-      new THREE.SphereGeometry(radius * 0.52, 14, 10, 0, Math.PI * 2, 0, Math.PI / 2),
-      new THREE.MeshStandardMaterial({ color: 0xaebdd6, roughness: 0.5, metalness: 0.6, side: THREE.DoubleSide }),
-    );
-    dish.rotation.x = Math.PI;
-    dish.position.y = -radius * 1.1;
-    group.add(dish);
-    const beacon = new THREE.Mesh(
-      new THREE.SphereGeometry(radius * 0.3, 10, 8),
-      new THREE.MeshBasicMaterial({ color: color.clone().lerp(new THREE.Color(0xffffff), 0.5) }),
-    );
-    beacon.position.y = radius * 1.3;
-    group.add(beacon);
     return group;
   }
 
@@ -1039,10 +1422,10 @@ export class AtlasScene {
       const points = new THREE.Points(
         geo,
         new THREE.PointsMaterial({
-          size: 46,
+          size: 30,
           sizeAttenuation: true,
           vertexColors: true,
-          map: SOFT_DOT,
+          map: CRISP_STAR,
           transparent: true,
           opacity: ci === 0 ? 0.4 : 0.26,
           depthWrite: false,
@@ -1052,8 +1435,9 @@ export class AtlasScene {
       points.position.copy(c.anchor);
       this.root.add(points);
 
-      // Every galaxy has a relativistic supermassive black hole at its centre.
-      const holeRadius = ci === 0 ? 150 : 90;
+      // Every galaxy has a relativistic supermassive black hole at its centre. A galactic core is
+      // 140 units of event horizon, so it dwarfs the 42-unit discipline stars around it.
+      const holeRadius = 140;
       const hole = this.relativisticBlackHole(holeRadius);
       hole.position.copy(c.anchor);
       this.root.add(hole);
@@ -1064,8 +1448,8 @@ export class AtlasScene {
         center: c.anchor.clone(),
         radius: holeRadius,
       });
-      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: radialSprite("rgba(255,226,190,0.55)", "rgba(126,164,255,0.18)"), transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false }));
-      glow.scale.setScalar(ci === 0 ? 1400 : 900);
+      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: radialSprite("rgba(255,226,190,0.55)", "rgba(126,164,255,0.18)"), transparent: true, opacity: 0.26, blending: THREE.AdditiveBlending, depthWrite: false }));
+      glow.scale.setScalar(ci === 0 ? 2100 : 1500);
       glow.position.copy(c.anchor);
       this.root.add(glow);
       this.clusterGlows.push({ sprite: glow, center: c.anchor.clone() });
@@ -1241,16 +1625,9 @@ export class AtlasScene {
     const n = this.ndc(x, y);
     this.pointer.set(n.x, n.y);
     this.raycaster.setFromCamera(this.pointer, this.camera);
-    const hits = this.raycaster.intersectObjects(this.pickables, false);
-    for (const hit of hits) {
-      const id = hit.object.userData.bodyId as string | undefined;
-      if (id) {
-        const body = this.bodies.get(id);
-        if (body) return { id, body, cosmic: null };
-      }
-    }
-    // Cosmic bodies are picked with generous analytic hit-spheres, so a 0.65-unit station or a distant
-    // galaxy still registers under a thumb. No invisible meshes needed at all.
+    // Cosmic bodies are picked first, with generous analytic hit-spheres and a hard screen-space
+    // floor. A 0.65-unit station or a core singularity stays tappable at any range, and — critically —
+    // a black hole can never be hijacked by the discipline star whose anchor it happens to sit near.
     const sphere = new THREE.Sphere();
     const point = new THREE.Vector3();
     let best: { body: CosmicBody; distance: number } | null = null;
@@ -1259,12 +1636,48 @@ export class AtlasScene {
       // or galaxy, and empty space there must deselect rather than warp.
       const inside = this.camera.position.distanceTo(body.center);
       if ((body.kind === "universe" || body.kind === "galaxy") && inside < body.radius * 1.08) continue;
-      const slack = body.kind === "station" ? 8 : body.kind === "galaxy" ? 1.35 : body.kind === "universe" ? 1.05 : 1.25;
-      sphere.set(body.center, Math.max(body.radius * slack, body.kind === "station" ? 0.9 : 0));
+      const slack = body.kind === "station" ? 6 : body.kind === "galaxy" ? 1.35 : body.kind === "universe" ? 1.05 : 1.25;
+      sphere.set(body.center, Math.max(body.radius * slack, 0.9));
       if (!this.raycaster.ray.intersectSphere(sphere, point)) continue;
       const distance = point.distanceTo(this.camera.position);
       if (!best || distance < best.distance) best = { body, distance };
     }
+    // Anything that is itself the focus of study outranks the loose bodies behind it. Only the faint
+    // galaxy/universe containers keep deferring to the star field inside them.
+    if (best && best.body.kind !== "galaxy" && best.body.kind !== "universe") {
+      return { id: best.body.id, body: null, cosmic: best.body };
+    }
+
+    const hits = this.raycaster.intersectObjects(this.pickables, false);
+    let bodyHit: { id: string; body: AtlasBody } | null = null;
+    for (const hit of hits) {
+      const id = hit.object.userData.bodyId as string | undefined;
+      if (!id) continue;
+      const body = this.bodies.get(id);
+      if (body) {
+        bodyHit = { id, body };
+        break;
+      }
+    }
+    // Small hardware (satellites, stations, moons) gets a 28 px screen-space collider, so a thumb tap
+    // never has to land on a two-pixel hull.
+    const projected = new THREE.Vector3();
+    let near: { id: string; body: AtlasBody; px: number } | null = null;
+    for (const body of this.bodies.values()) {
+      if (body.kind !== "satellite" && body.kind !== "moon") continue;
+      const object = this.bodyObject.get(body.id);
+      if (!object) continue;
+      object.getWorldPosition(projected);
+      if (projected.clone().sub(this.camera.position).dot(this.raycaster.ray.direction) <= 0) continue;
+      projected.project(this.camera);
+      const dx = ((projected.x + 1) / 2) * this.width - x;
+      const dy = ((1 - projected.y) / 2) * this.height - y;
+      const px = Math.hypot(dx, dy);
+      if (px > 28) continue;
+      if (!near || px < near.px) near = { id: body.id, body, px };
+    }
+    if (near) return { id: near.id, body: near.body, cosmic: null };
+    if (bodyHit) return { id: bodyHit.id, body: bodyHit.body, cosmic: null };
     if (best) return { id: best.body.id, body: null, cosmic: best.body };
     return null;
   }
@@ -1437,12 +1850,16 @@ export class AtlasScene {
     this.stick = null;
   }
 
-  /** Closest the camera may come: 1.45× the focused body's radius, never inside its hull. */
+  /** Closest the camera may come: 1.45× the focused body's radius, never inside its hull. Moons and
+   *  satellites get a 0.45-unit floor so their hulls can be inspected at panel scale. */
   private floorDistance(): number {
     const id = this.follow ?? this.selected;
     if (id) {
       const body = this.bodies.get(id);
-      if (body) return Math.max(MIN_CAMERA_DISTANCE, body.radius * 1.45);
+      if (body) {
+        const floor = body.kind === "satellite" || body.kind === "moon" ? 0.45 : MIN_CAMERA_DISTANCE;
+        return Math.max(floor, body.radius * 1.45);
+      }
       const cosmic = this.cosmicBodies.find((c) => c.id === id);
       if (cosmic && cosmic.kind !== "universe" && cosmic.kind !== "galaxy") return Math.max(MIN_CAMERA_DISTANCE, cosmic.radius * 1.45);
     }
@@ -1602,10 +2019,34 @@ export class AtlasScene {
       const angle = b.phase + this.elapsed * 0.28;
       b.pivot.rotation.y = angle;
       const dir = new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle));
-      b.bridge.position.copy(dir).multiplyScalar(67.5);
+      b.bridge.position.copy(dir).multiplyScalar(b.separation * 0.5);
       b.bridge.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
-      b.bridge.scale.set(1, 135, 1);
+      b.bridge.scale.set(1, b.separation, 1);
     }
+    // Prominences breathe: each loop swells and dims on its own phase, never in lockstep.
+    for (const f of this.starFlares) {
+      const k = 0.5 + 0.5 * Math.sin(this.elapsed * f.speed + f.phase);
+      f.mesh.scale.setScalar(0.9 + k * 0.3);
+      f.mat.opacity = 0.05 + k * 0.26;
+    }
+    // Comets on eccentric orbits: position on an ellipse, tail aimed radially away from the star,
+    // longer and brighter near perihelion.
+    for (const c of this.comets) {
+      const theta = c.phase + this.elapsed * c.speed;
+      const px = c.a * (Math.cos(theta) - c.e);
+      const pz = c.a * Math.sqrt(Math.max(0, 1 - c.e * c.e)) * Math.sin(theta);
+      c.holder.position.set(Math.cos(c.yaw) * px - Math.sin(c.yaw) * pz, Math.sin(theta * 2.3) * c.a * 0.06, Math.sin(c.yaw) * px + Math.cos(c.yaw) * pz);
+      const r = c.holder.position.length();
+      const glow = clamp(1 - r / (c.a * 1.7), 0, 1);
+      const dir = c.holder.position.clone().normalize();
+      c.tail.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+      c.tail.scale.set(0.85 + glow * 0.6, 14 + glow * 46, 0.85 + glow * 0.6);
+      c.coma.scale.setScalar(4 + glow * 7);
+      c.tailMat.opacity = 0.1 + glow * 0.35;
+    }
+    for (const belt of this.belts) belt.holder.rotation.y += dt * 0.045 * belt.spin * Math.max(0.2, this.timeScale);
+    for (const m of this.megaStructures) m.mesh.rotation.y += dt * m.speed;
+    for (const d of this.dysonSwarms) d.group.rotation.y += dt * d.speed;
 
     // Level of detail, measured from the camera to each system's own star.
     const camPos = this.camera.position;
@@ -1617,6 +2058,7 @@ export class AtlasScene {
       // Level of detail is what keeps a phone at 60 FPS: only the system being flown stays fully
       // populated, and its moons and satellites appear as the camera closes on them.
       s.planets.visible = d < 4800;
+      s.small.visible = d < 4800;
       s.moons.visible = d < 700;
       s.satellites.visible = d < 60;
       s.star.rotation.y += dt * 0.02;
@@ -1642,6 +2084,12 @@ export class AtlasScene {
     // The galactic glow is a galaxy-scale cue; up close it would white out an inspection.
     for (const g of this.clusterGlows) g.sprite.visible = this.camera.position.distanceTo(g.center) > 3200;
     for (const mat of this.diskMats) mat.uniforms.uTime!.value = now * 0.001;
+    // A ring's shadow term needs the planet's current world position, which orbits every frame.
+    const wp = new THREE.Vector3();
+    for (const r of this.ringShaders) {
+      r.mesh.getWorldPosition(wp);
+      (r.mat.uniforms.uPlanet!.value as THREE.Vector3).copy(wp);
+    }
 
     this.renderer.render(this.scene, this.camera);
     this.drawLabels();
@@ -1923,7 +2371,7 @@ export class AtlasScene {
     this.multiverse.add(
       new THREE.Points(
         uniGeo,
-        new THREE.PointsMaterial({ size: 130, sizeAttenuation: true, vertexColors: true, map: SOFT_DOT, transparent: true, opacity: 0.75, depthWrite: false, blending: THREE.AdditiveBlending }),
+        new THREE.PointsMaterial({ size: 170, sizeAttenuation: true, vertexColors: true, map: CRISP_STAR, transparent: true, opacity: 0.92, depthWrite: false, blending: THREE.AdditiveBlending }),
       ),
     );
 
@@ -1984,7 +2432,7 @@ export class AtlasScene {
     this.galaxyField.add(
       new THREE.Points(
         galGeo,
-        new THREE.PointsMaterial({ size: 40, sizeAttenuation: true, vertexColors: true, map: SOFT_DOT, transparent: true, opacity: 0.6, depthWrite: false, blending: THREE.AdditiveBlending }),
+        new THREE.PointsMaterial({ size: 34, sizeAttenuation: true, vertexColors: true, map: CRISP_STAR, transparent: true, opacity: 0.85, depthWrite: false, blending: THREE.AdditiveBlending }),
       ),
     );
 
@@ -2063,6 +2511,41 @@ export class AtlasScene {
       mesh.frustumCulled = false;
       this.galaxyField.add(mesh);
     }
+  }
+
+  /** A quasar: a hyper-luminous accretion core firing twin opposing relativistic jets, cyan on one
+   *  pole and violet on the other. Both jets are additive cones, so the beam brightens toward the tip. */
+  private quasar(scale: number): THREE.Group {
+    const group = this.relativisticBlackHole(scale);
+    const jetLen = 1200;
+    for (const [dir, color] of [[1, 0x35d9ff], [-1, 0xa78bfa]] as const) {
+      const mat = new THREE.MeshBasicMaterial({
+        color,
+        transparent: true,
+        opacity: 0.30,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        side: THREE.DoubleSide,
+      });
+      const jet = new THREE.Mesh(new THREE.ConeGeometry(scale * 1.5, jetLen, 24, 1, true), mat);
+      jet.rotation.x = dir > 0 ? Math.PI : 0;
+      jet.position.y = (dir * jetLen) / 2;
+      group.add(jet);
+      // A brighter inner beam and a terminal shock lobe make the jet read as relativistic plasma.
+      const core = new THREE.Mesh(
+        new THREE.CylinderGeometry(scale * 0.18, scale * 0.62, jetLen * 0.96, 16, 1, true),
+        new THREE.MeshBasicMaterial({ color: 0xf2fbff, transparent: true, opacity: 0.42, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }),
+      );
+      core.position.y = (dir * jetLen) / 2;
+      group.add(core);
+      const lobe = new THREE.Sprite(
+        new THREE.SpriteMaterial({ map: radialSprite(`rgba(${dir > 0 ? "120,240,255" : "190,160,255"},0.9)`, "rgba(40,40,90,0)"), transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false }),
+      );
+      lobe.scale.setScalar(scale * 7);
+      lobe.position.y = dir * jetLen;
+      group.add(lobe);
+    }
+    return group;
   }
 
   /** A relativistic black hole: pitch-black shadow, omnidirectional photon ring, lensed halo and a
@@ -2460,6 +2943,116 @@ function lensingHaloMaterial(): THREE.ShaderMaterial {
     blending: THREE.AdditiveBlending,
     depthWrite: false,
   });
+}
+
+/** Night-side emission: warm city grids and cyan fusion hubs, lit only where the star does not reach. */
+function nightLightsMaterial(sun: THREE.Vector3): THREE.ShaderMaterial {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      uSun: { value: sun.clone() },
+      uProgress: { value: 0 },
+      uWarm: { value: new THREE.Color(0xffc66d) },
+      uCool: { value: new THREE.Color(0x35d9ff) },
+    },
+    vertexShader:
+      "varying vec3 vN; varying vec3 vWorld;\n" +
+      "void main() {\n" +
+      "  vN = normalize(mat3(modelMatrix) * normal);\n" +
+      "  vec4 wp = modelMatrix * vec4(position, 1.0);\n" +
+      "  vWorld = wp.xyz;\n" +
+      "  gl_Position = projectionMatrix * viewMatrix * wp;\n" +
+      "}",
+    fragmentShader:
+      "uniform vec3 uSun; uniform float uProgress; uniform vec3 uWarm; uniform vec3 uCool;\n" +
+      "varying vec3 vN; varying vec3 vWorld;\n" +
+      "void main() {\n" +
+      "  vec3 n = normalize(vN);\n" +
+      "  float lit = dot(n, normalize(uSun - vWorld));\n" +
+      "  float night = smoothstep(0.14, -0.3, lit);\n" +
+      "  float gx = sin(vWorld.x * 15.0) * sin(vWorld.y * 12.0) * sin(vWorld.z * 14.0);\n" +
+      "  float grid = smoothstep(0.16, 0.96, abs(gx));\n" +
+      "  float hub = smoothstep(0.5, 0.98, sin(vWorld.x * 3.1 + vWorld.y * 2.3) * sin(vWorld.z * 3.7));\n" +
+      "  vec3 c = mix(uWarm, uCool, hub);\n" +
+      "  float a = night * uProgress * (0.2 + 0.8 * grid);\n" +
+      "  gl_FragColor = vec4(c * a * 1.35, a * 0.85);\n" +
+      "}",
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+}
+
+/** A shader ring: concentric bands, a Cassini division, and the planet's shadow across the far side. */
+function ringMaterial(inner: number, outer: number, tint: THREE.Color, sun: THREE.Vector3): THREE.ShaderMaterial {
+  return new THREE.ShaderMaterial({
+    uniforms: {
+      uInner: { value: inner },
+      uOuter: { value: outer },
+      uSun: { value: sun.clone() },
+      uPlanet: { value: new THREE.Vector3() },
+      uTint: { value: tint },
+    },
+    vertexShader:
+      "varying vec3 vWorld; varying float vR;\n" +
+      "void main() {\n" +
+      "  vR = length(position.xy);\n" +
+      "  vec4 wp = modelMatrix * vec4(position, 1.0);\n" +
+      "  vWorld = wp.xyz;\n" +
+      "  gl_Position = projectionMatrix * viewMatrix * wp;\n" +
+      "}",
+    fragmentShader:
+      "uniform float uInner; uniform float uOuter; uniform vec3 uSun; uniform vec3 uPlanet; uniform vec3 uTint;\n" +
+      "varying vec3 vWorld; varying float vR;\n" +
+      "void main() {\n" +
+      "  float t = clamp((vR - uInner) / (uOuter - uInner), 0.0, 1.0);\n" +
+      "  float b1 = 0.5 + 0.5 * sin(t * 24.0);\n" +
+      "  float b2 = 0.5 + 0.5 * sin(t * 57.0 + 1.7);\n" +
+      "  float bands = 0.45 + 0.55 * (0.62 * b1 + 0.38 * b2);\n" +
+      "  float cassini = smoothstep(0.43, 0.47, t) * smoothstep(0.57, 0.53, t);\n" +
+      "  float gap = 1.0 - cassini * 0.92;\n" +
+      "  float edge = smoothstep(0.0, 0.05, t) * smoothstep(1.0, 0.92, t);\n" +
+      "  vec3 toSun = normalize(uSun - vWorld);\n" +
+      "  float behind = smoothstep(0.15, 0.9, dot(normalize(vWorld - uPlanet), -toSun));\n" +
+      "  float shadow = 1.0 - behind * 0.7;\n" +
+      "  vec3 c = mix(uTint, vec3(1.0), bands * 0.4);\n" +
+      "  float a = edge * gap * (0.26 + 0.34 * bands) * shadow;\n" +
+      "  gl_FragColor = vec4(c * (0.6 + 0.5 * bands) * shadow, a * 0.5);\n" +
+      "}",
+    transparent: true,
+    side: THREE.DoubleSide,
+    depthWrite: false,
+  });
+}
+
+/** Seven seeded biome classes. Every domain reads as a distinct world: ocean, ringed giant, ice,
+ *  lava, lush, crystalline or desert. */
+interface PlanetBiome {
+  name: string;
+  tint: THREE.Color;
+  atmosphere: THREE.Color;
+  clouds: number;
+  cloudTint: number;
+  roughness: number;
+  metalness: number;
+  glint: number;
+  rings: boolean;
+}
+
+function planetBiome(seed: number, banded: boolean): PlanetBiome {
+  const klass = Math.floor(hash01(seed, 21) * 7) % 7;
+  const tint = new THREE.Color([0x9fd4ff, 0xf2d3a0, 0xd8ecff, 0xff9a6b, 0x9ff0b6, 0xb8f4ff, 0xe8b87a][klass]!);
+  const atmosphere = new THREE.Color([0x6fc4ff, 0xffc98f, 0x9fe2ff, 0xff8a5c, 0x8be9b0, 0xa8f2ff, 0xffb877][klass]!);
+  return {
+    name: ["Oceanic", "Ringed Gas Giant", "Ice World", "Volcanic", "Lush Terrestrial", "Crystalline", "Desert Canyon"][klass]!,
+    tint,
+    atmosphere,
+    clouds: [0.5, 0.74, 0.36, 0.3, 0.62, 0.16, 0.24][klass]!,
+    cloudTint: [0xffffff, 0xfff2dd, 0xeaf6ff, 0xffd2bd, 0xffffff, 0xd8fbff, 0xffe6c8][klass]!,
+    roughness: [0.3, 0.86, 0.38, 0.72, 0.62, 0.12, 0.8][klass]!,
+    metalness: [0.06, 0.04, 0.1, 0.08, 0.03, 0.5, 0.05][klass]!,
+    glint: [1, 0.4, 0.7, 0.5, 0.6, 1.2, 0.4][klass]!,
+    rings: banded || klass === 1 || (klass === 2 && hash01(seed, 22) > 0.55),
+  };
 }
 
 /** One procedural galaxy shape: spiral, barred spiral, elliptical or ring. */

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/content-coverage-record-v0.1.schema.json",
+  "title": "ATHENA_CONTENT_COVERAGE_RECORD_v0.1",
+  "type": "object",
+  "required": [
+    "domain_code",
+    "owner_discipline_id",
+    "taxonomy_status",
+    "coverage_stage",
+    "counts",
+    "next_authoring_action"
+  ],
+  "properties": {
+    "domain_code": {
+      "type": "string",
+      "pattern": "^ATH-DOM-[A-Z]+-[A-Z0-9-]+$"
+    },
+    "owner_discipline_id": {
+      "type": "string",
+      "pattern": "^ATH-DISC-[A-Z]+$"
+    },
+    "taxonomy_status": {
+      "const": "draft"
+    },
+    "coverage_stage": {
+      "enum": [
+        "taxonomy_only",
+        "seeded_draft",
+        "in_authoring",
+        "reviewed",
+        "approved"
+      ]
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "skill_families",
+        "skills",
+        "subskills",
+        "concepts",
+        "learning_objectives",
+        "learning_units",
+        "assessments",
+        "resources"
+      ],
+      "properties": {
+        "skill_families": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skills": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "subskills": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "concepts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "learning_objectives": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "learning_units": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "assessments": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resources": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "next_authoring_action": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

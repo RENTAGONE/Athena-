@@ -1,0 +1,409 @@
+{
+  "registry_id": "ATHENA_INTEGRATED_PROJECT_PORTFOLIO_M14",
+  "version": "0.1.0",
+  "status": "draft_for_review",
+  "policy": "Projects generate evidence and transfer opportunities; completion is not mastery. Adapt scope, materials and supervision to age and context.",
+  "projects": [
+    {
+      "id": "ATH-IP-M14-001",
+      "title": "Build a small digital product with evidence of real usefulness",
+      "disciplines": [
+        "ENG",
+        "BIZ",
+        "FIN",
+        "MATH",
+        "RES",
+        "COMM",
+        "AEST",
+        "CYBER",
+        "WORK",
+        "LEAD"
+      ],
+      "challenge": "Design and test a narrowly scoped digital product or service for a clearly defined user problem without assuming demand.",
+      "deliverables": [
+        "problem and user evidence brief",
+        "working low-risk prototype",
+        "cost/revenue and capacity model",
+        "privacy/threat checklist",
+        "test log and short demonstration",
+        "decision memo: continue, change or stop"
+      ],
+      "phases": [
+        "Separate observation from assumptions; conduct consent-based discovery.",
+        "Define one user task and measurable acceptance criteria.",
+        "Build the smallest testable prototype and document versions.",
+        "Calculate direct costs, time capacity and break-even scenarios with assumptions.",
+        "Test usability, privacy and failure cases using dummy data.",
+        "Present findings, uncertainty and a justified next decision."
+      ],
+      "acceptance_criteria": [
+        "At least one user task is testable end-to-end.",
+        "Claims about demand are limited to collected evidence.",
+        "Calculations reconcile and assumptions are visible.",
+        "No real sensitive user data is required.",
+        "A failure or stop decision is treated as valid evidence."
+      ],
+      "rubric": {
+        "problem_evidence": "0–3: from unsupported assumption to traceable, appropriately limited user evidence",
+        "technical_quality": "0–3: from nonfunctional to tested prototype with documented limits",
+        "quantitative_reasoning": "0–3: from missing arithmetic to reconciled scenarios and sensitivity checks",
+        "responsibility": "0–3: from ignored risks to proportionate privacy, security and ethical safeguards"
+      },
+      "safety_ethics": "Use dummy/test data; obtain guardian approval for public release or spending; no deceptive marketing, scraping or unauthorised testing.",
+      "transfer_test": "Repeat the same discovery and evaluation method for a different user group; explain which method transferred and which assumptions did not."
+    },
+    {
+      "id": "ATH-IP-M14-002",
+      "title": "Low-voltage sensor investigation and engineering notebook",
+      "disciplines": [
+        "ELEC",
+        "MATH",
+        "ENG",
+        "RES",
+        "WORK",
+        "COMM",
+        "AEST"
+      ],
+      "challenge": "Investigate a simple low-voltage sensor or circuit using predictions, controlled measurements and clear reporting.",
+      "deliverables": [
+        "question and hypothesis",
+        "annotated circuit diagram",
+        "parts and safety checklist",
+        "prediction table and measurement log",
+        "uncertainty/error discussion",
+        "technical explainer"
+      ],
+      "phases": [
+        "Define a narrow question and identify variables.",
+        "Select a documented beginner-safe low-voltage setup.",
+        "Predict behaviour using appropriate circuit models.",
+        "Build only with suitable supervision and verified components.",
+        "Measure, record instrument limitations and compare predictions.",
+        "Explain deviations without hiding inconvenient results."
+      ],
+      "acceptance_criteria": [
+        "Circuit and power source remain within documented safe limits.",
+        "Diagram, units and observations are reproducible.",
+        "At least one alternative explanation is considered.",
+        "Conclusions match the evidence and stated limitations."
+      ],
+      "rubric": {
+        "model": "0–3: from absent to justified prediction with assumptions",
+        "measurement": "0–3: from untraceable to repeatable records with units",
+        "reasoning": "0–3: from outcome-only to uncertainty-aware interpretation",
+        "communication": "0–3: from unclear to independently reproducible explanation"
+      },
+      "safety_ethics": "No mains electricity, exposed high-energy sources, lithium battery modification or unsupervised soldering; adult supervision and known-safe kit required.",
+      "transfer_test": "Apply the same prediction-measurement-revision cycle to a non-electrical physical investigation."
+    },
+    {
+      "id": "ATH-IP-M14-003",
+      "title": "Research a claim and publish a bilingual evidence explainer",
+      "disciplines": [
+        "RES",
+        "MATH",
+        "LANG",
+        "COMM",
+        "AEST",
+        "PSY",
+        "LEAD"
+      ],
+      "challenge": "Evaluate a public claim and explain what the evidence does and does not establish in accessible Bangla and English.",
+      "deliverables": [
+        "research question and search log",
+        "source-quality matrix",
+        "claim/evidence/uncertainty map",
+        "bilingual glossary",
+        "one-page visual explainer",
+        "reader feedback and revision note"
+      ],
+      "phases": [
+        "Turn a broad claim into a bounded answerable question.",
+        "Search for primary and authoritative sources where appropriate.",
+        "Compare methods, sample, date, conflicts and limitations.",
+        "Check numerical claims and distinguish correlation from causation.",
+        "Draft both language versions with consistent meaning.",
+        "Test comprehension and revise confusing or overstated statements."
+      ],
+      "acceptance_criteria": [
+        "Every material factual claim has traceable provenance.",
+        "Uncertainty and disagreement are represented fairly.",
+        "Bangla and English versions preserve the same substantive meaning.",
+        "A reader can correctly explain the main conclusion after reading."
+      ],
+      "rubric": {
+        "source_quality": "0–3: from unsupported to diverse, relevant and traceable sources",
+        "quantitative_interpretation": "0–3: from misread to contextually correct with limitations",
+        "bilingual_fidelity": "0–3: from inconsistent to accurate equivalent meaning",
+        "audience_comprehension": "0–3: from untested to reader-tested and revised"
+      },
+      "safety_ethics": "Avoid private individuals, medical diagnosis, political targeting or exposing personal information; distinguish educational information from professional advice.",
+      "transfer_test": "Evaluate a second claim from a different field and identify which source-evaluation principles remain valid."
+    },
+    {
+      "id": "ATH-IP-M14-004",
+      "title": "Football performance: observe, analyse, practise, reassess",
+      "disciplines": [
+        "ATH",
+        "BODY",
+        "MATH",
+        "PSY",
+        "RES",
+        "COMM",
+        "WORK"
+      ],
+      "challenge": "Analyse one football skill or decision using observations, then design a safe practice intervention and reassess.",
+      "deliverables": [
+        "one clearly defined performance question",
+        "baseline observation sheet",
+        "simple metric and limitations",
+        "practice microcycle",
+        "reflection and delayed reassessment"
+      ],
+      "phases": [
+        "Choose one observable behaviour, not a vague goal.",
+        "Record a small baseline sample and separate decision quality from outcome.",
+        "Identify plausible technical, tactical and contextual factors.",
+        "Design a manageable practice constraint with rest and stop signals.",
+        "Reassess using comparable observations and note confounders."
+      ],
+      "acceptance_criteria": [
+        "Measures are defined before practice.",
+        "No claim of causation from a tiny uncontrolled sample.",
+        "Training load is age-appropriate and includes recovery.",
+        "Pain, dizziness, unusual breathlessness or injury triggers stopping and adult support."
+      ],
+      "rubric": {
+        "observation": "0–3: from impression to repeatable, specific records",
+        "analysis": "0–3: from outcome bias to contextual explanation and uncertainty",
+        "practice_design": "0–3: from unsafe/unfocused to safe, specific and progressive",
+        "reflection": "0–3: from anecdote to comparison and next-step rationale"
+      },
+      "safety_ethics": "No maximal testing, weight-loss targets, punishment conditioning or training through pain; adapt to weather, surface and supervision.",
+      "transfer_test": "Apply observation → hypothesis → intervention → reassessment to a non-sport learning or workflow task."
+    },
+    {
+      "id": "ATH-IP-M14-005",
+      "title": "Create an accessible visual story with recorded narration",
+      "disciplines": [
+        "ART",
+        "AEST",
+        "PERF",
+        "COMM",
+        "LANG",
+        "PSY",
+        "WORK"
+      ],
+      "challenge": "Create a short visual sequence and narration that communicate one idea clearly to a defined audience.",
+      "deliverables": [
+        "audience and intent statement",
+        "thumbnail storyboard",
+        "visual studies and final sequence",
+        "short narration recording/script",
+        "accessibility and comprehension checks",
+        "revision log"
+      ],
+      "phases": [
+        "Define the message and audience.",
+        "Develop several visual compositions before choosing one.",
+        "Use contrast, sequence, pacing and readable typography intentionally.",
+        "Prepare clear narration with appropriate diction and vocal care.",
+        "Add captions/alt description and test comprehension.",
+        "Revise based on specific audience feedback."
+      ],
+      "acceptance_criteria": [
+        "Sequence is understandable without relying only on decorative polish.",
+        "Narration is intelligible and does not strain the voice.",
+        "Text and visual contrast are usable on a phone.",
+        "At least one revision responds to observed confusion."
+      ],
+      "rubric": {
+        "visual_structure": "0–3: from confusing to coherent intentional sequence",
+        "performance": "0–3: from unclear/strained to intelligible and sustainable",
+        "accessibility": "0–3: from omitted to tested captions/contrast/description",
+        "iteration": "0–3: from no revision to evidence-led revision"
+      },
+      "safety_ethics": "Use licensed or original assets; obtain consent for identifiable voices/images; avoid harmful imitation or unsafe vocal strain.",
+      "transfer_test": "Reuse the audience-testing method in a non-artistic information design task."
+    },
+    {
+      "id": "ATH-IP-M14-006",
+      "title": "Household systems and hazard-aware independence audit",
+      "disciplines": [
+        "INDEP",
+        "WORK",
+        "MATH",
+        "BODY",
+        "COMM",
+        "CYBER",
+        "LEAD"
+      ],
+      "challenge": "Improve one low-risk household routine while documenting cost, clarity, safety boundaries and escalation points.",
+      "deliverables": [
+        "current-state process map",
+        "risk and escalation checklist",
+        "simple cost/time comparison",
+        "revised checklist or visual guide",
+        "supervised trial notes",
+        "reflection on what should remain unchanged"
+      ],
+      "phases": [
+        "Choose a reversible, low-risk task with guardian agreement.",
+        "Observe the current process without collecting private data.",
+        "Identify hazards and stop/escalation conditions.",
+        "Redesign instructions and calculate relevant quantities.",
+        "Trial the change under appropriate supervision.",
+        "Review whether the change genuinely helped."
+      ],
+      "acceptance_criteria": [
+        "No high-risk repair or unsupervised hazardous activity.",
+        "Instructions are clear to another household member.",
+        "The process includes stop/escalation triggers.",
+        "The change does not trade safety for speed."
+      ],
+      "rubric": {
+        "process_understanding": "0–3: from vague to accurate sequence and constraints",
+        "risk_recognition": "0–3: from missed hazards to clear stop/escalation rules",
+        "quantitative_accuracy": "0–3: from absent to correct and relevant estimates",
+        "usability": "0–3: from unclear to tested and repeatable"
+      },
+      "safety_ethics": "Do not handle mains wiring, gas, chemicals, medication, sharp tools or heavy loads without qualified adult supervision; stop and escalate uncertainty.",
+      "transfer_test": "Use the same process-mapping method on a digital workflow and explain new cyber/privacy risks."
+    },
+    {
+      "id": "ATH-IP-M14-007",
+      "title": "Ethical micro-venture experiment with a real stop rule",
+      "disciplines": [
+        "BIZ",
+        "FIN",
+        "MATH",
+        "RES",
+        "COMM",
+        "PSY",
+        "WORK",
+        "LEAD"
+      ],
+      "challenge": "Evaluate a small lawful offer through a bounded, low-cost experiment without assuming sales prove long-term viability.",
+      "deliverables": [
+        "offer and target-user statement",
+        "consent-based discovery notes",
+        "unit-cost and cash ledger",
+        "predefined metric and stop rule",
+        "experiment results",
+        "decision memo and ethical review"
+      ],
+      "phases": [
+        "Define a problem and offer without exaggerated claims.",
+        "Set a guardian-approved spending ceiling and no-debt rule.",
+        "Estimate costs, time, capacity and contribution margin.",
+        "Run a small transparent test with permission.",
+        "Reconcile every transaction and separate revenue from profit.",
+        "Decide to stop, change or continue based on evidence."
+      ],
+      "acceptance_criteria": [
+        "No borrowing, speculative investment or misleading claims.",
+        "Cash records reconcile.",
+        "The metric and stop rule are defined before the test.",
+        "Negative results are reported honestly."
+      ],
+      "rubric": {
+        "customer_evidence": "0–3: from assumption to bounded direct evidence",
+        "financial_control": "0–3: from unreconciled to accurate ledger and costs",
+        "experiment_design": "0–3: from vague to measurable with stop rule",
+        "ethics": "0–3: from risky/misleading to transparent and permission-based"
+      },
+      "safety_ethics": "For minors: guardian oversight, lawful age-appropriate activity, no debt, no high-risk financial products, no collection of unnecessary customer data.",
+      "transfer_test": "Use the experiment framework to test a non-commercial hypothesis and compare ethical constraints."
+    },
+    {
+      "id": "ATH-IP-M14-008",
+      "title": "Personal knowledge system with evidence and delayed recall",
+      "disciplines": [
+        "WORK",
+        "ENG",
+        "RES",
+        "PSY",
+        "LANG",
+        "AEST",
+        "COMM"
+      ],
+      "challenge": "Build a small offline-first knowledge collection that helps a learner retrieve and explain what they studied.",
+      "deliverables": [
+        "simple data model and stable IDs",
+        "source/provenance records",
+        "linked concept notes",
+        "retrieval prompts and answers",
+        "navigation prototype",
+        "delayed recall and correction log"
+      ],
+      "phases": [
+        "Select a narrow topic and define what counts as a useful note.",
+        "Record source, author/publisher, access date and claim scope.",
+        "Create stable identifiers and explicit links.",
+        "Design retrieval prompts that require explanation, not recognition only.",
+        "Test navigation and accessibility on a phone.",
+        "Revisit after a delay and record corrections or gaps."
+      ],
+      "acceptance_criteria": [
+        "Links resolve and IDs remain stable.",
+        "Source claims are distinguishable from learner inference.",
+        "Retrieval requires unaided explanation.",
+        "The system works without mandatory cloud access."
+      ],
+      "rubric": {
+        "information_model": "0–3: from ad hoc to consistent and navigable",
+        "provenance": "0–3: from missing to traceable and qualified",
+        "retrieval_design": "0–3: from recognition-only to explanatory delayed recall",
+        "usability": "0–3: from fragile to phone-usable and resilient"
+      },
+      "safety_ethics": "Do not store passwords, identity numbers, private messages or sensitive personal records; backup and export must be understandable.",
+      "transfer_test": "Reuse the knowledge model for a different discipline and identify which metadata fields need domain-specific additions."
+    },
+    {
+      "id": "ATH-IP-M14-009",
+      "title": "Team challenge: plan, build, communicate and review",
+      "disciplines": [
+        "LEAD",
+        "COMM",
+        "BIZ",
+        "ENG",
+        "ART",
+        "ATH",
+        "PERF",
+        "INDEP",
+        "CYBER"
+      ],
+      "challenge": "A small team delivers a modest, safe community or school-facing artefact with clear roles and accountable review.",
+      "deliverables": [
+        "shared brief and success criteria",
+        "role/decision log",
+        "prototype or performance",
+        "risk/privacy plan",
+        "rehearsed demonstration",
+        "retrospective and individual contribution evidence"
+      ],
+      "phases": [
+        "Agree on purpose, roles, boundaries and decision rights.",
+        "Break work into testable tasks with owners and dependencies.",
+        "Create a prototype or performance with checkpoints.",
+        "Review accessibility, safety, privacy and permissions.",
+        "Demonstrate and collect structured feedback.",
+        "Run a retrospective that separates team outcome from individual learning."
+      ],
+      "acceptance_criteria": [
+        "Roles and decisions are transparent.",
+        "No participant is pressured to share private information or perform unsafe tasks.",
+        "Deliverable meets stated user/audience criteria.",
+        "Each learner can explain their own contribution and a team trade-off."
+      ],
+      "rubric": {
+        "coordination": "0–3: from unclear to accountable and adaptive roles",
+        "craft": "0–3: from incomplete to fit-for-purpose deliverable",
+        "communication": "0–3: from opaque to clear and audience-aware",
+        "reflection": "0–3: from blame to evidence-based learning and responsibility"
+      },
+      "safety_ethics": "Obtain permission for public activity and images; use least-privilege access; avoid unsafe sport, tool or performance demands.",
+      "transfer_test": "Repeat with a different team composition and compare which coordination practices generalise."
+    }
+  ]
+}

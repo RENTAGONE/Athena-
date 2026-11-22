@@ -1,0 +1,356 @@
+{
+  "registry": "ATHENA_MICRO_SKILL_LINKING_REGISTER",
+  "version": "0.1",
+  "status": "all_20_canonical_micro_skills_linked_as_draft_supports_candidates",
+  "canonical_micro_skill_count": 20,
+  "records_with_discipline_links": 20,
+  "records_with_skill_links": 20,
+  "records_with_prerequisites": 0,
+  "records": [
+    {
+      "micro_skill_id": "ATH-MICRO-COG-MENTAL-ARITHMETIC",
+      "discipline_links": [
+        "ATH-DISC-MATH"
+      ],
+      "skill_links": [
+        "ATH-SKILL-MATH-NUMBER-ALGEBRA"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Mental estimation is a small observable component of number sense and quantitative problem solving.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-COG-ACTIVE-RECALL",
+      "discipline_links": [
+        "ATH-DISC-PSY",
+        "ATH-DISC-LANG",
+        "ATH-DISC-RES"
+      ],
+      "skill_links": [
+        "ATH-SKILL-PSY-LEARNING-STRATEGIES"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Retrieval prompt generation is a learning strategy; it supports language acquisition and research learning but is not equivalent to either whole discipline.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-COG-OBSERVATION-LOG",
+      "discipline_links": [
+        "ATH-DISC-MATH",
+        "ATH-DISC-RES"
+      ],
+      "skill_links": [
+        "ATH-SKILL-MATH-SCIENTIFIC-REASONING",
+        "ATH-SKILL-RES-SOURCE-EVALUATION"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Separating observations from inferences supports scientific reasoning and careful source evaluation.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-COG-MEMORY-CHUNKING",
+      "discipline_links": [
+        "ATH-DISC-PSY",
+        "ATH-DISC-LANG"
+      ],
+      "skill_links": [
+        "ATH-SKILL-PSY-LEARNING-STRATEGIES"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Chunking is a learning strategy that can support vocabulary, concepts and working with structured information.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-DEX-PEN-CONTROL",
+      "discipline_links": [
+        "ATH-DISC-ART",
+        "ATH-DISC-AEST"
+      ],
+      "skill_links": [
+        "ATH-SKILL-ART-OBSERVATIONAL-DRAWING"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Basic pen control supports drawing and visual mark-making; it is not equivalent to drawing competence.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-DEX-COIN-ROLL",
+      "discipline_links": [
+        "ATH-DISC-ATH"
+      ],
+      "skill_links": [
+        "ATH-SKILL-ATH-MOVEMENT-FOUNDATIONS"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Coin manipulation is a low-load coordination and dexterity exercise; transfer to athletic movement is limited and indirect.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-DEX-ORIGAMI-BASE",
+      "discipline_links": [
+        "ATH-DISC-ART",
+        "ATH-DISC-AEST"
+      ],
+      "skill_links": [
+        "ATH-SKILL-ART-VISUAL-STUDIES"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Origami develops precision, spatial transformation and visual-form awareness; it does not replace broader visual studies.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-DEX-TYPING-ACCURACY",
+      "discipline_links": [
+        "ATH-DISC-WORK",
+        "ATH-DISC-ENG"
+      ],
+      "skill_links": [
+        "ATH-SKILL-WORK-DIGITAL-INPUT-FLUENCY"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Typing accuracy is a component of digital input fluency; raw speed alone is not the target.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-PRACT-COOKING-MISE",
+      "discipline_links": [
+        "ATH-DISC-INDEP"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-EVERYDAY-COOKING"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Mise en place is a preparation and sequencing component of everyday cooking.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-PRACT-KNOT-SQUARE",
+      "discipline_links": [
+        "ATH-DISC-INDEP"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-PRACTICAL-KNOTWORK"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "A square knot is one specific low-risk knot; assessment must include appropriate use and limitations.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-PRACT-SEW-BUTTON",
+      "discipline_links": [
+        "ATH-DISC-INDEP"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-CLOTHING-REPAIR"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Button sewing is a basic garment-repair task and one component of clothing maintenance.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-PRACT-NAVIGATION-LANDMARKS",
+      "discipline_links": [
+        "ATH-DISC-INDEP"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-LOCAL-NAVIGATION"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Landmark use is one wayfinding strategy within local navigation.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SOC-ACTIVE-LISTENING",
+      "discipline_links": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-LEAD"
+      ],
+      "skill_links": [
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION",
+        "ATH-SKILL-LEAD-TEAM-COORDINATION"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Active listening and paraphrase support dialogue, coordination and checking shared understanding.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SOC-ONE-MIN-EXPLANATION",
+      "discipline_links": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-LANG"
+      ],
+      "skill_links": [
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "A one-minute explanation is a constrained delivery exercise within clear explanation.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SOC-QUESTION-CLARIFICATION",
+      "discipline_links": [
+        "ATH-DISC-COMM"
+      ],
+      "skill_links": [
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Clarifying questions help establish accurate shared meaning and support clear explanation.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SOC-DISAGREEMENT-STEELMAN",
+      "discipline_links": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-PSY",
+        "ATH-DISC-LEAD"
+      ],
+      "skill_links": [
+        "ATH-SKILL-COMM-ARGUMENTATION",
+        "ATH-SKILL-LEAD-FEEDBACK-PRACTICE"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Fair restatement supports argument quality and constructive feedback; it is not identical to either capability.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SAFE-EMERGENCY-CALL",
+      "discipline_links": [
+        "ATH-DISC-INDEP",
+        "ATH-DISC-COMM"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-EMERGENCY-PREPAREDNESS"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Emergency communication is one preparedness behaviour; local emergency routes must be verified for the learner jurisdiction.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SAFE-HAZARD-SCAN",
+      "discipline_links": [
+        "ATH-DISC-INDEP",
+        "ATH-DISC-ELEC"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-EMERGENCY-PREPAREDNESS"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Basic hazard recognition supports stop-and-escalate judgement; it does not authorise entering or handling hazardous scenes.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SAFE-CPR-LEARNING-READINESS",
+      "discipline_links": [
+        "ATH-DISC-BODY",
+        "ATH-DISC-INDEP"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-EMERGENCY-PREPAREDNESS"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "This link is strictly to course readiness and escalation. It is not a link to, or evidence of, CPR/AED practical competence.",
+      "review_status": "owner_and_subject_review_required"
+    },
+    {
+      "micro_skill_id": "ATH-MICRO-SAFE-STOP-AND-ESCALATE",
+      "discipline_links": [
+        "ATH-DISC-INDEP",
+        "ATH-DISC-ELEC",
+        "ATH-DISC-WORK"
+      ],
+      "skill_links": [
+        "ATH-SKILL-INDEP-EMERGENCY-PREPAREDNESS"
+      ],
+      "relationship_type": "SUPPORTS",
+      "relationship_status": "draft",
+      "gating": "none",
+      "prerequisites": [],
+      "prerequisite_decision": "no_hard_or_recommended_entry_prerequisite_justified_for_initial_scope",
+      "rationale": "Stop-work judgement is a preparedness and escalation behaviour; discipline links indicate contexts, not permission to perform technical work.",
+      "review_status": "owner_and_subject_review_required"
+    }
+  ],
+  "governance": {
+    "links_are_not_equivalence": true,
+    "links_are_not_competency_evidence": true,
+    "no_prerequisite_is_not_a_missing_data_error": true,
+    "all_links_require_semantic_review": true
+  }
+}

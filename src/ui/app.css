@@ -1657,21 +1657,12 @@ html.athena-zen .main.full { inset: 0; }
 .pill.warp button { min-width: 34px; }
 @media (min-width: 900px) { .atlas-crumbs { top: 152px; padding: 0 18px; } }
 
-/* Sideways cockpit. With no platform orientation lock (desktop, most WebViews) the stage becomes a
-   rotated full-viewport surface; offsetX/offsetY stay in element pixels, so taps are still exact. */
-.atlas-root[data-landscape-css="true"] {
-  position: fixed; top: 0; left: 0; z-index: 60;
-  width: 100vh; height: 100vw;
-  transform-origin: 0 0;
-  transform: translateX(100vw) rotate(90deg);
-  border-radius: 0;
-}
 /* The cockpit is the whole screen: the app chrome would be sideways beside it. */
 html.athena-cockpit .brandrail,
 html.athena-cockpit .nav,
 html.athena-cockpit .topbar { display: none; }
 html.athena-cockpit body { padding-left: 0; }
-.atlas-root[data-landscape="true"] .atlas-hud { flex-wrap: wrap; }
+.atlas-root[data-landscape="true"] .atlas-hud { flex-wrap: nowrap; }
 .atlas-root[data-landscape="true"] .hud-search { flex: 1 1 220px; }
 .atlas-root[data-landscape="true"] .atlas-crumbs { top: 140px; }
 .atlas-root[data-landscape="true"] .atlas-chips { top: 62px; }
@@ -1889,3 +1880,42 @@ html.athena-cockpit body { padding-left: 0; }
 @media (prefers-reduced-motion: reduce) {
   .warp-reticle, .warp-reticle::after, .warp-streaks { animation: none; }
 }
+
+/* ── Chunk 4 · native auto-rotate cockpit ───────────────────────────────── */
+/* A physically rotated phone gets a single 38 px translucent bar; the 3D surface owns the rest. */
+.atlas-root[data-landscape="true"] .atlas-hud {
+  flex-wrap: nowrap; align-items: center; gap: 6px;
+  height: 38px; padding: 0 8px;
+  background: rgba(4, 8, 15, 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(53, 217, 255, 0.14);
+}
+.atlas-root[data-landscape="true"] .atlas-hud .hud-search { flex: 1 1 150px; min-width: 90px; }
+.atlas-root[data-landscape="true"] .atlas-hud .hud-search input { min-height: 28px; font-size: 11px; }
+.atlas-root[data-landscape="true"] .hud-actions { flex: 0 1 auto; flex-wrap: nowrap; overflow-x: auto; }
+.atlas-root[data-landscape="true"] .hud-actions .btn.sm { min-height: 28px; padding: 0 7px; }
+.atlas-root[data-landscape="true"] .pill button { min-height: 26px; padding: 0 6px; font-size: 10px; }
+.atlas-root[data-landscape="true"] .atlas-stage { inset: 0 0 6% 0; }
+.atlas-root[data-landscape="true"] .atlas-chips {
+  top: 46px; display: flex; flex-wrap: nowrap;
+  overflow-x: auto; overflow-y: hidden; white-space: nowrap;
+  padding: 3px 8px 5px; scrollbar-width: none;
+}
+.atlas-root[data-landscape="true"] .atlas-chips::-webkit-scrollbar { display: none; }
+.atlas-root[data-landscape="true"] .atlas-chips .chip { flex: 0 0 auto; }
+.atlas-root[data-landscape="true"] .atlas-galaxies {
+  top: auto; bottom: 10px; left: 8px; right: 8px; width: auto;
+  flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start;
+}
+.atlas-root[data-landscape="true"] .atlas-crumbs { top: 82px; }
+.atlas-root[data-landscape="true"] .atlas-legend,
+.atlas-root[data-landscape="true"] .atlas-zoom { display: none; }
+.atlas-root[data-landscape="true"] .hud-drawer { display: inline-flex; }
+.atlas-root[data-landscape="true"] .drawer { max-height: calc(100% - 96px); }
+
+/* The collapsed rail can be reopened from the cockpit's drawer button. */
+html.athena-cockpit.athena-rail-collapsed .brandrail { transform: translateX(-100%); }
+.atlas-root[data-rail-open="true"] ~ .brandrail { transform: none; }
+
+.core-bridges { margin: 10px 0 0; padding-left: 16px; display: grid; gap: 3px; font-size: 11px; color: #9fc4e8; }
+.core-bridges li { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

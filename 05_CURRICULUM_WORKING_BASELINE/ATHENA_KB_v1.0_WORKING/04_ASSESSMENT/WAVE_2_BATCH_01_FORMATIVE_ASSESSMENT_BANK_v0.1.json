@@ -1,0 +1,160 @@
+{
+  "bank_id": "ATHENA-WAVE2-BATCH01-ASSESSMENT",
+  "version": "0.1",
+  "status": "draft_not_calibrated",
+  "items": [
+    {
+      "item_id": "BIZ-A01",
+      "discipline_code": "BIZ",
+      "prompt": "A founder asks, “Would you buy my app?” Why is this weak discovery evidence?",
+      "answer_guidance": "It is hypothetical and leading; ask about recent behaviour, current workaround, frequency and consequences.",
+      "construct": "Interview design",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "BIZ-A02",
+      "discipline_code": "BIZ",
+      "prompt": "Five of six interviewees say they like a concept. Can you claim product-market fit?",
+      "answer_guidance": "No. Tiny, possibly biased sample; stated liking is not purchase/retention evidence. State sample and next disconfirming test.",
+      "construct": "Evidence calibration",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "BIZ-A03",
+      "discipline_code": "BIZ",
+      "prompt": "Write a neutral question to understand how a learner currently stores study resources.",
+      "answer_guidance": "Example: “Show/tell me how you organised the materials for your last study session.”",
+      "construct": "Application",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "FIN-A01",
+      "discipline_code": "FIN",
+      "prompt": "Opening ৳900, inflows ৳450, outflows ৳275. Find closing cash.",
+      "answer_guidance": "৳1,075.",
+      "construct": "Reconciliation",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "FIN-A02",
+      "discipline_code": "FIN",
+      "prompt": "A customer promises ৳300 next week. Is it current cash? Explain.",
+      "answer_guidance": "No; it may be a receivable/expected inflow, not cash currently available.",
+      "construct": "Classification",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "FIN-A03",
+      "discipline_code": "FIN",
+      "prompt": "Nominal savings rise 6%, prices rise 8%. Approximate real change and caveat.",
+      "answer_guidance": "Approximately −2 percentage points; exact factor 1.06/1.08−1 ≈ −1.85%. Periods and basket assumptions matter.",
+      "construct": "Purchasing power",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "WORK-A01",
+      "discipline_code": "WORK",
+      "prompt": "A team repeatedly waits for missing request details. Identify a likely process fix.",
+      "answer_guidance": "Define required intake fields and validate completeness before queueing; measure rework and throughput.",
+      "construct": "Bottleneck",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "WORK-A02",
+      "discipline_code": "WORK",
+      "prompt": "Why should a bulk file operation be previewed and tested before execution?",
+      "answer_guidance": "To bound scope, catch matching errors, preserve reversibility and reduce destructive mistakes.",
+      "construct": "Operational safety",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "WORK-A03",
+      "discipline_code": "WORK",
+      "prompt": "Convert “improve the website” into an observable acceptance criterion.",
+      "answer_guidance": "Example: target page loads on mobile, displays verified content and contact route, passes named checks by date.",
+      "construct": "Outcome design",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "CYBER-A01",
+      "discipline_code": "CYBER",
+      "prompt": "Differentiate a threat and a vulnerability.",
+      "answer_guidance": "Threat is a potential cause/event of harm; vulnerability is a weakness that may be exploited.",
+      "construct": "Conceptual precision",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "CYBER-A02",
+      "discipline_code": "CYBER",
+      "prompt": "Why does hiding an admin button not enforce authorisation?",
+      "answer_guidance": "Server/API must check identity and permission on every protected action; client UI can be modified or bypassed.",
+      "construct": "Access control",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "CYBER-A03",
+      "discipline_code": "CYBER",
+      "prompt": "A student wants to scan a neighbour’s Wi-Fi “for practice.” What is the correct response?",
+      "answer_guidance": "Do not scan without explicit authorisation; use own network or a purpose-built authorised lab.",
+      "construct": "Scope and safety",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "PSY-A01",
+      "discipline_code": "PSY",
+      "prompt": "Why can rereading feel fluent without proving recall?",
+      "answer_guidance": "Familiarity/recognition can rise while unaided retrieval remains weak; test by recalling without notes.",
+      "construct": "Memory",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "PSY-A02",
+      "discipline_code": "PSY",
+      "prompt": "Name two limitations of a one-week self-study comparison.",
+      "answer_guidance": "Small sample/one learner, unequal material difficulty, order effects, short duration, uncontrolled fatigue/context.",
+      "construct": "Method limits",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "PSY-A03",
+      "discipline_code": "PSY",
+      "prompt": "Does a poor attention score in a self-test diagnose ADHD?",
+      "answer_guidance": "No; informal self-tests cannot diagnose. Clinical assessment belongs to qualified professionals.",
+      "construct": "Boundary",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "LEAD-A01",
+      "discipline_code": "LEAD",
+      "prompt": "Why is “work on the event” a weak milestone?",
+      "answer_guidance": "It describes activity, not verifiable output or acceptance criteria.",
+      "construct": "Execution",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "LEAD-A02",
+      "discipline_code": "LEAD",
+      "prompt": "A person is accountable for a deadline but has no access or authority. Identify the leadership failure.",
+      "answer_guidance": "Responsibility without resources/authority; clarify decision rights, access and support.",
+      "construct": "Delegation",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    },
+    {
+      "item_id": "LEAD-A03",
+      "discipline_code": "LEAD",
+      "prompt": "Rewrite “You are unreliable” as behaviour-specific feedback.",
+      "answer_guidance": "Describe the missed handoff, impact, ask what blocked it, agree next checkpoint.",
+      "construct": "Feedback",
+      "scoring": "0-2: 0 incorrect/unsupported; 1 partially correct; 2 accurate with reasoning"
+    }
+  ],
+  "coverage": {
+    "BIZ": 3,
+    "FIN": 3,
+    "WORK": 3,
+    "CYBER": 3,
+    "PSY": 3,
+    "LEAD": 3
+  },
+  "use": "Formative check only; not a validated high-stakes test."
+}

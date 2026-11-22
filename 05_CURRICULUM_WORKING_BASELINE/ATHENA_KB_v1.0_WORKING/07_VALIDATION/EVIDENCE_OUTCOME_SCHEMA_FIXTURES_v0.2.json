@@ -1,0 +1,121 @@
+{
+  "fixture_version": "0.2",
+  "schema_ref": "SCHEMAS/EVIDENCE_RECORD.schema.json",
+  "cases": [
+    {
+      "case_id": "EVID-OUTCOME-01",
+      "expected": "valid",
+      "purpose": "Single target with shared record outcome and criterion-level met values",
+      "record": {
+        "id": "evidence-fixture-single-001",
+        "record_type": "evidence_record",
+        "target_ids": [
+          "ATH-SKILL-MATH-NUMBER-ALGEBRA"
+        ],
+        "objective_ids": [],
+        "occurred_at": "2026-11-17T12:00:00Z",
+        "evidence_class": "PROBLEM_PERFORMANCE",
+        "result_summary": "Learner solved the assigned number and algebra task independently.",
+        "outcome_schema_version": "0.2",
+        "outcome": "demonstrated",
+        "rubric_results": [
+          {
+            "criterion": "Correctly represents unknown quantity",
+            "result": "Met",
+            "met": true
+          },
+          {
+            "criterion": "Checks solution",
+            "result": "Not met",
+            "met": false
+          }
+        ],
+        "evaluator": {
+          "type": "human",
+          "name": "Fixture evaluator",
+          "version": null,
+          "prompt_or_protocol_ref": null
+        },
+        "conditions": {
+          "calculator_used": false,
+          "notes_used": false,
+          "ai_used": false,
+          "hints_used": false,
+          "collaboration_used": false,
+          "tools_used": []
+        }
+      }
+    },
+    {
+      "case_id": "EVID-OUTCOME-02",
+      "expected": "valid",
+      "purpose": "Multi-target evidence with different outcomes per target",
+      "record": {
+        "id": "evidence-fixture-mixed-002",
+        "record_type": "evidence_record",
+        "target_ids": [
+          "ATH-SKILL-MATH-NUMBER-ALGEBRA",
+          "ATH-SKILL-MATH-SCIENTIFIC-REASONING"
+        ],
+        "objective_ids": [],
+        "occurred_at": "2026-11-17T12:00:00Z",
+        "evidence_class": "EXPLANATION",
+        "result_summary": "The learner explained one target accurately and showed partial performance on the other.",
+        "outcome_schema_version": "0.2",
+        "target_outcomes": [
+          {
+            "target_id": "ATH-SKILL-MATH-NUMBER-ALGEBRA",
+            "outcome": "demonstrated"
+          },
+          {
+            "target_id": "ATH-SKILL-MATH-SCIENTIFIC-REASONING",
+            "outcome": "partial"
+          }
+        ],
+        "rubric_results": [
+          {
+            "criterion": "Reasoning is coherent",
+            "result": "Met",
+            "met": true
+          }
+        ],
+        "evaluator": {
+          "type": "ai",
+          "name": "Fixture evaluator",
+          "version": "0.1",
+          "prompt_or_protocol_ref": "fixture-only"
+        },
+        "conditions": {
+          "calculator_used": false,
+          "notes_used": false,
+          "ai_used": true,
+          "hints_used": false,
+          "collaboration_used": false,
+          "tools_used": []
+        }
+      }
+    },
+    {
+      "case_id": "EVID-OUTCOME-03",
+      "expected": "invalid",
+      "purpose": "Structural edge must not be accepted as an evidence target",
+      "record": {
+        "id": "evidence-fixture-edge-003",
+        "record_type": "evidence_record",
+        "target_ids": [
+          "ATH-EDGE-NOT-A-SEMANTIC-ID"
+        ],
+        "objective_ids": [],
+        "occurred_at": "2026-11-17T12:00:00Z",
+        "evidence_class": "SELF_REPORT",
+        "result_summary": "Invalid fixture.",
+        "outcome_schema_version": "0.2",
+        "outcome": "partial",
+        "evaluator": {
+          "type": "learner",
+          "name": "Fixture learner"
+        }
+      }
+    }
+  ]
+}

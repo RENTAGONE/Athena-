@@ -1,0 +1,24 @@
+{
+  "baseline_modules": {
+    "errors": 0,
+    "first_errors": []
+  },
+  "assessment_specs": {
+    "errors": 0,
+    "first_errors": []
+  },
+  "retention_integration": {
+    "errors": 0,
+    "first_errors": []
+  },
+  "relationship_edges": {
+    "count": 26,
+    "errors": 0,
+    "first_errors": []
+  },
+  "resource_records": {
+    "count": 52,
+    "errors": 0,
+    "first_errors": []
+  }
+}

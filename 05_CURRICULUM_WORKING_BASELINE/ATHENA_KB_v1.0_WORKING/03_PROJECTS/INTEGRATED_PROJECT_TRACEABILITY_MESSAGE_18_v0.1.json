@@ -1,0 +1,765 @@
+{
+  "registry": "ATHENA_INTEGRATED_PROJECT_TRACEABILITY",
+  "version": "0.1",
+  "status": "candidate_traceability_not_approved",
+  "project_count": 9,
+  "records": [
+    {
+      "project_id": "ATH-IP-M14-001",
+      "title": "Build a small digital product with evidence of real usefulness",
+      "candidate_module_ids": [
+        "BASE-ENG-001",
+        "BASE-ENG-002",
+        "BASE-ENG-005",
+        "BASE-ENG-007",
+        "BASE-ENG-010",
+        "BASE-ENG-012",
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-BIZ-009",
+        "BASE-FIN-008",
+        "BASE-RES-003",
+        "BASE-COMM-001",
+        "BASE-COMM-008",
+        "BASE-AEST-008",
+        "BASE-CYBER-001",
+        "BASE-CYBER-004",
+        "BASE-CYBER-005",
+        "BASE-WORK-004",
+        "BASE-WORK-008",
+        "BASE-LEAD-008"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-ENG-PROGRAMMING-FUNDAMENTALS",
+        "ATH-SKILL-ENG-SOFTWARE-ENGINEERING",
+        "ATH-SKILL-BIZ-CUSTOMER-DISCOVERY",
+        "ATH-SKILL-BIZ-OFFER-DESIGN",
+        "ATH-SKILL-FIN-PERSONAL-FINANCE",
+        "ATH-SKILL-RES-SOURCE-EVALUATION",
+        "ATH-SKILL-CYBER-PERSONAL-DIGITAL-SECURITY",
+        "ATH-SKILL-COMM-ARGUMENTATION",
+        "ATH-SKILL-LEAD-TEAM-COORDINATION"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "problem and user evidence brief",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "working low-risk prototype",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "cost/revenue and capacity model",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "privacy/threat checklist",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "test log and short demonstration",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "decision memo: continue, change or stop",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-ENG-01",
+        "ATH-ASSESS-ENG-02",
+        "ATH-ASSESS-ENG-03",
+        "ATH-ASSESS-ENG-04",
+        "ATH-ASSESS-BIZ-01",
+        "ATH-ASSESS-BIZ-02",
+        "ATH-ASSESS-BIZ-03",
+        "ATH-ASSESS-FIN-03",
+        "ATH-ASSESS-RES-01",
+        "ATH-ASSESS-COMM-01",
+        "ATH-ASSESS-COMM-03",
+        "ATH-ASSESS-AEST-03",
+        "ATH-ASSESS-CYBER-01",
+        "ATH-ASSESS-CYBER-02",
+        "ATH-ASSESS-WORK-02",
+        "ATH-ASSESS-WORK-03",
+        "ATH-ASSESS-LEAD-03"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "Use dummy/test data; obtain guardian approval for public release or spending; no deceptive marketing, scraping or unauthorised testing.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-002",
+      "title": "Low-voltage sensor investigation and engineering notebook",
+      "candidate_module_ids": [
+        "BASE-ELEC-001",
+        "BASE-ELEC-002",
+        "BASE-ELEC-003",
+        "BASE-ELEC-004",
+        "BASE-ELEC-005",
+        "BASE-ELEC-006",
+        "BASE-ELEC-007",
+        "BASE-ELEC-008",
+        "BASE-ELEC-009",
+        "BASE-ELEC-010",
+        "BASE-ELEC-011",
+        "BASE-MATH-005",
+        "BASE-MATH-010",
+        "BASE-ENG-007",
+        "BASE-RES-008",
+        "BASE-COMM-005",
+        "BASE-AEST-003"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-ELEC-ELECTRICAL-FOUNDATIONS",
+        "ATH-SKILL-ELEC-CIRCUIT-BUILDING",
+        "ATH-SKILL-MATH-SCIENTIFIC-REASONING",
+        "ATH-SKILL-RES-RESEARCH-SYNTHESIS",
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "question and hypothesis",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "annotated circuit diagram",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "parts and safety checklist",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "prediction table and measurement log",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "uncertainty/error discussion",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "technical explainer",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-ELEC-01",
+        "ATH-ASSESS-ELEC-02",
+        "ATH-ASSESS-ELEC-03",
+        "ATH-ASSESS-ELEC-04",
+        "ATH-ASSESS-MATH-02",
+        "ATH-ASSESS-MATH-04",
+        "ATH-ASSESS-ENG-03",
+        "ATH-ASSESS-RES-03",
+        "ATH-ASSESS-COMM-02",
+        "ATH-ASSESS-AEST-01"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "No mains electricity, exposed high-energy sources, lithium battery modification or unsupervised soldering; adult supervision and known-safe kit required.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-003",
+      "title": "Research a claim and publish a bilingual evidence explainer",
+      "candidate_module_ids": [
+        "BASE-RES-001",
+        "BASE-RES-002",
+        "BASE-RES-003",
+        "BASE-RES-004",
+        "BASE-RES-005",
+        "BASE-RES-006",
+        "BASE-RES-009",
+        "BASE-RES-010",
+        "BASE-LANG-005",
+        "BASE-LANG-007",
+        "BASE-LANG-009",
+        "BASE-LANG-010",
+        "BASE-COMM-005",
+        "BASE-COMM-008",
+        "BASE-AEST-003",
+        "BASE-AEST-009",
+        "BASE-PSY-007",
+        "BASE-LEAD-006"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-RES-SOURCE-EVALUATION",
+        "ATH-SKILL-RES-RESEARCH-SYNTHESIS",
+        "ATH-SKILL-LANG-READING-COMPREHENSION",
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION",
+        "ATH-SKILL-COMM-ARGUMENTATION",
+        "ATH-SKILL-PSY-COGNITIVE-BIASES"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "research question and search log",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "source-quality matrix",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "claim/evidence/uncertainty map",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "bilingual glossary",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "one-page visual explainer",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "reader feedback and revision note",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-RES-01",
+        "ATH-ASSESS-RES-02",
+        "ATH-ASSESS-RES-03",
+        "ATH-ASSESS-RES-04",
+        "ATH-ASSESS-LANG-02",
+        "ATH-ASSESS-LANG-03",
+        "ATH-ASSESS-LANG-04",
+        "ATH-ASSESS-COMM-02",
+        "ATH-ASSESS-COMM-03",
+        "ATH-ASSESS-AEST-01",
+        "ATH-ASSESS-AEST-03",
+        "ATH-ASSESS-PSY-03",
+        "ATH-ASSESS-LEAD-02"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "Avoid private individuals, medical diagnosis, political targeting or exposing personal information; distinguish educational information from professional advice.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-004",
+      "title": "Football performance: observe, analyse, practise, reassess",
+      "candidate_module_ids": [
+        "BASE-ATH-001",
+        "BASE-ATH-002",
+        "BASE-ATH-003",
+        "BASE-ATH-004",
+        "BASE-ATH-005",
+        "BASE-ATH-006",
+        "BASE-BODY-007",
+        "BASE-BODY-010",
+        "BASE-MATH-001",
+        "BASE-MATH-005",
+        "BASE-MATH-010",
+        "BASE-MATH-011",
+        "BASE-PSY-008",
+        "BASE-RES-008",
+        "BASE-COMM-002",
+        "BASE-WORK-004"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-ATH-MOVEMENT-FOUNDATIONS",
+        "ATH-SKILL-ATH-FOOTBALL-PERFORMANCE",
+        "ATH-SKILL-BODY-HUMAN-PHYSIOLOGY",
+        "ATH-SKILL-MATH-SCIENTIFIC-REASONING",
+        "ATH-SKILL-PSY-DECISION-MODELLING",
+        "ATH-SKILL-RES-RESEARCH-SYNTHESIS"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "one clearly defined performance question",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "baseline observation sheet",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "simple metric and limitations",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "practice microcycle",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "reflection and delayed reassessment",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-ATH-01",
+        "ATH-ASSESS-ATH-02",
+        "ATH-ASSESS-BODY-03",
+        "ATH-ASSESS-BODY-04",
+        "ATH-ASSESS-MATH-01",
+        "ATH-ASSESS-MATH-02",
+        "ATH-ASSESS-MATH-04",
+        "ATH-ASSESS-PSY-03",
+        "ATH-ASSESS-RES-03",
+        "ATH-ASSESS-COMM-01",
+        "ATH-ASSESS-WORK-02"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "No maximal testing, weight-loss targets, punishment conditioning or training through pain; adapt to weather, surface and supervision.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-005",
+      "title": "Create an accessible visual story with recorded narration",
+      "candidate_module_ids": [
+        "BASE-ART-001",
+        "BASE-ART-002",
+        "BASE-ART-003",
+        "BASE-ART-004",
+        "BASE-AEST-002",
+        "BASE-AEST-005",
+        "BASE-AEST-009",
+        "BASE-AEST-010",
+        "BASE-AEST-011",
+        "BASE-PERF-001",
+        "BASE-PERF-002",
+        "BASE-COMM-005",
+        "BASE-LANG-008",
+        "BASE-PSY-002",
+        "BASE-WORK-002"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-ART-OBSERVATIONAL-DRAWING",
+        "ATH-SKILL-ART-VISUAL-STUDIES",
+        "ATH-SKILL-AEST-VISUAL-COMPOSITION",
+        "ATH-SKILL-PERF-VOCAL-FOUNDATIONS",
+        "ATH-SKILL-PERF-PERFORMANCE-DELIVERY",
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "audience and intent statement",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "thumbnail storyboard",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "visual studies and final sequence",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "short narration recording/script",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "accessibility and comprehension checks",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "revision log",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-ART-01",
+        "ATH-ASSESS-ART-02",
+        "ATH-ASSESS-AEST-01",
+        "ATH-ASSESS-AEST-02",
+        "ATH-ASSESS-AEST-03",
+        "ATH-ASSESS-AEST-04",
+        "ATH-ASSESS-PERF-01",
+        "ATH-ASSESS-COMM-02",
+        "ATH-ASSESS-LANG-03",
+        "ATH-ASSESS-PSY-01",
+        "ATH-ASSESS-WORK-01"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "Use licensed or original assets; obtain consent for identifiable voices/images; avoid harmful imitation or unsafe vocal strain.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-006",
+      "title": "Household systems and hazard-aware independence audit",
+      "candidate_module_ids": [
+        "BASE-INDEP-001",
+        "BASE-INDEP-002",
+        "BASE-INDEP-003",
+        "BASE-INDEP-004",
+        "BASE-INDEP-005",
+        "BASE-INDEP-008",
+        "BASE-INDEP-009",
+        "BASE-INDEP-010",
+        "BASE-INDEP-011",
+        "BASE-INDEP-012",
+        "BASE-WORK-001",
+        "BASE-WORK-003",
+        "BASE-WORK-004",
+        "BASE-MATH-001",
+        "BASE-MATH-004",
+        "BASE-MATH-005",
+        "BASE-COMM-001",
+        "BASE-COMM-006",
+        "BASE-CYBER-001",
+        "BASE-CYBER-005",
+        "BASE-LEAD-002"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-INDEP-EVERYDAY-COOKING",
+        "ATH-SKILL-INDEP-PERSONAL-ORGANISATION",
+        "ATH-SKILL-INDEP-EMERGENCY-PREPAREDNESS",
+        "ATH-SKILL-WORK-FILE-SYSTEMS",
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION",
+        "ATH-SKILL-LEAD-TEAM-COORDINATION"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "current-state process map",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "risk and escalation checklist",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "simple cost/time comparison",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "revised checklist or visual guide",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "supervised trial notes",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "reflection on what should remain unchanged",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-INDEP-01",
+        "ATH-ASSESS-INDEP-02",
+        "ATH-ASSESS-INDEP-03",
+        "ATH-ASSESS-INDEP-04",
+        "ATH-ASSESS-WORK-01",
+        "ATH-ASSESS-WORK-02",
+        "ATH-ASSESS-MATH-01",
+        "ATH-ASSESS-MATH-02",
+        "ATH-ASSESS-COMM-01",
+        "ATH-ASSESS-COMM-02",
+        "ATH-ASSESS-CYBER-01",
+        "ATH-ASSESS-CYBER-02",
+        "ATH-ASSESS-LEAD-01"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "Do not handle mains wiring, gas, chemicals, medication, sharp tools or heavy loads without qualified adult supervision; stop and escalate uncertainty.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-007",
+      "title": "Ethical micro-venture experiment with a real stop rule",
+      "candidate_module_ids": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-002",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-BIZ-005",
+        "BASE-BIZ-006",
+        "BASE-BIZ-008",
+        "BASE-BIZ-009",
+        "BASE-BIZ-012",
+        "BASE-FIN-001",
+        "BASE-FIN-002",
+        "BASE-FIN-003",
+        "BASE-FIN-008",
+        "BASE-FIN-011",
+        "BASE-MATH-004",
+        "BASE-MATH-005",
+        "BASE-RES-003",
+        "BASE-RES-007",
+        "BASE-RES-012",
+        "BASE-COMM-009",
+        "BASE-PSY-007",
+        "BASE-WORK-003",
+        "BASE-WORK-004",
+        "BASE-LEAD-010"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-BIZ-CUSTOMER-DISCOVERY",
+        "ATH-SKILL-BIZ-OFFER-DESIGN",
+        "ATH-SKILL-FIN-PERSONAL-FINANCE",
+        "ATH-SKILL-RES-SOURCE-EVALUATION",
+        "ATH-SKILL-PSY-DECISION-MODELLING",
+        "ATH-SKILL-COMM-ARGUMENTATION"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "offer and target-user statement",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "consent-based discovery notes",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "unit-cost and cash ledger",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "predefined metric and stop rule",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "experiment results",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "decision memo and ethical review",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-BIZ-01",
+        "ATH-ASSESS-BIZ-02",
+        "ATH-ASSESS-BIZ-03",
+        "ATH-ASSESS-BIZ-04",
+        "ATH-ASSESS-FIN-01",
+        "ATH-ASSESS-FIN-03",
+        "ATH-ASSESS-FIN-04",
+        "ATH-ASSESS-MATH-02",
+        "ATH-ASSESS-RES-01",
+        "ATH-ASSESS-RES-03",
+        "ATH-ASSESS-RES-04",
+        "ATH-ASSESS-COMM-03",
+        "ATH-ASSESS-PSY-03",
+        "ATH-ASSESS-WORK-01",
+        "ATH-ASSESS-WORK-02",
+        "ATH-ASSESS-LEAD-04"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "For minors: guardian oversight, lawful age-appropriate activity, no debt, no high-risk financial products, no collection of unnecessary customer data.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-008",
+      "title": "Personal knowledge system with evidence and delayed recall",
+      "candidate_module_ids": [
+        "BASE-WORK-001",
+        "BASE-WORK-002",
+        "BASE-WORK-009",
+        "BASE-ENG-011",
+        "BASE-ENG-012",
+        "BASE-RES-005",
+        "BASE-RES-009",
+        "BASE-RES-011",
+        "BASE-PSY-003",
+        "BASE-PSY-004",
+        "BASE-LANG-007",
+        "BASE-AEST-003",
+        "BASE-AEST-006",
+        "BASE-COMM-005"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-WORK-FILE-SYSTEMS",
+        "ATH-SKILL-WORK-WORKFLOW-AUTOMATION",
+        "ATH-SKILL-ENG-SOFTWARE-ENGINEERING",
+        "ATH-SKILL-RES-RESEARCH-SYNTHESIS",
+        "ATH-SKILL-PSY-LEARNING-STRATEGIES",
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "simple data model and stable IDs",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "source/provenance records",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "linked concept notes",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "retrieval prompts and answers",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "navigation prototype",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "delayed recall and correction log",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-WORK-01",
+        "ATH-ASSESS-WORK-03",
+        "ATH-ASSESS-ENG-04",
+        "ATH-ASSESS-RES-02",
+        "ATH-ASSESS-RES-03",
+        "ATH-ASSESS-RES-04",
+        "ATH-ASSESS-PSY-01",
+        "ATH-ASSESS-PSY-02",
+        "ATH-ASSESS-LANG-03",
+        "ATH-ASSESS-AEST-01",
+        "ATH-ASSESS-AEST-02",
+        "ATH-ASSESS-COMM-02"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "Do not store passwords, identity numbers, private messages or sensitive personal records; backup and export must be understandable.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    },
+    {
+      "project_id": "ATH-IP-M14-009",
+      "title": "Team challenge: plan, build, communicate and review",
+      "candidate_module_ids": [
+        "BASE-LEAD-002",
+        "BASE-LEAD-004",
+        "BASE-LEAD-006",
+        "BASE-LEAD-007",
+        "BASE-LEAD-008",
+        "BASE-LEAD-009",
+        "BASE-LEAD-010",
+        "BASE-LEAD-011",
+        "BASE-LEAD-012",
+        "BASE-COMM-001",
+        "BASE-COMM-002",
+        "BASE-COMM-010",
+        "BASE-COMM-011",
+        "BASE-BIZ-005",
+        "BASE-BIZ-010",
+        "BASE-BIZ-012",
+        "BASE-ENG-007",
+        "BASE-ART-011",
+        "BASE-PERF-001",
+        "BASE-INDEP-001",
+        "BASE-CYBER-001",
+        "BASE-CYBER-012"
+      ],
+      "candidate_skill_ids": [
+        "ATH-SKILL-LEAD-TEAM-COORDINATION",
+        "ATH-SKILL-LEAD-FEEDBACK-PRACTICE",
+        "ATH-SKILL-COMM-CLEAR-EXPLANATION",
+        "ATH-SKILL-BIZ-CUSTOMER-DISCOVERY",
+        "ATH-SKILL-ENG-SOFTWARE-ENGINEERING",
+        "ATH-SKILL-CYBER-PERSONAL-DIGITAL-SECURITY"
+      ],
+      "deliverable_traceability": [
+        {
+          "deliverable": "shared brief and success criteria",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "role/decision log",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "prototype or performance",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "risk/privacy plan",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "rehearsed demonstration",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        },
+        {
+          "deliverable": "retrospective and individual contribution evidence",
+          "evidence_type": "artifact_or_observation",
+          "review_required": true
+        }
+      ],
+      "assessment_task_ids": [
+        "ATH-ASSESS-LEAD-01",
+        "ATH-ASSESS-LEAD-02",
+        "ATH-ASSESS-LEAD-03",
+        "ATH-ASSESS-LEAD-04",
+        "ATH-ASSESS-COMM-01",
+        "ATH-ASSESS-COMM-04",
+        "ATH-ASSESS-BIZ-02",
+        "ATH-ASSESS-BIZ-04",
+        "ATH-ASSESS-ENG-03",
+        "ATH-ASSESS-ART-04",
+        "ATH-ASSESS-PERF-01",
+        "ATH-ASSESS-INDEP-01",
+        "ATH-ASSESS-CYBER-01",
+        "ATH-ASSESS-CYBER-04"
+      ],
+      "transfer_validation": "Project demonstrates integration only when each mapped skill is independently evidenced; project completion alone does not award mastery.",
+      "safety_ethics_boundary": "Obtain permission for public activity and images; use least-privilege access; avoid unsafe sport, tool or performance demands.",
+      "mapping_status": "candidate_mapping_not_semantically_approved",
+      "assessment_link_status": "candidate_task_links_resolved"
+    }
+  ],
+  "validation": {
+    "invalid_module_refs": 0,
+    "invalid_skill_refs": 0,
+    "errors": [],
+    "projects_with_assessment_links": 9
+  },
+  "policy": "Mappings are candidates for expert/owner review. Project completion is not automatic mastery; evidence must be evaluated per target skill and deliverable."
+}

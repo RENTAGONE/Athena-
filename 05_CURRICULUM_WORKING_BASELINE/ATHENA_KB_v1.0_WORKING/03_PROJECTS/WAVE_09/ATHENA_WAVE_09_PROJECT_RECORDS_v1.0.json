@@ -1,0 +1,1044 @@
+{
+  "registry": "ATHENA_PROJECT_RECORDS_WAVE_09",
+  "version": "1.0",
+  "status": "draft",
+  "project_count": 18,
+  "records": [
+    {
+      "id": "ATH-PROJ-PERSONAL-001",
+      "object_type": "project",
+      "title": "Personal Knowledge and Study Retrieval System",
+      "status": "draft",
+      "goal": "Solve the learner's own problem of scattered notes and unreliable retrieval by building a small personal system that makes useful knowledge findable and testable.",
+      "discipline_ids": [
+        "ATH-DISC-WORK",
+        "ATH-DISC-RES",
+        "ATH-DISC-ENG",
+        "ATH-DISC-PSY",
+        "ATH-DISC-LANG",
+        "ATH-DISC-AEST"
+      ],
+      "deliverables": [
+        "A personal use-case and friction log",
+        "A small structured knowledge collection with stable IDs and source provenance",
+        "A searchable or navigable index (paper, spreadsheet or local digital format)",
+        "Retrieval prompts and a delayed-recall record",
+        "A short change log and reflection"
+      ],
+      "acceptance_criteria": [
+        "Solves a documented personal retrieval problem rather than merely looking organised.",
+        "A note can be found from a realistic query and traced to its source where applicable.",
+        "Retrieval prompts test understanding rather than recognition alone.",
+        "The system remains small enough to maintain; unused complexity is removed.",
+        "Delayed retrieval is reported honestly and not confused with app usage."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not store passwords, recovery codes, private messages or sensitive personal data.",
+        "Use local/offline storage; do not upload private notes to public AI services.",
+        "No need to collect data about other people."
+      ],
+      "project_state": "proposed",
+      "project_class": "personal_use",
+      "blueprint_ref": "ATH-PROJ-PERSONAL-001",
+      "target_module_ids": [
+        "BASE-WORK-002",
+        "BASE-WORK-001",
+        "BASE-RES-005",
+        "BASE-RES-011",
+        "BASE-PSY-003",
+        "BASE-ENG-001",
+        "BASE-AEST-003"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PERSONAL-002",
+      "object_type": "project",
+      "title": "Personal Football Performance Feedback Loop",
+      "status": "draft",
+      "goal": "Improve one chosen football performance weakness using observable evidence, safe practice design and recovery-aware iteration.",
+      "discipline_ids": [
+        "ATH-DISC-ATH",
+        "ATH-DISC-BODY",
+        "ATH-DISC-MATH",
+        "ATH-DISC-PSY",
+        "ATH-DISC-RES",
+        "ATH-DISC-WORK"
+      ],
+      "deliverables": [
+        "A narrow performance question and baseline observation",
+        "A simple action/cue observation rubric",
+        "A short practice plan with warm-up, workload and recovery boundaries",
+        "A practice log with contextual notes",
+        "A post-practice comparison and next-step decision"
+      ],
+      "acceptance_criteria": [
+        "The target is a controllable behaviour with an observable definition.",
+        "Baseline and follow-up use sufficiently similar conditions and note confounders.",
+        "Practice is age-appropriate, technique-led and includes rest.",
+        "The conclusion does not claim causation from a tiny sample.",
+        "The next action follows evidence and personal readiness, not pressure."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "No maximal testing, punishment conditioning or training through pain.",
+        "Avoid recording identifiable bystanders; obtain permission before filming or sharing.",
+        "No diagnosis or individualized medical claims; seek a trusted adult/qualified professional for injury or health concerns."
+      ],
+      "project_state": "proposed",
+      "project_class": "personal_use",
+      "blueprint_ref": "ATH-PROJ-PERSONAL-002",
+      "target_module_ids": [
+        "BASE-ATH-009",
+        "BASE-ATH-012",
+        "BASE-ATH-010",
+        "BASE-ATH-011",
+        "BASE-MATH-005",
+        "BASE-RES-008",
+        "BASE-PSY-008"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PERSONAL-003",
+      "object_type": "project",
+      "title": "Personal Money and Small-Business Record System",
+      "status": "draft",
+      "goal": "Improve the learner's own understanding of small cash movements and business unit economics using accurate, privacy-conscious records.",
+      "discipline_ids": [
+        "ATH-DISC-FIN",
+        "ATH-DISC-MATH",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-WORK",
+        "ATH-DISC-RES",
+        "ATH-DISC-CYBER"
+      ],
+      "deliverables": [
+        "A fictional or permissioned transaction dataset",
+        "A transparent ledger with categories and reconciliation",
+        "A unit-economics worksheet separating revenue, direct cost and contribution",
+        "A cash-flow summary and assumptions note",
+        "A privacy and error-check checklist"
+      ],
+      "acceptance_criteria": [
+        "Revenue, cash balance, cost and profit/contribution are not conflated.",
+        "Transactions reconcile to the supplied dataset and exceptions are visible.",
+        "Private customer and account data are excluded.",
+        "Assumptions and missing costs are explicit.",
+        "No investment, tax or legal recommendation is produced."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "A minor must not independently handle regulated financial activity, tax filings, contracts or customer payment credentials.",
+        "Real business data require explicit owner/guardian permission and anonymisation.",
+        "No high-risk investing, borrowing, crypto trading or financial promotion."
+      ],
+      "project_state": "proposed",
+      "project_class": "personal_use",
+      "blueprint_ref": "ATH-PROJ-PERSONAL-003",
+      "target_module_ids": [
+        "BASE-FIN-001",
+        "BASE-FIN-002",
+        "BASE-FIN-003",
+        "BASE-FIN-006",
+        "BASE-FIN-008",
+        "BASE-MATH-004",
+        "BASE-WORK-009",
+        "BASE-CYBER-001"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PERSONAL-004",
+      "object_type": "project",
+      "title": "Household Workflow Improvement",
+      "status": "draft",
+      "goal": "Reduce friction in one low-risk household task through observation, a reversible change and a fair before/after comparison.",
+      "discipline_ids": [
+        "ATH-DISC-INDEP",
+        "ATH-DISC-WORK",
+        "ATH-DISC-MATH",
+        "ATH-DISC-COMM",
+        "ATH-DISC-LEAD"
+      ],
+      "deliverables": [
+        "A description of the current process",
+        "A simple process map and friction observation",
+        "A proposed reversible change",
+        "A before/after comparison using a modest measure",
+        "A household handoff note and reflection"
+      ],
+      "acceptance_criteria": [
+        "The selected process is genuinely used and low risk.",
+        "The change is reversible and does not transfer hidden work or risk to others.",
+        "The comparison uses a consistent measure and records context.",
+        "Household members' privacy and preferences are respected.",
+        "The handoff is understandable to the person who will use it."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not mix cleaning chemicals or use hazardous tools.",
+        "Do not alter shared spaces or discard belongings without permission.",
+        "Stop and ask an adult for electrical, gas, plumbing, heavy lifting or repair issues."
+      ],
+      "project_state": "proposed",
+      "project_class": "personal_use",
+      "blueprint_ref": "ATH-PROJ-PERSONAL-004",
+      "target_module_ids": [
+        "BASE-INDEP-005",
+        "BASE-INDEP-006",
+        "BASE-WORK-012",
+        "BASE-WORK-004",
+        "BASE-MATH-005",
+        "BASE-COMM-006",
+        "BASE-LEAD-002"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PERSONAL-005",
+      "object_type": "project",
+      "title": "Bangla–English Personal Technical Glossary",
+      "status": "draft",
+      "goal": "Solve a real comprehension problem by building a small, concept-accurate bilingual glossary for terms encountered in current study.",
+      "discipline_ids": [
+        "ATH-DISC-LANG",
+        "ATH-DISC-COMM",
+        "ATH-DISC-RES",
+        "ATH-DISC-MATH",
+        "ATH-DISC-WORK"
+      ],
+      "deliverables": [
+        "A list of 20–30 encountered terms",
+        "Concept definitions in plain language in both languages",
+        "Examples, diagrams or counterexamples for difficult terms",
+        "A note on non-equivalent translations and context",
+        "A short self-test and correction log"
+      ],
+      "acceptance_criteria": [
+        "Entries explain concepts rather than provide bare word substitutions.",
+        "Technical meaning remains stable across both languages.",
+        "Ambiguous terms show context and non-equivalence explicitly.",
+        "Sources can be traced and quotations are attributed.",
+        "Delayed self-test exposes gaps rather than being pre-filled."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not copy entire textbook passages or copyrighted dictionaries; paraphrase and cite.",
+        "Avoid collecting classmates' private mistakes or personal data."
+      ],
+      "project_state": "proposed",
+      "project_class": "personal_use",
+      "blueprint_ref": "ATH-PROJ-PERSONAL-005",
+      "target_module_ids": [
+        "BASE-LANG-009",
+        "BASE-LANG-003",
+        "BASE-LANG-007",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-COMM-005"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PERSONAL-006",
+      "object_type": "project",
+      "title": "Personal Digital Safety and Backup Drill",
+      "status": "draft",
+      "goal": "Reduce the learner's own risk of losing important non-sensitive files or compromising accounts through a documented, reversible safety routine.",
+      "discipline_ids": [
+        "ATH-DISC-CYBER",
+        "ATH-DISC-WORK",
+        "ATH-DISC-ENG",
+        "ATH-DISC-RES",
+        "ATH-DISC-INDEP"
+      ],
+      "deliverables": [
+        "A personal data inventory excluding secrets",
+        "A file organisation and naming convention",
+        "A backup plan with at least one independent copy",
+        "A test restore of dummy or non-sensitive files",
+        "A short account/device safety checklist"
+      ],
+      "acceptance_criteria": [
+        "A test restore succeeds for selected dummy files.",
+        "Backup copy is independent enough to reduce a realistic failure mode.",
+        "No secrets or unnecessary personal data are stored in the artefact.",
+        "The procedure is reversible and avoids destructive commands.",
+        "Limitations and residual risks are documented."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Never share passwords, OTPs, recovery phrases or private keys.",
+        "Do not run destructive shell commands or factory reset as part of the project.",
+        "Ask a guardian before changing account recovery or device security settings."
+      ],
+      "project_state": "proposed",
+      "project_class": "personal_use",
+      "blueprint_ref": "ATH-PROJ-PERSONAL-006",
+      "target_module_ids": [
+        "BASE-CYBER-001",
+        "BASE-CYBER-004",
+        "BASE-CYBER-005",
+        "BASE-CYBER-006",
+        "BASE-WORK-001",
+        "BASE-WORK-008",
+        "BASE-RES-011"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PRODUCT-001",
+      "object_type": "project",
+      "title": "Tiny Digital Product: Problem-to-Prototype Validation",
+      "status": "draft",
+      "goal": "Build a useful, narrowly scoped digital product prototype around an evidenced user problem and establish a credible path to future improvement, packaging and possible sale without assuming commercial success.",
+      "discipline_ids": [
+        "ATH-DISC-ENG",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-RES",
+        "ATH-DISC-COMM",
+        "ATH-DISC-AEST",
+        "ATH-DISC-CYBER",
+        "ATH-DISC-FIN",
+        "ATH-DISC-WORK",
+        "ATH-DISC-LEAD"
+      ],
+      "deliverables": [
+        "Problem and user-evidence brief",
+        "One end-to-end prototype for a narrow task",
+        "Acceptance tests and usability observations",
+        "Basic cost/time/capacity model with assumptions",
+        "Privacy/threat checklist using dummy data",
+        "Decision memo: continue, change, pause or stop"
+      ],
+      "acceptance_criteria": [
+        "The product completes one defined user task end-to-end.",
+        "User/problem evidence is consent-based and appropriately limited.",
+        "Prototype tests include normal and boundary cases.",
+        "Sensitive real user data and unnecessary collection are avoided.",
+        "Costs, time and support burden are stated separately from revenue.",
+        "A stop/change decision is accepted as a valid result."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Public release, contracts, paid services, spending, customer accounts and handling real payments require guardian involvement and applicable legal checks.",
+        "Do not collect sensitive personal data, scrape sites, spam, mislead users or test systems without permission.",
+        "Do not promise income or claim product-market fit."
+      ],
+      "project_state": "proposed",
+      "project_class": "product_business_foundation",
+      "blueprint_ref": "ATH-PROJ-PRODUCT-001",
+      "target_module_ids": [
+        "BASE-ENG-001",
+        "BASE-ENG-002",
+        "BASE-ENG-005",
+        "BASE-ENG-007",
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-RES-001",
+        "BASE-RES-003",
+        "BASE-RES-007",
+        "BASE-COMM-006",
+        "BASE-AEST-008",
+        "BASE-AEST-009",
+        "BASE-CYBER-001",
+        "BASE-FIN-008",
+        "BASE-WORK-004",
+        "BASE-WORK-008"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PRODUCT-002",
+      "object_type": "project",
+      "title": "Small Inventory and Sales Operations Tool",
+      "status": "draft",
+      "goal": "Create a reliable internal tool or spreadsheet for a small lawful product operation, with reconciled inventory, sales and unit economics.",
+      "discipline_ids": [
+        "ATH-DISC-ENG",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-FIN",
+        "ATH-DISC-MATH",
+        "ATH-DISC-WORK",
+        "ATH-DISC-COMM",
+        "ATH-DISC-CYBER"
+      ],
+      "deliverables": [
+        "Data dictionary and workflow map",
+        "Spreadsheet or local prototype",
+        "Test dataset and edge-case suite",
+        "Inventory reconciliation report",
+        "Unit economics summary",
+        "User guide and rollback plan"
+      ],
+      "acceptance_criteria": [
+        "Inventory changes reconcile to the test ledger.",
+        "Revenue, direct cost, contribution and cash timing remain distinct.",
+        "Duplicate, refund and correction cases are tested.",
+        "Access is limited to appropriate users; customer data are not required.",
+        "The tool includes backup/export and correction procedures."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not use customer names, phone numbers, credentials or payment card data.",
+        "Real deployment or business process changes require owner/guardian approval.",
+        "No automated payment processing or financial-account integration in the learning prototype."
+      ],
+      "project_state": "proposed",
+      "project_class": "product_business_foundation",
+      "blueprint_ref": "ATH-PROJ-PRODUCT-002",
+      "target_module_ids": [
+        "BASE-ENG-001",
+        "BASE-ENG-005",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-FIN-001",
+        "BASE-FIN-006",
+        "BASE-FIN-007",
+        "BASE-MATH-004",
+        "BASE-WORK-009",
+        "BASE-CYBER-005"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PRODUCT-003",
+      "object_type": "project",
+      "title": "Customer-Support Knowledge Base for a Small Service",
+      "status": "draft",
+      "goal": "Create a trustworthy support knowledge base that reduces repeated explanations for a small lawful service while preserving accuracy and escalation boundaries.",
+      "discipline_ids": [
+        "ATH-DISC-BIZ",
+        "ATH-DISC-COMM",
+        "ATH-DISC-LANG",
+        "ATH-DISC-RES",
+        "ATH-DISC-AEST",
+        "ATH-DISC-WORK",
+        "ATH-DISC-CYBER"
+      ],
+      "deliverables": [
+        "Top-question inventory based on observed or fictional scenarios",
+        "Verified answer articles with sources and last-checked dates",
+        "Search/navigation structure",
+        "Escalation and uncertainty rules",
+        "Comprehension test and revision log"
+      ],
+      "acceptance_criteria": [
+        "Every factual answer has a traceable source or is clearly labelled as a proposed policy.",
+        "Outdated and uncertain information is marked for review.",
+        "Sensitive customer details are excluded.",
+        "Escalation routes exist for payment, safety, legal or account-specific issues.",
+        "Users can find and understand answers without misleading guarantees."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not publish customer conversations or identifiable complaints.",
+        "Do not invent refund, warranty, legal or platform policies.",
+        "A minor must not independently represent a business in contracts or public commitments."
+      ],
+      "project_state": "proposed",
+      "project_class": "product_business_foundation",
+      "blueprint_ref": "ATH-PROJ-PRODUCT-003",
+      "target_module_ids": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-COMM-001",
+        "BASE-COMM-003",
+        "BASE-COMM-005",
+        "BASE-LANG-007",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-AEST-003",
+        "BASE-WORK-010",
+        "BASE-CYBER-001"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PRODUCT-004",
+      "object_type": "project",
+      "title": "Ethical Offer and Market Evidence Experiment",
+      "status": "draft",
+      "goal": "Test whether a clearly described, lawful offer solves a real problem using low-cost, consent-based evidence and a defined stop rule.",
+      "discipline_ids": [
+        "ATH-DISC-BIZ",
+        "ATH-DISC-FIN",
+        "ATH-DISC-RES",
+        "ATH-DISC-COMM",
+        "ATH-DISC-PSY",
+        "ATH-DISC-MATH",
+        "ATH-DISC-LEAD"
+      ],
+      "deliverables": [
+        "Problem hypothesis and target-user description",
+        "Interview or observation protocol with consent",
+        "Offer statement with scope and exclusions",
+        "Cost/time and capacity assumptions",
+        "Predefined success and stop thresholds",
+        "Results and decision memo"
+      ],
+      "acceptance_criteria": [
+        "Hypotheses can be contradicted by observations.",
+        "Sampling and consent are described; sample limits are acknowledged.",
+        "Offer claims and terms are clear and non-deceptive.",
+        "Costs, capacity and risk are included; spending has prior approval.",
+        "A stop rule is written before results are known."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "No independent contracts, paid ads, customer data processing, borrowing or payment collection by a minor.",
+        "Guardian approval before any spending, public offer, transaction or business commitment.",
+        "No deceptive marketing, pressure, spam or collection of sensitive data."
+      ],
+      "project_state": "proposed",
+      "project_class": "product_business_foundation",
+      "blueprint_ref": "ATH-PROJ-PRODUCT-004",
+      "target_module_ids": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-002",
+        "BASE-BIZ-004",
+        "BASE-FIN-001",
+        "BASE-FIN-008",
+        "BASE-RES-001",
+        "BASE-RES-007",
+        "BASE-RES-008",
+        "BASE-COMM-009",
+        "BASE-PSY-008",
+        "BASE-LEAD-010"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PRODUCT-005",
+      "object_type": "project",
+      "title": "Small Educational Product: Teach One Skill Well",
+      "status": "draft",
+      "goal": "Create a small educational product prototype that helps a defined learner perform one narrow skill, with evidence of learning rather than content volume.",
+      "discipline_ids": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-RES",
+        "ATH-DISC-PSY",
+        "ATH-DISC-AEST",
+        "ATH-DISC-LANG",
+        "ATH-DISC-WORK",
+        "ATH-DISC-BIZ"
+      ],
+      "deliverables": [
+        "One target learner/outcome statement",
+        "A short explanation with worked example",
+        "Guided and independent practice items",
+        "Answer/feedback guidance and misconception checks",
+        "A small pilot record using consent and no sensitive data",
+        "Revision and packaging note"
+      ],
+      "acceptance_criteria": [
+        "The material teaches a specific observable outcome.",
+        "Practice is aligned to the outcome and includes feedback.",
+        "A pilot tests performance, not just whether the learner liked it.",
+        "Sources and reused assets are attributed and licensing is respected.",
+        "Packaging does not imply guaranteed results or expert certification."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not collect learner health, identity or sensitive personal data.",
+        "Do not claim accredited status or guaranteed outcomes.",
+        "Use only assets with suitable permissions; link to sources instead of copying restricted material."
+      ],
+      "project_state": "proposed",
+      "project_class": "product_business_foundation",
+      "blueprint_ref": "ATH-PROJ-PRODUCT-005",
+      "target_module_ids": [
+        "BASE-COMM-005",
+        "BASE-RES-003",
+        "BASE-RES-009",
+        "BASE-PSY-003",
+        "BASE-PSY-004",
+        "BASE-AEST-003",
+        "BASE-AEST-009",
+        "BASE-LANG-007",
+        "BASE-BIZ-001"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-PRODUCT-006",
+      "object_type": "project",
+      "title": "Service Delivery Workflow and Quality Checklist",
+      "status": "draft",
+      "goal": "Design a repeatable, low-risk service workflow that makes scope, quality checks, handoff and revision predictable.",
+      "discipline_ids": [
+        "ATH-DISC-BIZ",
+        "ATH-DISC-WORK",
+        "ATH-DISC-LEAD",
+        "ATH-DISC-COMM",
+        "ATH-DISC-MATH",
+        "ATH-DISC-RES",
+        "ATH-DISC-CYBER"
+      ],
+      "deliverables": [
+        "Service scope and exclusion statement",
+        "Workflow with roles and handoff points",
+        "Quality checklist and error log",
+        "Time/capacity estimate",
+        "Customer-safe communication template",
+        "Revision and escalation procedure"
+      ],
+      "acceptance_criteria": [
+        "Scope and exclusions prevent ambiguous promises.",
+        "Workflow has clear ownership and handoff criteria.",
+        "Quality checks catch plausible errors before delivery.",
+        "Capacity estimates include revision and support time.",
+        "Privacy and escalation rules are proportionate."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "No real client commitments, contracts, paid work or sensitive records without guardian involvement and legal checks.",
+        "Do not promise outcomes beyond current capability.",
+        "Do not automate decisions affecting other people without human review."
+      ],
+      "project_state": "proposed",
+      "project_class": "product_business_foundation",
+      "blueprint_ref": "ATH-PROJ-PRODUCT-006",
+      "target_module_ids": [
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-WORK-003",
+        "BASE-WORK-004",
+        "BASE-WORK-012",
+        "BASE-LEAD-002",
+        "BASE-LEAD-008",
+        "BASE-COMM-001",
+        "BASE-CYBER-001"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-INTRINSIC-001",
+      "object_type": "project",
+      "title": "Visual Form and Light Exploration Series",
+      "status": "draft",
+      "goal": "Explore how line, shape, perspective, light and composition change the visual character of an image, without requiring a client, utility or commercial outcome.",
+      "discipline_ids": [
+        "ATH-DISC-ART",
+        "ATH-DISC-AEST",
+        "ATH-DISC-RES"
+      ],
+      "deliverables": [
+        "A self-chosen series of sketches or photographs",
+        "A small experiment log noting the variable explored",
+        "Selected iterations and discarded attempts",
+        "A short artist/research reflection on discoveries and unresolved questions"
+      ],
+      "acceptance_criteria": [
+        "The learner explores a self-chosen visual question.",
+        "Multiple variations make the exploration visible.",
+        "Observations distinguish visible evidence from interpretation.",
+        "The series includes iteration and a reflection on discoveries.",
+        "No audience approval, public release, client use or commercial value is required."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Use only safe locations and materials; do not trespass or photograph people without appropriate permission.",
+        "Avoid unsafe heights, traffic or hazardous lighting setups."
+      ],
+      "project_state": "proposed",
+      "project_class": "intrinsic_exploration",
+      "blueprint_ref": "ATH-PROJ-INTRINSIC-001",
+      "target_module_ids": [
+        "BASE-ART-001",
+        "BASE-ART-002",
+        "BASE-ART-003",
+        "BASE-ART-005",
+        "BASE-ART-006",
+        "BASE-ART-008",
+        "BASE-ART-011",
+        "BASE-AEST-002",
+        "BASE-AEST-010"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-INTRINSIC-002",
+      "object_type": "project",
+      "title": "Electronics Curiosity Lab: Diodes, Signals and Surprises",
+      "status": "draft",
+      "goal": "Explore selected electronics phenomena through diagrams, simulations or verified safe low-voltage kits, driven by curiosity rather than a required product.",
+      "discipline_ids": [
+        "ATH-DISC-ELEC",
+        "ATH-DISC-MATH",
+        "ATH-DISC-ENG",
+        "ATH-DISC-RES"
+      ],
+      "deliverables": [
+        "A curiosity question or prediction",
+        "Circuit sketches or simulator screenshots",
+        "A small set of observations or simulation results",
+        "A record of surprising results and revised explanations",
+        "A list of new questions"
+      ],
+      "acceptance_criteria": [
+        "A clear question and pre-observation prediction exist.",
+        "The exploration stays within verified safe low-voltage conditions or simulation.",
+        "Observations are recorded with units/context where applicable.",
+        "The learner revises or qualifies a model when evidence conflicts.",
+        "No functioning device, sale or practical utility is required."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Never use mains electricity, wall adapters of unknown quality, exposed high-energy sources, modified lithium cells or improvised power supplies.",
+        "No soldering or physical circuit assembly without appropriate adult supervision and safe components.",
+        "Do not bypass safety features."
+      ],
+      "project_state": "proposed",
+      "project_class": "intrinsic_exploration",
+      "blueprint_ref": "ATH-PROJ-INTRINSIC-002",
+      "target_module_ids": [
+        "BASE-ELEC-001",
+        "BASE-ELEC-002",
+        "BASE-ELEC-003",
+        "BASE-ELEC-004",
+        "BASE-ELEC-005",
+        "BASE-ELEC-006",
+        "BASE-ELEC-007",
+        "BASE-ELEC-008",
+        "BASE-ELEC-010",
+        "BASE-MATH-005",
+        "BASE-RES-008"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-INTRINSIC-003",
+      "object_type": "project",
+      "title": "Original Micro-World or Visual Narrative",
+      "status": "draft",
+      "goal": "Create an original fictional world, character study or visual narrative to explore ideas, atmosphere and form for its own sake.",
+      "discipline_ids": [
+        "ATH-DISC-ART",
+        "ATH-DISC-AEST",
+        "ATH-DISC-LANG",
+        "ATH-DISC-COMM",
+        "ATH-DISC-PERF",
+        "ATH-DISC-PSY"
+      ],
+      "deliverables": [
+        "A self-chosen premise, mood or visual question",
+        "Character/place/prop sketches or notes",
+        "A short sequence, scene, comic, audio fragment or prose experiment",
+        "Alternative versions and a reflection on artistic choices"
+      ],
+      "acceptance_criteria": [
+        "The work is recognisably the learner's own creative exploration.",
+        "Choices of form, sequence or language are intentional enough to discuss.",
+        "At least one alternative or revision is preserved.",
+        "Existing media references are acknowledged; no copying or impersonation.",
+        "No audience, utility, publication or monetisation requirement exists."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not imitate a living creator's exact style; use broad formal qualities and original choices.",
+        "Respect copyright and privacy when using references, images or voices.",
+        "Do not publish personal information or other people's likenesses without permission."
+      ],
+      "project_state": "proposed",
+      "project_class": "intrinsic_exploration",
+      "blueprint_ref": "ATH-PROJ-INTRINSIC-003",
+      "target_module_ids": [
+        "BASE-ART-003",
+        "BASE-ART-008",
+        "BASE-ART-010",
+        "BASE-ART-011",
+        "BASE-AEST-001",
+        "BASE-AEST-002",
+        "BASE-LANG-007",
+        "BASE-COMM-004",
+        "BASE-PERF-008"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-INTRINSIC-004",
+      "object_type": "project",
+      "title": "Mathematical Pattern Hunt",
+      "status": "draft",
+      "goal": "Investigate a mathematical pattern or conjecture because it is interesting, using examples, representations and counterexamples without requiring a practical application.",
+      "discipline_ids": [
+        "ATH-DISC-MATH",
+        "ATH-DISC-RES",
+        "ATH-DISC-ENG",
+        "ATH-DISC-AEST"
+      ],
+      "deliverables": [
+        "A pattern question or conjecture",
+        "A table, drawing, graph or small program exploring examples",
+        "A counterexample search",
+        "A distinction between observed pattern and proven statement",
+        "A note on next questions"
+      ],
+      "acceptance_criteria": [
+        "The question is mathematically meaningful and learner-chosen.",
+        "Examples and representations are accurate.",
+        "At least one deliberate attempt to find a counterexample is made.",
+        "Conjecture, evidence and proof are not conflated.",
+        "A useful unresolved question remains visible."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "No special safety risk; avoid exposing private data in online calculators or code tools."
+      ],
+      "project_state": "proposed",
+      "project_class": "intrinsic_exploration",
+      "blueprint_ref": "ATH-PROJ-INTRINSIC-004",
+      "target_module_ids": [
+        "BASE-MATH-001",
+        "BASE-MATH-005",
+        "BASE-MATH-007",
+        "BASE-MATH-009",
+        "BASE-MATH-011",
+        "BASE-MATH-012",
+        "BASE-RES-001",
+        "BASE-RES-008"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-INTRINSIC-005",
+      "object_type": "project",
+      "title": "Sound, Rhythm and Voice Curiosity Study",
+      "status": "draft",
+      "goal": "Explore sound, rhythm, pitch, phrasing or vocal colour in a comfortable, self-directed way without performance or audience requirements.",
+      "discipline_ids": [
+        "ATH-DISC-PERF",
+        "ATH-DISC-MATH",
+        "ATH-DISC-ART",
+        "ATH-DISC-PSY"
+      ],
+      "deliverables": [
+        "A self-chosen listening or sound question",
+        "Short comfortable recordings or rhythm sketches",
+        "A comparison of variations",
+        "Notes on perception and what was difficult to hear",
+        "A next-curiosity list"
+      ],
+      "acceptance_criteria": [
+        "Exploration is self-chosen and bounded.",
+        "Experiments are comfortable and do not involve vocal strain.",
+        "One parameter is compared at a time where practical.",
+        "Listening observations are specific and open to uncertainty.",
+        "No public performance, polished recording or audience approval is required."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Stop if pain, hoarseness, dizziness or strain occurs; do not force range or volume.",
+        "Keep playback volume safe; recording is optional and private by default."
+      ],
+      "project_state": "proposed",
+      "project_class": "intrinsic_exploration",
+      "blueprint_ref": "ATH-PROJ-INTRINSIC-005",
+      "target_module_ids": [
+        "BASE-PERF-001",
+        "BASE-PERF-002",
+        "BASE-PERF-003",
+        "BASE-PERF-004",
+        "BASE-PERF-005",
+        "BASE-PERF-007",
+        "BASE-PERF-008",
+        "BASE-PERF-010"
+      ]
+    },
+    {
+      "id": "ATH-PROJ-INTRINSIC-006",
+      "object_type": "project",
+      "title": "Language and Script Curiosity Atlas",
+      "status": "draft",
+      "goal": "Explore how languages or writing systems encode sound, meaning and structure through a self-chosen comparison, without requiring fluency or a practical deliverable.",
+      "discipline_ids": [
+        "ATH-DISC-LANG",
+        "ATH-DISC-RES",
+        "ATH-DISC-ART",
+        "ATH-DISC-COMM"
+      ],
+      "deliverables": [
+        "A self-chosen linguistic question",
+        "Examples from credible sources or voluntarily supplied language material",
+        "A small annotated map/table/visual atlas",
+        "Notes on exceptions and limits",
+        "A reflection and next questions"
+      ],
+      "acceptance_criteria": [
+        "The comparison is specific and curious rather than ranking languages.",
+        "Examples have traceable sources and context.",
+        "Claims avoid overgeneralising from a small sample.",
+        "The atlas makes a real structural difference visible.",
+        "No fluency, utility, public audience or monetisation is required."
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "source_refs": [
+        "W09-SRC-001",
+        "W09-SRC-002",
+        "W09-SRC-003"
+      ],
+      "review_notes": "Wave 09 working proposal. Project-class semantics and objective mappings require later discipline-owner and learner review; completion does not confer mastery.",
+      "milestone_ids": [],
+      "resource_ids": [],
+      "safety_requirements": [
+        "Do not record or publish other people's speech without consent.",
+        "Avoid stereotypes, ranking languages or inferring identity from language use.",
+        "Respect copyright and source terms."
+      ],
+      "project_state": "proposed",
+      "project_class": "intrinsic_exploration",
+      "blueprint_ref": "ATH-PROJ-INTRINSIC-006",
+      "target_module_ids": [
+        "BASE-LANG-002",
+        "BASE-LANG-004",
+        "BASE-LANG-012",
+        "BASE-LANG-003",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-ART-001"
+      ]
+    }
+  ]
+}

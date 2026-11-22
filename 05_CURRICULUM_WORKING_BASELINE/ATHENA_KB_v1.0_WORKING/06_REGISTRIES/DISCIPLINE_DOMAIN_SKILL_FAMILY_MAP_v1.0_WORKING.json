@@ -1,0 +1,5969 @@
+{
+  "registry": "ATHENA_DISCIPLINE_DOMAIN_SKILL_FAMILY_MAP",
+  "version": "1.0-working",
+  "status": "draft_for_content_authoring",
+  "discipline_count": 18,
+  "domain_count": 145,
+  "skill_family_count": 733,
+  "note": "Structured macro map for authoring. Not approved curriculum and not a complete skill/subskill registry. Each family must be expanded into measurable skills, subskills, concepts, objectives, learning units, practice and assessments.",
+  "disciplines": [
+    {
+      "id": "DIS-ENG",
+      "code": "ENG",
+      "name": "Engineering & Computer Science",
+      "domain_count": 9
+    },
+    {
+      "id": "DIS-BIZ",
+      "code": "BIZ",
+      "name": "Business & Entrepreneurship",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-ELEC",
+      "code": "ELEC",
+      "name": "Electronics & Hardware",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-FIN",
+      "code": "FIN",
+      "name": "Finance & Economics",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-BODY",
+      "code": "BODY",
+      "name": "Body Science & Anatomy",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-PSY",
+      "code": "PSY",
+      "name": "Psychology & Strategy",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-AEST",
+      "code": "AEST",
+      "name": "Aesthetics & Visual Design",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-WORK",
+      "code": "WORK",
+      "name": "Workflow & Productivity",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-ART",
+      "code": "ART",
+      "name": "Artistic Development",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-ATH",
+      "code": "ATH",
+      "name": "Athletics & Physical Performance",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-PERF",
+      "code": "PERF",
+      "name": "Vocal & Performance Arts",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-MATH",
+      "code": "MATH",
+      "name": "Mathematics & Scientific Reasoning",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-CYBER",
+      "code": "CYBER",
+      "name": "Cybersecurity & Digital Infrastructure",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-LANG",
+      "code": "LANG",
+      "name": "Language & Linguistic Intelligence",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-RES",
+      "code": "RES",
+      "name": "Research & Information Intelligence",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-INDEP",
+      "code": "INDEP",
+      "name": "Practical Independence",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-LEAD",
+      "code": "LEAD",
+      "name": "Leadership & Management",
+      "domain_count": 8
+    },
+    {
+      "id": "DIS-COMM",
+      "code": "COMM",
+      "name": "Communication & Rhetoric",
+      "domain_count": 8
+    }
+  ],
+  "records": [
+    {
+      "id": "DOM-ENG-01",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Computational Thinking",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-01-01",
+          "name": "Decomposition",
+          "slug": "decomposition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-01-02",
+          "name": "Abstraction",
+          "slug": "abstraction",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-01-03",
+          "name": "Pattern Recognition",
+          "slug": "pattern recognition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-01-04",
+          "name": "Algorithm Design",
+          "slug": "algorithm design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-01-05",
+          "name": "Debugging And Tracing",
+          "slug": "debugging and tracing",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-02",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Programming Foundations",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-02-01",
+          "name": "Variables And Types",
+          "slug": "variables and types",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-02-02",
+          "name": "Control Flow",
+          "slug": "control flow",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-02-03",
+          "name": "Functions And Modularity",
+          "slug": "functions and modularity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-02-04",
+          "name": "Data Structures",
+          "slug": "data structures",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-02-05",
+          "name": "Errors And Testing",
+          "slug": "errors and testing",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-03",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Programming Languages & Paradigms",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-03-01",
+          "name": "Python Track",
+          "slug": "Python track",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-03-02",
+          "name": "Javascript And Typescript Track",
+          "slug": "JavaScript and TypeScript track",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-03-03",
+          "name": "C And Systems Track",
+          "slug": "C and systems track",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-03-04",
+          "name": "Sql And Data Query Track",
+          "slug": "SQL and data query track",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-03-05",
+          "name": "Shell Scripting Track",
+          "slug": "shell scripting track",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-03-06",
+          "name": "Rust/Go/Java Comparative Tracks",
+          "slug": "Rust/Go/Java comparative tracks",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-03-07",
+          "name": "Functional And Object-Oriented Paradigms",
+          "slug": "functional and object-oriented paradigms",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-04",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Software Engineering",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-04-01",
+          "name": "Requirements And Specification",
+          "slug": "requirements and specification",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-04-02",
+          "name": "Version Control And Collaboration",
+          "slug": "version control and collaboration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-04-03",
+          "name": "Architecture And Design",
+          "slug": "architecture and design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-04-04",
+          "name": "Testing Strategy",
+          "slug": "testing strategy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-04-05",
+          "name": "Documentation And Maintenance",
+          "slug": "documentation and maintenance",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-05",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Web and Application Engineering",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-05-01",
+          "name": "Html And Semantics",
+          "slug": "HTML and semantics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-05-02",
+          "name": "Css And Responsive Design",
+          "slug": "CSS and responsive design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-05-03",
+          "name": "Browser Javascript",
+          "slug": "browser JavaScript",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-05-04",
+          "name": "Frontend Architecture",
+          "slug": "frontend architecture",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-05-05",
+          "name": "Backend Services And Apis",
+          "slug": "backend services and APIs",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-05-06",
+          "name": "Authentication And Authorization",
+          "slug": "authentication and authorization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-05-07",
+          "name": "Deployment And Operations",
+          "slug": "deployment and operations",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-06",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Computer Systems",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-06-01",
+          "name": "Binary And Representation",
+          "slug": "binary and representation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-06-02",
+          "name": "Computer Architecture",
+          "slug": "computer architecture",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-06-03",
+          "name": "Operating Systems",
+          "slug": "operating systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-06-04",
+          "name": "Memory And Processes",
+          "slug": "memory and processes",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-06-05",
+          "name": "Filesystems And Storage",
+          "slug": "filesystems and storage",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-06-06",
+          "name": "Concurrency And Synchronization",
+          "slug": "concurrency and synchronization",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-07",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Networks and Distributed Systems",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-07-01",
+          "name": "Network Fundamentals",
+          "slug": "network fundamentals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-07-02",
+          "name": "Internet Protocols",
+          "slug": "Internet protocols",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-07-03",
+          "name": "Network Programming",
+          "slug": "network programming",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-07-04",
+          "name": "Distributed Systems",
+          "slug": "distributed systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-07-05",
+          "name": "Reliability And Fault Tolerance",
+          "slug": "reliability and fault tolerance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-07-06",
+          "name": "Cloud And Deployment Architecture",
+          "slug": "cloud and deployment architecture",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-08",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Data and Intelligent Systems",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-08-01",
+          "name": "Relational Databases",
+          "slug": "relational databases",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-08-02",
+          "name": "Data Modeling",
+          "slug": "data modeling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-08-03",
+          "name": "Data Pipelines",
+          "slug": "data pipelines",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-08-04",
+          "name": "Statistics For Computing",
+          "slug": "statistics for computing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-08-05",
+          "name": "Machine Learning Foundations",
+          "slug": "machine learning foundations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-08-06",
+          "name": "Ai Systems And Evaluation",
+          "slug": "AI systems and evaluation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-08-07",
+          "name": "Data Privacy And Governance",
+          "slug": "data privacy and governance",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ENG-09",
+      "discipline_id": "DIS-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "name": "Advanced Computer Science",
+      "sequence": 9,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ENG-09-01",
+          "name": "Algorithms And Complexity",
+          "slug": "algorithms and complexity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-09-02",
+          "name": "Compilers And Language Tools",
+          "slug": "compilers and language tools",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-09-03",
+          "name": "Formal Methods",
+          "slug": "formal methods",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-09-04",
+          "name": "Security Engineering",
+          "slug": "security engineering",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-09-05",
+          "name": "Performance Engineering",
+          "slug": "performance engineering",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ENG-09-06",
+          "name": "Graphics And Simulation",
+          "slug": "graphics and simulation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-01",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Customer and Market Discovery",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-01-01",
+          "name": "Problem Discovery",
+          "slug": "problem discovery",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-01-02",
+          "name": "Customer Interviews",
+          "slug": "customer interviews",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-01-03",
+          "name": "Market Sizing",
+          "slug": "market sizing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-01-04",
+          "name": "Competitor Analysis",
+          "slug": "competitor analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-01-05",
+          "name": "Validation Experiments",
+          "slug": "validation experiments",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-02",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Value Proposition and Offer Design",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-02-01",
+          "name": "Customer Value",
+          "slug": "customer value",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-02-02",
+          "name": "Positioning",
+          "slug": "positioning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-02-03",
+          "name": "Offer Construction",
+          "slug": "offer construction",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-02-04",
+          "name": "Product Packaging",
+          "slug": "product packaging",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-02-05",
+          "name": "Pricing Strategy",
+          "slug": "pricing strategy",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-03",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Sales and Negotiation",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-03-01",
+          "name": "Lead Generation",
+          "slug": "lead generation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-03-02",
+          "name": "Sales Conversations",
+          "slug": "sales conversations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-03-03",
+          "name": "Objection Handling",
+          "slug": "objection handling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-03-04",
+          "name": "Ethical Persuasion",
+          "slug": "ethical persuasion",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-03-05",
+          "name": "Negotiation And Closing",
+          "slug": "negotiation and closing",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-04",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Marketing and Distribution",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-04-01",
+          "name": "Brand Strategy",
+          "slug": "brand strategy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-04-02",
+          "name": "Content Marketing",
+          "slug": "content marketing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-04-03",
+          "name": "Social Distribution",
+          "slug": "social distribution",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-04-04",
+          "name": "Conversion Funnels",
+          "slug": "conversion funnels",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-04-05",
+          "name": "Retention And Referrals",
+          "slug": "retention and referrals",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-05",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Business Operations",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-05-01",
+          "name": "Process Design",
+          "slug": "process design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-05-02",
+          "name": "Service Delivery",
+          "slug": "service delivery",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-05-03",
+          "name": "Quality Control",
+          "slug": "quality control",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-05-04",
+          "name": "Supplier Management",
+          "slug": "supplier management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-05-05",
+          "name": "Customer Support",
+          "slug": "customer support",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-06",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Finance and Unit Economics",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-06-01",
+          "name": "Revenue Models",
+          "slug": "revenue models",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-06-02",
+          "name": "Cost Structure",
+          "slug": "cost structure",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-06-03",
+          "name": "Cash Flow",
+          "slug": "cash flow",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-06-04",
+          "name": "Unit Economics",
+          "slug": "unit economics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-06-05",
+          "name": "Budgeting And Forecasting",
+          "slug": "budgeting and forecasting",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-07",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Product and Growth",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-07-01",
+          "name": "Product Discovery",
+          "slug": "product discovery",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-07-02",
+          "name": "Prototyping",
+          "slug": "prototyping",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-07-03",
+          "name": "Roadmaps",
+          "slug": "roadmaps",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-07-04",
+          "name": "Experimentation",
+          "slug": "experimentation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-07-05",
+          "name": "Growth Loops And Scaling",
+          "slug": "growth loops and scaling",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BIZ-08",
+      "discipline_id": "DIS-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "name": "Governance and Strategy",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BIZ-08-01",
+          "name": "Business Strategy",
+          "slug": "business strategy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-08-02",
+          "name": "Risk Management",
+          "slug": "risk management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-08-03",
+          "name": "Legal And Ethical Basics",
+          "slug": "legal and ethical basics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-08-04",
+          "name": "Team Design",
+          "slug": "team design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BIZ-08-05",
+          "name": "Sustainable Growth",
+          "slug": "sustainable growth",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-01",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Electrical Safety and Measurement",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-01-01",
+          "name": "Hazard Recognition",
+          "slug": "hazard recognition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-01-02",
+          "name": "Multimeter Operation",
+          "slug": "multimeter operation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-01-03",
+          "name": "Units And Measurement",
+          "slug": "units and measurement",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-01-04",
+          "name": "Power And Energy Safety",
+          "slug": "power and energy safety",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-02",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Circuit Fundamentals",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-02-01",
+          "name": "Voltage Current Resistance",
+          "slug": "voltage current resistance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-02-02",
+          "name": "Ohms Law",
+          "slug": "Ohms law",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-02-03",
+          "name": "Series And Parallel Circuits",
+          "slug": "series and parallel circuits",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-02-04",
+          "name": "Kirchhoff Laws",
+          "slug": "Kirchhoff laws",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-02-05",
+          "name": "Circuit Diagrams",
+          "slug": "circuit diagrams",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-03",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Components and Devices",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-03-01",
+          "name": "Resistors And Capacitors",
+          "slug": "resistors and capacitors",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-03-02",
+          "name": "Inductors And Transformers",
+          "slug": "inductors and transformers",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-03-03",
+          "name": "Diodes And Leds",
+          "slug": "diodes and LEDs",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-03-04",
+          "name": "Transistors And Mosfets",
+          "slug": "transistors and MOSFETs",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-03-05",
+          "name": "Relays And Switches",
+          "slug": "relays and switches",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-04",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Prototyping and Fabrication",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-04-01",
+          "name": "Breadboard Wiring",
+          "slug": "breadboard wiring",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-04-02",
+          "name": "Soldering Fundamentals",
+          "slug": "soldering fundamentals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-04-03",
+          "name": "Connectors And Wiring",
+          "slug": "connectors and wiring",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-04-04",
+          "name": "Enclosures And Mechanical Fit",
+          "slug": "enclosures and mechanical fit",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-04-05",
+          "name": "Pcb Design And Fabrication",
+          "slug": "PCB design and fabrication",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-05",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Digital Electronics",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-05-01",
+          "name": "Logic Gates",
+          "slug": "logic gates",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-05-02",
+          "name": "Binary And Boolean Logic",
+          "slug": "binary and Boolean logic",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-05-03",
+          "name": "Combinational Circuits",
+          "slug": "combinational circuits",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-05-04",
+          "name": "Sequential Circuits",
+          "slug": "sequential circuits",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-05-05",
+          "name": "Timing And Clocking",
+          "slug": "timing and clocking",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-06",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Embedded Systems",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-06-01",
+          "name": "Microcontroller Fundamentals",
+          "slug": "microcontroller fundamentals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-06-02",
+          "name": "Gpio And Peripherals",
+          "slug": "GPIO and peripherals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-06-03",
+          "name": "Sensors And Signal Conditioning",
+          "slug": "sensors and signal conditioning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-06-04",
+          "name": "Actuators And Motor Control",
+          "slug": "actuators and motor control",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-06-05",
+          "name": "Firmware Debugging",
+          "slug": "firmware debugging",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-07",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Signals and Control",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-07-01",
+          "name": "Analog Signals",
+          "slug": "analog signals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-07-02",
+          "name": "Sampling And Adc/Dac",
+          "slug": "sampling and ADC/DAC",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-07-03",
+          "name": "Filters",
+          "slug": "filters",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-07-04",
+          "name": "Feedback Control",
+          "slug": "feedback control",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-07-05",
+          "name": "Communications And Rf Foundations",
+          "slug": "communications and RF foundations",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ELEC-08",
+      "discipline_id": "DIS-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "name": "Power and Product Engineering",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ELEC-08-01",
+          "name": "Power Supplies",
+          "slug": "power supplies",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-08-02",
+          "name": "Battery Systems",
+          "slug": "battery systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-08-03",
+          "name": "Thermal Management",
+          "slug": "thermal management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-08-04",
+          "name": "Reliability And Testing",
+          "slug": "reliability and testing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ELEC-08-05",
+          "name": "Product Integration",
+          "slug": "product integration",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-01",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Personal Financial Foundations",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-01-01",
+          "name": "Money And Value",
+          "slug": "money and value",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-01-02",
+          "name": "Budgeting",
+          "slug": "budgeting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-01-03",
+          "name": "Saving And Liquidity",
+          "slug": "saving and liquidity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-01-04",
+          "name": "Interest And Inflation",
+          "slug": "interest and inflation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-01-05",
+          "name": "Financial Scams And Risk",
+          "slug": "financial scams and risk",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-02",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Accounting and Business Finance",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-02-01",
+          "name": "Accounting Equation",
+          "slug": "accounting equation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-02-02",
+          "name": "Financial Statements",
+          "slug": "financial statements",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-02-03",
+          "name": "Cash Flow Statements",
+          "slug": "cash flow statements",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-02-04",
+          "name": "Cost Accounting",
+          "slug": "cost accounting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-02-05",
+          "name": "Financial Planning",
+          "slug": "financial planning",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-03",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Economics Foundations",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-03-01",
+          "name": "Scarcity And Opportunity Cost",
+          "slug": "scarcity and opportunity cost",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-03-02",
+          "name": "Supply And Demand",
+          "slug": "supply and demand",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-03-03",
+          "name": "Market Structures",
+          "slug": "market structures",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-03-04",
+          "name": "Incentives And Externalities",
+          "slug": "incentives and externalities",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-03-05",
+          "name": "Macroeconomic Indicators",
+          "slug": "macroeconomic indicators",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-04",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Financial Markets",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-04-01",
+          "name": "Market Instruments",
+          "slug": "market instruments",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-04-02",
+          "name": "Market Structure",
+          "slug": "market structure",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-04-03",
+          "name": "Orders And Settlement",
+          "slug": "orders and settlement",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-04-04",
+          "name": "Risk And Return",
+          "slug": "risk and return",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-04-05",
+          "name": "Market Regulation",
+          "slug": "market regulation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-05",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Investment Analysis",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-05-01",
+          "name": "Diversification",
+          "slug": "diversification",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-05-02",
+          "name": "Asset Allocation",
+          "slug": "asset allocation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-05-03",
+          "name": "Valuation Foundations",
+          "slug": "valuation foundations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-05-04",
+          "name": "Portfolio Theory",
+          "slug": "portfolio theory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-05-05",
+          "name": "Behavioral Finance",
+          "slug": "behavioral finance",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-06",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Corporate Finance",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-06-01",
+          "name": "Capital Budgeting",
+          "slug": "capital budgeting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-06-02",
+          "name": "Cost Of Capital",
+          "slug": "cost of capital",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-06-03",
+          "name": "Working Capital",
+          "slug": "working capital",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-06-04",
+          "name": "Capital Structure",
+          "slug": "capital structure",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-06-05",
+          "name": "Financial Strategy",
+          "slug": "financial strategy",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-07",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Quantitative Finance and Research",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-07-01",
+          "name": "Probability And Statistics",
+          "slug": "probability and statistics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-07-02",
+          "name": "Time Value Of Money",
+          "slug": "time value of money",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-07-03",
+          "name": "Econometrics Foundations",
+          "slug": "econometrics foundations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-07-04",
+          "name": "Model Risk",
+          "slug": "model risk",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-07-05",
+          "name": "Performance Evaluation",
+          "slug": "performance evaluation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-FIN-08",
+      "discipline_id": "DIS-FIN",
+      "discipline_name": "Finance & Economics",
+      "name": "Public and Development Finance",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-FIN-08-01",
+          "name": "Taxation Foundations",
+          "slug": "taxation foundations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-08-02",
+          "name": "Public Budgets",
+          "slug": "public budgets",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-08-03",
+          "name": "Development Economics",
+          "slug": "development economics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-08-04",
+          "name": "Financial Inclusion",
+          "slug": "financial inclusion",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-FIN-08-05",
+          "name": "Policy Evaluation",
+          "slug": "policy evaluation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-01",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Anatomy and Biological Organization",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-01-01",
+          "name": "Cells And Tissues",
+          "slug": "cells and tissues",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-01-02",
+          "name": "Skeletal System",
+          "slug": "skeletal system",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-01-03",
+          "name": "Muscular System",
+          "slug": "muscular system",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-01-04",
+          "name": "Nervous System",
+          "slug": "nervous system",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-01-05",
+          "name": "Cardiovascular And Respiratory Systems",
+          "slug": "cardiovascular and respiratory systems",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-02",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Human Physiology",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-02-01",
+          "name": "Homeostasis",
+          "slug": "homeostasis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-02-02",
+          "name": "Movement Physiology",
+          "slug": "movement physiology",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-02-03",
+          "name": "Circulation And Respiration",
+          "slug": "circulation and respiration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-02-04",
+          "name": "Digestion And Metabolism",
+          "slug": "digestion and metabolism",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-02-05",
+          "name": "Endocrine And Immune Foundations",
+          "slug": "endocrine and immune foundations",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-03",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Biomechanics",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-03-01",
+          "name": "Forces And Levers",
+          "slug": "forces and levers",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-03-02",
+          "name": "Joint Mechanics",
+          "slug": "joint mechanics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-03-03",
+          "name": "Movement Analysis",
+          "slug": "movement analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-03-04",
+          "name": "Posture And Load",
+          "slug": "posture and load",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-03-05",
+          "name": "Injury Mechanism Literacy",
+          "slug": "injury mechanism literacy",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-04",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Nutrition Science",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-04-01",
+          "name": "Macronutrients",
+          "slug": "macronutrients",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-04-02",
+          "name": "Micronutrients",
+          "slug": "micronutrients",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-04-03",
+          "name": "Hydration",
+          "slug": "hydration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-04-04",
+          "name": "Energy Balance",
+          "slug": "energy balance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-04-05",
+          "name": "Food Literacy And Evidence",
+          "slug": "food literacy and evidence",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-05",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Sleep and Recovery Science",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-05-01",
+          "name": "Sleep Regulation",
+          "slug": "sleep regulation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-05-02",
+          "name": "Recovery Mechanisms",
+          "slug": "recovery mechanisms",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-05-03",
+          "name": "Fatigue And Adaptation",
+          "slug": "fatigue and adaptation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-05-04",
+          "name": "Stress Physiology",
+          "slug": "stress physiology",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-05-05",
+          "name": "Recovery Measurement Limits",
+          "slug": "recovery measurement limits",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-06",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Health Information Literacy",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-06-01",
+          "name": "Clinical Evidence Basics",
+          "slug": "clinical evidence basics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-06-02",
+          "name": "Risk And Prevention",
+          "slug": "risk and prevention",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-06-03",
+          "name": "Health Claims Evaluation",
+          "slug": "health claims evaluation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-06-04",
+          "name": "Medical System Navigation",
+          "slug": "medical system navigation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-06-05",
+          "name": "When To Seek Qualified Care",
+          "slug": "when to seek qualified care",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-07",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Exercise Physiology",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-07-01",
+          "name": "Aerobic Systems",
+          "slug": "aerobic systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-07-02",
+          "name": "Anaerobic Systems",
+          "slug": "anaerobic systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-07-03",
+          "name": "Strength Adaptation",
+          "slug": "strength adaptation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-07-04",
+          "name": "Motor Learning",
+          "slug": "motor learning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-07-05",
+          "name": "Training Response Variability",
+          "slug": "training response variability",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-BODY-08",
+      "discipline_id": "DIS-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "name": "Research and Human Variation",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-BODY-08-01",
+          "name": "Study Design",
+          "slug": "study design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-08-02",
+          "name": "Measurement Validity",
+          "slug": "measurement validity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-08-03",
+          "name": "Individual Variation",
+          "slug": "individual variation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-08-04",
+          "name": "Ethics",
+          "slug": "ethics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-BODY-08-05",
+          "name": "Limits Of Generalization",
+          "slug": "limits of generalization",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-01",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Cognitive Psychology",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-01-01",
+          "name": "Attention",
+          "slug": "attention",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-01-02",
+          "name": "Working Memory",
+          "slug": "working memory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-01-03",
+          "name": "Long-Term Memory",
+          "slug": "long-term memory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-01-04",
+          "name": "Reasoning",
+          "slug": "reasoning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-01-05",
+          "name": "Metacognition",
+          "slug": "metacognition",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-02",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Learning and Behavior",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-02-01",
+          "name": "Conditioning",
+          "slug": "conditioning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-02-02",
+          "name": "Reinforcement",
+          "slug": "reinforcement",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-02-03",
+          "name": "Habit Formation",
+          "slug": "habit formation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-02-04",
+          "name": "Motivation",
+          "slug": "motivation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-02-05",
+          "name": "Behavior Change",
+          "slug": "behavior change",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-03",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Emotion and Wellbeing Science",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-03-01",
+          "name": "Emotion Models",
+          "slug": "emotion models",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-03-02",
+          "name": "Stress Response",
+          "slug": "stress response",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-03-03",
+          "name": "Emotion Regulation",
+          "slug": "emotion regulation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-03-04",
+          "name": "Social Support",
+          "slug": "social support",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-03-05",
+          "name": "Evidence Limits",
+          "slug": "evidence limits",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-04",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Social Psychology",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-04-01",
+          "name": "Social Influence",
+          "slug": "social influence",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-04-02",
+          "name": "Group Dynamics",
+          "slug": "group dynamics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-04-03",
+          "name": "Identity And Context",
+          "slug": "identity and context",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-04-04",
+          "name": "Communication Effects",
+          "slug": "communication effects",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-04-05",
+          "name": "Conflict And Cooperation",
+          "slug": "conflict and cooperation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-05",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Decision Science",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-05-01",
+          "name": "Heuristics And Biases",
+          "slug": "heuristics and biases",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-05-02",
+          "name": "Probability Judgment",
+          "slug": "probability judgment",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-05-03",
+          "name": "Decision Trees",
+          "slug": "decision trees",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-05-04",
+          "name": "Risk Perception",
+          "slug": "risk perception",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-05-05",
+          "name": "Choice Architecture",
+          "slug": "choice architecture",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-06",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Strategic Reasoning",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-06-01",
+          "name": "Game Theory",
+          "slug": "game theory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-06-02",
+          "name": "Incentives",
+          "slug": "incentives",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-06-03",
+          "name": "Negotiation Strategy",
+          "slug": "negotiation strategy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-06-04",
+          "name": "Adversarial Thinking",
+          "slug": "adversarial thinking",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-06-05",
+          "name": "Cooperative Strategy",
+          "slug": "cooperative strategy",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-07",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Systems and Causal Thinking",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-07-01",
+          "name": "Systems Mapping",
+          "slug": "systems mapping",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-07-02",
+          "name": "Feedback Loops",
+          "slug": "feedback loops",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-07-03",
+          "name": "Causal Inference",
+          "slug": "causal inference",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-07-04",
+          "name": "Complexity",
+          "slug": "complexity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-07-05",
+          "name": "Scenario Analysis",
+          "slug": "scenario analysis",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PSY-08",
+      "discipline_id": "DIS-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "name": "Psychological Research Literacy",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PSY-08-01",
+          "name": "Research Methods",
+          "slug": "research methods",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-08-02",
+          "name": "Measurement",
+          "slug": "measurement",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-08-03",
+          "name": "Correlation And Causation",
+          "slug": "correlation and causation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-08-04",
+          "name": "Replication",
+          "slug": "replication",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PSY-08-05",
+          "name": "Ethics And Limitations",
+          "slug": "ethics and limitations",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-01",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Visual Literacy",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-01-01",
+          "name": "Visual Analysis",
+          "slug": "visual analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-01-02",
+          "name": "Composition",
+          "slug": "composition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-01-03",
+          "name": "Hierarchy",
+          "slug": "hierarchy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-01-04",
+          "name": "Contrast And Balance",
+          "slug": "contrast and balance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-01-05",
+          "name": "Visual Storytelling",
+          "slug": "visual storytelling",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-02",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Color and Typography",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-02-01",
+          "name": "Color Systems",
+          "slug": "color systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-02-02",
+          "name": "Color Interaction",
+          "slug": "color interaction",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-02-03",
+          "name": "Type Anatomy",
+          "slug": "type anatomy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-02-04",
+          "name": "Typographic Hierarchy",
+          "slug": "typographic hierarchy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-02-05",
+          "name": "Legibility And Accessibility",
+          "slug": "legibility and accessibility",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-03",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Graphic and Brand Design",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-03-01",
+          "name": "Layout Systems",
+          "slug": "layout systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-03-02",
+          "name": "Identity Design",
+          "slug": "identity design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-03-03",
+          "name": "Logo Systems",
+          "slug": "logo systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-03-04",
+          "name": "Brand Applications",
+          "slug": "brand applications",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-03-05",
+          "name": "Design Critique",
+          "slug": "design critique",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-04",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Interface and Interaction Design",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-04-01",
+          "name": "User Needs",
+          "slug": "user needs",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-04-02",
+          "name": "Information Architecture",
+          "slug": "information architecture",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-04-03",
+          "name": "Wireframing",
+          "slug": "wireframing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-04-04",
+          "name": "Interaction Patterns",
+          "slug": "interaction patterns",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-04-05",
+          "name": "Accessibility And Usability",
+          "slug": "accessibility and usability",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-05",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Photography and Imaging",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-05-01",
+          "name": "Exposure Triangle",
+          "slug": "exposure triangle",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-05-02",
+          "name": "Focus And Depth",
+          "slug": "focus and depth",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-05-03",
+          "name": "Lighting",
+          "slug": "lighting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-05-04",
+          "name": "Framing",
+          "slug": "framing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-05-05",
+          "name": "Image Editing And Color Management",
+          "slug": "image editing and color management",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-06",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Motion and Time-Based Design",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-06-01",
+          "name": "Motion Principles",
+          "slug": "motion principles",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-06-02",
+          "name": "Timing And Easing",
+          "slug": "timing and easing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-06-03",
+          "name": "Storyboards",
+          "slug": "storyboards",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-06-04",
+          "name": "Video Composition",
+          "slug": "video composition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-06-05",
+          "name": "Sound-Image Relationships",
+          "slug": "sound-image relationships",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-07",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Three-Dimensional Design",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-07-01",
+          "name": "Form And Volume",
+          "slug": "form and volume",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-07-02",
+          "name": "Materials And Lighting",
+          "slug": "materials and lighting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-07-03",
+          "name": "3D Modeling",
+          "slug": "3D modeling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-07-04",
+          "name": "Rendering",
+          "slug": "rendering",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-07-05",
+          "name": "Spatial Composition",
+          "slug": "spatial composition",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-AEST-08",
+      "discipline_id": "DIS-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "name": "Design Systems and Direction",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-AEST-08-01",
+          "name": "Design Tokens",
+          "slug": "design tokens",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-08-02",
+          "name": "Component Systems",
+          "slug": "component systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-08-03",
+          "name": "Art Direction",
+          "slug": "art direction",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-08-04",
+          "name": "Production Handoff",
+          "slug": "production handoff",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-AEST-08-05",
+          "name": "Design Evaluation",
+          "slug": "design evaluation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-01",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Personal Information Management",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-01-01",
+          "name": "Capture Systems",
+          "slug": "capture systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-01-02",
+          "name": "File Organization",
+          "slug": "file organization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-01-03",
+          "name": "Naming And Metadata",
+          "slug": "naming and metadata",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-01-04",
+          "name": "Notes And Retrieval",
+          "slug": "notes and retrieval",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-01-05",
+          "name": "Archive And Lifecycle",
+          "slug": "archive and lifecycle",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-02",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Planning and Execution",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-02-01",
+          "name": "Goal Decomposition",
+          "slug": "goal decomposition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-02-02",
+          "name": "Task Estimation",
+          "slug": "task estimation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-02-03",
+          "name": "Prioritization",
+          "slug": "prioritization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-02-04",
+          "name": "Time Blocking",
+          "slug": "time blocking",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-02-05",
+          "name": "Review And Replanning",
+          "slug": "review and replanning",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-03",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Digital Literacy",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-03-01",
+          "name": "Device And Os Fundamentals",
+          "slug": "device and OS fundamentals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-03-02",
+          "name": "Browser Literacy",
+          "slug": "browser literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-03-03",
+          "name": "Cloud And Local Files",
+          "slug": "cloud and local files",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-03-04",
+          "name": "Privacy Settings",
+          "slug": "privacy settings",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-03-05",
+          "name": "Troubleshooting",
+          "slug": "troubleshooting",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-04",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Developer Workflow",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-04-01",
+          "name": "Terminal Literacy",
+          "slug": "terminal literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-04-02",
+          "name": "Git Fundamentals",
+          "slug": "Git fundamentals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-04-03",
+          "name": "Github Collaboration",
+          "slug": "GitHub collaboration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-04-04",
+          "name": "Debugging Workflow",
+          "slug": "debugging workflow",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-04-05",
+          "name": "Release Management",
+          "slug": "release management",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-05",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Office and Data Tools",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-05-01",
+          "name": "Documents",
+          "slug": "documents",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-05-02",
+          "name": "Spreadsheets",
+          "slug": "spreadsheets",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-05-03",
+          "name": "Presentations",
+          "slug": "presentations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-05-04",
+          "name": "Structured Data",
+          "slug": "structured data",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-05-05",
+          "name": "Data Visualization",
+          "slug": "data visualization",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-06",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Automation and Integration",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-06-01",
+          "name": "Workflow Automation",
+          "slug": "workflow automation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-06-02",
+          "name": "Scripting For Tasks",
+          "slug": "scripting for tasks",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-06-03",
+          "name": "Apis And Webhooks",
+          "slug": "APIs and webhooks",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-06-04",
+          "name": "Data Validation",
+          "slug": "data validation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-06-05",
+          "name": "Error Handling",
+          "slug": "error handling",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-07",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Knowledge Systems",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-07-01",
+          "name": "Knowledge Capture",
+          "slug": "knowledge capture",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-07-02",
+          "name": "Concept Linking",
+          "slug": "concept linking",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-07-03",
+          "name": "Personal Knowledge Bases",
+          "slug": "personal knowledge bases",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-07-04",
+          "name": "Versioning",
+          "slug": "versioning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-07-05",
+          "name": "Export And Backup",
+          "slug": "export and backup",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-WORK-08",
+      "discipline_id": "DIS-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "name": "Operational Design",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-WORK-08-01",
+          "name": "Checklists",
+          "slug": "checklists",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-08-02",
+          "name": "Standard Operating Procedures",
+          "slug": "standard operating procedures",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-08-03",
+          "name": "Quality Assurance",
+          "slug": "quality assurance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-08-04",
+          "name": "Process Metrics",
+          "slug": "process metrics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-WORK-08-05",
+          "name": "Continuous Improvement",
+          "slug": "continuous improvement",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-01",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Observation and Visual Fundamentals",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-01-01",
+          "name": "Seeing Shape And Proportion",
+          "slug": "seeing shape and proportion",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-01-02",
+          "name": "Line Quality",
+          "slug": "line quality",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-01-03",
+          "name": "Form Construction",
+          "slug": "form construction",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-01-04",
+          "name": "Value And Light",
+          "slug": "value and light",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-01-05",
+          "name": "Edge Control",
+          "slug": "edge control",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-02",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Perspective and Space",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-02-01",
+          "name": "One-Point Perspective",
+          "slug": "one-point perspective",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-02-02",
+          "name": "Two-Point Perspective",
+          "slug": "two-point perspective",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-02-03",
+          "name": "Three-Point Perspective",
+          "slug": "three-point perspective",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-02-04",
+          "name": "Foreshortening",
+          "slug": "foreshortening",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-02-05",
+          "name": "Spatial Composition",
+          "slug": "spatial composition",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-03",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Anatomy and Figure Drawing",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-03-01",
+          "name": "Gesture",
+          "slug": "gesture",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-03-02",
+          "name": "Proportion",
+          "slug": "proportion",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-03-03",
+          "name": "Skeletal Landmarks",
+          "slug": "skeletal landmarks",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-03-04",
+          "name": "Muscle Groups",
+          "slug": "muscle groups",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-03-05",
+          "name": "Hands And Faces",
+          "slug": "hands and faces",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-04",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Color and Painting",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-04-01",
+          "name": "Color Theory",
+          "slug": "color theory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-04-02",
+          "name": "Mixing And Palettes",
+          "slug": "mixing and palettes",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-04-03",
+          "name": "Light And Color",
+          "slug": "light and color",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-04-04",
+          "name": "Surface And Texture",
+          "slug": "surface and texture",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-04-05",
+          "name": "Painting Workflows",
+          "slug": "painting workflows",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-05",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Composition and Storytelling",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-05-01",
+          "name": "Focal Hierarchy",
+          "slug": "focal hierarchy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-05-02",
+          "name": "Visual Rhythm",
+          "slug": "visual rhythm",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-05-03",
+          "name": "Thumbnailing",
+          "slug": "thumbnailing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-05-04",
+          "name": "Narrative Composition",
+          "slug": "narrative composition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-05-05",
+          "name": "Sequential Storytelling",
+          "slug": "sequential storytelling",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-06",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Illustration and Concept Art",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-06-01",
+          "name": "Shape Language",
+          "slug": "shape language",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-06-02",
+          "name": "Character Design",
+          "slug": "character design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-06-03",
+          "name": "Environment Design",
+          "slug": "environment design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-06-04",
+          "name": "Prop Design",
+          "slug": "prop design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-06-05",
+          "name": "Visual Development",
+          "slug": "visual development",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-07",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Digital Art Production",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-07-01",
+          "name": "Digital Tools",
+          "slug": "digital tools",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-07-02",
+          "name": "Layers And Masks",
+          "slug": "layers and masks",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-07-03",
+          "name": "Brush Control",
+          "slug": "brush control",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-07-04",
+          "name": "Non-Destructive Editing",
+          "slug": "non-destructive editing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-07-05",
+          "name": "File And Export Standards",
+          "slug": "file and export standards",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ART-08",
+      "discipline_id": "DIS-ART",
+      "discipline_name": "Artistic Development",
+      "name": "Personal Practice and Critique",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ART-08-01",
+          "name": "Reference Studies",
+          "slug": "reference studies",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-08-02",
+          "name": "Master Studies",
+          "slug": "master studies",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-08-03",
+          "name": "Portfolio Curation",
+          "slug": "portfolio curation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-08-04",
+          "name": "Critique Literacy",
+          "slug": "critique literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ART-08-05",
+          "name": "Style Development",
+          "slug": "style development",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-01",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Movement Literacy",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-01-01",
+          "name": "Fundamental Movement Patterns",
+          "slug": "fundamental movement patterns",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-01-02",
+          "name": "Balance And Coordination",
+          "slug": "balance and coordination",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-01-03",
+          "name": "Landing Mechanics",
+          "slug": "landing mechanics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-01-04",
+          "name": "Mobility",
+          "slug": "mobility",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-01-05",
+          "name": "Body Awareness",
+          "slug": "body awareness",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-02",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Strength and Power",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-02-01",
+          "name": "Bodyweight Strength",
+          "slug": "bodyweight strength",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-02-02",
+          "name": "Resistance Training Technique",
+          "slug": "resistance training technique",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-02-03",
+          "name": "Progressive Overload",
+          "slug": "progressive overload",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-02-04",
+          "name": "Power Development",
+          "slug": "power development",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-02-05",
+          "name": "Strength Assessment",
+          "slug": "strength assessment",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-03",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Aerobic and Anaerobic Conditioning",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-03-01",
+          "name": "Aerobic Base",
+          "slug": "aerobic base",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-03-02",
+          "name": "Interval Training",
+          "slug": "interval training",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-03-03",
+          "name": "Repeat Sprint Ability",
+          "slug": "repeat sprint ability",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-03-04",
+          "name": "Energy System Demands",
+          "slug": "energy system demands",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-03-05",
+          "name": "Conditioning Assessment",
+          "slug": "conditioning assessment",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-04",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Speed and Agility",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-04-01",
+          "name": "Acceleration",
+          "slug": "acceleration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-04-02",
+          "name": "Max Velocity Mechanics",
+          "slug": "max velocity mechanics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-04-03",
+          "name": "Deceleration",
+          "slug": "deceleration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-04-04",
+          "name": "Change Of Direction",
+          "slug": "change of direction",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-04-05",
+          "name": "Reactive Agility",
+          "slug": "reactive agility",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-05",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Sport-Specific Skill",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-05-01",
+          "name": "Ball Control",
+          "slug": "ball control",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-05-02",
+          "name": "Passing And Receiving",
+          "slug": "passing and receiving",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-05-03",
+          "name": "Shooting And Finishing",
+          "slug": "shooting and finishing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-05-04",
+          "name": "Defensive Positioning",
+          "slug": "defensive positioning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-05-05",
+          "name": "Tactical Perception",
+          "slug": "tactical perception",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-06",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Training Design",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-06-01",
+          "name": "Warm-Up Design",
+          "slug": "warm-up design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-06-02",
+          "name": "Session Planning",
+          "slug": "session planning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-06-03",
+          "name": "Periodization",
+          "slug": "periodization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-06-04",
+          "name": "Load Management",
+          "slug": "load management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-06-05",
+          "name": "Recovery Planning",
+          "slug": "recovery planning",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-07",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Performance Psychology",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-07-01",
+          "name": "Attention Under Pressure",
+          "slug": "attention under pressure",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-07-02",
+          "name": "Pre-Performance Routines",
+          "slug": "pre-performance routines",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-07-03",
+          "name": "Team Communication",
+          "slug": "team communication",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-07-04",
+          "name": "Self-Regulation",
+          "slug": "self-regulation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-07-05",
+          "name": "Competition Review",
+          "slug": "competition review",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-ATH-08",
+      "discipline_id": "DIS-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "name": "Coaching and Performance Analysis",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-ATH-08-01",
+          "name": "Observation And Feedback",
+          "slug": "observation and feedback",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-08-02",
+          "name": "Video Analysis",
+          "slug": "video analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-08-03",
+          "name": "Performance Metrics",
+          "slug": "performance metrics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-08-04",
+          "name": "Program Adjustment",
+          "slug": "program adjustment",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-ATH-08-05",
+          "name": "Ethical Coaching",
+          "slug": "ethical coaching",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-01",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Vocal Health and Mechanics",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-01-01",
+          "name": "Safe Vocal Habits",
+          "slug": "safe vocal habits",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-01-02",
+          "name": "Breath Coordination",
+          "slug": "breath coordination",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-01-03",
+          "name": "Posture And Release",
+          "slug": "posture and release",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-01-04",
+          "name": "Resonance Basics",
+          "slug": "resonance basics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-01-05",
+          "name": "Vocal Fatigue Awareness",
+          "slug": "vocal fatigue awareness",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-02",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Pitch and Musicality",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-02-01",
+          "name": "Pitch Matching",
+          "slug": "pitch matching",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-02-02",
+          "name": "Interval Recognition",
+          "slug": "interval recognition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-02-03",
+          "name": "Intonation",
+          "slug": "intonation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-02-04",
+          "name": "Rhythm And Pulse",
+          "slug": "rhythm and pulse",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-02-05",
+          "name": "Phrasing",
+          "slug": "phrasing",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-03",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Voice Development",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-03-01",
+          "name": "Register Coordination",
+          "slug": "register coordination",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-03-02",
+          "name": "Tone And Timbre",
+          "slug": "tone and timbre",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-03-03",
+          "name": "Articulation",
+          "slug": "articulation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-03-04",
+          "name": "Dynamics",
+          "slug": "dynamics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-03-05",
+          "name": "Expressive Control",
+          "slug": "expressive control",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-04",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Listening and Musicianship",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-04-01",
+          "name": "Active Listening",
+          "slug": "active listening",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-04-02",
+          "name": "Ear Training",
+          "slug": "ear training",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-04-03",
+          "name": "Melodic Memory",
+          "slug": "melodic memory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-04-04",
+          "name": "Harmonic Awareness",
+          "slug": "harmonic awareness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-04-05",
+          "name": "Ensemble Timing",
+          "slug": "ensemble timing",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-05",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Performance Craft",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-05-01",
+          "name": "Interpretation",
+          "slug": "interpretation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-05-02",
+          "name": "Stage Presence",
+          "slug": "stage presence",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-05-03",
+          "name": "Audience Awareness",
+          "slug": "audience awareness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-05-04",
+          "name": "Improvisation",
+          "slug": "improvisation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-05-05",
+          "name": "Rehearsal Methods",
+          "slug": "rehearsal methods",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-06",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Recording and Production",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-06-01",
+          "name": "Microphone Technique",
+          "slug": "microphone technique",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-06-02",
+          "name": "Room Acoustics",
+          "slug": "room acoustics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-06-03",
+          "name": "Basic Recording",
+          "slug": "basic recording",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-06-04",
+          "name": "Editing And Takes",
+          "slug": "editing and takes",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-06-05",
+          "name": "Critical Playback",
+          "slug": "critical playback",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-07",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Speech and Diction",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-07-01",
+          "name": "Pronunciation",
+          "slug": "pronunciation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-07-02",
+          "name": "Resonant Speech",
+          "slug": "resonant speech",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-07-03",
+          "name": "Pacing",
+          "slug": "pacing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-07-04",
+          "name": "Clarity",
+          "slug": "clarity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-07-05",
+          "name": "Expressive Speaking",
+          "slug": "expressive speaking",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-PERF-08",
+      "discipline_id": "DIS-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "name": "Performance Research and Repertoire",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-PERF-08-01",
+          "name": "Repertoire Selection",
+          "slug": "repertoire selection",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-08-02",
+          "name": "Style Analysis",
+          "slug": "style analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-08-03",
+          "name": "Practice Planning",
+          "slug": "practice planning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-08-04",
+          "name": "Performance Reflection",
+          "slug": "performance reflection",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-PERF-08-05",
+          "name": "Creative Development",
+          "slug": "creative development",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-01",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Numeracy and Arithmetic",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-01-01",
+          "name": "Place Value",
+          "slug": "place value",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-01-02",
+          "name": "Integer Operations",
+          "slug": "integer operations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-01-03",
+          "name": "Fractions Decimals Percentages",
+          "slug": "fractions decimals percentages",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-01-04",
+          "name": "Ratio And Proportion",
+          "slug": "ratio and proportion",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-01-05",
+          "name": "Estimation And Units",
+          "slug": "estimation and units",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-02",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Pre-Algebra and Algebra",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-02-01",
+          "name": "Expressions",
+          "slug": "expressions",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-02-02",
+          "name": "Linear Equations",
+          "slug": "linear equations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-02-03",
+          "name": "Inequalities",
+          "slug": "inequalities",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-02-04",
+          "name": "Exponents And Roots",
+          "slug": "exponents and roots",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-02-05",
+          "name": "Polynomials And Factoring",
+          "slug": "polynomials and factoring",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-03",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Geometry and Measurement",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-03-01",
+          "name": "Angles And Shapes",
+          "slug": "angles and shapes",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-03-02",
+          "name": "Area And Volume",
+          "slug": "area and volume",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-03-03",
+          "name": "Similarity And Congruence",
+          "slug": "similarity and congruence",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-03-04",
+          "name": "Coordinate Geometry",
+          "slug": "coordinate geometry",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-03-05",
+          "name": "Geometric Proof",
+          "slug": "geometric proof",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-04",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Functions and Modeling",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-04-01",
+          "name": "Relations And Functions",
+          "slug": "relations and functions",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-04-02",
+          "name": "Graphs",
+          "slug": "graphs",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-04-03",
+          "name": "Linear And Nonlinear Models",
+          "slug": "linear and nonlinear models",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-04-04",
+          "name": "Sequences",
+          "slug": "sequences",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-04-05",
+          "name": "Exponential And Logarithmic Models",
+          "slug": "exponential and logarithmic models",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-05",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Probability and Statistics",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-05-01",
+          "name": "Data Literacy",
+          "slug": "data literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-05-02",
+          "name": "Descriptive Statistics",
+          "slug": "descriptive statistics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-05-03",
+          "name": "Probability Rules",
+          "slug": "probability rules",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-05-04",
+          "name": "Distributions",
+          "slug": "distributions",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-05-05",
+          "name": "Inference And Uncertainty",
+          "slug": "inference and uncertainty",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-06",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Trigonometry and Vectors",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-06-01",
+          "name": "Right-Triangle Trigonometry",
+          "slug": "right-triangle trigonometry",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-06-02",
+          "name": "Unit Circle",
+          "slug": "unit circle",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-06-03",
+          "name": "Trigonometric Identities",
+          "slug": "trigonometric identities",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-06-04",
+          "name": "Vectors",
+          "slug": "vectors",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-06-05",
+          "name": "Complex Numbers",
+          "slug": "complex numbers",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-07",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Calculus and Analysis",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-07-01",
+          "name": "Limits",
+          "slug": "limits",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-07-02",
+          "name": "Differentiation",
+          "slug": "differentiation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-07-03",
+          "name": "Integration",
+          "slug": "integration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-07-04",
+          "name": "Series",
+          "slug": "series",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-07-05",
+          "name": "Multivariable Calculus",
+          "slug": "multivariable calculus",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-MATH-08",
+      "discipline_id": "DIS-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "name": "Advanced Mathematics",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-MATH-08-01",
+          "name": "Linear Algebra",
+          "slug": "linear algebra",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-08-02",
+          "name": "Discrete Mathematics",
+          "slug": "discrete mathematics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-08-03",
+          "name": "Differential Equations",
+          "slug": "differential equations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-08-04",
+          "name": "Optimization",
+          "slug": "optimization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-MATH-08-05",
+          "name": "Real Analysis And Proof",
+          "slug": "real analysis and proof",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-01",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Digital Safety and Privacy",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-01-01",
+          "name": "Account Security",
+          "slug": "account security",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-01-02",
+          "name": "Password Managers And Mfa",
+          "slug": "password managers and MFA",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-01-03",
+          "name": "Privacy Controls",
+          "slug": "privacy controls",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-01-04",
+          "name": "Phishing Recognition",
+          "slug": "phishing recognition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-01-05",
+          "name": "Backup Hygiene",
+          "slug": "backup hygiene",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-02",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Operating Systems and Networks",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-02-01",
+          "name": "Os Fundamentals",
+          "slug": "OS fundamentals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-02-02",
+          "name": "Linux Command Line",
+          "slug": "Linux command line",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-02-03",
+          "name": "Tcp/Ip",
+          "slug": "TCP/IP",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-02-04",
+          "name": "Dns And Http",
+          "slug": "DNS and HTTP",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-02-05",
+          "name": "Network Troubleshooting",
+          "slug": "network troubleshooting",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-03",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Secure Software Foundations",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-03-01",
+          "name": "Input Validation",
+          "slug": "input validation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-03-02",
+          "name": "Authentication",
+          "slug": "authentication",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-03-03",
+          "name": "Authorization",
+          "slug": "authorization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-03-04",
+          "name": "Secure Session Handling",
+          "slug": "secure session handling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-03-05",
+          "name": "Dependency Hygiene",
+          "slug": "dependency hygiene",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-04",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Defensive Security Operations",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-04-01",
+          "name": "Asset Inventory",
+          "slug": "asset inventory",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-04-02",
+          "name": "Logging And Monitoring",
+          "slug": "logging and monitoring",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-04-03",
+          "name": "Patch Management",
+          "slug": "patch management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-04-04",
+          "name": "Endpoint Hardening",
+          "slug": "endpoint hardening",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-04-05",
+          "name": "Incident Triage",
+          "slug": "incident triage",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-05",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Cryptography and Identity",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-05-01",
+          "name": "Hashing And Signatures",
+          "slug": "hashing and signatures",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-05-02",
+          "name": "Symmetric And Asymmetric Crypto",
+          "slug": "symmetric and asymmetric crypto",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-05-03",
+          "name": "Key Management",
+          "slug": "key management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-05-04",
+          "name": "Pki And Certificates",
+          "slug": "PKI and certificates",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-05-05",
+          "name": "Identity Systems",
+          "slug": "identity systems",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-06",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Threat Modeling and Risk",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-06-01",
+          "name": "Attack Surfaces",
+          "slug": "attack surfaces",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-06-02",
+          "name": "Threat Modeling",
+          "slug": "threat modeling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-06-03",
+          "name": "Risk Assessment",
+          "slug": "risk assessment",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-06-04",
+          "name": "Security Requirements",
+          "slug": "security requirements",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-06-05",
+          "name": "Resilience Planning",
+          "slug": "resilience planning",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-07",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Authorized Testing and Research",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-07-01",
+          "name": "Lab Isolation",
+          "slug": "lab isolation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-07-02",
+          "name": "Scope And Permission",
+          "slug": "scope and permission",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-07-03",
+          "name": "Web Security Testing",
+          "slug": "web security testing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-07-04",
+          "name": "Vulnerability Verification",
+          "slug": "vulnerability verification",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-07-05",
+          "name": "Responsible Disclosure",
+          "slug": "responsible disclosure",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-CYBER-08",
+      "discipline_id": "DIS-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "name": "Advanced Infrastructure Security",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-CYBER-08-01",
+          "name": "Cloud Security",
+          "slug": "cloud security",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-08-02",
+          "name": "Container Security",
+          "slug": "container security",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-08-03",
+          "name": "Network Defense",
+          "slug": "network defense",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-08-04",
+          "name": "Forensics Foundations",
+          "slug": "forensics foundations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-CYBER-08-05",
+          "name": "Security Architecture",
+          "slug": "security architecture",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-01",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Language Foundations",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-01-01",
+          "name": "Phonetics And Phonology",
+          "slug": "phonetics and phonology",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-01-02",
+          "name": "Vocabulary Acquisition",
+          "slug": "vocabulary acquisition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-01-03",
+          "name": "Grammar And Syntax",
+          "slug": "grammar and syntax",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-01-04",
+          "name": "Semantics And Pragmatics",
+          "slug": "semantics and pragmatics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-01-05",
+          "name": "Language Learning Strategies",
+          "slug": "language learning strategies",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-02",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "English Mastery",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-02-01",
+          "name": "Reading Comprehension",
+          "slug": "reading comprehension",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-02-02",
+          "name": "Precise Writing",
+          "slug": "precise writing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-02-03",
+          "name": "Grammar In Use",
+          "slug": "grammar in use",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-02-04",
+          "name": "Academic And Technical English",
+          "slug": "academic and technical English",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-02-05",
+          "name": "Rhetoric And Register",
+          "slug": "rhetoric and register",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-03",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Bangla Literacy and Technical Language",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-03-01",
+          "name": "Standard Written Bangla",
+          "slug": "standard written Bangla",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-03-02",
+          "name": "Scientific Vocabulary",
+          "slug": "scientific vocabulary",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-03-03",
+          "name": "Technical Translation",
+          "slug": "technical translation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-03-04",
+          "name": "Formal And Informal Register",
+          "slug": "formal and informal register",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-03-05",
+          "name": "Clear Explanatory Writing",
+          "slug": "clear explanatory writing",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-04",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Additional Language Tracks",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-04-01",
+          "name": "Pronunciation And Listening",
+          "slug": "pronunciation and listening",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-04-02",
+          "name": "Core Vocabulary",
+          "slug": "core vocabulary",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-04-03",
+          "name": "Grammar Progression",
+          "slug": "grammar progression",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-04-04",
+          "name": "Reading And Writing",
+          "slug": "reading and writing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-04-05",
+          "name": "Conversation And Fluency",
+          "slug": "conversation and fluency",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-05",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Linguistics",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-05-01",
+          "name": "Morphology",
+          "slug": "morphology",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-05-02",
+          "name": "Syntax",
+          "slug": "syntax",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-05-03",
+          "name": "Semantics",
+          "slug": "semantics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-05-04",
+          "name": "Pragmatics",
+          "slug": "pragmatics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-05-05",
+          "name": "Historical Linguistics",
+          "slug": "historical linguistics",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-06",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Multilingual Communication",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-06-01",
+          "name": "Translation Principles",
+          "slug": "translation principles",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-06-02",
+          "name": "Interpreting Basics",
+          "slug": "interpreting basics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-06-03",
+          "name": "Code-Switching",
+          "slug": "code-switching",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-06-04",
+          "name": "Cross-Cultural Pragmatics",
+          "slug": "cross-cultural pragmatics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-06-05",
+          "name": "Language Comparison",
+          "slug": "language comparison",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-07",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Advanced Literacy",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-07-01",
+          "name": "Argumentative Writing",
+          "slug": "argumentative writing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-07-02",
+          "name": "Literary Analysis",
+          "slug": "literary analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-07-03",
+          "name": "Discourse Analysis",
+          "slug": "discourse analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-07-04",
+          "name": "Editing And Style",
+          "slug": "editing and style",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-07-05",
+          "name": "Research Communication",
+          "slug": "research communication",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LANG-08",
+      "discipline_id": "DIS-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "name": "Language Assessment and Practice",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LANG-08-01",
+          "name": "Proficiency Diagnostics",
+          "slug": "proficiency diagnostics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-08-02",
+          "name": "Retrieval Systems",
+          "slug": "retrieval systems",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-08-03",
+          "name": "Pronunciation Feedback",
+          "slug": "pronunciation feedback",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-08-04",
+          "name": "Extensive Reading",
+          "slug": "extensive reading",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LANG-08-05",
+          "name": "Conversation Practice",
+          "slug": "conversation practice",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-01",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Question and Search Design",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-01-01",
+          "name": "Question Formulation",
+          "slug": "question formulation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-01-02",
+          "name": "Search Operators",
+          "slug": "search operators",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-01-03",
+          "name": "Database Searching",
+          "slug": "database searching",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-01-04",
+          "name": "Search Iteration",
+          "slug": "search iteration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-01-05",
+          "name": "Scope Control",
+          "slug": "scope control",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-02",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Source Evaluation",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-02-01",
+          "name": "Authority And Expertise",
+          "slug": "authority and expertise",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-02-02",
+          "name": "Primary And Secondary Sources",
+          "slug": "primary and secondary sources",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-02-03",
+          "name": "Bias And Incentives",
+          "slug": "bias and incentives",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-02-04",
+          "name": "Evidence Quality",
+          "slug": "evidence quality",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-02-05",
+          "name": "Claim Verification",
+          "slug": "claim verification",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-03",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Research Methods",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-03-01",
+          "name": "Observational Methods",
+          "slug": "observational methods",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-03-02",
+          "name": "Experimental Design",
+          "slug": "experimental design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-03-03",
+          "name": "Sampling",
+          "slug": "sampling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-03-04",
+          "name": "Measurement Validity",
+          "slug": "measurement validity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-03-05",
+          "name": "Qualitative Methods",
+          "slug": "qualitative methods",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-04",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Data and Analysis",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-04-01",
+          "name": "Data Collection",
+          "slug": "data collection",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-04-02",
+          "name": "Cleaning And Documentation",
+          "slug": "cleaning and documentation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-04-03",
+          "name": "Descriptive Analysis",
+          "slug": "descriptive analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-04-04",
+          "name": "Visualization",
+          "slug": "visualization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-04-05",
+          "name": "Uncertainty And Inference",
+          "slug": "uncertainty and inference",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-05",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Synthesis and Writing",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-05-01",
+          "name": "Literature Mapping",
+          "slug": "literature mapping",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-05-02",
+          "name": "Note Synthesis",
+          "slug": "note synthesis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-05-03",
+          "name": "Argument Structure",
+          "slug": "argument structure",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-05-04",
+          "name": "Citation Practice",
+          "slug": "citation practice",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-05-05",
+          "name": "Research Reporting",
+          "slug": "research reporting",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-06",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Reproducibility and Ethics",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-06-01",
+          "name": "Research Integrity",
+          "slug": "research integrity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-06-02",
+          "name": "Transparent Methods",
+          "slug": "transparent methods",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-06-03",
+          "name": "Data Provenance",
+          "slug": "data provenance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-06-04",
+          "name": "Privacy And Consent",
+          "slug": "privacy and consent",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-06-05",
+          "name": "Limitations And Conflicts",
+          "slug": "limitations and conflicts",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-07",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Advanced Evidence Review",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-07-01",
+          "name": "Systematic Search",
+          "slug": "systematic search",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-07-02",
+          "name": "Critical Appraisal",
+          "slug": "critical appraisal",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-07-03",
+          "name": "Meta-Analysis Literacy",
+          "slug": "meta-analysis literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-07-04",
+          "name": "Causal Reasoning",
+          "slug": "causal reasoning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-07-05",
+          "name": "Evidence Grading",
+          "slug": "evidence grading",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-RES-08",
+      "discipline_id": "DIS-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "name": "Independent Research Projects",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-RES-08-01",
+          "name": "Proposal Design",
+          "slug": "proposal design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-08-02",
+          "name": "Protocol Writing",
+          "slug": "protocol writing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-08-03",
+          "name": "Project Execution",
+          "slug": "project execution",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-08-04",
+          "name": "Peer Review",
+          "slug": "peer review",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-RES-08-05",
+          "name": "Publication And Communication",
+          "slug": "publication and communication",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-01",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Personal Organization",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-01-01",
+          "name": "Personal Routines",
+          "slug": "personal routines",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-01-02",
+          "name": "Clothing And Care",
+          "slug": "clothing and care",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-01-03",
+          "name": "Document Organization",
+          "slug": "document organization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-01-04",
+          "name": "Home Organization",
+          "slug": "home organization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-01-05",
+          "name": "Time And Appointment Management",
+          "slug": "time and appointment management",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-02",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Food and Kitchen Skills",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-02-01",
+          "name": "Food Hygiene",
+          "slug": "food hygiene",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-02-02",
+          "name": "Knife Safety",
+          "slug": "knife safety",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-02-03",
+          "name": "Basic Preparation",
+          "slug": "basic preparation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-02-04",
+          "name": "Simple Meals",
+          "slug": "simple meals",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-02-05",
+          "name": "Food Storage And Budgeting",
+          "slug": "food storage and budgeting",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-03",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Tools and Repairs",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-03-01",
+          "name": "Tool Identification",
+          "slug": "tool identification",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-03-02",
+          "name": "Measuring And Marking",
+          "slug": "measuring and marking",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-03-03",
+          "name": "Fasteners And Fittings",
+          "slug": "fasteners and fittings",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-03-04",
+          "name": "Basic Household Troubleshooting",
+          "slug": "basic household troubleshooting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-03-05",
+          "name": "Repair Limits And Escalation",
+          "slug": "repair limits and escalation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-04",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Navigation and Travel",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-04-01",
+          "name": "Map Literacy",
+          "slug": "map literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-04-02",
+          "name": "Route Planning",
+          "slug": "route planning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-04-03",
+          "name": "Public Transport Literacy",
+          "slug": "public transport literacy",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-04-04",
+          "name": "Situational Awareness",
+          "slug": "situational awareness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-04-05",
+          "name": "Travel Contingency Planning",
+          "slug": "travel contingency planning",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-05",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Money and Consumer Skills",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-05-01",
+          "name": "Price Comparison",
+          "slug": "price comparison",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-05-02",
+          "name": "Budgeting",
+          "slug": "budgeting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-05-03",
+          "name": "Receipts And Records",
+          "slug": "receipts and records",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-05-04",
+          "name": "Consumer Rights Awareness",
+          "slug": "consumer rights awareness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-05-05",
+          "name": "Scam Avoidance",
+          "slug": "scam avoidance",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-06",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Safety and First Aid Literacy",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-06-01",
+          "name": "Hazard Recognition",
+          "slug": "hazard recognition",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-06-02",
+          "name": "Emergency Communication",
+          "slug": "emergency communication",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-06-03",
+          "name": "First Aid Concepts",
+          "slug": "first aid concepts",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-06-04",
+          "name": "Fire And Evacuation Awareness",
+          "slug": "fire and evacuation awareness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-06-05",
+          "name": "Qualified Training Pathways",
+          "slug": "qualified training pathways",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-07",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Digital and Administrative Independence",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-07-01",
+          "name": "Forms And Applications",
+          "slug": "forms and applications",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-07-02",
+          "name": "Account Management",
+          "slug": "account management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-07-03",
+          "name": "Digital Documents",
+          "slug": "digital documents",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-07-04",
+          "name": "Appointments And Services",
+          "slug": "appointments and services",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-07-05",
+          "name": "Privacy Protection",
+          "slug": "privacy protection",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-INDEP-08",
+      "discipline_id": "DIS-INDEP",
+      "discipline_name": "Practical Independence",
+      "name": "Problem Solving and Self-Reliance",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-INDEP-08-01",
+          "name": "Problem Framing",
+          "slug": "problem framing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-08-02",
+          "name": "Resourcefulness",
+          "slug": "resourcefulness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-08-03",
+          "name": "Asking For Help",
+          "slug": "asking for help",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-08-04",
+          "name": "Decision Under Uncertainty",
+          "slug": "decision under uncertainty",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-INDEP-08-05",
+          "name": "After-Action Review",
+          "slug": "after-action review",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-01",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Personal Leadership",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-01-01",
+          "name": "Reliability",
+          "slug": "reliability",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-01-02",
+          "name": "Self-Management",
+          "slug": "self-management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-01-03",
+          "name": "Integrity",
+          "slug": "integrity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-01-04",
+          "name": "Accountability",
+          "slug": "accountability",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-01-05",
+          "name": "Reflection",
+          "slug": "reflection",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-02",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Teamwork and Collaboration",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-02-01",
+          "name": "Team Roles",
+          "slug": "team roles",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-02-02",
+          "name": "Active Listening",
+          "slug": "active listening",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-02-03",
+          "name": "Coordination",
+          "slug": "coordination",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-02-04",
+          "name": "Shared Decisions",
+          "slug": "shared decisions",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-02-05",
+          "name": "Psychological Safety",
+          "slug": "psychological safety",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-03",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Communication and Feedback",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-03-01",
+          "name": "Clear Expectations",
+          "slug": "clear expectations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-03-02",
+          "name": "Feedback Delivery",
+          "slug": "feedback delivery",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-03-03",
+          "name": "Feedback Reception",
+          "slug": "feedback reception",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-03-04",
+          "name": "Difficult Conversations",
+          "slug": "difficult conversations",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-03-05",
+          "name": "Meeting Facilitation",
+          "slug": "meeting facilitation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-04",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Project and Operations Management",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-04-01",
+          "name": "Scope And Milestones",
+          "slug": "scope and milestones",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-04-02",
+          "name": "Work Breakdown",
+          "slug": "work breakdown",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-04-03",
+          "name": "Risk And Dependency",
+          "slug": "risk and dependency",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-04-04",
+          "name": "Resource Planning",
+          "slug": "resource planning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-04-05",
+          "name": "Quality Control",
+          "slug": "quality control",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-05",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "People Development",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-05-01",
+          "name": "Coaching",
+          "slug": "coaching",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-05-02",
+          "name": "Delegation",
+          "slug": "delegation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-05-03",
+          "name": "Mentoring",
+          "slug": "mentoring",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-05-04",
+          "name": "Skill Assessment",
+          "slug": "skill assessment",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-05-05",
+          "name": "Conflict Resolution",
+          "slug": "conflict resolution",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-06",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Strategy and Decision Making",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-06-01",
+          "name": "Strategic Analysis",
+          "slug": "strategic analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-06-02",
+          "name": "Prioritization",
+          "slug": "prioritization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-06-03",
+          "name": "Scenario Planning",
+          "slug": "scenario planning",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-06-04",
+          "name": "Decision Records",
+          "slug": "decision records",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-06-05",
+          "name": "Execution Review",
+          "slug": "execution review",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-07",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Organization and Governance",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-07-01",
+          "name": "Organizational Design",
+          "slug": "organizational design",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-07-02",
+          "name": "Policies And Procedures",
+          "slug": "policies and procedures",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-07-03",
+          "name": "Ethical Governance",
+          "slug": "ethical governance",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-07-04",
+          "name": "Stakeholder Management",
+          "slug": "stakeholder management",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-07-05",
+          "name": "Change Management",
+          "slug": "change management",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-LEAD-08",
+      "discipline_id": "DIS-LEAD",
+      "discipline_name": "Leadership & Management",
+      "name": "Advanced Leadership Practice",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-LEAD-08-01",
+          "name": "Negotiation",
+          "slug": "negotiation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-08-02",
+          "name": "Crisis Leadership",
+          "slug": "crisis leadership",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-08-03",
+          "name": "Culture Building",
+          "slug": "culture building",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-08-04",
+          "name": "Systems Leadership",
+          "slug": "systems leadership",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-LEAD-08-05",
+          "name": "Succession And Sustainability",
+          "slug": "succession and sustainability",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-01",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Foundational Communication",
+      "sequence": 1,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-01-01",
+          "name": "Listening",
+          "slug": "listening",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-01-02",
+          "name": "Clarifying Questions",
+          "slug": "clarifying questions",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-01-03",
+          "name": "Concise Expression",
+          "slug": "concise expression",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-01-04",
+          "name": "Audience Awareness",
+          "slug": "audience awareness",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-01-05",
+          "name": "Nonverbal Communication",
+          "slug": "nonverbal communication",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-02",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Writing and Explanation",
+      "sequence": 2,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-02-01",
+          "name": "Sentence Clarity",
+          "slug": "sentence clarity",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-02-02",
+          "name": "Paragraph Structure",
+          "slug": "paragraph structure",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-02-03",
+          "name": "Structured Explanation",
+          "slug": "structured explanation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-02-04",
+          "name": "Technical Writing",
+          "slug": "technical writing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-02-05",
+          "name": "Editing And Revision",
+          "slug": "editing and revision",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-03",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Argument and Critical Discussion",
+      "sequence": 3,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-03-01",
+          "name": "Claims And Reasons",
+          "slug": "claims and reasons",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-03-02",
+          "name": "Evidence Use",
+          "slug": "evidence use",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-03-03",
+          "name": "Logical Fallacies",
+          "slug": "logical fallacies",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-03-04",
+          "name": "Counterargument",
+          "slug": "counterargument",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-03-05",
+          "name": "Constructive Disagreement",
+          "slug": "constructive disagreement",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-04",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Persuasion and Rhetoric",
+      "sequence": 4,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-04-01",
+          "name": "Audience Analysis",
+          "slug": "audience analysis",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-04-02",
+          "name": "Framing",
+          "slug": "framing",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-04-03",
+          "name": "Ethical Persuasion",
+          "slug": "ethical persuasion",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-04-04",
+          "name": "Storytelling",
+          "slug": "storytelling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-04-05",
+          "name": "Rhetorical Structure",
+          "slug": "rhetorical structure",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-05",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Speaking and Presentation",
+      "sequence": 5,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-05-01",
+          "name": "Speech Organization",
+          "slug": "speech organization",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-05-02",
+          "name": "Vocal Delivery",
+          "slug": "vocal delivery",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-05-03",
+          "name": "Visual Support",
+          "slug": "visual support",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-05-04",
+          "name": "Question Handling",
+          "slug": "question handling",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-05-05",
+          "name": "Impromptu Speaking",
+          "slug": "impromptu speaking",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-06",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Negotiation and Conflict",
+      "sequence": 6,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-06-01",
+          "name": "Interests And Positions",
+          "slug": "interests and positions",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-06-02",
+          "name": "Option Generation",
+          "slug": "option generation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-06-03",
+          "name": "Trade-Offs",
+          "slug": "trade-offs",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-06-04",
+          "name": "Boundary Setting",
+          "slug": "boundary setting",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-06-05",
+          "name": "Conflict De-Escalation",
+          "slug": "conflict de-escalation",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-07",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Digital and Cross-Cultural Communication",
+      "sequence": 7,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-07-01",
+          "name": "Written Tone",
+          "slug": "written tone",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-07-02",
+          "name": "Async Collaboration",
+          "slug": "async collaboration",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-07-03",
+          "name": "Cross-Cultural Pragmatics",
+          "slug": "cross-cultural pragmatics",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-07-04",
+          "name": "Online Reputation",
+          "slug": "online reputation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-07-05",
+          "name": "Miscommunication Repair",
+          "slug": "miscommunication repair",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    },
+    {
+      "id": "DOM-COMM-08",
+      "discipline_id": "DIS-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "name": "Advanced Communication Strategy",
+      "sequence": 8,
+      "status": "draft_for_content_authoring",
+      "skill_families": [
+        {
+          "id": "SF-COMM-08-01",
+          "name": "Executive Summaries",
+          "slug": "executive summaries",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-08-02",
+          "name": "High-Stakes Explanation",
+          "slug": "high-stakes explanation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-08-03",
+          "name": "Public Argument",
+          "slug": "public argument",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-08-04",
+          "name": "Facilitation",
+          "slug": "facilitation",
+          "status": "draft_for_content_authoring"
+        },
+        {
+          "id": "SF-COMM-08-05",
+          "name": "Strategic Narrative",
+          "slug": "strategic narrative",
+          "status": "draft_for_content_authoring"
+        }
+      ]
+    }
+  ]
+}

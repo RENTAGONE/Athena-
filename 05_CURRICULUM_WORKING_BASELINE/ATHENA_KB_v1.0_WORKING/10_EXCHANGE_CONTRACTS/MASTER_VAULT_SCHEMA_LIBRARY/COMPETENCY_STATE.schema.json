@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-competency-state.schema.json",
+  "title": "ATHENA_COMPETENCY_STATE",
+  "description": "",
+  "type": "object",
+  "required": [
+    "id",
+    "record_type",
+    "target_id",
+    "as_of",
+    "dimensions",
+    "derived_learner_state",
+    "evidence_ids",
+    "rules_version",
+    "inputs_hash"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "record_type": {
+      "const": "competency_snapshot"
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "exposure",
+        "self_report",
+        "performance",
+        "retention",
+        "mastery"
+      ],
+      "properties": {
+        "exposure": {
+          "enum": [
+            "not_exposed",
+            "exposed"
+          ]
+        },
+        "self_report": {
+          "enum": [
+            "unknown",
+            "struggling",
+            "partial",
+            "confident"
+          ]
+        },
+        "performance": {
+          "enum": [
+            "none",
+            "assisted",
+            "independent_partial",
+            "independent_demonstrated"
+          ]
+        },
+        "retention": {
+          "enum": [
+            "unknown",
+            "due",
+            "fragile",
+            "retained"
+          ]
+        },
+        "mastery": {
+          "enum": [
+            "none",
+            "candidate",
+            "confirmed",
+            "lapsed"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "derived_learner_state": {
+      "enum": [
+        "not_exposed",
+        "exposed",
+        "practising",
+        "understood_provisionally",
+        "demonstrated",
+        "retained",
+        "mastered",
+        "needs_revision"
+      ]
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "rules_version": {
+      "type": "string"
+    },
+    "inputs_hash": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

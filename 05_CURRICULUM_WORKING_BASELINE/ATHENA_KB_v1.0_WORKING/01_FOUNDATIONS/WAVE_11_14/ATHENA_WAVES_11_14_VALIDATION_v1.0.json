@@ -1,0 +1,41 @@
+{
+  "baseline": {
+    "kb": "v3.25",
+    "vault": "v6.1",
+    "modules": 216,
+    "disciplines": 18
+  },
+  "wave11": {
+    "discipline_risk_records": 18,
+    "cross_cutting_controls": 12,
+    "privacy_data_classes": 8,
+    "source_records": 9,
+    "activity_overlays": 6
+  },
+  "wave12": {
+    "glossary_terms": 72,
+    "accessibility_checks": 40,
+    "low_bandwidth_fallbacks": 8,
+    "regional_adaptation_items": 10,
+    "source_records": 2
+  },
+  "wave13": {
+    "existing_importer_cases": 22,
+    "new_cases": 18,
+    "total_specified_cases": 40,
+    "executed_cases": 0
+  },
+  "wave14": {
+    "reviewer_packets": 11,
+    "pilot_protocol": "prepared_not_run",
+    "release_gates": 11,
+    "release_decision": "BLOCKED_PENDING_EXTERNAL_EVIDENCE"
+  },
+  "validation_limits": [
+    "No qualified expert review or sign-off performed.",
+    "No learner pilot or accessibility user testing performed.",
+    "No actual application importer/device execution performed.",
+    "No legal compliance certification.",
+    "No empirically calibrated assessment reliability or adaptive efficacy claimed."
+  ]
+}

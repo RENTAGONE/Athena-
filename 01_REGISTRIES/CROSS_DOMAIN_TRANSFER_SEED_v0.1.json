@@ -1,0 +1,90 @@
+{
+  "schema_version": "0.1.0",
+  "registry_status": "draft_hypotheses_to_validate",
+  "transfers": [
+    {
+      "id": "ATH-XFER-ALGEBRA-PHYSICS-EQ",
+      "source_id": "ATH-DOM-MATH-ALG",
+      "target_id": "ATH-DOM-MATH-PHYS",
+      "relation_type": "TRANSFER_TO",
+      "status": "draft",
+      "transfer_type": "mathematical",
+      "transfer_distance": "near",
+      "mechanism": "Equation manipulation and equality-preserving transformations support rearranging and interpreting physics relationships and formulae.",
+      "rationale": "A learner fluent in algebra can focus more attention on the physical model instead of getting blocked by symbolic manipulation.",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-RATIO-CHEM-QUANT",
+      "source_id": "ATH-DOM-MATH-NUM",
+      "target_id": "ATH-DOM-MATH-CHEM",
+      "relation_type": "TRANSFER_TO",
+      "status": "draft",
+      "transfer_type": "mathematical",
+      "transfer_distance": "intermediate",
+      "mechanism": "Ratios, proportions and unit reasoning support quantitative relationships in chemistry and measurement contexts.",
+      "rationale": "Proportional reasoning is reused across scientific quantities; specific chemistry applications require their own concepts.",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-ANATOMY-PHYSIOLOGY",
+      "source_id": "ATH-DOM-BODY-ANAT",
+      "target_id": "ATH-DOM-BODY-PHYS",
+      "relation_type": "TRANSFER_TO",
+      "status": "draft",
+      "transfer_type": "conceptual",
+      "transfer_distance": "near",
+      "mechanism": "Knowledge of organs, tissues and spatial organisation provides prior context for understanding physiological processes and biological structure-function relationships.",
+      "rationale": "Anatomical knowledge can make overlapping human-biology concepts easier to interpret; it does not replace broader biology study.",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-SCI-REASON-RESEARCH",
+      "source_id": "ATH-DOM-MATH-REASON",
+      "target_id": "ATH-DOM-RES-SOURCES",
+      "relation_type": "SUPPORTS",
+      "status": "draft",
+      "transfer_type": "methodological",
+      "transfer_distance": "near",
+      "mechanism": "Hypothesis testing, variable control and evidence evaluation reinforce research literacy.",
+      "rationale": "Both domains require distinguishing claims from observations and judging the strength of support.",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-RETRIEVAL-ALL",
+      "source_id": "ATH-DOM-WORK-LEARN",
+      "target_id": "ATH-DISC-MATH",
+      "relation_type": "SUPPORTS",
+      "status": "draft",
+      "transfer_type": "methodological",
+      "transfer_distance": "intermediate",
+      "mechanism": "Retrieval practice and feedback can improve durable learning across different subject domains.",
+      "rationale": "This is a general learning method, not a subject-specific prerequisite.",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-ALGORITHM-ELECTRONICS",
+      "source_id": "ATH-DOM-ENG-COMPUTE",
+      "target_id": "ATH-DISC-ELEC",
+      "relation_type": "SUPPORTS",
+      "status": "draft",
+      "transfer_type": "conceptual",
+      "transfer_distance": "intermediate",
+      "mechanism": "Algorithmic decomposition supports reasoning about embedded-system behaviour and control logic.",
+      "rationale": "Software and hardware systems often interact, but neither domain is reducible to the other.",
+      "evidence_refs": []
+    },
+    {
+      "id": "ATH-XFER-COMM-BUSINESS",
+      "source_id": "ATH-DOM-COMM-EXPLAIN",
+      "target_id": "ATH-DISC-BIZ",
+      "relation_type": "SUPPORTS",
+      "status": "draft",
+      "transfer_type": "communication",
+      "transfer_distance": "intermediate",
+      "mechanism": "Clear explanations support customer discovery, offers, sales conversations and stakeholder communication.",
+      "rationale": "Communication skill transfers, while ethical sales and customer research require additional domain-specific capabilities.",
+      "evidence_refs": []
+    }
+  ]
+}

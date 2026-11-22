@@ -1,0 +1,2402 @@
+{
+  "wave": "03",
+  "version": "1.0",
+  "status": "audit_only_no_canonical_mutation",
+  "record_count": 156,
+  "disposition_counts": {
+    "linked_to_existing_canonical_proposal": 24,
+    "new_canonical_extension_proposal": 130,
+    "MISSING_FROM_EXISTING_CROSSWALK_AND_PROPOSAL_QUEUES": 2
+  },
+  "records": [
+    {
+      "micro_skill_id": "MS-01-001",
+      "name": "Active recall from a blank page",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-COG-ACTIVE-RECALL",
+      "canonical_name": "Active recall prompt generation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "combined_supporting_components",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-15",
+          "type": "strategy relation not equivalence",
+          "other_ids": [
+            "MS-15-003"
+          ],
+          "reason": "Method of loci is a mnemonic encoding strategy; blank-page active recall is a retrieval practice. Keep distinct and assess separately."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-01-002",
+      "name": "Confidence calibration",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-01-002",
+      "proposed_name": "Confidence calibration",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-01-003",
+      "name": "Explain a concept simply",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-01-003",
+      "proposed_name": "Explain a concept simply",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-16",
+          "type": "false-equivalence risk",
+          "other_ids": [
+            "MS-15-005"
+          ],
+          "reason": "Speed reading is reading-rate control; explaining simply is comprehension/explanation. Reading faster must not be used as a proxy for understanding."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-01-004",
+      "name": "Build a useful analogy",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-01-004",
+      "proposed_name": "Build a useful analogy",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-01-005",
+      "name": "Spot a hidden assumption",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-01-005",
+      "proposed_name": "Spot a hidden assumption",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-01-006",
+      "name": "Separate fact, inference, and opinion",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-01-006",
+      "proposed_name": "Separate fact, inference, and opinion",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-01-007",
+      "name": "Create a retrieval prompt",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-COG-ACTIVE-RECALL",
+      "canonical_name": "Active recall prompt generation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "combined_supporting_components",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-01-008",
+      "name": "Error log analysis",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-01-008",
+      "proposed_name": "Error log analysis",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-01-009",
+      "name": "Estimate before calculating",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-COG-MENTAL-ARITHMETIC",
+      "canonical_name": "Mental arithmetic estimation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "supporting_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-06",
+          "type": "shared reasoning component",
+          "other_ids": [
+            "MS-14-009"
+          ],
+          "reason": "Estimation before calculation and decision matrix comparison are distinct but share quantitative judgement and sensitivity checking."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-01-010",
+      "name": "Chunk a procedure",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-COG-MEMORY-CHUNKING",
+      "canonical_name": "Information chunking",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_narrower_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-05",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-14-001"
+          ],
+          "reason": "Chunk a procedure versus break a task into next actions; likely related but not identical if one focuses procedural decomposition and the other operational next-step planning."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-02-001",
+      "name": "Ambidexterity Basics (longitudinal non-dominant-hand use)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-02-001",
+      "proposed_name": "Ambidexterity Basics (longitudinal non-dominant-hand use)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-02-002",
+      "name": "Coin Rolling (finger roll and controlled transfer)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-COIN-ROLL",
+      "canonical_name": "Coin transfer and rolling coordination",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-02-003",
+      "name": "Pen Spinning (safe basic rotations)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-PEN-CONTROL",
+      "canonical_name": "Basic pen control patterns",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_narrower_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-02-004",
+      "name": "Everyday Knot Tying (foundational knots)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-KNOT-SQUARE",
+      "canonical_name": "Square knot recognition and tying",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "partial_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-20",
+          "type": "overlap family",
+          "other_ids": [
+            "MS-15-015",
+            "MS-02-005"
+          ],
+          "reason": "Advanced everyday tie knots may overlap square knot/bowline. Scope must explicitly list knot types and exclude climbing/rescue/rigging/life-safety loads."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-02-005",
+      "name": "Knot tying: bowline",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-02-005",
+      "proposed_name": "Knot tying: bowline",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-20",
+          "type": "overlap family",
+          "other_ids": [
+            "MS-15-015",
+            "MS-02-004"
+          ],
+          "reason": "Advanced everyday tie knots may overlap square knot/bowline. Scope must explicitly list knot types and exclude climbing/rescue/rigging/life-safety loads."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-02-006",
+      "name": "Origami (foundational folds and model sequence)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-ORIGAMI-BASE",
+      "canonical_name": "Basic origami folds",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-02-007",
+      "name": "Handwriting legibility under time",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-02-007",
+      "proposed_name": "Handwriting legibility under time",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-02-008",
+      "name": "Keyboard touch-typing home row",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-TYPING-ACCURACY",
+      "canonical_name": "Touch-typing accuracy",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "partial_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-02-009",
+      "name": "Mouse / trackpad precision",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-02-009",
+      "proposed_name": "Mouse / trackpad precision",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-02-010",
+      "name": "Basic ball wall pass control",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-02-010",
+      "proposed_name": "Basic ball wall pass control",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-09",
+          "type": "shared football skill family",
+          "other_ids": [
+            "MS-10-005"
+          ],
+          "reason": "Receiving/cushioning pass and wall pass control overlap first-touch outcomes; MS-02-010 combines passing and receiving against a wall, MS-10-005 isolates receiving."
+        },
+        {
+          "group_id": "OV-10",
+          "type": "shared football skill family",
+          "other_ids": [
+            "MS-10-008"
+          ],
+          "reason": "Weaker-foot pass is a specialised constraint on passing; preserve as distinct practice dimension if its assessment is independently meaningful."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-001",
+      "name": "Fold a T-shirt consistently",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-001",
+      "proposed_name": "Fold a T-shirt consistently",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-02",
+          "type": "near-duplicate candidate overlap",
+          "other_ids": [
+            "MS-13-008"
+          ],
+          "reason": "Both cover folding clothing; MS-13-008 broadens to fold and store common clothing. Could be a parent/extension or duplicate depending exact protocol scope."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-002",
+      "name": "Pack a small bag by checklist",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-002",
+      "proposed_name": "Pack a small bag by checklist",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-03",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-13-010"
+          ],
+          "reason": "Packing by checklist versus household checklist; shared checklist literacy but different task contexts."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-003",
+      "name": "Sew on a button",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-SEW-BUTTON",
+      "canonical_name": "Sewing on a button",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-03-004",
+      "name": "Tie shoelaces securely",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-004",
+      "proposed_name": "Tie shoelaces securely",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-005",
+      "name": "Read a measuring tape",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-005",
+      "proposed_name": "Read a measuring tape",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-006",
+      "name": "Use a spirit level",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-006",
+      "proposed_name": "Use a spirit level",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-007",
+      "name": "Basic screwdriver selection",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-007",
+      "proposed_name": "Basic screwdriver selection",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-01",
+          "type": "near-duplicate candidate overlap",
+          "other_ids": [
+            "MS-09-001"
+          ],
+          "reason": "Both target screwdriver/driver-bit selection. Compare target granularity and assessment; likely merge or make MS-09-001 a narrower fastener-specific component, but do not delete either ID."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-008",
+      "name": "Organise a digital folder",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-008",
+      "proposed_name": "Organise a digital folder",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-04",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-14-008"
+          ],
+          "reason": "Digital folder organisation versus inventory management; both involve classification/retrieval but different data objects and outcomes."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-009",
+      "name": "Make a simple spreadsheet table",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-009",
+      "proposed_name": "Make a simple spreadsheet table",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-03-010",
+      "name": "Read a public transport route",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-03-010",
+      "proposed_name": "Read a public transport route",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-04-001",
+      "name": "Introduce yourself clearly",
+      "category": "Communication & social",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-04-001",
+      "proposed_name": "Introduce yourself clearly",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-04-002",
+      "name": "Ask a precise question",
+      "category": "Communication & social",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-QUESTION-CLARIFICATION",
+      "canonical_name": "Clarifying-question formulation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-04-003",
+      "name": "Active listening summary",
+      "category": "Communication & social",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-ACTIVE-LISTENING",
+      "canonical_name": "Active listening and paraphrase",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-04-004",
+      "name": "Give specific feedback",
+      "category": "Communication & social",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-04-004",
+      "proposed_name": "Give specific feedback",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-04-005",
+      "name": "Disagree respectfully",
+      "category": "Communication & social",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-DISAGREEMENT-STEELMAN",
+      "canonical_name": "Fair disagreement summary",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "partial_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-12",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-12-007"
+          ],
+          "reason": "Pacing a spoken explanation versus summarising in 60 seconds; one is delivery fluency, the other content selection/compression."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-04-006",
+      "name": "Speak for one minute without notes",
+      "category": "Communication & social",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-ONE-MIN-EXPLANATION",
+      "canonical_name": "One-minute structured explanation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "partial_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-04-007",
+      "name": "Summarise a long message",
+      "category": "Communication & social",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-04-007",
+      "proposed_name": "Summarise a long message",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-04-008",
+      "name": "Read aloud with punctuation",
+      "category": "Communication & social",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-04-008",
+      "proposed_name": "Read aloud with punctuation",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-04-009",
+      "name": "Negotiate a simple agreement",
+      "category": "Communication & social",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-04-009",
+      "proposed_name": "Negotiate a simple agreement",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-04-010",
+      "name": "Write a concise professional message",
+      "category": "Communication & social",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-04-010",
+      "proposed_name": "Write a concise professional message",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-001",
+      "name": "Use keyboard shortcuts safely",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-001",
+      "proposed_name": "Use keyboard shortcuts safely",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-002",
+      "name": "Search with exact phrases",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-002",
+      "proposed_name": "Search with exact phrases",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-003",
+      "name": "Evaluate a source quickly",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-003",
+      "proposed_name": "Evaluate a source quickly",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-004",
+      "name": "Capture a reproducible bug report",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-004",
+      "proposed_name": "Capture a reproducible bug report",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-005",
+      "name": "Use Git status and diff",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-005",
+      "proposed_name": "Use Git status and diff",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-006",
+      "name": "Create a strong unique passphrase",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-006",
+      "proposed_name": "Create a strong unique passphrase",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-007",
+      "name": "Recognise phishing indicators",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-007",
+      "proposed_name": "Recognise phishing indicators",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-008",
+      "name": "Back up a file and verify restore",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-008",
+      "proposed_name": "Back up a file and verify restore",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-009",
+      "name": "Use a terminal safely",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-009",
+      "proposed_name": "Use a terminal safely",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-05-010",
+      "name": "Read a simple JSON object",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-05-010",
+      "proposed_name": "Read a simple JSON object",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-001",
+      "name": "Notice three levels of visual hierarchy",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-001",
+      "proposed_name": "Notice three levels of visual hierarchy",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-002",
+      "name": "Frame a phone photograph",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-002",
+      "proposed_name": "Frame a phone photograph",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-11",
+          "type": "component relation",
+          "other_ids": [
+            "MS-11-003"
+          ],
+          "reason": "Grid alignment is one technique within broader phone-photo framing; do not collapse composition skill into one setting."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-003",
+      "name": "Lock focus and exposure on phone",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-003",
+      "proposed_name": "Lock focus and exposure on phone",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-004",
+      "name": "Use natural light direction",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-004",
+      "proposed_name": "Use natural light direction",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-005",
+      "name": "Sketch basic 3D forms",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-005",
+      "proposed_name": "Sketch basic 3D forms",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-006",
+      "name": "Identify dominant rhythm",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-006",
+      "proposed_name": "Identify dominant rhythm",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-007",
+      "name": "Match a pitch by ear",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-007",
+      "proposed_name": "Match a pitch by ear",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-008",
+      "name": "Controlled breathing for speech",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-008",
+      "proposed_name": "Controlled breathing for speech",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-009",
+      "name": "Observe a subject before drawing",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-009",
+      "proposed_name": "Observe a subject before drawing",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-17",
+          "type": "potential duplicate/overlap",
+          "other_ids": [
+            "MS-15-002"
+          ],
+          "reason": "Structured scene description and observe-before-drawing both use deliberate observation; one is verbal scene encoding, the other visual construction. Compare protocols."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-06-010",
+      "name": "Spot color temperature shifts",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-06-010",
+      "proposed_name": "Spot color temperature shifts",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-07-001",
+      "name": "Identify local emergency contact route",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-EMERGENCY-CALL",
+      "canonical_name": "Emergency-call information sequence",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "combined_supporting_components",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-07-002",
+      "name": "Check a scene for immediate hazards",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-HAZARD-SCAN",
+      "canonical_name": "Basic hazard scan",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-07-003",
+      "name": "Communicate an emergency clearly",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-EMERGENCY-CALL",
+      "canonical_name": "Emergency-call information sequence",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "combined_supporting_components",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-07",
+          "type": "shared component / context-specific distinction",
+          "other_ids": [
+            "MS-08-007"
+          ],
+          "reason": "Precise location description overlaps emergency communication location payload; retain emergency call skill as broader, location description as reusable component."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-07-004",
+      "name": "Basic digital account recovery hygiene",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-07-004",
+      "proposed_name": "Basic digital account recovery hygiene",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-07-005",
+      "name": "Recognise unsafe electrical conditions",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-STOP-AND-ESCALATE",
+      "canonical_name": "Stop-work and escalation judgement",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "partial_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-08",
+          "type": "shared safety recognition pattern",
+          "other_ids": [
+            "MS-09-006"
+          ],
+          "reason": "Tool inspection and electrical hazard recognition both use stop/inspect/escalate; separate domains and hazards."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-07-006",
+      "name": "Read a basic product safety label",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-STOP-AND-ESCALATE",
+      "canonical_name": "Stop-work and escalation judgement",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "partial_component",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-14",
+          "type": "shared product-label component",
+          "other_ids": [
+            "MS-13-006"
+          ],
+          "reason": "Cleaning product use requires label reading; label literacy is general and cleaning task is application."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-07-007",
+      "name": "Use a fire extinguisher decision model",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-07-007",
+      "proposed_name": "Use a fire extinguisher decision model",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-19",
+          "type": "safety boundary relation",
+          "other_ids": [
+            "MS-15-012"
+          ],
+          "reason": "Safe lighter handling and fire-extinguisher decision model share fire-risk literacy but are not interchangeable; lighter handling remains recognition/adult handoff only."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-07-008",
+      "name": "Basic wound-care literacy",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-07-008",
+      "proposed_name": "Basic wound-care literacy",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-13",
+          "type": "shared hygiene component",
+          "other_ids": [
+            "MS-13-001"
+          ],
+          "reason": "Handwashing is a routine; wound-care literacy includes hygiene but should not duplicate the full handwashing protocol."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-07-009",
+      "name": "CPR/AED course readiness and qualified training pathway",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-CPR-LEARNING-READINESS",
+      "canonical_name": "CPR and first-aid course readiness",
+      "relationship": "pathway_supports_course_readiness_not_practical_competence",
+      "review_classification": "pathway_only_not_competency_equivalence",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-07-010",
+      "name": "Choking Response (certified practical competency pathway)",
+      "category": "Safety & emergency literacy",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-07-010",
+      "proposed_name": "Choking Response (certified practical competency pathway)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-001",
+      "name": "Orient a map to the environment",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-NAVIGATION-LANDMARKS",
+      "canonical_name": "Landmark-based local navigation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "combined_supporting_components",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-08-002",
+      "name": "Follow a multi-step route plan",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-002",
+      "proposed_name": "Follow a multi-step route plan",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-003",
+      "name": "Estimate walking time and distance",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-003",
+      "proposed_name": "Estimate walking time and distance",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-004",
+      "name": "Use a compass bearing safely",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-004",
+      "proposed_name": "Use a compass bearing safely",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-005",
+      "name": "Recognise orientation landmarks",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-NAVIGATION-LANDMARKS",
+      "canonical_name": "Landmark-based local navigation",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "combined_supporting_components",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-08-006",
+      "name": "Recover calmly after a wrong turn",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-006",
+      "proposed_name": "Recover calmly after a wrong turn",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-007",
+      "name": "Give a precise location description",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-007",
+      "proposed_name": "Give a precise location description",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-07",
+          "type": "shared component / context-specific distinction",
+          "other_ids": [
+            "MS-07-003"
+          ],
+          "reason": "Precise location description overlaps emergency communication location payload; retain emergency call skill as broader, location description as reusable component."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-008",
+      "name": "Read a transit interchange diagram",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-008",
+      "proposed_name": "Read a transit interchange diagram",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-009",
+      "name": "Maintain a situational check-in routine",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-009",
+      "proposed_name": "Maintain a situational check-in routine",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-08-010",
+      "name": "Distinguish safe from unsafe shortcuts",
+      "category": "Navigation & situational awareness",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-08-010",
+      "proposed_name": "Distinguish safe from unsafe shortcuts",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-001",
+      "name": "Select the correct screwdriver bit",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-001",
+      "proposed_name": "Select the correct screwdriver bit",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-01",
+          "type": "near-duplicate candidate overlap",
+          "other_ids": [
+            "MS-03-007"
+          ],
+          "reason": "Both target screwdriver/driver-bit selection. Compare target granularity and assessment; likely merge or make MS-09-001 a narrower fastener-specific component, but do not delete either ID."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-002",
+      "name": "Use a hand tool with controlled force",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-002",
+      "proposed_name": "Use a hand tool with controlled force",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-003",
+      "name": "Clamp a workpiece securely",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-003",
+      "proposed_name": "Clamp a workpiece securely",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-004",
+      "name": "Measure and mark a straight cut line",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-004",
+      "proposed_name": "Measure and mark a straight cut line",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-005",
+      "name": "Identify common fastener types",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-005",
+      "proposed_name": "Identify common fastener types",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-006",
+      "name": "Inspect a tool before use",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-006",
+      "proposed_name": "Inspect a tool before use",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-08",
+          "type": "shared safety recognition pattern",
+          "other_ids": [
+            "MS-07-005"
+          ],
+          "reason": "Tool inspection and electrical hazard recognition both use stop/inspect/escalate; separate domains and hazards."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-007",
+      "name": "Strip a wire to a specified length",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-007",
+      "proposed_name": "Strip a wire to a specified length",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-008",
+      "name": "Make a secure low-voltage breadboard connection",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-008",
+      "proposed_name": "Make a secure low-voltage breadboard connection",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-009",
+      "name": "Identify resistor colour bands",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-009",
+      "proposed_name": "Identify resistor colour bands",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-09-010",
+      "name": "Keep a tidy tool and parts station",
+      "category": "Workshop & tool handling",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SAFE-CANDIDATE-09-010",
+      "proposed_name": "Keep a tidy tool and parts station",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-001",
+      "name": "Perform a balanced athletic landing",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-001",
+      "proposed_name": "Perform a balanced athletic landing",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-002",
+      "name": "Accelerate over a short distance",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-002",
+      "proposed_name": "Accelerate over a short distance",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-003",
+      "name": "Decelerate under control",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-003",
+      "proposed_name": "Decelerate under control",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-004",
+      "name": "Change direction with body control",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-004",
+      "proposed_name": "Change direction with body control",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-005",
+      "name": "Receive and cushion a football pass",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-005",
+      "proposed_name": "Receive and cushion a football pass",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-09",
+          "type": "shared football skill family",
+          "other_ids": [
+            "MS-02-010"
+          ],
+          "reason": "Receiving/cushioning pass and wall pass control overlap first-touch outcomes; MS-02-010 combines passing and receiving against a wall, MS-10-005 isolates receiving."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-006",
+      "name": "Pass accurately to a moving target",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-006",
+      "proposed_name": "Pass accurately to a moving target",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-007",
+      "name": "Scan before receiving a ball",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-007",
+      "proposed_name": "Scan before receiving a ball",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-008",
+      "name": "Use the weaker foot for a controlled pass",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-008",
+      "proposed_name": "Use the weaker foot for a controlled pass",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-10",
+          "type": "shared football skill family",
+          "other_ids": [
+            "MS-02-010"
+          ],
+          "reason": "Weaker-foot pass is a specialised constraint on passing; preserve as distinct practice dimension if its assessment is independently meaningful."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-009",
+      "name": "Maintain a steady aerobic pace",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-009",
+      "proposed_name": "Maintain a steady aerobic pace",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-10-010",
+      "name": "Perform a safe dynamic warm-up sequence",
+      "category": "Movement & sport technique",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-10-010",
+      "proposed_name": "Perform a safe dynamic warm-up sequence",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-001",
+      "name": "Clean a phone camera lens safely",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-001",
+      "proposed_name": "Clean a phone camera lens safely",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-002",
+      "name": "Choose an aspect ratio intentionally",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-002",
+      "proposed_name": "Choose an aspect ratio intentionally",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-003",
+      "name": "Use grid lines for alignment",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-003",
+      "proposed_name": "Use grid lines for alignment",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-11",
+          "type": "component relation",
+          "other_ids": [
+            "MS-06-002"
+          ],
+          "reason": "Grid alignment is one technique within broader phone-photo framing; do not collapse composition skill into one setting."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-004",
+      "name": "Avoid digital zoom degradation",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-004",
+      "proposed_name": "Avoid digital zoom degradation",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-005",
+      "name": "Expose for highlights",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-005",
+      "proposed_name": "Expose for highlights",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-006",
+      "name": "Stabilise a handheld phone shot",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-006",
+      "proposed_name": "Stabilise a handheld phone shot",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-007",
+      "name": "Use leading lines deliberately",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-007",
+      "proposed_name": "Use leading lines deliberately",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-008",
+      "name": "Separate subject from background",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-008",
+      "proposed_name": "Separate subject from background",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-009",
+      "name": "Edit exposure without destroying detail",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-009",
+      "proposed_name": "Edit exposure without destroying detail",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-11-010",
+      "name": "Export an image for a target platform",
+      "category": "Photography & visual capture",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-11-010",
+      "proposed_name": "Export an image for a target platform",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-001",
+      "name": "Find a comfortable speaking pitch",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-001",
+      "proposed_name": "Find a comfortable speaking pitch",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-002",
+      "name": "Articulate consonant endings clearly",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-002",
+      "proposed_name": "Articulate consonant endings clearly",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-003",
+      "name": "Maintain a steady beat",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-003",
+      "proposed_name": "Maintain a steady beat",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-004",
+      "name": "Hear simple pitch direction",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-004",
+      "proposed_name": "Hear simple pitch direction",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-005",
+      "name": "Sing a short phrase in tune",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-005",
+      "proposed_name": "Sing a short phrase in tune",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-006",
+      "name": "Use a clean vocal onset",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-006",
+      "proposed_name": "Use a clean vocal onset",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-007",
+      "name": "Pace a spoken explanation",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-007",
+      "proposed_name": "Pace a spoken explanation",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-12",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-04-005"
+          ],
+          "reason": "Pacing a spoken explanation versus summarising in 60 seconds; one is delivery fluency, the other content selection/compression."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-008",
+      "name": "Listen for phrase structure in music",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-008",
+      "proposed_name": "Listen for phrase structure in music",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-009",
+      "name": "Project speech without shouting",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-009",
+      "proposed_name": "Project speech without shouting",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-12-010",
+      "name": "Record clean phone audio",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-12-010",
+      "proposed_name": "Record clean phone audio",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-001",
+      "name": "Wash hands using a complete routine",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-001",
+      "proposed_name": "Wash hands using a complete routine",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-13",
+          "type": "shared hygiene component",
+          "other_ids": [
+            "MS-07-008"
+          ],
+          "reason": "Handwashing is a routine; wound-care literacy includes hygiene but should not duplicate the full handwashing protocol."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-002",
+      "name": "Read a food date and storage label",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-002",
+      "proposed_name": "Read a food date and storage label",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-003",
+      "name": "Prepare a simple no-heat snack hygienically",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-003",
+      "proposed_name": "Prepare a simple no-heat snack hygienically",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-004",
+      "name": "Use a kitchen knife safely under supervision",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-004",
+      "proposed_name": "Use a kitchen knife safely under supervision",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-005",
+      "name": "Measure dry and liquid ingredients",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-005",
+      "proposed_name": "Measure dry and liquid ingredients",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-006",
+      "name": "Clean a surface using the correct product",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-006",
+      "proposed_name": "Clean a surface using the correct product",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-14",
+          "type": "shared product-label component",
+          "other_ids": [
+            "MS-07-006"
+          ],
+          "reason": "Cleaning product use requires label reading; label literacy is general and cleaning task is application."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-007",
+      "name": "Sort laundry by care requirements",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-007",
+      "proposed_name": "Sort laundry by care requirements",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-008",
+      "name": "Fold and store common clothing",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-13-008",
+      "proposed_name": "Fold and store common clothing",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-02",
+          "type": "near-duplicate candidate overlap",
+          "other_ids": [
+            "MS-03-001"
+          ],
+          "reason": "Both cover folding clothing; MS-13-008 broadens to fold and store common clothing. Could be a parent/extension or duplicate depending exact protocol scope."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-009",
+      "name": "Plan a simple balanced meal",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "MISSING_FROM_EXISTING_CROSSWALK_AND_PROPOSAL_QUEUES",
+      "overlap_flags": [
+        {
+          "group_id": "OV-18",
+          "type": "parent/extension relation",
+          "other_ids": [
+            "MS-15-014"
+          ],
+          "reason": "Signature dish is repeatable recipe execution; balanced meal planning is nutritional planning. Recipe competence does not establish balanced nutrition."
+        }
+      ],
+      "recommended_next_action": "Explicitly reconcile after app is usable; do not auto-create canonical node."
+    },
+    {
+      "micro_skill_id": "MS-13-010",
+      "name": "Use a household checklist",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "MISSING_FROM_EXISTING_CROSSWALK_AND_PROPOSAL_QUEUES",
+      "overlap_flags": [
+        {
+          "group_id": "OV-03",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-03-002"
+          ],
+          "reason": "Packing by checklist versus household checklist; shared checklist literacy but different task contexts."
+        }
+      ],
+      "recommended_next_action": "Explicitly reconcile after app is usable; do not auto-create canonical node."
+    },
+    {
+      "micro_skill_id": "MS-14-001",
+      "name": "Break a task into next actions",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-001",
+      "proposed_name": "Break a task into next actions",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-05",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-01-010"
+          ],
+          "reason": "Chunk a procedure versus break a task into next actions; likely related but not identical if one focuses procedural decomposition and the other operational next-step planning."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-002",
+      "name": "Estimate task duration realistically",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-002",
+      "proposed_name": "Estimate task duration realistically",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-003",
+      "name": "Create a simple contingency plan",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-003",
+      "proposed_name": "Create a simple contingency plan",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-004",
+      "name": "Maintain a short decision log",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-004",
+      "proposed_name": "Maintain a short decision log",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-005",
+      "name": "Use a checklist without becoming dependent",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-005",
+      "proposed_name": "Use a checklist without becoming dependent",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-006",
+      "name": "Prioritise by consequence and urgency",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-006",
+      "proposed_name": "Prioritise by consequence and urgency",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-007",
+      "name": "Prepare a concise handoff",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-007",
+      "proposed_name": "Prepare a concise handoff",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-008",
+      "name": "Keep a simple inventory",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-008",
+      "proposed_name": "Keep a simple inventory",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-04",
+          "type": "partial overlap",
+          "other_ids": [
+            "MS-03-008"
+          ],
+          "reason": "Digital folder organisation versus inventory management; both involve classification/retrieval but different data objects and outcomes."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-009",
+      "name": "Compare two options with a decision matrix",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-009",
+      "proposed_name": "Compare two options with a decision matrix",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-06",
+          "type": "shared reasoning component",
+          "other_ids": [
+            "MS-01-009"
+          ],
+          "reason": "Estimation before calculation and decision matrix comparison are distinct but share quantitative judgement and sensitivity checking."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-14-010",
+      "name": "Close a work session cleanly",
+      "category": "Personal operations & planning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-14-010",
+      "proposed_name": "Close a work session cleanly",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-001",
+      "name": "Doomsday Algorithm (weekday mental calculation)",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-15-001",
+      "proposed_name": "Doomsday Algorithm (weekday mental calculation)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-002",
+      "name": "Visual Observation (structured scene description)",
+      "category": "Observation & creative",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-COG-OBSERVATION-LOG",
+      "canonical_name": "Structured observation logging",
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "review_classification": "candidate_equivalent_scope_check",
+      "status": "proposed_not_approved",
+      "overlap_flags": [
+        {
+          "group_id": "OV-17",
+          "type": "potential duplicate/overlap",
+          "other_ids": [
+            "MS-06-009"
+          ],
+          "reason": "Structured scene description and observe-before-drawing both use deliberate observation; one is verbal scene encoding, the other visual construction. Compare protocols."
+        }
+      ],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    },
+    {
+      "micro_skill_id": "MS-15-003",
+      "name": "Memory Palace (method of loci)",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-15-003",
+      "proposed_name": "Memory Palace (method of loci)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [
+        {
+          "group_id": "OV-15",
+          "type": "strategy relation not equivalence",
+          "other_ids": [
+            "MS-01-001"
+          ],
+          "reason": "Method of loci is a mnemonic encoding strategy; blank-page active recall is a retrieval practice. Keep distinct and assess separately."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-004",
+      "name": "Lucid-Dream Reality Checks (sleep-safe awareness practice)",
+      "category": "Cognitive & learning",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-COG-CANDIDATE-15-004",
+      "proposed_name": "Lucid-Dream Reality Checks (sleep-safe awareness practice)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-005",
+      "name": "Speed Reading (flexible reading-rate control)",
+      "category": "Language & communication",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-SOC-CANDIDATE-15-005",
+      "proposed_name": "Speed Reading (flexible reading-rate control)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [
+        {
+          "group_id": "OV-16",
+          "type": "false-equivalence risk",
+          "other_ids": [
+            "MS-01-003"
+          ],
+          "reason": "Speed reading is reading-rate control; explaining simply is comprehension/explanation. Reading faster must not be used as a proxy for understanding."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-006",
+      "name": "Morse Code (basic send and receive)",
+      "category": "Digital & technical",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-15-006",
+      "proposed_name": "Morse Code (basic send and receive)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-007",
+      "name": "Rubik’s Cube 3×3 (beginner solve)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-15-007",
+      "proposed_name": "Rubik’s Cube 3×3 (beginner solve)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-008",
+      "name": "Locksport Fundamentals (owned transparent practice lock only)",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-15-008",
+      "proposed_name": "Locksport Fundamentals (owned transparent practice lock only)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-009",
+      "name": "French Drop (basic coin-vanish sleight)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-15-009",
+      "proposed_name": "French Drop (basic coin-vanish sleight)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-010",
+      "name": "One-Handed Card Shuffle (basic packet control)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-15-010",
+      "proposed_name": "One-Handed Card Shuffle (basic packet control)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-011",
+      "name": "Faro Shuffle (introductory card interweave)",
+      "category": "Dexterity & coordination",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-DEX-CANDIDATE-15-011",
+      "proposed_name": "Faro Shuffle (introductory card interweave)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-012",
+      "name": "Safe Lighter Handling (non-flourish replacement for Zippo trick)",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-15-012",
+      "proposed_name": "Safe Lighter Handling (non-flourish replacement for Zippo trick)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [
+        {
+          "group_id": "OV-19",
+          "type": "safety boundary relation",
+          "other_ids": [
+            "MS-07-007"
+          ],
+          "reason": "Safe lighter handling and fire-extinguisher decision model share fire-risk literacy but are not interchangeable; lighter handling remains recognition/adult handoff only."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-013",
+      "name": "Stadium Whistle (finger-assisted loud whistle)",
+      "category": "Vocal & auditory performance",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-15-013",
+      "proposed_name": "Stadium Whistle (finger-assisted loud whistle)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-014",
+      "name": "Signature Dish (repeatable personal recipe)",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-15-014",
+      "proposed_name": "Signature Dish (repeatable personal recipe)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": false,
+      "overlap_flags": [
+        {
+          "group_id": "OV-18",
+          "type": "parent/extension relation",
+          "other_ids": [
+            "MS-13-009"
+          ],
+          "reason": "Signature dish is repeatable recipe execution; balanced meal planning is nutritional planning. Recipe competence does not establish balanced nutrition."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-15-015",
+      "name": "Advanced Everyday Tie Knots (non-life-safety set)",
+      "category": "Practical & everyday",
+      "crosswalk_disposition": "new_canonical_extension_proposal",
+      "proposed_canonical_micro_skill_id": "ATH-MICRO-PRACT-CANDIDATE-15-015",
+      "proposed_name": "Advanced Everyday Tie Knots (non-life-safety set)",
+      "relationship": "proposed_new_canonical_extension",
+      "status": "proposal_not_canonical_not_approved",
+      "risk_review_required": true,
+      "overlap_flags": [
+        {
+          "group_id": "OV-20",
+          "type": "overlap family",
+          "other_ids": [
+            "MS-02-004",
+            "MS-02-005"
+          ],
+          "reason": "Advanced everyday tie knots may overlap square knot/bowline. Scope must explicitly list knot types and exclude climbing/rescue/rigging/life-safety loads."
+        }
+      ],
+      "recommended_next_action": "Review scope, duplicate risk, category and evidence before any canonical promotion."
+    },
+    {
+      "micro_skill_id": "MS-13-011",
+      "name": "Prepare a kitchen station using mise en place",
+      "category": "Household & food skills",
+      "crosswalk_disposition": "linked_to_existing_canonical_proposal",
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-COOKING-MISE",
+      "canonical_name": "Basic kitchen mise en place",
+      "relationship": "candidate_supporting_scope_match_not_equivalence_approved",
+      "review_classification": "dedicated_candidate_added_previous_candidates_rejected_as_mismatch",
+      "status": "proposed_not_approved",
+      "overlap_flags": [],
+      "recommended_next_action": "Check exact target, context and rubric; keep as proposal until owner review."
+    }
+  ]
+}

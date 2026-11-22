@@ -1,0 +1,1935 @@
+{
+  "schema_version": "0.1.0",
+  "registry_type": "domain_content_coverage_snapshot",
+  "as_of": "2026-11-17",
+  "status": "draft_inventory_not_curriculum_completion",
+  "counts": {
+    "domains": 113,
+    "taxonomy_only": 71,
+    "seeded_draft": 42
+  },
+  "coverage_definition": "Counts include only current draft seed records explicitly mapped to each domain. They do not measure completeness, quality, approval or learner mastery.",
+  "records": [
+    {
+      "domain_code": "ATH-DOM-ENG-PROG",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ENG-SOFT",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ENG-WEB",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ENG-ALGO",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ENG-SYS",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ENG-ADV",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BIZ-VALUE",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BIZ-OFFER",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BIZ-MKT",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BIZ-SALES",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BIZ-OPS",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BIZ-GROW",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ELEC-FUND",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 1,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ELEC-COMP",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ELEC-DIG",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ELEC-EMB",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ELEC-MEAS",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ELEC-FAB",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-FIN-PERSONAL",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-FIN-ACC",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-FIN-ECON",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-FIN-MARKETS",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-FIN-CORP",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-FIN-RISK",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BODY-ANAT",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 1,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BODY-PHYS",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 1,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BODY-BIOCHEM",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BODY-KINES",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BODY-NUTRI",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-BODY-RECOV",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PSY-COG",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PSY-BEHAV",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PSY-SOCIAL",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PSY-DECIDE",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PSY-STRAT",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PSY-EMOTION",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-AEST-VISPER",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-AEST-COMP",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-AEST-TYPE",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-AEST-PHOTO",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-AEST-BRAND",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-AEST-DIGDES",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-PERSONAL",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-TYPING",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-CLI",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-VERSION",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-AUTO",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-KNOW",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ART-OBS",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ART-DRAW",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ART-SPACE",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ART-LIGHT",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ART-COLOR",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ART-ILLUS",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ATH-FITBASE",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ATH-STRENGTH",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ATH-ENDURE",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ATH-SPEED",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ATH-SKILL",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ATH-RECOVERY",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PERF-VOICE",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PERF-SING",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PERF-SPEAK",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PERF-PRESENCE",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PERF-IMPROV",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-PERF-MOVE",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-NUM",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 2,
+        "learning_objectives": 1,
+        "learning_units": 1,
+        "assessments": 1,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-ALG",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 3,
+        "learning_objectives": 2,
+        "learning_units": 1,
+        "assessments": 1,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-GEO",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-DATA",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 1,
+        "learning_units": 1,
+        "assessments": 1,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-REASON",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 2,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-SCI",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-ADV",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-CYBER-SAFETY",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-CYBER-NETWORK",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-CYBER-OS",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-CYBER-WEBSEC",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-CYBER-DEFENSE",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-CYBER-TEST",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LANG-LING",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LANG-VOCAB",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LANG-GRAM",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LANG-READ",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LANG-WRITE",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LANG-ACQUIRE",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-RES-QUEST",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-RES-SOURCES",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 5,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 1,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-RES-EVIDENCE",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-RES-SYNTH",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-RES-DOC",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-RES-INFO",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-INDEP-HOME",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-INDEP-FOOD",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-INDEP-REPAIR",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-INDEP-NAV",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-INDEP-SAFETY",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-INDEP-MONEY",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LEAD-SELF",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LEAD-TEAM",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LEAD-PLAN",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LEAD-FEEDBACK",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LEAD-CONFLICT",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-LEAD-ORG",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-COMM-EXPLAIN",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 2,
+        "concepts": 0,
+        "learning_objectives": 1,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-COMM-LISTEN",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-COMM-WRITE",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-COMM-SPEAK",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-COMM-ARGUE",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 1,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-COMM-PERSUADE",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-ENG-COMPUTE",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 1,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-PHYS",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-MATH-CHEM",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "taxonomy_status": "draft",
+      "coverage_stage": "taxonomy_only",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 0,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    },
+    {
+      "domain_code": "ATH-DOM-WORK-LEARN",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "taxonomy_status": "draft",
+      "coverage_stage": "seeded_draft",
+      "counts": {
+        "skill_families": 0,
+        "skills": 0,
+        "subskills": 0,
+        "concepts": 0,
+        "learning_objectives": 1,
+        "learning_units": 0,
+        "assessments": 0,
+        "resources": 0
+      },
+      "next_authoring_action": "Review domain scope and author measurable skills/objectives with provenance; do not approve until assessment alignment and review are complete."
+    }
+  ]
+}

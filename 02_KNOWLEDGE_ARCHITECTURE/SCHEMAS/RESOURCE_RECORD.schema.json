@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-resource-record.schema.json",
+  "title": "ATHENA_RESOURCE_RECORD",
+  "description": "Provenance-aware record for learning and research resources; resource inclusion is not evidence of learning.",
+  "type": "object",
+  "required": [
+    "id",
+    "object_type",
+    "title",
+    "status",
+    "resource_type",
+    "source_class",
+    "verification_status",
+    "content_version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-RES-[A-Z]+-[A-Z0-9-]+$"
+    },
+    "object_type": {
+      "const": "resource"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated",
+        "archived"
+      ]
+    },
+    "resource_type": {
+      "enum": [
+        "book",
+        "chapter",
+        "article",
+        "paper",
+        "video",
+        "course",
+        "documentation",
+        "dataset",
+        "tool",
+        "exercise",
+        "website",
+        "person_or_expert",
+        "other"
+      ]
+    },
+    "creator_or_author": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "publisher_or_host": {
+      "type": "string"
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "publication_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "accessed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "version_or_edition": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "source_class": {
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "instructional",
+        "reference",
+        "dataset",
+        "tool"
+      ]
+    },
+    "claims_supported": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verification_status": {
+      "enum": [
+        "unreviewed",
+        "checked",
+        "corroborated",
+        "disputed",
+        "superseded"
+      ]
+    },
+    "reviewed_by": {
+      "type": "string"
+    },
+    "linked_object_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|XFER|EDGE)-[A-Z0-9-]+$"
+      }
+    },
+    "license_or_usage_notes": {
+      "type": "string"
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

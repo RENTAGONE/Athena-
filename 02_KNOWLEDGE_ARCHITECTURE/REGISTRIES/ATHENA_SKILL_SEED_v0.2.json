@@ -1,0 +1,1503 @@
+{
+  "schema_version": "0.2.0",
+  "registry_status": "draft_seed_not_approved_curriculum",
+  "count": 36,
+  "skills": [
+    {
+      "id": "ATH-SKILL-ENG-PROGRAMMING-FUNDAMENTALS",
+      "object_type": "skill",
+      "title": "Programming fundamentals",
+      "summary": "Initial candidate skill within Engineering & Computer Science.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-ENG-VARIABLES-AND-TYPES",
+        "ATH-SUB-ENG-CONTROL-FLOW"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Write, trace and debug small programs using variables, control flow and functions.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ENG-PROG",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ENG-SOFTWARE-ENGINEERING",
+      "object_type": "skill",
+      "title": "Software engineering practice",
+      "summary": "Initial candidate skill within Engineering & Computer Science.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ENG-SOFT"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Design, implement, test and maintain a small software feature.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ENG-SOFT",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-BIZ-CUSTOMER-DISCOVERY",
+      "object_type": "skill",
+      "title": "Customer discovery",
+      "summary": "Initial candidate skill within Business & Entrepreneurship.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "domain_ids": [
+        "ATH-DOM-BIZ-VALUE"
+      ],
+      "skill_family_id": "ATH-FAM-BIZ-VALUE-CUSTOMER",
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-BIZ-CUSTOMER-INTERVIEWS",
+        "ATH-SUB-BIZ-PROBLEM-VALIDATION"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Gather and interpret evidence about a target customer problem.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-BIZ-VALUE",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-BIZ-OFFER-DESIGN",
+      "object_type": "skill",
+      "title": "Offer design",
+      "summary": "Initial candidate skill within Business & Entrepreneurship.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BIZ"
+      ],
+      "domain_ids": [
+        "ATH-DOM-BIZ-OFFER"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Define a specific customer, outcome, scope, price logic and delivery promise.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-BIZ-OFFER",
+      "owner_discipline_id": "ATH-DISC-BIZ",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ELEC-ELECTRICAL-FOUNDATIONS",
+      "object_type": "skill",
+      "title": "Electrical foundations",
+      "summary": "Initial candidate skill within Electronics & Hardware.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ELEC-FUND"
+      ],
+      "skill_family_id": "ATH-FAM-ELEC-FUND-VIR",
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-ELEC-VOLTAGE-CURRENT-MEASUREMENT",
+        "ATH-SUB-ELEC-RESISTANCE-AND-OHMS-LAW"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Explain and measure basic voltage, current, resistance and power safely.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ELEC-FUND",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ELEC-CIRCUIT-BUILDING",
+      "object_type": "skill",
+      "title": "Basic circuit construction",
+      "summary": "Initial candidate skill within Electronics & Hardware.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Build and test a simple low-voltage circuit from a schematic.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ELEC-COMP",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-FIN-PERSONAL-FINANCE",
+      "object_type": "skill",
+      "title": "Personal finance",
+      "summary": "Initial candidate skill within Finance & Economics.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "domain_ids": [
+        "ATH-DOM-FIN-PERSONAL"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-FIN-CASH-FLOW-RECORDING",
+        "ATH-SUB-FIN-SAVING-TRADEOFFS"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Track cash flow, plan saving and explain trade-offs in basic financial decisions.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-FIN-PERSONAL",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-FIN-FINANCIAL-LITERACY",
+      "object_type": "skill",
+      "title": "Financial statement literacy",
+      "summary": "Initial candidate skill within Finance & Economics.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-FIN"
+      ],
+      "domain_ids": [
+        "ATH-DOM-FIN-ACC"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Interpret basic income, expense, asset and liability records.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-FIN-ACC",
+      "owner_discipline_id": "ATH-DISC-FIN",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-BODY-ANATOMY-FOUNDATIONS",
+      "object_type": "skill",
+      "title": "Anatomy foundations",
+      "summary": "Initial candidate skill within Body Science & Anatomy.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "domain_ids": [
+        "ATH-DOM-BODY-ANAT"
+      ],
+      "skill_family_id": "ATH-FAM-BODY-ANAT-TERMS",
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-BODY-SKELETAL-LANDMARKS",
+        "ATH-SUB-BODY-MUSCLE-GROUPS"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Identify major body structures and explain their basic relationships.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-BODY-ANAT",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-BODY-HUMAN-PHYSIOLOGY",
+      "object_type": "skill",
+      "title": "Human physiology foundations",
+      "summary": "Initial candidate skill within Body Science & Anatomy.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "domain_ids": [
+        "ATH-DOM-BODY-PHYS"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Explain selected body functions using cause-and-effect models.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-BODY-PHYS",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-PSY-COGNITIVE-BIASES",
+      "object_type": "skill",
+      "title": "Cognitive bias analysis",
+      "summary": "Initial candidate skill within Psychology & Strategy.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "domain_ids": [
+        "ATH-DOM-PSY-COG"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-PSY-CONFIRMATION-BIAS",
+        "ATH-SUB-PSY-BASE-RATE-NEGLECT"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Recognise common reasoning biases and evaluate their influence on a decision.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-PSY-COG",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-PSY-DECISION-MODELLING",
+      "object_type": "skill",
+      "title": "Decision modelling",
+      "summary": "Initial candidate skill within Psychology & Strategy.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-PSY"
+      ],
+      "domain_ids": [
+        "ATH-DOM-PSY-DECIDE"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Compare options using explicit assumptions, probabilities and consequences.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-PSY-DECIDE",
+      "owner_discipline_id": "ATH-DISC-PSY",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-AEST-VISUAL-COMPOSITION",
+      "object_type": "skill",
+      "title": "Visual composition",
+      "summary": "Initial candidate skill within Aesthetics & Visual Design.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "domain_ids": [
+        "ATH-DOM-AEST-COMP"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-AEST-FRAME-AND-FOCAL-POINT",
+        "ATH-SUB-AEST-BALANCE-AND-NEGATIVE-SPACE"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Arrange visual elements to establish hierarchy, balance and focal emphasis.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-AEST-COMP",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-AEST-PHONE-PHOTOGRAPHY",
+      "object_type": "skill",
+      "title": "Mobile photography",
+      "summary": "Initial candidate skill within Aesthetics & Visual Design.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-AEST"
+      ],
+      "domain_ids": [
+        "ATH-DOM-AEST-PHOTO"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Capture intentional photographs using framing, exposure, focus and light.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-AEST-PHOTO",
+      "owner_discipline_id": "ATH-DISC-AEST",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-WORK-FILE-SYSTEMS",
+      "object_type": "skill",
+      "title": "File and information management",
+      "summary": "Initial candidate skill within Workflow & Productivity.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "domain_ids": [
+        "ATH-DOM-WORK-KNOW"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-WORK-FILE-NAMING",
+        "ATH-SUB-WORK-FOLDER-STRUCTURE"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Organise, name, locate and back up digital files reliably.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-WORK-KNOW",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-WORK-WORKFLOW-AUTOMATION",
+      "object_type": "skill",
+      "title": "Workflow automation",
+      "summary": "Initial candidate skill within Workflow & Productivity.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "domain_ids": [
+        "ATH-DOM-WORK-AUTO"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Automate a repeatable low-risk digital task with a documented procedure.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-WORK-AUTO",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ART-OBSERVATIONAL-DRAWING",
+      "object_type": "skill",
+      "title": "Observational drawing",
+      "summary": "Initial candidate skill within Artistic Development.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ART-DRAW"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-ART-PROPORTION-OBSERVATION",
+        "ATH-SUB-ART-SHAPE-BLOCKING"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Represent visible form and proportion through structured observation.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ART-DRAW",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ART-VISUAL-STUDIES",
+      "object_type": "skill",
+      "title": "Visual studies",
+      "summary": "Initial candidate skill within Artistic Development.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ART"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ART-OBS"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Analyse and practise line, value, shape, colour and form.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ART-OBS",
+      "owner_discipline_id": "ATH-DISC-ART",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ATH-MOVEMENT-FOUNDATIONS",
+      "object_type": "skill",
+      "title": "Movement foundations",
+      "summary": "Initial candidate skill within Athletics & Physical Performance.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ATH-FITBASE"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-ATH-MOVEMENT-ALIGNMENT",
+        "ATH-SUB-ATH-LANDING-CONTROL"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Perform fundamental movement patterns with controlled technique.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ATH-FITBASE",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-ATH-FOOTBALL-PERFORMANCE",
+      "object_type": "skill",
+      "title": "Football performance",
+      "summary": "Initial candidate skill within Athletics & Physical Performance.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ATH"
+      ],
+      "domain_ids": [
+        "ATH-DOM-ATH-SKILL"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Apply technical and tactical skills under representative game constraints.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-ATH-SKILL",
+      "owner_discipline_id": "ATH-DISC-ATH",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-PERF-VOCAL-FOUNDATIONS",
+      "object_type": "skill",
+      "title": "Vocal foundations",
+      "summary": "Initial candidate skill within Vocal & Performance Arts.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "domain_ids": [
+        "ATH-DOM-PERF-VOICE"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-PERF-BREATH-CONTROL",
+        "ATH-SUB-PERF-ARTICULATION"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Use safe breath, resonance and articulation exercises with controlled effort.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-PERF-VOICE",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-PERF-PERFORMANCE-DELIVERY",
+      "object_type": "skill",
+      "title": "Performance delivery",
+      "summary": "Initial candidate skill within Vocal & Performance Arts.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-PERF"
+      ],
+      "domain_ids": [
+        "ATH-DOM-PERF-SPEAK"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Deliver a prepared spoken or performed piece with purposeful pacing and expression.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-PERF-SPEAK",
+      "owner_discipline_id": "ATH-DISC-PERF",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-MATH-NUMBER-ALGEBRA",
+      "object_type": "skill",
+      "title": "Number and algebra",
+      "summary": "Initial candidate skill within Mathematics & Scientific Reasoning.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "domain_ids": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "skill_family_id": "ATH-FAM-MATH-NUM-PLACE",
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-MATH-FRACTION-OPERATIONS",
+        "ATH-SUB-MATH-RATIO-REASONING"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Solve appropriately scoped numerical and algebraic problems and explain methods.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-MATH-NUM",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-MATH-SCIENTIFIC-REASONING",
+      "object_type": "skill",
+      "title": "Scientific reasoning",
+      "summary": "Initial candidate skill within Mathematics & Scientific Reasoning.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "domain_ids": [
+        "ATH-DOM-MATH-SCI",
+        "ATH-DOM-MATH-REASON"
+      ],
+      "skill_family_id": "ATH-FAM-MATH-REASON-MODEL",
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Form testable questions, interpret evidence and distinguish data from inference.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-MATH-SCI",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-CYBER-PERSONAL-DIGITAL-SECURITY",
+      "object_type": "skill",
+      "title": "Personal digital security",
+      "summary": "Initial candidate skill within Cybersecurity & Digital Infrastructure.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "domain_ids": [
+        "ATH-DOM-CYBER-SAFETY"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-CYBER-PASSWORD-MANAGER-PRACTICE",
+        "ATH-SUB-CYBER-MULTI-FACTOR-AUTH"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Apply practical account, device and data-protection practices.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-CYBER-SAFETY",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-CYBER-NETWORKING-FOUNDATIONS",
+      "object_type": "skill",
+      "title": "Networking foundations",
+      "summary": "Initial candidate skill within Cybersecurity & Digital Infrastructure.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-CYBER"
+      ],
+      "domain_ids": [
+        "ATH-DOM-CYBER-NETWORK"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Explain basic network addressing and common internet protocols.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-CYBER-NETWORK",
+      "owner_discipline_id": "ATH-DISC-CYBER",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-LANG-READING-COMPREHENSION",
+      "object_type": "skill",
+      "title": "Reading comprehension",
+      "summary": "Initial candidate skill within Language & Linguistic Intelligence.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "domain_ids": [
+        "ATH-DOM-LANG-READ"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-LANG-MAIN-IDEA-AND-DETAIL",
+        "ATH-SUB-LANG-INFERENCE-FROM-CONTEXT"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Extract claims, structure and implications from appropriately challenging texts.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-LANG-READ",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-LANG-LANGUAGE-ACQUISITION",
+      "object_type": "skill",
+      "title": "Language acquisition strategies",
+      "summary": "Initial candidate skill within Language & Linguistic Intelligence.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-LANG"
+      ],
+      "domain_ids": [
+        "ATH-DOM-LANG-ACQUIRE"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Use retrieval, spaced practice and comprehensible input to develop language ability.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-LANG-ACQUIRE",
+      "owner_discipline_id": "ATH-DISC-LANG",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-RES-SOURCE-EVALUATION",
+      "object_type": "skill",
+      "title": "Source evaluation",
+      "summary": "Initial candidate skill within Research & Information Intelligence.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "domain_ids": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "skill_family_id": "ATH-FAM-RES-SOURCES-QUALITY",
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-RES-AUTHOR-AND-PUBLISHER-CHECK",
+        "ATH-SUB-RES-CLAIM-EVIDENCE-SEPARATION"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Evaluate source authority, evidence, bias, recency and relevance.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-RES-SOURCES",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-RES-RESEARCH-SYNTHESIS",
+      "object_type": "skill",
+      "title": "Research synthesis",
+      "summary": "Initial candidate skill within Research & Information Intelligence.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "domain_ids": [
+        "ATH-DOM-RES-SYNTH"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Combine multiple sources into a traceable, qualified explanation.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-RES-SYNTH",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-INDEP-EVERYDAY-COOKING",
+      "object_type": "skill",
+      "title": "Everyday cooking",
+      "summary": "Initial candidate skill within Practical Independence.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "domain_ids": [
+        "ATH-DOM-INDEP-FOOD"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-INDEP-KITCHEN-HYGIENE",
+        "ATH-SUB-INDEP-SAFE-HEAT-HANDLING"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Prepare simple meals while following hygiene and kitchen safety practices.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-INDEP-FOOD",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-INDEP-PERSONAL-ORGANISATION",
+      "object_type": "skill",
+      "title": "Personal organisation",
+      "summary": "Initial candidate skill within Practical Independence.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-INDEP"
+      ],
+      "domain_ids": [
+        "ATH-DOM-INDEP-HOME"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Manage personal tasks, materials and routine responsibilities reliably.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-INDEP-HOME",
+      "owner_discipline_id": "ATH-DISC-INDEP",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-LEAD-TEAM-COORDINATION",
+      "object_type": "skill",
+      "title": "Team coordination",
+      "summary": "Initial candidate skill within Leadership & Management.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "domain_ids": [
+        "ATH-DOM-LEAD-TEAM"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-LEAD-ROLE-CLARITY",
+        "ATH-SUB-LEAD-PROGRESS-CHECKINS"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Clarify roles, goals, dependencies and progress in a small collaborative task.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-LEAD-TEAM",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-LEAD-FEEDBACK-PRACTICE",
+      "object_type": "skill",
+      "title": "Feedback practice",
+      "summary": "Initial candidate skill within Leadership & Management.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-LEAD"
+      ],
+      "domain_ids": [
+        "ATH-DOM-LEAD-FEEDBACK"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Give and receive specific, actionable feedback respectfully.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-LEAD-FEEDBACK",
+      "owner_discipline_id": "ATH-DISC-LEAD",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-COMM-CLEAR-EXPLANATION",
+      "object_type": "skill",
+      "title": "Clear explanation",
+      "summary": "Initial candidate skill within Communication & Rhetoric.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "domain_ids": [
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [
+        "ATH-SUB-COMM-CLAIM-REASON-EVIDENCE",
+        "ATH-SUB-COMM-AUDIENCE-ADAPTATION"
+      ],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Explain an idea in a structured way for a defined audience.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-COMM-EXPLAIN",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "mapping_status": "draft_proposed_needs_review"
+    },
+    {
+      "id": "ATH-SKILL-COMM-ARGUMENTATION",
+      "object_type": "skill",
+      "title": "Argumentation",
+      "summary": "Initial candidate skill within Communication & Rhetoric.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "domain_ids": [
+        "ATH-DOM-COMM-ARGUE"
+      ],
+      "skill_family_id": null,
+      "parent_skill_id": null,
+      "subskill_ids": [],
+      "concept_ids": [],
+      "objective_ids": [],
+      "prerequisite_ids": [],
+      "outcome_statement": "Construct and evaluate claims using reasons, evidence and rebuttals.",
+      "performance_contexts": [],
+      "difficulty_dimensions": {
+        "complexity": 1,
+        "novelty": 1,
+        "independence": 1,
+        "precision": 1,
+        "constraints": 1,
+        "consequence": 1
+      },
+      "evidence_types": [
+        "EXPLANATION",
+        "PROBLEM_PERFORMANCE"
+      ],
+      "safety_class": "none",
+      "source_refs": [],
+      "content_version": 1,
+      "review_notes": "Draft seed only. Map to canonical domain/family and author subskills/objectives during review.",
+      "primary_domain_id": "ATH-DOM-COMM-ARGUE",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "mapping_status": "draft_proposed_needs_review"
+    }
+  ],
+  "mapping_policy": "Each initial candidate has one proposed primary domain. Family links are populated only where an existing family is a clear fit; null is intentional elsewhere. All mappings remain draft pending human review."
+}

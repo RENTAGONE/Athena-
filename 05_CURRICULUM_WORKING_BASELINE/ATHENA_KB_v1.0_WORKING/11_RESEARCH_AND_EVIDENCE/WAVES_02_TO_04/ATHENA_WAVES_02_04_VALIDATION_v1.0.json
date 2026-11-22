@@ -1,0 +1,25 @@
+{
+  "wave": "02-04",
+  "version": "1.0",
+  "checks": {
+    "registry_records": 156,
+    "retention_records": 156,
+    "wave02_records": 86,
+    "wave02_ids_unique": true,
+    "wave02_ids_all_in_registry": true,
+    "wave02_source_ids_resolve": true,
+    "wave04_ids_equal_registry": true,
+    "wave04_dimensions_nonempty": true,
+    "wave04_profiles_preserved": true,
+    "all_registry_records_draft": true,
+    "canonical_registry_mutated": false,
+    "expert_review_claimed": false,
+    "learner_validation_claimed": false
+  },
+  "limitations": [
+    "Desk research and structured audit only; no expert review or learner pilot.",
+    "Some evidence sources are authoritative task/safety references or instructional resources, not efficacy studies.",
+    "Overlap groups are review hypotheses, not merge decisions.",
+    "Retention intervals remain adaptive recommendations without calibrated learner data."
+  ]
+}

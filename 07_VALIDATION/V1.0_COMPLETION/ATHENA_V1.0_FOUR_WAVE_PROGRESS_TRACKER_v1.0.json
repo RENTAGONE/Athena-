@@ -1,0 +1,73 @@
+{
+  "release": "ATHENA v1.0",
+  "programme": "Four Completion Waves",
+  "version": "1.0",
+  "baseline": {
+    "kb": "v3.26",
+    "vault": "v6.2"
+  },
+  "overall_status": "BLOCKED_NOT_RELEASE_READY",
+  "waves": [
+    {
+      "wave": 1,
+      "name": "Knowledge Core, Ontology and Curriculum Completion",
+      "status": "IN_PROGRESS",
+      "exit": "216/216 substantive lessons; explicit ontology/family/micro-skill dispositions; graph integrity."
+    },
+    {
+      "wave": 2,
+      "name": "Learning, Assessment, Evidence, Resources and Projects",
+      "status": "NOT_STARTED",
+      "exit": "216 mastery/assessment/adaptation aligned; verified resource claims; deduplicated and justified project catalogue."
+    },
+    {
+      "wave": 3,
+      "name": "Life & Schedule Engine, Safety, Privacy, Accessibility and Bangladesh Fit",
+      "status": "NOT_STARTED",
+      "exit": "Schedule reference engine and tests; qualified safety/privacy review; executed accessibility/localization evidence."
+    },
+    {
+      "wave": 4,
+      "name": "App Integration, Runtime Verification and v1.0 Release",
+      "status": "NOT_STARTED",
+      "exit": "Actual app tests, device evidence, pilot/reviewer findings, frozen reproducible release package and release-owner decision."
+    }
+  ],
+  "current_verified_state": {
+    "baseline_modules": 216,
+    "historical_strict_teaching_pack_matches": 46,
+    "wave06_pack_artifacts": 170,
+    "wave06b_deepened_after_ledger": 119,
+    "wave06_packs_not_deepened": 51,
+    "wave06b_recertified": 0,
+    "expert_approved_lessons": 0,
+    "learner_validated_lessons": 0,
+    "working_domain_rows": 146,
+    "canonical_domain_seed": 113,
+    "approved_domain_mappings": 0,
+    "skill_family_candidates": 741,
+    "substantive_family_specs": 59,
+    "title_level_family_candidates": 682,
+    "micro_skill_protocol_drafts": 155,
+    "unapproved_micro_skill_new_entry_proposals": 130,
+    "risk_sensitive_micro_skills": 21,
+    "mastery_profiles": 216,
+    "assessment_instruments": 216,
+    "adaptation_profiles": 216,
+    "project_blueprints": 18,
+    "resource_records": 59,
+    "resource_crosswalk_rows": 216,
+    "accessibility_checks_executed": 0,
+    "importer_tests_executed": 0,
+    "life_schedule_engine_implemented": false,
+    "release_gates_closed": 1,
+    "release_gates_total": 11
+  },
+  "rules": [
+    "Artifact existence is not completion.",
+    "Internal structural validation is not subject approval.",
+    "Specifications are not implemented app features.",
+    "External review, learner pilots and device tests remain open until evidence is recorded.",
+    "No wave may silently promote candidate ontology records to canonical status."
+  ]
+}

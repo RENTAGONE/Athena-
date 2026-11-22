@@ -1,0 +1,45 @@
+{
+  "audit": "ATHENA v1.0 structural gap audit",
+  "version": "0.2-working",
+  "date": "2026-11-17",
+  "micro_skills": {
+    "working_candidate_count": 155,
+    "unique_ids": 155,
+    "ids_in_protocol_documents": 155,
+    "substantive_draft_authored_count": 155,
+    "missing_protocol_ids": 0,
+    "expert_reviewed": 0,
+    "learner_validated": 0,
+    "approved": 0,
+    "risk_sensitive_review_required": 21,
+    "authoring_coverage_status": "complete_draft_authoring_review_pending"
+  },
+  "ontology": {
+    "canonical_domains": 113,
+    "canonical_skill_family_seed_records": 40,
+    "working_domains": 146,
+    "working_skill_family_entries": 741,
+    "canonical_domains_with_candidate_rows": 113,
+    "canonical_domains_without_candidate_rows": 0,
+    "repeated_name_groups_semantically_reviewed": 11,
+    "canonical_micro_skill_records": 20,
+    "canonical_micro_skills_with_discipline_and_skill_links": 20,
+    "semantic_approval_status": "pending_owner_and_subject_review"
+  },
+  "curriculum": {
+    "disciplines": 18,
+    "baseline_modules": 216,
+    "deepening_batch_01_units": 18,
+    "integrated_projects": 24
+  },
+  "critical_gaps": [
+    "canonical semantic approval and family taxonomy expansion",
+    "micro-skill expert and safety review",
+    "full 18-discipline deepening",
+    "verified resource corpus",
+    "assessment calibration",
+    "actual application importer/build/CI/browser/device validation",
+    "learner pilot"
+  ],
+  "release_decision": "not_ready"
+}

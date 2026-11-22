@@ -1,0 +1,506 @@
+{
+  "registry_id": "ATHENA-WAVE3-BATCH02",
+  "version": "0.1",
+  "production_message": 13,
+  "status": "draft",
+  "disciplines": [
+    "BODY",
+    "ATH",
+    "PERF",
+    "AEST",
+    "ART",
+    "INDEP"
+  ],
+  "unit_count": 12,
+  "units": [
+    {
+      "unit_id": "BODY-ADV-001",
+      "discipline_code": "BODY",
+      "title": "Exercise physiology: energy systems, intensity and adaptation",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "BODY-DEV-001",
+        "BODY-DEV-002",
+        "ATH-DEV-001",
+        "basic graph reading"
+      ],
+      "learning_outcomes": [
+        "explain at a broad level how ATP supplies immediate cellular energy",
+        "compare the overlapping roles of phosphagen, glycolytic and oxidative energy pathways without treating them as isolated switches",
+        "interpret how intensity and duration influence perceived effort, breathing and recovery",
+        "distinguish an acute response from a training adaptation",
+        "identify why individual measurements and wearable estimates have limitations"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No maximal testing, breath-holding, dehydration, deliberate exhaustion or unsupervised high-intensity protocols. This is conceptual physiology, not a personal training prescription. Stop activity for pain, dizziness, faintness or unusual breathing difficulty and tell a trusted adult."
+    },
+    {
+      "unit_id": "BODY-ADV-002",
+      "discipline_code": "BODY",
+      "title": "Health information, epidemiology and evidence-based public-health reasoning",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "BODY-DEV-002",
+        "basic fractions, percentages and graph reading",
+        "PSY-DEV-001 or equivalent source-evaluation skill"
+      ],
+      "learning_outcomes": [
+        "distinguish incidence, prevalence, risk and rate in plain language",
+        "explain why population-level patterns do not predict an individual outcome",
+        "identify confounding, selection bias and measurement bias in a simple claim",
+        "compare relative and absolute risk statements",
+        "write a cautious evidence summary that separates observation from recommendation"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Educational evidence literacy only. Do not collect identifiable health information, diagnose anyone, recommend treatment or replace advice from qualified health professionals."
+    },
+    {
+      "unit_id": "ATH-ADV-001",
+      "discipline_code": "ATH",
+      "title": "Training design: progression, load management and recovery",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "ATH-DEV-001",
+        "ATH-DEV-002",
+        "BODY-ADV-001",
+        "basic arithmetic and table reading"
+      ],
+      "learning_outcomes": [
+        "distinguish external workload from internal response",
+        "explain progressive overload, specificity, variation and recovery",
+        "design a conservative practice microcycle around an existing activity schedule",
+        "use a simple session reflection without treating it as medical measurement",
+        "identify when to reduce, modify or stop a session"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No maximal tests, unsupervised heavy lifting, forced weight targets or training through pain. Youth training should be age-appropriate and reviewed by a responsible adult/coach. Health concerns go to a qualified professional."
+    },
+    {
+      "unit_id": "ATH-ADV-002",
+      "discipline_code": "ATH",
+      "title": "Game analysis: principles of play, constraints and performance review",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "ATH-DEV-002",
+        "basic rules and positional vocabulary",
+        "ability to make a simple timeline or event log"
+      ],
+      "learning_outcomes": [
+        "analyse a team phase using width, depth, support, balance and penetration as contextual principles",
+        "distinguish tactical decision quality from execution outcome",
+        "code a small sample of game events consistently",
+        "identify how constraints change available decisions",
+        "produce a fair, evidence-based review with alternative explanations"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No public shaming, hostile ranking or non-consensual recording. Do not infer character from a mistake; discuss actions and context respectfully."
+    },
+    {
+      "unit_id": "PERF-ADV-001",
+      "discipline_code": "PERF",
+      "title": "Diction, articulation and expressive speech for an audience",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "PERF-DEV-001",
+        "PERF-DEV-002",
+        "COMM foundational speaking skills"
+      ],
+      "learning_outcomes": [
+        "distinguish articulation, diction, pace, phrasing and emphasis",
+        "adapt speech clarity to audience, room and recording conditions",
+        "use a controlled rehearsal loop to improve intelligibility",
+        "avoid over-articulation, forced accents and vocal strain",
+        "evaluate listener comprehension separately from personal preference"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No shouting, forced accents, extreme pitch, breath manipulation or practice through discomfort. Protect privacy when recording and obtain consent from everyone recorded."
+    },
+    {
+      "unit_id": "PERF-ADV-002",
+      "discipline_code": "PERF",
+      "title": "Performance production: rehearsal systems, recording and critique",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "PERF-DEV-002",
+        "PERF-ADV-001",
+        "basic file organisation and consent awareness"
+      ],
+      "learning_outcomes": [
+        "plan a short performance from brief to delivery",
+        "distinguish artistic intention from technical production constraints",
+        "capture usable audio/video with a simple repeatable setup",
+        "give and receive behaviour-specific critique",
+        "manage versions, rights, consent and reflection"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Use safe volume levels, comfortable posture and ordinary device setups. Do not publish faces, voices, locations or personal details without explicit permission and guardian guidance where appropriate."
+    },
+    {
+      "unit_id": "AEST-ADV-001",
+      "discipline_code": "AEST",
+      "title": "Typography systems, responsive layout and interface consistency",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "AEST-DEV-001",
+        "AEST-DEV-002",
+        "basic digital layout tool or paper prototyping"
+      ],
+      "learning_outcomes": [
+        "select type roles using hierarchy, readability and context",
+        "build a small spacing and layout system rather than arbitrary one-off values",
+        "explain responsive reflow and content priority across screen sizes",
+        "design reusable components with clear states",
+        "test readability and consistency with users or structured inspection"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Do not collect unnecessary user data during testing. Obtain consent, avoid exposing personal information and provide accessible alternatives for participants."
+    },
+    {
+      "unit_id": "AEST-ADV-002",
+      "discipline_code": "AEST",
+      "title": "Information design: charts, dashboards and truthful visual encoding",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "AEST-DEV-001",
+        "AEST-DEV-002",
+        "basic percentages, averages and table reading"
+      ],
+      "learning_outcomes": [
+        "match chart form to data type and comparison task",
+        "identify misleading axes, scales, aggregation and omitted context",
+        "design labels, legends and annotations for interpretation",
+        "distinguish descriptive display from causal explanation",
+        "test whether a reader can extract the intended message accurately"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Use synthetic or public non-sensitive datasets. Label simulated data clearly and do not imply fictional numbers are real measurements."
+    },
+    {
+      "unit_id": "ART-ADV-001",
+      "discipline_code": "ART",
+      "title": "Perspective, light and form: constructing believable space",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "ART-DEV-001",
+        "ART-DEV-002",
+        "basic line, shape and value vocabulary"
+      ],
+      "learning_outcomes": [
+        "construct a simple one- or two-point perspective scene",
+        "identify horizon, vanishing points and converging orthogonals",
+        "describe how light direction affects form, cast shadow and value grouping",
+        "use measurement and negative space to check proportion",
+        "revise a drawing using observed evidence rather than symbol-based guessing"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Use ordinary drawing materials in a ventilated, well-lit workspace. Avoid unsafe blades, solvents or aerosols; ask an adult before using unfamiliar materials."
+    },
+    {
+      "unit_id": "ART-ADV-002",
+      "discipline_code": "ART",
+      "title": "Visual research, reference ethics and iterative concept development",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "ART-DEV-002",
+        "basic source citation and file organisation",
+        "awareness of copyright and consent"
+      ],
+      "learning_outcomes": [
+        "turn a creative brief into visual research questions",
+        "collect references with provenance and usage constraints",
+        "separate observation, influence and direct copying",
+        "generate multiple distinct concepts before selecting one",
+        "document iteration and explain why design decisions changed"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Do not use private images of people without permission. Respect licences, attribution and platform terms. Avoid reproducing hateful, humiliating or exploitative imagery."
+    },
+    {
+      "unit_id": "INDEP-ADV-001",
+      "discipline_code": "INDEP",
+      "title": "Personal administration: records, budgets, purchases and consumer judgement",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "INDEP-DEV-001",
+        "INDEP-DEV-002",
+        "basic arithmetic and digital file organisation"
+      ],
+      "learning_outcomes": [
+        "organise a simple personal task and document system",
+        "compare total cost, recurring cost, warranty and practical need in a purchase",
+        "recognise common misleading sales tactics and urgency cues",
+        "maintain a privacy-conscious record of decisions and receipts",
+        "identify which decisions require parent/guardian involvement"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Do not create financial accounts, sign contracts, share identity documents, make online payments or contact unknown sellers independently. Involve a parent/guardian. Keep all practice data fictional."
+    },
+    {
+      "unit_id": "INDEP-ADV-002",
+      "discipline_code": "INDEP",
+      "title": "Household systems: maintenance checks, hazard awareness and escalation",
+      "status": "draft_instructional_unit",
+      "level": "advanced_developing",
+      "prerequisites": [
+        "INDEP-DEV-001",
+        "INDEP-DEV-002",
+        "ability to follow written safety instructions"
+      ],
+      "learning_outcomes": [
+        "distinguish routine observation from repair or intervention",
+        "identify common household hazard categories and safe boundaries",
+        "create a simple inspection and escalation checklist",
+        "communicate a hazard clearly with location, observation and urgency",
+        "understand why some tasks require trained adults or professionals"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "application_artifact_or_supervised_demonstration",
+        "limitations_and_uncertainty",
+        "reflection_and_confidence"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "suggested_threshold": "11/15; safety-critical conditions must all be met",
+        "critical_fail_conditions": [
+          "unsafe practice or bypassed stop rule",
+          "privacy, consent or copyright violation",
+          "unsupported diagnostic/causal claim",
+          "fabricated source or misrepresented synthetic data"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Adult-supervised observation only. Never handle electrical, gas, chemical, fire, structural or medical hazards. For immediate danger, move away and alert adults/emergency services according to local guidance."
+    }
+  ],
+  "workflow_contract": {
+    "assignment": "ATHENA assigns objective, prerequisites, outcomes, source-quality expectations and evidence requirements.",
+    "learning": "Learner studies through independently selected external sources; ATHENA does not require all content to be taught in-app.",
+    "evaluation": "Evaluator assesses closed-book explanation, application, reasoning, provenance, uncertainty and safety.",
+    "update": "Evaluator may create a proposed update package; app validates and previews it.",
+    "commit": "Learner approval is mandatory; no automatic mastery or silent persistent update."
+  }
+}

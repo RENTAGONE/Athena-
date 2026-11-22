@@ -1,0 +1,265 @@
+{
+  "schema_version": "0.1.0",
+  "registry_type": "discipline_boundary_matrix",
+  "status": "draft_for_review",
+  "discipline_count": 18,
+  "entries": [
+    {
+      "discipline_id": "ATH-DISC-ENG",
+      "discipline_name": "Engineering & Computer Science",
+      "purpose_boundary": "Build and maintain computational systems: software, algorithms, applications and computer systems.",
+      "includes": "Programming languages, software architecture, algorithms, APIs, databases, testing, operating-system concepts and computing theory.",
+      "excludes_or_defers": "Electrical circuit design, general digital safety, business strategy or visual-art technique except where directly required by a software product.",
+      "overlap_disciplines": [
+        "ATH-DISC-WORK",
+        "ATH-DISC-CYBER",
+        "ATH-DISC-ELEC",
+        "ATH-DISC-AEST",
+        "ATH-DISC-BIZ"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-BIZ",
+      "discipline_name": "Business & Entrepreneurship",
+      "purpose_boundary": "Create and deliver economic value through ventures, products and services.",
+      "includes": "Customer discovery, offers, positioning, marketing, sales, pricing, operations, retention and venture strategy.",
+      "excludes_or_defers": "Personal budgeting/investing, generic leadership theory or software implementation details.",
+      "overlap_disciplines": [
+        "ATH-DISC-FIN",
+        "ATH-DISC-COMM",
+        "ATH-DISC-LEAD",
+        "ATH-DISC-ENG",
+        "ATH-DISC-PSY",
+        "ATH-DISC-RES"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-ELEC",
+      "discipline_name": "Electronics & Hardware",
+      "purpose_boundary": "Understand, design, measure and prototype electrical/electronic systems and hardware.",
+      "includes": "Circuit theory, components, digital logic, embedded hardware, sensors, instrumentation, PCB and mechatronics.",
+      "excludes_or_defers": "General software engineering, pure physics beyond useful electrical foundations, or general tool safety.",
+      "overlap_disciplines": [
+        "ATH-DISC-ENG",
+        "ATH-DISC-MATH",
+        "ATH-DISC-BODY",
+        "ATH-DISC-INDEP"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-FIN",
+      "discipline_name": "Finance & Economics",
+      "purpose_boundary": "Understand money, accounting, markets, economics, investment and capital allocation.",
+      "includes": "Personal finance, bookkeeping, financial statements, economic models, markets, valuation, risk and portfolio principles.",
+      "excludes_or_defers": "Venture marketing/sales execution, product operations or legal/tax advice beyond general literacy.",
+      "overlap_disciplines": [
+        "ATH-DISC-BIZ",
+        "ATH-DISC-MATH",
+        "ATH-DISC-RES"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-BODY",
+      "discipline_name": "Body Science & Anatomy",
+      "purpose_boundary": "Understand human structure, function, movement and health-related body science.",
+      "includes": "Anatomy, physiology, cell biology foundations, kinesiology, biomechanics, nutrition science and recovery science.",
+      "excludes_or_defers": "Sport-specific training plans, medical diagnosis/treatment or general psychology except relevant mechanisms.",
+      "overlap_disciplines": [
+        "ATH-DISC-ATH",
+        "ATH-DISC-MATH",
+        "ATH-DISC-PSY"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-PSY",
+      "discipline_name": "Psychology & Strategy",
+      "purpose_boundary": "Understand cognition, behaviour, motivation, social processes and strategic decision-making.",
+      "includes": "Learning/cognition, behaviour, social psychology, decision science, game theory, emotion and self-regulation.",
+      "excludes_or_defers": "Clinical diagnosis/therapy, rhetoric craft, or management systems except where psychological mechanisms are studied.",
+      "overlap_disciplines": [
+        "ATH-DISC-LANG",
+        "ATH-DISC-COMM",
+        "ATH-DISC-LEAD",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-RES",
+        "ATH-DISC-ATH"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-AEST",
+      "discipline_name": "Aesthetics & Visual Design",
+      "purpose_boundary": "Develop visual judgement and design systems for communication and interfaces.",
+      "includes": "Visual perception, composition, typography, photography, branding, art direction and interface design.",
+      "excludes_or_defers": "Fine-art drawing progression as a primary craft, software engineering implementation or marketing strategy.",
+      "overlap_disciplines": [
+        "ATH-DISC-ART",
+        "ATH-DISC-ENG",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-COMM"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-WORK",
+      "discipline_name": "Workflow & Productivity",
+      "purpose_boundary": "Improve personal execution and the tools/systems used to manage work and information.",
+      "includes": "Planning, typing, terminal fluency, Git, automation, documentation and knowledge management.",
+      "excludes_or_defers": "Discipline-specific production skills, business operations at organisational scale or cybersecurity as a specialty.",
+      "overlap_disciplines": [
+        "ATH-DISC-ENG",
+        "ATH-DISC-CYBER",
+        "ATH-DISC-LEAD",
+        "ATH-DISC-RES"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-ART",
+      "discipline_name": "Artistic Development",
+      "purpose_boundary": "Develop artistic observation and image-making craft.",
+      "includes": "Drawing, visual construction, perspective, light/value, colour, illustration and visual storytelling.",
+      "excludes_or_defers": "Commercial interface/brand design as primary focus or camera operation as a photography specialty.",
+      "overlap_disciplines": [
+        "ATH-DISC-AEST"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-ATH",
+      "discipline_name": "Athletics & Physical Performance",
+      "purpose_boundary": "Develop physical performance through movement practice and training.",
+      "includes": "Strength, conditioning, speed, agility, coordination, sport skills, mobility and performance practice.",
+      "excludes_or_defers": "Anatomy/physiology theory as primary knowledge or medical rehabilitation.",
+      "overlap_disciplines": [
+        "ATH-DISC-BODY",
+        "ATH-DISC-PSY"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-PERF",
+      "discipline_name": "Vocal & Performance Arts",
+      "purpose_boundary": "Develop vocal and embodied performance capabilities.",
+      "includes": "Voice technique, singing, pitch, spoken performance, stage/camera presence, improvisation and expressive movement.",
+      "excludes_or_defers": "General public-speaking structure/debate as primary communication discipline or clinical voice therapy.",
+      "overlap_disciplines": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-BODY",
+        "ATH-DISC-ART"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-MATH",
+      "discipline_name": "Mathematics & Scientific Reasoning",
+      "purpose_boundary": "Develop quantitative, formal and scientific reasoning tools applicable across domains.",
+      "includes": "Arithmetic, algebra, geometry, statistics, probability, logic, proof, modelling and scientific method.",
+      "excludes_or_defers": "Domain-specific physics/chemistry/biology content or research source evaluation as a separate discipline.",
+      "overlap_disciplines": [
+        "ATH-DISC-ENG",
+        "ATH-DISC-ELEC",
+        "ATH-DISC-FIN",
+        "ATH-DISC-BODY",
+        "ATH-DISC-RES"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-CYBER",
+      "discipline_name": "Cybersecurity & Digital Infrastructure",
+      "purpose_boundary": "Protect digital systems and understand networks, operating systems and authorised security testing.",
+      "includes": "Personal security, networking, Linux/system administration, defensive security, secure application design and scoped lab testing.",
+      "excludes_or_defers": "General software product development, offensive activity without authorization or physical security.",
+      "overlap_disciplines": [
+        "ATH-DISC-ENG",
+        "ATH-DISC-WORK",
+        "ATH-DISC-RES"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-LANG",
+      "discipline_name": "Language & Linguistic Intelligence",
+      "purpose_boundary": "Understand and acquire language as a system and improve reading/writing/listening/speaking competence.",
+      "includes": "Linguistics, vocabulary, grammar, reading, writing, pronunciation and additional-language acquisition.",
+      "excludes_or_defers": "Rhetorical performance, debate strategy or research methodology except where language is the object.",
+      "overlap_disciplines": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-RES",
+        "ATH-DISC-PERF"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-RES",
+      "discipline_name": "Research & Information Intelligence",
+      "purpose_boundary": "Find, evaluate, verify, synthesise and document information responsibly.",
+      "includes": "Research design, source evaluation, evidence, synthesis, citation, information literacy and lawful OSINT.",
+      "excludes_or_defers": "Domain expertise itself, persuasion, or cybersecurity testing.",
+      "overlap_disciplines": [
+        "ATH-DISC-MATH",
+        "ATH-DISC-LANG",
+        "ATH-DISC-CYBER",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-WORK"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-INDEP",
+      "discipline_name": "Practical Independence",
+      "purpose_boundary": "Build practical competence for everyday self-management and safe independent living.",
+      "includes": "Cooking, home routines, basic repairs, navigation, everyday administration and safety literacy.",
+      "excludes_or_defers": "Specialist trade work, medical emergency certification or advanced finance.",
+      "overlap_disciplines": [
+        "ATH-DISC-BODY",
+        "ATH-DISC-ELEC",
+        "ATH-DISC-FIN"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-LEAD",
+      "discipline_name": "Leadership & Management",
+      "purpose_boundary": "Coordinate people and work responsibly toward shared outcomes.",
+      "includes": "Self-leadership, team dynamics, planning, delegation, feedback, conflict and organisational systems.",
+      "excludes_or_defers": "Persuasive language craft, venture strategy or personal productivity tooling as primary topics.",
+      "overlap_disciplines": [
+        "ATH-DISC-COMM",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-WORK",
+        "ATH-DISC-PSY"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    },
+    {
+      "discipline_id": "ATH-DISC-COMM",
+      "discipline_name": "Communication & Rhetoric",
+      "purpose_boundary": "Communicate ideas and intentions clearly, listen accurately and reason with others.",
+      "includes": "Explanation, listening, writing, public speaking, argumentation, debate, persuasion and negotiation communication.",
+      "excludes_or_defers": "Language acquisition/grammar as primary study, sales operations or leadership structures.",
+      "overlap_disciplines": [
+        "ATH-DISC-LANG",
+        "ATH-DISC-PERF",
+        "ATH-DISC-BIZ",
+        "ATH-DISC-LEAD",
+        "ATH-DISC-PSY"
+      ],
+      "ownership_rule": "This discipline owns the learning objective when its primary outcome is the capability described in its purpose boundary. Shared application is represented with typed links, not duplicated canonical objects."
+    }
+  ],
+  "global_rules": [
+    "Choose one canonical owner for each concept or skill based on its primary learning outcome.",
+    "Create aliases or context-specific applications instead of duplicating the same concept in multiple disciplines.",
+    "Use SUPPORTS, TRANSFER_TO, APPLIES_TO or RELATED_TO edges to represent overlap.",
+    "When two disciplines genuinely teach different aspects of a shared topic, create distinct objectives and state the boundary explicitly.",
+    "Safety-critical content may require specialist sources, supervision or certification; ATHENA content does not confer professional qualification.",
+    "Boundary decisions are revisable through a documented change, not silent taxonomy moves."
+  ]
+}

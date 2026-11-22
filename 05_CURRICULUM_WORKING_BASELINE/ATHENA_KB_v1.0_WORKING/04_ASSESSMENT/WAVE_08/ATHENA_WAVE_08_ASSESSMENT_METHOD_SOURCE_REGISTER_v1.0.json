@@ -1,0 +1,43 @@
+{
+  "registry": "ATHENA_WAVE_08_ASSESSMENT_METHOD_SOURCE_REGISTER",
+  "version": "1.0",
+  "status": "draft",
+  "records": [
+    {
+      "source_id": "W08-SRC-01",
+      "title": "Standards for Educational and Psychological Testing",
+      "publisher": "AERA, APA, NCME",
+      "year": 2014,
+      "url": "https://www.apa.org/science/programs/testing/standards",
+      "use": "Framework for validity, reliability and fairness; informs the distinction between authored rubrics and evidence supporting score interpretations.",
+      "limitation": "Standards overview page; full standards text should be consulted for formal assessment programmes."
+    },
+    {
+      "source_id": "W08-SRC-02",
+      "title": "Testing Standards",
+      "publisher": "National Council on Measurement in Education",
+      "year": 2014,
+      "url": "https://ncme.org/resources/books/testing-standards/",
+      "use": "Confirms joint authorship and scope of the testing standards.",
+      "limitation": "Publisher information page, not a substitute for the full standards."
+    },
+    {
+      "source_id": "W08-SRC-03",
+      "title": "Teacher Feedback to Improve Pupil Learning",
+      "publisher": "Education Endowment Foundation",
+      "year": 2021,
+      "url": "https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/feedback",
+      "use": "Feedback design: formative assessment foundations, actionable feedback and learner opportunity to act.",
+      "limitation": "Guidance for school contexts; adapt principles, do not assume every effect transfers unchanged to self-directed ATHENA use."
+    },
+    {
+      "source_id": "W08-SRC-04",
+      "title": "Feedback evidence summary",
+      "publisher": "Education Endowment Foundation",
+      "year": 2026,
+      "url": "https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/Feedback",
+      "use": "Highlights variability in feedback effects and the need for specific actionable feedback and learner response.",
+      "limitation": "Toolkit summary; not a universal effect guarantee."
+    }
+  ]
+}

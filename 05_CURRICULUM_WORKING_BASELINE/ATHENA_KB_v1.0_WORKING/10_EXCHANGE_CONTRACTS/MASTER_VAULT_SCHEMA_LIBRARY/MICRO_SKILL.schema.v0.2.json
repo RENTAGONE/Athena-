@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-micro-skill-v0.2.schema.json",
+  "title": "ATHENA_MICRO_SKILL_v0.2",
+  "description": "",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "definition",
+    "target_performance",
+    "success_criteria",
+    "practice_protocol",
+    "assessment",
+    "maintenance",
+    "maintenance_policy",
+    "status",
+    "content_version",
+    "safety_review"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-MICRO-(COG|DEX|PRACT|SOC|SAFE)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2
+    },
+    "category": {
+      "enum": [
+        "COGNITIVE",
+        "DEXTERITY_COORDINATION",
+        "PRACTICAL_EVERYDAY",
+        "SOCIAL_COMMUNICATION",
+        "SAFETY_EMERGENCY"
+      ]
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 10
+    },
+    "discipline_links": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-DISC-[A-Z]+$"
+      }
+    },
+    "skill_links": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(SKILL|SUB)-[A-Z]+-[A-Z0-9-]+$"
+      }
+    },
+    "prerequisites": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_performance": {
+      "type": "object",
+      "required": [
+        "statement",
+        "metric",
+        "conditions"
+      ],
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "string"
+        },
+        "success_threshold": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "criterion_id",
+          "statement",
+          "measurement_method",
+          "threshold_type",
+          "threshold_text"
+        ],
+        "properties": {
+          "criterion_id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "measurement_method": {
+            "type": "string"
+          },
+          "threshold_type": {
+            "enum": [
+              "numeric",
+              "qualitative",
+              "external_standard"
+            ]
+          },
+          "threshold_text": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "practice_protocol": {
+      "type": "object",
+      "required": [
+        "steps",
+        "session_minutes",
+        "frequency_per_week"
+      ],
+      "properties": {
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "session_minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "frequency_per_week": {
+          "type": "string"
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environment": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "assessment": {
+      "type": "object",
+      "required": [
+        "method",
+        "record"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "record": {
+          "type": "string"
+        },
+        "repeat_trials": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "progression": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "required": [
+        "trigger",
+        "protocol"
+      ],
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "maintenance_policy": {
+      "type": "object",
+      "required": [
+        "mode",
+        "interval_days",
+        "trigger",
+        "protocol"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "interval",
+            "event_triggered",
+            "manual",
+            "provider_guided"
+          ]
+        },
+        "interval_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "trigger": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "scheduler_note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "time_to_initial_competence_minutes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "risk_level": {
+      "enum": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ]
+    },
+    "safety_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supervision": {
+      "enum": [
+        "NONE_ROUTINE_SAFE_CONTEXT",
+        "ADULT_GUIDANCE_RECOMMENDED",
+        "QUALIFIED_INSTRUCTOR_REQUIRED",
+        "NOT_FOR_UNSUPERVISED_PRACTICE"
+      ]
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED",
+        "DEPRECATED"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authoring_notes": {
+      "type": "string"
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_review": {
+      "type": "object",
+      "required": [
+        "status",
+        "review_required_before_approval",
+        "review_note"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "needs_review",
+            "not_flagged_for_high_risk_review",
+            "reviewed"
+          ]
+        },
+        "review_required_before_approval": {
+          "type": "boolean"
+        },
+        "review_note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

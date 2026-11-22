@@ -1,0 +1,1108 @@
+{
+  "log": "ATHENA_RESOURCE_SOURCE_VERIFICATION_LOG_MESSAGE_18",
+  "version": "0.3",
+  "access_date": "2026-11-17",
+  "method": "Live web search results from publisher/host domains; records are included only where a concrete page or catalogue entry was returned and its identity/scope could be inspected.",
+  "result_count": 52,
+  "records": [
+    {
+      "resource_id": "ATH-RES-MATH-KHAN-MATH",
+      "source_result_ref": "turn771935search7",
+      "publisher_page_url": "https://www.khanacademy.org/math",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-MATH-OPENSTAX-K12-MATH",
+      "source_result_ref": "turn771935search0",
+      "publisher_page_url": "https://openstax.org/k12/math",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ENG-PYTHON-TUTORIAL",
+      "source_result_ref": "turn563378search1",
+      "publisher_page_url": "https://docs.python.org/3/tutorial/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ENG-MDN-WEB-DEV",
+      "source_result_ref": "turn563378search0",
+      "publisher_page_url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+      "source_result_ref": "turn991769search2",
+      "publisher_page_url": "https://www.allaboutcircuits.com/textbook/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ELEC-ESF-DIY-SAFETY",
+      "source_result_ref": "turn585911search1",
+      "publisher_page_url": "https://www.electricalsafetyfirst.org.uk/safety-advice/home-and-people/diy-ers/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-OPENLEARN-SWOT",
+      "source_result_ref": "turn892509search0",
+      "publisher_page_url": "https://www.open.edu/openlearn/money-business/business-communication-writing-swot-analysis/content-section-0",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-USAGOV-START-BUSINESS",
+      "source_result_ref": "turn771935search4",
+      "publisher_page_url": "https://www.usa.gov/start-business",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-OPENLEARN-COURSES",
+      "source_result_ref": "turn513619search6",
+      "publisher_page_url": "https://www.open.edu/openlearn/money-management/free-courses",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+      "source_result_ref": "turn513619search3",
+      "publisher_page_url": "https://www.consumerfinance.gov/consumer-tools/money-as-you-grow/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+      "source_result_ref": "turn513619search0",
+      "publisher_page_url": "https://www.investor.gov/introduction-investing",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+      "source_result_ref": "turn588107search9",
+      "publisher_page_url": "https://openstax.org/subjects/anatomy-and-physiology",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-WHO-HEALTHY-DIET",
+      "source_result_ref": "turn513619search8",
+      "publisher_page_url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+      "source_result_ref": "turn513619search1",
+      "publisher_page_url": "https://openstax.org/books/psychology-2e/pages/preface",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-RES-UNESCO-MIL",
+      "source_result_ref": "turn991769search1",
+      "publisher_page_url": "https://www.unesco.org/mil4teachers/en/curriculum",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+      "source_result_ref": "turn771935search12",
+      "publisher_page_url": "https://owl.purdue.edu/owl/general_writing/index.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-LANG-BRITISH-COUNCIL-LISTENING",
+      "source_result_ref": "turn563378search5",
+      "publisher_page_url": "https://learnenglish.britishcouncil.org/free-resources/listening",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+      "source_result_ref": "turn563378search12",
+      "publisher_page_url": "https://www.goethe.de/en/spr/ueb.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-WORK-PRO-GIT",
+      "source_result_ref": "turn892509search3",
+      "publisher_page_url": "https://git-scm.com/book/en/v2",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-NIST-800-50R1",
+      "source_result_ref": "turn771935search18",
+      "publisher_page_url": "https://csrc.nist.gov/pubs/sp/800/50/r1/final",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-OWASP-TOP10-2025",
+      "source_result_ref": "turn513619search4",
+      "publisher_page_url": "https://owasp.org/projects/top-ten",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+      "source_result_ref": "turn991769search0",
+      "publisher_page_url": "https://www.cdc.gov/physical-activity-basics/guidelines/children.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+      "source_result_ref": "turn991769search11",
+      "publisher_page_url": "https://www.fifatrainingcentre.com/en/practice/training-perspectives/athleticism-for-young-players/athleticism-for-young-players-building-more-from-less.php",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+      "source_result_ref": "turn585911search10",
+      "publisher_page_url": "https://online.berklee.edu/courses/voice-technique-101/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+      "source_result_ref": "turn991769search9",
+      "publisher_page_url": "https://www.adobe.com/express/learn/blog/typography-tips",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+      "source_result_ref": "turn991769search3",
+      "publisher_page_url": "https://www.metmuseum.org/essays/timeline-of-art-history",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-USDA-FOOD-SAFETY",
+      "source_result_ref": "turn563378search9",
+      "publisher_page_url": "https://ask.fsis.usda.gov/article/How-do-I-keep-my-foods-safe-to-eat",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+      "source_result_ref": "turn585911search6",
+      "publisher_page_url": "https://www.electricalsafetyfirst.org.uk/safety-advice/home-and-people/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+      "source_result_ref": "turn588107search1",
+      "publisher_page_url": "https://www.open.edu/openlearn/money-business/leadership-challenges-turbulent-times/content-section-0",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+      "source_result_ref": "turn892509search0",
+      "publisher_page_url": "https://www.open.edu/openlearn/money-business/business-communication-writing-swot-analysis/content-section-0",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability or access information where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "Bangladesh legal/regulatory applicability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked"
+    },
+    {
+      "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+      "source_result_ref": "turn773379view0",
+      "publisher_page_url": "https://cs50.harvard.edu/x/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-OPENSTAX-BUSINESS-TEXTS",
+      "source_result_ref": "turn773379view1",
+      "publisher_page_url": "https://openstax.org/new-subjects/business-books",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-CISCO-NETACAD",
+      "source_result_ref": "turn773379view2",
+      "publisher_page_url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/netacad/index.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-CISCO-LINUX-ESSENTIALS",
+      "source_result_ref": "turn669326search11",
+      "publisher_page_url": "https://www.netacad.com/courses/linux-essentials/operacijskega%20Sistema?courseLang=en-US",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-BODY-CDC-ADOLESCENT-SLEEP",
+      "source_result_ref": "turn773379view3",
+      "publisher_page_url": "https://www.cdc.gov/yrbs/youth-health-in-focus/sleep.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-BODY-CDC-YOUTH-ACTIVITY",
+      "source_result_ref": "turn773379view4",
+      "publisher_page_url": "https://www.cdc.gov/physical-activity-basics/guidelines/children.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-LANG-BRITISH-COUNCIL-WRITING",
+      "source_result_ref": "turn773379view6",
+      "publisher_page_url": "https://learnenglish.britishcouncil.org/free-resources/writing",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+      "source_result_ref": "turn773379view7",
+      "publisher_page_url": "https://draw.racolw.org/en/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+      "source_result_ref": "turn790950view1",
+      "publisher_page_url": "https://workspace.google.com/training/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-WORK-MICROSOFT-FILE-EXPLORER",
+      "source_result_ref": "turn790950view2",
+      "publisher_page_url": "https://support.microsoft.com/en-us/windows/experience/fileexplorer/file-explorer-in-windows",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-BDRCS-FIRST-AID",
+      "source_result_ref": "turn790950view0",
+      "publisher_page_url": "https://bdrcs.org/first-aid-training/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-BFSA-FOOD-SAFETY",
+      "source_result_ref": "turn783432search14",
+      "publisher_page_url": "https://bfsa.gov.bd/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "unreviewed",
+      "verification_note": "BFSA page fetch timed out; only official-domain search-result scope was visible."
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-DDM-AWARE",
+      "source_result_ref": "turn542094view2",
+      "publisher_page_url": "https://rapid.ddm.gov.bd/service/list",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-CAB-CONSUMER-RIGHTS",
+      "source_result_ref": "turn790950view3",
+      "publisher_page_url": "https://consumerbd.org/bn/consumer-rights",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-BODY-MEDLINEPLUS-HEALTH-INFO",
+      "source_result_ref": "turn827356view0",
+      "publisher_page_url": "https://medlineplus.gov/evaluatinghealthinformation.html",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-WORK-TYPINGCLUB",
+      "source_result_ref": "turn827356view1",
+      "publisher_page_url": "https://www.typingclub.com/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-WORK-GOOGLE-APPS-SCRIPT",
+      "source_result_ref": "turn827356view2",
+      "publisher_page_url": "https://developers.google.com/apps-script/samples",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-GOOGLE-DRIVE-RESTORE",
+      "source_result_ref": "turn827356view3",
+      "publisher_page_url": "https://support.google.com/drive/answer/1716222?hl=en",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-LANG-BANGLA-ACCESSIBLE-DICTIONARY",
+      "source_result_ref": "turn827356view4",
+      "publisher_page_url": "https://accessibledictionary.gov.bd/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-BANGLADESH-RAILWAY",
+      "source_result_ref": "turn827356view5",
+      "publisher_page_url": "https://railway.gov.bd/",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-ACCC-CARE-LABELS",
+      "source_result_ref": "turn827356view6",
+      "publisher_page_url": "https://www.productsafety.gov.au/consumers/use-cosmetic-and-fashion-products-safely/care-labelling-on-clothing-and-textiles-guide",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher or host",
+        "stated scope/description",
+        "availability/access where visible"
+      ],
+      "not_checked": [
+        "full resource content end-to-end",
+        "all factual claims",
+        "all chapters/lessons",
+        "long-term URL stability",
+        "independent subject expert quality"
+      ],
+      "verification_status": "checked",
+      "verification_note": "Page identity and stated scope inspected; full content not read end-to-end."
+    },
+    {
+      "resource_id": "ATH-RES-BODY-UNESCO-HUMAN-GENOME-ETHICS",
+      "source_result_ref": "turn811210search1",
+      "publisher_page_url": "https://www.unesco.org/en/legal-affairs/universal-declaration-human-genome-and-human-rights",
+      "checked_at": "2026-11-17",
+      "checked_fields": [
+        "page identity/title",
+        "publisher",
+        "stated ethical principles and scope"
+      ],
+      "not_checked": [
+        "full declaration legal analysis",
+        "Bangladesh domestic law mapping",
+        "independent bioethics expert review"
+      ],
+      "verification_status": "checked",
+      "verification_note": "UNESCO page/search content inspected; used only for human dignity, non-discrimination, consent and privacy principles."
+    }
+  ],
+  "limitations": [
+    "Search-result inspection is not equivalent to reading the full resource.",
+    "No independent expert review or learner pilot was performed.",
+    "Some resources are paid or require registration; no paywall bypass or redistribution is implied.",
+    "US and UK government/regulatory resources are explicitly marked as jurisdiction-limited where relevant.",
+    "No comprehensive Bangladesh-specific legal, tax, finance, safety or curriculum resource set is claimed.",
+    "Message 18 added 21 records; most were checked for page identity and stated scope, not full content. BFSA page fetch timed out and remains unreviewed.",
+    "Several sources are jurisdiction-limited (US, UK, Australia) and are not Bangladesh legal or regulatory guidance.",
+    "The BDRCS course is a training-provider route; no fee-free or age-eligibility claim is made."
+  ]
+}

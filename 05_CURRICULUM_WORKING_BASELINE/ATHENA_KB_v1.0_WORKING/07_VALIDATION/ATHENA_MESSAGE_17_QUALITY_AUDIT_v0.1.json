@@ -1,0 +1,355 @@
+{
+  "audit_id": "ATHENA-MSG17-QUALITY-AUDIT-01",
+  "version": "0.1",
+  "date": "2026-11-17",
+  "scope": "All 216 baseline records plus the 18-unit Message 17 remediation draft",
+  "status": "internal_diagnostic_not_approval",
+  "baseline_metrics": {
+    "module_count": 216,
+    "discipline_count": 18,
+    "modules_per_discipline": {
+      "ENG": 12,
+      "BIZ": 12,
+      "ELEC": 12,
+      "FIN": 12,
+      "BODY": 12,
+      "PSY": 12,
+      "AEST": 12,
+      "WORK": 12,
+      "ART": 12,
+      "ATH": 12,
+      "PERF": 12,
+      "MATH": 12,
+      "CYBER": 12,
+      "LANG": 12,
+      "RES": 12,
+      "INDEP": 12,
+      "LEAD": 12,
+      "COMM": 12
+    },
+    "mean_learning_objective_words": 9.09,
+    "mean_practice_prompt_words": 9.62,
+    "mean_assessment_prompt_words": 8.8,
+    "mean_transfer_bridge_words": 4.67,
+    "generic_metadata": {
+      "success_criteria": {
+        "unique_values": 5,
+        "dominant_value_count": 212,
+        "dominant_value_share": 0.9815
+      },
+      "assessment_modes": {
+        "unique_values": 2,
+        "dominant_value_count": 212,
+        "dominant_value_share": 0.9815
+      },
+      "retention_profile": {
+        "unique_values": 5,
+        "dominant_value_count": 212,
+        "dominant_value_share": 0.9815
+      },
+      "safety_review": {
+        "unique_values": 2,
+        "dominant_value_count": 212,
+        "dominant_value_share": 0.9815
+      },
+      "provenance": {
+        "unique_values": 2,
+        "dominant_value_count": 212,
+        "dominant_value_share": 0.9815
+      },
+      "stage": {
+        "unique_values": 1,
+        "dominant_value_count": 216,
+        "dominant_value_share": 1.0
+      },
+      "status": {
+        "unique_values": 2,
+        "dominant_value_count": 212,
+        "dominant_value_share": 0.9815
+      }
+    }
+  },
+  "remediation_units": [
+    {
+      "baseline_module_id": "BASE-ENG-007",
+      "discipline_code": "ENG",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-BIZ-009",
+      "discipline_code": "BIZ",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-ELEC-003",
+      "discipline_code": "ELEC",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 13,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-FIN-008",
+      "discipline_code": "FIN",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-BODY-004",
+      "discipline_code": "BODY",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 13,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-PSY-007",
+      "discipline_code": "PSY",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 13,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-AEST-008",
+      "discipline_code": "AEST",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-WORK-007",
+      "discipline_code": "WORK",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-ART-004",
+      "discipline_code": "ART",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 13,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-ATH-008",
+      "discipline_code": "ATH",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 1
+      },
+      "score_total": 12,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-PERF-006",
+      "discipline_code": "PERF",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 1
+      },
+      "score_total": 12,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-MATH-009",
+      "discipline_code": "MATH",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-CYBER-004",
+      "discipline_code": "CYBER",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-LANG-009",
+      "discipline_code": "LANG",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-RES-003",
+      "discipline_code": "RES",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-INDEP-004",
+      "discipline_code": "INDEP",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 2,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 1
+      },
+      "score_total": 12,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-LEAD-006",
+      "discipline_code": "LEAD",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    },
+    {
+      "baseline_module_id": "BASE-COMM-008",
+      "discipline_code": "COMM",
+      "rubric_scores": {
+        "scope_outcomes": 3,
+        "explanation_worked_reasoning": 3,
+        "practice_answer_feedback": 3,
+        "assessment_transfer_alignment": 3,
+        "prerequisites_safety_retention": 2
+      },
+      "score_total": 14,
+      "score_max": 15,
+      "status": "internal_draft_review_required",
+      "score_interpretation": "editorial triage only; not an approval or learner outcome"
+    }
+  ],
+  "remediation_count": 18,
+  "new_non_math_baseline_units": 17,
+  "math_unit_relationship": "BASE-MATH-009 is an additional teaching treatment of a module already covered by the existing Mathematics teaching-pack sequence; do not count it as a newly covered baseline ID.",
+  "known_limits": [
+    "The audit is field-level and editorial; it does not prove subject correctness.",
+    "The baseline JSON was not rewritten; remediation is additive.",
+    "The 18 units have not been independently reviewed or learner-piloted.",
+    "Risk-sensitive units are not safety-approved.",
+    "Existing cross-discipline packs use discipline-specific unit IDs and are not automatically treated as coverage of BASE-* records."
+  ],
+  "release_gap_effect": "GAP-008 partially advanced; remains open."
+}

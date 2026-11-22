@@ -1,0 +1,385 @@
+{
+  "registry": "ATHENA_SCHEMA_INVENTORY",
+  "version": "0.1",
+  "status": "inventory_not_unification_approval",
+  "count": 47,
+  "records": [
+    {
+      "file": "ASSESSMENT.schema.json",
+      "title": "ATHENA_ASSESSMENT",
+      "schema_id": "https://athena.local/schemas/athena-assessment.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "COMPETENCY_STATE.schema.json",
+      "title": "ATHENA_COMPETENCY_STATE",
+      "schema_id": "https://athena.local/schemas/athena-competency-state.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "CONTENT_COVERAGE.schema.json",
+      "title": "ATHENA_CONTENT_COVERAGE_SNAPSHOT_v0.1",
+      "schema_id": "https://athena.local/schemas/content-coverage-v0.1.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "CONTENT_COVERAGE_RECORD.schema.json",
+      "title": "ATHENA_CONTENT_COVERAGE_RECORD_v0.1",
+      "schema_id": "https://athena.local/schemas/content-coverage-record-v0.1.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "CONTEXT_RECORD.schema.json",
+      "title": "ATHENA_CONTEXT_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-context-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "DOMAIN_MAP_REGISTRY.schema.json",
+      "title": "ATHENA_DOMAIN_MAP_REGISTRY_v0.3",
+      "schema_id": "https://athena.local/schemas/domain-map-registry-v0.3.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "DOMAIN_RECORD.schema.json",
+      "title": "ATHENA_DOMAIN_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-domain-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "EVIDENCE_RECORD.schema.json",
+      "title": "ATHENA_EVIDENCE_RECORD_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-evidence-record-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "EVIDENCE_RECORD.schema.v0.1.json",
+      "title": "ATHENA_EVIDENCE_RECORD_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-evidence-record-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "FOUNDATION_SEED_NODE.schema.json",
+      "title": "ATHENA_FOUNDATION_SEED_NODE_v0.2",
+      "schema_id": "https://athena.local/schemas/foundation-seed-node-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "KNOWLEDGE_EDGE.schema.json",
+      "title": "ATHENA_STORAGE_EDGE_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-storage-edge-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "KNOWLEDGE_NODE_BASE.schema.json",
+      "title": "ATHENA_KNOWLEDGE_NODE_STORAGE_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-knowledge-node-storage-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "KNOWLEDGE_NODE_EXCHANGE_BASE.schema.json",
+      "title": "ATHENA_KNOWLEDGE_NODE_EXCHANGE_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-knowledge-node-exchange-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "KNOWLEDGE_RELATIONSHIP.schema.json",
+      "title": "ATHENA_KNOWLEDGE_RELATIONSHIP_EXCHANGE_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-knowledge-relationship-exchange-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "LEARNING_OBJECTIVE.schema.json",
+      "title": "ATHENA_LEARNING_OBJECTIVE_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-learning-objective-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "LEARNING_UNIT.schema.json",
+      "title": "ATHENA_LEARNING_UNIT",
+      "schema_id": "https://athena.local/schemas/athena-learning-unit.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "MICRO_SKILL.schema.v0.1.json",
+      "title": "ATHENA Micro-skill Record",
+      "schema_id": "https://athena.local/schemas/micro-skill.schema.v0.1.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "MICRO_SKILL.schema.v0.2.json",
+      "title": "ATHENA_MICRO_SKILL_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-v0.2.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "MILESTONE_RECORD.schema.json",
+      "title": "ATHENA_MILESTONE_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-milestone-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "PRACTICE_PROTOCOL.schema.json",
+      "title": "ATHENA_PRACTICE_PROTOCOL",
+      "schema_id": "https://athena.local/schemas/athena-practice-protocol.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "PROJECT_RECORD.schema.json",
+      "title": "ATHENA_PROJECT_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-project-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "RESOURCE_RECORD.schema.json",
+      "title": "ATHENA_RESOURCE_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-resource-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "SKILL_FAMILY_RECORD.schema.json",
+      "title": "ATHENA_SKILL_FAMILY_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-skill-family-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "SKILL_RECORD.schema.json",
+      "title": "ATHENA_SKILL_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-skill-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "SUBSKILL_RECORD.schema.json",
+      "title": "ATHENA_SUBSKILL_RECORD",
+      "schema_id": "https://athena.local/schemas/athena-subskill-record.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "TRANSFER_LINK.schema.json",
+      "title": "ATHENA_TRANSFER_LINK_v0.3",
+      "schema_id": "https://athena.local/schemas/athena-transfer-link-v0.3.schema.json",
+      "status": "master_vault_reference_copy",
+      "authoritative_location": "Master Vault 02_KNOWLEDGE_ARCHITECTURE",
+      "note": "Reference copy; do not replace active KB exchange contract without version comparison."
+    },
+    {
+      "file": "EVIDENCE_RECORD.schema.json",
+      "title": "ATHENA_EVIDENCE_RECORD_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-evidence-record-v0.2.schema.json",
+      "status": "active_kb_exchange_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "Current KB exchange schema; versioned independently from historical Master Vault schema library."
+    },
+    {
+      "file": "KNOWLEDGE_RELATIONSHIP.schema.json",
+      "title": "ATHENA_KNOWLEDGE_RELATIONSHIP_EXCHANGE_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-knowledge-relationship-exchange-v0.2.schema.json",
+      "status": "active_kb_exchange_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "Current KB exchange schema; versioned independently from historical Master Vault schema library."
+    },
+    {
+      "file": "MICRO_SKILL.schema.v0.2.json",
+      "title": "ATHENA_MICRO_SKILL_v0.2",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-v0.2.schema.json",
+      "status": "active_kb_exchange_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "Current KB exchange schema; versioned independently from historical Master Vault schema library."
+    },
+    {
+      "file": "BASELINE_MODULE.schema.v1.1.json",
+      "title": "ATHENA_BASELINE_MODULE_v1.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE_ASSESSMENT_SPEC.schema.v0.1.json",
+      "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "MICRO_SKILL_RETENTION_INTEGRATION.schema.v0.1.json",
+      "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE.schema.v1.1.json",
+      "title": "ATHENA_BASELINE_MODULE_v1.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE_ASSESSMENT_SPEC.schema.v0.1.json",
+      "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "MICRO_SKILL_RETENTION_INTEGRATION.schema.v0.1.json",
+      "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE.schema.v1.1.json",
+      "title": "ATHENA_BASELINE_MODULE_v1.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE_ASSESSMENT_SPEC.schema.v0.1.json",
+      "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "MICRO_SKILL_RETENTION_INTEGRATION.schema.v0.1.json",
+      "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE.schema.v1.1.json",
+      "title": "ATHENA_BASELINE_MODULE_v1.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE_ASSESSMENT_SPEC.schema.v0.1.json",
+      "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "MICRO_SKILL_RETENTION_INTEGRATION.schema.v0.1.json",
+      "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE.schema.v1.1.json",
+      "title": "ATHENA_BASELINE_MODULE_v1.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE_ASSESSMENT_SPEC.schema.v0.1.json",
+      "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "MICRO_SKILL_RETENTION_INTEGRATION.schema.v0.1.json",
+      "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE.schema.v1.1.json",
+      "title": "ATHENA_BASELINE_MODULE_v1.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-module-v1.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "BASELINE_MODULE_ASSESSMENT_SPEC.schema.v0.1.json",
+      "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    },
+    {
+      "file": "MICRO_SKILL_RETENTION_INTEGRATION.schema.v0.1.json",
+      "title": "ATHENA_MICRO_SKILL_RETENTION_INTEGRATION_v0.1",
+      "schema_id": "https://athena.local/schemas/athena-micro-skill-retention-integration-v0.1.schema.json",
+      "status": "active_kb_working_contract",
+      "authoritative_location": "KB 10_EXCHANGE_CONTRACTS",
+      "note": "New Message 18 schema; Draft 2020-12; internal working contract, importer compatibility not yet tested."
+    }
+  ],
+  "policy": "Schema names and versions are preserved. Similar names are not assumed equivalent; compare semantics and compatibility before migration."
+}

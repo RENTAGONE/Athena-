@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.2.0",
+  "registry_status": "illustrative_draft",
+  "assessments": [
+    {
+      "id": "ATH-ASMT-MATH-BASELINE-01",
+      "object_type": "assessment",
+      "title": "Mathematics baseline diagnostic",
+      "status": "draft",
+      "target_ids": [
+        "ATH-SKILL-MATH-NUMBER-ALGEBRA"
+      ],
+      "objective_ids": [
+        "ATH-OBJ-MATH-BASELINE-DIAGNOSIS"
+      ],
+      "assessment_type": "diagnostic",
+      "prompt_or_task": "Complete a balanced set of number, fraction, ratio, algebra and graph-reading items. Explain selected answers and mark confidence.",
+      "conditions": {
+        "time_limit_minutes": 45,
+        "calculator_allowed": false,
+        "notes_allowed": false,
+        "ai_allowed": false,
+        "hints_allowed": false,
+        "collaboration_allowed": false,
+        "materials": [
+          "paper",
+          "pen"
+        ]
+      },
+      "rubric": [
+        {
+          "criterion": "Accuracy",
+          "description": "Correctness of selected solutions.",
+          "levels": [
+            "needs support",
+            "partially accurate",
+            "consistently accurate"
+          ]
+        },
+        {
+          "criterion": "Reasoning",
+          "description": "Can explain the method rather than only state an answer.",
+          "levels": [
+            "cannot explain",
+            "partial explanation",
+            "clear explanation"
+          ]
+        }
+      ],
+      "success_criteria": [
+        "Record item-level results, not only one total score.",
+        "Record confidence separately from correctness.",
+        "Use results to route learning, not label ability."
+      ],
+      "safety_requirements": [],
+      "evaluator_guidance": "Diagnostic only. Do not infer mastery from one sitting.",
+      "content_version": 1,
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "primary_domain_id": "ATH-DOM-MATH-NUM",
+      "domain_ids": [
+        "ATH-DOM-MATH-NUM",
+        "ATH-DOM-MATH-ALG",
+        "ATH-DOM-MATH-DATA"
+      ]
+    }
+  ]
+}

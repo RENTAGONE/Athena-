@@ -1,0 +1,204 @@
+{
+  "wave": "03",
+  "version": "1.0",
+  "status": "audit_only_no_canonical_mutation",
+  "baseline_registry_count": 156,
+  "canonical_micro_skill_count": 20,
+  "crosswalk_rows": 20,
+  "candidates_linked_to_existing_canonical": 24,
+  "candidates_unlinked": 130,
+  "new_canonical_extension_proposals": 130,
+  "candidate_ids_in_registry": 156,
+  "unlinked_missing_from_registry": [],
+  "proposal_missing_from_registry": [],
+  "canonical_link_ids_missing_from_registry": [],
+  "overlap_groups": [
+    {
+      "ids": [
+        "MS-03-007",
+        "MS-09-001"
+      ],
+      "type": "near-duplicate candidate overlap",
+      "reason": "Both target screwdriver/driver-bit selection. Compare target granularity and assessment; likely merge or make MS-09-001 a narrower fastener-specific component, but do not delete either ID."
+    },
+    {
+      "ids": [
+        "MS-03-001",
+        "MS-13-008"
+      ],
+      "type": "near-duplicate candidate overlap",
+      "reason": "Both cover folding clothing; MS-13-008 broadens to fold and store common clothing. Could be a parent/extension or duplicate depending exact protocol scope."
+    },
+    {
+      "ids": [
+        "MS-03-002",
+        "MS-13-010"
+      ],
+      "type": "partial overlap",
+      "reason": "Packing by checklist versus household checklist; shared checklist literacy but different task contexts."
+    },
+    {
+      "ids": [
+        "MS-03-008",
+        "MS-14-008"
+      ],
+      "type": "partial overlap",
+      "reason": "Digital folder organisation versus inventory management; both involve classification/retrieval but different data objects and outcomes."
+    },
+    {
+      "ids": [
+        "MS-01-010",
+        "MS-14-001"
+      ],
+      "type": "partial overlap",
+      "reason": "Chunk a procedure versus break a task into next actions; likely related but not identical if one focuses procedural decomposition and the other operational next-step planning."
+    },
+    {
+      "ids": [
+        "MS-01-009",
+        "MS-14-009"
+      ],
+      "type": "shared reasoning component",
+      "reason": "Estimation before calculation and decision matrix comparison are distinct but share quantitative judgement and sensitivity checking."
+    },
+    {
+      "ids": [
+        "MS-08-007",
+        "MS-07-003"
+      ],
+      "type": "shared component / context-specific distinction",
+      "reason": "Precise location description overlaps emergency communication location payload; retain emergency call skill as broader, location description as reusable component."
+    },
+    {
+      "ids": [
+        "MS-09-006",
+        "MS-07-005"
+      ],
+      "type": "shared safety recognition pattern",
+      "reason": "Tool inspection and electrical hazard recognition both use stop/inspect/escalate; separate domains and hazards."
+    },
+    {
+      "ids": [
+        "MS-10-005",
+        "MS-02-010"
+      ],
+      "type": "shared football skill family",
+      "reason": "Receiving/cushioning pass and wall pass control overlap first-touch outcomes; MS-02-010 combines passing and receiving against a wall, MS-10-005 isolates receiving."
+    },
+    {
+      "ids": [
+        "MS-10-008",
+        "MS-02-010"
+      ],
+      "type": "shared football skill family",
+      "reason": "Weaker-foot pass is a specialised constraint on passing; preserve as distinct practice dimension if its assessment is independently meaningful."
+    },
+    {
+      "ids": [
+        "MS-11-003",
+        "MS-06-002"
+      ],
+      "type": "component relation",
+      "reason": "Grid alignment is one technique within broader phone-photo framing; do not collapse composition skill into one setting."
+    },
+    {
+      "ids": [
+        "MS-12-007",
+        "MS-04-005"
+      ],
+      "type": "partial overlap",
+      "reason": "Pacing a spoken explanation versus summarising in 60 seconds; one is delivery fluency, the other content selection/compression."
+    },
+    {
+      "ids": [
+        "MS-13-001",
+        "MS-07-008"
+      ],
+      "type": "shared hygiene component",
+      "reason": "Handwashing is a routine; wound-care literacy includes hygiene but should not duplicate the full handwashing protocol."
+    },
+    {
+      "ids": [
+        "MS-13-006",
+        "MS-07-006"
+      ],
+      "type": "shared product-label component",
+      "reason": "Cleaning product use requires label reading; label literacy is general and cleaning task is application."
+    },
+    {
+      "ids": [
+        "MS-15-003",
+        "MS-01-001"
+      ],
+      "type": "strategy relation not equivalence",
+      "reason": "Method of loci is a mnemonic encoding strategy; blank-page active recall is a retrieval practice. Keep distinct and assess separately."
+    },
+    {
+      "ids": [
+        "MS-15-005",
+        "MS-01-003"
+      ],
+      "type": "false-equivalence risk",
+      "reason": "Speed reading is reading-rate control; explaining simply is comprehension/explanation. Reading faster must not be used as a proxy for understanding."
+    },
+    {
+      "ids": [
+        "MS-15-002",
+        "MS-06-009"
+      ],
+      "type": "potential duplicate/overlap",
+      "reason": "Structured scene description and observe-before-drawing both use deliberate observation; one is verbal scene encoding, the other visual construction. Compare protocols."
+    },
+    {
+      "ids": [
+        "MS-15-014",
+        "MS-13-009"
+      ],
+      "type": "parent/extension relation",
+      "reason": "Signature dish is repeatable recipe execution; balanced meal planning is nutritional planning. Recipe competence does not establish balanced nutrition."
+    },
+    {
+      "ids": [
+        "MS-15-012",
+        "MS-07-007"
+      ],
+      "type": "safety boundary relation",
+      "reason": "Safe lighter handling and fire-extinguisher decision model share fire-risk literacy but are not interchangeable; lighter handling remains recognition/adult handoff only."
+    },
+    {
+      "ids": [
+        "MS-15-015",
+        "MS-02-004",
+        "MS-02-005"
+      ],
+      "type": "overlap family",
+      "reason": "Advanced everyday tie knots may overlap square knot/bowline. Scope must explicitly list knot types and exclude climbing/rescue/rigging/life-safety loads."
+    }
+  ],
+  "governance_findings": [
+    "Existing crosswalk status is proposal_not_approved; retain this.",
+    "130 candidate-level extension proposals are not 130 approved canonical skills.",
+    "A candidate-to-canonical mapping is semantic equivalence only when target performance, scope, assessment and safety boundary match. Otherwise use supporting_component, narrower_variant, extension_candidate, related_to or no-link.",
+    "Do not use visual graph density as a reason to add semantic edges.",
+    "Keep canonical skill identity, working candidate identity and protocol identity separate. Preserve historical IDs and add redirects/aliases only through a governed migration.",
+    "The source catalogue has 140 bullets while the registry has 156 records; the registry is the operational inventory. Fix catalogue generation in a future controlled change, not this research wave.",
+    "The working ontology validator can verify schema/ID/edge consistency but cannot adjudicate conceptual equivalence or instructional validity.",
+    "The current crosswalk does not account for every candidate: 24 are linked to existing canonical proposals, 130 have new-canonical extension proposals, and 2 (MS-13-009 and MS-13-010) are absent from both proposal and unlinked queues. They are explicitly surfaced as missing, not silently treated as no-link."
+  ],
+  "deferred_owner_decisions": [
+    "Which candidate duplicates should be merged, and which should remain as narrower subskills?",
+    "Which of the 130 new-canonical proposals merit canonical status after app review?",
+    "Should category taxonomy use 15 categories or map some categories into macro-disciplines/families?",
+    "What is the formal canonical relationship vocabulary and directional semantics for component/variant/support links?"
+  ],
+  "expert_and_learner_review": "Explicitly deferred until the app is usable.",
+  "candidates_missing_from_all_crosswalk_queues": [
+    "MS-13-009",
+    "MS-13-010"
+  ],
+  "candidate_disposition_counts": {
+    "linked_to_existing_canonical_proposal": 24,
+    "new_canonical_extension_proposal": 130,
+    "MISSING_FROM_EXISTING_CROSSWALK_AND_PROPOSAL_QUEUES": 2
+  }
+}

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { Eye, Maximize2, RotateCcw, Search, X } from "lucide-react";
+import { Eye, Menu, RotateCcw, Search, X } from "lucide-react";
 import { useApp } from "./context.ts";
 import { DISCIPLINES, DISCIPLINE_BY_ID } from "./disciplines.ts";
 import {
@@ -50,9 +50,11 @@ export function Knowledge(): ReactNode {
   const [selected, setSelected] = useState<string | null>(null);
   const [isolated, setIsolated] = useState<number | null>(null);
   const [speed, setSpeed] = useState<number>(1);
-  const [landscape, setLandscape] = useState(false);
-  /** True only when the platform refused to rotate for us and the stage rotates itself. */
-  const [cssRotate, setCssRotate] = useState(false);
+  /** Native orientation only: no manual rotation button, no CSS-rotated fake cockpit. */
+  const [landscape, setLandscape] = useState(() =>
+    typeof window === "undefined" ? false : window.matchMedia("(orientation: landscape)").matches,
+  );
+  const [railOpen, setRailOpen] = useState(false);
   const [zen, setZen] = useState(false);
   const [distance, setDistance] = useState(20_500);
   /** A universe, galaxy, black hole or station: inspected without a knowledge record behind it. */
@@ -79,6 +81,36 @@ export function Knowledge(): ReactNode {
     for (const [id, list] of index.byTarget) out.set(id, list.length);
     return out;
   }, [index]);
+
+  /** Mastery ratio per record: 1 mastered, 0.6 demonstrated, 0.15 needs revision, 0 untouched. A
+   *  domain's night lights, its orbital ring and a discipline's Dyson swarm all read this one map. */
+  const progress = useMemo(() => {
+    const children = new Map<string, NodeRecord[]>();
+    for (const node of Object.values(state.nodes)) {
+      if (!node.parent_id) continue;
+      const list = children.get(node.parent_id) ?? [];
+      list.push(node);
+      children.set(node.parent_id, list);
+    }
+    const ratio = new Map<string, number>();
+    const weight = (tier: MasteryTier): number =>
+      tier === "mastered" ? 1 : tier === "demonstrated" ? 0.6 : tier === "needs_revision" ? 0.15 : 0;
+    const walk = (node: NodeRecord): number => {
+      const kids = children.get(node.id) ?? [];
+      if (kids.length === 0) {
+        const value = weight(masteryTier(index, node.id));
+        ratio.set(node.id, value);
+        return value;
+      }
+      let sum = 0;
+      for (const kid of kids) sum += walk(kid);
+      const value = sum / kids.length;
+      ratio.set(node.id, value);
+      return value;
+    };
+    for (const node of Object.values(state.nodes)) if (!node.parent_id) walk(node);
+    return ratio;
+  }, [state.nodes, index]);
 
   useEffect(() => {
     setWebgl(webglAvailable());
@@ -122,8 +154,8 @@ export function Knowledge(): ReactNode {
   }, []);
 
   useEffect(() => {
-    sceneRef.current?.setGalaxy(galaxy, evidence);
-  }, [galaxy, evidence]);
+    sceneRef.current?.setGalaxy(galaxy, evidence, progress);
+  }, [galaxy, evidence, progress]);
 
   useEffect(() => {
     sceneRef.current?.setSelected(selected);
@@ -148,35 +180,40 @@ export function Knowledge(): ReactNode {
   }, [zen]);
 
   /**
-   * Sideways cockpit. Where the platform allows it the screen itself is locked to landscape; when it
-   * does not (desktop, some Android WebViews) the stage is rotated with CSS. Pointer coordinates stay
-   * exact either way because the rig reads offsetX/offsetY, which are pre-transform element pixels.
+   * The cockpit follows the device. A phone turned sideways gets the landscape layout without a
+   * button, a rotation animation or any CSS transform: matchMedia is the single source of truth, with
+   * resize/orientationchange as a fallback for WebViews that lag the media query.
    */
-  const toggleLandscape = useCallback(() => {
-    const next = !landscape;
-    setLandscape(next);
-    type Lockable = { lock?: (orientation: string) => Promise<void>; unlock?: () => void };
-    const orientation = (screen as unknown as { orientation?: Lockable }).orientation;
-    if (!next) {
-      orientation?.unlock?.();
-      setCssRotate(false);
-      return;
-    }
-    if (orientation?.lock) {
-      // If the platform rotates the screen for real, rotating the stage again would double-rotate it.
-      void orientation
-        .lock("landscape")
-        .then(() => setCssRotate(false))
-        .catch(() => setCssRotate(true));
-    } else {
-      setCssRotate(true);
-    }
-  }, [landscape]);
-
   useEffect(() => {
-    document.documentElement.classList.toggle("athena-cockpit", landscape);
-    return () => document.documentElement.classList.remove("athena-cockpit");
-  }, [landscape]);
+    const query = window.matchMedia("(orientation: landscape)");
+    const apply = (): void => {
+      const landscapeNow = window.matchMedia("(orientation: landscape)").matches && window.innerWidth > window.innerHeight;
+      setLandscape(landscapeNow);
+      document.documentElement.classList.toggle("athena-cockpit", landscapeNow);
+      // The rail collapses into the compact drawer whenever the screen turns sideways.
+      document.documentElement.classList.toggle("athena-rail-collapsed", landscapeNow);
+      if (!landscapeNow) setRailOpen(false);
+    };
+    apply();
+    query.addEventListener("change", apply);
+    window.addEventListener("resize", apply);
+    window.addEventListener("orientationchange", apply);
+    return () => {
+      query.removeEventListener("change", apply);
+      window.removeEventListener("resize", apply);
+      window.removeEventListener("orientationchange", apply);
+      document.documentElement.classList.remove("athena-cockpit", "athena-rail-collapsed");
+    };
+  }, []);
+
+  /** The drawer button only appears in landscape; it re-opens the collapsed sidebar on demand. */
+  const toggleRail = useCallback(() => {
+    setRailOpen((open) => {
+      const next = !open;
+      document.documentElement.classList.toggle("athena-rail-collapsed", !next);
+      return next;
+    });
+  }, []);
 
   const focusSystem = useCallback((si: number) => {
     setIsolated(si);
@@ -245,7 +282,7 @@ export function Knowledge(): ReactNode {
       aria-label="Knowledge Atlas"
       data-zen={zen ? "true" : undefined}
       data-landscape={landscape ? "true" : undefined}
-      data-landscape-css={cssRotate ? "true" : undefined}
+      data-rail-open={railOpen ? "true" : undefined}
     >
       <div className="atlas-stage">
         <canvas ref={canvasRef} className="atlas-canvas" aria-hidden={view === "index"} />
@@ -283,15 +320,16 @@ export function Knowledge(): ReactNode {
               </button>
             ))}
           </div>
-          <button
-            className="btn sm ghost"
-            aria-label={landscape ? "Leave landscape cockpit" : "Rotate to landscape cockpit"}
-            aria-pressed={landscape}
-            onClick={toggleLandscape}
-          >
-            <Maximize2 size={15} strokeWidth={1.5} aria-hidden="true" />
-            <span>Landscape</span>
-          </button>
+          {landscape && (
+            <button
+              className="btn sm ghost hud-drawer"
+              aria-label="Open navigation drawer"
+              aria-expanded={railOpen}
+              onClick={toggleRail}
+            >
+              <Menu size={17} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          )}
           <button className="btn sm ghost" aria-label="Zen view" aria-pressed={zen} onClick={() => setZen(true)}>
             <Eye size={15} strokeWidth={1.5} aria-hidden="true" />
             <span>Zen</span>
@@ -457,12 +495,37 @@ export function Knowledge(): ReactNode {
       {core && view === "atlas" && (
         <aside className="drawer core-card" aria-label="Galactic core inspection">
           <div className="row between">
-            <span className="label">{core.kind === "blackhole" ? "supermassive black hole" : core.kind}</span>
+            <span className="label">
+              {core.kind === "blackhole"
+                ? "supermassive black hole"
+                : core.kind === "quasar"
+                  ? "relativistic quasar"
+                  : core.kind === "bottleneck"
+                    ? "revision gravity well"
+                    : core.kind}
+            </span>
             <button className="icon-btn" aria-label="Close core inspection" onClick={() => setCore(null)}>
               <X size={16} strokeWidth={1.5} aria-hidden="true" />
             </button>
           </div>
           <h2>{core.kind === "blackhole" ? "Galactic Core Singularity" : core.name}</h2>
+          {(core.kind === "quasar" || core.kind === "bottleneck") && core.detail && core.detail.length > 0 && (
+            <ul className="core-bridges">
+              {core.detail.slice(0, 6).map((d) => (
+                <li key={d}>{d}</li>
+              ))}
+            </ul>
+          )}
+          {core.kind === "quasar" && (
+            <button className="btn primary" style={{ marginTop: 12 }} onClick={() => sceneRef.current?.focusCosmic(core.id)}>
+              Warp Across Bridge
+            </button>
+          )}
+          {core.kind === "bottleneck" && (
+            <a className="btn primary" style={{ marginTop: 12 }} href="#/schedule">
+              Start Revision Session
+            </a>
+          )}
           <code className="drawer-code">{core.id}</code>
           {core.kind === "blackhole" ? (
             <>
@@ -481,12 +544,22 @@ export function Knowledge(): ReactNode {
             </>
           ) : (
             <p className="hint">
-              {core.kind === "galaxy" ? "A procedural barred spiral with a lensed core. Fly inside to orbit its singularity." : core.kind === "universe" ? "A sealed universe in the multiverse box. Fly in to survey its galaxies." : "An orbital station with lit docking bays, holding position for the Chunk 5 cockpit."}
+              {core.kind === "galaxy"
+                ? "A procedural barred spiral with a lensed core. Fly inside to orbit its singularity."
+                : core.kind === "universe"
+                  ? "A sealed universe in the multiverse box. Fly in to survey its galaxies."
+                  : core.kind === "quasar"
+                    ? "Twin relativistic jets mark a cross-discipline synthesis bridge. Every family listed here transfers into another domain."
+                    : core.kind === "bottleneck"
+                      ? "Flagged needs-revision records bend the local orbits into a gravity well until they are cleared."
+                      : "An orbital station with lit docking bays, holding position for the Chunk 5 cockpit."}
             </p>
           )}
-          <button className="btn primary" style={{ marginTop: 12 }} onClick={() => sceneRef.current?.focusCosmic(core.id)}>
-            Fly There
-          </button>
+          {core.kind !== "quasar" && core.kind !== "bottleneck" && (
+            <button className="btn primary" style={{ marginTop: 12 }} onClick={() => sceneRef.current?.focusCosmic(core.id)}>
+              Fly There
+            </button>
+          )}
         </aside>
       )}
 

@@ -1,0 +1,478 @@
+{
+  "registry_id": "ATHENA-WAVE3-BATCH01",
+  "version": "0.1",
+  "production_message": 12,
+  "status": "draft",
+  "disciplines": [
+    "BODY",
+    "ATH",
+    "PERF",
+    "AEST",
+    "ART",
+    "INDEP"
+  ],
+  "unit_count": 12,
+  "units": [
+    {
+      "unit_id": "BODY-DEV-001",
+      "discipline_code": "BODY",
+      "title": "Human systems, homeostasis and feedback",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "BODY-FOUND-001",
+        "basic cell and tissue vocabulary",
+        "ability to interpret a simple labelled diagram"
+      ],
+      "learning_outcomes": [
+        "trace a basic stimulus–response loop",
+        "explain how respiratory and circulatory systems cooperate during activity",
+        "distinguish a short-term response from a longer-term adaptation",
+        "state limits of a simplified model"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Educational anatomy only. Persistent symptoms, pain, breathing difficulty or health concerns belong with a trusted adult and qualified health professional; no self-diagnosis."
+    },
+    {
+      "unit_id": "BODY-DEV-002",
+      "discipline_code": "BODY",
+      "title": "Nutrition, sleep, recovery and health-claim literacy",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "BODY-FOUND-001",
+        "basic fractions and percentages",
+        "ability to compare claims with evidence"
+      ],
+      "learning_outcomes": [
+        "describe broad roles of carbohydrates, fats, proteins, vitamins, minerals and water",
+        "explain why energy and nutrient needs vary",
+        "distinguish sleep opportunity, sleep quality and recovery",
+        "evaluate a health claim for evidence, scope and uncertainty"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No calorie targets, weight-loss prescriptions, supplement recommendations or diagnosis. For a young learner, nutrition and sleep changes should be discussed with a parent/guardian and qualified clinician when health concerns exist."
+    },
+    {
+      "unit_id": "ATH-DEV-001",
+      "discipline_code": "ATH",
+      "title": "Acceleration, deceleration, landing and change of direction",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "ATH-FOUND-001",
+        "basic balance and body awareness",
+        "safe open practice space"
+      ],
+      "learning_outcomes": [
+        "describe acceleration and braking as distinct movement tasks",
+        "demonstrate controlled low-intensity landing mechanics",
+        "identify space, traction and fatigue constraints",
+        "design a progressive practice with recovery and stop rules"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "For a developing athlete, prioritize supervision, safe surfaces, modest volume and technique. No maximal sprint, heavy loading or plyometric testing without qualified coaching and age-appropriate preparation."
+    },
+    {
+      "unit_id": "ATH-DEV-002",
+      "discipline_code": "ATH",
+      "title": "Football scanning, support angles and decision-making",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "ATH-FOUND-001",
+        "basic passing and receiving",
+        "understanding of teammate/opponent roles"
+      ],
+      "learning_outcomes": [
+        "scan before receiving and identify relevant information",
+        "create a useful support angle rather than hiding behind a defender",
+        "select a simple action based on pressure, space and teammate position",
+        "review decisions using evidence rather than outcome alone"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Keep drills age-appropriate, avoid collisions and unsafe surfaces, and do not use public footage of others without permission."
+    },
+    {
+      "unit_id": "PERF-DEV-001",
+      "discipline_code": "PERF",
+      "title": "Safe vocal production, breath coordination and fatigue awareness",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "PERF-FOUND-001",
+        "ability to follow a short warm-up",
+        "basic awareness of comfortable speaking/singing range"
+      ],
+      "learning_outcomes": [
+        "describe breath coordination without forcing airflow",
+        "use gentle warm-up and cool-down habits",
+        "distinguish expressive effort from strain",
+        "recognise signs to stop and seek appropriate help"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No forced high notes, extreme vocal exercises, shouting challenges or breath-holding contests. Persistent hoarseness, pain or voice loss should be discussed with a trusted adult and qualified clinician/voice professional."
+    },
+    {
+      "unit_id": "PERF-DEV-002",
+      "discipline_code": "PERF",
+      "title": "Interpretation, stage presence and deliberate rehearsal",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "PERF-FOUND-001",
+        "PERF-DEV-001",
+        "ability to prepare a short spoken or musical piece"
+      ],
+      "learning_outcomes": [
+        "identify the intention and audience of a short performance",
+        "shape phrasing, pacing and emphasis to communicate meaning",
+        "rehearse one variable at a time",
+        "use playback or feedback without treating taste as objective fact"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Respect copyright and performance permissions. Do not pressure a learner to perform publicly or disclose personal material."
+    },
+    {
+      "unit_id": "AEST-DEV-001",
+      "discipline_code": "AEST",
+      "title": "Visual hierarchy, grid systems and information layout",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "AEST-FOUND-001",
+        "basic shape and text editing",
+        "ability to identify a target audience and task"
+      ],
+      "learning_outcomes": [
+        "identify the primary task and information priority",
+        "use size, position, spacing and contrast to establish hierarchy",
+        "apply a simple alignment/grid system",
+        "evaluate a layout for readability at realistic viewing size"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Use licensed or self-created assets; do not imitate a living designer’s exact signature style or use protected logos without permission."
+    },
+    {
+      "unit_id": "AEST-DEV-002",
+      "discipline_code": "AEST",
+      "title": "Colour relationships, contrast and accessible visual communication",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "AEST-DEV-001",
+        "basic colour naming and visual comparison"
+      ],
+      "learning_outcomes": [
+        "distinguish hue, value and saturation",
+        "explain how foreground/background contrast affects legibility",
+        "build a restrained palette with functional roles",
+        "avoid communicating essential information through colour alone"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Avoid using colour alone for warnings or critical information. Verify accessibility guidance against current standards when publishing production interfaces."
+    },
+    {
+      "unit_id": "ART-DEV-001",
+      "discipline_code": "ART",
+      "title": "Observational drawing: proportion, form and value",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "ART-FOUND-001",
+        "basic line and shape drawing",
+        "simple household object as reference"
+      ],
+      "learning_outcomes": [
+        "measure relative proportions using visual comparison",
+        "construct an object from simple 2D/3D forms",
+        "identify light direction and major value groups",
+        "revise a drawing using observation rather than symbol memory"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Use safe materials and a comfortable posture; avoid prolonged strain. Use references lawfully and credit sources when required."
+    },
+    {
+      "unit_id": "ART-DEV-002",
+      "discipline_code": "ART",
+      "title": "Composition, visual storytelling and thumbnail iteration",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "ART-DEV-001",
+        "basic understanding of foreground/middle/background"
+      ],
+      "learning_outcomes": [
+        "define a visual focal point and supporting hierarchy",
+        "use value, shape, scale and direction to guide attention",
+        "generate multiple thumbnails before committing to detail",
+        "explain how composition changes narrative interpretation"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Respect copyright and consent when using photographs or people as references; do not publish another person’s likeness without permission."
+    },
+    {
+      "unit_id": "INDEP-DEV-001",
+      "discipline_code": "INDEP",
+      "title": "Kitchen independence: hygiene, preparation and simple meal workflow",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "INDEP-FOUND-001",
+        "ability to read simple instructions",
+        "adult supervision and access to a safe kitchen"
+      ],
+      "learning_outcomes": [
+        "identify clean/dirty workflow and basic contamination risks",
+        "use safe handwashing and surface practices",
+        "follow a simple preparation sequence",
+        "identify tasks requiring adult supervision or specialist equipment"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "A minor must have adult supervision for knives, hot surfaces, appliances and unfamiliar equipment. Follow local food-safety authority guidance; never guess cooking temperatures or storage times."
+    },
+    {
+      "unit_id": "INDEP-DEV-002",
+      "discipline_code": "INDEP",
+      "title": "Navigation, appointments and personal contingency planning",
+      "status": "draft_instructional_unit",
+      "level": "developing",
+      "prerequisites": [
+        "INDEP-FOUND-001",
+        "basic map and clock literacy",
+        "ability to contact a trusted adult"
+      ],
+      "learning_outcomes": [
+        "plan a route using reliable information and time buffers",
+        "identify decision points and safe alternatives",
+        "prepare essential appointment information without oversharing",
+        "use a check-in and escalation plan when a journey changes"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "closed_book_learner_explanation",
+        "guided_or_independent_application",
+        "artifact_or_supervised_demonstration",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15; BODY, ATH, PERF and INDEP require 12/15 where safety-critical criteria apply",
+        "critical_fail_conditions": [
+          "unsafe practice",
+          "unsupported health or performance claim",
+          "privacy/consent violation"
+        ],
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "For a young learner, route practice and appointments require guardian approval and supervision appropriate to local conditions. Never publish live location, home address, identity documents or private contact details."
+    }
+  ],
+  "workflow_contract": {
+    "assignment": "ATHENA assigns objective, prerequisites, success criteria and evidence requirements.",
+    "study": "Learner chooses and studies external sources; source provenance is recorded.",
+    "evaluation": "Evaluator checks explanation, application, transfer, uncertainty and safety.",
+    "commit": "A structured proposal is previewed; learner approval is required before persistent commit.",
+    "mastery": "No automatic mastery from reading, lesson completion, AI-generated text or a single score."
+  }
+}

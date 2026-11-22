@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-transfer-link-v0.3.schema.json",
+  "title": "ATHENA_TRANSFER_LINK_v0.3",
+  "description": "Exchange representation of a transfer edge. id is the stable ATH-XFER semantic code; source_id/target_id and owner_discipline_id are ATHENA codes. Storage allocates an internal UUID and resolves endpoints.",
+  "type": "object",
+  "required": [
+    "id",
+    "source_id",
+    "target_id",
+    "relation_type",
+    "status",
+    "review_state",
+    "owner_discipline_id",
+    "gating",
+    "strength",
+    "transfer_type",
+    "transfer_distance",
+    "mechanism",
+    "rationale",
+    "evidence_refs",
+    "transfer_evidence_state",
+    "content_version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-XFER-[A-Z0-9-]+$"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "relation_type": {
+      "enum": [
+        "SUPPORTS",
+        "APPLIES_TO",
+        "TRANSFER_TO",
+        "SHARED_FOUNDATION_FOR",
+        "ENABLES",
+        "EXPLAINS",
+        "RELATED_TO"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated"
+      ]
+    },
+    "review_state": {
+      "enum": [
+        "needs_review",
+        "in_review",
+        "reviewed",
+        "approved",
+        "blocked"
+      ]
+    },
+    "owner_discipline_id": {
+      "type": "string",
+      "pattern": "^ATH-DISC-[A-Z]+$"
+    },
+    "gating": {
+      "const": "none"
+    },
+    "strength": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "required",
+        "recommended",
+        "helpful",
+        null
+      ]
+    },
+    "transfer_type": {
+      "enum": [
+        "conceptual",
+        "procedural",
+        "mathematical",
+        "methodological",
+        "tooling",
+        "physical",
+        "communication",
+        "strategic"
+      ]
+    },
+    "transfer_distance": {
+      "enum": [
+        "near",
+        "intermediate",
+        "far"
+      ]
+    },
+    "mechanism": {
+      "type": "string",
+      "minLength": 10
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 10
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transfer_evidence_state": {
+      "enum": [
+        "hypothesised",
+        "evidence_attached_unverified",
+        "demonstrated_in_context"
+      ]
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": false
+}

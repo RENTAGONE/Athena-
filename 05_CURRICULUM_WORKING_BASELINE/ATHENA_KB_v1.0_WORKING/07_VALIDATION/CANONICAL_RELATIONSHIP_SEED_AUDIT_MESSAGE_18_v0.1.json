@@ -1,0 +1,10 @@
+{
+  "registry": "ATHENA_CANONICAL_RELATIONSHIP_SEED_AUDIT",
+  "version": "0.1",
+  "status": "structural_audit_only_semantic_review_pending",
+  "edge_count": 26,
+  "known_node_id_count": 1652,
+  "endpoint_or_owner_errors": [],
+  "hard_gate_count": 0,
+  "policy": "All edges remain draft. Structural endpoint validity does not imply semantic approval."
+}

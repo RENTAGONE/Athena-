@@ -1,0 +1,2476 @@
+{
+  "registry": "ATHENA_DOMAIN_RECONCILIATION_CROSSWALK",
+  "version": "0.2",
+  "status": "complete_candidate_crosswalk_pending_human_approval",
+  "canonical_domain_count": 113,
+  "working_domain_count": 145,
+  "working_skill_family_count": 733,
+  "crosswalk_row_count": 145,
+  "canonical_domains_with_at_least_one_candidate": 112,
+  "canonical_domains_without_candidate": [
+    {
+      "id": "ATH-DOM-MATH-CHEM",
+      "title": "Chemistry Foundations & Quantitative Modelling",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "working_domain_id": "DOM-ENG-01",
+      "working_domain_name": "Computational Thinking",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-COMPUTE"
+      ],
+      "canonical_target_names": [
+        "Computational Foundations"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-02",
+      "working_domain_name": "Programming Foundations",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-PROG"
+      ],
+      "canonical_target_names": [
+        "Programming & Computational Thinking"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-03",
+      "working_domain_name": "Programming Languages & Paradigms",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-PROG",
+        "ATH-DOM-ENG-ADV"
+      ],
+      "canonical_target_names": [
+        "Programming & Computational Thinking",
+        "Advanced Computing"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 7,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-04",
+      "working_domain_name": "Software Engineering",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-SOFT"
+      ],
+      "canonical_target_names": [
+        "Software Engineering"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-05",
+      "working_domain_name": "Web and Application Engineering",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-WEB"
+      ],
+      "canonical_target_names": [
+        "Web & Application Development"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 7,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-06",
+      "working_domain_name": "Computer Systems",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-SYS"
+      ],
+      "canonical_target_names": [
+        "Computer Systems"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 6,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-07",
+      "working_domain_name": "Networks and Distributed Systems",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-SYS",
+        "ATH-DOM-ENG-ADV"
+      ],
+      "canonical_target_names": [
+        "Computer Systems",
+        "Advanced Computing"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 6,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-08",
+      "working_domain_name": "Data and Intelligent Systems",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-ADV"
+      ],
+      "canonical_target_names": [
+        "Advanced Computing"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 7,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ENG-09",
+      "working_domain_name": "Advanced Computer Science",
+      "working_discipline_id": "DIS-ENG",
+      "canonical_target_ids": [
+        "ATH-DOM-ENG-ALGO",
+        "ATH-DOM-ENG-ADV"
+      ],
+      "canonical_target_names": [
+        "Algorithms & Data Structures",
+        "Advanced Computing"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 6,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-01",
+      "working_domain_name": "Customer and Market Discovery",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-VALUE"
+      ],
+      "canonical_target_names": [
+        "Value Creation & Customer Discovery"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-02",
+      "working_domain_name": "Value Proposition and Offer Design",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-OFFER"
+      ],
+      "canonical_target_names": [
+        "Offers & Positioning"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-03",
+      "working_domain_name": "Sales and Negotiation",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-SALES"
+      ],
+      "canonical_target_names": [
+        "Sales & Negotiation"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-04",
+      "working_domain_name": "Marketing and Distribution",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-MKT"
+      ],
+      "canonical_target_names": [
+        "Marketing & Distribution"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-05",
+      "working_domain_name": "Business Operations",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-OPS"
+      ],
+      "canonical_target_names": [
+        "Operations & Systems"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-06",
+      "working_domain_name": "Finance and Unit Economics",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-OPS",
+        "ATH-DOM-BIZ-GROW"
+      ],
+      "canonical_target_names": [
+        "Operations & Systems",
+        "Venture Strategy & Growth"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-07",
+      "working_domain_name": "Product and Growth",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-GROW"
+      ],
+      "canonical_target_names": [
+        "Venture Strategy & Growth"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BIZ-08",
+      "working_domain_name": "Governance and Strategy",
+      "working_discipline_id": "DIS-BIZ",
+      "canonical_target_ids": [
+        "ATH-DOM-BIZ-GROW",
+        "ATH-DOM-BIZ-OPS"
+      ],
+      "canonical_target_names": [
+        "Venture Strategy & Growth",
+        "Operations & Systems"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-01",
+      "working_domain_name": "Electrical Safety and Measurement",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-MEAS"
+      ],
+      "canonical_target_names": [
+        "Electrical Fundamentals",
+        "Instrumentation & Measurement"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 4,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-02",
+      "working_domain_name": "Circuit Fundamentals",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_target_names": [
+        "Electrical Fundamentals",
+        "Components & Circuits"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-03",
+      "working_domain_name": "Components and Devices",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_target_names": [
+        "Components & Circuits"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-04",
+      "working_domain_name": "Prototyping and Fabrication",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-FAB"
+      ],
+      "canonical_target_names": [
+        "Fabrication & Mechatronics"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-05",
+      "working_domain_name": "Digital Electronics",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-DIG"
+      ],
+      "canonical_target_names": [
+        "Digital Electronics"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-06",
+      "working_domain_name": "Embedded Systems",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-EMB"
+      ],
+      "canonical_target_names": [
+        "Embedded Systems"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-07",
+      "working_domain_name": "Signals and Control",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-FUND",
+        "ATH-DOM-ELEC-FAB"
+      ],
+      "canonical_target_names": [
+        "Electrical Fundamentals",
+        "Fabrication & Mechatronics"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ELEC-08",
+      "working_domain_name": "Power and Product Engineering",
+      "working_discipline_id": "DIS-ELEC",
+      "canonical_target_ids": [
+        "ATH-DOM-ELEC-FAB",
+        "ATH-DOM-ELEC-COMP"
+      ],
+      "canonical_target_names": [
+        "Fabrication & Mechatronics",
+        "Components & Circuits"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-01",
+      "working_domain_name": "Personal Financial Foundations",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-PERSONAL"
+      ],
+      "canonical_target_names": [
+        "Personal Finance"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-02",
+      "working_domain_name": "Accounting and Business Finance",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-ACC",
+        "ATH-DOM-FIN-CORP"
+      ],
+      "canonical_target_names": [
+        "Accounting & Statements",
+        "Corporate Finance"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-03",
+      "working_domain_name": "Economics Foundations",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-ECON"
+      ],
+      "canonical_target_names": [
+        "Economic Principles"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-04",
+      "working_domain_name": "Financial Markets",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-MARKETS"
+      ],
+      "canonical_target_names": [
+        "Markets & Investing"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-05",
+      "working_domain_name": "Investment Analysis",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-MARKETS",
+        "ATH-DOM-FIN-RISK"
+      ],
+      "canonical_target_names": [
+        "Markets & Investing",
+        "Risk & Capital Allocation"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-06",
+      "working_domain_name": "Corporate Finance",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-CORP"
+      ],
+      "canonical_target_names": [
+        "Corporate Finance"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-07",
+      "working_domain_name": "Quantitative Finance and Research",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-RISK",
+        "ATH-DOM-FIN-MARKETS"
+      ],
+      "canonical_target_names": [
+        "Risk & Capital Allocation",
+        "Markets & Investing"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-FIN-08",
+      "working_domain_name": "Public and Development Finance",
+      "working_discipline_id": "DIS-FIN",
+      "canonical_target_ids": [
+        "ATH-DOM-FIN-ECON",
+        "ATH-DOM-FIN-CORP"
+      ],
+      "canonical_target_names": [
+        "Economic Principles",
+        "Corporate Finance"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-01",
+      "working_domain_name": "Anatomy and Biological Organization",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-ANAT"
+      ],
+      "canonical_target_names": [
+        "Human Anatomy"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-02",
+      "working_domain_name": "Human Physiology",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-PHYS"
+      ],
+      "canonical_target_names": [
+        "Human Physiology"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-03",
+      "working_domain_name": "Biomechanics",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-KINES"
+      ],
+      "canonical_target_names": [
+        "Kinesiology & Biomechanics"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-04",
+      "working_domain_name": "Nutrition Science",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-NUTRI"
+      ],
+      "canonical_target_names": [
+        "Nutrition Science"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-05",
+      "working_domain_name": "Sleep and Recovery Science",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-RECOV"
+      ],
+      "canonical_target_names": [
+        "Recovery & Health Science"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-06",
+      "working_domain_name": "Health Information Literacy",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-RECOV"
+      ],
+      "canonical_target_names": [
+        "Recovery & Health Science"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-07",
+      "working_domain_name": "Exercise Physiology",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-PHYS",
+        "ATH-DOM-BODY-KINES"
+      ],
+      "canonical_target_names": [
+        "Human Physiology",
+        "Kinesiology & Biomechanics"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-BODY-08",
+      "working_domain_name": "Research and Human Variation",
+      "working_discipline_id": "DIS-BODY",
+      "canonical_target_ids": [
+        "ATH-DOM-BODY-BIOCHEM",
+        "ATH-DOM-BODY-PHYS"
+      ],
+      "canonical_target_names": [
+        "Biochemistry & Cell Biology",
+        "Human Physiology"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-01",
+      "working_domain_name": "Cognitive Psychology",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-COG"
+      ],
+      "canonical_target_names": [
+        "Cognition & Learning Psychology"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-02",
+      "working_domain_name": "Learning and Behavior",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-BEHAV",
+        "ATH-DOM-PSY-COG"
+      ],
+      "canonical_target_names": [
+        "Behavior & Motivation",
+        "Cognition & Learning Psychology"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-03",
+      "working_domain_name": "Emotion and Wellbeing Science",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-EMOTION"
+      ],
+      "canonical_target_names": [
+        "Emotion & Self-Regulation"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-04",
+      "working_domain_name": "Social Psychology",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-SOCIAL"
+      ],
+      "canonical_target_names": [
+        "Social Psychology"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-05",
+      "working_domain_name": "Decision Science",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-DECIDE"
+      ],
+      "canonical_target_names": [
+        "Decision Science"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-06",
+      "working_domain_name": "Strategic Reasoning",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-STRAT"
+      ],
+      "canonical_target_names": [
+        "Strategic Reasoning & Game Theory"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-07",
+      "working_domain_name": "Systems and Causal Thinking",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-DECIDE",
+        "ATH-DOM-MATH-REASON"
+      ],
+      "canonical_target_names": [
+        "Decision Science",
+        "Logic & Mathematical Reasoning"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PSY-08",
+      "working_domain_name": "Psychological Research Literacy",
+      "working_discipline_id": "DIS-PSY",
+      "canonical_target_ids": [
+        "ATH-DOM-PSY-COG",
+        "ATH-DOM-RES-EVIDENCE"
+      ],
+      "canonical_target_names": [
+        "Cognition & Learning Psychology",
+        "Evidence & Verification"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-01",
+      "working_domain_name": "Visual Literacy",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-VISPER"
+      ],
+      "canonical_target_names": [
+        "Visual Perception & Principles"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-02",
+      "working_domain_name": "Color and Typography",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-TYPE"
+      ],
+      "canonical_target_names": [
+        "Typography & Layout"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-03",
+      "working_domain_name": "Graphic and Brand Design",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-BRAND",
+        "ATH-DOM-AEST-COMP"
+      ],
+      "canonical_target_names": [
+        "Identity & Brand Systems",
+        "Composition & Art Direction"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-04",
+      "working_domain_name": "Interface and Interaction Design",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-DIGDES"
+      ],
+      "canonical_target_names": [
+        "Digital Interface Design"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-05",
+      "working_domain_name": "Photography and Imaging",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-PHOTO"
+      ],
+      "canonical_target_names": [
+        "Photography & Imaging"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-06",
+      "working_domain_name": "Motion and Time-Based Design",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [],
+      "canonical_target_names": [],
+      "relationship_proposal": "unmapped_extension_candidate",
+      "decision_status": "proposed_not_approved",
+      "rationale": "No defensible one-to-one canonical domain exists in v0.3; retain as a proposed extension for explicit architecture review.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-07",
+      "working_domain_name": "Three-Dimensional Design",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-COMP"
+      ],
+      "canonical_target_names": [
+        "Composition & Art Direction"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-AEST-08",
+      "working_domain_name": "Design Systems and Direction",
+      "working_discipline_id": "DIS-AEST",
+      "canonical_target_ids": [
+        "ATH-DOM-AEST-COMP",
+        "ATH-DOM-AEST-BRAND"
+      ],
+      "canonical_target_names": [
+        "Composition & Art Direction",
+        "Identity & Brand Systems"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-01",
+      "working_domain_name": "Personal Information Management",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-KNOW"
+      ],
+      "canonical_target_names": [
+        "Knowledge & Information Management"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-02",
+      "working_domain_name": "Planning and Execution",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-PERSONAL",
+        "ATH-DOM-WORK-LEARN"
+      ],
+      "canonical_target_names": [
+        "Personal Workflow Design",
+        "Learning Systems & Metacognition"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-03",
+      "working_domain_name": "Digital Literacy",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-TYPING"
+      ],
+      "canonical_target_names": [
+        "Typing & Input Fluency"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "String-similarity candidate plus a second semantically plausible scope candidate; family-level mapping must determine child ownership. Neither candidate is approved.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-04",
+      "working_domain_name": "Developer Workflow",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-VERSION",
+        "ATH-DOM-WORK-CLI"
+      ],
+      "canonical_target_names": [
+        "Version Control",
+        "Command Line & Shell"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-05",
+      "working_domain_name": "Office and Data Tools",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-AUTO",
+        "ATH-DOM-WORK-KNOW"
+      ],
+      "canonical_target_names": [
+        "Automation & Scripting",
+        "Knowledge & Information Management"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-06",
+      "working_domain_name": "Automation and Integration",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-AUTO"
+      ],
+      "canonical_target_names": [
+        "Automation & Scripting"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-07",
+      "working_domain_name": "Knowledge Systems",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-KNOW"
+      ],
+      "canonical_target_names": [
+        "Knowledge & Information Management"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-WORK-08",
+      "working_domain_name": "Operational Design",
+      "working_discipline_id": "DIS-WORK",
+      "canonical_target_ids": [
+        "ATH-DOM-WORK-PERSONAL"
+      ],
+      "canonical_target_names": [
+        "Personal Workflow Design"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-01",
+      "working_domain_name": "Observation and Visual Fundamentals",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-OBS"
+      ],
+      "canonical_target_names": [
+        "Observation & Visual Literacy"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-02",
+      "working_domain_name": "Perspective and Space",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-SPACE"
+      ],
+      "canonical_target_names": [
+        "Perspective & Spatial Form"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-03",
+      "working_domain_name": "Anatomy and Figure Drawing",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-DRAW"
+      ],
+      "canonical_target_names": [
+        "Drawing Fundamentals"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-04",
+      "working_domain_name": "Color and Painting",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-COLOR",
+        "ATH-DOM-ART-LIGHT"
+      ],
+      "canonical_target_names": [
+        "Color Theory & Application",
+        "Light, Value & Rendering"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-05",
+      "working_domain_name": "Composition and Storytelling",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-ILLUS",
+        "ATH-DOM-AEST-COMP"
+      ],
+      "canonical_target_names": [
+        "Illustration & Visual Storytelling",
+        "Composition & Art Direction"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-06",
+      "working_domain_name": "Illustration and Concept Art",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-ILLUS"
+      ],
+      "canonical_target_names": [
+        "Illustration & Visual Storytelling"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-07",
+      "working_domain_name": "Digital Art Production",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-LIGHT",
+        "ATH-DOM-ART-ILLUS"
+      ],
+      "canonical_target_names": [
+        "Light, Value & Rendering",
+        "Illustration & Visual Storytelling"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ART-08",
+      "working_domain_name": "Personal Practice and Critique",
+      "working_discipline_id": "DIS-ART",
+      "canonical_target_ids": [
+        "ATH-DOM-ART-OBS"
+      ],
+      "canonical_target_names": [
+        "Observation & Visual Literacy"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-01",
+      "working_domain_name": "Movement Literacy",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-FITBASE"
+      ],
+      "canonical_target_names": [
+        "Physical Literacy & Training Principles"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-02",
+      "working_domain_name": "Strength and Power",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-STRENGTH"
+      ],
+      "canonical_target_names": [
+        "Strength & Power"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-03",
+      "working_domain_name": "Aerobic and Anaerobic Conditioning",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-ENDURE"
+      ],
+      "canonical_target_names": [
+        "Aerobic & Anaerobic Conditioning"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-04",
+      "working_domain_name": "Speed and Agility",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-SPEED"
+      ],
+      "canonical_target_names": [
+        "Speed, Agility & Change of Direction"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-05",
+      "working_domain_name": "Sport-Specific Skill",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-SKILL"
+      ],
+      "canonical_target_names": [
+        "Coordination & Sport Skill"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-06",
+      "working_domain_name": "Training Design",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-FITBASE",
+        "ATH-DOM-ATH-RECOVERY"
+      ],
+      "canonical_target_names": [
+        "Physical Literacy & Training Principles",
+        "Performance Recovery"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-07",
+      "working_domain_name": "Performance Psychology",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-RECOVERY",
+        "ATH-DOM-PSY-BEHAV"
+      ],
+      "canonical_target_names": [
+        "Performance Recovery",
+        "Behavior & Motivation"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-ATH-08",
+      "working_domain_name": "Coaching and Performance Analysis",
+      "working_discipline_id": "DIS-ATH",
+      "canonical_target_ids": [
+        "ATH-DOM-ATH-SKILL",
+        "ATH-DOM-ATH-RECOVERY"
+      ],
+      "canonical_target_names": [
+        "Coordination & Sport Skill",
+        "Performance Recovery"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-01",
+      "working_domain_name": "Vocal Health and Mechanics",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-VOICE"
+      ],
+      "canonical_target_names": [
+        "Vocal Technique & Voice Care"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-02",
+      "working_domain_name": "Pitch and Musicality",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-SING"
+      ],
+      "canonical_target_names": [
+        "Singing & Pitch"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-03",
+      "working_domain_name": "Voice Development",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-VOICE",
+        "ATH-DOM-PERF-SING"
+      ],
+      "canonical_target_names": [
+        "Vocal Technique & Voice Care",
+        "Singing & Pitch"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-04",
+      "working_domain_name": "Listening and Musicianship",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-SING"
+      ],
+      "canonical_target_names": [
+        "Singing & Pitch"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-05",
+      "working_domain_name": "Performance Craft",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-SPEAK",
+        "ATH-DOM-PERF-MOVE",
+        "ATH-DOM-PERF-PRESENCE"
+      ],
+      "canonical_target_names": [
+        "Spoken Performance",
+        "Movement & Physical Expression",
+        "Stage & Camera Presence"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "String-similarity candidate plus a second semantically plausible scope candidate; family-level mapping must determine child ownership. Neither candidate is approved.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-06",
+      "working_domain_name": "Recording and Production",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-VOICE"
+      ],
+      "canonical_target_names": [
+        "Vocal Technique & Voice Care"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-07",
+      "working_domain_name": "Speech and Diction",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-SPEAK"
+      ],
+      "canonical_target_names": [
+        "Spoken Performance"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-PERF-08",
+      "working_domain_name": "Performance Research and Repertoire",
+      "working_discipline_id": "DIS-PERF",
+      "canonical_target_ids": [
+        "ATH-DOM-PERF-SING",
+        "ATH-DOM-PERF-IMPROV"
+      ],
+      "canonical_target_names": [
+        "Singing & Pitch",
+        "Improvisation & Creative Response"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-01",
+      "working_domain_name": "Numeracy and Arithmetic",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-NUM"
+      ],
+      "canonical_target_names": [
+        "Number & Arithmetic Foundations"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-02",
+      "working_domain_name": "Pre-Algebra and Algebra",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-ALG"
+      ],
+      "canonical_target_names": [
+        "Algebra & Symbolic Reasoning"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-03",
+      "working_domain_name": "Geometry and Measurement",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-GEO"
+      ],
+      "canonical_target_names": [
+        "Geometry & Measurement"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-04",
+      "working_domain_name": "Functions and Modeling",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-ADV",
+        "ATH-DOM-MATH-SCI"
+      ],
+      "canonical_target_names": [
+        "Advanced Mathematics",
+        "Scientific Method & Modelling"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-05",
+      "working_domain_name": "Probability and Statistics",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-DATA"
+      ],
+      "canonical_target_names": [
+        "Statistics & Probability"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-06",
+      "working_domain_name": "Trigonometry and Vectors",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-ADV",
+        "ATH-DOM-MATH-PHYS"
+      ],
+      "canonical_target_names": [
+        "Advanced Mathematics",
+        "Physics Foundations & Quantitative Modelling"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-07",
+      "working_domain_name": "Calculus and Analysis",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-ADV"
+      ],
+      "canonical_target_names": [
+        "Advanced Mathematics"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-MATH-08",
+      "working_domain_name": "Advanced Mathematics",
+      "working_discipline_id": "DIS-MATH",
+      "canonical_target_ids": [
+        "ATH-DOM-MATH-ADV",
+        "ATH-DOM-MATH-REASON"
+      ],
+      "canonical_target_names": [
+        "Advanced Mathematics",
+        "Logic & Mathematical Reasoning"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-01",
+      "working_domain_name": "Digital Safety and Privacy",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-SAFETY"
+      ],
+      "canonical_target_names": [
+        "Personal Digital Security"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-02",
+      "working_domain_name": "Operating Systems and Networks",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-OS",
+        "ATH-DOM-CYBER-NETWORK"
+      ],
+      "canonical_target_names": [
+        "Operating Systems & Linux",
+        "Networking Fundamentals"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-03",
+      "working_domain_name": "Secure Software Foundations",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-WEBSEC"
+      ],
+      "canonical_target_names": [
+        "Web & Application Security"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-04",
+      "working_domain_name": "Defensive Security Operations",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-DEFENSE"
+      ],
+      "canonical_target_names": [
+        "Defensive Security"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-05",
+      "working_domain_name": "Cryptography and Identity",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-SAFETY",
+        "ATH-DOM-CYBER-WEBSEC"
+      ],
+      "canonical_target_names": [
+        "Personal Digital Security",
+        "Web & Application Security"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-06",
+      "working_domain_name": "Threat Modeling and Risk",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-DEFENSE",
+        "ATH-DOM-CYBER-SAFETY"
+      ],
+      "canonical_target_names": [
+        "Defensive Security",
+        "Personal Digital Security"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-07",
+      "working_domain_name": "Authorized Testing and Research",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-TEST"
+      ],
+      "canonical_target_names": [
+        "Authorized Security Testing"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-CYBER-08",
+      "working_domain_name": "Advanced Infrastructure Security",
+      "working_discipline_id": "DIS-CYBER",
+      "canonical_target_ids": [
+        "ATH-DOM-CYBER-DEFENSE",
+        "ATH-DOM-CYBER-NETWORK"
+      ],
+      "canonical_target_names": [
+        "Defensive Security",
+        "Networking Fundamentals"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-01",
+      "working_domain_name": "Language Foundations",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-LING",
+        "ATH-DOM-LANG-VOCAB"
+      ],
+      "canonical_target_names": [
+        "Linguistic Foundations",
+        "Vocabulary & Lexical Growth"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "String-similarity candidate plus a second semantically plausible scope candidate; family-level mapping must determine child ownership. Neither candidate is approved.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-02",
+      "working_domain_name": "English Mastery",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_target_names": [
+        "Reading & Interpretation",
+        "Writing Development",
+        "Grammar & Usage"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-03",
+      "working_domain_name": "Bangla Literacy and Technical Language",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-WRITE",
+        "ATH-DOM-LANG-GRAM"
+      ],
+      "canonical_target_names": [
+        "Writing Development",
+        "Grammar & Usage"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-04",
+      "working_domain_name": "Additional Language Tracks",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-ACQUIRE"
+      ],
+      "canonical_target_names": [
+        "Additional Language Acquisition"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-05",
+      "working_domain_name": "Linguistics",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-LING"
+      ],
+      "canonical_target_names": [
+        "Linguistic Foundations"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-06",
+      "working_domain_name": "Multilingual Communication",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-ACQUIRE",
+        "ATH-DOM-LANG-WRITE"
+      ],
+      "canonical_target_names": [
+        "Additional Language Acquisition",
+        "Writing Development"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-07",
+      "working_domain_name": "Advanced Literacy",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-READ",
+        "ATH-DOM-LANG-WRITE"
+      ],
+      "canonical_target_names": [
+        "Reading & Interpretation",
+        "Writing Development"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LANG-08",
+      "working_domain_name": "Language Assessment and Practice",
+      "working_discipline_id": "DIS-LANG",
+      "canonical_target_ids": [
+        "ATH-DOM-LANG-ACQUIRE"
+      ],
+      "canonical_target_names": [
+        "Additional Language Acquisition"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-01",
+      "working_domain_name": "Question and Search Design",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-INFO"
+      ],
+      "canonical_target_names": [
+        "Question Formation & Research Design",
+        "Information Literacy & OSINT"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "String-similarity candidate plus a second semantically plausible scope candidate; family-level mapping must determine child ownership. Neither candidate is approved.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-02",
+      "working_domain_name": "Source Evaluation",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-SOURCES"
+      ],
+      "canonical_target_names": [
+        "Source Evaluation"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-03",
+      "working_domain_name": "Research Methods",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-EVIDENCE"
+      ],
+      "canonical_target_names": [
+        "Question Formation & Research Design",
+        "Evidence & Verification"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-04",
+      "working_domain_name": "Data and Analysis",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-SYNTH",
+        "ATH-DOM-RES-EVIDENCE"
+      ],
+      "canonical_target_names": [
+        "Synthesis & Analysis",
+        "Evidence & Verification"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-05",
+      "working_domain_name": "Synthesis and Writing",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-SYNTH",
+        "ATH-DOM-RES-DOC"
+      ],
+      "canonical_target_names": [
+        "Synthesis & Analysis",
+        "Documentation & Citation"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-06",
+      "working_domain_name": "Reproducibility and Ethics",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-EVIDENCE",
+        "ATH-DOM-RES-DOC"
+      ],
+      "canonical_target_names": [
+        "Evidence & Verification",
+        "Documentation & Citation"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-07",
+      "working_domain_name": "Advanced Evidence Review",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-EVIDENCE",
+        "ATH-DOM-RES-SYNTH"
+      ],
+      "canonical_target_names": [
+        "Evidence & Verification",
+        "Synthesis & Analysis"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-RES-08",
+      "working_domain_name": "Independent Research Projects",
+      "working_discipline_id": "DIS-RES",
+      "canonical_target_ids": [
+        "ATH-DOM-RES-QUEST",
+        "ATH-DOM-RES-SYNTH"
+      ],
+      "canonical_target_names": [
+        "Question Formation & Research Design",
+        "Synthesis & Analysis"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-01",
+      "working_domain_name": "Personal Organization",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-HOME"
+      ],
+      "canonical_target_names": [
+        "Home & Daily Living"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-02",
+      "working_domain_name": "Food and Kitchen Skills",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-FOOD"
+      ],
+      "canonical_target_names": [
+        "Food Preparation & Cooking"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-03",
+      "working_domain_name": "Tools and Repairs",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-REPAIR"
+      ],
+      "canonical_target_names": [
+        "Tools & Basic Repair"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-04",
+      "working_domain_name": "Navigation and Travel",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-NAV"
+      ],
+      "canonical_target_names": [
+        "Navigation & Travel Skills"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-05",
+      "working_domain_name": "Money and Consumer Skills",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-MONEY"
+      ],
+      "canonical_target_names": [
+        "Everyday Administration"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-06",
+      "working_domain_name": "Safety and First Aid Literacy",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-SAFETY"
+      ],
+      "canonical_target_names": [
+        "Personal & Emergency Safety"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-07",
+      "working_domain_name": "Digital and Administrative Independence",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-HOME",
+        "ATH-DOM-INDEP-MONEY"
+      ],
+      "canonical_target_names": [
+        "Home & Daily Living",
+        "Everyday Administration"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-INDEP-08",
+      "working_domain_name": "Problem Solving and Self-Reliance",
+      "working_discipline_id": "DIS-INDEP",
+      "canonical_target_ids": [
+        "ATH-DOM-INDEP-HOME",
+        "ATH-DOM-INDEP-SAFETY"
+      ],
+      "canonical_target_names": [
+        "Home & Daily Living",
+        "Personal & Emergency Safety"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-01",
+      "working_domain_name": "Personal Leadership",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-SELF"
+      ],
+      "canonical_target_names": [
+        "Self-Leadership"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-02",
+      "working_domain_name": "Teamwork and Collaboration",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-TEAM"
+      ],
+      "canonical_target_names": [
+        "Team Dynamics"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-03",
+      "working_domain_name": "Communication and Feedback",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-FEEDBACK",
+        "ATH-DOM-LEAD-CONFLICT"
+      ],
+      "canonical_target_names": [
+        "Feedback & Development",
+        "Conflict & Difficult Conversations"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-04",
+      "working_domain_name": "Project and Operations Management",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-PLAN",
+        "ATH-DOM-LEAD-ORG"
+      ],
+      "canonical_target_names": [
+        "Planning & Coordination",
+        "Organisational Systems"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-05",
+      "working_domain_name": "People Development",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-FEEDBACK"
+      ],
+      "canonical_target_names": [
+        "Feedback & Development"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-06",
+      "working_domain_name": "Strategy and Decision Making",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-ORG",
+        "ATH-DOM-LEAD-PLAN"
+      ],
+      "canonical_target_names": [
+        "Organisational Systems",
+        "Planning & Coordination"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-07",
+      "working_domain_name": "Organization and Governance",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-ORG"
+      ],
+      "canonical_target_names": [
+        "Organisational Systems"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-LEAD-08",
+      "working_domain_name": "Advanced Leadership Practice",
+      "working_discipline_id": "DIS-LEAD",
+      "canonical_target_ids": [
+        "ATH-DOM-LEAD-TEAM",
+        "ATH-DOM-LEAD-ORG"
+      ],
+      "canonical_target_names": [
+        "Team Dynamics",
+        "Organisational Systems"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-01",
+      "working_domain_name": "Foundational Communication",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_target_names": [
+        "Listening & Dialogue",
+        "Explanation & Teaching"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-02",
+      "working_domain_name": "Writing and Explanation",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-WRITE",
+        "ATH-DOM-COMM-EXPLAIN"
+      ],
+      "canonical_target_names": [
+        "Practical & Professional Writing",
+        "Explanation & Teaching"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-03",
+      "working_domain_name": "Argument and Critical Discussion",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-ARGUE"
+      ],
+      "canonical_target_names": [
+        "Argumentation & Debate"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-04",
+      "working_domain_name": "Persuasion and Rhetoric",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-PERSUADE"
+      ],
+      "canonical_target_names": [
+        "Persuasion & Negotiation Communication"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-05",
+      "working_domain_name": "Speaking and Presentation",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-SPEAK"
+      ],
+      "canonical_target_names": [
+        "Public Speaking & Presentation"
+      ],
+      "relationship_proposal": "candidate_equivalent_or_narrower_cluster",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Conceptual alignment is plausible, but this is not an approved merge and must not rewrite canonical identity.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-06",
+      "working_domain_name": "Negotiation and Conflict",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-PERSUADE",
+        "ATH-DOM-LEAD-CONFLICT"
+      ],
+      "canonical_target_names": [
+        "Persuasion & Negotiation Communication",
+        "Conflict & Difficult Conversations"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-07",
+      "working_domain_name": "Digital and Cross-Cultural Communication",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-LISTEN",
+        "ATH-DOM-COMM-WRITE"
+      ],
+      "canonical_target_names": [
+        "Listening & Dialogue",
+        "Practical & Professional Writing"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    },
+    {
+      "working_domain_id": "DOM-COMM-08",
+      "working_domain_name": "Advanced Communication Strategy",
+      "working_discipline_id": "DIS-COMM",
+      "canonical_target_ids": [
+        "ATH-DOM-COMM-EXPLAIN",
+        "ATH-DOM-COMM-PERSUADE"
+      ],
+      "canonical_target_names": [
+        "Explanation & Teaching",
+        "Persuasion & Negotiation Communication"
+      ],
+      "relationship_proposal": "cross_domain_or_composite_mapping",
+      "decision_status": "proposed_not_approved",
+      "rationale": "Working cluster spans multiple canonical scopes; preserve the working cluster as an authoring grouping and link individual skill families to the appropriate canonical nodes during detailed reconciliation.",
+      "working_skill_family_count": 5,
+      "family_level_reconciliation": "pending_individual_skill_family_mapping"
+    }
+  ],
+  "governance": {
+    "canonical_registry_mutated": false,
+    "working_registry_mutated": false,
+    "stable_ids_minted": false,
+    "approval_required": true,
+    "rule": "No canonical merge, split, deprecation, or ID reassignment occurs until each proposal is semantically reviewed."
+  },
+  "notes": [
+    "Four previously uncovered canonical domains now have plausible working-cluster candidates.",
+    "ATH-DOM-MATH-CHEM remains without a working-domain counterpart and is a genuine curriculum architecture gap; do not force-map it to generic advanced mathematics."
+  ]
+}

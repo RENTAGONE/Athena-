@@ -1,0 +1,1192 @@
+{
+  "registry": "ATHENA_RESOURCE_SOURCE_AUDIT",
+  "version": "1.0",
+  "access_date": "2026-11-19",
+  "records": [
+    {
+      "resource_id": "ATH-RES-MATH-KHAN-MATH",
+      "title": "Math learning pathways",
+      "publisher": "Khan Academy",
+      "url": "https://www.khanacademy.org/math",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "search_result_page_identity",
+      "claim_scope": [
+        "Structured practice across arithmetic, algebra, geometry, statistics and higher mathematics; course pathways include grade-level content."
+      ],
+      "limitations": [
+        "Curriculum alignment is largely US-oriented; map concepts to the learner's local syllabus rather than assuming exact equivalence."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-MATH-OPENSTAX-K12-MATH",
+      "title": "K–12 Math textbooks and curriculum resources",
+      "publisher": "OpenStax / Rice University",
+      "url": "https://openstax.org/k12/math",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free online mathematics textbooks including algebra, precalculus, calculus and statistics; OpenStax describes the books as openly licensed."
+      ],
+      "limitations": [
+        "Some titles are high-school/college level; select by prerequisite readiness. Verify individual title and edition before use."
+      ],
+      "reuse_note": "OpenStax page identifies open licensing; individual textbook license is CC BY 4.0 where stated on its title page. Preserve attribution and verify the specific title license.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ENG-PYTHON-TUTORIAL",
+      "title": "The Python Tutorial",
+      "publisher": "Python Documentation",
+      "url": "https://docs.python.org/3/tutorial/",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Official Python tutorial covers interpreter use, data types, control flow and core language features."
+      ],
+      "limitations": [
+        "Explicitly assumes basic programming knowledge; it is not the gentlest first exposure for a learner new to programming. Python version shown by the site may change."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [
+        "Official tutorial says it is for people new to Python, not beginners new to programming; pair with true beginner instruction."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-ENG-MDN-WEB-DEV",
+      "title": "Learn web development",
+      "publisher": "Mozilla / MDN",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Structured beginner-to-comfortable pathway for front-end development, including HTML, CSS, JavaScript, accessibility and challenges."
+      ],
+      "limitations": [
+        "Focused on front-end web development, not a complete computer science or software engineering curriculum; MDN states it is not designed to take beginners to expert level."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ELEC-AAC-TEXTBOOK",
+      "title": "Lessons in Electric Circuits",
+      "publisher": "All About Circuits",
+      "url": "https://www.allaboutcircuits.com/textbook/",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free multi-volume electrical/electronics textbook covering DC, AC, semiconductors, digital circuits and practical measurement topics."
+      ],
+      "limitations": [
+        "Theory and projects do not authorise unsupervised mains work, battery short-circuit experiments or hazardous construction; beginner practice must remain low-voltage and supervised."
+      ],
+      "reuse_note": "Source page states Design Science License; verify exact license terms before adapting or redistributing any material.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ELEC-ESF-DIY-SAFETY",
+      "title": "Electrical safety advice for DIY-ers",
+      "publisher": "Electrical Safety First",
+      "url": "https://www.electricalsafetyfirst.org.uk/safety-advice/home-and-people/diy-ers/",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Safety guidance warns against DIY electrical repairs and recommends competent professionals for electrical work."
+      ],
+      "limitations": [
+        "UK organisation and legal references are jurisdiction-specific; general hazard principles transfer, but local Bangladesh codes and emergency contacts must be checked."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-OPENLEARN-SWOT",
+      "title": "Business communication: writing a SWOT analysis",
+      "publisher": "OpenLearn / The Open University",
+      "url": "https://www.open.edu/openlearn/money-business/business-communication-writing-swot-analysis/content-section-0",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free introductory course teaches SWOT analysis, case-study selection, concise notes, report structure and recommendations."
+      ],
+      "limitations": [
+        "Case study uses a UK company; SWOT is an organising framework, not a substitute for customer research or validated market evidence."
+      ],
+      "reuse_note": "OpenLearn page identifies a Creative Commons course licence; third-party materials are separately licensed. Check acknowledgements and licence conditions before reuse.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-USAGOV-START-BUSINESS",
+      "title": "How to start and fund your own business",
+      "publisher": "USA.gov",
+      "url": "https://www.usa.gov/start-business",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Government guide covers planning, launching, managing and growing a small business."
+      ],
+      "limitations": [
+        "US legal, tax, funding and support-programme information does not apply directly in Bangladesh; use for general concepts only and verify local rules independently."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [
+        "US-specific business registration/funding details; use for general concepts only, never Bangladesh legal procedure."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-OPENLEARN-COURSES",
+      "title": "Free online Business & Finance courses",
+      "publisher": "OpenLearn / The Open University",
+      "url": "https://www.open.edu/openlearn/money-management/free-courses",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "OpenLearn catalogue lists free business and finance courses, including business communication, leadership and entrepreneurship."
+      ],
+      "limitations": [
+        "This is a course catalogue rather than a single course; verify the selected course's current scope, level, availability and licence before assigning it."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-FIN-CFPB-MONEY-GROW",
+      "title": "Money as You Grow",
+      "publisher": "Consumer Financial Protection Bureau",
+      "url": "https://www.consumerfinance.gov/consumer-tools/money-as-you-grow/",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Age-aware activities support children's and teenagers' money skills, habits and decision-making, including earning, saving, planning, shopping and protecting money."
+      ],
+      "limitations": [
+        "US government source; use for general financial capability, not Bangladesh banking, tax, investment or legal advice."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-FIN-INVESTOR-GOV-INTRO",
+      "title": "Introduction to Investing",
+      "publisher": "Investor.gov",
+      "url": "https://www.investor.gov/introduction-investing",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Explains investing, compounding, risk, asset allocation, diversification, time horizon and fraud awareness."
+      ],
+      "limitations": [
+        "US regulatory context and examples; not investment advice and not a guide to Bangladesh securities law, DSE procedures or specific products."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [
+        "US securities-regulator context; use for generic market concepts only, not Bangladesh broker/account/regulatory instructions."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-OPENSTAX-ANATOMY",
+      "title": "Anatomy and Physiology",
+      "publisher": "OpenStax / Rice University",
+      "url": "https://openstax.org/subjects/anatomy-and-physiology",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened_stale_retired_label",
+      "claim_scope": [
+        "Free two-semester anatomy and physiology textbook organised by body systems, with diagrams and linked learning materials."
+      ],
+      "limitations": [
+        "College-level scope; not a diagnostic or treatment manual. Clinical interpretation belongs to qualified health professionals."
+      ],
+      "reuse_note": "OpenStax identifies CC BY 4.0 for the listed textbook; preserve attribution and verify title-specific licence.",
+      "audit_flags": [
+        "Page currently labels the listed textbook entry retired; replace or identify a current edition before assigning."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-WHO-HEALTHY-DIET",
+      "title": "Healthy diet",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "WHO fact sheet summarises population-level healthy-diet principles and food-pattern considerations."
+      ],
+      "limitations": [
+        "Population guidance is not an individual prescription; needs vary with age, health, culture, access and clinical circumstances. Avoid rigid calorie or weight targets without qualified support."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-PSY-OPENSTAX-PSYCH",
+      "title": "Psychology 2e",
+      "publisher": "OpenStax / Rice University",
+      "url": "https://openstax.org/books/psychology-2e/pages/preface",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Introductory textbook covers psychological research, cognition, learning, memory, motivation, social psychology, stress and health."
+      ],
+      "limitations": [
+        "Introductory textbook, not a diagnostic tool or substitute for mental-health care; research findings require context and replication assessment."
+      ],
+      "reuse_note": "OpenStax textbook uses an open licence; confirm the specific edition's licence notice before adaptation.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-RES-UNESCO-MIL",
+      "title": "Media and Information Literacy Curriculum",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/mil4teachers/en/curriculum",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Comprehensive curriculum modules cover information cycles, research, intellectual property, misinformation, privacy, advertising, AI and digital media."
+      ],
+      "limitations": [
+        "Designed as a broad educator curriculum; adapt activities to learner level and local context. It does not replace discipline-specific research methods training."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-COMM-PURDUE-OWL",
+      "title": "Purdue Online Writing Lab (OWL)",
+      "publisher": "Purdue University",
+      "url": "https://owl.purdue.edu/owl/general_writing/index.html",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened_copyright_restrictions_visible",
+      "claim_scope": [
+        "Writing reference covers grammar, mechanics, academic writing, visual rhetoric, citation and communication genres."
+      ],
+      "limitations": [
+        "Many examples reflect US academic conventions and citation styles; adapt to assignment requirements and local language context."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [
+        "Purdue page displays restrictive copyright/redistribution notice; link to it, do not reproduce or adapt its text without permission."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-LANG-BRITISH-COUNCIL-LISTENING",
+      "title": "Practise English listening skills",
+      "publisher": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/listening",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free listening practice is organised by CEFR levels A1–C1 with recordings and interactive exercises."
+      ],
+      "limitations": [
+        "English-specific; CEFR levels are broad descriptors, not a complete language assessment. Select level by actual performance rather than assumed grade."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-LANG-GOETHE-PRACTICE",
+      "title": "Practise German for free",
+      "publisher": "Goethe-Institut",
+      "url": "https://www.goethe.de/en/spr/ueb.html",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free German learning media include exercises, videos, podcasts, games and community practice across levels."
+      ],
+      "limitations": [
+        "German-specific; do not generalise its sequence directly to other languages. Confirm access and level suitability for each activity."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-WORK-PRO-GIT",
+      "title": "Pro Git",
+      "publisher": "Git SCM / Apress",
+      "url": "https://git-scm.com/book/en/v2",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free online book explains version control, Git concepts, command-line use and collaborative workflows."
+      ],
+      "limitations": [
+        "Second edition dates to 2014; core Git concepts remain useful, but current hosting-platform interfaces and security practices may differ."
+      ],
+      "reuse_note": "The book page states CC BY-NC-SA 3.0; attribution, non-commercial and share-alike conditions apply.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-NIST-800-50R1",
+      "title": "Building a Cybersecurity and Privacy Learning Program (SP 800-50 Rev. 1)",
+      "publisher": "National Institute of Standards and Technology",
+      "url": "https://csrc.nist.gov/pubs/sp/800/50/r1/final",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "NIST publication describes a lifecycle approach to cybersecurity and privacy learning programmes, including evaluation and improvement."
+      ],
+      "limitations": [
+        "Written for organisational programme design, not a beginner hands-on security course; US federal context and terminology may require adaptation."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-OWASP-TOP10-2025",
+      "title": "OWASP Top 10:2025",
+      "publisher": "OWASP",
+      "url": "https://owasp.org/projects/top-ten",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "inherited_message18_metadata_check",
+      "claim_scope": [
+        "OWASP identifies the 2025 release as the current Top 10 awareness document for major web application security risks."
+      ],
+      "limitations": [
+        "Awareness document, not a complete security standard, secure coding curriculum or penetration-testing permission. Practice only in authorised labs and systems."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ATH-CDC-YOUTH-ACTIVITY",
+      "title": "Child Activity: An Overview",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/physical-activity-basics/guidelines/children.html",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "CDC summarises physical activity guidance for children and adolescents aged 6–17, including aerobic, muscle-strengthening and bone-strengthening activity."
+      ],
+      "limitations": [
+        "US public-health guidance; not an individual training prescription. Adjust for health, disability, climate, recovery and qualified coaching advice."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ATH-FIFA-YOUTH-ATHLETICISM",
+      "title": "Athleticism for young players – Building more from less",
+      "publisher": "FIFA Training Centre",
+      "url": "https://www.fifatrainingcentre.com/en/practice/training-perspectives/athleticism-for-young-players/athleticism-for-young-players-building-more-from-less.php",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "FIFA Training Centre discusses youth football athletic development and argues that physical work should complement technical-tactical learning rather than displace it."
+      ],
+      "limitations": [
+        "One expert article, not a complete periodised training programme or medical clearance. Individual workload requires age-appropriate coaching and recovery."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-PERF-BERKLEE-VOICE-101",
+      "title": "Voice Technique 101",
+      "publisher": "Berklee Online",
+      "url": "https://online.berklee.edu/courses/voice-technique-101/",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened_paid_course",
+      "claim_scope": [
+        "Course description covers breath control, diction, warm-ups, vocal care, pitch, expression, performance anxiety and stage movement."
+      ],
+      "limitations": [
+        "Paid course; resource metadata is useful for scope but access is not free. Do not force range, volume or prolonged practice; pain/hoarseness requires rest and appropriate professional advice."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [
+        "Course is paid; do not imply free access or require purchase."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-AEST-ADOBE-TYPOGRAPHY",
+      "title": "12 Typography tips for any design project",
+      "publisher": "Adobe",
+      "url": "https://www.adobe.com/express/learn/blog/typography-tips",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Practical article discusses typeface selection, hierarchy, spacing, grids and legibility in design."
+      ],
+      "limitations": [
+        "Commercial publisher tutorial; useful as an introductory heuristic, not a universal design standard or substitute for accessibility testing."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ART-MET-HEILBRUNN",
+      "title": "Heilbrunn Timeline of Art History",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/timeline-of-art-history",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Expert-authored essays and chronologies explore global art history by theme, geography and period."
+      ],
+      "limitations": [
+        "Collection and institutional perspective; not a practical drawing course. Supplement with observational practice and sources representing regions and traditions beyond the Met collection."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-USDA-FOOD-SAFETY",
+      "title": "How do I keep my foods safe to eat?",
+      "publisher": "U.S. Department of Agriculture",
+      "url": "https://ask.fsis.usda.gov/article/How-do-I-keep-my-foods-safe-to-eat",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "inherited_message18_metadata_check",
+      "claim_scope": [
+        "USDA FSIS explains clean, separate, cook and chill principles for reducing foodborne illness risk."
+      ],
+      "limitations": [
+        "US temperatures and refrigeration thresholds are specific to the source's guidance; food storage and local conditions vary. Follow local public-health guidance and product labels."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-ESF-HOME-SAFETY",
+      "title": "Electrical safety advice for the home",
+      "publisher": "Electrical Safety First",
+      "url": "https://www.electricalsafetyfirst.org.uk/safety-advice/home-and-people/",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Home safety guidance highlights damaged cables, overheating, overloaded sockets and when to contact a competent electrician."
+      ],
+      "limitations": [
+        "UK guidance and terminology; not a substitute for Bangladesh electrical codes or a qualified local electrician. Learner should observe/report hazards, not repair wiring."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-LEAD-OPENLEARN-LEADERSHIP",
+      "title": "Leadership challenges in turbulent times",
+      "publisher": "OpenLearn / The Open University",
+      "url": "https://www.open.edu/openlearn/money-business/leadership-challenges-turbulent-times/content-section-0",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free course covers leadership challenges, prioritisation, inclusion, collaboration and win-win outcomes."
+      ],
+      "limitations": [
+        "Intermediate-level course with organisational case studies; adapt concepts to small teams and avoid treating one leadership model as universally correct."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-COMM-OPENLEARN-SWOT-COMMS",
+      "title": "Business communication: writing a SWOT analysis",
+      "publisher": "OpenLearn / The Open University",
+      "url": "https://www.open.edu/openlearn/money-business/business-communication-writing-swot-analysis/content-section-0",
+      "source_class": "instructional",
+      "language": "en",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Course provides structured practice in selecting information, concise notes, formal report organisation and recommendations."
+      ],
+      "limitations": [
+        "Business-report context and UK case study; not a comprehensive interpersonal communication or negotiation course."
+      ],
+      "reuse_note": "Publisher terms apply; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ENG-HARVARD-CS50X-2026",
+      "title": "CS50x — Introduction to Computer Science (2026)",
+      "publisher": "Harvard University CS50",
+      "url": "https://cs50.harvard.edu/x/",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "inherited_message18_metadata_check",
+      "claim_scope": [
+        "Problem solving with and without code; algorithms; data structures; C and Python; SQL; web development; security; final project."
+      ],
+      "limitations": [
+        "Demanding course; not all modules align to the baseline sequence; learners should select relevant weeks and use age-appropriate support.",
+        "Free OpenCourseWare access does not imply that all optional certificates or services are free."
+      ],
+      "reuse_note": "OpenCourseWare course material; follow the current site terms and license. No redistribution permission is inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BIZ-OPENSTAX-BUSINESS-TEXTS",
+      "title": "OpenStax Free Business Textbooks Catalogue",
+      "publisher": "OpenStax",
+      "url": "https://openstax.org/new-subjects/business-books",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "inherited_message18_metadata_check",
+      "claim_scope": [
+        "Free online business textbooks including Business Ethics, Entrepreneurship, Introduction to Business, Business Law, Introductory Business Statistics and Organizational Behavior."
+      ],
+      "limitations": [
+        "Catalogue-level resource; each book has its own scope and licensing terms.",
+        "Business Law I Essentials focuses on the US legal system and must not be used as Bangladesh legal advice."
+      ],
+      "reuse_note": "Open access catalogue; verify the current individual book license before reproducing material.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-CISCO-NETACAD",
+      "title": "Cisco Networking Academy — Free Self-Paced Courses",
+      "publisher": "Cisco",
+      "url": "https://www.cisco.com/site/us/en/learn/training-certifications/training/netacad/index.html",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "inherited_message18_metadata_check",
+      "claim_scope": [
+        "Cisco describes free self-paced courses including Introduction to Cybersecurity, Networking Basics and Python Essentials."
+      ],
+      "limitations": [
+        "Some courses require account registration and have different prerequisites/durations.",
+        "Ethical Hacker material is not permission to test systems; use authorized labs only."
+      ],
+      "reuse_note": "Free course catalogue; account requirements and terms may vary by course.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-CISCO-LINUX-ESSENTIALS",
+      "title": "Cisco Networking Academy — Linux Essentials",
+      "publisher": "Cisco Networking Academy / NDG",
+      "url": "https://www.netacad.com/courses/linux-essentials/operacijskega%20Sistema?courseLang=en-US",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened_javascript_shell",
+      "claim_scope": [
+        "Self-paced Linux course with command-line and virtual-machine practice; listing states no prior knowledge and a 70-hour workload."
+      ],
+      "limitations": [
+        "Course listing is localized and may redirect; confirm language, access and enrollment conditions before assignment.",
+        "Intermediate course; do not treat completion as proof of system-administration competence."
+      ],
+      "reuse_note": "Publisher-hosted course listing; account and course terms apply.",
+      "audit_flags": [
+        "Page renders as a JavaScript shell in this inspection; link identity exists but course details/access not independently confirmed."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-CDC-ADOLESCENT-SLEEP",
+      "title": "CDC — Sleep and Adolescent Health",
+      "publisher": "Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/yrbs/youth-health-in-focus/sleep.html",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "CDC page describes adolescent sleep needs and links sleep with physical and mental health, safety and attention."
+      ],
+      "limitations": [
+        "US surveillance data and guidance context; use the general educational concepts cautiously outside the US.",
+        "Not medical diagnosis or individualized treatment advice."
+      ],
+      "reuse_note": "Public government information; cite CDC and date when using numeric recommendations.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-CDC-YOUTH-ACTIVITY",
+      "title": "CDC — Child and Adolescent Physical Activity Guidelines",
+      "publisher": "Centers for Disease Control and Prevention",
+      "url": "https://www.cdc.gov/physical-activity-basics/guidelines/children.html",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "CDC page summarizes activity recommendations for ages 6–17, including aerobic, muscle-strengthening and bone-strengthening activity."
+      ],
+      "limitations": [
+        "US public-health guidance; not a personalized training prescription.",
+        "Individual training must account for health, recovery, disability, environment and qualified guidance."
+      ],
+      "reuse_note": "Public government information; do not copy graphics without checking their terms.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-LANG-BRITISH-COUNCIL-WRITING",
+      "title": "British Council LearnEnglish — Writing",
+      "publisher": "British Council",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/writing",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Free self-study writing lessons organized by CEFR level from A1 to C1, with model texts, writing tips and interactive exercises."
+      ],
+      "limitations": [
+        "English writing practice only; it does not teach Bangla-English technical terminology or guarantee academic style mastery.",
+        "Some additional features may require registration."
+      ],
+      "reuse_note": "Use on publisher site; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-ART-DRAW-PRACTICE-LAB",
+      "title": "Draw Practice Lab — Free Online Drawing Exercises",
+      "publisher": "Independent web tool (Draw Practice Lab)",
+      "url": "https://draw.racolw.org/en/",
+      "source_class": "tool",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened_tool_device_constraints",
+      "claim_scope": [
+        "Interactive exercises for lines, shapes, perspective, proportion, value, colour and anatomy, with on-device feedback."
+      ],
+      "limitations": [
+        "Independent tool; scoring/analysis is not independently validated and may change.",
+        "The page indicates mouse or Apple Pencil use; phone-only users may need alternative paper exercises."
+      ],
+      "reuse_note": "Use as an optional practice tool; do not redistribute tool content.",
+      "audit_flags": [
+        "Tool says mouse/Apple Pencil; mobile touch/Android compatibility is not established."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-WORK-GOOGLE-WORKSPACE-TRAINING",
+      "title": "Google Workspace Learning Center",
+      "publisher": "Google",
+      "url": "https://workspace.google.com/training/",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened_localised_non_english_variant",
+      "claim_scope": [
+        "Guides and training for Drive, Calendar, Tasks, Docs, Sheets, Slides, Forms and other Workspace products."
+      ],
+      "limitations": [
+        "Product availability and UI vary by account, region and plan.",
+        "The product is not required; use equivalent tools where access is unavailable."
+      ],
+      "reuse_note": "Publisher-hosted training; Google product terms apply.",
+      "audit_flags": [
+        "Page was served in a non-English locale during reinspection; use language selector or a stable English route if needed."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-WORK-MICROSOFT-FILE-EXPLORER",
+      "title": "Microsoft Support — File Explorer in Windows",
+      "publisher": "Microsoft",
+      "url": "https://support.microsoft.com/en-us/windows/experience/fileexplorer/file-explorer-in-windows",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Explains finding, opening, organizing and managing files/folders, Quick Access, move/copy and common File Explorer options."
+      ],
+      "limitations": [
+        "Windows-specific; not a universal file-management guide and not directly applicable to Android file managers.",
+        "Windows 10 support lifecycle differs from Windows 11."
+      ],
+      "reuse_note": "Microsoft support content; Windows version applicability must be checked.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-BDRCS-FIRST-AID",
+      "title": "Bangladesh Red Crescent Society — First Aid Training Course",
+      "publisher": "Bangladesh Red Crescent Society",
+      "url": "https://bdrcs.org/first-aid-training/",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "BDRCS describes first-aid course scope including scene assessment, choking, CPR, bleeding, wounds, burns, fractures, poisoning and training/certification details."
+      ],
+      "limitations": [
+        "Course availability, fees, age eligibility and recertification must be confirmed with BDRCS and a guardian.",
+        "Reading the page is not practical first-aid training or certification; do not teach or self-certify techniques from this resource alone."
+      ],
+      "reuse_note": "Training is provider-delivered; contact BDRCS for current conditions. No fee-free claim.",
+      "audit_flags": [
+        "Training-provider page, not a self-study substitute; course dates, eligibility and costs must be checked with BDRCS."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-BFSA-FOOD-SAFETY",
+      "title": "Bangladesh Food Safety Authority — Food Safety Guidance",
+      "publisher": "Bangladesh Food Safety Authority",
+      "url": "https://bfsa.gov.bd/",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "Search result from the official BFSA domain lists food-safety principles including cleanliness/handwashing, separation of raw and cooked foods, thorough cooking and safe storage."
+      ],
+      "limitations": [
+        "The official site fetch timed out during this check; exact page and current wording remain unverified.",
+        "Search-result evidence only; do not cite as fully reviewed until page-level inspection succeeds."
+      ],
+      "reuse_note": "Official BFSA domain; page-level review pending due fetch timeout.",
+      "audit_flags": [
+        "Direct page fetch timed out in previous inspection; use current BFSA detailed guidance and do not rely on homepage alone."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-DDM-AWARE",
+      "title": "Bangladesh Department of Disaster Management — AWARE",
+      "publisher": "Department of Disaster Management, Ministry of Disaster Management and Relief",
+      "url": "https://rapid.ddm.gov.bd/service/list",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Government service lists disaster early-warning and shelter information services and emergency contacts including 999 and disaster helpline 1090."
+      ],
+      "limitations": [
+        "Numbers and services can change; verify from current government sources before an emergency.",
+        "This is an information/alert service, not a substitute for emergency services or a personal emergency plan."
+      ],
+      "reuse_note": "Government information; verify live details and current phone numbers before use.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-CAB-CONSUMER-RIGHTS",
+      "title": "Consumers Association of Bangladesh — Consumer Rights",
+      "publisher": "Consumers Association of Bangladesh",
+      "url": "https://consumerbd.org/bn/consumer-rights",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "CAB search-result summary describes consumer rights related to safety, fair information, service standards and digital consumer rights; site also lists financial literacy and consumer advocacy work."
+      ],
+      "limitations": [
+        "Advocacy organization, not a regulator or legal authority.",
+        "The page body was only partly readable; current legal rights must be checked against Bangladesh law and official authorities."
+      ],
+      "reuse_note": "Use as consumer-advocacy context; verify legal claims against official Bangladesh law.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-MEDLINEPLUS-HEALTH-INFO",
+      "title": "MedlinePlus — Evaluating Health Information",
+      "publisher": "US National Library of Medicine / NIH",
+      "url": "https://medlineplus.gov/evaluatinghealthinformation.html",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Explains evaluating health information by checking site ownership, purpose, funding, editorial review, sources, dates and privacy; advises discussing personal health decisions with a provider."
+      ],
+      "limitations": [
+        "US federal health-information context; general source-evaluation method is transferable, but clinical guidance is not localized to Bangladesh.",
+        "Not a substitute for professional medical care."
+      ],
+      "reuse_note": "Public NLM/NIH information; no redistribution permission inferred.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-WORK-TYPINGCLUB",
+      "title": "TypingClub — Free Touch-Typing Lessons",
+      "publisher": "TypingClub / edclub",
+      "url": "https://www.typingclub.com/",
+      "source_class": "tool",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Web-based touch-typing lessons, posture guidance, progress tracking and optional account; the provider states individual use is free."
+      ],
+      "limitations": [
+        "Keyboard-based; not useful for every mobile-only workflow or every language/script.",
+        "Provider marketing claims are not independent efficacy evidence."
+      ],
+      "reuse_note": "Individual access described as free; optional paid school edition exists.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-WORK-GOOGLE-APPS-SCRIPT",
+      "title": "Google for Developers — Apps Script Samples",
+      "publisher": "Google for Developers",
+      "url": "https://developers.google.com/apps-script/samples",
+      "source_class": "instructional",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Official samples and codelabs for automating tasks, extending Workspace interfaces and integrating services; includes quickstarts and full solutions."
+      ],
+      "limitations": [
+        "Requires a Google account and browser; authorization scopes must be reviewed before running scripts.",
+        "Use test accounts and non-sensitive data; never authorize untrusted code."
+      ],
+      "reuse_note": "Developer documentation and samples; terms apply. Review permissions before execution.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-CYBER-GOOGLE-DRIVE-RESTORE",
+      "title": "Google Drive Help — Recover a Deleted File",
+      "publisher": "Google",
+      "url": "https://support.google.com/drive/answer/1716222?hl=en",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Explains restoring a deleted Drive file from Trash and states the standard 30-day Trash retention period."
+      ],
+      "limitations": [
+        "Applies to Google Drive deletion recovery, not a complete backup strategy or guaranteed recovery of all data.",
+        "Retention policies may vary for managed accounts and product changes."
+      ],
+      "reuse_note": "Google support content; account and administrator policies may affect recovery.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-LANG-BANGLA-ACCESSIBLE-DICTIONARY",
+      "title": "Bangladesh Accessible Dictionary — Bengali/English Lookup",
+      "publisher": "Government of Bangladesh (Accessible Dictionary)",
+      "url": "https://accessibledictionary.gov.bd/",
+      "source_class": "tool",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Government-hosted dictionary interface supports Bengali-to-English, English-to-Bengali, Bengali-to-Bengali and English-to-English lookup."
+      ],
+      "limitations": [
+        "Dictionary equivalents may not capture technical register, discipline-specific meaning or context; verify specialist terminology in authoritative sources.",
+        "Some lookup results load dynamically."
+      ],
+      "reuse_note": "Government-hosted dictionary; use as a terminology aid, not sole specialist authority.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-BANGLADESH-RAILWAY",
+      "title": "Bangladesh Railway — Official Train Schedules and Fares",
+      "publisher": "Bangladesh Railway",
+      "url": "https://railway.gov.bd/",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Official site lists train schedules by region, inter-country train schedules, station information, fares and e-ticketing."
+      ],
+      "limitations": [
+        "Schedules and fares change; check the official live timetable and guardian-approved travel plan before travel.",
+        "Not a general navigation or personal safety course."
+      ],
+      "reuse_note": "Official Bangladesh Railway information; live details must be rechecked.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-INDEP-ACCC-CARE-LABELS",
+      "title": "ACCC Product Safety — Clothing and Textile Care Labels",
+      "publisher": "Australian Competition and Consumer Commission",
+      "url": "https://www.productsafety.gov.au/consumers/use-cosmetic-and-fashion-products-safely/care-labelling-on-clothing-and-textiles-guide",
+      "source_class": "reference",
+      "language": "English (some Bangladesh government pages are Bengali/English)",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "Explains internationally recognized garment care symbols for washing, bleaching, drying, ironing and professional care."
+      ],
+      "limitations": [
+        "Australian consumer guidance; not Bangladesh law. Follow the actual care label and garment/material-specific instructions."
+      ],
+      "reuse_note": "Australian regulator reference; symbols are broadly used but jurisdiction-specific legal claims do not transfer.",
+      "audit_flags": [
+        "Australian consumer guidance; garment-symbol concepts may transfer but local product-label/legal claims need local verification."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BODY-UNESCO-HUMAN-GENOME-ETHICS",
+      "title": "UNESCO — Universal Declaration on the Human Genome and Human Rights",
+      "publisher": "UNESCO",
+      "url": "https://www.unesco.org/en/legal-affairs/universal-declaration-human-genome-and-human-rights",
+      "source_class": "reference",
+      "language": "English",
+      "accessed_at": "2026-11-17T00:00:00Z",
+      "inspection_state": "page_opened",
+      "claim_scope": [
+        "The declaration states that human dignity and rights are not determined by genetic characteristics and that people should not be reduced to those characteristics.",
+        "The declaration describes how genetic characteristics can be expressed differently in relation to natural and social environments.",
+        "The declaration includes consent, confidentiality and human-rights principles for genome-related research."
+      ],
+      "limitations": [
+        "International declaration, not a substitute for Bangladesh law or a complete biology textbook.",
+        "Use as an ethical framework; do not treat it as evidence for specific biological claims or as individual medical advice."
+      ],
+      "reuse_note": "UNESCO declaration text; check UNESCO terms before reproducing.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BD-BSEC-INVESTOR-EDU",
+      "title": "Investor Education",
+      "publisher": "Bangladesh Securities and Exchange Commission",
+      "url": "https://sec.gov.bd/investor-education",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "Bangladesh capital-market literacy; market products and operations; investor risks, rights, authorized intermediaries and complaint routes."
+      ],
+      "limitations": [
+        "Educational page does not replace current laws, circulars, prospectuses or licensed advice; participation/eligibility and account rules require current Bangladesh-specific checks; age/guardian restrictions apply."
+      ],
+      "reuse_note": "Link to official page; do not copy course material without checking permission.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BD-NBR-VAT-FAQ",
+      "title": "VAT FAQ",
+      "publisher": "National Board of Revenue, Bangladesh",
+      "url": "https://nbr.gov.bd/faq/vat-faq/eng",
+      "source_class": "reference",
+      "language": "en",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "Official NBR explanations of VAT scope and tax administration concepts."
+      ],
+      "limitations": [
+        "Rates, thresholds and legal treatment can change; the page is not general tax advice; learner must not infer own filing obligations from a teaching example."
+      ],
+      "reuse_note": "Link and quote minimally with attribution; no republication rights assumed.",
+      "audit_flags": [
+        "Tax rules and rates change; re-check the current NBR page before any operational use."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BD-DNCRP-COMPLAINT",
+      "title": "How to file a consumer complaint",
+      "publisher": "DNCRP, Government of Bangladesh",
+      "url": "https://dncrp.gov.bd/pages/static-pages/6922e087933eb65569e276ca",
+      "source_class": "reference",
+      "language": "bn",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "The page describes written complaint submission and supporting purchase receipt requirements."
+      ],
+      "limitations": [
+        "Complaint deadlines, eligibility, process and contact details may change; verify current instructions on the official site. Not legal advice."
+      ],
+      "reuse_note": "Link to official page; preserve Bangla terminology and verify current version.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    },
+    {
+      "resource_id": "ATH-RES-BD-BFSA-FIVE-KEYS",
+      "title": "Five keys to keeping food safe",
+      "publisher": "Bangladesh Food Safety Authority",
+      "url": "https://bfsa.gov.bd/",
+      "source_class": "reference",
+      "language": "bn",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "Cleanliness; separating raw and cooked food; adequate cooking; safe-temperature storage; safe water and ingredients."
+      ],
+      "limitations": [
+        "Homepage fetch timed out in this audit; search result and official-domain content showed the five-key message. Exact temperature/time details must be taken from current detailed guidance, not inferred from this summary."
+      ],
+      "reuse_note": "Link only; no redistribution permission inferred.",
+      "audit_flags": [
+        "Only official-domain search result visible; direct page fetch timed out."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BD-FIRESERVICE-HOTLINE",
+      "title": "Fire Service hotline and station contacts",
+      "publisher": "Bangladesh Fire Service and Civil Defence",
+      "url": "https://fireservice.gov.bd/pages/static-pages/6922dcc6933eb65569e11fd1",
+      "source_class": "reference",
+      "language": "bn",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "Official emergency hotline and regional station contact directory."
+      ],
+      "limitations": [
+        "Emergency numbers and service routing can change; verify at point of use. Does not replace 999 or dispatcher directions; avoid relying on a static copied number list."
+      ],
+      "reuse_note": "Link to official contact page; keep dynamic rather than hard-coding.",
+      "audit_flags": [
+        "Emergency contact page is dynamic; store source URL and recheck at use time rather than hard-code numbers."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BD-BB-FINANCIAL-LITERACY",
+      "title": "Bangladesh Bank financial literacy resources",
+      "publisher": "Bangladesh Bank",
+      "url": "https://finlit.bb.org.bd/",
+      "source_class": "reference",
+      "language": "bn",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "Bangladesh financial-literacy materials for youth, MFS users, farmers and small/micro entrepreneurs."
+      ],
+      "limitations": [
+        "Portal availability and individual modules were not independently opened; check current materials, terms and suitability before assigning."
+      ],
+      "reuse_note": "Link to portal; no copying or commercial reuse permission inferred.",
+      "audit_flags": [
+        "Portal referenced by Bangladesh Bank report; portal itself not independently opened."
+      ],
+      "disposition": "KEEP_BUT_FLAG_FOR_REPLACEMENT_OR_LOCAL_REVIEW"
+    },
+    {
+      "resource_id": "ATH-RES-BD-BANGLABIZ-STARTUP",
+      "title": "BanglaBiz — unified gateway for business licenses and permits",
+      "publisher": "BanglaBiz, Government of Bangladesh",
+      "url": "https://banglabiz.gov.bd/",
+      "source_class": "reference",
+      "language": "bn/en",
+      "accessed_at": "2026-11-19T00:00:00Z",
+      "inspection_state": "not_reverified",
+      "claim_scope": [
+        "The portal presents a unified gateway to start a business, identify approvals and explore government licensing services in Bangladesh."
+      ],
+      "limitations": [
+        "A landing page does not determine the legal form, approvals, eligibility or costs for a particular business; users must check current agency requirements and involve a responsible adult/qualified adviser."
+      ],
+      "reuse_note": "Link to the official service portal; do not treat as legal advice or copy portal content without permission.",
+      "audit_flags": [],
+      "disposition": "KEEP_WITH_SCOPE_LIMITS"
+    }
+  ],
+  "method": "Publisher/host pages were reopened for the source URLs enumerated in the build manifest; other resources retain the prior Message 18 checked metadata status. Page identity/scope inspection is not full-text review, claim corroboration, independent subject review or legal/license approval.",
+  "limitations": [
+    "No full end-to-end reading of all 59 resources.",
+    "No claim-by-claim corroboration for every lesson.",
+    "No licensing legal review; link-only default.",
+    "No comprehensive Bangladesh law/tax/health/safety review.",
+    "Some pages are paid, JavaScript-only, stale, device-limited or search-result-only; these are flagged.",
+    "A source link is not a completed teaching pack or mastery evidence."
+  ]
+}

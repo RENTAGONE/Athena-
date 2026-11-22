@@ -1,0 +1,386 @@
+{
+  "registry_id": "ATHENA-WAVE1-PATHWAY-MAP",
+  "version": "0.1",
+  "status": "working_candidate_pending_semantic_review",
+  "production_message": 8,
+  "policy": {
+    "sequence_is_recommended_not_forced": true,
+    "hard_prerequisites_only_when_failure_would_make_task_unsafe_or_unintelligible": true,
+    "learner_may_explore_ahead": true,
+    "mastery_requires_learner_generated_evidence": true,
+    "tool_assistance_must_be_disclosed": true
+  },
+  "disciplines": [
+    {
+      "code": "MATH",
+      "name": "Mathematics & Scientific Reasoning",
+      "pathways": [
+        {
+          "stage": "entry",
+          "units": [
+            "BASE-MATH-001",
+            "BASE-MATH-002",
+            "BASE-MATH-003",
+            "BASE-MATH-004"
+          ],
+          "focus": "Numeracy, operations, fractions, estimation and mathematical language."
+        },
+        {
+          "stage": "foundation",
+          "units": [
+            "BASE-MATH-005",
+            "BASE-MATH-006",
+            "BASE-MATH-007",
+            "BASE-MATH-008",
+            "BASE-MATH-009",
+            "BASE-MATH-010",
+            "BASE-MATH-011",
+            "BASE-MATH-012"
+          ],
+          "focus": "Ratios, signed numbers, algebra, powers, geometry, graphs and foundational quantitative reasoning."
+        },
+        {
+          "stage": "functional",
+          "units": [
+            "MATH-FUNC-001",
+            "MATH-ALG-002",
+            "MATH-ALG-003",
+            "MATH-ALG-004",
+            "MATH-EXP-005",
+            "MATH-TRIG-006"
+          ],
+          "focus": "Functions, systems, polynomials, quadratics, exponential models and trigonometry."
+        },
+        {
+          "stage": "extended_foundations",
+          "units": [
+            "MATH-SEQ-007",
+            "MATH-PROB-008",
+            "MATH-STAT-009",
+            "MATH-CALC-010"
+          ],
+          "focus": "Sequences and series, introductory counting/probability, descriptive statistics/sampling and calculus foundations."
+        },
+        {
+          "stage": "extended_foundations",
+          "units": [
+            "MATH-PROB-011",
+            "MATH-PROB-012",
+            "MATH-STAT-013",
+            "MATH-STAT-014"
+          ],
+          "focus": "Counting, conditional probability, distributions, sampling and inference."
+        },
+        {
+          "stage": "reasoning_and_application",
+          "units": [
+            "MATH-MOD-015",
+            "MATH-REASON-016"
+          ],
+          "focus": "Model construction, assumptions, proof, counterexamples and structured problem solving."
+        }
+      ],
+      "recommended_order_edges": [
+        [
+          "BASE-MATH-001",
+          "BASE-MATH-002"
+        ],
+        [
+          "BASE-MATH-003",
+          "BASE-MATH-007"
+        ],
+        [
+          "BASE-MATH-005",
+          "MATH-FUNC-001"
+        ],
+        [
+          "BASE-MATH-007",
+          "MATH-ALG-002"
+        ],
+        [
+          "MATH-FUNC-001",
+          "MATH-MOD-015"
+        ],
+        [
+          "MATH-STAT-013",
+          "MATH-MOD-015"
+        ],
+        [
+          "BASE-MATH-008",
+          "MATH-REASON-016"
+        ],
+        [
+          "MATH-PROB-011",
+          "MATH-PROB-012"
+        ],
+        [
+          "MATH-STAT-013",
+          "MATH-STAT-014"
+        ],
+        [
+          "MATH-SEQ-007",
+          "MATH-CALC-010"
+        ],
+        [
+          "MATH-PROB-008",
+          "MATH-PROB-011"
+        ],
+        [
+          "MATH-STAT-009",
+          "MATH-STAT-013"
+        ],
+        [
+          "MATH-CALC-010",
+          "MATH-MOD-015"
+        ]
+      ],
+      "next_content_gaps": [
+        "limits_continuity_derivatives_integrals",
+        "linear_algebra_vectors_matrices_transformations",
+        "discrete_mathematics_graphs_logic_computation",
+        "number_theory_modular_arithmetic",
+        "numerical_methods_error_and_simulation",
+        "scientific_reasoning_experimental_uncertainty"
+      ]
+    },
+    {
+      "code": "ENG",
+      "name": "Engineering & Computer Science",
+      "pathways": [
+        {
+          "stage": "entry",
+          "units": [
+            "ENG-ARCH-001"
+          ],
+          "focus": "Requirements, interfaces, constraints and acceptance tests."
+        },
+        {
+          "stage": "workflow",
+          "units": [
+            "ENG-SWE-002"
+          ],
+          "focus": "Version control, commits, branches, diffs, merges and collaboration."
+        },
+        {
+          "stage": "computational_foundations",
+          "units": [
+            "ENG-ALGO-003"
+          ],
+          "focus": "Algorithm design, data structures, complexity, testing and edge cases."
+        }
+      ],
+      "recommended_order_edges": [
+        [
+          "ENG-ARCH-001",
+          "ENG-SWE-002"
+        ],
+        [
+          "ENG-SWE-002",
+          "ENG-ALGO-003"
+        ]
+      ],
+      "next_content_gaps": [
+        "programming_fundamentals_and_language_track",
+        "testing_debugging_and_quality_assurance",
+        "operating_systems_and_processes",
+        "networks_and_web_protocols",
+        "databases_and_data_modelling",
+        "security_privacy_and_threat_modeling",
+        "architecture_and_distributed_systems",
+        "AI_systems_and_evaluation"
+      ]
+    },
+    {
+      "code": "ELEC",
+      "name": "Electronics & Hardware",
+      "pathways": [
+        {
+          "stage": "device_foundations",
+          "units": [
+            "ELEC-DEV-001"
+          ],
+          "focus": "Diodes, LEDs, operating points and transistor switching."
+        },
+        {
+          "stage": "measurement",
+          "units": [
+            "ELEC-MEAS-002"
+          ],
+          "focus": "Safe low-voltage measurement, multimeter use and uncertainty."
+        },
+        {
+          "stage": "digital_foundations",
+          "units": [
+            "ELEC-DIG-003"
+          ],
+          "focus": "Binary representation, Boolean logic, truth tables and combinational circuits."
+        }
+      ],
+      "recommended_order_edges": [
+        [
+          "ELEC-DEV-001",
+          "ELEC-MEAS-002"
+        ],
+        [
+          "ELEC-MEAS-002",
+          "ELEC-DIG-003"
+        ]
+      ],
+      "next_content_gaps": [
+        "series_parallel_circuit_analysis",
+        "voltage_current_resistance_power_and_energy",
+        "semiconductor_device_models_and_biasing",
+        "sequential_logic_and_state",
+        "microcontrollers_and_embedded_io",
+        "sensors_actuators_and_signal_conditioning",
+        "soldering_and_workshop_practice_under_supervision",
+        "power_supply_and_battery_safety"
+      ]
+    },
+    {
+      "code": "RES",
+      "name": "Research & Information Intelligence",
+      "pathways": [
+        {
+          "stage": "source_literacy",
+          "units": [
+            "RES-EVAL-001"
+          ],
+          "focus": "Source provenance, claim quality, evidence strength and bias."
+        },
+        {
+          "stage": "research_design",
+          "units": [
+            "RES-METHOD-002"
+          ],
+          "focus": "Questions, operational definitions, variables, study designs and ethics."
+        },
+        {
+          "stage": "data_workflow",
+          "units": [
+            "RES-DATA-003"
+          ],
+          "focus": "Data dictionaries, cleaning, missingness, descriptive analysis and reproducibility."
+        }
+      ],
+      "recommended_order_edges": [
+        [
+          "RES-EVAL-001",
+          "RES-METHOD-002"
+        ],
+        [
+          "RES-METHOD-002",
+          "RES-DATA-003"
+        ]
+      ],
+      "next_content_gaps": [
+        "search_strategy_and_information_retrieval",
+        "systematic_literature_review_and_synthesis",
+        "sampling_and_measurement_validity",
+        "causal_inference_and_confounding",
+        "statistical_inference_and_uncertainty",
+        "qualitative_methods_and_coding",
+        "reproducibility_and_research_integrity",
+        "citation_and_data_management"
+      ]
+    },
+    {
+      "code": "LANG",
+      "name": "Language & Linguistic Intelligence",
+      "pathways": [
+        {
+          "stage": "language_structure",
+          "units": [
+            "LANG-STRUCT-001"
+          ],
+          "focus": "Sounds, words, sentence structure and meaning."
+        },
+        {
+          "stage": "acquisition",
+          "units": [
+            "LANG-ACQ-002"
+          ],
+          "focus": "Comprehensible input, retrieval, feedback and transfer."
+        },
+        {
+          "stage": "literacy_and_analysis",
+          "units": [
+            "LANG-READ-003"
+          ],
+          "focus": "Comprehension, inference, evidence, summary and analytical writing."
+        }
+      ],
+      "recommended_order_edges": [
+        [
+          "LANG-STRUCT-001",
+          "LANG-ACQ-002"
+        ],
+        [
+          "LANG-STRUCT-001",
+          "LANG-READ-003"
+        ],
+        [
+          "LANG-ACQ-002",
+          "LANG-READ-003"
+        ]
+      ],
+      "next_content_gaps": [
+        "phonetics_and_phonology_in_depth",
+        "morphology_syntax_semantics_pragmatics",
+        "listening_and_speaking_fluency",
+        "writing_process_and_revision",
+        "genre_and_register",
+        "rhetorical_and_discourse_analysis",
+        "multilingualism_and_transfer",
+        "language_assessment_and_error_analysis"
+      ]
+    },
+    {
+      "code": "COMM",
+      "name": "Communication & Rhetoric",
+      "pathways": [
+        {
+          "stage": "argumentation",
+          "units": [
+            "COMM-ARG-001"
+          ],
+          "focus": "Claims, reasons, evidence, warrants, rebuttals and fallacies."
+        },
+        {
+          "stage": "oral_communication",
+          "units": [
+            "COMM-PRES-002"
+          ],
+          "focus": "Audience analysis, presentation structure, delivery and question handling."
+        },
+        {
+          "stage": "interpersonal_communication",
+          "units": [
+            "COMM-NEG-003"
+          ],
+          "focus": "Active listening, interests, negotiation, conflict and fair agreements."
+        }
+      ],
+      "recommended_order_edges": [
+        [
+          "COMM-ARG-001",
+          "COMM-PRES-002"
+        ],
+        [
+          "COMM-ARG-001",
+          "COMM-NEG-003"
+        ]
+      ],
+      "next_content_gaps": [
+        "interpersonal_and_nonverbal_communication",
+        "listening_and_questioning",
+        "writing_for_audience_and_purpose",
+        "rhetorical_analysis_and_media_literacy",
+        "persuasion_and_ethical_influence",
+        "facilitation_and_group_discussion",
+        "cross_cultural_communication",
+        "feedback_and_difficult_conversations"
+      ]
+    }
+  ]
+}

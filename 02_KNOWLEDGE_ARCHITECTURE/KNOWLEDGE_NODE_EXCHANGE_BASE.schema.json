@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-knowledge-node-exchange-v0.2.schema.json",
+  "title": "ATHENA_KNOWLEDGE_NODE_EXCHANGE_v0.2",
+  "description": "Exchange representation. The id field contains a stable ATHENA code, not a storage UUID. The importer maps it to storage.code and allocates storage.id.",
+  "type": "object",
+  "required": [
+    "id",
+    "object_type",
+    "title",
+    "status",
+    "content_version"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|CTX)-[A-Z0-9-]+$"
+    },
+    "object_type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated",
+        "archived"
+      ]
+    },
+    "owner_discipline_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^ATH-DISC-[A-Z]+$"
+    },
+    "discipline_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-DISC-[A-Z]+$"
+      }
+    },
+    "parent_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,88 @@
+{
+  "scenario_pack_id": "ATHENA-WAVE2-BATCH02-PERFORMANCE",
+  "version": "0.1",
+  "production_message": 11,
+  "scenarios": [
+    {
+      "id": "W2B02-SCENARIO-01",
+      "title": "A small digital service pilot",
+      "disciplines": [
+        "BIZ",
+        "FIN",
+        "WORK",
+        "CYBER",
+        "PSY",
+        "LEAD"
+      ],
+      "brief": "A fictional student team considers offering a setup service to community organisers. They have no verified demand data and limited weekly capacity.",
+      "deliverables": [
+        "customer evidence plan and bounded offer",
+        "unit economics with explicit assumptions",
+        "two-week work breakdown and dependency map",
+        "role/access matrix and data-minimisation plan",
+        "neutral feedback and forecast log",
+        "delegation brief and escalation rules"
+      ],
+      "constraints": [
+        "no real payments or credential collection",
+        "use synthetic numbers",
+        "no fabricated testimonials",
+        "do not promise outcomes outside team control"
+      ],
+      "success": "The team states what remains unknown and chooses a reversible pilot rather than claiming a validated business."
+    },
+    {
+      "id": "W2B02-SCENARIO-02",
+      "title": "School event under a fixed deadline",
+      "disciplines": [
+        "BIZ",
+        "FIN",
+        "WORK",
+        "PSY",
+        "LEAD",
+        "CYBER"
+      ],
+      "brief": "A school group must organise a small event with a fixed opening date, limited budget and changing attendance estimates.",
+      "deliverables": [
+        "attendee need hypothesis",
+        "cash budget and reconciliation",
+        "critical path and contingency",
+        "pre-mortem with probability estimates",
+        "decision-rights matrix",
+        "participant information handling plan"
+      ],
+      "constraints": [
+        "adult approval for venue, money and safety",
+        "no publication of student personal data",
+        "contingency must be explicit"
+      ],
+      "success": "The plan is feasible, safe, auditable and updated transparently when assumptions change."
+    },
+    {
+      "id": "W2B02-SCENARIO-03",
+      "title": "Recovering from a process failure",
+      "disciplines": [
+        "WORK",
+        "CYBER",
+        "LEAD",
+        "PSY",
+        "FIN"
+      ],
+      "brief": "A team accidentally overwrites a shared draft and cannot tell which version is current.",
+      "deliverables": [
+        "incident timeline and impact statement",
+        "restore/backup verification plan",
+        "process map and root-cause hypotheses",
+        "safe automation change proposal",
+        "feedback conversation and ownership update"
+      ],
+      "constraints": [
+        "do not reproduce the destructive action",
+        "use copies and synthetic data",
+        "do not blame individuals before facts are established"
+      ],
+      "success": "Recovery is verified, access is reviewed and the process is improved with reversible controls."
+    }
+  ],
+  "grading": "Score evidence quality, domain reasoning, cross-domain integration, safety and reflection separately. A scenario score does not automatically grant discipline mastery."
+}

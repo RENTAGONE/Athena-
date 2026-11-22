@@ -1,0 +1,4257 @@
+{
+  "status": "analysis_only_no_canonical_mutations",
+  "canonical_domain_count": 113,
+  "working_domain_count": 145,
+  "canonical_skill_family_count": 40,
+  "working_skill_family_count": 733,
+  "candidate_rows": [
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-01",
+      "working_name": "Visual Literacy",
+      "canonical_candidate_id": "ATH-DOM-AEST-VISPER",
+      "canonical_candidate_name": "Visual Perception & Principles",
+      "similarity": 0.39,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-VISPER",
+          "title": "Visual Perception & Principles",
+          "score": 0.39
+        },
+        {
+          "id": "ATH-DOM-AEST-DIGDES",
+          "title": "Digital Interface Design",
+          "score": 0.333
+        },
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.211
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-02",
+      "working_name": "Color and Typography",
+      "canonical_candidate_id": "ATH-DOM-AEST-TYPE",
+      "canonical_candidate_name": "Typography & Layout",
+      "similarity": 0.439,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-TYPE",
+          "title": "Typography & Layout",
+          "score": 0.439
+        },
+        {
+          "id": "ATH-DOM-AEST-PHOTO",
+          "title": "Photography & Imaging",
+          "score": 0.3
+        },
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.186
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-03",
+      "working_name": "Graphic and Brand Design",
+      "canonical_candidate_id": "ATH-DOM-AEST-BRAND",
+      "canonical_candidate_name": "Identity & Brand Systems",
+      "similarity": 0.369,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.369
+        },
+        {
+          "id": "ATH-DOM-AEST-DIGDES",
+          "title": "Digital Interface Design",
+          "score": 0.356
+        },
+        {
+          "id": "ATH-DOM-AEST-PHOTO",
+          "title": "Photography & Imaging",
+          "score": 0.272
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-04",
+      "working_name": "Interface and Interaction Design",
+      "canonical_candidate_id": "ATH-DOM-AEST-DIGDES",
+      "canonical_candidate_name": "Digital Interface Design",
+      "similarity": 0.511,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-DIGDES",
+          "title": "Digital Interface Design",
+          "score": 0.511
+        },
+        {
+          "id": "ATH-DOM-AEST-COMP",
+          "title": "Composition & Art Direction",
+          "score": 0.274
+        },
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.265
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-05",
+      "working_name": "Photography and Imaging",
+      "canonical_candidate_id": "ATH-DOM-AEST-PHOTO",
+      "canonical_candidate_name": "Photography & Imaging",
+      "similarity": 0.821,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-PHOTO",
+          "title": "Photography & Imaging",
+          "score": 0.821
+        },
+        {
+          "id": "ATH-DOM-AEST-TYPE",
+          "title": "Typography & Layout",
+          "score": 0.325
+        },
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.231
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-06",
+      "working_name": "Motion and Time-Based Design",
+      "canonical_candidate_id": "ATH-DOM-AEST-DIGDES",
+      "canonical_candidate_name": "Digital Interface Design",
+      "similarity": 0.35,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-DIGDES",
+          "title": "Digital Interface Design",
+          "score": 0.35
+        },
+        {
+          "id": "ATH-DOM-AEST-COMP",
+          "title": "Composition & Art Direction",
+          "score": 0.294
+        },
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.26
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-07",
+      "working_name": "Three-Dimensional Design",
+      "canonical_candidate_id": "ATH-DOM-AEST-DIGDES",
+      "canonical_candidate_name": "Digital Interface Design",
+      "similarity": 0.395,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-DIGDES",
+          "title": "Digital Interface Design",
+          "score": 0.395
+        },
+        {
+          "id": "ATH-DOM-AEST-COMP",
+          "title": "Composition & Art Direction",
+          "score": 0.239
+        },
+        {
+          "id": "ATH-DOM-AEST-PHOTO",
+          "title": "Photography & Imaging",
+          "score": 0.212
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "AEST",
+      "working_id": "DOM-AEST-08",
+      "working_name": "Design Systems and Direction",
+      "canonical_candidate_id": "ATH-DOM-AEST-COMP",
+      "canonical_candidate_name": "Composition & Art Direction",
+      "similarity": 0.426,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-AEST-COMP",
+          "title": "Composition & Art Direction",
+          "score": 0.426
+        },
+        {
+          "id": "ATH-DOM-AEST-BRAND",
+          "title": "Identity & Brand Systems",
+          "score": 0.37
+        },
+        {
+          "id": "ATH-DOM-AEST-DIGDES",
+          "title": "Digital Interface Design",
+          "score": 0.208
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-01",
+      "working_name": "Observation and Visual Fundamentals",
+      "canonical_candidate_id": "ATH-DOM-ART-OBS",
+      "canonical_candidate_name": "Observation & Visual Literacy",
+      "similarity": 0.559,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-OBS",
+          "title": "Observation & Visual Literacy",
+          "score": 0.559
+        },
+        {
+          "id": "ATH-DOM-ART-DRAW",
+          "title": "Drawing Fundamentals",
+          "score": 0.472
+        },
+        {
+          "id": "ATH-DOM-ART-ILLUS",
+          "title": "Illustration & Visual Storytelling",
+          "score": 0.369
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-02",
+      "working_name": "Perspective and Space",
+      "canonical_candidate_id": "ATH-DOM-ART-SPACE",
+      "canonical_candidate_name": "Perspective & Spatial Form",
+      "similarity": 0.503,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-SPACE",
+          "title": "Perspective & Spatial Form",
+          "score": 0.503
+        },
+        {
+          "id": "ATH-DOM-ART-OBS",
+          "title": "Observation & Visual Literacy",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-ART-ILLUS",
+          "title": "Illustration & Visual Storytelling",
+          "score": 0.196
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-03",
+      "working_name": "Anatomy and Figure Drawing",
+      "canonical_candidate_id": "ATH-DOM-ART-DRAW",
+      "canonical_candidate_name": "Drawing Fundamentals",
+      "similarity": 0.268,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-DRAW",
+          "title": "Drawing Fundamentals",
+          "score": 0.268
+        },
+        {
+          "id": "ATH-DOM-ART-OBS",
+          "title": "Observation & Visual Literacy",
+          "score": 0.245
+        },
+        {
+          "id": "ATH-DOM-ART-LIGHT",
+          "title": "Light, Value & Rendering",
+          "score": 0.221
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-04",
+      "working_name": "Color and Painting",
+      "canonical_candidate_id": "ATH-DOM-ART-COLOR",
+      "canonical_candidate_name": "Color Theory & Application",
+      "similarity": 0.441,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-COLOR",
+          "title": "Color Theory & Application",
+          "score": 0.441
+        },
+        {
+          "id": "ATH-DOM-ART-LIGHT",
+          "title": "Light, Value & Rendering",
+          "score": 0.233
+        },
+        {
+          "id": "ATH-DOM-ART-ILLUS",
+          "title": "Illustration & Visual Storytelling",
+          "score": 0.208
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-05",
+      "working_name": "Composition and Storytelling",
+      "canonical_candidate_id": "ATH-DOM-ART-ILLUS",
+      "canonical_candidate_name": "Illustration & Visual Storytelling",
+      "similarity": 0.503,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-ILLUS",
+          "title": "Illustration & Visual Storytelling",
+          "score": 0.503
+        },
+        {
+          "id": "ATH-DOM-ART-LIGHT",
+          "title": "Light, Value & Rendering",
+          "score": 0.265
+        },
+        {
+          "id": "ATH-DOM-ART-OBS",
+          "title": "Observation & Visual Literacy",
+          "score": 0.26
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-06",
+      "working_name": "Illustration and Concept Art",
+      "canonical_candidate_id": "ATH-DOM-ART-ILLUS",
+      "canonical_candidate_name": "Illustration & Visual Storytelling",
+      "similarity": 0.383,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-ILLUS",
+          "title": "Illustration & Visual Storytelling",
+          "score": 0.383
+        },
+        {
+          "id": "ATH-DOM-ART-DRAW",
+          "title": "Drawing Fundamentals",
+          "score": 0.271
+        },
+        {
+          "id": "ATH-DOM-ART-OBS",
+          "title": "Observation & Visual Literacy",
+          "score": 0.26
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-07",
+      "working_name": "Digital Art Production",
+      "canonical_candidate_id": "ATH-DOM-ART-LIGHT",
+      "canonical_candidate_name": "Light, Value & Rendering",
+      "similarity": 0.302,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-LIGHT",
+          "title": "Light, Value & Rendering",
+          "score": 0.302
+        },
+        {
+          "id": "ATH-DOM-ART-COLOR",
+          "title": "Color Theory & Application",
+          "score": 0.254
+        },
+        {
+          "id": "ATH-DOM-ART-DRAW",
+          "title": "Drawing Fundamentals",
+          "score": 0.186
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ART",
+      "working_id": "DOM-ART-08",
+      "working_name": "Personal Practice and Critique",
+      "canonical_candidate_id": "ATH-DOM-ART-OBS",
+      "canonical_candidate_name": "Observation & Visual Literacy",
+      "similarity": 0.228,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ART-OBS",
+          "title": "Observation & Visual Literacy",
+          "score": 0.228
+        },
+        {
+          "id": "ATH-DOM-ART-ILLUS",
+          "title": "Illustration & Visual Storytelling",
+          "score": 0.21
+        },
+        {
+          "id": "ATH-DOM-ART-SPACE",
+          "title": "Perspective & Spatial Form",
+          "score": 0.193
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-01",
+      "working_name": "Movement Literacy",
+      "canonical_candidate_id": "ATH-DOM-ATH-FITBASE",
+      "canonical_candidate_name": "Physical Literacy & Training Principles",
+      "similarity": 0.287,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-FITBASE",
+          "title": "Physical Literacy & Training Principles",
+          "score": 0.287
+        },
+        {
+          "id": "ATH-DOM-ATH-STRENGTH",
+          "title": "Strength & Power",
+          "score": 0.252
+        },
+        {
+          "id": "ATH-DOM-ATH-SPEED",
+          "title": "Speed, Agility & Change of Direction",
+          "score": 0.234
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-02",
+      "working_name": "Strength and Power",
+      "canonical_candidate_id": "ATH-DOM-ATH-STRENGTH",
+      "canonical_candidate_name": "Strength & Power",
+      "similarity": 0.802,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-STRENGTH",
+          "title": "Strength & Power",
+          "score": 0.802
+        },
+        {
+          "id": "ATH-DOM-ATH-FITBASE",
+          "title": "Physical Literacy & Training Principles",
+          "score": 0.189
+        },
+        {
+          "id": "ATH-DOM-ATH-RECOVERY",
+          "title": "Performance Recovery",
+          "score": 0.171
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-03",
+      "working_name": "Aerobic and Anaerobic Conditioning",
+      "canonical_candidate_id": "ATH-DOM-ATH-ENDURE",
+      "canonical_candidate_name": "Aerobic & Anaerobic Conditioning",
+      "similarity": 0.872,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-ENDURE",
+          "title": "Aerobic & Anaerobic Conditioning",
+          "score": 0.872
+        },
+        {
+          "id": "ATH-DOM-ATH-SPEED",
+          "title": "Speed, Agility & Change of Direction",
+          "score": 0.272
+        },
+        {
+          "id": "ATH-DOM-ATH-SKILL",
+          "title": "Coordination & Sport Skill",
+          "score": 0.202
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-04",
+      "working_name": "Speed and Agility",
+      "canonical_candidate_id": "ATH-DOM-ATH-SPEED",
+      "canonical_candidate_name": "Speed, Agility & Change of Direction",
+      "similarity": 0.455,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-SPEED",
+          "title": "Speed, Agility & Change of Direction",
+          "score": 0.455
+        },
+        {
+          "id": "ATH-DOM-ATH-RECOVERY",
+          "title": "Performance Recovery",
+          "score": 0.211
+        },
+        {
+          "id": "ATH-DOM-ATH-ENDURE",
+          "title": "Aerobic & Anaerobic Conditioning",
+          "score": 0.194
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-05",
+      "working_name": "Sport-Specific Skill",
+      "canonical_candidate_id": "ATH-DOM-ATH-SKILL",
+      "canonical_candidate_name": "Coordination & Sport Skill",
+      "similarity": 0.5,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-SKILL",
+          "title": "Coordination & Sport Skill",
+          "score": 0.5
+        },
+        {
+          "id": "ATH-DOM-ATH-RECOVERY",
+          "title": "Performance Recovery",
+          "score": 0.195
+        },
+        {
+          "id": "ATH-DOM-ATH-STRENGTH",
+          "title": "Strength & Power",
+          "score": 0.153
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-06",
+      "working_name": "Training Design",
+      "canonical_candidate_id": "ATH-DOM-ATH-FITBASE",
+      "canonical_candidate_name": "Physical Literacy & Training Principles",
+      "similarity": 0.345,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-FITBASE",
+          "title": "Physical Literacy & Training Principles",
+          "score": 0.345
+        },
+        {
+          "id": "ATH-DOM-ATH-STRENGTH",
+          "title": "Strength & Power",
+          "score": 0.269
+        },
+        {
+          "id": "ATH-DOM-ATH-SKILL",
+          "title": "Coordination & Sport Skill",
+          "score": 0.267
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-07",
+      "working_name": "Performance Psychology",
+      "canonical_candidate_id": "ATH-DOM-ATH-RECOVERY",
+      "canonical_candidate_name": "Performance Recovery",
+      "similarity": 0.519,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-RECOVERY",
+          "title": "Performance Recovery",
+          "score": 0.519
+        },
+        {
+          "id": "ATH-DOM-ATH-ENDURE",
+          "title": "Aerobic & Anaerobic Conditioning",
+          "score": 0.275
+        },
+        {
+          "id": "ATH-DOM-ATH-SKILL",
+          "title": "Coordination & Sport Skill",
+          "score": 0.226
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ATH",
+      "working_id": "DOM-ATH-08",
+      "working_name": "Coaching and Performance Analysis",
+      "canonical_candidate_id": "ATH-DOM-ATH-RECOVERY",
+      "canonical_candidate_name": "Performance Recovery",
+      "similarity": 0.389,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ATH-RECOVERY",
+          "title": "Performance Recovery",
+          "score": 0.389
+        },
+        {
+          "id": "ATH-DOM-ATH-FITBASE",
+          "title": "Physical Literacy & Training Principles",
+          "score": 0.241
+        },
+        {
+          "id": "ATH-DOM-ATH-SKILL",
+          "title": "Coordination & Sport Skill",
+          "score": 0.228
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-01",
+      "working_name": "Customer and Market Discovery",
+      "canonical_candidate_id": "ATH-DOM-BIZ-VALUE",
+      "canonical_candidate_name": "Value Creation & Customer Discovery",
+      "similarity": 0.494,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-VALUE",
+          "title": "Value Creation & Customer Discovery",
+          "score": 0.494
+        },
+        {
+          "id": "ATH-DOM-BIZ-MKT",
+          "title": "Marketing & Distribution",
+          "score": 0.28
+        },
+        {
+          "id": "ATH-DOM-BIZ-OFFER",
+          "title": "Offers & Positioning",
+          "score": 0.166
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-02",
+      "working_name": "Value Proposition and Offer Design",
+      "canonical_candidate_id": "ATH-DOM-BIZ-VALUE",
+      "canonical_candidate_name": "Value Creation & Customer Discovery",
+      "similarity": 0.393,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-VALUE",
+          "title": "Value Creation & Customer Discovery",
+          "score": 0.393
+        },
+        {
+          "id": "ATH-DOM-BIZ-OFFER",
+          "title": "Offers & Positioning",
+          "score": 0.3
+        },
+        {
+          "id": "ATH-DOM-BIZ-SALES",
+          "title": "Sales & Negotiation",
+          "score": 0.255
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-03",
+      "working_name": "Sales and Negotiation",
+      "canonical_candidate_id": "ATH-DOM-BIZ-SALES",
+      "canonical_candidate_name": "Sales & Negotiation",
+      "similarity": 0.815,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-SALES",
+          "title": "Sales & Negotiation",
+          "score": 0.815
+        },
+        {
+          "id": "ATH-DOM-BIZ-OFFER",
+          "title": "Offers & Positioning",
+          "score": 0.3
+        },
+        {
+          "id": "ATH-DOM-BIZ-MKT",
+          "title": "Marketing & Distribution",
+          "score": 0.242
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-04",
+      "working_name": "Marketing and Distribution",
+      "canonical_candidate_id": "ATH-DOM-BIZ-MKT",
+      "canonical_candidate_name": "Marketing & Distribution",
+      "similarity": 0.829,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-MKT",
+          "title": "Marketing & Distribution",
+          "score": 0.829
+        },
+        {
+          "id": "ATH-DOM-BIZ-SALES",
+          "title": "Sales & Negotiation",
+          "score": 0.272
+        },
+        {
+          "id": "ATH-DOM-BIZ-VALUE",
+          "title": "Value Creation & Customer Discovery",
+          "score": 0.264
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-05",
+      "working_name": "Business Operations",
+      "canonical_candidate_id": "ATH-DOM-BIZ-OPS",
+      "canonical_candidate_name": "Operations & Systems",
+      "similarity": 0.468,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-OPS",
+          "title": "Operations & Systems",
+          "score": 0.468
+        },
+        {
+          "id": "ATH-DOM-BIZ-SALES",
+          "title": "Sales & Negotiation",
+          "score": 0.325
+        },
+        {
+          "id": "ATH-DOM-BIZ-VALUE",
+          "title": "Value Creation & Customer Discovery",
+          "score": 0.25
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-06",
+      "working_name": "Finance and Unit Economics",
+      "canonical_candidate_id": "ATH-DOM-BIZ-MKT",
+      "canonical_candidate_name": "Marketing & Distribution",
+      "similarity": 0.217,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-MKT",
+          "title": "Marketing & Distribution",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-BIZ-VALUE",
+          "title": "Value Creation & Customer Discovery",
+          "score": 0.198
+        },
+        {
+          "id": "ATH-DOM-BIZ-GROW",
+          "title": "Venture Strategy & Growth",
+          "score": 0.159
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-07",
+      "working_name": "Product and Growth",
+      "canonical_candidate_id": "ATH-DOM-BIZ-GROW",
+      "canonical_candidate_name": "Venture Strategy & Growth",
+      "similarity": 0.387,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-GROW",
+          "title": "Venture Strategy & Growth",
+          "score": 0.387
+        },
+        {
+          "id": "ATH-DOM-BIZ-OFFER",
+          "title": "Offers & Positioning",
+          "score": 0.181
+        },
+        {
+          "id": "ATH-DOM-BIZ-SALES",
+          "title": "Sales & Negotiation",
+          "score": 0.149
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BIZ",
+      "working_id": "DOM-BIZ-08",
+      "working_name": "Governance and Strategy",
+      "canonical_candidate_id": "ATH-DOM-BIZ-GROW",
+      "canonical_candidate_name": "Venture Strategy & Growth",
+      "similarity": 0.437,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BIZ-GROW",
+          "title": "Venture Strategy & Growth",
+          "score": 0.437
+        },
+        {
+          "id": "ATH-DOM-BIZ-MKT",
+          "title": "Marketing & Distribution",
+          "score": 0.202
+        },
+        {
+          "id": "ATH-DOM-BIZ-OFFER",
+          "title": "Offers & Positioning",
+          "score": 0.19
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-01",
+      "working_name": "Anatomy and Biological Organization",
+      "canonical_candidate_id": "ATH-DOM-BODY-ANAT",
+      "canonical_candidate_name": "Human Anatomy",
+      "similarity": 0.26,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-ANAT",
+          "title": "Human Anatomy",
+          "score": 0.26
+        },
+        {
+          "id": "ATH-DOM-BODY-KINES",
+          "title": "Kinesiology & Biomechanics",
+          "score": 0.242
+        },
+        {
+          "id": "ATH-DOM-BODY-BIOCHEM",
+          "title": "Biochemistry & Cell Biology",
+          "score": 0.217
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-02",
+      "working_name": "Human Physiology",
+      "canonical_candidate_id": "ATH-DOM-BODY-PHYS",
+      "canonical_candidate_name": "Human Physiology",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-PHYS",
+          "title": "Human Physiology",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-BODY-ANAT",
+          "title": "Human Anatomy",
+          "score": 0.43
+        },
+        {
+          "id": "ATH-DOM-BODY-BIOCHEM",
+          "title": "Biochemistry & Cell Biology",
+          "score": 0.285
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-03",
+      "working_name": "Biomechanics",
+      "canonical_candidate_id": "ATH-DOM-BODY-KINES",
+      "canonical_candidate_name": "Kinesiology & Biomechanics",
+      "similarity": 0.608,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-KINES",
+          "title": "Kinesiology & Biomechanics",
+          "score": 0.608
+        },
+        {
+          "id": "ATH-DOM-BODY-BIOCHEM",
+          "title": "Biochemistry & Cell Biology",
+          "score": 0.246
+        },
+        {
+          "id": "ATH-DOM-BODY-RECOV",
+          "title": "Recovery & Health Science",
+          "score": 0.223
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-04",
+      "working_name": "Nutrition Science",
+      "canonical_candidate_id": "ATH-DOM-BODY-NUTRI",
+      "canonical_candidate_name": "Nutrition Science",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-NUTRI",
+          "title": "Nutrition Science",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-BODY-RECOV",
+          "title": "Recovery & Health Science",
+          "score": 0.38
+        },
+        {
+          "id": "ATH-DOM-BODY-ANAT",
+          "title": "Human Anatomy",
+          "score": 0.173
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-05",
+      "working_name": "Sleep and Recovery Science",
+      "canonical_candidate_id": "ATH-DOM-BODY-RECOV",
+      "canonical_candidate_name": "Recovery & Health Science",
+      "similarity": 0.564,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-RECOV",
+          "title": "Recovery & Health Science",
+          "score": 0.564
+        },
+        {
+          "id": "ATH-DOM-BODY-NUTRI",
+          "title": "Nutrition Science",
+          "score": 0.403
+        },
+        {
+          "id": "ATH-DOM-BODY-KINES",
+          "title": "Kinesiology & Biomechanics",
+          "score": 0.182
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-06",
+      "working_name": "Health Information Literacy",
+      "canonical_candidate_id": "ATH-DOM-BODY-RECOV",
+      "canonical_candidate_name": "Recovery & Health Science",
+      "similarity": 0.33,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-RECOV",
+          "title": "Recovery & Health Science",
+          "score": 0.33
+        },
+        {
+          "id": "ATH-DOM-BODY-NUTRI",
+          "title": "Nutrition Science",
+          "score": 0.295
+        },
+        {
+          "id": "ATH-DOM-BODY-ANAT",
+          "title": "Human Anatomy",
+          "score": 0.227
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-07",
+      "working_name": "Exercise Physiology",
+      "canonical_candidate_id": "ATH-DOM-BODY-PHYS",
+      "canonical_candidate_name": "Human Physiology",
+      "similarity": 0.525,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-PHYS",
+          "title": "Human Physiology",
+          "score": 0.525
+        },
+        {
+          "id": "ATH-DOM-BODY-BIOCHEM",
+          "title": "Biochemistry & Cell Biology",
+          "score": 0.325
+        },
+        {
+          "id": "ATH-DOM-BODY-KINES",
+          "title": "Kinesiology & Biomechanics",
+          "score": 0.242
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "BODY",
+      "working_id": "DOM-BODY-08",
+      "working_name": "Research and Human Variation",
+      "canonical_candidate_id": "ATH-DOM-BODY-ANAT",
+      "canonical_candidate_name": "Human Anatomy",
+      "similarity": 0.387,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-BODY-ANAT",
+          "title": "Human Anatomy",
+          "score": 0.387
+        },
+        {
+          "id": "ATH-DOM-BODY-PHYS",
+          "title": "Human Physiology",
+          "score": 0.306
+        },
+        {
+          "id": "ATH-DOM-BODY-NUTRI",
+          "title": "Nutrition Science",
+          "score": 0.231
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-01",
+      "working_name": "Foundational Communication",
+      "canonical_candidate_id": "ATH-DOM-COMM-PERSUADE",
+      "canonical_candidate_name": "Persuasion & Negotiation Communication",
+      "similarity": 0.528,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-PERSUADE",
+          "title": "Persuasion & Negotiation Communication",
+          "score": 0.528
+        },
+        {
+          "id": "ATH-DOM-COMM-ARGUE",
+          "title": "Argumentation & Debate",
+          "score": 0.283
+        },
+        {
+          "id": "ATH-DOM-COMM-WRITE",
+          "title": "Practical & Professional Writing",
+          "score": 0.255
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-02",
+      "working_name": "Writing and Explanation",
+      "canonical_candidate_id": "ATH-DOM-COMM-EXPLAIN",
+      "canonical_candidate_name": "Explanation & Teaching",
+      "similarity": 0.42,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-EXPLAIN",
+          "title": "Explanation & Teaching",
+          "score": 0.42
+        },
+        {
+          "id": "ATH-DOM-COMM-SPEAK",
+          "title": "Public Speaking & Presentation",
+          "score": 0.28
+        },
+        {
+          "id": "ATH-DOM-COMM-LISTEN",
+          "title": "Listening & Dialogue",
+          "score": 0.254
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-03",
+      "working_name": "Argument and Critical Discussion",
+      "canonical_candidate_id": "ATH-DOM-COMM-ARGUE",
+      "canonical_candidate_name": "Argumentation & Debate",
+      "similarity": 0.325,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-ARGUE",
+          "title": "Argumentation & Debate",
+          "score": 0.325
+        },
+        {
+          "id": "ATH-DOM-COMM-WRITE",
+          "title": "Practical & Professional Writing",
+          "score": 0.273
+        },
+        {
+          "id": "ATH-DOM-COMM-SPEAK",
+          "title": "Public Speaking & Presentation",
+          "score": 0.217
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-04",
+      "working_name": "Persuasion and Rhetoric",
+      "canonical_candidate_id": "ATH-DOM-COMM-PERSUADE",
+      "canonical_candidate_name": "Persuasion & Negotiation Communication",
+      "similarity": 0.445,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-PERSUADE",
+          "title": "Persuasion & Negotiation Communication",
+          "score": 0.445
+        },
+        {
+          "id": "ATH-DOM-COMM-WRITE",
+          "title": "Practical & Professional Writing",
+          "score": 0.245
+        },
+        {
+          "id": "ATH-DOM-COMM-EXPLAIN",
+          "title": "Explanation & Teaching",
+          "score": 0.242
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-05",
+      "working_name": "Speaking and Presentation",
+      "canonical_candidate_id": "ATH-DOM-COMM-SPEAK",
+      "canonical_candidate_name": "Public Speaking & Presentation",
+      "similarity": 0.69,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-SPEAK",
+          "title": "Public Speaking & Presentation",
+          "score": 0.69
+        },
+        {
+          "id": "ATH-DOM-COMM-ARGUE",
+          "title": "Argumentation & Debate",
+          "score": 0.289
+        },
+        {
+          "id": "ATH-DOM-COMM-PERSUADE",
+          "title": "Persuasion & Negotiation Communication",
+          "score": 0.256
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-06",
+      "working_name": "Negotiation and Conflict",
+      "canonical_candidate_id": "ATH-DOM-COMM-PERSUADE",
+      "canonical_candidate_name": "Persuasion & Negotiation Communication",
+      "similarity": 0.46,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-PERSUADE",
+          "title": "Persuasion & Negotiation Communication",
+          "score": 0.46
+        },
+        {
+          "id": "ATH-DOM-COMM-ARGUE",
+          "title": "Argumentation & Debate",
+          "score": 0.295
+        },
+        {
+          "id": "ATH-DOM-COMM-EXPLAIN",
+          "title": "Explanation & Teaching",
+          "score": 0.266
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-07",
+      "working_name": "Digital and Cross-Cultural Communication",
+      "canonical_candidate_id": "ATH-DOM-COMM-PERSUADE",
+      "canonical_candidate_name": "Persuasion & Negotiation Communication",
+      "similarity": 0.375,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-PERSUADE",
+          "title": "Persuasion & Negotiation Communication",
+          "score": 0.375
+        },
+        {
+          "id": "ATH-DOM-COMM-WRITE",
+          "title": "Practical & Professional Writing",
+          "score": 0.279
+        },
+        {
+          "id": "ATH-DOM-COMM-EXPLAIN",
+          "title": "Explanation & Teaching",
+          "score": 0.173
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "COMM",
+      "working_id": "DOM-COMM-08",
+      "working_name": "Advanced Communication Strategy",
+      "canonical_candidate_id": "ATH-DOM-COMM-PERSUADE",
+      "canonical_candidate_name": "Persuasion & Negotiation Communication",
+      "similarity": 0.4,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-COMM-PERSUADE",
+          "title": "Persuasion & Negotiation Communication",
+          "score": 0.4
+        },
+        {
+          "id": "ATH-DOM-COMM-EXPLAIN",
+          "title": "Explanation & Teaching",
+          "score": 0.28
+        },
+        {
+          "id": "ATH-DOM-COMM-ARGUE",
+          "title": "Argumentation & Debate",
+          "score": 0.28
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-01",
+      "working_name": "Digital Safety and Privacy",
+      "canonical_candidate_id": "ATH-DOM-CYBER-SAFETY",
+      "canonical_candidate_name": "Personal Digital Security",
+      "similarity": 0.364,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-SAFETY",
+          "title": "Personal Digital Security",
+          "score": 0.364
+        },
+        {
+          "id": "ATH-DOM-CYBER-TEST",
+          "title": "Authorized Security Testing",
+          "score": 0.196
+        },
+        {
+          "id": "ATH-DOM-CYBER-OS",
+          "title": "Operating Systems & Linux",
+          "score": 0.186
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-02",
+      "working_name": "Operating Systems and Networks",
+      "canonical_candidate_id": "ATH-DOM-CYBER-OS",
+      "canonical_candidate_name": "Operating Systems & Linux",
+      "similarity": 0.606,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-OS",
+          "title": "Operating Systems & Linux",
+          "score": 0.606
+        },
+        {
+          "id": "ATH-DOM-CYBER-NETWORK",
+          "title": "Networking Fundamentals",
+          "score": 0.196
+        },
+        {
+          "id": "ATH-DOM-CYBER-WEBSEC",
+          "title": "Web & Application Security",
+          "score": 0.193
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-03",
+      "working_name": "Secure Software Foundations",
+      "canonical_candidate_id": "ATH-DOM-CYBER-NETWORK",
+      "canonical_candidate_name": "Networking Fundamentals",
+      "similarity": 0.312,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-NETWORK",
+          "title": "Networking Fundamentals",
+          "score": 0.312
+        },
+        {
+          "id": "ATH-DOM-CYBER-TEST",
+          "title": "Authorized Security Testing",
+          "score": 0.241
+        },
+        {
+          "id": "ATH-DOM-CYBER-OS",
+          "title": "Operating Systems & Linux",
+          "score": 0.182
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-04",
+      "working_name": "Defensive Security Operations",
+      "canonical_candidate_id": "ATH-DOM-CYBER-DEFENSE",
+      "canonical_candidate_name": "Defensive Security",
+      "similarity": 0.731,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-DEFENSE",
+          "title": "Defensive Security",
+          "score": 0.731
+        },
+        {
+          "id": "ATH-DOM-CYBER-TEST",
+          "title": "Authorized Security Testing",
+          "score": 0.418
+        },
+        {
+          "id": "ATH-DOM-CYBER-WEBSEC",
+          "title": "Web & Application Security",
+          "score": 0.34
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-05",
+      "working_name": "Cryptography and Identity",
+      "canonical_candidate_id": "ATH-DOM-CYBER-NETWORK",
+      "canonical_candidate_name": "Networking Fundamentals",
+      "similarity": 0.217,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-NETWORK",
+          "title": "Networking Fundamentals",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-CYBER-WEBSEC",
+          "title": "Web & Application Security",
+          "score": 0.186
+        },
+        {
+          "id": "ATH-DOM-CYBER-DEFENSE",
+          "title": "Defensive Security",
+          "score": 0.181
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-06",
+      "working_name": "Threat Modeling and Risk",
+      "canonical_candidate_id": "ATH-DOM-CYBER-TEST",
+      "canonical_candidate_name": "Authorized Security Testing",
+      "similarity": 0.255,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-TEST",
+          "title": "Authorized Security Testing",
+          "score": 0.255
+        },
+        {
+          "id": "ATH-DOM-CYBER-NETWORK",
+          "title": "Networking Fundamentals",
+          "score": 0.249
+        },
+        {
+          "id": "ATH-DOM-CYBER-OS",
+          "title": "Operating Systems & Linux",
+          "score": 0.221
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-07",
+      "working_name": "Authorized Testing and Research",
+      "canonical_candidate_id": "ATH-DOM-CYBER-TEST",
+      "canonical_candidate_name": "Authorized Security Testing",
+      "similarity": 0.543,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-TEST",
+          "title": "Authorized Security Testing",
+          "score": 0.543
+        },
+        {
+          "id": "ATH-DOM-CYBER-NETWORK",
+          "title": "Networking Fundamentals",
+          "score": 0.265
+        },
+        {
+          "id": "ATH-DOM-CYBER-OS",
+          "title": "Operating Systems & Linux",
+          "score": 0.169
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "CYBER",
+      "working_id": "DOM-CYBER-08",
+      "working_name": "Advanced Infrastructure Security",
+      "canonical_candidate_id": "ATH-DOM-CYBER-DEFENSE",
+      "canonical_candidate_name": "Defensive Security",
+      "similarity": 0.399,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-CYBER-DEFENSE",
+          "title": "Defensive Security",
+          "score": 0.399
+        },
+        {
+          "id": "ATH-DOM-CYBER-WEBSEC",
+          "title": "Web & Application Security",
+          "score": 0.349
+        },
+        {
+          "id": "ATH-DOM-CYBER-SAFETY",
+          "title": "Personal Digital Security",
+          "score": 0.344
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-01",
+      "working_name": "Electrical Safety and Measurement",
+      "canonical_candidate_id": "ATH-DOM-ELEC-FUND",
+      "canonical_candidate_name": "Electrical Fundamentals",
+      "similarity": 0.511,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-FUND",
+          "title": "Electrical Fundamentals",
+          "score": 0.511
+        },
+        {
+          "id": "ATH-DOM-ELEC-MEAS",
+          "title": "Instrumentation & Measurement",
+          "score": 0.417
+        },
+        {
+          "id": "ATH-DOM-ELEC-FAB",
+          "title": "Fabrication & Mechatronics",
+          "score": 0.251
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-02",
+      "working_name": "Circuit Fundamentals",
+      "canonical_candidate_id": "ATH-DOM-ELEC-FUND",
+      "canonical_candidate_name": "Electrical Fundamentals",
+      "similarity": 0.6,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-FUND",
+          "title": "Electrical Fundamentals",
+          "score": 0.6
+        },
+        {
+          "id": "ATH-DOM-ELEC-COMP",
+          "title": "Components & Circuits",
+          "score": 0.267
+        },
+        {
+          "id": "ATH-DOM-ELEC-MEAS",
+          "title": "Instrumentation & Measurement",
+          "score": 0.249
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-03",
+      "working_name": "Components and Devices",
+      "canonical_candidate_id": "ATH-DOM-ELEC-COMP",
+      "canonical_candidate_name": "Components & Circuits",
+      "similarity": 0.531,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-COMP",
+          "title": "Components & Circuits",
+          "score": 0.531
+        },
+        {
+          "id": "ATH-DOM-ELEC-FAB",
+          "title": "Fabrication & Mechatronics",
+          "score": 0.226
+        },
+        {
+          "id": "ATH-DOM-ELEC-EMB",
+          "title": "Embedded Systems",
+          "score": 0.205
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-04",
+      "working_name": "Prototyping and Fabrication",
+      "canonical_candidate_id": "ATH-DOM-ELEC-FAB",
+      "canonical_candidate_name": "Fabrication & Mechatronics",
+      "similarity": 0.368,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-FAB",
+          "title": "Fabrication & Mechatronics",
+          "score": 0.368
+        },
+        {
+          "id": "ATH-DOM-ELEC-MEAS",
+          "title": "Instrumentation & Measurement",
+          "score": 0.193
+        },
+        {
+          "id": "ATH-DOM-ELEC-FUND",
+          "title": "Electrical Fundamentals",
+          "score": 0.156
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-05",
+      "working_name": "Digital Electronics",
+      "canonical_candidate_id": "ATH-DOM-ELEC-DIG",
+      "canonical_candidate_name": "Digital Electronics",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-DIG",
+          "title": "Digital Electronics",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-ELEC-FAB",
+          "title": "Fabrication & Mechatronics",
+          "score": 0.363
+        },
+        {
+          "id": "ATH-DOM-ELEC-FUND",
+          "title": "Electrical Fundamentals",
+          "score": 0.279
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-06",
+      "working_name": "Embedded Systems",
+      "canonical_candidate_id": "ATH-DOM-ELEC-EMB",
+      "canonical_candidate_name": "Embedded Systems",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-EMB",
+          "title": "Embedded Systems",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-ELEC-FUND",
+          "title": "Electrical Fundamentals",
+          "score": 0.133
+        },
+        {
+          "id": "ATH-DOM-ELEC-MEAS",
+          "title": "Instrumentation & Measurement",
+          "score": 0.121
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-07",
+      "working_name": "Signals and Control",
+      "canonical_candidate_id": "ATH-DOM-ELEC-DIG",
+      "canonical_candidate_name": "Digital Electronics",
+      "similarity": 0.308,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-DIG",
+          "title": "Digital Electronics",
+          "score": 0.308
+        },
+        {
+          "id": "ATH-DOM-ELEC-FAB",
+          "title": "Fabrication & Mechatronics",
+          "score": 0.212
+        },
+        {
+          "id": "ATH-DOM-ELEC-COMP",
+          "title": "Components & Circuits",
+          "score": 0.171
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ELEC",
+      "working_id": "DOM-ELEC-08",
+      "working_name": "Power and Product Engineering",
+      "canonical_candidate_id": "ATH-DOM-ELEC-COMP",
+      "canonical_candidate_name": "Components & Circuits",
+      "similarity": 0.217,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ELEC-COMP",
+          "title": "Components & Circuits",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-ELEC-MEAS",
+          "title": "Instrumentation & Measurement",
+          "score": 0.209
+        },
+        {
+          "id": "ATH-DOM-ELEC-FUND",
+          "title": "Electrical Fundamentals",
+          "score": 0.175
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-01",
+      "working_name": "Computational Thinking",
+      "canonical_candidate_id": "ATH-DOM-ENG-PROG",
+      "canonical_candidate_name": "Programming & Computational Thinking",
+      "similarity": 0.744,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-PROG",
+          "title": "Programming & Computational Thinking",
+          "score": 0.744
+        },
+        {
+          "id": "ATH-DOM-ENG-COMPUTE",
+          "title": "Computational Foundations",
+          "score": 0.587
+        },
+        {
+          "id": "ATH-DOM-ENG-ADV",
+          "title": "Advanced Computing",
+          "score": 0.293
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-02",
+      "working_name": "Programming Foundations",
+      "canonical_candidate_id": "ATH-DOM-ENG-COMPUTE",
+      "canonical_candidate_name": "Computational Foundations",
+      "similarity": 0.523,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-COMPUTE",
+          "title": "Computational Foundations",
+          "score": 0.523
+        },
+        {
+          "id": "ATH-DOM-ENG-PROG",
+          "title": "Programming & Computational Thinking",
+          "score": 0.521
+        },
+        {
+          "id": "ATH-DOM-ENG-ALGO",
+          "title": "Algorithms & Data Structures",
+          "score": 0.186
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-03",
+      "working_name": "Programming Languages & Paradigms",
+      "canonical_candidate_id": "ATH-DOM-ENG-PROG",
+      "canonical_candidate_name": "Programming & Computational Thinking",
+      "similarity": 0.37,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-PROG",
+          "title": "Programming & Computational Thinking",
+          "score": 0.37
+        },
+        {
+          "id": "ATH-DOM-ENG-SYS",
+          "title": "Computer Systems",
+          "score": 0.166
+        },
+        {
+          "id": "ATH-DOM-ENG-SOFT",
+          "title": "Software Engineering",
+          "score": 0.153
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-04",
+      "working_name": "Software Engineering",
+      "canonical_candidate_id": "ATH-DOM-ENG-SOFT",
+      "canonical_candidate_name": "Software Engineering",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-SOFT",
+          "title": "Software Engineering",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-ENG-ADV",
+          "title": "Advanced Computing",
+          "score": 0.171
+        },
+        {
+          "id": "ATH-DOM-ENG-SYS",
+          "title": "Computer Systems",
+          "score": 0.144
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-05",
+      "working_name": "Web and Application Engineering",
+      "canonical_candidate_id": "ATH-DOM-ENG-WEB",
+      "canonical_candidate_name": "Web & Application Development",
+      "similarity": 0.543,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-WEB",
+          "title": "Web & Application Development",
+          "score": 0.543
+        },
+        {
+          "id": "ATH-DOM-ENG-SOFT",
+          "title": "Software Engineering",
+          "score": 0.427
+        },
+        {
+          "id": "ATH-DOM-ENG-PROG",
+          "title": "Programming & Computational Thinking",
+          "score": 0.26
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-06",
+      "working_name": "Computer Systems",
+      "canonical_candidate_id": "ATH-DOM-ENG-SYS",
+      "canonical_candidate_name": "Computer Systems",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-SYS",
+          "title": "Computer Systems",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-ENG-COMPUTE",
+          "title": "Computational Foundations",
+          "score": 0.254
+        },
+        {
+          "id": "ATH-DOM-ENG-ADV",
+          "title": "Advanced Computing",
+          "score": 0.229
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-07",
+      "working_name": "Networks and Distributed Systems",
+      "canonical_candidate_id": "ATH-DOM-ENG-SYS",
+      "canonical_candidate_name": "Computer Systems",
+      "similarity": 0.395,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-SYS",
+          "title": "Computer Systems",
+          "score": 0.395
+        },
+        {
+          "id": "ATH-DOM-ENG-ALGO",
+          "title": "Algorithms & Data Structures",
+          "score": 0.291
+        },
+        {
+          "id": "ATH-DOM-ENG-ADV",
+          "title": "Advanced Computing",
+          "score": 0.156
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-08",
+      "working_name": "Data and Intelligent Systems",
+      "canonical_candidate_id": "ATH-DOM-ENG-SYS",
+      "canonical_candidate_name": "Computer Systems",
+      "similarity": 0.365,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-SYS",
+          "title": "Computer Systems",
+          "score": 0.365
+        },
+        {
+          "id": "ATH-DOM-ENG-ALGO",
+          "title": "Algorithms & Data Structures",
+          "score": 0.275
+        },
+        {
+          "id": "ATH-DOM-ENG-ADV",
+          "title": "Advanced Computing",
+          "score": 0.226
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "ENG",
+      "working_id": "DOM-ENG-09",
+      "working_name": "Advanced Computer Science",
+      "canonical_candidate_id": "ATH-DOM-ENG-ADV",
+      "canonical_candidate_name": "Advanced Computing",
+      "similarity": 0.601,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-ENG-ADV",
+          "title": "Advanced Computing",
+          "score": 0.601
+        },
+        {
+          "id": "ATH-DOM-ENG-SYS",
+          "title": "Computer Systems",
+          "score": 0.436
+        },
+        {
+          "id": "ATH-DOM-ENG-PROG",
+          "title": "Programming & Computational Thinking",
+          "score": 0.264
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-01",
+      "working_name": "Personal Financial Foundations",
+      "canonical_candidate_id": "ATH-DOM-FIN-PERSONAL",
+      "canonical_candidate_name": "Personal Finance",
+      "similarity": 0.511,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.511
+        },
+        {
+          "id": "ATH-DOM-FIN-RISK",
+          "title": "Risk & Capital Allocation",
+          "score": 0.294
+        },
+        {
+          "id": "ATH-DOM-FIN-ECON",
+          "title": "Economic Principles",
+          "score": 0.265
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-02",
+      "working_name": "Accounting and Business Finance",
+      "canonical_candidate_id": "ATH-DOM-FIN-ACC",
+      "canonical_candidate_name": "Accounting & Statements",
+      "similarity": 0.42,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-ACC",
+          "title": "Accounting & Statements",
+          "score": 0.42
+        },
+        {
+          "id": "ATH-DOM-FIN-CORP",
+          "title": "Corporate Finance",
+          "score": 0.395
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.319
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-03",
+      "working_name": "Economics Foundations",
+      "canonical_candidate_id": "ATH-DOM-FIN-ECON",
+      "canonical_candidate_name": "Economic Principles",
+      "similarity": 0.293,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-ECON",
+          "title": "Economic Principles",
+          "score": 0.293
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.281
+        },
+        {
+          "id": "ATH-DOM-FIN-ACC",
+          "title": "Accounting & Statements",
+          "score": 0.279
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-04",
+      "working_name": "Financial Markets",
+      "canonical_candidate_id": "ATH-DOM-FIN-MARKETS",
+      "canonical_candidate_name": "Markets & Investing",
+      "similarity": 0.384,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-MARKETS",
+          "title": "Markets & Investing",
+          "score": 0.384
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.276
+        },
+        {
+          "id": "ATH-DOM-FIN-CORP",
+          "title": "Corporate Finance",
+          "score": 0.268
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-05",
+      "working_name": "Investment Analysis",
+      "canonical_candidate_id": "ATH-DOM-FIN-ACC",
+      "canonical_candidate_name": "Accounting & Statements",
+      "similarity": 0.293,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-ACC",
+          "title": "Accounting & Statements",
+          "score": 0.293
+        },
+        {
+          "id": "ATH-DOM-FIN-MARKETS",
+          "title": "Markets & Investing",
+          "score": 0.253
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.223
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-06",
+      "working_name": "Corporate Finance",
+      "canonical_candidate_id": "ATH-DOM-FIN-CORP",
+      "canonical_candidate_name": "Corporate Finance",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-CORP",
+          "title": "Corporate Finance",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.511
+        },
+        {
+          "id": "ATH-DOM-FIN-ECON",
+          "title": "Economic Principles",
+          "score": 0.253
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-07",
+      "working_name": "Quantitative Finance and Research",
+      "canonical_candidate_id": "ATH-DOM-FIN-CORP",
+      "canonical_candidate_name": "Corporate Finance",
+      "similarity": 0.356,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-CORP",
+          "title": "Corporate Finance",
+          "score": 0.356
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.309
+        },
+        {
+          "id": "ATH-DOM-FIN-ACC",
+          "title": "Accounting & Statements",
+          "score": 0.241
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "FIN",
+      "working_id": "DOM-FIN-08",
+      "working_name": "Public and Development Finance",
+      "canonical_candidate_id": "ATH-DOM-FIN-CORP",
+      "canonical_candidate_name": "Corporate Finance",
+      "similarity": 0.374,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-FIN-CORP",
+          "title": "Corporate Finance",
+          "score": 0.374
+        },
+        {
+          "id": "ATH-DOM-FIN-PERSONAL",
+          "title": "Personal Finance",
+          "score": 0.353
+        },
+        {
+          "id": "ATH-DOM-FIN-ACC",
+          "title": "Accounting & Statements",
+          "score": 0.229
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-01",
+      "working_name": "Personal Organization",
+      "canonical_candidate_id": "ATH-DOM-INDEP-SAFETY",
+      "canonical_candidate_name": "Personal & Emergency Safety",
+      "similarity": 0.455,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-SAFETY",
+          "title": "Personal & Emergency Safety",
+          "score": 0.455
+        },
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.355
+        },
+        {
+          "id": "ATH-DOM-INDEP-FOOD",
+          "title": "Food Preparation & Cooking",
+          "score": 0.231
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-02",
+      "working_name": "Food and Kitchen Skills",
+      "canonical_candidate_id": "ATH-DOM-INDEP-FOOD",
+      "canonical_candidate_name": "Food Preparation & Cooking",
+      "similarity": 0.363,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-FOOD",
+          "title": "Food Preparation & Cooking",
+          "score": 0.363
+        },
+        {
+          "id": "ATH-DOM-INDEP-NAV",
+          "title": "Navigation & Travel Skills",
+          "score": 0.363
+        },
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.198
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-03",
+      "working_name": "Tools and Repairs",
+      "canonical_candidate_id": "ATH-DOM-INDEP-REPAIR",
+      "canonical_candidate_name": "Tools & Basic Repair",
+      "similarity": 0.59,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-REPAIR",
+          "title": "Tools & Basic Repair",
+          "score": 0.59
+        },
+        {
+          "id": "ATH-DOM-INDEP-FOOD",
+          "title": "Food Preparation & Cooking",
+          "score": 0.285
+        },
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.195
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-04",
+      "working_name": "Navigation and Travel",
+      "canonical_candidate_id": "ATH-DOM-INDEP-NAV",
+      "canonical_candidate_name": "Navigation & Travel Skills",
+      "similarity": 0.666,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-NAV",
+          "title": "Navigation & Travel Skills",
+          "score": 0.666
+        },
+        {
+          "id": "ATH-DOM-INDEP-FOOD",
+          "title": "Food Preparation & Cooking",
+          "score": 0.231
+        },
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.207
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-05",
+      "working_name": "Money and Consumer Skills",
+      "canonical_candidate_id": "ATH-DOM-INDEP-NAV",
+      "canonical_candidate_name": "Navigation & Travel Skills",
+      "similarity": 0.324,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-NAV",
+          "title": "Navigation & Travel Skills",
+          "score": 0.324
+        },
+        {
+          "id": "ATH-DOM-INDEP-SAFETY",
+          "title": "Personal & Emergency Safety",
+          "score": 0.208
+        },
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.19
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-06",
+      "working_name": "Safety and First Aid Literacy",
+      "canonical_candidate_id": "ATH-DOM-INDEP-MONEY",
+      "canonical_candidate_name": "Everyday Administration",
+      "similarity": 0.25,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.25
+        },
+        {
+          "id": "ATH-DOM-INDEP-HOME",
+          "title": "Home & Daily Living",
+          "score": 0.226
+        },
+        {
+          "id": "ATH-DOM-INDEP-FOOD",
+          "title": "Food Preparation & Cooking",
+          "score": 0.196
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-07",
+      "working_name": "Digital and Administrative Independence",
+      "canonical_candidate_id": "ATH-DOM-INDEP-MONEY",
+      "canonical_candidate_name": "Everyday Administration",
+      "similarity": 0.335,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-MONEY",
+          "title": "Everyday Administration",
+          "score": 0.335
+        },
+        {
+          "id": "ATH-DOM-INDEP-NAV",
+          "title": "Navigation & Travel Skills",
+          "score": 0.227
+        },
+        {
+          "id": "ATH-DOM-INDEP-FOOD",
+          "title": "Food Preparation & Cooking",
+          "score": 0.206
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "INDEP",
+      "working_id": "DOM-INDEP-08",
+      "working_name": "Problem Solving and Self-Reliance",
+      "canonical_candidate_id": "ATH-DOM-INDEP-SAFETY",
+      "canonical_candidate_name": "Personal & Emergency Safety",
+      "similarity": 0.224,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-INDEP-SAFETY",
+          "title": "Personal & Emergency Safety",
+          "score": 0.224
+        },
+        {
+          "id": "ATH-DOM-INDEP-HOME",
+          "title": "Home & Daily Living",
+          "score": 0.208
+        },
+        {
+          "id": "ATH-DOM-INDEP-REPAIR",
+          "title": "Tools & Basic Repair",
+          "score": 0.204
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-01",
+      "working_name": "Language Foundations",
+      "canonical_candidate_id": "ATH-DOM-LANG-LING",
+      "canonical_candidate_name": "Linguistic Foundations",
+      "similarity": 0.612,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-LING",
+          "title": "Linguistic Foundations",
+          "score": 0.612
+        },
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.444
+        },
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.279
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-02",
+      "working_name": "English Mastery",
+      "canonical_candidate_id": "ATH-DOM-LANG-LING",
+      "canonical_candidate_name": "Linguistic Foundations",
+      "similarity": 0.246,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-LING",
+          "title": "Linguistic Foundations",
+          "score": 0.246
+        },
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.246
+        },
+        {
+          "id": "ATH-DOM-LANG-GRAM",
+          "title": "Grammar & Usage",
+          "score": 0.232
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-03",
+      "working_name": "Bangla Literacy and Technical Language",
+      "canonical_candidate_id": "ATH-DOM-LANG-ACQUIRE",
+      "canonical_candidate_name": "Additional Language Acquisition",
+      "similarity": 0.333,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.333
+        },
+        {
+          "id": "ATH-DOM-LANG-VOCAB",
+          "title": "Vocabulary & Lexical Growth",
+          "score": 0.248
+        },
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.217
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-04",
+      "working_name": "Additional Language Tracks",
+      "canonical_candidate_id": "ATH-DOM-LANG-ACQUIRE",
+      "canonical_candidate_name": "Additional Language Acquisition",
+      "similarity": 0.7,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.7
+        },
+        {
+          "id": "ATH-DOM-LANG-GRAM",
+          "title": "Grammar & Usage",
+          "score": 0.233
+        },
+        {
+          "id": "ATH-DOM-LANG-WRITE",
+          "title": "Writing Development",
+          "score": 0.202
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-05",
+      "working_name": "Linguistics",
+      "canonical_candidate_id": "ATH-DOM-LANG-LING",
+      "canonical_candidate_name": "Linguistic Foundations",
+      "similarity": 0.433,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-LING",
+          "title": "Linguistic Foundations",
+          "score": 0.433
+        },
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.248
+        },
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.236
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-06",
+      "working_name": "Multilingual Communication",
+      "canonical_candidate_id": "ATH-DOM-LANG-LING",
+      "canonical_candidate_name": "Linguistic Foundations",
+      "similarity": 0.379,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-LING",
+          "title": "Linguistic Foundations",
+          "score": 0.379
+        },
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.342
+        },
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.271
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-07",
+      "working_name": "Advanced Literacy",
+      "canonical_candidate_id": "ATH-DOM-LANG-READ",
+      "canonical_candidate_name": "Reading & Interpretation",
+      "similarity": 0.3,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.3
+        },
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.19
+        },
+        {
+          "id": "ATH-DOM-LANG-VOCAB",
+          "title": "Vocabulary & Lexical Growth",
+          "score": 0.186
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LANG",
+      "working_id": "DOM-LANG-08",
+      "working_name": "Language Assessment and Practice",
+      "canonical_candidate_id": "ATH-DOM-LANG-ACQUIRE",
+      "canonical_candidate_name": "Additional Language Acquisition",
+      "similarity": 0.327,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LANG-ACQUIRE",
+          "title": "Additional Language Acquisition",
+          "score": 0.327
+        },
+        {
+          "id": "ATH-DOM-LANG-READ",
+          "title": "Reading & Interpretation",
+          "score": 0.265
+        },
+        {
+          "id": "ATH-DOM-LANG-WRITE",
+          "title": "Writing Development",
+          "score": 0.204
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-01",
+      "working_name": "Personal Leadership",
+      "canonical_candidate_id": "ATH-DOM-LEAD-SELF",
+      "canonical_candidate_name": "Self-Leadership",
+      "similarity": 0.614,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-SELF",
+          "title": "Self-Leadership",
+          "score": 0.614
+        },
+        {
+          "id": "ATH-DOM-LEAD-ORG",
+          "title": "Organisational Systems",
+          "score": 0.285
+        },
+        {
+          "id": "ATH-DOM-LEAD-FEEDBACK",
+          "title": "Feedback & Development",
+          "score": 0.2
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-02",
+      "working_name": "Teamwork and Collaboration",
+      "canonical_candidate_id": "ATH-DOM-LEAD-PLAN",
+      "canonical_candidate_name": "Planning & Coordination",
+      "similarity": 0.332,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-PLAN",
+          "title": "Planning & Coordination",
+          "score": 0.332
+        },
+        {
+          "id": "ATH-DOM-LEAD-CONFLICT",
+          "title": "Conflict & Difficult Conversations",
+          "score": 0.269
+        },
+        {
+          "id": "ATH-DOM-LEAD-ORG",
+          "title": "Organisational Systems",
+          "score": 0.244
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-03",
+      "working_name": "Communication and Feedback",
+      "canonical_candidate_id": "ATH-DOM-LEAD-FEEDBACK",
+      "canonical_candidate_name": "Feedback & Development",
+      "similarity": 0.314,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-FEEDBACK",
+          "title": "Feedback & Development",
+          "score": 0.314
+        },
+        {
+          "id": "ATH-DOM-LEAD-ORG",
+          "title": "Organisational Systems",
+          "score": 0.271
+        },
+        {
+          "id": "ATH-DOM-LEAD-CONFLICT",
+          "title": "Conflict & Difficult Conversations",
+          "score": 0.224
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-04",
+      "working_name": "Project and Operations Management",
+      "canonical_candidate_id": "ATH-DOM-LEAD-CONFLICT",
+      "canonical_candidate_name": "Conflict & Difficult Conversations",
+      "similarity": 0.26,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-CONFLICT",
+          "title": "Conflict & Difficult Conversations",
+          "score": 0.26
+        },
+        {
+          "id": "ATH-DOM-LEAD-ORG",
+          "title": "Organisational Systems",
+          "score": 0.26
+        },
+        {
+          "id": "ATH-DOM-LEAD-FEEDBACK",
+          "title": "Feedback & Development",
+          "score": 0.245
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-05",
+      "working_name": "People Development",
+      "canonical_candidate_id": "ATH-DOM-LEAD-FEEDBACK",
+      "canonical_candidate_name": "Feedback & Development",
+      "similarity": 0.596,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-FEEDBACK",
+          "title": "Feedback & Development",
+          "score": 0.596
+        },
+        {
+          "id": "ATH-DOM-LEAD-SELF",
+          "title": "Self-Leadership",
+          "score": 0.236
+        },
+        {
+          "id": "ATH-DOM-LEAD-CONFLICT",
+          "title": "Conflict & Difficult Conversations",
+          "score": 0.208
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-06",
+      "working_name": "Strategy and Decision Making",
+      "canonical_candidate_id": "ATH-DOM-LEAD-TEAM",
+      "canonical_candidate_name": "Team Dynamics",
+      "similarity": 0.222,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-TEAM",
+          "title": "Team Dynamics",
+          "score": 0.222
+        },
+        {
+          "id": "ATH-DOM-LEAD-ORG",
+          "title": "Organisational Systems",
+          "score": 0.208
+        },
+        {
+          "id": "ATH-DOM-LEAD-FEEDBACK",
+          "title": "Feedback & Development",
+          "score": 0.163
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-07",
+      "working_name": "Organization and Governance",
+      "canonical_candidate_id": "ATH-DOM-LEAD-ORG",
+      "canonical_candidate_name": "Organisational Systems",
+      "similarity": 0.345,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-ORG",
+          "title": "Organisational Systems",
+          "score": 0.345
+        },
+        {
+          "id": "ATH-DOM-LEAD-PLAN",
+          "title": "Planning & Coordination",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-LEAD-TEAM",
+          "title": "Team Dynamics",
+          "score": 0.195
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "LEAD",
+      "working_id": "DOM-LEAD-08",
+      "working_name": "Advanced Leadership Practice",
+      "canonical_candidate_id": "ATH-DOM-LEAD-SELF",
+      "canonical_candidate_name": "Self-Leadership",
+      "similarity": 0.45,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-LEAD-SELF",
+          "title": "Self-Leadership",
+          "score": 0.45
+        },
+        {
+          "id": "ATH-DOM-LEAD-TEAM",
+          "title": "Team Dynamics",
+          "score": 0.19
+        },
+        {
+          "id": "ATH-DOM-LEAD-FEEDBACK",
+          "title": "Feedback & Development",
+          "score": 0.19
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-01",
+      "working_name": "Numeracy and Arithmetic",
+      "canonical_candidate_id": "ATH-DOM-MATH-NUM",
+      "canonical_candidate_name": "Number & Arithmetic Foundations",
+      "similarity": 0.47,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-NUM",
+          "title": "Number & Arithmetic Foundations",
+          "score": 0.47
+        },
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 0.363
+        },
+        {
+          "id": "ATH-DOM-MATH-REASON",
+          "title": "Logic & Mathematical Reasoning",
+          "score": 0.204
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-02",
+      "working_name": "Pre-Algebra and Algebra",
+      "canonical_candidate_id": "ATH-DOM-MATH-ALG",
+      "canonical_candidate_name": "Algebra & Symbolic Reasoning",
+      "similarity": 0.362,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-ALG",
+          "title": "Algebra & Symbolic Reasoning",
+          "score": 0.362
+        },
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 0.242
+        },
+        {
+          "id": "ATH-DOM-MATH-NUM",
+          "title": "Number & Arithmetic Foundations",
+          "score": 0.2
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-03",
+      "working_name": "Geometry and Measurement",
+      "canonical_candidate_id": "ATH-DOM-MATH-GEO",
+      "canonical_candidate_name": "Geometry & Measurement",
+      "similarity": 0.824,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-GEO",
+          "title": "Geometry & Measurement",
+          "score": 0.824
+        },
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 0.266
+        },
+        {
+          "id": "ATH-DOM-MATH-SCI",
+          "title": "Scientific Method & Modelling",
+          "score": 0.229
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-04",
+      "working_name": "Functions and Modeling",
+      "canonical_candidate_id": "ATH-DOM-MATH-PHYS",
+      "canonical_candidate_name": "Physics Foundations & Quantitative Modelling",
+      "similarity": 0.406,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-PHYS",
+          "title": "Physics Foundations & Quantitative Modelling",
+          "score": 0.406
+        },
+        {
+          "id": "ATH-DOM-MATH-CHEM",
+          "title": "Chemistry Foundations & Quantitative Modelling",
+          "score": 0.394
+        },
+        {
+          "id": "ATH-DOM-MATH-SCI",
+          "title": "Scientific Method & Modelling",
+          "score": 0.371
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-05",
+      "working_name": "Probability and Statistics",
+      "canonical_candidate_id": "ATH-DOM-MATH-DATA",
+      "canonical_candidate_name": "Statistics & Probability",
+      "similarity": 0.531,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-DATA",
+          "title": "Statistics & Probability",
+          "score": 0.531
+        },
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 0.311
+        },
+        {
+          "id": "ATH-DOM-MATH-NUM",
+          "title": "Number & Arithmetic Foundations",
+          "score": 0.26
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-06",
+      "working_name": "Trigonometry and Vectors",
+      "canonical_candidate_id": "ATH-DOM-MATH-GEO",
+      "canonical_candidate_name": "Geometry & Measurement",
+      "similarity": 0.325,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-GEO",
+          "title": "Geometry & Measurement",
+          "score": 0.325
+        },
+        {
+          "id": "ATH-DOM-MATH-NUM",
+          "title": "Number & Arithmetic Foundations",
+          "score": 0.27
+        },
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 0.207
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-07",
+      "working_name": "Calculus and Analysis",
+      "canonical_candidate_id": "ATH-DOM-MATH-ADV",
+      "canonical_candidate_name": "Advanced Mathematics",
+      "similarity": 0.254,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 0.254
+        },
+        {
+          "id": "ATH-DOM-MATH-NUM",
+          "title": "Number & Arithmetic Foundations",
+          "score": 0.208
+        },
+        {
+          "id": "ATH-DOM-MATH-DATA",
+          "title": "Statistics & Probability",
+          "score": 0.181
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "MATH",
+      "working_id": "DOM-MATH-08",
+      "working_name": "Advanced Mathematics",
+      "canonical_candidate_id": "ATH-DOM-MATH-ADV",
+      "canonical_candidate_name": "Advanced Mathematics",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-MATH-ADV",
+          "title": "Advanced Mathematics",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-MATH-REASON",
+          "title": "Logic & Mathematical Reasoning",
+          "score": 0.352
+        },
+        {
+          "id": "ATH-DOM-MATH-GEO",
+          "title": "Geometry & Measurement",
+          "score": 0.227
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-01",
+      "working_name": "Vocal Health and Mechanics",
+      "canonical_candidate_id": "ATH-DOM-PERF-VOICE",
+      "canonical_candidate_name": "Vocal Technique & Voice Care",
+      "similarity": 0.375,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-VOICE",
+          "title": "Vocal Technique & Voice Care",
+          "score": 0.375
+        },
+        {
+          "id": "ATH-DOM-PERF-IMPROV",
+          "title": "Improvisation & Creative Response",
+          "score": 0.205
+        },
+        {
+          "id": "ATH-DOM-PERF-SPEAK",
+          "title": "Spoken Performance",
+          "score": 0.177
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-02",
+      "working_name": "Pitch and Musicality",
+      "canonical_candidate_id": "ATH-DOM-PERF-SING",
+      "canonical_candidate_name": "Singing & Pitch",
+      "similarity": 0.284,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-SING",
+          "title": "Singing & Pitch",
+          "score": 0.284
+        },
+        {
+          "id": "ATH-DOM-PERF-MOVE",
+          "title": "Movement & Physical Expression",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-PERF-IMPROV",
+          "title": "Improvisation & Creative Response",
+          "score": 0.178
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-03",
+      "working_name": "Voice Development",
+      "canonical_candidate_id": "ATH-DOM-PERF-VOICE",
+      "canonical_candidate_name": "Vocal Technique & Voice Care",
+      "similarity": 0.282,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-VOICE",
+          "title": "Vocal Technique & Voice Care",
+          "score": 0.282
+        },
+        {
+          "id": "ATH-DOM-PERF-MOVE",
+          "title": "Movement & Physical Expression",
+          "score": 0.202
+        },
+        {
+          "id": "ATH-DOM-PERF-IMPROV",
+          "title": "Improvisation & Creative Response",
+          "score": 0.19
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-04",
+      "working_name": "Listening and Musicianship",
+      "canonical_candidate_id": "ATH-DOM-PERF-SING",
+      "canonical_candidate_name": "Singing & Pitch",
+      "similarity": 0.3,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-SING",
+          "title": "Singing & Pitch",
+          "score": 0.3
+        },
+        {
+          "id": "ATH-DOM-PERF-VOICE",
+          "title": "Vocal Technique & Voice Care",
+          "score": 0.225
+        },
+        {
+          "id": "ATH-DOM-PERF-SPEAK",
+          "title": "Spoken Performance",
+          "score": 0.207
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-05",
+      "working_name": "Performance Craft",
+      "canonical_candidate_id": "ATH-DOM-PERF-SPEAK",
+      "canonical_candidate_name": "Spoken Performance",
+      "similarity": 0.525,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-SPEAK",
+          "title": "Spoken Performance",
+          "score": 0.525
+        },
+        {
+          "id": "ATH-DOM-PERF-IMPROV",
+          "title": "Improvisation & Creative Response",
+          "score": 0.271
+        },
+        {
+          "id": "ATH-DOM-PERF-VOICE",
+          "title": "Vocal Technique & Voice Care",
+          "score": 0.212
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-06",
+      "working_name": "Recording and Production",
+      "canonical_candidate_id": "ATH-DOM-PERF-SING",
+      "canonical_candidate_name": "Singing & Pitch",
+      "similarity": 0.211,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-SING",
+          "title": "Singing & Pitch",
+          "score": 0.211
+        },
+        {
+          "id": "ATH-DOM-PERF-IMPROV",
+          "title": "Improvisation & Creative Response",
+          "score": 0.189
+        },
+        {
+          "id": "ATH-DOM-PERF-SPEAK",
+          "title": "Spoken Performance",
+          "score": 0.186
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-07",
+      "working_name": "Speech and Diction",
+      "canonical_candidate_id": "ATH-DOM-PERF-SPEAK",
+      "canonical_candidate_name": "Spoken Performance",
+      "similarity": 0.253,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-SPEAK",
+          "title": "Spoken Performance",
+          "score": 0.253
+        },
+        {
+          "id": "ATH-DOM-PERF-VOICE",
+          "title": "Vocal Technique & Voice Care",
+          "score": 0.177
+        },
+        {
+          "id": "ATH-DOM-PERF-MOVE",
+          "title": "Movement & Physical Expression",
+          "score": 0.17
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PERF",
+      "working_id": "DOM-PERF-08",
+      "working_name": "Performance Research and Repertoire",
+      "canonical_candidate_id": "ATH-DOM-PERF-SPEAK",
+      "canonical_candidate_name": "Spoken Performance",
+      "similarity": 0.34,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PERF-SPEAK",
+          "title": "Spoken Performance",
+          "score": 0.34
+        },
+        {
+          "id": "ATH-DOM-PERF-PRESENCE",
+          "title": "Stage & Camera Presence",
+          "score": 0.232
+        },
+        {
+          "id": "ATH-DOM-PERF-IMPROV",
+          "title": "Improvisation & Creative Response",
+          "score": 0.177
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-01",
+      "working_name": "Cognitive Psychology",
+      "canonical_candidate_id": "ATH-DOM-PSY-COG",
+      "canonical_candidate_name": "Cognition & Learning Psychology",
+      "similarity": 0.592,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.592
+        },
+        {
+          "id": "ATH-DOM-PSY-SOCIAL",
+          "title": "Social Psychology",
+          "score": 0.573
+        },
+        {
+          "id": "ATH-DOM-PSY-DECIDE",
+          "title": "Decision Science",
+          "score": 0.217
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-02",
+      "working_name": "Learning and Behavior",
+      "canonical_candidate_id": "ATH-DOM-PSY-COG",
+      "canonical_candidate_name": "Cognition & Learning Psychology",
+      "similarity": 0.356,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.356
+        },
+        {
+          "id": "ATH-DOM-PSY-BEHAV",
+          "title": "Behavior & Motivation",
+          "score": 0.348
+        },
+        {
+          "id": "ATH-DOM-PSY-STRAT",
+          "title": "Strategic Reasoning & Game Theory",
+          "score": 0.3
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-03",
+      "working_name": "Emotion and Wellbeing Science",
+      "canonical_candidate_id": "ATH-DOM-PSY-DECIDE",
+      "canonical_candidate_name": "Decision Science",
+      "similarity": 0.417,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-DECIDE",
+          "title": "Decision Science",
+          "score": 0.417
+        },
+        {
+          "id": "ATH-DOM-PSY-EMOTION",
+          "title": "Emotion & Self-Regulation",
+          "score": 0.383
+        },
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.314
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-04",
+      "working_name": "Social Psychology",
+      "canonical_candidate_id": "ATH-DOM-PSY-SOCIAL",
+      "canonical_candidate_name": "Social Psychology",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-SOCIAL",
+          "title": "Social Psychology",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.483
+        },
+        {
+          "id": "ATH-DOM-PSY-DECIDE",
+          "title": "Decision Science",
+          "score": 0.197
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-05",
+      "working_name": "Decision Science",
+      "canonical_candidate_id": "ATH-DOM-PSY-DECIDE",
+      "canonical_candidate_name": "Decision Science",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-DECIDE",
+          "title": "Decision Science",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-PSY-EMOTION",
+          "title": "Emotion & Self-Regulation",
+          "score": 0.267
+        },
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.231
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-06",
+      "working_name": "Strategic Reasoning",
+      "canonical_candidate_id": "ATH-DOM-PSY-STRAT",
+      "canonical_candidate_name": "Strategic Reasoning & Game Theory",
+      "similarity": 0.669,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-STRAT",
+          "title": "Strategic Reasoning & Game Theory",
+          "score": 0.669
+        },
+        {
+          "id": "ATH-DOM-PSY-EMOTION",
+          "title": "Emotion & Self-Regulation",
+          "score": 0.248
+        },
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.244
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-07",
+      "working_name": "Systems and Causal Thinking",
+      "canonical_candidate_id": "ATH-DOM-PSY-SOCIAL",
+      "canonical_candidate_name": "Social Psychology",
+      "similarity": 0.207,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-SOCIAL",
+          "title": "Social Psychology",
+          "score": 0.207
+        },
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.163
+        },
+        {
+          "id": "ATH-DOM-PSY-STRAT",
+          "title": "Strategic Reasoning & Game Theory",
+          "score": 0.157
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "PSY",
+      "working_id": "DOM-PSY-08",
+      "working_name": "Psychological Research Literacy",
+      "canonical_candidate_id": "ATH-DOM-PSY-SOCIAL",
+      "canonical_candidate_name": "Social Psychology",
+      "similarity": 0.271,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-PSY-SOCIAL",
+          "title": "Social Psychology",
+          "score": 0.271
+        },
+        {
+          "id": "ATH-DOM-PSY-STRAT",
+          "title": "Strategic Reasoning & Game Theory",
+          "score": 0.231
+        },
+        {
+          "id": "ATH-DOM-PSY-COG",
+          "title": "Cognition & Learning Psychology",
+          "score": 0.217
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-01",
+      "working_name": "Question and Search Design",
+      "canonical_candidate_id": "ATH-DOM-RES-QUEST",
+      "canonical_candidate_name": "Question Formation & Research Design",
+      "similarity": 0.658,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-QUEST",
+          "title": "Question Formation & Research Design",
+          "score": 0.658
+        },
+        {
+          "id": "ATH-DOM-RES-SYNTH",
+          "title": "Synthesis & Analysis",
+          "score": 0.266
+        },
+        {
+          "id": "ATH-DOM-RES-INFO",
+          "title": "Information Literacy & OSINT",
+          "score": 0.25
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-02",
+      "working_name": "Source Evaluation",
+      "canonical_candidate_id": "ATH-DOM-RES-SOURCES",
+      "canonical_candidate_name": "Source Evaluation",
+      "similarity": 1.0,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-SOURCES",
+          "title": "Source Evaluation",
+          "score": 1.0
+        },
+        {
+          "id": "ATH-DOM-RES-EVIDENCE",
+          "title": "Evidence & Verification",
+          "score": 0.308
+        },
+        {
+          "id": "ATH-DOM-RES-DOC",
+          "title": "Documentation & Citation",
+          "score": 0.267
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-03",
+      "working_name": "Research Methods",
+      "canonical_candidate_id": "ATH-DOM-RES-QUEST",
+      "canonical_candidate_name": "Question Formation & Research Design",
+      "similarity": 0.356,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-QUEST",
+          "title": "Question Formation & Research Design",
+          "score": 0.356
+        },
+        {
+          "id": "ATH-DOM-RES-SOURCES",
+          "title": "Source Evaluation",
+          "score": 0.276
+        },
+        {
+          "id": "ATH-DOM-RES-DOC",
+          "title": "Documentation & Citation",
+          "score": 0.171
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-04",
+      "working_name": "Data and Analysis",
+      "canonical_candidate_id": "ATH-DOM-RES-SYNTH",
+      "canonical_candidate_name": "Synthesis & Analysis",
+      "similarity": 0.459,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-SYNTH",
+          "title": "Synthesis & Analysis",
+          "score": 0.459
+        },
+        {
+          "id": "ATH-DOM-RES-INFO",
+          "title": "Information Literacy & OSINT",
+          "score": 0.181
+        },
+        {
+          "id": "ATH-DOM-RES-QUEST",
+          "title": "Question Formation & Research Design",
+          "score": 0.178
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-05",
+      "working_name": "Synthesis and Writing",
+      "canonical_candidate_id": "ATH-DOM-RES-SYNTH",
+      "canonical_candidate_name": "Synthesis & Analysis",
+      "similarity": 0.521,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-SYNTH",
+          "title": "Synthesis & Analysis",
+          "score": 0.521
+        },
+        {
+          "id": "ATH-DOM-RES-EVIDENCE",
+          "title": "Evidence & Verification",
+          "score": 0.248
+        },
+        {
+          "id": "ATH-DOM-RES-DOC",
+          "title": "Documentation & Citation",
+          "score": 0.242
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-06",
+      "working_name": "Reproducibility and Ethics",
+      "canonical_candidate_id": "ATH-DOM-RES-INFO",
+      "canonical_candidate_name": "Information Literacy & OSINT",
+      "similarity": 0.225,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-INFO",
+          "title": "Information Literacy & OSINT",
+          "score": 0.225
+        },
+        {
+          "id": "ATH-DOM-RES-SYNTH",
+          "title": "Synthesis & Analysis",
+          "score": 0.207
+        },
+        {
+          "id": "ATH-DOM-RES-SOURCES",
+          "title": "Source Evaluation",
+          "score": 0.181
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-07",
+      "working_name": "Advanced Evidence Review",
+      "canonical_candidate_id": "ATH-DOM-RES-EVIDENCE",
+      "canonical_candidate_name": "Evidence & Verification",
+      "similarity": 0.405,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-EVIDENCE",
+          "title": "Evidence & Verification",
+          "score": 0.405
+        },
+        {
+          "id": "ATH-DOM-RES-SOURCES",
+          "title": "Source Evaluation",
+          "score": 0.222
+        },
+        {
+          "id": "ATH-DOM-RES-DOC",
+          "title": "Documentation & Citation",
+          "score": 0.17
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "RES",
+      "working_id": "DOM-RES-08",
+      "working_name": "Independent Research Projects",
+      "canonical_candidate_id": "ATH-DOM-RES-QUEST",
+      "canonical_candidate_name": "Question Formation & Research Design",
+      "similarity": 0.368,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-RES-QUEST",
+          "title": "Question Formation & Research Design",
+          "score": 0.368
+        },
+        {
+          "id": "ATH-DOM-RES-DOC",
+          "title": "Documentation & Citation",
+          "score": 0.178
+        },
+        {
+          "id": "ATH-DOM-RES-SYNTH",
+          "title": "Synthesis & Analysis",
+          "score": 0.166
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-01",
+      "working_name": "Personal Information Management",
+      "canonical_candidate_id": "ATH-DOM-WORK-KNOW",
+      "canonical_candidate_name": "Knowledge & Information Management",
+      "similarity": 0.67,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-KNOW",
+          "title": "Knowledge & Information Management",
+          "score": 0.67
+        },
+        {
+          "id": "ATH-DOM-WORK-PERSONAL",
+          "title": "Personal Workflow Design",
+          "score": 0.377
+        },
+        {
+          "id": "ATH-DOM-WORK-AUTO",
+          "title": "Automation & Scripting",
+          "score": 0.255
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-02",
+      "working_name": "Planning and Execution",
+      "canonical_candidate_id": "ATH-DOM-WORK-LEARN",
+      "canonical_candidate_name": "Learning Systems & Metacognition",
+      "similarity": 0.325,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-LEARN",
+          "title": "Learning Systems & Metacognition",
+          "score": 0.325
+        },
+        {
+          "id": "ATH-DOM-WORK-TYPING",
+          "title": "Typing & Input Fluency",
+          "score": 0.279
+        },
+        {
+          "id": "ATH-DOM-WORK-CLI",
+          "title": "Command Line & Shell",
+          "score": 0.195
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-03",
+      "working_name": "Digital Literacy",
+      "canonical_candidate_id": "ATH-DOM-WORK-TYPING",
+      "canonical_candidate_name": "Typing & Input Fluency",
+      "similarity": 0.289,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-TYPING",
+          "title": "Typing & Input Fluency",
+          "score": 0.289
+        },
+        {
+          "id": "ATH-DOM-WORK-CLI",
+          "title": "Command Line & Shell",
+          "score": 0.191
+        },
+        {
+          "id": "ATH-DOM-WORK-PERSONAL",
+          "title": "Personal Workflow Design",
+          "score": 0.163
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-04",
+      "working_name": "Developer Workflow",
+      "canonical_candidate_id": "ATH-DOM-WORK-PERSONAL",
+      "canonical_candidate_name": "Personal Workflow Design",
+      "similarity": 0.459,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-PERSONAL",
+          "title": "Personal Workflow Design",
+          "score": 0.459
+        },
+        {
+          "id": "ATH-DOM-WORK-CLI",
+          "title": "Command Line & Shell",
+          "score": 0.181
+        },
+        {
+          "id": "ATH-DOM-WORK-KNOW",
+          "title": "Knowledge & Information Management",
+          "score": 0.156
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-05",
+      "working_name": "Office and Data Tools",
+      "canonical_candidate_id": "ATH-DOM-WORK-CLI",
+      "canonical_candidate_name": "Command Line & Shell",
+      "similarity": 0.233,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-CLI",
+          "title": "Command Line & Shell",
+          "score": 0.233
+        },
+        {
+          "id": "ATH-DOM-WORK-VERSION",
+          "title": "Version Control",
+          "score": 0.217
+        },
+        {
+          "id": "ATH-DOM-WORK-LEARN",
+          "title": "Learning Systems & Metacognition",
+          "score": 0.178
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-06",
+      "working_name": "Automation and Integration",
+      "canonical_candidate_id": "ATH-DOM-WORK-AUTO",
+      "canonical_candidate_name": "Automation & Scripting",
+      "similarity": 0.483,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-AUTO",
+          "title": "Automation & Scripting",
+          "score": 0.483
+        },
+        {
+          "id": "ATH-DOM-WORK-KNOW",
+          "title": "Knowledge & Information Management",
+          "score": 0.269
+        },
+        {
+          "id": "ATH-DOM-WORK-CLI",
+          "title": "Command Line & Shell",
+          "score": 0.266
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-07",
+      "working_name": "Knowledge Systems",
+      "canonical_candidate_id": "ATH-DOM-WORK-KNOW",
+      "canonical_candidate_name": "Knowledge & Information Management",
+      "similarity": 0.432,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-KNOW",
+          "title": "Knowledge & Information Management",
+          "score": 0.432
+        },
+        {
+          "id": "ATH-DOM-WORK-LEARN",
+          "title": "Learning Systems & Metacognition",
+          "score": 0.392
+        },
+        {
+          "id": "ATH-DOM-WORK-CLI",
+          "title": "Command Line & Shell",
+          "score": 0.223
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    },
+    {
+      "discipline_code": "WORK",
+      "working_id": "DOM-WORK-08",
+      "working_name": "Operational Design",
+      "canonical_candidate_id": "ATH-DOM-WORK-PERSONAL",
+      "canonical_candidate_name": "Personal Workflow Design",
+      "similarity": 0.521,
+      "candidate_alternatives": [
+        {
+          "id": "ATH-DOM-WORK-PERSONAL",
+          "title": "Personal Workflow Design",
+          "score": 0.521
+        },
+        {
+          "id": "ATH-DOM-WORK-AUTO",
+          "title": "Automation & Scripting",
+          "score": 0.342
+        },
+        {
+          "id": "ATH-DOM-WORK-KNOW",
+          "title": "Knowledge & Information Management",
+          "score": 0.286
+        }
+      ],
+      "decision": "unreviewed_candidate_only"
+    }
+  ],
+  "canonical_domains_without_high_similarity_candidate": [
+    {
+      "id": "ATH-DOM-ENG-WEB",
+      "title": "Web & Application Development",
+      "discipline_code": "ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-ALGO",
+      "title": "Algorithms & Data Structures",
+      "discipline_code": "ENG"
+    },
+    {
+      "id": "ATH-DOM-ENG-ADV",
+      "title": "Advanced Computing",
+      "discipline_code": "ENG"
+    },
+    {
+      "id": "ATH-DOM-BIZ-VALUE",
+      "title": "Value Creation & Customer Discovery",
+      "discipline_code": "BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-OFFER",
+      "title": "Offers & Positioning",
+      "discipline_code": "BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-OPS",
+      "title": "Operations & Systems",
+      "discipline_code": "BIZ"
+    },
+    {
+      "id": "ATH-DOM-BIZ-GROW",
+      "title": "Venture Strategy & Growth",
+      "discipline_code": "BIZ"
+    },
+    {
+      "id": "ATH-DOM-ELEC-FUND",
+      "title": "Electrical Fundamentals",
+      "discipline_code": "ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-COMP",
+      "title": "Components & Circuits",
+      "discipline_code": "ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-MEAS",
+      "title": "Instrumentation & Measurement",
+      "discipline_code": "ELEC"
+    },
+    {
+      "id": "ATH-DOM-ELEC-FAB",
+      "title": "Fabrication & Mechatronics",
+      "discipline_code": "ELEC"
+    },
+    {
+      "id": "ATH-DOM-FIN-PERSONAL",
+      "title": "Personal Finance",
+      "discipline_code": "FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-ACC",
+      "title": "Accounting & Statements",
+      "discipline_code": "FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-ECON",
+      "title": "Economic Principles",
+      "discipline_code": "FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-MARKETS",
+      "title": "Markets & Investing",
+      "discipline_code": "FIN"
+    },
+    {
+      "id": "ATH-DOM-FIN-RISK",
+      "title": "Risk & Capital Allocation",
+      "discipline_code": "FIN"
+    },
+    {
+      "id": "ATH-DOM-BODY-ANAT",
+      "title": "Human Anatomy",
+      "discipline_code": "BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-BIOCHEM",
+      "title": "Biochemistry & Cell Biology",
+      "discipline_code": "BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-KINES",
+      "title": "Kinesiology & Biomechanics",
+      "discipline_code": "BODY"
+    },
+    {
+      "id": "ATH-DOM-BODY-RECOV",
+      "title": "Recovery & Health Science",
+      "discipline_code": "BODY"
+    },
+    {
+      "id": "ATH-DOM-PSY-COG",
+      "title": "Cognition & Learning Psychology",
+      "discipline_code": "PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-BEHAV",
+      "title": "Behavior & Motivation",
+      "discipline_code": "PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-STRAT",
+      "title": "Strategic Reasoning & Game Theory",
+      "discipline_code": "PSY"
+    },
+    {
+      "id": "ATH-DOM-PSY-EMOTION",
+      "title": "Emotion & Self-Regulation",
+      "discipline_code": "PSY"
+    },
+    {
+      "id": "ATH-DOM-AEST-VISPER",
+      "title": "Visual Perception & Principles",
+      "discipline_code": "AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-COMP",
+      "title": "Composition & Art Direction",
+      "discipline_code": "AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-TYPE",
+      "title": "Typography & Layout",
+      "discipline_code": "AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-BRAND",
+      "title": "Identity & Brand Systems",
+      "discipline_code": "AEST"
+    },
+    {
+      "id": "ATH-DOM-AEST-DIGDES",
+      "title": "Digital Interface Design",
+      "discipline_code": "AEST"
+    },
+    {
+      "id": "ATH-DOM-WORK-PERSONAL",
+      "title": "Personal Workflow Design",
+      "discipline_code": "WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-TYPING",
+      "title": "Typing & Input Fluency",
+      "discipline_code": "WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-CLI",
+      "title": "Command Line & Shell",
+      "discipline_code": "WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-VERSION",
+      "title": "Version Control",
+      "discipline_code": "WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-AUTO",
+      "title": "Automation & Scripting",
+      "discipline_code": "WORK"
+    },
+    {
+      "id": "ATH-DOM-WORK-KNOW",
+      "title": "Knowledge & Information Management",
+      "discipline_code": "WORK"
+    },
+    {
+      "id": "ATH-DOM-ART-OBS",
+      "title": "Observation & Visual Literacy",
+      "discipline_code": "ART"
+    },
+    {
+      "id": "ATH-DOM-ART-DRAW",
+      "title": "Drawing Fundamentals",
+      "discipline_code": "ART"
+    },
+    {
+      "id": "ATH-DOM-ART-SPACE",
+      "title": "Perspective & Spatial Form",
+      "discipline_code": "ART"
+    },
+    {
+      "id": "ATH-DOM-ART-LIGHT",
+      "title": "Light, Value & Rendering",
+      "discipline_code": "ART"
+    },
+    {
+      "id": "ATH-DOM-ART-COLOR",
+      "title": "Color Theory & Application",
+      "discipline_code": "ART"
+    },
+    {
+      "id": "ATH-DOM-ART-ILLUS",
+      "title": "Illustration & Visual Storytelling",
+      "discipline_code": "ART"
+    },
+    {
+      "id": "ATH-DOM-ATH-FITBASE",
+      "title": "Physical Literacy & Training Principles",
+      "discipline_code": "ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-SPEED",
+      "title": "Speed, Agility & Change of Direction",
+      "discipline_code": "ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-SKILL",
+      "title": "Coordination & Sport Skill",
+      "discipline_code": "ATH"
+    },
+    {
+      "id": "ATH-DOM-ATH-RECOVERY",
+      "title": "Performance Recovery",
+      "discipline_code": "ATH"
+    },
+    {
+      "id": "ATH-DOM-PERF-VOICE",
+      "title": "Vocal Technique & Voice Care",
+      "discipline_code": "PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-SING",
+      "title": "Singing & Pitch",
+      "discipline_code": "PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-SPEAK",
+      "title": "Spoken Performance",
+      "discipline_code": "PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-PRESENCE",
+      "title": "Stage & Camera Presence",
+      "discipline_code": "PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-IMPROV",
+      "title": "Improvisation & Creative Response",
+      "discipline_code": "PERF"
+    },
+    {
+      "id": "ATH-DOM-PERF-MOVE",
+      "title": "Movement & Physical Expression",
+      "discipline_code": "PERF"
+    },
+    {
+      "id": "ATH-DOM-MATH-NUM",
+      "title": "Number & Arithmetic Foundations",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-ALG",
+      "title": "Algebra & Symbolic Reasoning",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-DATA",
+      "title": "Statistics & Probability",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-REASON",
+      "title": "Logic & Mathematical Reasoning",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-SCI",
+      "title": "Scientific Method & Modelling",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-CYBER-SAFETY",
+      "title": "Personal Digital Security",
+      "discipline_code": "CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-NETWORK",
+      "title": "Networking Fundamentals",
+      "discipline_code": "CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-OS",
+      "title": "Operating Systems & Linux",
+      "discipline_code": "CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-WEBSEC",
+      "title": "Web & Application Security",
+      "discipline_code": "CYBER"
+    },
+    {
+      "id": "ATH-DOM-CYBER-TEST",
+      "title": "Authorized Security Testing",
+      "discipline_code": "CYBER"
+    },
+    {
+      "id": "ATH-DOM-LANG-LING",
+      "title": "Linguistic Foundations",
+      "discipline_code": "LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-VOCAB",
+      "title": "Vocabulary & Lexical Growth",
+      "discipline_code": "LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-GRAM",
+      "title": "Grammar & Usage",
+      "discipline_code": "LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-READ",
+      "title": "Reading & Interpretation",
+      "discipline_code": "LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-WRITE",
+      "title": "Writing Development",
+      "discipline_code": "LANG"
+    },
+    {
+      "id": "ATH-DOM-LANG-ACQUIRE",
+      "title": "Additional Language Acquisition",
+      "discipline_code": "LANG"
+    },
+    {
+      "id": "ATH-DOM-RES-QUEST",
+      "title": "Question Formation & Research Design",
+      "discipline_code": "RES"
+    },
+    {
+      "id": "ATH-DOM-RES-EVIDENCE",
+      "title": "Evidence & Verification",
+      "discipline_code": "RES"
+    },
+    {
+      "id": "ATH-DOM-RES-SYNTH",
+      "title": "Synthesis & Analysis",
+      "discipline_code": "RES"
+    },
+    {
+      "id": "ATH-DOM-RES-DOC",
+      "title": "Documentation & Citation",
+      "discipline_code": "RES"
+    },
+    {
+      "id": "ATH-DOM-RES-INFO",
+      "title": "Information Literacy & OSINT",
+      "discipline_code": "RES"
+    },
+    {
+      "id": "ATH-DOM-INDEP-HOME",
+      "title": "Home & Daily Living",
+      "discipline_code": "INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-FOOD",
+      "title": "Food Preparation & Cooking",
+      "discipline_code": "INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-REPAIR",
+      "title": "Tools & Basic Repair",
+      "discipline_code": "INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-NAV",
+      "title": "Navigation & Travel Skills",
+      "discipline_code": "INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-SAFETY",
+      "title": "Personal & Emergency Safety",
+      "discipline_code": "INDEP"
+    },
+    {
+      "id": "ATH-DOM-INDEP-MONEY",
+      "title": "Everyday Administration",
+      "discipline_code": "INDEP"
+    },
+    {
+      "id": "ATH-DOM-LEAD-SELF",
+      "title": "Self-Leadership",
+      "discipline_code": "LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-TEAM",
+      "title": "Team Dynamics",
+      "discipline_code": "LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-PLAN",
+      "title": "Planning & Coordination",
+      "discipline_code": "LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-FEEDBACK",
+      "title": "Feedback & Development",
+      "discipline_code": "LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-CONFLICT",
+      "title": "Conflict & Difficult Conversations",
+      "discipline_code": "LEAD"
+    },
+    {
+      "id": "ATH-DOM-LEAD-ORG",
+      "title": "Organisational Systems",
+      "discipline_code": "LEAD"
+    },
+    {
+      "id": "ATH-DOM-COMM-EXPLAIN",
+      "title": "Explanation & Teaching",
+      "discipline_code": "COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-LISTEN",
+      "title": "Listening & Dialogue",
+      "discipline_code": "COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-WRITE",
+      "title": "Practical & Professional Writing",
+      "discipline_code": "COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-SPEAK",
+      "title": "Public Speaking & Presentation",
+      "discipline_code": "COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-ARGUE",
+      "title": "Argumentation & Debate",
+      "discipline_code": "COMM"
+    },
+    {
+      "id": "ATH-DOM-COMM-PERSUADE",
+      "title": "Persuasion & Negotiation Communication",
+      "discipline_code": "COMM"
+    },
+    {
+      "id": "ATH-DOM-ENG-COMPUTE",
+      "title": "Computational Foundations",
+      "discipline_code": "ENG"
+    },
+    {
+      "id": "ATH-DOM-MATH-PHYS",
+      "title": "Physics Foundations & Quantitative Modelling",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-MATH-CHEM",
+      "title": "Chemistry Foundations & Quantitative Modelling",
+      "discipline_code": "MATH"
+    },
+    {
+      "id": "ATH-DOM-WORK-LEARN",
+      "title": "Learning Systems & Metacognition",
+      "discipline_code": "WORK"
+    }
+  ],
+  "warnings": [
+    "String similarity is not semantic equivalence.",
+    "One-to-many and many-to-one mappings require human review.",
+    "Some working domains may be intentional splits, some canonical domains may be broad parents, and some concepts may be misclassified.",
+    "No IDs, titles, parent links, or statuses were changed."
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "schema_version": "0.2.0",
+  "registry_status": "draft_seed_for_review_not_complete_curriculum",
+  "nodes": [
+    {
+      "id": "ATH-DOM-MATH-NUM",
+      "object_type": "domain",
+      "title": "Number sense and operations",
+      "summary": "Arithmetic, fractions, decimals, percentages, ratios and proportional reasoning.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-MATH-ALG",
+      "object_type": "domain",
+      "title": "Algebra and equations",
+      "summary": "Variables, expressions, equality, equations, inequalities and symbolic manipulation.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-MATH-GEO",
+      "object_type": "domain",
+      "title": "Geometry and spatial reasoning",
+      "summary": "Shape, measurement, spatial relationships, coordinate geometry and proof foundations.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-MATH-DATA",
+      "object_type": "domain",
+      "title": "Data, statistics and probability",
+      "summary": "Data literacy, descriptive statistics, uncertainty and probability.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-MATH-REASON",
+      "object_type": "domain",
+      "title": "Mathematical and scientific reasoning",
+      "summary": "Logic, modelling, evidence, hypotheses, measurement and scientific inference.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-MATH-PHYS",
+      "object_type": "domain",
+      "title": "Physics foundations",
+      "summary": "Physical quantities, motion, forces, energy, waves, electricity and mathematical models of physical systems.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-MATH-CHEM",
+      "object_type": "domain",
+      "title": "Chemistry foundations",
+      "summary": "Matter, atomic models, chemical bonding, reactions, quantities and transformations.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-BODY-ANAT",
+      "object_type": "domain",
+      "title": "Human anatomy",
+      "summary": "Structures of the human body and their spatial and functional organisation.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-BODY-PHYS",
+      "object_type": "domain",
+      "title": "Human physiology",
+      "summary": "How body systems function and regulate internal conditions.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-RES-SOURCES",
+      "object_type": "domain",
+      "title": "Source evaluation and evidence",
+      "summary": "Source provenance, reliability, evidence quality and corroboration.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-RES",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-WORK-LEARN",
+      "object_type": "domain",
+      "title": "Learning systems and metacognition",
+      "summary": "Planning, retrieval, practice, feedback, reflection and self-regulated learning.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-COMM-EXPLAIN",
+      "object_type": "domain",
+      "title": "Explanation and structured communication",
+      "summary": "Clear explanations, definitions, examples, argument structure and audience adaptation.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-ENG-COMPUTE",
+      "object_type": "domain",
+      "title": "Computational foundations",
+      "summary": "Algorithms, data representation, decomposition and computational problem-solving.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-DOM-ELEC-FUND",
+      "object_type": "domain",
+      "title": "Electrical foundations",
+      "summary": "Charge, current, voltage, resistance, energy and elementary circuit models.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-MATH-FRACTION-MEANING",
+      "object_type": "concept",
+      "title": "Fraction as a number and ratio",
+      "summary": "A fraction represents a quantity formed by dividing a whole into equal parts and can also express a ratio.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-MATH-PROPORTION",
+      "object_type": "concept",
+      "title": "Proportional relationship",
+      "summary": "A relationship in which two quantities change by a constant multiplicative factor.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-NUM",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-MATH-VARIABLE",
+      "object_type": "concept",
+      "title": "Variable as a quantity",
+      "summary": "A symbol representing a quantity whose value may be unknown or vary.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-MATH-EQUALITY",
+      "object_type": "concept",
+      "title": "Equality and equivalent expressions",
+      "summary": "An equation asserts that two expressions have the same value; valid transformations preserve equality.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-MATH-INVERSE-OPS",
+      "object_type": "concept",
+      "title": "Inverse operations",
+      "summary": "Operations that undo one another under specified conditions.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-OBJ-MATH-SOLVE-LINEAR-EQ",
+      "object_type": "learning_objective",
+      "title": "Solve and explain a one-variable linear equation",
+      "summary": "Independently solve unfamiliar one-variable linear equations, justify each equality-preserving step and check the solution.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-ALG",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_stub",
+      "approval_blockers": [
+        "Complete the full learning-objective contract and assessment alignment before approval."
+      ]
+    },
+    {
+      "id": "ATH-CON-SCI-HYPOTHESIS",
+      "object_type": "concept",
+      "title": "Testable hypothesis",
+      "summary": "A proposed explanation or prediction that can be examined through observation or experiment.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-SCI-VARIABLES",
+      "object_type": "concept",
+      "title": "Independent, dependent and controlled variables",
+      "summary": "Distinguish the variable deliberately changed, the outcome measured and factors held consistent.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-MATH"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-MATH-REASON",
+      "owner_discipline_id": "ATH-DISC-MATH",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-OBJ-SCI-EVIDENCE-CLAIM",
+      "object_type": "learning_objective",
+      "title": "Evaluate a claim against evidence",
+      "summary": "Identify a claim, inspect relevant evidence, assess source quality and explain whether the evidence supports the claim.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-RES"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-RES-SOURCES",
+      "owner_discipline_id": "ATH-DISC-RES",
+      "review_state": "needs_review",
+      "record_stage": "seed_stub",
+      "approval_blockers": [
+        "Complete the full learning-objective contract and assessment alignment before approval."
+      ]
+    },
+    {
+      "id": "ATH-CON-BODY-STRUCTURE-FUNCTION",
+      "object_type": "concept",
+      "title": "Structure-function relationship",
+      "summary": "Biological structures have properties that enable, constrain or regulate their functions.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-BODY-ANAT",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-BODY-HOMEOSTASIS",
+      "object_type": "concept",
+      "title": "Homeostasis",
+      "summary": "Regulation of internal conditions within viable ranges through interacting control mechanisms.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-BODY"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-BODY-PHYS",
+      "owner_discipline_id": "ATH-DISC-BODY",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-OBJ-LEARN-RETRIEVAL",
+      "object_type": "learning_objective",
+      "title": "Use retrieval practice effectively",
+      "summary": "Recall and explain learned material without looking, check accuracy, correct errors and schedule later retrieval.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-WORK"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-WORK-LEARN",
+      "owner_discipline_id": "ATH-DISC-WORK",
+      "review_state": "needs_review",
+      "record_stage": "seed_stub",
+      "approval_blockers": [
+        "Complete the full learning-objective contract and assessment alignment before approval."
+      ]
+    },
+    {
+      "id": "ATH-OBJ-COMM-EXPLAIN-CONCEPT",
+      "object_type": "learning_objective",
+      "title": "Explain a concept clearly",
+      "summary": "Give an accurate explanation using a definition, mechanism, example and appropriate level of detail.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-COMM"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-COMM-EXPLAIN",
+      "owner_discipline_id": "ATH-DISC-COMM",
+      "review_state": "needs_review",
+      "record_stage": "seed_stub",
+      "approval_blockers": [
+        "Complete the full learning-objective contract and assessment alignment before approval."
+      ]
+    },
+    {
+      "id": "ATH-CON-ENG-ALGORITHM",
+      "object_type": "concept",
+      "title": "Algorithm",
+      "summary": "A finite, sufficiently precise procedure for transforming inputs into outputs or solving a class of problems.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ENG"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-ENG-COMPUTE",
+      "owner_discipline_id": "ATH-DISC-ENG",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    },
+    {
+      "id": "ATH-CON-ELEC-OHMS-LAW",
+      "object_type": "concept",
+      "title": "Ohm's law",
+      "summary": "For an ohmic conductor under specified physical conditions, voltage, current and resistance are related by V = IR.",
+      "status": "draft",
+      "discipline_ids": [
+        "ATH-DISC-ELEC"
+      ],
+      "content_version": 1,
+      "aliases": [],
+      "parent_id": "ATH-DOM-ELEC-FUND",
+      "owner_discipline_id": "ATH-DISC-ELEC",
+      "review_state": "needs_review",
+      "record_stage": "seed_record"
+    }
+  ],
+  "validation_notes": [
+    "All 29 seed nodes are retained with their original IDs.",
+    "The four previously missing domain parents are now present in ATHENA_DOMAIN_MAP_v0.3.",
+    "SCI and LEARN are legacy origin namespaces; owner_discipline_id is explicit and is not inferred from the code segment.",
+    "Learning-objective records in this seed are stubs and cannot be approved until they satisfy LEARNING_OBJECTIVE.schema.json."
+  ]
+}

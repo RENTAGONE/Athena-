@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "base_suite": "IMPORTER_CONFORMANCE_SUITE_v0.1.json",
+  "additional_cases": [
+    {
+      "id": "IMP-023",
+      "test": "Offline create then reconnect",
+      "expected_result": "Local write persists offline; sync replays once using idempotency key; no duplicate record.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-024",
+      "test": "Offline edit conflicts with remote edit",
+      "expected_result": "Conflict surfaced with both versions; user chooses or merges; no silent overwrite.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-025",
+      "test": "Interrupted sync mid-package",
+      "expected_result": "Resume safely; committed transaction state is known; no partial package mutation.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-026",
+      "test": "Backup before migration",
+      "expected_result": "Backup is created and checksum verified before schema migration begins.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-027",
+      "test": "Restore corrupted backup",
+      "expected_result": "Restore rejects corrupted archive and preserves current database unchanged.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-028",
+      "test": "Restore valid backup",
+      "expected_result": "Restore preview shows target version/counts; explicit confirmation required; restored records preserve IDs and provenance.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-029",
+      "test": "Unknown optional field",
+      "expected_result": "Forward-compatible policy applied only to declared extension fields; unknown required semantics rejected.",
+      "test_type": "schema_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-030",
+      "test": "Deprecated field migration",
+      "expected_result": "Migration preview maps old field to new field and records migration provenance.",
+      "test_type": "schema_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-031",
+      "test": "Stable ID alias round trip",
+      "expected_result": "Aliases and tombstones survive export/import without minting or reassignment.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-032",
+      "test": "Malicious instruction in imported content",
+      "expected_result": "Imported text is treated as untrusted content and cannot execute code or override app policy.",
+      "test_type": "security_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-033",
+      "test": "Oversized archive",
+      "expected_result": "Importer enforces size/decompression limits and rejects resource-exhaustion payload safely.",
+      "test_type": "security_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-034",
+      "test": "Path traversal archive entry",
+      "expected_result": "Importer rejects absolute paths and parent traversal; no file escapes import sandbox.",
+      "test_type": "security_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-035",
+      "test": "Unicode and Bangla identifiers/content",
+      "expected_result": "Unicode normalization is stable; Bangla text remains intact; IDs remain ASCII canonical if schema requires.",
+      "test_type": "unicode_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-036",
+      "test": "Duplicate package with same hash",
+      "expected_result": "Re-import is idempotent and does not create duplicate revisions or evidence.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-037",
+      "test": "Evidence deletion attempt",
+      "expected_result": "Append-only evidence cannot be overwritten by import; correction requires a superseding record with reason.",
+      "test_type": "integration_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-038",
+      "test": "Consent withdrawn for media",
+      "expected_result": "Shared media access is revoked; local retention/deletion policy is applied and logged.",
+      "test_type": "privacy_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-039",
+      "test": "Permission boundary",
+      "expected_result": "Import cannot grant broader sharing, permissions or external integrations without explicit user approval.",
+      "test_type": "security_test",
+      "status": "not_executed"
+    },
+    {
+      "id": "IMP-040",
+      "test": "Large low-memory import",
+      "expected_result": "Importer streams or bounds memory use; failure is recoverable and leaves database unchanged.",
+      "test_type": "performance_test",
+      "status": "not_executed"
+    }
+  ]
+}

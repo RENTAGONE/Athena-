@@ -1,0 +1,1611 @@
+{
+  "wave": "02",
+  "version": "1.0",
+  "baseline": "KB v3.19 working registry",
+  "inventory_count": 86,
+  "status": "research refinement only; all candidates remain draft",
+  "records": [
+    {
+      "micro_skill_id": "MS-08-001",
+      "name": "Orient a map to the environment",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-002",
+      "name": "Follow a multi-step route plan",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-003",
+      "name": "Estimate walking time and distance",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-004",
+      "name": "Use a compass bearing safely",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-005",
+      "name": "Recognise orientation landmarks",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-006",
+      "name": "Recover calmly after a wrong turn",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-007",
+      "name": "Give a precise location description",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-008",
+      "name": "Read a transit interchange diagram",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use unseen map/route scenarios and require a verbal rationale, safe fallback and location communication. A correct route with an unsafe decision process is not a pass.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-009",
+      "name": "Maintain a situational check-in routine",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-08-010",
+      "name": "Distinguish safe from unsafe shortcuts",
+      "category": "Navigation & situational awareness",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_05_SAFETY_NAVIGATION_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-NAV-01",
+        "SRC-W2-NAV-02"
+      ],
+      "practice_refinement": "Practise first with paper maps, mock routes and scenario cards in a familiar safe setting. Require the learner to stop, orient, identify stable landmarks, compare route options and select a guardian-approved safe response. Never send a learner alone to test navigation.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-001",
+      "name": "Select the correct screwdriver bit",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-002",
+      "name": "Use a hand tool with controlled force",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-003",
+      "name": "Clamp a workpiece securely",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-004",
+      "name": "Measure and mark a straight cut line",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-005",
+      "name": "Identify common fastener types",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-006",
+      "name": "Inspect a tool before use",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-007",
+      "name": "Strip a wire to a specified length",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-008",
+      "name": "Make a secure low-voltage breadboard connection",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-009",
+      "name": "Identify resistor colour bands",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-09-010",
+      "name": "Keep a tidy tool and parts station",
+      "category": "Workshop & tool handling",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01",
+        "SRC-W2-TOOL-02",
+        "SRC-W2-ELEC-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Use an observed practical demonstration plus inspection checklist; score tool/workpiece match, stability, controlled action and safe stop. Do not assess dangerous tasks through unsupervised video.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-001",
+      "name": "Perform a balanced athletic landing",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-002",
+      "name": "Accelerate over a short distance",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-003",
+      "name": "Decelerate under control",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-004",
+      "name": "Change direction with body control",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-005",
+      "name": "Receive and cushion a football pass",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-006",
+      "name": "Pass accurately to a moving target",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-007",
+      "name": "Scan before receiving a ball",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-008",
+      "name": "Use the weaker foot for a controlled pass",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-009",
+      "name": "Maintain a steady aerobic pace",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-10-010",
+      "name": "Perform a safe dynamic warm-up sequence",
+      "category": "Movement & sport technique",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_06_WORKSHOP_ATHLETICS_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-SPORT-01",
+        "SRC-W2-SPORT-02",
+        "SRC-W2-SPORT-03",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use progressive low-intensity rehearsal, then controlled repetitions with adequate rest and a stable surface. Increase only one variable (speed, distance, direction, complexity) after technique is consistent. Stop for pain, dizziness, unusual breathlessness or unsafe conditions; youth training must be stage-appropriate and coached.",
+      "assessment_refinement": "Score technique quality, control, consistency and adaptation across at least two task conditions; record pain/safety stop criteria separately from performance. No single speed/accuracy threshold is universal.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-001",
+      "name": "Clean a phone camera lens safely",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-002",
+      "name": "Choose an aspect ratio intentionally",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-003",
+      "name": "Use grid lines for alignment",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-004",
+      "name": "Avoid digital zoom degradation",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-005",
+      "name": "Expose for highlights",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-006",
+      "name": "Stabilise a handheld phone shot",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-007",
+      "name": "Use leading lines deliberately",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-008",
+      "name": "Separate subject from background",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-009",
+      "name": "Edit exposure without destroying detail",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-11-010",
+      "name": "Export an image for a target platform",
+      "category": "Photography & visual capture",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-PHOTO-01",
+        "SRC-W2-PHOTO-02"
+      ],
+      "practice_refinement": "Use the same subject and scene for controlled comparisons; alter one setting or compositional choice at a time. Preserve originals, compare at full size and explain the trade-off (detail, clipping, crop, stability, separation or file size).",
+      "assessment_refinement": "Use a small portfolio of controlled before/after comparisons; assess the intended effect, technical artifact control and ability to explain a trade-off, not aesthetic taste alone.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-001",
+      "name": "Find a comfortable speaking pitch",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-002",
+      "name": "Articulate consonant endings clearly",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-003",
+      "name": "Maintain a steady beat",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-004",
+      "name": "Hear simple pitch direction",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-005",
+      "name": "Sing a short phrase in tune",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-006",
+      "name": "Use a clean vocal onset",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-007",
+      "name": "Pace a spoken explanation",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-008",
+      "name": "Listen for phrase structure in music",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-009",
+      "name": "Project speech without shouting",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-12-010",
+      "name": "Record clean phone audio",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_07_PHOTOGRAPHY_VOCAL_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-001",
+      "name": "Wash hands using a complete routine",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-002",
+      "name": "Read a food date and storage label",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-003",
+      "name": "Prepare a simple no-heat snack hygienically",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-004",
+      "name": "Use a kitchen knife safely under supervision",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-005",
+      "name": "Measure dry and liquid ingredients",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-006",
+      "name": "Clean a surface using the correct product",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "Safety-sensitive: use current, locally appropriate instruction and adult supervision. Scenario or text study alone does not establish real-world readiness. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-007",
+      "name": "Sort laundry by care requirements",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-008",
+      "name": "Fold and store common clothing",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-009",
+      "name": "Plan a simple balanced meal",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-010",
+      "name": "Use a household checklist",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-001",
+      "name": "Break a task into next actions",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-002",
+      "name": "Estimate task duration realistically",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-003",
+      "name": "Create a simple contingency plan",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-004",
+      "name": "Maintain a short decision log",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-005",
+      "name": "Use a checklist without becoming dependent",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-006",
+      "name": "Prioritise by consequence and urgency",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-007",
+      "name": "Prepare a concise handoff",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-008",
+      "name": "Keep a simple inventory",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-009",
+      "name": "Compare two options with a decision matrix",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-14-010",
+      "name": "Close a work session cleanly",
+      "category": "Personal operations & planning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "INDIRECT MECHANISM / PRACTICE GUIDANCE; exact micro-skill effect not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-OPS-01",
+        "SRC-W2-OPS-02"
+      ],
+      "practice_refinement": "Use a real low-stakes task. Make a short plan before starting, record an estimate and decision rationale, then compare predicted with actual time/outcome. Remove or vary prompts gradually so the learner learns the underlying process rather than blindly following a template.",
+      "assessment_refinement": "Give a novel low-stakes task and compare plan, execution, handoff/record quality and post-task estimate calibration; check that the learner can explain when not to use the tool.",
+      "limitations_and_scope": "Use age-appropriate equipment and adult supervision where required; stop if there is pain, damage, uncertainty or an unsafe condition. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-001",
+      "name": "Doomsday Algorithm (weekday mental calculation)",
+      "category": "Cognitive & learning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-08"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Use published calendar checks during learning; distinguish Gregorian rules from other calendar systems. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-002",
+      "name": "Visual Observation (structured scene description)",
+      "category": "Observation & creative",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Privacy-respecting observation only; no stalking, covert tracking, sensitive-trait inference or profiling people. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-003",
+      "name": "Memory Palace (method of loci)",
+      "category": "Cognitive & learning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-01"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Compare delayed recall against an appropriate baseline/control strategy and include intrusion/ordering errors; do not claim general intelligence or durable memory transfer.",
+      "limitations_and_scope": "Use as a memory aid, not as proof that vivid memories are accurate eyewitness records. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-004",
+      "name": "Lucid-Dream Reality Checks (sleep-safe awareness practice)",
+      "category": "Cognitive & learning",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-04"
+      ],
+      "practice_refinement": "Keep this optional and sleep-safe: no sleep restriction, alarms, supplements, deliberate sleep disruption or reality-check compulsions. Track only voluntary daytime observations; stop if it increases anxiety, confusion or harms sleep.",
+      "assessment_refinement": "No performance pass/fail; check sleep health, distress and voluntary opt-in. Stop if practice disrupts sleep or wellbeing.",
+      "limitations_and_scope": "Protect sleep duration and quality; stop if it causes anxiety, sleep disruption, derealisation or distress. Not a treatment. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-005",
+      "name": "Speed Reading (flexible reading-rate control)",
+      "category": "Language & communication",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-03"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Measure reading rate and comprehension together on comparable passages; reject speed gains that reduce comprehension, recall or task accuracy.",
+      "limitations_and_scope": "No universal speed target; reject techniques that increase words per minute while destroying understanding. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-006",
+      "name": "Morse Code (basic send and receive)",
+      "category": "Digital & technical",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-02"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Treat as a communication skill, not a substitute for modern emergency communications or local regulations. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-007",
+      "name": "Rubik’s Cube 3×3 (beginner solve)",
+      "category": "Dexterity & coordination",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-01"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Use ordinary cube practice; speed-solving is a separate advanced pathway. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-008",
+      "name": "Locksport Fundamentals (owned transparent practice lock only)",
+      "category": "Practical & everyday",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-05"
+      ],
+      "practice_refinement": "Confine to a learner-owned transparent practice lock that is not installed or securing anything. Teach permission, ownership and legal boundaries first; no real locks, access bypass, covert entry or tool use on another person’s property.",
+      "assessment_refinement": "Use only a transparent learner-owned practice lock; assess permission/ethics recognition and basic mechanical explanation. Never treat success on a practice lock as permission or ability to open real locks.",
+      "limitations_and_scope": "Never apply to real doors, property, unknown locks or access controls; no covert entry, bypassing security or evasion. Confirm local law and guardian approval. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-009",
+      "name": "French Drop (basic coin-vanish sleight)",
+      "category": "Dexterity & coordination",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-06",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Use as consensual entertainment; do not use sleight of hand to steal, cheat or manipulate transactions. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-010",
+      "name": "One-Handed Card Shuffle (basic packet control)",
+      "category": "Dexterity & coordination",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_02_LEGACY_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-06",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Stop if fingers or wrist hurt; adapt deck size and hand position. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-011",
+      "name": "Faro Shuffle (introductory card interweave)",
+      "category": "Dexterity & coordination",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-06",
+        "SRC-W2-MOT-01"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Advanced dexterity pathway; avoid forcing cards or straining hands. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-012",
+      "name": "Safe Lighter Handling (non-flourish replacement for Zippo trick)",
+      "category": "Practical & everyday",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "AUTHORITATIVE SAFETY GUIDANCE / BOUNDARY EVIDENCE; no ATHENA self-certification",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-TOOL-01"
+      ],
+      "practice_refinement": "Teach hazard recognition, storage and adult handoff only. No ignition practice, flame tricks, carrying, lighting or unsupervised handling; practical fire safety is guardian-led.",
+      "assessment_refinement": "Use scenario classification plus an explicit stop/escalate decision. Any real-world practical competence requires the applicable qualified adult/instructor and current external standard; ATHENA records orientation/readiness only.",
+      "limitations_and_scope": "No flame tricks, juggling, ignition stunts or unsupervised use. This deliberately replaces the previously discussed Zippo trick. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-013",
+      "name": "Stadium Whistle (finger-assisted loud whistle)",
+      "category": "Vocal & auditory performance",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT TASK INSTRUCTION OR TECHNICAL GUIDANCE + INDIRECT MOTOR/PRACTICE MECHANISM; task-specific efficacy not established",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-VOICE-01",
+        "SRC-W2-VOICE-02",
+        "SRC-W2-AUDIO-01"
+      ],
+      "practice_refinement": "Use comfortable-range, low-volume practice with short bouts, playback/reference feedback and rest. Do not force pitch, volume or duration; stop if pain, hoarseness or strain appears. For recording, compare microphone distance, room noise and clipping without chasing loudness.",
+      "assessment_refinement": "Use recorded samples or reference comparisons at comfortable effort; assess clarity/timing/pitch or recording signal quality as appropriate. Include a no-strain safety criterion.",
+      "limitations_and_scope": "Wash hands first; do not place dirty fingers in mouth; avoid prolonged maximal-volume practice near others or in enclosed spaces. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-014",
+      "name": "Signature Dish (repeatable personal recipe)",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Practise using clean, age-appropriate mock or supervised household tasks. Make hygiene and label-reading decisions explicit before handling food or products. Follow local product labels and household rules; do not mix cleaning chemicals or use heat/knives unsupervised.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Age-appropriate kitchen supervision; knife, heat, allergen and food-storage safety. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-15-015",
+      "name": "Advanced Everyday Tie Knots (non-life-safety set)",
+      "category": "Practical & everyday",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_08_FINAL_CANDIDATES_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "MIXED: reference/instructional support for the named technique; limited evidence for broad transfer",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-LEG-07"
+      ],
+      "practice_refinement": "Use a short demonstration, a deliberately varied set of examples, learner prediction before feedback, and a clean unaided attempt. Change one task condition at a time; log errors and the cue that corrected them.",
+      "assessment_refinement": "Use a fresh example for unaided performance, explain the decision or mechanism, then repeat after a meaningful delay and in a changed context. Score accuracy/quality separately from speed and confidence.",
+      "limitations_and_scope": "Not climbing, rescue, rigging, restraint or life-safety competence; those require separate qualified training. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    },
+    {
+      "micro_skill_id": "MS-13-011",
+      "name": "Prepare a kitchen station using mise en place",
+      "category": "Household & food skills",
+      "existing_protocol_document": "MICRO_SKILL_SUBSTANTIVE_PROTOCOLS_BATCH_09_MISE_EN_PLACE_MESSAGE_18_v0.1.md",
+      "existing_protocol_status": "substantive_draft_authored_not_reviewed",
+      "evidence_fit": "DIRECT PUBLIC-HEALTH / PRODUCT GUIDANCE FOR SAFETY ELEMENTS; procedural learning efficacy remains task-specific",
+      "source_ids": [
+        "SRC-W2-LRN-01",
+        "SRC-W2-FOOD-01",
+        "SRC-W2-FOOD-02",
+        "SRC-W2-FOOD-03",
+        "SRC-W2-CLEAN-01"
+      ],
+      "practice_refinement": "Begin with identification and inspection on an unplugged, non-powered sample. Progress only to supervised, low-risk practice using the correct tool, stable workpiece and suitable PPE. Electrical practice is battery-powered extra-low-voltage only; no mains wiring, live circuits, soldering or cutting tools without qualified adult supervision.",
+      "assessment_refinement": "Observe the complete sequence and critical hygiene/label decisions; any critical safety miss blocks practical pass regardless of speed or presentation.",
+      "limitations_and_scope": "Use age-appropriate no-heat or supervised preparation. A trusted adult handles heat, sharp knives and hazardous equipment. Check allergies, hand hygiene, clean surfaces and raw-food separation; do not taste unsafe or unidentified ingredients. Acquisition estimates remain planning hypotheses. External guidance is not learner validation; category-level sources do not prove this exact micro-skill is effective.",
+      "candidate_decision": "RETAIN AS DRAFT CANDIDATE; check overlap and boundaries in Wave 03. No canonical promotion.",
+      "review_gate": "DEFER EXPERT REVIEW AND OWNER/LEARNER VALIDATION UNTIL APP IS USABLE; keep status draft."
+    }
+  ]
+}

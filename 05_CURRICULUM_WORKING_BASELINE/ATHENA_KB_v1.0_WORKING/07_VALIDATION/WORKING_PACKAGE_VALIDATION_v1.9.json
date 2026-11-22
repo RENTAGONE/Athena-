@@ -1,0 +1,21 @@
+{
+  "report": "ATHENA_KB_WORKING_PACKAGE_VALIDATION",
+  "version": "v1.9",
+  "kb_json_files_parsed": 17,
+  "whole_vault_json_files_parsed": 73,
+  "json_parse_errors": 0,
+  "domain_crosswalk_rows": 145,
+  "canonical_domain_candidate_coverage": 112,
+  "canonical_domain_total": 113,
+  "working_skill_family_entries": 733,
+  "unique_skill_family_ids": 733,
+  "repeated_normalized_family_name_groups": 11,
+  "micro_skill_candidates": 155,
+  "substantive_protocol_drafts": 20,
+  "protocols_remaining_for_substantive_authoring": 135,
+  "baseline_modules": 216,
+  "deepening_units": 18,
+  "importer_conformance_cases_specified": 22,
+  "importer_conformance_cases_executed": 0,
+  "status": "structural validation passed; semantic decisions, expert review, learner pilot and application importer validation remain open"
+}

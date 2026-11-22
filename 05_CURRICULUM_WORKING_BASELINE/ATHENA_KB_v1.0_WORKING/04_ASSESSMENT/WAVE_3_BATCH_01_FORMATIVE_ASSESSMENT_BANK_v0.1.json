@@ -1,0 +1,338 @@
+{
+  "bank_id": "ATHENA-WAVE3-BATCH01-FORMATIVE",
+  "version": "0.1",
+  "production_message": 12,
+  "status": "draft_formative",
+  "item_count": 36,
+  "items": [
+    {
+      "item_id": "W3B01-001",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-DEV-001",
+      "prompt": "Explain negative feedback using body temperature as an example.",
+      "answer_guidance": "A deviation is sensed; coordinating systems activate effectors such as sweating/skin blood-flow changes; response tends to reduce the deviation. Avoid implying exact control values or a single controller.",
+      "item_type": "explanation",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-002",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-DEV-001",
+      "prompt": "Trace two links between breathing and circulation during exercise.",
+      "answer_guidance": "Ventilation supports gas exchange in lungs; circulation transports oxygen to working tissues and returns carbon dioxide; systems interact rather than operate independently.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-003",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-DEV-001",
+      "prompt": "A wearable reports a high heart rate. What can and cannot be concluded?",
+      "answer_guidance": "It is a measurement in context, not a diagnosis or complete fitness measure. Consider activity, device error, conditions and symptoms; seek qualified help for concerning symptoms.",
+      "item_type": "limits",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-004",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-DEV-002",
+      "prompt": "Why are macronutrients and micronutrients not interchangeable?",
+      "answer_guidance": "Macronutrients provide energy and structural/functional roles in larger quantities; micronutrients support biological processes in smaller amounts; both matter and have distinct functions.",
+      "item_type": "explanation",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-005",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-DEV-002",
+      "prompt": "Evaluate the claim “one supplement guarantees better recovery.”",
+      "answer_guidance": "Overstated; identify measured outcome, study design, participants, comparison, safety, replication and alternative influences. No guarantee.",
+      "item_type": "evidence_appraisal",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-006",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-DEV-002",
+      "prompt": "What is the difference between an association and a causal conclusion in a sleep study?",
+      "answer_guidance": "Association means variables co-vary; causation requires stronger design and control of confounders. A single observational result cannot establish cause.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-007",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-DEV-001",
+      "prompt": "Why should deceleration be practised before maximal change-of-direction speed?",
+      "answer_guidance": "Learner needs controlled force absorption and body positioning; speed progression before control increases loss-of-balance/collision risk.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-008",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-DEV-001",
+      "prompt": "List four checks before a movement session.",
+      "answer_guidance": "Surface/traction, space/hazards, suitable footwear/equipment, warm-up/readiness and stop rules; any four grounded checks.",
+      "item_type": "safety",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-009",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-DEV-001",
+      "prompt": "A learner loses control on every sharp turn. What is the appropriate progression change?",
+      "answer_guidance": "Reduce approach speed, widen angle, shorten drill and rest; rebuild control before increasing complexity. Do not push through pain.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-010",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-DEV-002",
+      "prompt": "What information should a player scan before receiving a pass?",
+      "answer_guidance": "Ball flight/position, nearest pressure, teammates, open space and possible next action; not every cue equally important.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-011",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-DEV-002",
+      "prompt": "Why is pass completion alone an incomplete decision metric?",
+      "answer_guidance": "It omits available options, risk, timing, team objective, pressure and execution quality; outcomes include chance.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-012",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-DEV-002",
+      "prompt": "A support player is hidden behind a defender. Suggest a better movement.",
+      "answer_guidance": "Move laterally/diagonally to create a visible passing lane and useful angle/distance; rescan and adjust to pressure.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-013",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-DEV-001",
+      "prompt": "Why is pushing more air not a reliable way to improve a high note?",
+      "answer_guidance": "Can increase strain; efficient coordination depends on airflow, vocal-fold function, resonance and comfort, not maximum pressure.",
+      "item_type": "explanation",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-014",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-DEV-001",
+      "prompt": "Name two signs that practice should stop rather than continue.",
+      "answer_guidance": "Pain, persistent hoarseness/roughness, voice loss, unusual fatigue or discomfort; rest and seek qualified guidance if persistent.",
+      "item_type": "safety",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-015",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-DEV-001",
+      "prompt": "Design a safe short warm-up principle.",
+      "answer_guidance": "Gentle comfortable range, easy humming/speech, short duration, no forced volume/pitch, stop if discomfort.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-016",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-DEV-002",
+      "prompt": "How can a pause change the meaning of a short performance?",
+      "answer_guidance": "It can create emphasis, suspense, separation or reflection depending on context and timing; must serve intended meaning.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-017",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-DEV-002",
+      "prompt": "Why should a performer test one expressive variable at a time?",
+      "answer_guidance": "Makes cause/effect easier to observe and reduces confusion; compare iterations against a defined communicative goal.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-018",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-DEV-002",
+      "prompt": "A listener interprets a passage differently from the performer. How should this feedback be used?",
+      "answer_guidance": "Record interpretation as audience evidence, compare with intention, consider ambiguity and revise if the goal requires it; not assume listener is wrong.",
+      "item_type": "reflection",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-019",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-DEV-001",
+      "prompt": "What are three ways to create visual hierarchy without adding more decoration?",
+      "answer_guidance": "Scale, position, contrast, spacing, grouping, typography, alignment or whitespace; explain how each directs attention.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-020",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-DEV-001",
+      "prompt": "Why must a phone-first layout be tested at realistic size?",
+      "answer_guidance": "Full zoom hides small text, weak hierarchy and touch/readability issues; actual context changes perception.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-021",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-DEV-001",
+      "prompt": "A poster has a strong image but viewers miss the date. What should be tested?",
+      "answer_guidance": "Re-rank content, increase date prominence, group it with venue/time, improve contrast/spacing and test reading order.",
+      "item_type": "diagnostic",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-022",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-DEV-002",
+      "prompt": "Distinguish hue, value and saturation.",
+      "answer_guidance": "Hue is colour family; value is lightness/darkness; saturation is intensity/purity.",
+      "item_type": "explanation",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-023",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-DEV-002",
+      "prompt": "Why should status information not rely on red/green alone?",
+      "answer_guidance": "Colour perception/display/printing vary; add text, symbols, pattern or position so meaning remains available.",
+      "item_type": "accessibility",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-024",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-DEV-002",
+      "prompt": "Does a passing contrast ratio prove a design is accessible? Explain.",
+      "answer_guidance": "No. It addresses a specific text/background contrast condition; typography, size, layout, meaning, interaction and user testing also matter.",
+      "item_type": "limits",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-025",
+      "discipline_code": "ART",
+      "unit_id": "ART-DEV-001",
+      "prompt": "Why draw the bounding box before details?",
+      "answer_guidance": "Establishes overall proportions and placement; prevents local detail from hiding large structural errors.",
+      "item_type": "method",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-026",
+      "discipline_code": "ART",
+      "unit_id": "ART-DEV-001",
+      "prompt": "An angled mug opening is drawn as a circle. What should be checked?",
+      "answer_guidance": "Viewpoint makes the opening appear elliptical; compare ellipse width/height and axis angle with observation.",
+      "item_type": "diagnostic",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-027",
+      "discipline_code": "ART",
+      "unit_id": "ART-DEV-001",
+      "prompt": "What is the purpose of grouping values before rendering texture?",
+      "answer_guidance": "Establishes readable light/shadow structure and volume; details should support rather than replace large value relationships.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-028",
+      "discipline_code": "ART",
+      "unit_id": "ART-DEV-002",
+      "prompt": "What is a focal point and how can composition support it?",
+      "answer_guidance": "Intended first attention; use value, scale, contrast, placement, directional lines and surrounding negative space.",
+      "item_type": "explanation",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-029",
+      "discipline_code": "ART",
+      "unit_id": "ART-DEV-002",
+      "prompt": "Why make multiple thumbnails before one polished drawing?",
+      "answer_guidance": "Cheaply tests narrative/camera/value alternatives before time is spent on detail; encourages intentional choice.",
+      "item_type": "method",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-030",
+      "discipline_code": "ART",
+      "unit_id": "ART-DEV-002",
+      "prompt": "Two viewers notice different things in a scene. What can the artist infer?",
+      "answer_guidance": "Composition may support multiple readings; compare to intended focal path and audience; feedback is evidence, not universal truth.",
+      "item_type": "reflection",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-031",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-DEV-001",
+      "prompt": "Explain cross-contamination in a kitchen workflow.",
+      "answer_guidance": "Transfer of harmful microorganisms/allergens between raw and ready-to-eat foods, hands, utensils or surfaces; separation and cleaning reduce risk.",
+      "item_type": "safety",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-032",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-DEV-001",
+      "prompt": "Why prepare tools and ingredients before starting to cook?",
+      "answer_guidance": "Reduces rushed handling, missed steps and unsafe movement around heat/sharp tools; supports sequence and timing.",
+      "item_type": "reasoning",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-033",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-DEV-001",
+      "prompt": "What should a minor do before using an unfamiliar knife or hot appliance?",
+      "answer_guidance": "Stop and ask a responsible adult for supervision/training; do not experiment unsupervised.",
+      "item_type": "safety",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-034",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-DEV-002",
+      "prompt": "What belongs in a contingency plan for a supervised familiar journey?",
+      "answer_guidance": "Guardian-approved alternative, safe public place/landmark, check-in method, trusted contact and response if delayed.",
+      "item_type": "application",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-035",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-DEV-002",
+      "prompt": "Why is carrying more personal information not always safer?",
+      "answer_guidance": "Increases exposure if lost/shared; carry only what is necessary and protect documents/location details.",
+      "item_type": "privacy",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    },
+    {
+      "item_id": "W3B01-036",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-DEV-002",
+      "prompt": "A route estimate changes during travel. What is the safest next step for a young learner?",
+      "answer_guidance": "Move to a safe public place, contact trusted adult/guardian and follow agreed alternative; do not improvise into unfamiliar or unsafe areas.",
+      "item_type": "safety",
+      "scoring_note": "0–3: accuracy, reasoning, application and limits. Safety/privacy critical-fail rules apply where relevant; no automatic mastery."
+    }
+  ],
+  "scoring_policy": {
+    "scale": "0-3 per item",
+    "use": "formative diagnosis and evidence triangulation, not a standalone mastery test",
+    "critical_fail": "Unsafe practice, privacy/consent violation or unsupported medical claim requires remediation regardless of aggregate score."
+  }
+}

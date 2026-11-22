@@ -1,0 +1,107 @@
+{
+  "scenario_pack_id": "ATHENA-WAVE3-BATCH02-INTEGRATED",
+  "version": "0.1",
+  "production_message": 13,
+  "status": "draft",
+  "scenarios": [
+    {
+      "scenario_id": "W3B02-PROJ-01",
+      "title": "Design a safe, evidence-led community activity guide",
+      "disciplines": [
+        "BODY",
+        "ATH",
+        "AEST",
+        "ART",
+        "INDEP"
+      ],
+      "brief": "Create a one-page guide for a fictional school/community activity day. Explain safe activity progression at a general level, communicate a simple schedule clearly, use truthful visual information and include safe escalation instructions.",
+      "deliverables": [
+        "audience and constraint brief",
+        "non-prescriptive activity schedule with rest and weather fallback",
+        "one simple chart from synthetic data, correctly labelled",
+        "visual concept and reference-rights log",
+        "household/event hazard observation and escalation checklist",
+        "reflection identifying what requires adult/qualified oversight"
+      ],
+      "evaluation": [
+        "scientific accuracy and non-diagnostic framing",
+        "age-appropriate and conservative activity design",
+        "visual hierarchy and chart integrity",
+        "source provenance and rights",
+        "safety and adult escalation"
+      ],
+      "constraints": [
+        "no personal medical data",
+        "no unsupervised physical testing",
+        "no real emergency-system or security details",
+        "synthetic numbers clearly labelled"
+      ]
+    },
+    {
+      "scenario_id": "W3B02-PROJ-02",
+      "title": "Produce a short accessible performance with a documented workflow",
+      "disciplines": [
+        "PERF",
+        "AEST",
+        "ART",
+        "WORK",
+        "COMM"
+      ],
+      "brief": "Plan and produce an original 45–60 second spoken performance or narrated visual explanation for a defined audience. The production should demonstrate intelligibility, accessible visual structure and ethical reference use.",
+      "deliverables": [
+        "production brief and audience statement",
+        "marked script with pacing and emphasis",
+        "responsive title/visual card",
+        "reference and rights log",
+        "two versioned recordings or equivalent live rehearsal evidence",
+        "listener comprehension notes and revision log"
+      ],
+      "evaluation": [
+        "meaning and audience fit",
+        "comfortable vocal technique and intelligibility",
+        "visual readability",
+        "rights, consent and privacy",
+        "traceable iteration"
+      ],
+      "constraints": [
+        "original or permitted materials only",
+        "no forced vocal range or shouting",
+        "record only consenting participants",
+        "provide a non-recorded alternative"
+      ]
+    },
+    {
+      "scenario_id": "W3B02-PROJ-03",
+      "title": "Analyse a fictional team performance and propose a learning cycle",
+      "disciplines": [
+        "ATH",
+        "BODY",
+        "PSY",
+        "WORK",
+        "AEST"
+      ],
+      "brief": "Use a fictional or permitted sports scenario to separate tactical decisions from execution, interpret workload cautiously and present a small evidence-based review.",
+      "deliverables": [
+        "event-code definitions",
+        "10-event analysis table",
+        "team-shape or movement diagram",
+        "conservative practice microcycle with recovery and fallback",
+        "one chart with denominator and limitations",
+        "post-cycle review template"
+      ],
+      "evaluation": [
+        "coding consistency",
+        "contextual tactical reasoning",
+        "load/recovery reasoning",
+        "honest data visualisation",
+        "safe and actionable feedback"
+      ],
+      "constraints": [
+        "no public ranking or shaming",
+        "no maximal or unsupervised training test",
+        "fictional/synthetic data clearly labelled",
+        "do not infer medical status from performance"
+      ]
+    }
+  ]
+}

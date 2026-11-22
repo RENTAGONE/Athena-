@@ -1,0 +1,255 @@
+{
+  "registry": "ATHENA_WAVE_09_LEGACY_PROJECT_CLASS_CROSSWALK",
+  "version": "1.0",
+  "status": "draft",
+  "policy": "All legacy IDs are preserved. Proposed classifications are provisional and purpose-dependent; conditional mappings require the stated intent check. ATH-IP-M14-009 remains a delivery format, not a fourth class.",
+  "records": [
+    {
+      "legacy_project_id": "ATH-IP-M14-001",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Digital product prototype and evidence of usefulness."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-002",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Electronics investigation can remain curiosity-led; no product or sale required."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-003",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "adaptable_ancestor",
+      "rationale": "Research/explainer may be intrinsic; if used to solve the learner's own decision problem, redesign as personal-use."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-004",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Football performance project solves a learner-owned development goal."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-005",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Visual story is creation for its own sake unless learner explicitly chooses another purpose."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-006",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Household systems project solves a real personal/household need."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-007",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Ethical market experiment tests a possible offer; sale is not required."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-008",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_ancestor",
+      "rationale": "Personal knowledge system addresses the learner's own retrieval and learning workflow."
+    },
+    {
+      "legacy_project_id": "ATH-IP-M14-009",
+      "proposed_class": "cross_class_delivery_format",
+      "mapping_type": "not_a_project_class",
+      "rationale": "Team challenge is a collaboration format that can serve any of the three classes; it must inherit one explicit class when instantiated."
+    },
+    {
+      "legacy_project_id": "P-01",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_candidate",
+      "rationale": "Build and operate a tiny digital product; its prototype and customer/problem evidence point to a possible future offer. Sale is not required.",
+      "condition_or_boundary": "No paid launch or revenue requirement.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-02",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_candidate",
+      "rationale": "A low-voltage sensor experiment is naturally curiosity-led when no personal problem or product user is specified.",
+      "condition_or_boundary": "Keep it simulation-first or within verified safe low-voltage supervision.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-03",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "A personal learning module is personal-use when it solves the learner's own study or retrieval problem.",
+      "condition_or_boundary": "If it is designed for an external learner as a packaged offer, classify that separate project as product/business-foundation.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-04",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_candidate",
+      "rationale": "A visual identity and landing page can form a useful product/service presentation foundation for a defined user or offer.",
+      "condition_or_boundary": "Do not require publication or sale.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-05",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_candidate",
+      "rationale": "The ethical sales experiment explicitly tests an offer and possible market path.",
+      "condition_or_boundary": "No sale required; use guardian-aware, no-pressure research.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-06",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "The football performance notebook supports the learner's own development goal.",
+      "condition_or_boundary": "No performance guarantee; recovery-aware.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-07",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_candidate",
+      "rationale": "A phone photography field study is creative exploration when no client or utility is required.",
+      "condition_or_boundary": "Public posting and audience response are optional.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-08",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "The household independence challenge develops a real personal/household capability.",
+      "condition_or_boundary": "Adult supervision and household permission remain necessary.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-09",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "conditional_candidate",
+      "rationale": "Researching a public claim is intrinsic when driven by curiosity rather than a personal decision.",
+      "condition_or_boundary": "If it informs an actual personal decision, reclassify that instance as personal-use.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-10",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "conditional_candidate",
+      "rationale": "A safe workshop organiser is intrinsic if it is a design/making exploration without a real personal need.",
+      "condition_or_boundary": "If it solves the learner's own actual storage/workflow problem, reclassify as personal-use.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-11",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "A second-language mini-immersion plan serves the learner's own language goal.",
+      "condition_or_boundary": "No streak or fluency guarantee.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "P-12",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "conditional_candidate",
+      "rationale": "A community information explainer can be intrinsic when the learner's purpose is to explore explanation and visual communication; community benefit must not be imposed as a completion condition.",
+      "condition_or_boundary": "If community service is the primary intended outcome, do not force the project into a class; redesign its purpose or keep it outside this three-class project bank.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_01_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-013",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_candidate",
+      "rationale": "Inventory and sales system is a useful operational tool with possible future packaging for a defined operator.",
+      "condition_or_boundary": "Use synthetic data for prototype.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-014",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_candidate",
+      "rationale": "Electronics measurement notebook is an investigation driven by curiosity unless a personal need is stated.",
+      "condition_or_boundary": "Safety constraints remain mandatory.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-015",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "Personal knowledge mini-atlas solves the learner's own knowledge organisation/retrieval need.",
+      "condition_or_boundary": "No public product requirement.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-016",
+      "proposed_class": "personal_use",
+      "mapping_type": "conditional_candidate",
+      "rationale": "A bilingual science explainer is personal-use when it solves the learner's own comprehension/translation difficulty.",
+      "condition_or_boundary": "If built for a defined external learner as a packaged resource, classify that separate instance as product/business-foundation.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-017",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "Football decision analysis supports the learner's own tactical development.",
+      "condition_or_boundary": "Avoid outcome-only judgement.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-018",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "Household process improvement addresses a real household friction in which the learner participates.",
+      "condition_or_boundary": "Must be low-risk and reversible.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-019",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "conditional_candidate",
+      "rationale": "An accessible interface prototype is product/business-foundation when built for a defined external user/task with possible later packaging.",
+      "condition_or_boundary": "If it is only for the learner's own accessibility/workflow problem, classify as personal-use.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-020",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "conditional_candidate",
+      "rationale": "A micro-skill teaching card set is product/business-foundation if it is designed as a useful resource for a defined learner group and could later be packaged.",
+      "condition_or_boundary": "If made purely as a creative exploration, classify as intrinsic; if it solves the learner's own study need, classify as personal-use.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-021",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_candidate",
+      "rationale": "A research claim audit is curiosity-led unless it is being used to resolve a specific personal decision.",
+      "condition_or_boundary": "If decision-use is primary, reclassify that instance as personal-use.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-022",
+      "proposed_class": "product_business_foundation",
+      "mapping_type": "direct_candidate",
+      "rationale": "A small venture experiment explicitly tests a possible lawful offer and its delivery economics.",
+      "condition_or_boundary": "No revenue or sale required; guardian approval for spending or public activity.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-023",
+      "proposed_class": "intrinsic_exploration",
+      "mapping_type": "direct_candidate",
+      "rationale": "Visual storytelling is creative exploration without a utility or client requirement.",
+      "condition_or_boundary": "No audience or publication requirement.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    },
+    {
+      "legacy_project_id": "IP-024",
+      "proposed_class": "personal_use",
+      "mapping_type": "direct_candidate",
+      "rationale": "A training microcycle serves the learner's own athletic goal.",
+      "condition_or_boundary": "Age-appropriate workload, recovery and safety boundaries apply.",
+      "source_file": "INTEGRATED_PROJECT_BANK_BATCH_02_v1.0_WORKING.md"
+    }
+  ],
+  "legacy_project_count": 33
+}

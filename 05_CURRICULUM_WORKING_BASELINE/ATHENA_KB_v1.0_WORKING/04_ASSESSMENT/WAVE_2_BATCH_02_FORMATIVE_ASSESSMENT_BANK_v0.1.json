@@ -1,0 +1,345 @@
+{
+  "bank_id": "ATHENA-WAVE2-BATCH02-FORMATIVE",
+  "version": "0.1",
+  "production_message": 11,
+  "status": "draft_formative",
+  "item_count": 36,
+  "items": [
+    {
+      "item_id": "W2B02-001",
+      "discipline_code": "BIZ",
+      "unit_id": "BIZ-PROG-001",
+      "prompt": "A user says “make it modern.” What follow-up distinguishes an aesthetic preference from a job or outcome?",
+      "answer_guidance": "Ask what task they are trying to complete, what currently fails, and what observable improvement would matter; avoid leading them to a solution.",
+      "item_type": "diagnostic",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-002",
+      "discipline_code": "BIZ",
+      "unit_id": "BIZ-PROG-001",
+      "prompt": "A feature is “one-click export.” Give two possible customer benefits and explain why neither is guaranteed.",
+      "answer_guidance": "Could reduce time or errors; only if export format fits workflow and users can use it. Benefits require evidence.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-003",
+      "discipline_code": "BIZ",
+      "unit_id": "BIZ-PROG-001",
+      "prompt": "A draft offer promises “double your sales in a week.” What is wrong and how should it be rewritten?",
+      "answer_guidance": "Unsupported outcome claim; replace with bounded deliverable/process and evidence-backed claims, state limits.",
+      "item_type": "ethics",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-004",
+      "discipline_code": "BIZ",
+      "unit_id": "BIZ-PROG-002",
+      "prompt": "Price ৳150; variable cost ৳45; fixed monthly cost ৳2,100. Calculate contribution and break-even units.",
+      "answer_guidance": "Contribution ৳105; break-even 2100/105 = 20 units.",
+      "item_type": "calculation",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-005",
+      "discipline_code": "BIZ",
+      "unit_id": "BIZ-PROG-002",
+      "prompt": "Why can positive contribution coexist with negative monthly profit?",
+      "answer_guidance": "Contribution must cover fixed costs; below break-even total contribution is less than fixed costs.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-006",
+      "discipline_code": "BIZ",
+      "unit_id": "BIZ-PROG-002",
+      "prompt": "Name three omitted costs that could make a simple model misleading.",
+      "answer_guidance": "Owner labour, refunds, taxes, platform fees, failed delivery, support, equipment depreciation, compliance.",
+      "item_type": "transfer",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-007",
+      "discipline_code": "FIN",
+      "unit_id": "FIN-PROG-001",
+      "prompt": "A sale is made on credit. Which statement can show revenue before cash is received?",
+      "answer_guidance": "Income statement can recognise revenue when earned under the applicable accounting basis; cash flow waits for collection.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-008",
+      "discipline_code": "FIN",
+      "unit_id": "FIN-PROG-001",
+      "prompt": "Opening cash ৳4,000; receipts ৳2,500; payments ৳1,700. Closing cash?",
+      "answer_guidance": "৳4,800.",
+      "item_type": "calculation",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-009",
+      "discipline_code": "FIN",
+      "unit_id": "FIN-PROG-001",
+      "prompt": "Why is buying equipment not necessarily an immediate full-period expense?",
+      "answer_guidance": "It may be capitalised as an asset and depreciated over useful life; treatment depends on accounting rules/materiality.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-010",
+      "discipline_code": "FIN",
+      "unit_id": "FIN-PROG-002",
+      "prompt": "Nominal return 5%, inflation 7%. Approximate real return and exact formula result.",
+      "answer_guidance": "Approximate −2%; exact 1.05/1.07−1 ≈ −1.87%.",
+      "item_type": "calculation",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-011",
+      "discipline_code": "FIN",
+      "unit_id": "FIN-PROG-002",
+      "prompt": "A goal is due in one month. Why is liquidity more important than a high advertised return?",
+      "answer_guidance": "The money must be available on time; lockups/price loss can make the goal fail.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-012",
+      "discipline_code": "FIN",
+      "unit_id": "FIN-PROG-002",
+      "prompt": "Does holding five assets guarantee diversification? Explain.",
+      "answer_guidance": "No; if exposures are highly correlated or concentrated in one issuer/sector, risk remains.",
+      "item_type": "critical_thinking",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-013",
+      "discipline_code": "WORK",
+      "unit_id": "WORK-PROG-001",
+      "prompt": "What is the difference between a task list and a dependency network?",
+      "answer_guidance": "A task list names work; a network encodes precedence relationships and supports critical-path analysis.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-014",
+      "discipline_code": "WORK",
+      "unit_id": "WORK-PROG-001",
+      "prompt": "Path A is 2+3+2 days; path B is 2+4+1 days. Earliest finish absent resource constraints?",
+      "answer_guidance": "Both total 7 days; critical path length 7 days.",
+      "item_type": "calculation",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-015",
+      "discipline_code": "WORK",
+      "unit_id": "WORK-PROG-001",
+      "prompt": "A client adds a new feature after scope approval. What should happen before accepting it?",
+      "answer_guidance": "Record change, assess schedule/cost/risk/quality impact, confirm trade-off and approval, update baseline.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-016",
+      "discipline_code": "WORK",
+      "unit_id": "WORK-PROG-002",
+      "prompt": "Why is “number of emails sent” often a weak process metric?",
+      "answer_guidance": "It measures activity, not the intended outcome; can incentivise volume over resolution or quality.",
+      "item_type": "critical_thinking",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-017",
+      "discipline_code": "WORK",
+      "unit_id": "WORK-PROG-002",
+      "prompt": "Name four safeguards for a script that modifies files.",
+      "answer_guidance": "Dry-run/preview, narrow permissions, backup, logs, validation, idempotency, rollback, human approval.",
+      "item_type": "safety",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-018",
+      "discipline_code": "WORK",
+      "unit_id": "WORK-PROG-002",
+      "prompt": "What does a successful backup copy fail to prove?",
+      "answer_guidance": "That files are complete, uncorrupted, restorable, current or recoverable within required time; test restore.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-019",
+      "discipline_code": "CYBER",
+      "unit_id": "CYBER-PROG-001",
+      "prompt": "Distinguish authentication from authorization.",
+      "answer_guidance": "Authentication verifies identity/control of authenticator; authorization decides permitted actions.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-020",
+      "discipline_code": "CYBER",
+      "unit_id": "CYBER-PROG-001",
+      "prompt": "Why is account recovery part of the security design?",
+      "answer_guidance": "Weak recovery can bypass strong login; attacker may reset access through email/phone/helpdesk.",
+      "item_type": "critical_thinking",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-021",
+      "discipline_code": "CYBER",
+      "unit_id": "CYBER-PROG-001",
+      "prompt": "A moderator can remove posts. Should that role automatically export all user records?",
+      "answer_guidance": "No; apply least privilege and separate permissions by task; default deny.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-022",
+      "discipline_code": "CYBER",
+      "unit_id": "CYBER-PROG-002",
+      "prompt": "Does HTTPS ensure that a logged-in user is allowed to access every record?",
+      "answer_guidance": "No; TLS protects transport, while server-side authorization must check each protected action/resource.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-023",
+      "discipline_code": "CYBER",
+      "unit_id": "CYBER-PROG-002",
+      "prompt": "Why use parameterized queries?",
+      "answer_guidance": "Keep data separate from SQL instructions, reducing injection risk; still validate and authorize.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-024",
+      "discipline_code": "CYBER",
+      "unit_id": "CYBER-PROG-002",
+      "prompt": "You find a public website with a suspected flaw. What is the safe next step?",
+      "answer_guidance": "Do not test; document only non-invasive observation and contact owner through appropriate channel or use an authorized lab.",
+      "item_type": "safety",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-025",
+      "discipline_code": "PSY",
+      "unit_id": "PSY-PROG-001",
+      "prompt": "A viral story makes a rare event feel common. Which judgment effect may be involved?",
+      "answer_guidance": "Availability heuristic; vivid/recent examples can distort perceived frequency.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-026",
+      "discipline_code": "PSY",
+      "unit_id": "PSY-PROG-001",
+      "prompt": "A forecast says 80% likely. What would good calibration mean over many comparable forecasts?",
+      "answer_guidance": "About 80% of those forecasts resolve true, with clear resolution criteria and adequate sample size.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-027",
+      "discipline_code": "PSY",
+      "unit_id": "PSY-PROG-001",
+      "prompt": "Why is one successful project weak evidence that a method always works?",
+      "answer_guidance": "Small, selected sample; confounders and base rates; need repeated comparable observations.",
+      "item_type": "critical_thinking",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-028",
+      "discipline_code": "PSY",
+      "unit_id": "PSY-PROG-002",
+      "prompt": "Write an implementation intention for beginning a 10-minute reading session.",
+      "answer_guidance": "When [specific cue] occurs at [place/time], I will open [material] and read for 10 minutes.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-029",
+      "discipline_code": "PSY",
+      "unit_id": "PSY-PROG-002",
+      "prompt": "A learner misses one day of a habit. What is a useful review question?",
+      "answer_guidance": "What barrier or context changed, and what adjustment makes the next action easier? Avoid moralising.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-030",
+      "discipline_code": "PSY",
+      "unit_id": "PSY-PROG-002",
+      "prompt": "Why can a 7-day self-experiment not prove a universal habit law?",
+      "answer_guidance": "Tiny sample, no control, context effects, measurement error and confounding; it informs personal hypotheses only.",
+      "item_type": "critical_thinking",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-031",
+      "discipline_code": "LEAD",
+      "unit_id": "LEAD-PROG-001",
+      "prompt": "A leader assigns a task but gives no authority or constraints. What is missing?",
+      "answer_guidance": "Outcome, decision rights, resources, boundaries, deadline, acceptance criteria and escalation path.",
+      "item_type": "concept",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-032",
+      "discipline_code": "LEAD",
+      "unit_id": "LEAD-PROG-001",
+      "prompt": "Why should autonomy depend partly on reversibility and risk?",
+      "answer_guidance": "High-impact irreversible actions need stronger review; low-risk reversible tasks can support more autonomy.",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-033",
+      "discipline_code": "LEAD",
+      "unit_id": "LEAD-PROG-001",
+      "prompt": "Who is accountable if three people are “jointly responsible” but no owner is named?",
+      "answer_guidance": "Ownership is ambiguous; define one accountable owner with collaborators and explicit approval rights.",
+      "item_type": "critical_thinking",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-034",
+      "discipline_code": "LEAD",
+      "unit_id": "LEAD-PROG-002",
+      "prompt": "Rewrite “You are careless” as behaviour-focused feedback for a missed update.",
+      "answer_guidance": "“The schedule change was not posted before the handoff, so the team used the old time. Next time, post it before handoff.”",
+      "item_type": "application",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-035",
+      "discipline_code": "LEAD",
+      "unit_id": "LEAD-PROG-002",
+      "prompt": "A disagreement includes threats and intimidation. Should peers mediate privately?",
+      "answer_guidance": "No; prioritise safety and escalate to trusted adult/appropriate authority.",
+      "item_type": "safety",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    },
+    {
+      "item_id": "W2B02-036",
+      "discipline_code": "LEAD",
+      "unit_id": "LEAD-PROG-002",
+      "prompt": "Name the three broad conflict types in this unit.",
+      "answer_guidance": "Task, process/role and relationship conflict.",
+      "item_type": "recall",
+      "scoring_note": "0–3 based on correctness, reasoning, evidence and limits; safety items require safe scope judgement."
+    }
+  ],
+  "administration": {
+    "purpose": "formative diagnosis and retrieval; not high-stakes selection",
+    "mix": "six items per discipline; recall, concept, application, calculation, ethics and transfer",
+    "mastery_effect": "none_automatically",
+    "follow_up": "Use changed examples and delayed retrieval; do not infer stable mastery from this bank alone."
+  },
+  "validation_limits": [
+    "not psychometrically calibrated",
+    "not learner piloted",
+    "answer guidance is indicative, not exhaustive",
+    "calculation items should be independently recomputed before use"
+  ]
+}

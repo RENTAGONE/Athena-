@@ -1,0 +1,56 @@
+{
+  "registry": "ATHENA_WAVES_07_08_VALIDATION",
+  "version": "1.0",
+  "status": "structural_validation_passed_authoring_review_pending",
+  "baseline": {
+    "kb": "v3.22",
+    "vault": "v5.8",
+    "module_count": 216,
+    "discipline_count": 18
+  },
+  "checks": {
+    "baseline_module_count": 216,
+    "baseline_unique_ids": 216,
+    "wave07_profiles": 216,
+    "wave07_profile_ids_unique": 216,
+    "wave07_profile_ids_match_baseline": true,
+    "wave07_progression_count": 18,
+    "wave07_each_progression_12": true,
+    "wave07_bridge_count": 41,
+    "wave07_bridge_endpoints_resolve": true,
+    "wave07_hard_prerequisites_added": 0,
+    "wave08_instruments": 216,
+    "wave08_ids_unique": 216,
+    "wave08_ids_match_baseline": true,
+    "wave08_four_criteria_each": true,
+    "wave08_each_criterion_4_anchors": true,
+    "wave08_synthetic_samples": 18,
+    "wave08_empirical_scores": 0,
+    "source_register_count": 4,
+    "wave08_module_specific_scoring_cues": true,
+    "wave08_validity_stress_tests": true,
+    "all_research_json_parse": true,
+    "kb_zip_integrity": "passed",
+    "vault_zip_integrity": "passed",
+    "embedded_kb_matches_standalone": "passed",
+    "existing_working_ontology_validator": "passed_zero_errors_semantic_approval_pending"
+  },
+  "results": {
+    "structural_validation": "passed",
+    "semantic_subject_review": "not_performed",
+    "expert_review": "not_performed",
+    "learner_pilot": "not_performed",
+    "rater_calibration": "not_performed",
+    "reliability_estimate": null,
+    "validity_for_operational_use": "not_established",
+    "app_import_test": "not_performed",
+    "existing_ontology_validator": "passed with 0 errors; semantic approval remains pending",
+    "kb_vault_archive_integrity": "passed; embedded KB matches standalone KB byte-for-byte"
+  },
+  "notes": [
+    "All new module-level records preserve exact baseline IDs.",
+    "Cross-discipline bridges are proposals and non-gating.",
+    "Synthetic calibration samples are authored examples, not learner evidence.",
+    "No empirical reliability or validity claims are made."
+  ]
+}

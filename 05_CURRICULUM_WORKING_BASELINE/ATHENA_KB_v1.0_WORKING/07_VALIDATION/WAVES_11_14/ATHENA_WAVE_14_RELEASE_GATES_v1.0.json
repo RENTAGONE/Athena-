@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "release_decision": "BLOCKED_PENDING_EXTERNAL_EVIDENCE",
+  "gates": [
+    {
+      "gate_id": "GATE-01",
+      "name": "Package integrity",
+      "required_evidence": "All archives open; checksums match; no missing or duplicate files; KB/Vault copies byte-identical for mirrored artifacts.",
+      "owner": "Content/build owner",
+      "current_status": "passed_internal_package_integrity",
+      "evidence": {
+        "kb_archive": "ATHENA_KB_v1.0_WORKING_ONTOLOGY_CONTRACT_v3.26.zip",
+        "vault_archive": "ATHENA_Master_Vault_v6.2_WORKING.zip",
+        "research_archive": "ATHENA_RESEARCH_WAVES_11_14_v1.0.zip",
+        "audit_archive": "ATHENA_V1.0_AUDIT_AND_PROGRESS_v1.0.zip",
+        "zip_integrity": "all archives passed zip.testzip",
+        "embedded_kb_mirror": "398/398 files byte-identical",
+        "sha256_manifest": "ATHENA_WAVES_11_14_AND_V1.0_AUDIT_SHA256SUMS.txt"
+      }
+    },
+    {
+      "gate_id": "GATE-02",
+      "name": "Ontology and schema semantics",
+      "required_evidence": "Canonical owner decisions, schema semantic review, full importable-record validation and migration policy.",
+      "owner": "Ontology owner + app engineer",
+      "current_status": "open"
+    },
+    {
+      "gate_id": "GATE-03",
+      "name": "Instructional completeness",
+      "required_evidence": "Strict 216/216 full teaching-pack ledger; claim-to-source verification; subject review.",
+      "owner": "Content owner + subject reviewers",
+      "current_status": "open"
+    },
+    {
+      "gate_id": "GATE-04",
+      "name": "Assessment quality",
+      "required_evidence": "Assessment review, double-rater scoring, disagreement resolution and learner evidence.",
+      "owner": "Assessment lead + raters",
+      "current_status": "open"
+    },
+    {
+      "gate_id": "GATE-05",
+      "name": "Safety and safeguarding",
+      "required_evidence": "Qualified review of all high/critical-risk content; incident escalation; Bangladesh legal check; privacy review.",
+      "owner": "Qualified reviewers + safeguarding lead",
+      "current_status": "open_blocking"
+    },
+    {
+      "gate_id": "GATE-06",
+      "name": "Accessibility and localization",
+      "required_evidence": "P0 checklist passed on target Android and desktop; Bangla/English human review; disabled-user testing.",
+      "owner": "Accessibility lead + localization reviewers",
+      "current_status": "open_blocking"
+    },
+    {
+      "gate_id": "GATE-07",
+      "name": "App import lifecycle",
+      "required_evidence": "All 40 importer cases executed in actual app; preview, approval, atomicity, rollback, backup/restore and round trip evidenced.",
+      "owner": "Application engineer",
+      "current_status": "open_external_execution"
+    },
+    {
+      "gate_id": "GATE-08",
+      "name": "Learner pilot",
+      "required_evidence": "Approved protocol, guardian consent/assent where applicable, anonymised findings, defects and retest.",
+      "owner": "Pilot lead + safeguarding lead",
+      "current_status": "not_run"
+    },
+    {
+      "gate_id": "GATE-09",
+      "name": "Resource and legal freshness",
+      "required_evidence": "Broken-link/access sweep; jurisdiction/source/licence verification; emergency info rechecked.",
+      "owner": "Research owner + legal/safety reviewers",
+      "current_status": "open"
+    },
+    {
+      "gate_id": "GATE-10",
+      "name": "Operational readiness",
+      "required_evidence": "Backup recovery, offline use, sync conflict resolution, deletion/export, notification and device tests.",
+      "owner": "Application engineer + QA",
+      "current_status": "open"
+    },
+    {
+      "gate_id": "GATE-11",
+      "name": "Release decision",
+      "required_evidence": "All P0 gates closed, no unresolved critical/high severity safety/privacy issue, signed owner decision and release notes.",
+      "owner": "Release owner",
+      "current_status": "blocked"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": "0.1",
+  "status": "proposed_not_implemented",
+  "record_types": [
+    "fixed_commitment",
+    "tentative_event",
+    "confirmed_event",
+    "routine",
+    "task",
+    "deadline",
+    "availability",
+    "actual_record",
+    "buffer"
+  ],
+  "enums": {
+    "certainty": [
+      "unknown",
+      "tentative",
+      "confirmed"
+    ],
+    "flexibility": [
+      "immovable",
+      "fixed_time",
+      "flexible_window",
+      "movable",
+      "anytime"
+    ],
+    "priority": [
+      "protected",
+      "high",
+      "normal",
+      "low"
+    ],
+    "status": [
+      "draft",
+      "proposed",
+      "confirmed",
+      "completed",
+      "cancelled",
+      "missed",
+      "superseded"
+    ]
+  },
+  "invariants": [
+    "record_id is app-owned and immutable",
+    "planned estimate and actual duration are separate",
+    "actual records are append-only",
+    "tentative events never auto-promote to confirmed",
+    "routine edits require user decision",
+    "schedule proposals are non-mutating until accepted",
+    "significant changes require explicit approval",
+    "no silent last-write-wins for schedule conflicts",
+    "travel and preparation are separate from activity duration",
+    "all local core operations work offline",
+    "sleep/recovery protected windows cannot be silently displaced"
+  ],
+  "acceptance_test_count": 15,
+  "example_case": {
+    "utterance": "Friend called; tomorrow at 8 AM we are playing football. Activity about 3 hours; round-trip travel 30 minutes; tentative.",
+    "certainty": "tentative",
+    "start_time": "08:00",
+    "activity_duration_minutes": 180,
+    "round_trip_travel_minutes": 30,
+    "must_preview_interpreted_local_date": true,
+    "must_not_auto_confirm": true,
+    "must_not_overwrite_routine": true,
+    "travel_split": "unknown_until_user_specifies",
+    "preparation_minutes": "unknown_until_user_specifies"
+  }
+}

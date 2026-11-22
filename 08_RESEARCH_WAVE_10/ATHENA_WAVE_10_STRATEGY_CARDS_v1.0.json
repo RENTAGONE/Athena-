@@ -1,0 +1,170 @@
+{
+  "registry": "ATHENA_WAVE_10_STRATEGY_CARDS",
+  "version": "1.0.0",
+  "status": "draft_research_informed",
+  "count": 18,
+  "records": [
+    {
+      "id": "STR-01",
+      "name": "Retrieval practice",
+      "definition": "Recall information or perform a procedure from memory before looking at the source.",
+      "when_to_use": "Use after initial learning; choose free recall, cued recall, explanation, problem solving or performance according to the target.",
+      "adaptation_rule": "If retrieval repeatedly fails, provide a cue or brief restudy and retry; do not turn every attempt into a high-stakes test.",
+      "boundary": "Recall success is evidence under the recorded conditions, not automatic mastery.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-02",
+      "name": "Distributed practice",
+      "definition": "Spread meaningful practice across sessions rather than massing the same total practice into one sitting.",
+      "when_to_use": "Select revisit timing from task complexity, intended retention horizon and observed success.",
+      "adaptation_rule": "Shorten interval after failure; cautiously lengthen after repeated success.",
+      "boundary": "No universal 1-3-7-14-day schedule is asserted.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-03",
+      "name": "Interleaving",
+      "definition": "Mix related problem types so the learner must discriminate which method applies.",
+      "when_to_use": "Introduce after basic methods are understood; mix confusable types and give feedback on selection cues.",
+      "adaptation_rule": "Return to blocked guided practice if mixing only produces confusion or random guessing.",
+      "boundary": "Interleaving is not random shuffling or a universal first step.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-04",
+      "name": "Worked examples",
+      "definition": "Study a correct, fully explained solution to learn the structure of a new task.",
+      "when_to_use": "Use for novices and high element-interactivity tasks; explain why each step is valid.",
+      "adaptation_rule": "Fade prompts or remove steps as schemas develop.",
+      "boundary": "Do not leave advanced learners trapped in redundant examples.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-05",
+      "name": "Faded guidance",
+      "definition": "Gradually remove prompts, worked steps or scaffolds as performance stabilises.",
+      "when_to_use": "Fade one support dimension at a time and test on parallel tasks.",
+      "adaptation_rule": "Restore only the missing support when error patterns show a specific gap.",
+      "boundary": "Support removal is based on evidence, not a timer.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-06",
+      "name": "Self-explanation",
+      "definition": "Explain why a step, relation or decision makes sense.",
+      "when_to_use": "Prompt causal links, assumptions, conditions and alternatives during examples.",
+      "adaptation_rule": "If explanation becomes fluent but wrong, compare with evidence and test counterexamples.",
+      "boundary": "Verbal fluency alone does not prove correctness.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-07",
+      "name": "Elaborative interrogation",
+      "definition": "Ask why a fact or relationship is true and connect it to prior knowledge.",
+      "when_to_use": "Use when prior knowledge is accurate enough to support connections.",
+      "adaptation_rule": "If learner lacks the prerequisite, teach it first rather than demanding unsupported why answers.",
+      "boundary": "Elaboration can reinforce misconceptions if the base knowledge is false.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-08",
+      "name": "Dual/multiple representation",
+      "definition": "Connect words, diagrams, equations, demonstrations or physical models.",
+      "when_to_use": "Use representations that reveal complementary structure; explicitly map corresponding elements.",
+      "adaptation_rule": "Remove decorative or redundant representations that increase split attention.",
+      "boundary": "More modalities are not automatically better.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-09",
+      "name": "Contrastive examples",
+      "definition": "Compare similar cases that differ in one important feature.",
+      "when_to_use": "Use to teach categories, method selection, misconceptions and boundary conditions.",
+      "adaptation_rule": "Make the discriminating feature explicit after learner attempt.",
+      "boundary": "Do not compare cases that differ in many irrelevant dimensions.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-10",
+      "name": "Error diagnosis",
+      "definition": "Classify the earliest consequential error and its cause.",
+      "when_to_use": "Keep the original attempt; locate misconception, cue-selection, procedural, arithmetic, attention or verification error.",
+      "adaptation_rule": "Teach the cause and use a fresh parallel task.",
+      "boundary": "Do not merely reveal the correct answer and repeat the same item.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-11",
+      "name": "Confidence calibration",
+      "definition": "Record confidence before feedback and compare it with actual evidence over multiple observations.",
+      "when_to_use": "Use low-stakes items with objective or defensible scoring; track sample size and confidence bands.",
+      "adaptation_rule": "Investigate overconfidence and underconfidence separately.",
+      "boundary": "Never use confidence as a competence score or shame mechanism.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-12",
+      "name": "Goal decomposition",
+      "definition": "Translate a broad ambition into observable outcome, evidence and next action.",
+      "when_to_use": "Plan a specific target and success criteria before starting.",
+      "adaptation_rule": "Reduce scope if target is vague or too large; increase challenge when stable.",
+      "boundary": "Time spent is not the learning objective.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-13",
+      "name": "Attention and environment design",
+      "definition": "Reduce avoidable interruption and make required materials accessible.",
+      "when_to_use": "Prepare a bounded task, needed materials and a realistic stopping point.",
+      "adaptation_rule": "Change environment or task size if repeated interruption or friction is observed.",
+      "boundary": "Do not claim a universal attention-span number.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-14",
+      "name": "Deliberate component practice",
+      "definition": "Target one weak, observable component with feedback and an appropriate challenge.",
+      "when_to_use": "Use repeated high-quality attempts and gradually recombine components.",
+      "adaptation_rule": "Stop or change task when fatigue, pain, overload or degrading technique appears.",
+      "boundary": "Repetition count without quality criteria is not deliberate practice.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-15",
+      "name": "Variable practice and transfer",
+      "definition": "Vary relevant conditions after basic performance is reliable.",
+      "when_to_use": "Change one or two meaningful constraints at a time; include a transfer check.",
+      "adaptation_rule": "Keep variation low when safety, technique or beginner control is not stable.",
+      "boundary": "Difficulty should be desirable, not hazardous or arbitrary.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-16",
+      "name": "Feedback and feedforward",
+      "definition": "Use evidence to identify current gap and a specific next action.",
+      "when_to_use": "Feedback should be task/process/self-regulation focused, understandable and followed by another attempt.",
+      "adaptation_rule": "Avoid overwhelming lists; prioritise one or two high-impact corrections.",
+      "boundary": "Praise or criticism without information is not adequate feedback.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-17",
+      "name": "Reflective cycle",
+      "definition": "Plan, perform/monitor, reflect and adapt the next attempt.",
+      "when_to_use": "Apply to actual subject tasks, not only a detached reflection worksheet.",
+      "adaptation_rule": "If reflection has no evidence, add an observable check before changing the plan.",
+      "boundary": "Reflection is not self-blame or journaling for its own sake.",
+      "status": "draft_research_informed"
+    },
+    {
+      "id": "STR-18",
+      "name": "Sleep and recovery protection",
+      "definition": "Protect adequate sleep and recovery as conditions supporting learning and safe practice.",
+      "when_to_use": "Plan realistic sessions around school, family, movement and rest; use shorter fallback sessions when needed.",
+      "adaptation_rule": "When tired, reduce complexity or stop; do not compensate with all-night study.",
+      "boundary": "No study technique substitutes for sleep or professional support for persistent sleep problems.",
+      "status": "draft_research_informed"
+    }
+  ]
+}

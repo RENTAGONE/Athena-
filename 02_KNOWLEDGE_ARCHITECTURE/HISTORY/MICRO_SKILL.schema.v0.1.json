@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/micro-skill.schema.v0.1.json",
+  "title": "ATHENA Micro-skill Record",
+  "description": "A small, bounded capability with an observable performance target, safe practice protocol, and maintenance rule. A micro-skill supplements rather than replaces a macro-skill curriculum.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "category",
+    "definition",
+    "target_performance",
+    "practice_protocol",
+    "assessment",
+    "maintenance",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-MICRO-(COG|DEX|PRACT|SOC|SAFE)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2
+    },
+    "category": {
+      "enum": [
+        "COGNITIVE",
+        "DEXTERITY_COORDINATION",
+        "PRACTICAL_EVERYDAY",
+        "SOCIAL_COMMUNICATION",
+        "SAFETY_EMERGENCY"
+      ]
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 10
+    },
+    "discipline_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-DISC-[A-Z0-9]+$"
+      },
+      "uniqueItems": true
+    },
+    "skill_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(SKILL|SUB)-[A-Z0-9-]+$"
+      },
+      "uniqueItems": true
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(MICRO|SKILL|SUB|CON)-[A-Z0-9-]+$"
+      },
+      "uniqueItems": true
+    },
+    "target_performance": {
+      "type": "object",
+      "required": [
+        "statement",
+        "metric",
+        "conditions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "string"
+        },
+        "success_threshold": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "practice_protocol": {
+      "type": "object",
+      "required": [
+        "steps",
+        "session_minutes",
+        "frequency_per_week"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "session_minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "frequency_per_week": {
+          "type": "string"
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environment": {
+          "type": "string"
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "required": [
+        "method",
+        "record"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "record": {
+          "type": "string"
+        },
+        "repeat_trials": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        }
+      }
+    },
+    "progression": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "required": [
+        "trigger",
+        "protocol"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "protocol": {
+          "type": "string"
+        }
+      }
+    },
+    "time_to_initial_competence_minutes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "risk_level": {
+      "enum": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ]
+    },
+    "safety_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supervision": {
+      "enum": [
+        "NONE_ROUTINE_SAFE_CONTEXT",
+        "ADULT_GUIDANCE_RECOMMENDED",
+        "QUALIFIED_INSTRUCTOR_REQUIRED",
+        "NOT_FOR_UNSUPERVISED_PRACTICE"
+      ]
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED",
+        "DEPRECATED"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authoring_notes": {
+      "type": "string"
+    }
+  }
+}

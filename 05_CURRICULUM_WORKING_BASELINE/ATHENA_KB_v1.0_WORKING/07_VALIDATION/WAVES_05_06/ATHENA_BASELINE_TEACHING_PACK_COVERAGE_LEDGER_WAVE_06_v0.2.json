@@ -1,0 +1,1957 @@
+{
+  "registry": "ATHENA_BASELINE_TEACHING_PACK_COVERAGE",
+  "version": "0.2",
+  "status": "authored_draft_coverage_review_required",
+  "baseline_module_count": 216,
+  "matched_full_teaching_pack_draft_count": 216,
+  "unmatched_module_count": 0,
+  "coverage_percent": 100.0,
+  "definition": "A matched pack must explicitly include the exact BASE module ID and a learner-facing explanation, worked example, practice, answer guidance, assessment/evidence criteria and scope/safety boundary. Metadata-only enrichment does not count.",
+  "records": [
+    {
+      "module_id": "BASE-ENG-001",
+      "discipline_code": "ENG",
+      "sequence": 1,
+      "title": "Problem decomposition",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-002",
+      "discipline_code": "ENG",
+      "sequence": 2,
+      "title": "Algorithms and pseudocode",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-003",
+      "discipline_code": "ENG",
+      "sequence": 3,
+      "title": "Variables and data types",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-004",
+      "discipline_code": "ENG",
+      "sequence": 4,
+      "title": "Control flow",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-005",
+      "discipline_code": "ENG",
+      "sequence": 5,
+      "title": "Functions and contracts",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-006",
+      "discipline_code": "ENG",
+      "sequence": 6,
+      "title": "Collections and data structures",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-007",
+      "discipline_code": "ENG",
+      "sequence": 7,
+      "title": "Debugging and testing",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-008",
+      "discipline_code": "ENG",
+      "sequence": 8,
+      "title": "Files and command line",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-009",
+      "discipline_code": "ENG",
+      "sequence": 9,
+      "title": "Version control foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-010",
+      "discipline_code": "ENG",
+      "sequence": 10,
+      "title": "Web and HTTP foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-011",
+      "discipline_code": "ENG",
+      "sequence": 11,
+      "title": "Relational data foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ENG-012",
+      "discipline_code": "ENG",
+      "sequence": 12,
+      "title": "Security and reliability basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-001",
+      "discipline_code": "BIZ",
+      "sequence": 1,
+      "title": "Problem and customer discovery",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-002",
+      "discipline_code": "BIZ",
+      "sequence": 2,
+      "title": "Market research foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-003",
+      "discipline_code": "BIZ",
+      "sequence": 3,
+      "title": "Value proposition",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-004",
+      "discipline_code": "BIZ",
+      "sequence": 4,
+      "title": "Offer and pricing basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-005",
+      "discipline_code": "BIZ",
+      "sequence": 5,
+      "title": "Ethical sales conversations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-006",
+      "discipline_code": "BIZ",
+      "sequence": 6,
+      "title": "Marketing and positioning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-007",
+      "discipline_code": "BIZ",
+      "sequence": 7,
+      "title": "Funnel and measurement",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-008",
+      "discipline_code": "BIZ",
+      "sequence": 8,
+      "title": "Bookkeeping and cash flow",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-009",
+      "discipline_code": "BIZ",
+      "sequence": 9,
+      "title": "Unit economics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-010",
+      "discipline_code": "BIZ",
+      "sequence": 10,
+      "title": "Operations and fulfilment",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-011",
+      "discipline_code": "BIZ",
+      "sequence": 11,
+      "title": "Customer support and retention",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BIZ-012",
+      "discipline_code": "BIZ",
+      "sequence": 12,
+      "title": "Business ethics and strategy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-001",
+      "discipline_code": "ELEC",
+      "sequence": 1,
+      "title": "Electrical safety",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-002",
+      "discipline_code": "ELEC",
+      "sequence": 2,
+      "title": "Units and circuit quantities",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-003",
+      "discipline_code": "ELEC",
+      "sequence": 3,
+      "title": "Measurement instruments",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-004",
+      "discipline_code": "ELEC",
+      "sequence": 4,
+      "title": "Circuit diagrams",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-005",
+      "discipline_code": "ELEC",
+      "sequence": 5,
+      "title": "Ohm’s law",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-006",
+      "discipline_code": "ELEC",
+      "sequence": 6,
+      "title": "Series and parallel networks",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-007",
+      "discipline_code": "ELEC",
+      "sequence": 7,
+      "title": "Resistors and LEDs",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-008",
+      "discipline_code": "ELEC",
+      "sequence": 8,
+      "title": "Diode behaviour",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-009",
+      "discipline_code": "ELEC",
+      "sequence": 9,
+      "title": "Transistor switching",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-010",
+      "discipline_code": "ELEC",
+      "sequence": 10,
+      "title": "Capacitors and time response",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-011",
+      "discipline_code": "ELEC",
+      "sequence": 11,
+      "title": "Breadboard prototyping",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ELEC-012",
+      "discipline_code": "ELEC",
+      "sequence": 12,
+      "title": "Digital logic and microcontrollers",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-001",
+      "discipline_code": "FIN",
+      "sequence": 1,
+      "title": "Money numeracy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-002",
+      "discipline_code": "FIN",
+      "sequence": 2,
+      "title": "Personal budgeting",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-003",
+      "discipline_code": "FIN",
+      "sequence": 3,
+      "title": "Cash flow",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-004",
+      "discipline_code": "FIN",
+      "sequence": 4,
+      "title": "Interest and compounding",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-005",
+      "discipline_code": "FIN",
+      "sequence": 5,
+      "title": "Inflation and purchasing power",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-006",
+      "discipline_code": "FIN",
+      "sequence": 6,
+      "title": "Accounting foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-007",
+      "discipline_code": "FIN",
+      "sequence": 7,
+      "title": "Financial statements",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-008",
+      "discipline_code": "FIN",
+      "sequence": 8,
+      "title": "Risk and uncertainty",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-009",
+      "discipline_code": "FIN",
+      "sequence": 9,
+      "title": "Markets and institutions",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-010",
+      "discipline_code": "FIN",
+      "sequence": 10,
+      "title": "Diversification and allocation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-011",
+      "discipline_code": "FIN",
+      "sequence": 11,
+      "title": "Fraud and consumer protection",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-FIN-012",
+      "discipline_code": "FIN",
+      "sequence": 12,
+      "title": "Economic reasoning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-001",
+      "discipline_code": "BODY",
+      "sequence": 1,
+      "title": "Biological organization",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-002",
+      "discipline_code": "BODY",
+      "sequence": 2,
+      "title": "Cell and tissue basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-003",
+      "discipline_code": "BODY",
+      "sequence": 3,
+      "title": "Anatomical orientation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-004",
+      "discipline_code": "BODY",
+      "sequence": 4,
+      "title": "Homeostasis",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-005",
+      "discipline_code": "BODY",
+      "sequence": 5,
+      "title": "Nervous system basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-006",
+      "discipline_code": "BODY",
+      "sequence": 6,
+      "title": "Cardiorespiratory function",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-007",
+      "discipline_code": "BODY",
+      "sequence": 7,
+      "title": "Musculoskeletal function",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-008",
+      "discipline_code": "BODY",
+      "sequence": 8,
+      "title": "Nutrition and digestion",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-009",
+      "discipline_code": "BODY",
+      "sequence": 9,
+      "title": "Sleep and recovery",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-010",
+      "discipline_code": "BODY",
+      "sequence": 10,
+      "title": "Exercise adaptation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-011",
+      "discipline_code": "BODY",
+      "sequence": 11,
+      "title": "Health information literacy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-BODY-012",
+      "discipline_code": "BODY",
+      "sequence": 12,
+      "title": "Human variation and ethics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-001",
+      "discipline_code": "PSY",
+      "sequence": 1,
+      "title": "Psychology as an evidence discipline",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-002",
+      "discipline_code": "PSY",
+      "sequence": 2,
+      "title": "Attention and cognitive load",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-003",
+      "discipline_code": "PSY",
+      "sequence": 3,
+      "title": "Memory systems",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-004",
+      "discipline_code": "PSY",
+      "sequence": 4,
+      "title": "Learning and behaviour",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-005",
+      "discipline_code": "PSY",
+      "sequence": 5,
+      "title": "Emotion and regulation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-006",
+      "discipline_code": "PSY",
+      "sequence": 6,
+      "title": "Motivation and habits",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-007",
+      "discipline_code": "PSY",
+      "sequence": 7,
+      "title": "Biases and heuristics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-008",
+      "discipline_code": "PSY",
+      "sequence": 8,
+      "title": "Decision-making",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-009",
+      "discipline_code": "PSY",
+      "sequence": 9,
+      "title": "Social psychology",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-010",
+      "discipline_code": "PSY",
+      "sequence": 10,
+      "title": "Communication and conflict",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-011",
+      "discipline_code": "PSY",
+      "sequence": 11,
+      "title": "Strategic interaction",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PSY-012",
+      "discipline_code": "PSY",
+      "sequence": 12,
+      "title": "Systems and causal reasoning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-001",
+      "discipline_code": "AEST",
+      "sequence": 1,
+      "title": "Visual perception",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-002",
+      "discipline_code": "AEST",
+      "sequence": 2,
+      "title": "Composition and framing",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-003",
+      "discipline_code": "AEST",
+      "sequence": 3,
+      "title": "Hierarchy and information design",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-004",
+      "discipline_code": "AEST",
+      "sequence": 4,
+      "title": "Colour foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-005",
+      "discipline_code": "AEST",
+      "sequence": 5,
+      "title": "Typography foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-006",
+      "discipline_code": "AEST",
+      "sequence": 6,
+      "title": "Layout systems",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-007",
+      "discipline_code": "AEST",
+      "sequence": 7,
+      "title": "Brand foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-008",
+      "discipline_code": "AEST",
+      "sequence": 8,
+      "title": "Interface states",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-009",
+      "discipline_code": "AEST",
+      "sequence": 9,
+      "title": "Accessibility foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-010",
+      "discipline_code": "AEST",
+      "sequence": 10,
+      "title": "Photography foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-011",
+      "discipline_code": "AEST",
+      "sequence": 11,
+      "title": "Critique and iteration",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-AEST-012",
+      "discipline_code": "AEST",
+      "sequence": 12,
+      "title": "Design systems",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-001",
+      "discipline_code": "WORK",
+      "sequence": 1,
+      "title": "File and folder literacy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-002",
+      "discipline_code": "WORK",
+      "sequence": 2,
+      "title": "Notes and knowledge capture",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-003",
+      "discipline_code": "WORK",
+      "sequence": 3,
+      "title": "Task capture and triage",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-004",
+      "discipline_code": "WORK",
+      "sequence": 4,
+      "title": "Planning and estimation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-005",
+      "discipline_code": "WORK",
+      "sequence": 5,
+      "title": "Time and attention management",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-006",
+      "discipline_code": "WORK",
+      "sequence": 6,
+      "title": "Typing and text entry",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-007",
+      "discipline_code": "WORK",
+      "sequence": 7,
+      "title": "Terminal foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-008",
+      "discipline_code": "WORK",
+      "sequence": 8,
+      "title": "Git workflow",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-009",
+      "discipline_code": "WORK",
+      "sequence": 9,
+      "title": "Spreadsheet foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-010",
+      "discipline_code": "WORK",
+      "sequence": 10,
+      "title": "Documents and communication tools",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-011",
+      "discipline_code": "WORK",
+      "sequence": 11,
+      "title": "Automation foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-WORK-012",
+      "discipline_code": "WORK",
+      "sequence": 12,
+      "title": "Workflow improvement",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-001",
+      "discipline_code": "ART",
+      "sequence": 1,
+      "title": "Observation and visual analysis",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-002",
+      "discipline_code": "ART",
+      "sequence": 2,
+      "title": "Line and mark control",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-003",
+      "discipline_code": "ART",
+      "sequence": 3,
+      "title": "Shape and form",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-004",
+      "discipline_code": "ART",
+      "sequence": 4,
+      "title": "Proportion and measurement",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-005",
+      "discipline_code": "ART",
+      "sequence": 5,
+      "title": "Perspective foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-006",
+      "discipline_code": "ART",
+      "sequence": 6,
+      "title": "Value and light",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-007",
+      "discipline_code": "ART",
+      "sequence": 7,
+      "title": "Colour foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-008",
+      "discipline_code": "ART",
+      "sequence": 8,
+      "title": "Composition",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-009",
+      "discipline_code": "ART",
+      "sequence": 9,
+      "title": "Figure and anatomy foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-010",
+      "discipline_code": "ART",
+      "sequence": 10,
+      "title": "Visual storytelling",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-011",
+      "discipline_code": "ART",
+      "sequence": 11,
+      "title": "Reference and study practice",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ART-012",
+      "discipline_code": "ART",
+      "sequence": 12,
+      "title": "Critique and deliberate practice",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-001",
+      "discipline_code": "ATH",
+      "sequence": 1,
+      "title": "Movement literacy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-002",
+      "discipline_code": "ATH",
+      "sequence": 2,
+      "title": "Warm-up and readiness",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-003",
+      "discipline_code": "ATH",
+      "sequence": 3,
+      "title": "Mobility and flexibility",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-004",
+      "discipline_code": "ATH",
+      "sequence": 4,
+      "title": "Coordination and balance",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-005",
+      "discipline_code": "ATH",
+      "sequence": 5,
+      "title": "Strength foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-006",
+      "discipline_code": "ATH",
+      "sequence": 6,
+      "title": "Aerobic conditioning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-007",
+      "discipline_code": "ATH",
+      "sequence": 7,
+      "title": "Speed and acceleration",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-008",
+      "discipline_code": "ATH",
+      "sequence": 8,
+      "title": "Agility and deceleration",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-009",
+      "discipline_code": "ATH",
+      "sequence": 9,
+      "title": "Sport skill acquisition",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-010",
+      "discipline_code": "ATH",
+      "sequence": 10,
+      "title": "Recovery and load management",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-011",
+      "discipline_code": "ATH",
+      "sequence": 11,
+      "title": "Training design",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-ATH-012",
+      "discipline_code": "ATH",
+      "sequence": 12,
+      "title": "Performance analysis",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-001",
+      "discipline_code": "PERF",
+      "sequence": 1,
+      "title": "Vocal health",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-002",
+      "discipline_code": "PERF",
+      "sequence": 2,
+      "title": "Breath coordination",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-003",
+      "discipline_code": "PERF",
+      "sequence": 3,
+      "title": "Pitch foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-004",
+      "discipline_code": "PERF",
+      "sequence": 4,
+      "title": "Rhythm and timing",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-005",
+      "discipline_code": "PERF",
+      "sequence": 5,
+      "title": "Listening and ear training",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-006",
+      "discipline_code": "PERF",
+      "sequence": 6,
+      "title": "Articulation and diction",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-007",
+      "discipline_code": "PERF",
+      "sequence": 7,
+      "title": "Resonance and tone",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-008",
+      "discipline_code": "PERF",
+      "sequence": 8,
+      "title": "Phrasing and expression",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-009",
+      "discipline_code": "PERF",
+      "sequence": 9,
+      "title": "Practice design",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-010",
+      "discipline_code": "PERF",
+      "sequence": 10,
+      "title": "Recording and self-review",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-011",
+      "discipline_code": "PERF",
+      "sequence": 11,
+      "title": "Stagecraft foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-PERF-012",
+      "discipline_code": "PERF",
+      "sequence": 12,
+      "title": "Repertoire and interpretation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-001",
+      "discipline_code": "MATH",
+      "sequence": 1,
+      "title": "Number sense",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-002",
+      "discipline_code": "MATH",
+      "sequence": 2,
+      "title": "Arithmetic operations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-003",
+      "discipline_code": "MATH",
+      "sequence": 3,
+      "title": "Fractions and decimals",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-004",
+      "discipline_code": "MATH",
+      "sequence": 4,
+      "title": "Percentages and proportional change",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-005",
+      "discipline_code": "MATH",
+      "sequence": 5,
+      "title": "Ratios and rates",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-006",
+      "discipline_code": "MATH",
+      "sequence": 6,
+      "title": "Negative numbers and number lines",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-007",
+      "discipline_code": "MATH",
+      "sequence": 7,
+      "title": "Algebraic expressions",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-008",
+      "discipline_code": "MATH",
+      "sequence": 8,
+      "title": "Equations and inequalities",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-009",
+      "discipline_code": "MATH",
+      "sequence": 9,
+      "title": "Exponents, powers and roots",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-010",
+      "discipline_code": "MATH",
+      "sequence": 10,
+      "title": "Geometry, spatial reasoning and measurement",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-011",
+      "discipline_code": "MATH",
+      "sequence": 11,
+      "title": "Coordinate graphs, relations and functions",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-MATH-012",
+      "discipline_code": "MATH",
+      "sequence": 12,
+      "title": "Mathematical reasoning, problem solving and proof",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MATH_EXISTING",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-001",
+      "discipline_code": "CYBER",
+      "sequence": 1,
+      "title": "Digital safety and privacy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-002",
+      "discipline_code": "CYBER",
+      "sequence": 2,
+      "title": "Operating system foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-003",
+      "discipline_code": "CYBER",
+      "sequence": 3,
+      "title": "Network foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-004",
+      "discipline_code": "CYBER",
+      "sequence": 4,
+      "title": "Authentication and authorization",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-005",
+      "discipline_code": "CYBER",
+      "sequence": 5,
+      "title": "Permissions and least privilege",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-006",
+      "discipline_code": "CYBER",
+      "sequence": 6,
+      "title": "Backup and recovery",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-007",
+      "discipline_code": "CYBER",
+      "sequence": 7,
+      "title": "Shell and Linux basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-008",
+      "discipline_code": "CYBER",
+      "sequence": 8,
+      "title": "Web security basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-009",
+      "discipline_code": "CYBER",
+      "sequence": 9,
+      "title": "Secure coding foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-010",
+      "discipline_code": "CYBER",
+      "sequence": 10,
+      "title": "Threat modelling",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-011",
+      "discipline_code": "CYBER",
+      "sequence": 11,
+      "title": "Defensive monitoring",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-CYBER-012",
+      "discipline_code": "CYBER",
+      "sequence": 12,
+      "title": "Authorized lab practice",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-001",
+      "discipline_code": "LANG",
+      "sequence": 1,
+      "title": "Language learning strategy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-002",
+      "discipline_code": "LANG",
+      "sequence": 2,
+      "title": "Sound and phonology",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-003",
+      "discipline_code": "LANG",
+      "sequence": 3,
+      "title": "Vocabulary acquisition",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-004",
+      "discipline_code": "LANG",
+      "sequence": 4,
+      "title": "Grammar as structure",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-005",
+      "discipline_code": "LANG",
+      "sequence": 5,
+      "title": "Reading comprehension",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-006",
+      "discipline_code": "LANG",
+      "sequence": 6,
+      "title": "Listening comprehension",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-007",
+      "discipline_code": "LANG",
+      "sequence": 7,
+      "title": "Writing foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-008",
+      "discipline_code": "LANG",
+      "sequence": 8,
+      "title": "Speaking and interaction",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-009",
+      "discipline_code": "LANG",
+      "sequence": 9,
+      "title": "Bangla-English technical bridging",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-010",
+      "discipline_code": "LANG",
+      "sequence": 10,
+      "title": "Rhetoric and argument",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-011",
+      "discipline_code": "LANG",
+      "sequence": 11,
+      "title": "Second-language pathway design",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LANG-012",
+      "discipline_code": "LANG",
+      "sequence": 12,
+      "title": "Linguistic awareness",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-001",
+      "discipline_code": "RES",
+      "sequence": 1,
+      "title": "Question formation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-002",
+      "discipline_code": "RES",
+      "sequence": 2,
+      "title": "Search strategy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-003",
+      "discipline_code": "RES",
+      "sequence": 3,
+      "title": "Source credibility",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-004",
+      "discipline_code": "RES",
+      "sequence": 4,
+      "title": "Claims and evidence",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-005",
+      "discipline_code": "RES",
+      "sequence": 5,
+      "title": "Citation and provenance",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-006",
+      "discipline_code": "RES",
+      "sequence": 6,
+      "title": "Bias and misinformation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-007",
+      "discipline_code": "RES",
+      "sequence": 7,
+      "title": "Research design basics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-008",
+      "discipline_code": "RES",
+      "sequence": 8,
+      "title": "Data collection and quality",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-009",
+      "discipline_code": "RES",
+      "sequence": 9,
+      "title": "Evidence synthesis",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-010",
+      "discipline_code": "RES",
+      "sequence": 10,
+      "title": "Research writing",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-011",
+      "discipline_code": "RES",
+      "sequence": 11,
+      "title": "Reproducibility",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-RES-012",
+      "discipline_code": "RES",
+      "sequence": 12,
+      "title": "Research ethics",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-001",
+      "discipline_code": "INDEP",
+      "sequence": 1,
+      "title": "Personal safety and boundaries",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-002",
+      "discipline_code": "INDEP",
+      "sequence": 2,
+      "title": "Hygiene and self-care systems",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-003",
+      "discipline_code": "INDEP",
+      "sequence": 3,
+      "title": "Cooking foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-004",
+      "discipline_code": "INDEP",
+      "sequence": 4,
+      "title": "Food safety",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-005",
+      "discipline_code": "INDEP",
+      "sequence": 5,
+      "title": "Cleaning and household systems",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-006",
+      "discipline_code": "INDEP",
+      "sequence": 6,
+      "title": "Clothing and garment care",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-007",
+      "discipline_code": "INDEP",
+      "sequence": 7,
+      "title": "Money administration",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-008",
+      "discipline_code": "INDEP",
+      "sequence": 8,
+      "title": "Navigation and travel planning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-009",
+      "discipline_code": "INDEP",
+      "sequence": 9,
+      "title": "Basic tools and repairs",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-010",
+      "discipline_code": "INDEP",
+      "sequence": 10,
+      "title": "Household troubleshooting",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-011",
+      "discipline_code": "INDEP",
+      "sequence": 11,
+      "title": "First-aid literacy",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-INDEP-012",
+      "discipline_code": "INDEP",
+      "sequence": 12,
+      "title": "Emergency planning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-001",
+      "discipline_code": "LEAD",
+      "sequence": 1,
+      "title": "Self-management",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-002",
+      "discipline_code": "LEAD",
+      "sequence": 2,
+      "title": "Reliability and ownership",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-003",
+      "discipline_code": "LEAD",
+      "sequence": 3,
+      "title": "Listening and understanding",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-004",
+      "discipline_code": "LEAD",
+      "sequence": 4,
+      "title": "Teamwork foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-005",
+      "discipline_code": "LEAD",
+      "sequence": 5,
+      "title": "Goal setting",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-006",
+      "discipline_code": "LEAD",
+      "sequence": 6,
+      "title": "Feedback and coaching",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-007",
+      "discipline_code": "LEAD",
+      "sequence": 7,
+      "title": "Delegation",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-008",
+      "discipline_code": "LEAD",
+      "sequence": 8,
+      "title": "Project coordination",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-009",
+      "discipline_code": "LEAD",
+      "sequence": 9,
+      "title": "Conflict resolution",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-010",
+      "discipline_code": "LEAD",
+      "sequence": 10,
+      "title": "Decision and accountability",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-011",
+      "discipline_code": "LEAD",
+      "sequence": 11,
+      "title": "Meeting and coordination hygiene",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-LEAD-012",
+      "discipline_code": "LEAD",
+      "sequence": 12,
+      "title": "Ethical leadership",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-001",
+      "discipline_code": "COMM",
+      "sequence": 1,
+      "title": "Audience and purpose",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_17_SEQUENCE_1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-002",
+      "discipline_code": "COMM",
+      "sequence": 2,
+      "title": "Active listening",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "MESSAGE_18_SEQUENCE_2",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-003",
+      "discipline_code": "COMM",
+      "sequence": 3,
+      "title": "Clarity and concision",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-004",
+      "discipline_code": "COMM",
+      "sequence": 4,
+      "title": "Message structure",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-005",
+      "discipline_code": "COMM",
+      "sequence": 5,
+      "title": "Explanation and teaching",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-006",
+      "discipline_code": "COMM",
+      "sequence": 6,
+      "title": "Questioning skills",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-007",
+      "discipline_code": "COMM",
+      "sequence": 7,
+      "title": "Writing for purpose",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-008",
+      "discipline_code": "COMM",
+      "sequence": 8,
+      "title": "Argument and reasoning",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-009",
+      "discipline_code": "COMM",
+      "sequence": 9,
+      "title": "Persuasion and ethical influence",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-010",
+      "discipline_code": "COMM",
+      "sequence": 10,
+      "title": "Feedback and disagreement",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-011",
+      "discipline_code": "COMM",
+      "sequence": 11,
+      "title": "Public speaking foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    },
+    {
+      "module_id": "BASE-COMM-012",
+      "discipline_code": "COMM",
+      "sequence": 12,
+      "title": "Negotiation foundations",
+      "matched_full_teaching_pack": true,
+      "pack_batch": "WAVE_06_170_PACKS_V1",
+      "status": "draft_authored_review_required"
+    }
+  ],
+  "important_note": "Coverage means a pack artifact with the required authored sections exists. It does not imply accuracy, expert review, learner validation, approval or mastery."
+}

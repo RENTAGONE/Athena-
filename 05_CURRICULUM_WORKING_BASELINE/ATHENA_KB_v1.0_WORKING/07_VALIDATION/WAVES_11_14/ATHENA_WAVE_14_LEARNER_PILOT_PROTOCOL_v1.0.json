@@ -1,0 +1,48 @@
+{
+  "protocol_id": "ATHENA-PILOT-01",
+  "status": "protocol_only_not_run",
+  "purpose": "Assess whether representative learners can understand, navigate and use selected ATHENA learning flows safely and accessibly.",
+  "participants": "Small, deliberately varied group; include adult reviewers and age-appropriate learners only with guardian permission and child assent. Do not recruit through coercion.",
+  "minimum_safeguards": [
+    "guardian informed consent where participant is a minor; child assent in age-appropriate language",
+    "no collection of sensitive health, identity, political, religious or financial details",
+    "no public posting or recording by default",
+    "participant can stop or skip without penalty",
+    "use synthetic/sample accounts and non-production data",
+    "adult safeguarding lead present and incident route defined",
+    "do not test hazardous physical activities as part of software pilot"
+  ],
+  "tasks": [
+    "find a module and explain the objective",
+    "complete a short learning attempt and record evidence",
+    "use Bangla/English glossary switch",
+    "complete core flow in airplane mode",
+    "resume after interrupted session",
+    "review and correct an adaptive suggestion",
+    "export and delete a sample record",
+    "navigate with text scaling and screen reader where relevant"
+  ],
+  "measures": [
+    "task completion and error points",
+    "participant explanation of what data is collected",
+    "comprehension of safety boundaries",
+    "time-on-task as descriptive only",
+    "accessibility barriers",
+    "offline data persistence and sync status",
+    "participant-reported confusion/friction"
+  ],
+  "analysis_rules": [
+    "Do not treat a small convenience sample as representative population evidence.",
+    "Do not infer intelligence, diagnosis or motivation traits.",
+    "Separate observed defects from participant preference.",
+    "Record negative cases and dissent; do not report only positive quotes.",
+    "Any safeguarding event pauses the relevant activity and follows the incident pathway."
+  ],
+  "exit_criteria": [
+    "No unresolved critical safety/privacy defect in tested flow.",
+    "All P0 accessibility barriers remediated or explicitly block release.",
+    "Offline writes survive restart and sync without duplicate/loss.",
+    "Participants can understand consent, sharing and delete controls.",
+    "Content owner and independent reviewers approve any revised materials."
+  ]
+}

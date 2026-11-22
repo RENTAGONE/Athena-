@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-assessment.schema.json",
+  "title": "ATHENA_ASSESSMENT",
+  "description": "Assessment instrument specifying target outcomes, conditions, rubric and success criteria.",
+  "type": "object",
+  "required": [
+    "id",
+    "object_type",
+    "title",
+    "status",
+    "target_ids",
+    "objective_ids",
+    "assessment_type",
+    "prompt_or_task",
+    "rubric",
+    "success_criteria",
+    "content_version",
+    "owner_discipline_id"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-ASMT-[A-Z]+-[A-Z0-9-]+$"
+    },
+    "object_type": {
+      "const": "assessment"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated"
+      ]
+    },
+    "target_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|XFER|EDGE)-[A-Z0-9-]+$"
+      }
+    },
+    "objective_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-(DISC|DOM|FAM|SKILL|SUB|CON|OBJ|UNIT|RES|ASMT|PROJ|MICRO|XFER|EDGE)-[A-Z0-9-]+$"
+      }
+    },
+    "assessment_type": {
+      "enum": [
+        "diagnostic",
+        "retrieval",
+        "explanation",
+        "problem_set",
+        "practical",
+        "project_review",
+        "transfer_task",
+        "delayed_retention",
+        "external_check"
+      ]
+    },
+    "prompt_or_task": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "time_limit_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "calculator_allowed": {
+          "type": "boolean"
+        },
+        "notes_allowed": {
+          "type": "boolean"
+        },
+        "ai_allowed": {
+          "type": "boolean"
+        },
+        "hints_allowed": {
+          "type": "boolean"
+        },
+        "collaboration_allowed": {
+          "type": "boolean"
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "rubric": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "criterion",
+          "description"
+        ],
+        "properties": {
+          "criterion": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evaluator_guidance": {
+      "type": "string"
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "owner_discipline_id": {
+      "type": "string",
+      "pattern": "^ATH-DISC-[A-Z]+$"
+    },
+    "primary_domain_id": {
+      "type": "string",
+      "pattern": "^ATH-DOM-[A-Z]+-[A-Z0-9-]+$"
+    },
+    "domain_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-DOM-[A-Z]+-[A-Z0-9-]+$"
+      }
+    }
+  },
+  "additionalProperties": false
+}

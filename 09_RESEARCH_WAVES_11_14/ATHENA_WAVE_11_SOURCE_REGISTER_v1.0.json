@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "id": "SRC-W11-01",
+      "title": "Children Act, 2013 (Bangladesh Laws)",
+      "publisher": "Government of Bangladesh, Laws of Bangladesh",
+      "url": "https://bdlaws.minlaw.gov.bd/act-details-1119.html?lang=en",
+      "use": "Jurisdictional child-protection context; includes confidentiality provisions for children involved in proceedings.",
+      "limitations": "Not a complete safeguarding policy and not legal advice; verify amendments and applicability with Bangladesh counsel.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-02",
+      "title": "Child Helpline 1098",
+      "publisher": "Ministry of Social Welfare, Bangladesh",
+      "url": "https://msw.gov.bd/pages/static-pages/694032e235ce18e1c0563e15",
+      "use": "Official Bangladesh child helpline description and access.",
+      "limitations": "Emergency routing details and service availability must be reconfirmed before release.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-03",
+      "title": "Bangladesh Police Hotline Numbers",
+      "publisher": "Bangladesh Police",
+      "url": "https://www.police.gov.bd/en/hot_line_number",
+      "use": "Official listing including 999, 102 and 1098.",
+      "limitations": "Numbers and routing may change; verify with agency before release.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-04",
+      "title": "Fire Service and Civil Defence",
+      "publisher": "Bangladesh Fire Service and Civil Defence",
+      "url": "https://fireservice.gov.bd/",
+      "use": "Official 102 hotline and safety guidance.",
+      "limitations": "Individual guidance must be reviewed for the specific hazard; do not generalise a webpage into a complete response protocol.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-05",
+      "title": "WHO Physical Activity",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/initiatives/behealthy/physical-activity",
+      "use": "Population-level physical activity guidance for children and adolescents.",
+      "limitations": "Not an individual training prescription; medical conditions and symptoms require qualified advice.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-06",
+      "title": "UNICEF Procedure for a Child Safeguarding Framework",
+      "publisher": "UNICEF",
+      "url": "https://www.unicef.org/sites/default/files/2020-05/GP-2020-Phase-II-Programme-Document-ENG.pdf",
+      "use": "Safeguarding framework includes privacy/data protection and media capture considerations.",
+      "limitations": "UNICEF internal procedure; used as design reference, not as a law or direct policy binding ATHENA.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-07",
+      "title": "BSEC Investor Education",
+      "publisher": "Bangladesh Securities and Exchange Commission",
+      "url": "https://sec.gov.bd/investor-education",
+      "use": "Bangladesh investor education, risk awareness and investor protection topics.",
+      "limitations": "Education source, not individual investment advice.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-08",
+      "title": "Bangladesh Bank Financial Literacy Guidelines",
+      "publisher": "Bangladesh Bank",
+      "url": "https://www.bb.org.bd/mediaroom/circulars/finincld/mar272022fid01.pdf",
+      "use": "Financial literacy, clear language, audience adaptation and consumer protection.",
+      "limitations": "Guideline context; verify current status and any later amendments.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W11-09",
+      "title": "Bangladesh Food Safety Authority Laws",
+      "publisher": "Bangladesh Food Safety Authority",
+      "url": "https://bfsa.gov.bd/pages/laws",
+      "use": "Current official listing of food safety regulations for food-related learning.",
+      "limitations": "Specific food-handling content needs current regulation and qualified review.",
+      "accessed": "2026-11-19"
+    }
+  ]
+}

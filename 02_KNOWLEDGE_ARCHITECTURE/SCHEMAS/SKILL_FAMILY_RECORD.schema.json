@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-skill-family-record.schema.json",
+  "title": "ATHENA_SKILL_FAMILY_RECORD",
+  "description": "Canonical skill-family record; one primary domain parent.",
+  "type": "object",
+  "required": [
+    "id",
+    "object_type",
+    "title",
+    "discipline_ids",
+    "owner_discipline_id",
+    "parent_id",
+    "code",
+    "status",
+    "content_version",
+    "review_state"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ATH-FAM-[A-Z]+-[A-Z0-9-]+$"
+    },
+    "object_type": {
+      "const": "skill_family"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "discipline_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^ATH-DISC-[A-Z]+$"
+      }
+    },
+    "owner_discipline_id": {
+      "type": "string",
+      "pattern": "^ATH-DISC-[A-Z]+$"
+    },
+    "parent_id": {
+      "type": "string",
+      "pattern": "^ATH-DOM-[A-Z]+-[A-Z0-9-]+$"
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]+$"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated",
+        "archived"
+      ]
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "review_state": {
+      "enum": [
+        "needs_review",
+        "in_review",
+        "reviewed",
+        "approved",
+        "blocked"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,138 @@
+{
+  "version": "1.0",
+  "status": "reviewer_briefs_not_reviews",
+  "review_domains": [
+    {
+      "review_id": "REV-01",
+      "domain": "Mathematics and statistics",
+      "reviewer_profile": "Qualified mathematics educator/statistician",
+      "review_scope": "Concept correctness, progression, assessment construct, uncertainty and data interpretation.",
+      "evidence_to_return": [
+        "record IDs reviewed",
+        "severity-ranked findings",
+        "proposed corrections",
+        "approval status per item"
+      ]
+    },
+    {
+      "review_id": "REV-02",
+      "domain": "Science and laboratory practice",
+      "reviewer_profile": "Qualified science educator/lab safety reviewer",
+      "review_scope": "Scientific correctness, experiment safety, age appropriateness, hazardous materials and evidence quality.",
+      "evidence_to_return": [
+        "record IDs reviewed",
+        "hazard assessment",
+        "required supervision",
+        "approved/rejected wording"
+      ]
+    },
+    {
+      "review_id": "REV-03",
+      "domain": "Electrical and workshop skills",
+      "reviewer_profile": "Qualified electrical engineer/technician and workshop safety professional",
+      "review_scope": "Voltage/current limits, tools, batteries, soldering, isolation and stop rules.",
+      "evidence_to_return": [
+        "activity-level sign-off",
+        "prohibited actions",
+        "equipment constraints",
+        "review date"
+      ]
+    },
+    {
+      "review_id": "REV-04",
+      "domain": "Health, fitness and sports",
+      "reviewer_profile": "Qualified clinician/physiotherapist and youth sport coach",
+      "review_scope": "Age-appropriate load, injury warnings, recovery, health claims and referral boundaries.",
+      "evidence_to_return": [
+        "claims reviewed",
+        "contraindications and stop signs",
+        "scope limits",
+        "sign-off or rejection"
+      ]
+    },
+    {
+      "review_id": "REV-05",
+      "domain": "First aid and emergency content",
+      "reviewer_profile": "Recognised first-aid instructor and medical reviewer",
+      "review_scope": "Current local protocols, emergency escalation, CPR/AED/choking boundaries and certification claims.",
+      "evidence_to_return": [
+        "protocol/version reviewed",
+        "corrections",
+        "training-only boundaries",
+        "formal sign-off"
+      ]
+    },
+    {
+      "review_id": "REV-06",
+      "domain": "Cybersecurity and privacy",
+      "reviewer_profile": "Cybersecurity professional and privacy/legal reviewer",
+      "review_scope": "Authorization boundaries, data minimisation, secure storage, threat model and incident handling.",
+      "evidence_to_return": [
+        "threat findings",
+        "prohibited capabilities",
+        "data flow review",
+        "sign-off"
+      ]
+    },
+    {
+      "review_id": "REV-07",
+      "domain": "Finance and business",
+      "reviewer_profile": "Bangladesh financial educator and relevant legal/tax professional",
+      "review_scope": "Financial literacy vs advice, consumer protection, local currency, tax/legal references and regulated activities.",
+      "evidence_to_return": [
+        "jurisdiction and source check",
+        "risk disclosures",
+        "corrections",
+        "sign-off"
+      ]
+    },
+    {
+      "review_id": "REV-08",
+      "domain": "Language and localization",
+      "reviewer_profile": "Bangla language educator, English technical editor and subject specialist",
+      "review_scope": "Terminology accuracy, Bangla rendering, readability, mixed-script handling and culturally neutral examples.",
+      "evidence_to_return": [
+        "glossary diffs",
+        "terminology decisions",
+        "device evidence",
+        "approval"
+      ]
+    },
+    {
+      "review_id": "REV-09",
+      "domain": "Accessibility",
+      "reviewer_profile": "Accessibility specialist and disabled assistive-technology users",
+      "review_scope": "WCAG 2.2 AA target, mobile interaction, TalkBack, zoom, captions, cognitive accessibility and low-bandwidth use.",
+      "evidence_to_return": [
+        "test environment",
+        "criterion results",
+        "barriers",
+        "remediation verification"
+      ]
+    },
+    {
+      "review_id": "REV-10",
+      "domain": "Safeguarding and child privacy",
+      "reviewer_profile": "Child safeguarding specialist and Bangladesh legal reviewer",
+      "review_scope": "Consent/assent, data collection, disclosures, public sharing, contact and escalation.",
+      "evidence_to_return": [
+        "policy findings",
+        "incident pathway",
+        "legal caveats",
+        "sign-off"
+      ]
+    },
+    {
+      "review_id": "REV-11",
+      "domain": "App import and data integrity",
+      "reviewer_profile": "Application engineer independent of content author",
+      "review_scope": "Schema/import preview, atomic commit, rollback, backup/restore, offline sync and provenance.",
+      "evidence_to_return": [
+        "app version/device",
+        "case logs",
+        "before/after hashes",
+        "pass/fail and defect IDs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "pathway_map_id": "ATHENA-WAVE3-PATHWAYS",
+  "version": "0.2",
+  "status": "draft_candidate_sequence_with_batch02",
+  "production_message": 13,
+  "discipline_pathways": [
+    {
+      "discipline_code": "BODY",
+      "stages": [
+        {
+          "stage": "entry",
+          "unit_ids": [
+            "BODY-FOUND-001"
+          ],
+          "purpose": "baseline orientation; verify the learner has the vocabulary and safety context"
+        },
+        {
+          "stage": "developing",
+          "unit_ids": [
+            "BODY-DEV-001",
+            "BODY-DEV-002"
+          ],
+          "purpose": "apply concepts through controlled practice and evidence"
+        },
+        {
+          "stage": "advanced_developing",
+          "unit_ids": [
+            "BODY-ADV-001",
+            "BODY-ADV-002"
+          ],
+          "purpose": "extend applied capability with analysis, design, critique and evidence; not a terminal or expert stage"
+        },
+        {
+          "stage": "future_specialisation",
+          "unit_ids": [],
+          "purpose": "not yet authored; requires later breadth audit, learner goals and subject-expert review"
+        }
+      ]
+    },
+    {
+      "discipline_code": "ATH",
+      "stages": [
+        {
+          "stage": "entry",
+          "unit_ids": [
+            "ATH-FOUND-001"
+          ],
+          "purpose": "baseline orientation; verify the learner has the vocabulary and safety context"
+        },
+        {
+          "stage": "developing",
+          "unit_ids": [
+            "ATH-DEV-001",
+            "ATH-DEV-002"
+          ],
+          "purpose": "apply concepts through controlled practice and evidence"
+        },
+        {
+          "stage": "advanced_developing",
+          "unit_ids": [
+            "ATH-ADV-001",
+            "ATH-ADV-002"
+          ],
+          "purpose": "extend applied capability with analysis, design, critique and evidence; not a terminal or expert stage"
+        },
+        {
+          "stage": "future_specialisation",
+          "unit_ids": [],
+          "purpose": "not yet authored; requires later breadth audit, learner goals and subject-expert review"
+        }
+      ]
+    },
+    {
+      "discipline_code": "PERF",
+      "stages": [
+        {
+          "stage": "entry",
+          "unit_ids": [
+            "PERF-FOUND-001"
+          ],
+          "purpose": "baseline orientation; verify the learner has the vocabulary and safety context"
+        },
+        {
+          "stage": "developing",
+          "unit_ids": [
+            "PERF-DEV-001",
+            "PERF-DEV-002"
+          ],
+          "purpose": "apply concepts through controlled practice and evidence"
+        },
+        {
+          "stage": "advanced_developing",
+          "unit_ids": [
+            "PERF-ADV-001",
+            "PERF-ADV-002"
+          ],
+          "purpose": "extend applied capability with analysis, design, critique and evidence; not a terminal or expert stage"
+        },
+        {
+          "stage": "future_specialisation",
+          "unit_ids": [],
+          "purpose": "not yet authored; requires later breadth audit, learner goals and subject-expert review"
+        }
+      ]
+    },
+    {
+      "discipline_code": "AEST",
+      "stages": [
+        {
+          "stage": "entry",
+          "unit_ids": [
+            "AEST-FOUND-001"
+          ],
+          "purpose": "baseline orientation; verify the learner has the vocabulary and safety context"
+        },
+        {
+          "stage": "developing",
+          "unit_ids": [
+            "AEST-DEV-001",
+            "AEST-DEV-002"
+          ],
+          "purpose": "apply concepts through controlled practice and evidence"
+        },
+        {
+          "stage": "advanced_developing",
+          "unit_ids": [
+            "AEST-ADV-001",
+            "AEST-ADV-002"
+          ],
+          "purpose": "extend applied capability with analysis, design, critique and evidence; not a terminal or expert stage"
+        },
+        {
+          "stage": "future_specialisation",
+          "unit_ids": [],
+          "purpose": "not yet authored; requires later breadth audit, learner goals and subject-expert review"
+        }
+      ]
+    },
+    {
+      "discipline_code": "ART",
+      "stages": [
+        {
+          "stage": "entry",
+          "unit_ids": [
+            "ART-FOUND-001"
+          ],
+          "purpose": "baseline orientation; verify the learner has the vocabulary and safety context"
+        },
+        {
+          "stage": "developing",
+          "unit_ids": [
+            "ART-DEV-001",
+            "ART-DEV-002"
+          ],
+          "purpose": "apply concepts through controlled practice and evidence"
+        },
+        {
+          "stage": "advanced_developing",
+          "unit_ids": [
+            "ART-ADV-001",
+            "ART-ADV-002"
+          ],
+          "purpose": "extend applied capability with analysis, design, critique and evidence; not a terminal or expert stage"
+        },
+        {
+          "stage": "future_specialisation",
+          "unit_ids": [],
+          "purpose": "not yet authored; requires later breadth audit, learner goals and subject-expert review"
+        }
+      ]
+    },
+    {
+      "discipline_code": "INDEP",
+      "stages": [
+        {
+          "stage": "entry",
+          "unit_ids": [
+            "INDEP-FOUND-001"
+          ],
+          "purpose": "baseline orientation; verify the learner has the vocabulary and safety context"
+        },
+        {
+          "stage": "developing",
+          "unit_ids": [
+            "INDEP-DEV-001",
+            "INDEP-DEV-002"
+          ],
+          "purpose": "apply concepts through controlled practice and evidence"
+        },
+        {
+          "stage": "advanced_developing",
+          "unit_ids": [
+            "INDEP-ADV-001",
+            "INDEP-ADV-002"
+          ],
+          "purpose": "extend applied capability with analysis, design, critique and evidence; not a terminal or expert stage"
+        },
+        {
+          "stage": "future_specialisation",
+          "unit_ids": [],
+          "purpose": "not yet authored; requires later breadth audit, learner goals and subject-expert review"
+        }
+      ]
+    }
+  ],
+  "edge_policy": "Prerequisite links are candidate learning dependencies, not proof of competence. A learner may use diagnostic evidence to place out of a prerequisite, but must demonstrate equivalent knowledge. No automatic mastery."
+}

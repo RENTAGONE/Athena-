@@ -1,0 +1,1000 @@
+{
+  "registry_id": "ATHENA-MICRO-SKILL-REGISTRY",
+  "version": "0.1.0",
+  "status": "DRAFT",
+  "created": "2026-11-16",
+  "description": "Initial cross-disciplinary micro-skill candidates. Not an approved curriculum or a claim of competency.",
+  "category_taxonomy": [
+    {
+      "code": "COGNITIVE",
+      "id_prefix": "COG",
+      "scope": "Small cognitive procedures supporting attention, memory, reasoning and learning."
+    },
+    {
+      "code": "DEXTERITY_COORDINATION",
+      "id_prefix": "DEX",
+      "scope": "Fine motor control, hand-eye coordination and controlled movement."
+    },
+    {
+      "code": "PRACTICAL_EVERYDAY",
+      "id_prefix": "PRACT",
+      "scope": "Bounded everyday capabilities such as preparation, repair, navigation and tool readiness."
+    },
+    {
+      "code": "SOCIAL_COMMUNICATION",
+      "id_prefix": "SOC",
+      "scope": "Small repeatable interpersonal and communication behaviours."
+    },
+    {
+      "code": "SAFETY_EMERGENCY",
+      "id_prefix": "SAFE",
+      "scope": "Hazard recognition, escalation and access to properly supervised safety training; not professional certification."
+    }
+  ],
+  "records": [
+    {
+      "id": "ATH-MICRO-COG-MENTAL-ARITHMETIC",
+      "name": "Mental arithmetic estimation",
+      "category": "COGNITIVE",
+      "definition": "Estimate everyday quantities and check whether a numerical answer is plausible.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Mental arithmetic estimation: Produce a reasonable estimate before calculating exactly and identify estimates that are clearly implausible.",
+        "metric": "Produce a reasonable estimate before calculating exactly and identify estimates that are clearly implausible.",
+        "conditions": "Short, familiar arithmetic problems without time pressure.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Estimate first; state the rounding used.",
+          "Calculate exactly or with a calculator.",
+          "Compare estimate and result; explain any large difference."
+        ],
+        "session_minutes": 8,
+        "frequency_per_week": "2–4 short sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Give 10 varied everyday estimation prompts.",
+        "record": "Store prompt, estimate, exact result and absolute/percentage error.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Estimate with two operations.",
+        "Estimate percentages and ratios.",
+        "Estimate costs and unit prices."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Use five mixed prompts weekly."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-COG-ACTIVE-RECALL",
+      "name": "Active recall prompt generation",
+      "category": "COGNITIVE",
+      "definition": "Generate questions from recently studied material and answer without looking at notes.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Active recall prompt generation: Create at least five non-trivial questions and answer them from memory, then correct gaps using the source.",
+        "metric": "Create at least five non-trivial questions and answer them from memory, then correct gaps using the source.",
+        "conditions": "After a learning session with a defined topic.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Close the source.",
+          "Write five questions covering facts, explanation and application.",
+          "Answer from memory.",
+          "Check against a reliable source and log gaps."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "After each substantial learning block",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Blind recall followed by source comparison.",
+        "record": "Store questions, unaided answers, corrections and confidence.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Add compare/contrast questions.",
+        "Add application and transfer prompts."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Repeat missed questions after a delay; retire questions that no longer test useful knowledge."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-COG-OBSERVATION-LOG",
+      "name": "Structured observation logging",
+      "category": "COGNITIVE",
+      "definition": "Separate direct observations from interpretations and hypotheses.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Structured observation logging: For one observed event, record at least three observations and label interpretations separately.",
+        "metric": "For one observed event, record at least three observations and label interpretations separately.",
+        "conditions": "A short observation of an object, process, game or environment.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Write only what was directly observed.",
+          "Create a separate interpretation section.",
+          "List one alternative explanation.",
+          "Identify what evidence would distinguish explanations."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "1–3 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Review a log and classify each statement as observation, inference or question.",
+        "record": "Store the observation log and classification accuracy.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Compare repeated observations.",
+        "Add simple measurement and uncertainty."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Use a short observation log during research or project work."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-COG-MEMORY-CHUNKING",
+      "name": "Information chunking",
+      "category": "COGNITIVE",
+      "definition": "Group related information into meaningful units to improve recall.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Information chunking: Recall a short sequence or concept list more accurately after explaining a useful grouping strategy.",
+        "metric": "Recall a short sequence or concept list more accurately after explaining a useful grouping strategy.",
+        "conditions": "Neutral, non-sensitive information; no high-stakes memory reliance.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Study a short list.",
+          "Group items by meaningful relation.",
+          "Recall groups and individual items.",
+          "Compare against ungrouped baseline."
+        ],
+        "session_minutes": 8,
+        "frequency_per_week": "2 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Compare recall over several equivalent lists.",
+        "record": "Record list size, grouping strategy and recall count.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Use hierarchical outlines.",
+        "Apply to vocabulary and technical concepts."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Occasional mixed-list practice; do not use as a substitute for external notes."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-DEX-PEN-CONTROL",
+      "name": "Basic pen control patterns",
+      "category": "DEXTERITY_COORDINATION",
+      "definition": "Develop controlled finger and wrist movement for precise pen handling.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Basic pen control patterns: Trace repeated lines, curves and simple shapes with consistent control and without discomfort.",
+        "metric": "Trace repeated lines, curves and simple shapes with consistent control and without discomfort.",
+        "conditions": "Seated at a stable desk with ordinary pen and paper.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Relax grip.",
+          "Trace straight, curved and loop patterns slowly.",
+          "Increase speed only while maintaining control.",
+          "Stop if pain or cramping occurs."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "3–5 brief sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Compare line consistency and control on a standard pattern.",
+        "record": "Keep dated samples and note comfort.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Smaller patterns.",
+        "More complex lettering or drawing strokes."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "A few minutes of warm-up before drawing or handwriting."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-DEX-COIN-ROLL",
+      "name": "Coin transfer and rolling coordination",
+      "category": "DEXTERITY_COORDINATION",
+      "definition": "Move a coin between fingers with controlled, low-force movements.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Coin transfer and rolling coordination: Complete a simple finger-to-finger coin transfer sequence smoothly for 30 seconds.",
+        "metric": "Complete a simple finger-to-finger coin transfer sequence smoothly for 30 seconds.",
+        "conditions": "Seated over a table; use a large ordinary coin and avoid small parts near younger children.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Start with one coin over a table.",
+          "Practise lifting and lowering between adjacent fingers.",
+          "Add a continuous transfer only after control improves."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "2–4 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Count clean transfers in 30 seconds without dropping.",
+        "record": "Record successful transfers and drops.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Increase smoothness, not speed first.",
+        "Practise with the non-dominant hand if comfortable."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Brief maintenance practice once or twice weekly."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-DEX-ORIGAMI-BASE",
+      "name": "Basic origami folds",
+      "category": "DEXTERITY_COORDINATION",
+      "definition": "Execute accurate valley, mountain and squash folds in simple paper models.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Basic origami folds: Complete a beginner model with folds aligned and no major tears, using instructions.",
+        "metric": "Complete a beginner model with folds aligned and no major tears, using instructions.",
+        "conditions": "Flat table, paper and a beginner-level model.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Identify crease direction.",
+          "Make edge-to-edge alignment carefully.",
+          "Press creases evenly.",
+          "Check each step before continuing."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "1–3 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Assess fold alignment and model completion against reference steps.",
+        "record": "Save model photo and note difficult folds.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Move to models with more fold types.",
+        "Attempt from diagram after guided practice."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Make one simple model periodically to retain fold accuracy."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-DEX-TYPING-ACCURACY",
+      "name": "Touch-typing accuracy",
+      "category": "DEXTERITY_COORDINATION",
+      "definition": "Type common text using consistent finger zones while looking primarily at the screen.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Touch-typing accuracy: Maintain at least 95% accuracy on a short familiar passage before prioritising speed.",
+        "metric": "Maintain at least 95% accuracy on a short familiar passage before prioritising speed.",
+        "conditions": "Comfortable posture and a keyboard or accessible on-screen practice environment.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Practise home-row placement.",
+          "Type slowly with correct finger zones.",
+          "Review errors.",
+          "Increase pace only while accuracy remains stable."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "3–5 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Timed one-minute passage with accuracy and words-per-minute recorded separately.",
+        "record": "Record WPM, accuracy and keyboard type.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Add punctuation and numbers.",
+        "Practise code symbols separately."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Short weekly accuracy check; avoid long sessions that cause discomfort."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-PRACT-COOKING-MISE",
+      "name": "Basic kitchen mise en place",
+      "category": "PRACTICAL_EVERYDAY",
+      "definition": "Prepare ingredients and tools before a simple supervised or otherwise age-appropriate cooking task.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Basic kitchen mise en place: Identify ingredients, measure them, arrange tools and leave the workspace clean.",
+        "metric": "Identify ingredients, measure them, arrange tools and leave the workspace clean.",
+        "conditions": "Simple recipe with safe tools and appropriate adult oversight for heat and sharp equipment.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Read the recipe first.",
+          "Wash hands and produce as appropriate.",
+          "Measure and arrange ingredients.",
+          "Keep raw and ready-to-eat foods separate.",
+          "Clean the work area."
+        ],
+        "session_minutes": 15,
+        "frequency_per_week": "1 session/week when cooking",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Checklist observation across preparation, hygiene and cleanup.",
+        "record": "Record task, checklist and any corrections.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Scale quantities.",
+        "Prepare multiple components in sequence."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Use the checklist before each new recipe."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "MODERATE",
+      "safety_notes": [
+        "Heat, knives and appliances require appropriate adult guidance and safe handling.",
+        "Follow food hygiene guidance; avoid cross-contamination."
+      ],
+      "supervision": "ADULT_GUIDANCE_RECOMMENDED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-PRACT-KNOT-SQUARE",
+      "name": "Square knot recognition and tying",
+      "category": "PRACTICAL_EVERYDAY",
+      "definition": "Tie and identify a square knot for suitable non-critical bundling tasks.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Square knot recognition and tying: Tie a correctly oriented square knot and distinguish it from a granny knot.",
+        "metric": "Tie a correctly oriented square knot and distinguish it from a granny knot.",
+        "conditions": "Soft cord on a table; not for climbing, rescue, load-bearing or securing people.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Learn left-over-right then right-over-left.",
+          "Keep the knot flat and symmetrical.",
+          "Practise identifying the correct and incorrect knot."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "2 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Tie five examples and identify a deliberately incorrect example.",
+        "record": "Photo or checklist result.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Tie from different starting orientations.",
+        "Learn other everyday knots with clear use limits."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Tie a few examples monthly."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [
+        "Never use this knot for climbing, rescue, lifting, restraint or any safety-critical load."
+      ],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-PRACT-SEW-BUTTON",
+      "name": "Sewing on a button",
+      "category": "PRACTICAL_EVERYDAY",
+      "definition": "Attach a button to fabric using a basic needle-and-thread technique.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Sewing on a button: Attach a button that remains secure during gentle manual checking.",
+        "metric": "Attach a button that remains secure during gentle manual checking.",
+        "conditions": "Stable work surface, blunt/appropriate needle where available, adult guidance if needed.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Thread and knot the thread.",
+          "Mark button position.",
+          "Sew through button holes and fabric in a consistent pattern.",
+          "Secure thread and inspect."
+        ],
+        "session_minutes": 15,
+        "frequency_per_week": "Occasional practice",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Inspect attachment and gently test security without excessive force.",
+        "record": "Photo and note thread/fabric used.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Practise four-hole buttons.",
+        "Repair a small seam."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Repeat on scrap fabric when needed."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "MODERATE",
+      "safety_notes": [
+        "Handle needles carefully; store safely."
+      ],
+      "supervision": "ADULT_GUIDANCE_RECOMMENDED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-PRACT-NAVIGATION-LANDMARKS",
+      "name": "Landmark-based local navigation",
+      "category": "PRACTICAL_EVERYDAY",
+      "definition": "Use visible landmarks and a simple map to describe a familiar route.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Landmark-based local navigation: Explain a familiar route using at least four ordered landmarks and one alternative route.",
+        "metric": "Explain a familiar route using at least four ordered landmarks and one alternative route.",
+        "conditions": "Known, safe area with permission; map or offline map available.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Choose a familiar destination.",
+          "Identify landmarks and turns.",
+          "Trace the route on a map.",
+          "Explain an alternative route and safe check-in plan."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "1 session/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Ask another person to follow the described route on the map.",
+        "record": "Save route sketch and errors.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Add compass/map orientation.",
+        "Compare two routes for distance and safety."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Revisit route occasionally; verify current access and conditions."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "MODERATE",
+      "safety_notes": [
+        "Do not explore unfamiliar areas alone.",
+        "Use guardian-approved routes and local safety rules."
+      ],
+      "supervision": "ADULT_GUIDANCE_RECOMMENDED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SOC-ACTIVE-LISTENING",
+      "name": "Active listening and paraphrase",
+      "category": "SOCIAL_COMMUNICATION",
+      "definition": "Listen without interrupting, then accurately paraphrase the speaker’s main point.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Active listening and paraphrase: Paraphrase the main point and ask one relevant clarifying question without changing the meaning.",
+        "metric": "Paraphrase the main point and ask one relevant clarifying question without changing the meaning.",
+        "conditions": "Low-stakes conversation with a willing participant.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Give full attention.",
+          "Avoid interrupting.",
+          "Summarise the speaker’s point in neutral language.",
+          "Ask whether the summary is accurate."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "2–3 conversations/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Partner confirms whether the paraphrase is accurate.",
+        "record": "Record a short reflection without private conversation details.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Summarise disagreement fairly.",
+        "Identify assumptions and ask clarifying questions."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Use naturally in conversations; reflect on one interaction weekly."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SOC-ONE-MIN-EXPLANATION",
+      "name": "One-minute structured explanation",
+      "category": "SOCIAL_COMMUNICATION",
+      "definition": "Explain a concept using a compact claim-reason-example structure.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "One-minute structured explanation: Deliver a 60-second explanation containing a clear claim, supporting reason and example.",
+        "metric": "Deliver a 60-second explanation containing a clear claim, supporting reason and example.",
+        "conditions": "A familiar, non-sensitive topic.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "State the main point first.",
+          "Give one reason.",
+          "Provide one concrete example.",
+          "End with a concise implication."
+        ],
+        "session_minutes": 8,
+        "frequency_per_week": "2 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Record audio or explain to a listener; assess clarity and completeness.",
+        "record": "Save topic, recording if appropriate, and self/peer rubric.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Explain unfamiliar material after research.",
+        "Handle one follow-up question."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Give one short explanation weekly."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SOC-QUESTION-CLARIFICATION",
+      "name": "Clarifying-question formulation",
+      "category": "SOCIAL_COMMUNICATION",
+      "definition": "Ask neutral questions that reduce ambiguity before acting or arguing.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Clarifying-question formulation: Generate three distinct clarifying questions for an ambiguous instruction or claim.",
+        "metric": "Generate three distinct clarifying questions for an ambiguous instruction or claim.",
+        "conditions": "Use hypothetical or ordinary low-stakes scenarios.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Identify the ambiguous term or missing condition.",
+          "Ask what, who, when, how much or under what conditions.",
+          "Avoid leading or accusatory wording."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "2 sessions/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Score questions for neutrality and information value.",
+        "record": "Store scenario and questions.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Clarify conflicting requirements.",
+        "Ask about success criteria and constraints."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Apply before beginning complex tasks."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SOC-DISAGREEMENT-STEELMAN",
+      "name": "Fair disagreement summary",
+      "category": "SOCIAL_COMMUNICATION",
+      "definition": "Represent another position accurately before presenting a disagreement.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Fair disagreement summary: Summarise the opposing position in a way its holder would recognise before responding.",
+        "metric": "Summarise the opposing position in a way its holder would recognise before responding.",
+        "conditions": "Low-stakes discussion; no pressure to disclose personal beliefs.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Listen or read the position.",
+          "Write its strongest central claim and reasons.",
+          "Ask whether the summary is fair.",
+          "Then present a specific disagreement."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "1 session/week",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Other person or rubric checks fidelity of summary.",
+        "record": "Save anonymised argument map.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Identify shared premises.",
+        "Compare evidence quality."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Use when a disagreement matters."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "LOW",
+      "safety_notes": [],
+      "supervision": "NONE_ROUTINE_SAFE_CONTEXT",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SAFE-EMERGENCY-CALL",
+      "name": "Emergency-call information sequence",
+      "category": "SAFETY_EMERGENCY",
+      "definition": "Know how to communicate essential information when contacting local emergency services.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Emergency-call information sequence: In a simulated scenario, clearly state location, nature of emergency, immediate danger and callback information.",
+        "metric": "In a simulated scenario, clearly state location, nature of emergency, immediate danger and callback information.",
+        "conditions": "Simulation only; learn actual local emergency numbers from a trusted official source with a guardian.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Practise a calm opening.",
+          "State exact location or nearest landmark.",
+          "Describe what happened and immediate hazards.",
+          "Answer dispatcher questions and follow instructions."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "Quarterly simulation",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Role-play with a trusted adult; no real emergency call.",
+        "record": "Record completion of the sequence, not personal location data.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Practise different scenario types."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Review periodically and verify official local procedures."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "HIGH",
+      "safety_notes": [
+        "Never make a test call to emergency services.",
+        "In a real emergency, contact the locally appropriate emergency service and follow dispatcher instructions."
+      ],
+      "supervision": "ADULT_GUIDANCE_RECOMMENDED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SAFE-HAZARD-SCAN",
+      "name": "Basic hazard scan",
+      "category": "SAFETY_EMERGENCY",
+      "definition": "Pause to identify obvious hazards before starting a practical activity.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Basic hazard scan: Identify at least three relevant hazards and one control for each in a simulated workspace.",
+        "metric": "Identify at least three relevant hazards and one control for each in a simulated workspace.",
+        "conditions": "Use a safe, staged or ordinary environment; do not approach hazards to inspect them.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Pause before starting.",
+          "Scan for electrical, trip, heat, chemical and tool hazards as relevant.",
+          "Keep distance from hazards.",
+          "Ask a responsible adult when uncertain."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "Before practical tasks",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Checklist review against a prepared scenario.",
+        "record": "Store scenario checklist, not hazardous personal details.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Add task-specific risk assessment.",
+        "Identify stop-work conditions."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Use a brief scan before practical work."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "HIGH",
+      "safety_notes": [
+        "Do not touch, test or move unknown hazardous objects, exposed wiring or chemicals."
+      ],
+      "supervision": "ADULT_GUIDANCE_RECOMMENDED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SAFE-CPR-LEARNING-READINESS",
+      "name": "CPR and first-aid course readiness",
+      "category": "SAFETY_EMERGENCY",
+      "definition": "Identify how to access recognised first-aid instruction and understand that text-only practice is not certification.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "CPR and first-aid course readiness: Locate an appropriate recognised course with guardian support and list the skills it teaches.",
+        "metric": "Locate an appropriate recognised course with guardian support and list the skills it teaches.",
+        "conditions": "Planning and information literacy only; no unsupervised physical CPR practice.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Identify a reputable local provider with guardian.",
+          "Check course age requirements and instructor credentials.",
+          "Record course scope and date if attended.",
+          "Follow instructor training for any practical skill."
+        ],
+        "session_minutes": 10,
+        "frequency_per_week": "As an enrolment/review task",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Verify provider and course completion through provider documentation where available.",
+        "record": "Store course name, provider, date and scope; do not imply certification without evidence.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Attend age-appropriate recognised training.",
+        "Refresh according to provider guidance."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Follow the provider's refresher guidance."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "HIGH",
+      "safety_notes": [
+        "This record does not teach CPR and does not certify competence.",
+        "Practical CPR, AED and first-aid skills require recognised instruction and hands-on training."
+      ],
+      "supervision": "QUALIFIED_INSTRUCTOR_REQUIRED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    },
+    {
+      "id": "ATH-MICRO-SAFE-STOP-AND-ESCALATE",
+      "name": "Stop-work and escalation judgement",
+      "category": "SAFETY_EMERGENCY",
+      "definition": "Recognise when a task exceeds current skill, equipment or supervision and stop safely.",
+      "discipline_links": [],
+      "skill_links": [],
+      "prerequisites": [],
+      "target_performance": {
+        "statement": "Stop-work and escalation judgement: In a scenario, identify a stop condition and state who to contact before proceeding.",
+        "metric": "In a scenario, identify a stop condition and state who to contact before proceeding.",
+        "conditions": "Scenario-based learning only.",
+        "success_threshold": null
+      },
+      "practice_protocol": {
+        "steps": [
+          "Read a practical-task scenario.",
+          "Identify missing competence, unsafe conditions or unsuitable equipment.",
+          "State the stop action.",
+          "Identify a responsible person or qualified professional for help."
+        ],
+        "session_minutes": 5,
+        "frequency_per_week": "1 session/month",
+        "equipment": [],
+        "environment": "Use a calm, uncluttered and appropriately safe setting."
+      },
+      "assessment": {
+        "method": "Scenario rubric: identifies stop condition, avoids improvising, escalates appropriately.",
+        "record": "Store scenario and decision rationale.",
+        "repeat_trials": 3
+      },
+      "progression": [
+        "Apply to electronics, tools, sport and digital security."
+      ],
+      "maintenance": {
+        "trigger": "After initial performance is stable, or when recall/accuracy declines.",
+        "protocol": "Review before entering a new practical domain."
+      },
+      "time_to_initial_competence_minutes": 120,
+      "risk_level": "HIGH",
+      "safety_notes": [
+        "When uncertain about a real hazard, stop and seek qualified help rather than experimenting."
+      ],
+      "supervision": "ADULT_GUIDANCE_RECOMMENDED",
+      "status": "DRAFT",
+      "evidence_refs": [],
+      "authoring_notes": "Initial candidate only. Validate suitability, target thresholds and learning protocol before approval."
+    }
+  ],
+  "governance": {
+    "status": "All records are DRAFT until reviewed.",
+    "micro_skill_boundary": "A micro-skill is deliberately narrow and practiceable in short sessions. If it requires a multi-week curriculum, complex theory or broad integrated performance, model it as a normal skill or subskill instead.",
+    "evidence": "A completed practice session is not proof of competence. Record observable performance and conditions.",
+    "scheduling": "Micro-skills must not displace foundational learning, school obligations, sleep, recovery or major projects. Use short slots and rotate rather than scheduling every item daily.",
+    "safety": "Age-appropriate, lawful, low-risk practice only. Safety-critical skills require qualified instruction; never imply certification from an ATHENA record.",
+    "duplication": "Link a micro-skill to its canonical discipline/skill where appropriate; do not duplicate the same capability as separate canonical content."
+  }
+}

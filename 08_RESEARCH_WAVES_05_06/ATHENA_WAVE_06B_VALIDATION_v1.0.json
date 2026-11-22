@@ -1,0 +1,43 @@
+{
+  "wave": "06B",
+  "version": "1.0",
+  "checks": {
+    "expected_deepened_count_119": true,
+    "all_deepened_have_objective_specific_search_plan": true,
+    "all_deepened_have_domain_specific_case": true,
+    "all_deepened_have_guided_practice": true,
+    "all_deepened_have_error_diagnosis": true,
+    "all_deepened_unapproved": true,
+    "full_pack_ids_preserved": true,
+    "all_170_resource_ids_preserve_resolution": true
+  },
+  "results": {
+    "deepened": 119,
+    "total_packs": 170,
+    "deepened_by_discipline": {
+      "BIZ": 7,
+      "ELEC": 5,
+      "FIN": 4,
+      "BODY": 10,
+      "PSY": 7,
+      "AEST": 6,
+      "WORK": 10,
+      "ART": 8,
+      "ATH": 8,
+      "PERF": 8,
+      "CYBER": 6,
+      "LANG": 9,
+      "RES": 5,
+      "INDEP": 8,
+      "LEAD": 10,
+      "COMM": 8
+    },
+    "word_count_deepened": 90461
+  },
+  "limitations": [
+    "Automated structural and coverage checks only; not independent subject-matter verification.",
+    "Domain examples are instructional draft examples; technical claims, exact procedures and numerical component assumptions require source-level validation before release.",
+    "Resource discovery queries are search briefs, not proof that a best resource has been found or assigned.",
+    "No expert review, learner testing, assessment calibration, legal/licensing review or app import test."
+  ]
+}

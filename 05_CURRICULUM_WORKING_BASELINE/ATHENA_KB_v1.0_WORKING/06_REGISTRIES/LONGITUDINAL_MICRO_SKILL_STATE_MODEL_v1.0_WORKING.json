@@ -1,0 +1,76 @@
+{
+  "schema_id": "athena.micro_skill.longitudinal_practice.v1",
+  "status": "working_proposal",
+  "purpose": "Represent capabilities that improve through ongoing use and must not be forced into one-time completion.",
+  "example_skill_id": "MS-02-001",
+  "progression_model": "longitudinal_practice",
+  "completion_mode": "no_permanent_completion",
+  "states": [
+    "not_started",
+    "habit_forming",
+    "active_practice",
+    "maintained",
+    "paused",
+    "restarting"
+  ],
+  "practice_domains": [
+    "hygiene_routine",
+    "doors_and_handles",
+    "phone_interaction",
+    "handwriting_and_drawing",
+    "object_manipulation",
+    "sport_specific_optional"
+  ],
+  "event_types": [
+    "baseline_observation",
+    "guided_attempt",
+    "independent_attempt",
+    "real_world_use",
+    "monthly_check",
+    "pause",
+    "restart"
+  ],
+  "performance_dimensions": [
+    "accuracy",
+    "control",
+    "comfort",
+    "error_rate",
+    "task_time",
+    "fatigue_or_discomfort",
+    "real_world_adoption"
+  ],
+  "event_record_required_fields": [
+    "event_id",
+    "skill_id",
+    "occurred_at",
+    "task_domain",
+    "hand_used",
+    "context",
+    "performance_observation",
+    "support_or_prompt_level",
+    "comfort_or_discomfort",
+    "evidence_source"
+  ],
+  "scheduler_rules": [
+    "No daily streak requirement.",
+    "Use user-selected everyday anchors.",
+    "Do not require equal performance between hands.",
+    "Add a new practice domain only when the current one is comfortable and safe.",
+    "A pause does not erase historical evidence.",
+    "Never recommend non-dominant-hand use for hazardous or safety-critical tasks."
+  ],
+  "terminal_mastery": false,
+  "sample": {
+    "skill_id": "MS-02-001",
+    "state": "habit_forming",
+    "dominant_hand": "learner_declared",
+    "practice_anchors": [
+      "brush_teeth_non_dominant_hand",
+      "open_normal_door_non_dominant_hand",
+      "simple_phone_navigation_non_dominant_hand"
+    ],
+    "review_cadence": "user_selected_periodic_check",
+    "last_assessed_at": null,
+    "history_ref": "append_only_event_log"
+  }
+}

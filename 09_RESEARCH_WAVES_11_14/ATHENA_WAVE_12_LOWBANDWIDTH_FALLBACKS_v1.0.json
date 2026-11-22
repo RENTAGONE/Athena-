@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "items": [
+    {
+      "feature": "Curriculum reading",
+      "offline_fallback": "Downloadable text/JSON and compressed images; keep core text available without remote fonts/video.",
+      "degradation": "Hide decorative media and load on demand."
+    },
+    {
+      "feature": "Practice and assessment capture",
+      "offline_fallback": "Persist attempts locally with timestamps, local IDs and pending-sync state.",
+      "degradation": "No cloud feedback required to save; clearly label AI/external feedback unavailable."
+    },
+    {
+      "feature": "Schedule and routine engine",
+      "offline_fallback": "All events, routines, edits, actual-time capture and conflict detection execute locally.",
+      "degradation": "External calendar sync and online natural-language model are optional; manual quick capture always remains."
+    },
+    {
+      "feature": "Search",
+      "offline_fallback": "Search downloaded modules, glossary and personal records locally.",
+      "degradation": "Show coverage boundary and offer queued online search only if user requests."
+    },
+    {
+      "feature": "Media learning",
+      "offline_fallback": "Transcript, captions, key diagrams and text instructions.",
+      "degradation": "No autoplay; explicit download over Wi-Fi/data saver."
+    },
+    {
+      "feature": "Sync",
+      "offline_fallback": "Durable outbox with idempotency key, retry and user-visible sync state.",
+      "degradation": "Do not delete local data until server acknowledgement and integrity check."
+    },
+    {
+      "feature": "Backup/export",
+      "offline_fallback": "User-triggered local encrypted export where supported, checksum manifest and restore preview.",
+      "degradation": "Cloud backup optional; never required to access own records."
+    },
+    {
+      "feature": "Notifications",
+      "offline_fallback": "Local notifications from local schedule.",
+      "degradation": "Explain that OS battery restrictions may delay delivery; in-app schedule remains source of truth."
+    }
+  ]
+}

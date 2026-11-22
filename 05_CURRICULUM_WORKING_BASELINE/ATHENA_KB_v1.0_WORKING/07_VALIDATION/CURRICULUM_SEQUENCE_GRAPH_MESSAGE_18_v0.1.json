@@ -1,0 +1,1458 @@
+{
+  "registry": "ATHENA_BASELINE_ADVISORY_SEQUENCE_GRAPH",
+  "version": "0.1",
+  "status": "candidate_advisory_graph_not_canonical_prerequisite_approval",
+  "node_count": 216,
+  "edge_count": 206,
+  "edges": [
+    {
+      "source_id": "BASE-ENG-001",
+      "target_id": "BASE-ENG-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-002",
+      "target_id": "BASE-ENG-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-003",
+      "target_id": "BASE-ENG-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-004",
+      "target_id": "BASE-ENG-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-005",
+      "target_id": "BASE-ENG-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-006",
+      "target_id": "BASE-ENG-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-007",
+      "target_id": "BASE-ENG-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-008",
+      "target_id": "BASE-ENG-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-009",
+      "target_id": "BASE-ENG-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-010",
+      "target_id": "BASE-ENG-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ENG-011",
+      "target_id": "BASE-ENG-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-001",
+      "target_id": "BASE-BIZ-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-002",
+      "target_id": "BASE-BIZ-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-003",
+      "target_id": "BASE-BIZ-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-004",
+      "target_id": "BASE-BIZ-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-005",
+      "target_id": "BASE-BIZ-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-006",
+      "target_id": "BASE-BIZ-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-007",
+      "target_id": "BASE-BIZ-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-008",
+      "target_id": "BASE-BIZ-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-009",
+      "target_id": "BASE-BIZ-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-010",
+      "target_id": "BASE-BIZ-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BIZ-011",
+      "target_id": "BASE-BIZ-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-001",
+      "target_id": "BASE-ELEC-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-002",
+      "target_id": "BASE-ELEC-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-003",
+      "target_id": "BASE-ELEC-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-004",
+      "target_id": "BASE-ELEC-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-005",
+      "target_id": "BASE-ELEC-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-006",
+      "target_id": "BASE-ELEC-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-007",
+      "target_id": "BASE-ELEC-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-008",
+      "target_id": "BASE-ELEC-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-009",
+      "target_id": "BASE-ELEC-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-010",
+      "target_id": "BASE-ELEC-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ELEC-011",
+      "target_id": "BASE-ELEC-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-001",
+      "target_id": "BASE-FIN-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-002",
+      "target_id": "BASE-FIN-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-003",
+      "target_id": "BASE-FIN-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-004",
+      "target_id": "BASE-FIN-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-005",
+      "target_id": "BASE-FIN-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-006",
+      "target_id": "BASE-FIN-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-007",
+      "target_id": "BASE-FIN-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-008",
+      "target_id": "BASE-FIN-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-009",
+      "target_id": "BASE-FIN-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-010",
+      "target_id": "BASE-FIN-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-FIN-011",
+      "target_id": "BASE-FIN-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-001",
+      "target_id": "BASE-BODY-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-002",
+      "target_id": "BASE-BODY-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-003",
+      "target_id": "BASE-BODY-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-004",
+      "target_id": "BASE-BODY-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-005",
+      "target_id": "BASE-BODY-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-006",
+      "target_id": "BASE-BODY-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-007",
+      "target_id": "BASE-BODY-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-008",
+      "target_id": "BASE-BODY-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-009",
+      "target_id": "BASE-BODY-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-010",
+      "target_id": "BASE-BODY-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-BODY-011",
+      "target_id": "BASE-BODY-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-001",
+      "target_id": "BASE-PSY-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-002",
+      "target_id": "BASE-PSY-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-003",
+      "target_id": "BASE-PSY-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-004",
+      "target_id": "BASE-PSY-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-005",
+      "target_id": "BASE-PSY-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-006",
+      "target_id": "BASE-PSY-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-007",
+      "target_id": "BASE-PSY-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-008",
+      "target_id": "BASE-PSY-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-009",
+      "target_id": "BASE-PSY-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-010",
+      "target_id": "BASE-PSY-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PSY-011",
+      "target_id": "BASE-PSY-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-001",
+      "target_id": "BASE-AEST-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-002",
+      "target_id": "BASE-AEST-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-003",
+      "target_id": "BASE-AEST-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-004",
+      "target_id": "BASE-AEST-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-005",
+      "target_id": "BASE-AEST-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-006",
+      "target_id": "BASE-AEST-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-007",
+      "target_id": "BASE-AEST-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-008",
+      "target_id": "BASE-AEST-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-009",
+      "target_id": "BASE-AEST-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-010",
+      "target_id": "BASE-AEST-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-AEST-011",
+      "target_id": "BASE-AEST-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-001",
+      "target_id": "BASE-WORK-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-002",
+      "target_id": "BASE-WORK-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-003",
+      "target_id": "BASE-WORK-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-004",
+      "target_id": "BASE-WORK-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-005",
+      "target_id": "BASE-WORK-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-006",
+      "target_id": "BASE-WORK-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-007",
+      "target_id": "BASE-WORK-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-008",
+      "target_id": "BASE-WORK-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-009",
+      "target_id": "BASE-WORK-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-010",
+      "target_id": "BASE-WORK-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-WORK-011",
+      "target_id": "BASE-WORK-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-001",
+      "target_id": "BASE-ART-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-002",
+      "target_id": "BASE-ART-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-003",
+      "target_id": "BASE-ART-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-004",
+      "target_id": "BASE-ART-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-005",
+      "target_id": "BASE-ART-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-006",
+      "target_id": "BASE-ART-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-007",
+      "target_id": "BASE-ART-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-008",
+      "target_id": "BASE-ART-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-009",
+      "target_id": "BASE-ART-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-010",
+      "target_id": "BASE-ART-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ART-011",
+      "target_id": "BASE-ART-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-001",
+      "target_id": "BASE-ATH-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-002",
+      "target_id": "BASE-ATH-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-003",
+      "target_id": "BASE-ATH-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-004",
+      "target_id": "BASE-ATH-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-005",
+      "target_id": "BASE-ATH-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-006",
+      "target_id": "BASE-ATH-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-007",
+      "target_id": "BASE-ATH-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-008",
+      "target_id": "BASE-ATH-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-009",
+      "target_id": "BASE-ATH-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-010",
+      "target_id": "BASE-ATH-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-ATH-011",
+      "target_id": "BASE-ATH-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-001",
+      "target_id": "BASE-PERF-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-002",
+      "target_id": "BASE-PERF-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-003",
+      "target_id": "BASE-PERF-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-004",
+      "target_id": "BASE-PERF-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-005",
+      "target_id": "BASE-PERF-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-006",
+      "target_id": "BASE-PERF-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-007",
+      "target_id": "BASE-PERF-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-008",
+      "target_id": "BASE-PERF-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-009",
+      "target_id": "BASE-PERF-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-010",
+      "target_id": "BASE-PERF-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-PERF-011",
+      "target_id": "BASE-PERF-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-001",
+      "target_id": "BASE-MATH-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-002",
+      "target_id": "BASE-MATH-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-003",
+      "target_id": "BASE-MATH-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-004",
+      "target_id": "BASE-MATH-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-005",
+      "target_id": "BASE-MATH-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-006",
+      "target_id": "BASE-MATH-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-007",
+      "target_id": "BASE-MATH-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-007",
+      "target_id": "BASE-MATH-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-008",
+      "target_id": "BASE-MATH-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-001",
+      "target_id": "BASE-MATH-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-002",
+      "target_id": "BASE-MATH-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-005",
+      "target_id": "BASE-MATH-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-006",
+      "target_id": "BASE-MATH-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-007",
+      "target_id": "BASE-MATH-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-008",
+      "target_id": "BASE-MATH-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-007",
+      "target_id": "BASE-MATH-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-008",
+      "target_id": "BASE-MATH-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-010",
+      "target_id": "BASE-MATH-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-MATH-011",
+      "target_id": "BASE-MATH-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-001",
+      "target_id": "BASE-CYBER-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-002",
+      "target_id": "BASE-CYBER-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-003",
+      "target_id": "BASE-CYBER-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-004",
+      "target_id": "BASE-CYBER-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-005",
+      "target_id": "BASE-CYBER-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-006",
+      "target_id": "BASE-CYBER-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-007",
+      "target_id": "BASE-CYBER-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-008",
+      "target_id": "BASE-CYBER-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-009",
+      "target_id": "BASE-CYBER-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-010",
+      "target_id": "BASE-CYBER-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-CYBER-011",
+      "target_id": "BASE-CYBER-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-001",
+      "target_id": "BASE-LANG-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-002",
+      "target_id": "BASE-LANG-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-003",
+      "target_id": "BASE-LANG-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-004",
+      "target_id": "BASE-LANG-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-005",
+      "target_id": "BASE-LANG-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-006",
+      "target_id": "BASE-LANG-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-007",
+      "target_id": "BASE-LANG-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-008",
+      "target_id": "BASE-LANG-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-009",
+      "target_id": "BASE-LANG-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-010",
+      "target_id": "BASE-LANG-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LANG-011",
+      "target_id": "BASE-LANG-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-001",
+      "target_id": "BASE-RES-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-002",
+      "target_id": "BASE-RES-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-003",
+      "target_id": "BASE-RES-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-004",
+      "target_id": "BASE-RES-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-005",
+      "target_id": "BASE-RES-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-006",
+      "target_id": "BASE-RES-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-007",
+      "target_id": "BASE-RES-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-008",
+      "target_id": "BASE-RES-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-009",
+      "target_id": "BASE-RES-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-010",
+      "target_id": "BASE-RES-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-RES-011",
+      "target_id": "BASE-RES-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-001",
+      "target_id": "BASE-INDEP-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-002",
+      "target_id": "BASE-INDEP-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-003",
+      "target_id": "BASE-INDEP-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-004",
+      "target_id": "BASE-INDEP-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-005",
+      "target_id": "BASE-INDEP-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-006",
+      "target_id": "BASE-INDEP-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-007",
+      "target_id": "BASE-INDEP-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-008",
+      "target_id": "BASE-INDEP-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-009",
+      "target_id": "BASE-INDEP-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-010",
+      "target_id": "BASE-INDEP-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-INDEP-011",
+      "target_id": "BASE-INDEP-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-001",
+      "target_id": "BASE-LEAD-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-002",
+      "target_id": "BASE-LEAD-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-003",
+      "target_id": "BASE-LEAD-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-004",
+      "target_id": "BASE-LEAD-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-005",
+      "target_id": "BASE-LEAD-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-006",
+      "target_id": "BASE-LEAD-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-007",
+      "target_id": "BASE-LEAD-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-008",
+      "target_id": "BASE-LEAD-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-009",
+      "target_id": "BASE-LEAD-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-010",
+      "target_id": "BASE-LEAD-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-LEAD-011",
+      "target_id": "BASE-LEAD-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-001",
+      "target_id": "BASE-COMM-002",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-002",
+      "target_id": "BASE-COMM-003",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-003",
+      "target_id": "BASE-COMM-004",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-004",
+      "target_id": "BASE-COMM-005",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-005",
+      "target_id": "BASE-COMM-006",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-006",
+      "target_id": "BASE-COMM-007",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-007",
+      "target_id": "BASE-COMM-008",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-008",
+      "target_id": "BASE-COMM-009",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-009",
+      "target_id": "BASE-COMM-010",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-010",
+      "target_id": "BASE-COMM-011",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    },
+    {
+      "source_id": "BASE-COMM-011",
+      "target_id": "BASE-COMM-012",
+      "relation_type": "RECOMMENDED_SEQUENCE",
+      "gating": "advisory",
+      "rationale": "Existing within-discipline sequence recommendation; not a hard prerequisite. Learner may use diagnostic evidence to skip or reorder."
+    }
+  ],
+  "validation": {
+    "unresolved_endpoint_count": 0,
+    "acyclic": true,
+    "topological_nodes_processed": 216,
+    "hard_prerequisites_added": 0
+  },
+  "policy": "Recommended sequence edges do not block learner progress. No hard prerequisite is inferred from order alone."
+}

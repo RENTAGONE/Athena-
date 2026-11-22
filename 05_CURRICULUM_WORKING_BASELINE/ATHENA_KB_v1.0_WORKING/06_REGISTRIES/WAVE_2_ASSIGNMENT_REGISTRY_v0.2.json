@@ -1,0 +1,633 @@
+{
+  "registry_id": "ATHENA-WAVE2-BATCH01",
+  "version": "0.2",
+  "production_message": 11,
+  "status": "draft",
+  "disciplines": [
+    "BIZ",
+    "FIN",
+    "WORK",
+    "CYBER",
+    "PSY",
+    "LEAD"
+  ],
+  "unit_count": 18,
+  "units": [
+    {
+      "unit_id": "BIZ-FOUND-001",
+      "discipline_code": "BIZ",
+      "title": "Business discovery: customer, problem and evidence",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "basic_arithmetic",
+        "observation_vs_interpretation",
+        "consent_and_respect"
+      ],
+      "learning_outcomes": [
+        "define_segment",
+        "conduct_neutral_discovery",
+        "separate_observation_from_claim",
+        "identify_uncertainty"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "consent; anonymise; do not misrepresent fictional data as real"
+    },
+    {
+      "unit_id": "FIN-FOUND-001",
+      "discipline_code": "FIN",
+      "title": "Personal cash flow, budgeting and financial records",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "addition_subtraction_percentages",
+        "dates_and_records"
+      ],
+      "learning_outcomes": [
+        "maintain_ledger",
+        "reconcile_cash",
+        "build_budget",
+        "explain_timing_and_purchasing_power"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "fictional records preferred; no credentials; educational not investment advice"
+    },
+    {
+      "unit_id": "WORK-FOUND-001",
+      "discipline_code": "WORK",
+      "title": "Workflow design, prioritisation and reliable execution",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "task_description",
+        "file_literacy"
+      ],
+      "learning_outcomes": [
+        "define_acceptance_criteria",
+        "map_dependencies",
+        "identify_bottleneck",
+        "design_reversible_improvement"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "avoid destructive automation and consequential actions in practice"
+    },
+    {
+      "unit_id": "CYBER-FOUND-001",
+      "discipline_code": "CYBER",
+      "title": "Threat modelling and personal security fundamentals",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "account_device_file_network_basics",
+        "written_procedure"
+      ],
+      "learning_outcomes": [
+        "scope_authorised_assets",
+        "model_threats",
+        "select_controls",
+        "plan_recovery"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "only owned or explicitly authorised systems and training labs"
+    },
+    {
+      "unit_id": "PSY-FOUND-001",
+      "discipline_code": "PSY",
+      "title": "Learning science: attention, memory and retrieval",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "learning_task_description",
+        "basic_variables"
+      ],
+      "learning_outcomes": [
+        "explain_attention_and_memory",
+        "use_retrieval_and_spacing",
+        "interpret_small_learning_comparison",
+        "state_limits"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "not diagnosis; no clinical inference from self-experiment"
+    },
+    {
+      "unit_id": "LEAD-FOUND-001",
+      "discipline_code": "LEAD",
+      "title": "Goal setting, execution and accountable teamwork",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "task_definition",
+        "respectful_communication"
+      ],
+      "learning_outcomes": [
+        "define_verifiable_goal",
+        "assign_roles_and_authority",
+        "plan_checkpoints",
+        "give_actionable_feedback"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "consent, boundaries, no humiliation or coercion"
+    },
+    {
+      "unit_id": "BIZ-PROG-001",
+      "discipline_code": "BIZ",
+      "title": "Offer design: value proposition, scope and customer fit",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "BIZ-FOUND-001",
+        "basic_arithmetic",
+        "clear_written_communication"
+      ],
+      "learning_outcomes": [
+        "translate_a_validated_customer_problem_into_a_specific_offer",
+        "state_target_user_job_promised_outcome_delivery_mechanism_and_exclusions",
+        "distinguish_a_feature_from_a_customer_valued_benefit",
+        "test_offer_clarity_without_pressuring_respondents",
+        "revise_an_offer_when_evidence_contradicts_an_assumption"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No deceptive scarcity, fabricated testimonials, dark patterns, pressure selling or collection of sensitive data. For minors, involve a trusted adult in real transactions and follow platform/payment rules."
+    },
+    {
+      "unit_id": "BIZ-PROG-002",
+      "discipline_code": "BIZ",
+      "title": "Unit economics: costs, contribution margin and break-even reasoning",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "BIZ-PROG-001",
+        "FIN-FOUND-001",
+        "percentages_and_arithmetic"
+      ],
+      "learning_outcomes": [
+        "classify_fixed_variable_direct_and_indirect_costs",
+        "calculate_contribution_per_unit_and_contribution_margin_ratio",
+        "calculate_simple_break_even_volume_with_stated_assumptions",
+        "distinguish_revenue_gross_profit_contribution_and_cash",
+        "run_sensitivity_checks_and_identify_missing_cost_categories"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Educational modelling only, not investment, tax or legal advice. Do not share account balances, transaction IDs, passwords or private customer records."
+    },
+    {
+      "unit_id": "FIN-PROG-001",
+      "discipline_code": "FIN",
+      "title": "Financial statements: income, position and cash-flow logic",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "FIN-FOUND-001",
+        "addition_subtraction_percentages",
+        "record_classification"
+      ],
+      "learning_outcomes": [
+        "distinguish_an_income_statement_balance_sheet_and_cash_flow_statement",
+        "classify_common_transactions_using_a_simple_accounting_equation",
+        "explain_why_profit_and_cash_differ",
+        "reconcile_a_small_fictional_transaction_set",
+        "identify_timing_depreciation_and_non_cash_limitations"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Fictional data preferred. Never upload personal financial statements, passwords, full account numbers or another person’s records. Educational accounting only."
+    },
+    {
+      "unit_id": "FIN-PROG-002",
+      "discipline_code": "FIN",
+      "title": "Risk, diversification, liquidity and time horizon",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "FIN-FOUND-001",
+        "FIN-PROG-001",
+        "probability_and_percentages"
+      ],
+      "learning_outcomes": [
+        "distinguish_risk_capacity_tolerance_and_need",
+        "explain_diversification_and_concentration_risk",
+        "compare_liquidity_and_time_horizon",
+        "interpret_nominal_return_versus_inflation_adjusted_return",
+        "identify_scams_uncertainty_and_unsuitable_claims"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "This is conceptual financial education, not personalised investment advice. At the learner’s age, real financial products or accounts require guardian involvement and local legal compliance."
+    },
+    {
+      "unit_id": "WORK-PROG-001",
+      "discipline_code": "WORK",
+      "title": "Project planning: scope, dependencies, critical path and risk buffers",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "WORK-FOUND-001",
+        "task_decomposition",
+        "basic_time_estimation"
+      ],
+      "learning_outcomes": [
+        "write_a_bounded_project_charter_and_definition_of_done",
+        "decompose_outcomes_into_verifiable_work_packages",
+        "map_finish_to_start_dependencies",
+        "identify_a_critical_path_in_a_small_network",
+        "estimate_with_ranges_and_add_risk_based_buffers",
+        "re_plan_transparently_when_assumptions_change"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Do not use real high-risk or costly projects as first exercises. No destructive changes to shared systems without explicit authority and backup."
+    },
+    {
+      "unit_id": "WORK-PROG-002",
+      "discipline_code": "WORK",
+      "title": "Process measurement, documentation and safe automation",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "WORK-FOUND-001",
+        "WORK-PROG-001",
+        "file_literacy"
+      ],
+      "learning_outcomes": [
+        "map_a_repeatable_process_and_identify_its_failure_points",
+        "choose_a_meaningful_process_metric_and_baseline",
+        "write_an_operational_checklist_with_owner_and_exception_path",
+        "distinguish_deterministic_automation_from_judgment",
+        "design_dry_run_logging_rollback_and_permission_boundaries"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No mass messaging, account scraping, payment actions, deletion or production writes during practice. Use synthetic data and least-privilege test environments."
+    },
+    {
+      "unit_id": "CYBER-PROG-001",
+      "discipline_code": "CYBER",
+      "title": "Identity and access: authentication, authorization and session security",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "CYBER-FOUND-001",
+        "account_device_file_network_basics"
+      ],
+      "learning_outcomes": [
+        "distinguish_identification_authentication_and_authorization",
+        "explain_password_hashing_versus_encryption_at_a_conceptual_level",
+        "evaluate_multi_factor_authentication_and_recovery_paths",
+        "describe_session_cookies_expiry_and_logout_risks",
+        "apply_least_privilege_and_account_recovery_hygiene"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Defensive education only. Never test login bypasses, steal tokens, phish, enumerate accounts or access another person’s account. Use owned test accounts and official documentation."
+    },
+    {
+      "unit_id": "CYBER-PROG-002",
+      "discipline_code": "CYBER",
+      "title": "Network and web security fundamentals: boundaries, validation and safe testing",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "CYBER-FOUND-001",
+        "CYBER-PROG-001",
+        "basic_web_and_network_concepts"
+      ],
+      "learning_outcomes": [
+        "describe_client_server_dns_ip_port_and_https_roles",
+        "distinguish_transport_protection_from_application_authorization",
+        "explain_input_validation_output_encoding_and_parameterized_queries",
+        "recognize_common_web_risk_categories_conceptually",
+        "design_a_safe_test_plan_for_an_owned_local_lab"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No scanning, fuzzing, exploitation or credential testing on public IPs, school networks, shared hosting or third-party sites. Only local owned labs or explicitly authorized environments."
+    },
+    {
+      "unit_id": "PSY-PROG-001",
+      "discipline_code": "PSY",
+      "title": "Judgment and decision-making: bias, calibration and evidence",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "PSY-FOUND-001",
+        "basic_probability",
+        "observation_vs_interpretation"
+      ],
+      "learning_outcomes": [
+        "distinguish_a_cognitive_bias_from_a_demonstrated_error_in_a_specific_case",
+        "identify_base_rate_neglect_confirmation_bias_and_availability_effects",
+        "make_calibrated_probabilistic_forecasts",
+        "use_pre_mortems_and_disconfirming_evidence",
+        "update_a_belief_when_new_evidence_arrives"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Not psychological diagnosis or personality assessment. Do not infer mental disorders, manipulate people, or use the journal to evaluate others. Keep predictions low-stakes and non-sensitive."
+    },
+    {
+      "unit_id": "PSY-PROG-002",
+      "discipline_code": "PSY",
+      "title": "Motivation, habits and environment design",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "PSY-FOUND-001",
+        "goal_setting",
+        "basic_observation"
+      ],
+      "learning_outcomes": [
+        "distinguish_motivation_ability_cue_and_reinforcement",
+        "design_a_small_behaviour_with_a_clear_trigger_and_minimum_version",
+        "reduce_friction_and_add_useful_environmental_cues",
+        "use_implementation_intentions_and_feedback_loops",
+        "evaluate_a_habit_experiment_without_overclaiming_causality"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No extreme schedules, sleep restriction, punishment, food restriction or coercive tracking. Stop if the experiment increases distress; this unit is not therapy."
+    },
+    {
+      "unit_id": "LEAD-PROG-001",
+      "discipline_code": "LEAD",
+      "title": "Delegation and decision rights: ownership without micromanagement",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "LEAD-FOUND-001",
+        "task_decomposition",
+        "respectful_communication"
+      ],
+      "learning_outcomes": [
+        "delegate_outcomes_with_constraints_and_authority",
+        "distinguish_responsibility_accountability_and_approval",
+        "define_decision_rights_and_escalation_thresholds",
+        "match_task_risk_to_autonomy_and_review_cadence",
+        "avoid_dumping_unclear_work_or_retaining_hidden_vetoes"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "No coercion, unpaid exploitation, public shaming or assigning work beyond someone’s capacity/authority. Respect consent and school/family rules."
+    },
+    {
+      "unit_id": "LEAD-PROG-002",
+      "discipline_code": "LEAD",
+      "title": "Feedback, coaching and conflict resolution",
+      "progression_level": "developing",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "LEAD-FOUND-001",
+        "LEAD-PROG-001",
+        "active_listening"
+      ],
+      "learning_outcomes": [
+        "separate_observation_impact_and_interpretation",
+        "give_specific_behaviour_focused_feedback_with_a_next_step",
+        "ask_coaching_questions_without_pretending_to_diagnose",
+        "classify_conflict_by_task_process_or_relationship_source",
+        "use_a_fair_resolution_process_and_escalate_safety_concerns"
+      ],
+      "evidence_required": [
+        "source_provenance",
+        "learner_explanation_from_memory",
+        "worked_application_or_artifact",
+        "limitations_and_uncertainty",
+        "confidence_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "delayed_retrieval_required_for_stable_transition": true,
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "Do not mediate abuse, threats, harassment or serious power-imbalance cases alone. Involve a trusted adult or appropriate authority. No retaliation or public humiliation."
+    }
+  ],
+  "workflow_contract": {
+    "assign": "ATHENA presents objective, prerequisites, resources and evidence criteria",
+    "learn": "learner chooses external learning source",
+    "evaluate": "independent evaluator checks explanation, application, limits and provenance",
+    "update": "generate proposed structured update; do not auto-award mastery",
+    "commit": "learner reviews and approves engine changes"
+  },
+  "validation_limits": [
+    "not expert reviewed",
+    "not learner piloted",
+    "not importer tested",
+    "resource links not yet mapped to exact sections",
+    "rubric cut scores are provisional and not psychometrically calibrated"
+  ],
+  "batch_02_unit_count": 12
+}

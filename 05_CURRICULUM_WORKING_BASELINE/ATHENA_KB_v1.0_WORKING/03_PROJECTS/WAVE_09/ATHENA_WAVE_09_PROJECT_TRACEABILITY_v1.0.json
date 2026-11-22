@@ -1,0 +1,1696 @@
+{
+  "registry": "ATHENA_WAVE_09_PROJECT_OBJECTIVE_TRACEABILITY",
+  "version": "1.0",
+  "status": "candidate_mapping_not_approved",
+  "project_count": 18,
+  "records": [
+    {
+      "project_id": "ATH-PROJ-PERSONAL-001",
+      "project_class": "personal_use",
+      "target_module_ids": [
+        "BASE-WORK-002",
+        "BASE-WORK-001",
+        "BASE-RES-005",
+        "BASE-RES-011",
+        "BASE-PSY-003",
+        "BASE-ENG-001",
+        "BASE-AEST-003"
+      ],
+      "module_assessment_refs": [
+        "BASE-WORK-002",
+        "BASE-WORK-001",
+        "BASE-RES-005",
+        "BASE-RES-011",
+        "BASE-PSY-003",
+        "BASE-ENG-001",
+        "BASE-AEST-003"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-WORK-002",
+          "module_title": "Notes and knowledge capture",
+          "learning_objective": "Capture information so it can be retrieved and acted upon.",
+          "assessment_instrument_ref": "BASE-WORK-002",
+          "assessment_construct": "The assessment samples whether the learner can: Capture information so it can be retrieved and acted upon."
+        },
+        {
+          "module_id": "BASE-WORK-001",
+          "module_title": "File and folder literacy",
+          "learning_objective": "Organize files with predictable paths and names.",
+          "assessment_instrument_ref": "BASE-WORK-001",
+          "assessment_construct": "The assessment samples whether the learner can: Organize files with predictable paths and names."
+        },
+        {
+          "module_id": "BASE-RES-005",
+          "module_title": "Citation and provenance",
+          "learning_objective": "Record sources so another person can locate and evaluate them.",
+          "assessment_instrument_ref": "BASE-RES-005",
+          "assessment_construct": "The assessment samples whether the learner can: Record sources so another person can locate and evaluate them."
+        },
+        {
+          "module_id": "BASE-RES-011",
+          "module_title": "Reproducibility",
+          "learning_objective": "Preserve data, code, methods and decisions needed to repeat work.",
+          "assessment_instrument_ref": "BASE-RES-011",
+          "assessment_construct": "The assessment samples whether the learner can: Preserve data, code, methods and decisions needed to repeat work."
+        },
+        {
+          "module_id": "BASE-PSY-003",
+          "module_title": "Memory systems",
+          "learning_objective": "Distinguish encoding, storage and retrieval.",
+          "assessment_instrument_ref": "BASE-PSY-003",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish encoding, storage and retrieval."
+        },
+        {
+          "module_id": "BASE-ENG-001",
+          "module_title": "Problem decomposition",
+          "learning_objective": "Break a real problem into inputs, outputs, constraints and smaller testable tasks.",
+          "assessment_instrument_ref": "BASE-ENG-001",
+          "assessment_construct": "The assessment samples whether the learner can: Break a real problem into inputs, outputs, constraints and smaller testable tasks."
+        },
+        {
+          "module_id": "BASE-AEST-003",
+          "module_title": "Hierarchy and information design",
+          "learning_objective": "Order content by importance and user task.",
+          "assessment_instrument_ref": "BASE-AEST-003",
+          "assessment_construct": "The assessment samples whether the learner can: Order content by importance and user task."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PERSONAL-002",
+      "project_class": "personal_use",
+      "target_module_ids": [
+        "BASE-ATH-009",
+        "BASE-ATH-012",
+        "BASE-ATH-010",
+        "BASE-ATH-011",
+        "BASE-MATH-005",
+        "BASE-RES-008",
+        "BASE-PSY-008"
+      ],
+      "module_assessment_refs": [
+        "BASE-ATH-009",
+        "BASE-ATH-012",
+        "BASE-ATH-010",
+        "BASE-ATH-011",
+        "BASE-MATH-005",
+        "BASE-RES-008",
+        "BASE-PSY-008"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-ATH-009",
+          "module_title": "Sport skill acquisition",
+          "learning_objective": "Break sport skills into perception, decision and execution.",
+          "assessment_instrument_ref": "BASE-ATH-009",
+          "assessment_construct": "The assessment samples whether the learner can: Break sport skills into perception, decision and execution."
+        },
+        {
+          "module_id": "BASE-ATH-012",
+          "module_title": "Performance analysis",
+          "learning_objective": "Review performance using observable actions and context.",
+          "assessment_instrument_ref": "BASE-ATH-012",
+          "assessment_construct": "The assessment samples whether the learner can: Review performance using observable actions and context."
+        },
+        {
+          "module_id": "BASE-ATH-010",
+          "module_title": "Recovery and load management",
+          "learning_objective": "Recognize fatigue and balance training with recovery.",
+          "assessment_instrument_ref": "BASE-ATH-010",
+          "assessment_construct": "The assessment samples whether the learner can: Recognize fatigue and balance training with recovery."
+        },
+        {
+          "module_id": "BASE-ATH-011",
+          "module_title": "Training design",
+          "learning_objective": "Build a balanced week around goals, constraints and recovery.",
+          "assessment_instrument_ref": "BASE-ATH-011",
+          "assessment_construct": "The assessment samples whether the learner can: Build a balanced week around goals, constraints and recovery."
+        },
+        {
+          "module_id": "BASE-MATH-005",
+          "module_title": "Ratios and rates",
+          "learning_objective": "Compare quantities using ratios and unit rates.",
+          "assessment_instrument_ref": "BASE-MATH-005",
+          "assessment_construct": "The assessment samples whether the learner can: Compare quantities using ratios and unit rates."
+        },
+        {
+          "module_id": "BASE-RES-008",
+          "module_title": "Data collection and quality",
+          "learning_objective": "Collect data consistently and document measurement limits.",
+          "assessment_instrument_ref": "BASE-RES-008",
+          "assessment_construct": "The assessment samples whether the learner can: Collect data consistently and document measurement limits."
+        },
+        {
+          "module_id": "BASE-PSY-008",
+          "module_title": "Decision-making",
+          "learning_objective": "Compare options under uncertainty using explicit criteria.",
+          "assessment_instrument_ref": "BASE-PSY-008",
+          "assessment_construct": "The assessment samples whether the learner can: Compare options under uncertainty using explicit criteria."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PERSONAL-003",
+      "project_class": "personal_use",
+      "target_module_ids": [
+        "BASE-FIN-001",
+        "BASE-FIN-002",
+        "BASE-FIN-003",
+        "BASE-FIN-006",
+        "BASE-FIN-008",
+        "BASE-MATH-004",
+        "BASE-WORK-009",
+        "BASE-CYBER-001"
+      ],
+      "module_assessment_refs": [
+        "BASE-FIN-001",
+        "BASE-FIN-002",
+        "BASE-FIN-003",
+        "BASE-FIN-006",
+        "BASE-FIN-008",
+        "BASE-MATH-004",
+        "BASE-WORK-009",
+        "BASE-CYBER-001"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-FIN-001",
+          "module_title": "Money numeracy",
+          "learning_objective": "Use percentages, units and comparisons to reason about money.",
+          "assessment_instrument_ref": "BASE-FIN-001",
+          "assessment_construct": "The assessment samples whether the learner can: Use percentages, units and comparisons to reason about money."
+        },
+        {
+          "module_id": "BASE-FIN-002",
+          "module_title": "Personal budgeting",
+          "learning_objective": "Create a realistic budget that distinguishes needs, wants and goals.",
+          "assessment_instrument_ref": "BASE-FIN-002",
+          "assessment_construct": "The assessment samples whether the learner can: Create a realistic budget that distinguishes needs, wants and goals."
+        },
+        {
+          "module_id": "BASE-FIN-003",
+          "module_title": "Cash flow",
+          "learning_objective": "Track money timing and understand liquidity.",
+          "assessment_instrument_ref": "BASE-FIN-003",
+          "assessment_construct": "The assessment samples whether the learner can: Track money timing and understand liquidity."
+        },
+        {
+          "module_id": "BASE-FIN-006",
+          "module_title": "Accounting foundations",
+          "learning_objective": "Record transactions using consistent categories and double-entry logic.",
+          "assessment_instrument_ref": "BASE-FIN-006",
+          "assessment_construct": "The assessment samples whether the learner can: Record transactions using consistent categories and double-entry logic."
+        },
+        {
+          "module_id": "BASE-FIN-008",
+          "module_title": "Risk and uncertainty",
+          "learning_objective": "Distinguish risk types and avoid treating uncertain outcomes as guaranteed.",
+          "assessment_instrument_ref": "BASE-FIN-008",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish risk types and avoid treating uncertain outcomes as guaranteed."
+        },
+        {
+          "module_id": "BASE-MATH-004",
+          "module_title": "Percentages and proportional change",
+          "learning_objective": "Calculate percentage of, increase/decrease and reverse percentage.",
+          "assessment_instrument_ref": "BASE-MATH-004",
+          "assessment_construct": "The assessment samples whether the learner can: Calculate percentage of, increase/decrease and reverse percentage."
+        },
+        {
+          "module_id": "BASE-WORK-009",
+          "module_title": "Spreadsheet foundations",
+          "learning_objective": "Use formulas and tables for transparent calculations.",
+          "assessment_instrument_ref": "BASE-WORK-009",
+          "assessment_construct": "The assessment samples whether the learner can: Use formulas and tables for transparent calculations."
+        },
+        {
+          "module_id": "BASE-CYBER-001",
+          "module_title": "Digital safety and privacy",
+          "learning_objective": "Reduce common account and device risks.",
+          "assessment_instrument_ref": "BASE-CYBER-001",
+          "assessment_construct": "The assessment samples whether the learner can: Reduce common account and device risks."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PERSONAL-004",
+      "project_class": "personal_use",
+      "target_module_ids": [
+        "BASE-INDEP-005",
+        "BASE-INDEP-006",
+        "BASE-WORK-012",
+        "BASE-WORK-004",
+        "BASE-MATH-005",
+        "BASE-COMM-006",
+        "BASE-LEAD-002"
+      ],
+      "module_assessment_refs": [
+        "BASE-INDEP-005",
+        "BASE-INDEP-006",
+        "BASE-WORK-012",
+        "BASE-WORK-004",
+        "BASE-MATH-005",
+        "BASE-COMM-006",
+        "BASE-LEAD-002"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-INDEP-005",
+          "module_title": "Cleaning and household systems",
+          "learning_objective": "Clean common surfaces using appropriate methods and product labels.",
+          "assessment_instrument_ref": "BASE-INDEP-005",
+          "assessment_construct": "The assessment samples whether the learner can: Clean common surfaces using appropriate methods and product labels."
+        },
+        {
+          "module_id": "BASE-INDEP-006",
+          "module_title": "Clothing and garment care",
+          "learning_objective": "Interpret care labels and maintain common clothing.",
+          "assessment_instrument_ref": "BASE-INDEP-006",
+          "assessment_construct": "The assessment samples whether the learner can: Interpret care labels and maintain common clothing."
+        },
+        {
+          "module_id": "BASE-WORK-012",
+          "module_title": "Workflow improvement",
+          "learning_objective": "Measure bottlenecks and improve a process incrementally.",
+          "assessment_instrument_ref": "BASE-WORK-012",
+          "assessment_construct": "The assessment samples whether the learner can: Measure bottlenecks and improve a process incrementally."
+        },
+        {
+          "module_id": "BASE-WORK-004",
+          "module_title": "Planning and estimation",
+          "learning_objective": "Break work into milestones and estimate with uncertainty.",
+          "assessment_instrument_ref": "BASE-WORK-004",
+          "assessment_construct": "The assessment samples whether the learner can: Break work into milestones and estimate with uncertainty."
+        },
+        {
+          "module_id": "BASE-MATH-005",
+          "module_title": "Ratios and rates",
+          "learning_objective": "Compare quantities using ratios and unit rates.",
+          "assessment_instrument_ref": "BASE-MATH-005",
+          "assessment_construct": "The assessment samples whether the learner can: Compare quantities using ratios and unit rates."
+        },
+        {
+          "module_id": "BASE-COMM-006",
+          "module_title": "Questioning skills",
+          "learning_objective": "Ask questions that reveal assumptions and useful detail.",
+          "assessment_instrument_ref": "BASE-COMM-006",
+          "assessment_construct": "The assessment samples whether the learner can: Ask questions that reveal assumptions and useful detail."
+        },
+        {
+          "module_id": "BASE-LEAD-002",
+          "module_title": "Reliability and ownership",
+          "learning_objective": "Take responsibility for agreed work and communicate blockers.",
+          "assessment_instrument_ref": "BASE-LEAD-002",
+          "assessment_construct": "The assessment samples whether the learner can: Take responsibility for agreed work and communicate blockers."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PERSONAL-005",
+      "project_class": "personal_use",
+      "target_module_ids": [
+        "BASE-LANG-009",
+        "BASE-LANG-003",
+        "BASE-LANG-007",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-COMM-005"
+      ],
+      "module_assessment_refs": [
+        "BASE-LANG-009",
+        "BASE-LANG-003",
+        "BASE-LANG-007",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-COMM-005"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-LANG-009",
+          "module_title": "Bangla-English technical bridging",
+          "learning_objective": "Map technical concepts across Bangla and English without assuming word-for-word equivalence.",
+          "assessment_instrument_ref": "BASE-LANG-009",
+          "assessment_construct": "The assessment samples whether the learner can: Map technical concepts across Bangla and English without assuming word-for-word equivalence."
+        },
+        {
+          "module_id": "BASE-LANG-003",
+          "module_title": "Vocabulary acquisition",
+          "learning_objective": "Learn words with context, collocation and retrieval.",
+          "assessment_instrument_ref": "BASE-LANG-003",
+          "assessment_construct": "The assessment samples whether the learner can: Learn words with context, collocation and retrieval."
+        },
+        {
+          "module_id": "BASE-LANG-007",
+          "module_title": "Writing foundations",
+          "learning_objective": "Write clear paragraphs with a claim, support and logical sequence.",
+          "assessment_instrument_ref": "BASE-LANG-007",
+          "assessment_construct": "The assessment samples whether the learner can: Write clear paragraphs with a claim, support and logical sequence."
+        },
+        {
+          "module_id": "BASE-RES-003",
+          "module_title": "Source credibility",
+          "learning_objective": "Evaluate authority, evidence, methods, currency and conflicts.",
+          "assessment_instrument_ref": "BASE-RES-003",
+          "assessment_construct": "The assessment samples whether the learner can: Evaluate authority, evidence, methods, currency and conflicts."
+        },
+        {
+          "module_id": "BASE-RES-005",
+          "module_title": "Citation and provenance",
+          "learning_objective": "Record sources so another person can locate and evaluate them.",
+          "assessment_instrument_ref": "BASE-RES-005",
+          "assessment_construct": "The assessment samples whether the learner can: Record sources so another person can locate and evaluate them."
+        },
+        {
+          "module_id": "BASE-COMM-005",
+          "module_title": "Explanation and teaching",
+          "learning_objective": "Make an idea understandable through examples and checks.",
+          "assessment_instrument_ref": "BASE-COMM-005",
+          "assessment_construct": "The assessment samples whether the learner can: Make an idea understandable through examples and checks."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PERSONAL-006",
+      "project_class": "personal_use",
+      "target_module_ids": [
+        "BASE-CYBER-001",
+        "BASE-CYBER-004",
+        "BASE-CYBER-005",
+        "BASE-CYBER-006",
+        "BASE-WORK-001",
+        "BASE-WORK-008",
+        "BASE-RES-011"
+      ],
+      "module_assessment_refs": [
+        "BASE-CYBER-001",
+        "BASE-CYBER-004",
+        "BASE-CYBER-005",
+        "BASE-CYBER-006",
+        "BASE-WORK-001",
+        "BASE-WORK-008",
+        "BASE-RES-011"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-CYBER-001",
+          "module_title": "Digital safety and privacy",
+          "learning_objective": "Reduce common account and device risks.",
+          "assessment_instrument_ref": "BASE-CYBER-001",
+          "assessment_construct": "The assessment samples whether the learner can: Reduce common account and device risks."
+        },
+        {
+          "module_id": "BASE-CYBER-004",
+          "module_title": "Authentication and authorization",
+          "learning_objective": "Distinguish proving identity from permission to act.",
+          "assessment_instrument_ref": "BASE-CYBER-004",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish proving identity from permission to act."
+        },
+        {
+          "module_id": "BASE-CYBER-005",
+          "module_title": "Permissions and least privilege",
+          "learning_objective": "Limit access to files, devices and services.",
+          "assessment_instrument_ref": "BASE-CYBER-005",
+          "assessment_construct": "The assessment samples whether the learner can: Limit access to files, devices and services."
+        },
+        {
+          "module_id": "BASE-CYBER-006",
+          "module_title": "Backup and recovery",
+          "learning_objective": "Protect important data against loss and corruption.",
+          "assessment_instrument_ref": "BASE-CYBER-006",
+          "assessment_construct": "The assessment samples whether the learner can: Protect important data against loss and corruption."
+        },
+        {
+          "module_id": "BASE-WORK-001",
+          "module_title": "File and folder literacy",
+          "learning_objective": "Organize files with predictable paths and names.",
+          "assessment_instrument_ref": "BASE-WORK-001",
+          "assessment_construct": "The assessment samples whether the learner can: Organize files with predictable paths and names."
+        },
+        {
+          "module_id": "BASE-WORK-008",
+          "module_title": "Git workflow",
+          "learning_objective": "Use commits and branches to make changes recoverable.",
+          "assessment_instrument_ref": "BASE-WORK-008",
+          "assessment_construct": "The assessment samples whether the learner can: Use commits and branches to make changes recoverable."
+        },
+        {
+          "module_id": "BASE-RES-011",
+          "module_title": "Reproducibility",
+          "learning_objective": "Preserve data, code, methods and decisions needed to repeat work.",
+          "assessment_instrument_ref": "BASE-RES-011",
+          "assessment_construct": "The assessment samples whether the learner can: Preserve data, code, methods and decisions needed to repeat work."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PRODUCT-001",
+      "project_class": "product_business_foundation",
+      "target_module_ids": [
+        "BASE-ENG-001",
+        "BASE-ENG-002",
+        "BASE-ENG-005",
+        "BASE-ENG-007",
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-RES-001",
+        "BASE-RES-003",
+        "BASE-RES-007",
+        "BASE-COMM-006",
+        "BASE-AEST-008",
+        "BASE-AEST-009",
+        "BASE-CYBER-001",
+        "BASE-FIN-008",
+        "BASE-WORK-004",
+        "BASE-WORK-008"
+      ],
+      "module_assessment_refs": [
+        "BASE-ENG-001",
+        "BASE-ENG-002",
+        "BASE-ENG-005",
+        "BASE-ENG-007",
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-RES-001",
+        "BASE-RES-003",
+        "BASE-RES-007",
+        "BASE-COMM-006",
+        "BASE-AEST-008",
+        "BASE-AEST-009",
+        "BASE-CYBER-001",
+        "BASE-FIN-008",
+        "BASE-WORK-004",
+        "BASE-WORK-008"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-ENG-001",
+          "module_title": "Problem decomposition",
+          "learning_objective": "Break a real problem into inputs, outputs, constraints and smaller testable tasks.",
+          "assessment_instrument_ref": "BASE-ENG-001",
+          "assessment_construct": "The assessment samples whether the learner can: Break a real problem into inputs, outputs, constraints and smaller testable tasks."
+        },
+        {
+          "module_id": "BASE-ENG-002",
+          "module_title": "Algorithms and pseudocode",
+          "learning_objective": "Express a deterministic procedure in ordered steps and trace its state.",
+          "assessment_instrument_ref": "BASE-ENG-002",
+          "assessment_construct": "The assessment samples whether the learner can: Express a deterministic procedure in ordered steps and trace its state."
+        },
+        {
+          "module_id": "BASE-ENG-005",
+          "module_title": "Functions and contracts",
+          "learning_objective": "Decompose programs into functions with clear responsibilities and contracts.",
+          "assessment_instrument_ref": "BASE-ENG-005",
+          "assessment_construct": "The assessment samples whether the learner can: Decompose programs into functions with clear responsibilities and contracts."
+        },
+        {
+          "module_id": "BASE-ENG-007",
+          "module_title": "Debugging and testing",
+          "learning_objective": "Locate faults using reproducible evidence and test cases.",
+          "assessment_instrument_ref": "BASE-ENG-007",
+          "assessment_construct": "The assessment samples whether the learner can: Locate faults using reproducible evidence and test cases."
+        },
+        {
+          "module_id": "BASE-BIZ-001",
+          "module_title": "Problem and customer discovery",
+          "learning_objective": "Identify a specific customer group and a problem worth solving.",
+          "assessment_instrument_ref": "BASE-BIZ-001",
+          "assessment_construct": "The assessment samples whether the learner can: Identify a specific customer group and a problem worth solving."
+        },
+        {
+          "module_id": "BASE-BIZ-003",
+          "module_title": "Value proposition",
+          "learning_objective": "Connect a customer problem to a credible outcome and differentiator.",
+          "assessment_instrument_ref": "BASE-BIZ-003",
+          "assessment_construct": "The assessment samples whether the learner can: Connect a customer problem to a credible outcome and differentiator."
+        },
+        {
+          "module_id": "BASE-BIZ-004",
+          "module_title": "Offer and pricing basics",
+          "learning_objective": "Define scope, deliverables, limits and a defensible price.",
+          "assessment_instrument_ref": "BASE-BIZ-004",
+          "assessment_construct": "The assessment samples whether the learner can: Define scope, deliverables, limits and a defensible price."
+        },
+        {
+          "module_id": "BASE-RES-001",
+          "module_title": "Question formation",
+          "learning_objective": "Turn curiosity into a focused, answerable research question.",
+          "assessment_instrument_ref": "BASE-RES-001",
+          "assessment_construct": "The assessment samples whether the learner can: Turn curiosity into a focused, answerable research question."
+        },
+        {
+          "module_id": "BASE-RES-003",
+          "module_title": "Source credibility",
+          "learning_objective": "Evaluate authority, evidence, methods, currency and conflicts.",
+          "assessment_instrument_ref": "BASE-RES-003",
+          "assessment_construct": "The assessment samples whether the learner can: Evaluate authority, evidence, methods, currency and conflicts."
+        },
+        {
+          "module_id": "BASE-RES-007",
+          "module_title": "Research design basics",
+          "learning_objective": "Choose a method that can answer the question ethically.",
+          "assessment_instrument_ref": "BASE-RES-007",
+          "assessment_construct": "The assessment samples whether the learner can: Choose a method that can answer the question ethically."
+        },
+        {
+          "module_id": "BASE-COMM-006",
+          "module_title": "Questioning skills",
+          "learning_objective": "Ask questions that reveal assumptions and useful detail.",
+          "assessment_instrument_ref": "BASE-COMM-006",
+          "assessment_construct": "The assessment samples whether the learner can: Ask questions that reveal assumptions and useful detail."
+        },
+        {
+          "module_id": "BASE-AEST-008",
+          "module_title": "Interface states",
+          "learning_objective": "Design feedback for loading, empty, error, success and disabled states.",
+          "assessment_instrument_ref": "BASE-AEST-008",
+          "assessment_construct": "The assessment samples whether the learner can: Design feedback for loading, empty, error, success and disabled states."
+        },
+        {
+          "module_id": "BASE-AEST-009",
+          "module_title": "Accessibility foundations",
+          "learning_objective": "Design so information and controls remain perceivable and operable.",
+          "assessment_instrument_ref": "BASE-AEST-009",
+          "assessment_construct": "The assessment samples whether the learner can: Design so information and controls remain perceivable and operable."
+        },
+        {
+          "module_id": "BASE-CYBER-001",
+          "module_title": "Digital safety and privacy",
+          "learning_objective": "Reduce common account and device risks.",
+          "assessment_instrument_ref": "BASE-CYBER-001",
+          "assessment_construct": "The assessment samples whether the learner can: Reduce common account and device risks."
+        },
+        {
+          "module_id": "BASE-FIN-008",
+          "module_title": "Risk and uncertainty",
+          "learning_objective": "Distinguish risk types and avoid treating uncertain outcomes as guaranteed.",
+          "assessment_instrument_ref": "BASE-FIN-008",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish risk types and avoid treating uncertain outcomes as guaranteed."
+        },
+        {
+          "module_id": "BASE-WORK-004",
+          "module_title": "Planning and estimation",
+          "learning_objective": "Break work into milestones and estimate with uncertainty.",
+          "assessment_instrument_ref": "BASE-WORK-004",
+          "assessment_construct": "The assessment samples whether the learner can: Break work into milestones and estimate with uncertainty."
+        },
+        {
+          "module_id": "BASE-WORK-008",
+          "module_title": "Git workflow",
+          "learning_objective": "Use commits and branches to make changes recoverable.",
+          "assessment_instrument_ref": "BASE-WORK-008",
+          "assessment_construct": "The assessment samples whether the learner can: Use commits and branches to make changes recoverable."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PRODUCT-002",
+      "project_class": "product_business_foundation",
+      "target_module_ids": [
+        "BASE-ENG-001",
+        "BASE-ENG-005",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-FIN-001",
+        "BASE-FIN-006",
+        "BASE-FIN-007",
+        "BASE-MATH-004",
+        "BASE-WORK-009",
+        "BASE-CYBER-005"
+      ],
+      "module_assessment_refs": [
+        "BASE-ENG-001",
+        "BASE-ENG-005",
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-FIN-001",
+        "BASE-FIN-006",
+        "BASE-FIN-007",
+        "BASE-MATH-004",
+        "BASE-WORK-009",
+        "BASE-CYBER-005"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-ENG-001",
+          "module_title": "Problem decomposition",
+          "learning_objective": "Break a real problem into inputs, outputs, constraints and smaller testable tasks.",
+          "assessment_instrument_ref": "BASE-ENG-001",
+          "assessment_construct": "The assessment samples whether the learner can: Break a real problem into inputs, outputs, constraints and smaller testable tasks."
+        },
+        {
+          "module_id": "BASE-ENG-005",
+          "module_title": "Functions and contracts",
+          "learning_objective": "Decompose programs into functions with clear responsibilities and contracts.",
+          "assessment_instrument_ref": "BASE-ENG-005",
+          "assessment_construct": "The assessment samples whether the learner can: Decompose programs into functions with clear responsibilities and contracts."
+        },
+        {
+          "module_id": "BASE-BIZ-003",
+          "module_title": "Value proposition",
+          "learning_objective": "Connect a customer problem to a credible outcome and differentiator.",
+          "assessment_instrument_ref": "BASE-BIZ-003",
+          "assessment_construct": "The assessment samples whether the learner can: Connect a customer problem to a credible outcome and differentiator."
+        },
+        {
+          "module_id": "BASE-BIZ-004",
+          "module_title": "Offer and pricing basics",
+          "learning_objective": "Define scope, deliverables, limits and a defensible price.",
+          "assessment_instrument_ref": "BASE-BIZ-004",
+          "assessment_construct": "The assessment samples whether the learner can: Define scope, deliverables, limits and a defensible price."
+        },
+        {
+          "module_id": "BASE-FIN-001",
+          "module_title": "Money numeracy",
+          "learning_objective": "Use percentages, units and comparisons to reason about money.",
+          "assessment_instrument_ref": "BASE-FIN-001",
+          "assessment_construct": "The assessment samples whether the learner can: Use percentages, units and comparisons to reason about money."
+        },
+        {
+          "module_id": "BASE-FIN-006",
+          "module_title": "Accounting foundations",
+          "learning_objective": "Record transactions using consistent categories and double-entry logic.",
+          "assessment_instrument_ref": "BASE-FIN-006",
+          "assessment_construct": "The assessment samples whether the learner can: Record transactions using consistent categories and double-entry logic."
+        },
+        {
+          "module_id": "BASE-FIN-007",
+          "module_title": "Financial statements",
+          "learning_objective": "Interpret an income statement, balance sheet and cash-flow statement together.",
+          "assessment_instrument_ref": "BASE-FIN-007",
+          "assessment_construct": "The assessment samples whether the learner can: Interpret an income statement, balance sheet and cash-flow statement together."
+        },
+        {
+          "module_id": "BASE-MATH-004",
+          "module_title": "Percentages and proportional change",
+          "learning_objective": "Calculate percentage of, increase/decrease and reverse percentage.",
+          "assessment_instrument_ref": "BASE-MATH-004",
+          "assessment_construct": "The assessment samples whether the learner can: Calculate percentage of, increase/decrease and reverse percentage."
+        },
+        {
+          "module_id": "BASE-WORK-009",
+          "module_title": "Spreadsheet foundations",
+          "learning_objective": "Use formulas and tables for transparent calculations.",
+          "assessment_instrument_ref": "BASE-WORK-009",
+          "assessment_construct": "The assessment samples whether the learner can: Use formulas and tables for transparent calculations."
+        },
+        {
+          "module_id": "BASE-CYBER-005",
+          "module_title": "Permissions and least privilege",
+          "learning_objective": "Limit access to files, devices and services.",
+          "assessment_instrument_ref": "BASE-CYBER-005",
+          "assessment_construct": "The assessment samples whether the learner can: Limit access to files, devices and services."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PRODUCT-003",
+      "project_class": "product_business_foundation",
+      "target_module_ids": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-COMM-001",
+        "BASE-COMM-003",
+        "BASE-COMM-005",
+        "BASE-LANG-007",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-AEST-003",
+        "BASE-WORK-010",
+        "BASE-CYBER-001"
+      ],
+      "module_assessment_refs": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-COMM-001",
+        "BASE-COMM-003",
+        "BASE-COMM-005",
+        "BASE-LANG-007",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-AEST-003",
+        "BASE-WORK-010",
+        "BASE-CYBER-001"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-BIZ-001",
+          "module_title": "Problem and customer discovery",
+          "learning_objective": "Identify a specific customer group and a problem worth solving.",
+          "assessment_instrument_ref": "BASE-BIZ-001",
+          "assessment_construct": "The assessment samples whether the learner can: Identify a specific customer group and a problem worth solving."
+        },
+        {
+          "module_id": "BASE-BIZ-003",
+          "module_title": "Value proposition",
+          "learning_objective": "Connect a customer problem to a credible outcome and differentiator.",
+          "assessment_instrument_ref": "BASE-BIZ-003",
+          "assessment_construct": "The assessment samples whether the learner can: Connect a customer problem to a credible outcome and differentiator."
+        },
+        {
+          "module_id": "BASE-COMM-001",
+          "module_title": "Audience and purpose",
+          "learning_objective": "Adapt message to what the audience needs to know or do.",
+          "assessment_instrument_ref": "BASE-COMM-001",
+          "assessment_construct": "The assessment samples whether the learner can: Adapt message to what the audience needs to know or do."
+        },
+        {
+          "module_id": "BASE-COMM-003",
+          "module_title": "Clarity and concision",
+          "learning_objective": "Express one main idea with precise wording.",
+          "assessment_instrument_ref": "BASE-COMM-003",
+          "assessment_construct": "The assessment samples whether the learner can: Express one main idea with precise wording."
+        },
+        {
+          "module_id": "BASE-COMM-005",
+          "module_title": "Explanation and teaching",
+          "learning_objective": "Make an idea understandable through examples and checks.",
+          "assessment_instrument_ref": "BASE-COMM-005",
+          "assessment_construct": "The assessment samples whether the learner can: Make an idea understandable through examples and checks."
+        },
+        {
+          "module_id": "BASE-LANG-007",
+          "module_title": "Writing foundations",
+          "learning_objective": "Write clear paragraphs with a claim, support and logical sequence.",
+          "assessment_instrument_ref": "BASE-LANG-007",
+          "assessment_construct": "The assessment samples whether the learner can: Write clear paragraphs with a claim, support and logical sequence."
+        },
+        {
+          "module_id": "BASE-RES-003",
+          "module_title": "Source credibility",
+          "learning_objective": "Evaluate authority, evidence, methods, currency and conflicts.",
+          "assessment_instrument_ref": "BASE-RES-003",
+          "assessment_construct": "The assessment samples whether the learner can: Evaluate authority, evidence, methods, currency and conflicts."
+        },
+        {
+          "module_id": "BASE-RES-005",
+          "module_title": "Citation and provenance",
+          "learning_objective": "Record sources so another person can locate and evaluate them.",
+          "assessment_instrument_ref": "BASE-RES-005",
+          "assessment_construct": "The assessment samples whether the learner can: Record sources so another person can locate and evaluate them."
+        },
+        {
+          "module_id": "BASE-AEST-003",
+          "module_title": "Hierarchy and information design",
+          "learning_objective": "Order content by importance and user task.",
+          "assessment_instrument_ref": "BASE-AEST-003",
+          "assessment_construct": "The assessment samples whether the learner can: Order content by importance and user task."
+        },
+        {
+          "module_id": "BASE-WORK-010",
+          "module_title": "Documents and communication tools",
+          "learning_objective": "Create clear documents with styles, structure and version control.",
+          "assessment_instrument_ref": "BASE-WORK-010",
+          "assessment_construct": "The assessment samples whether the learner can: Create clear documents with styles, structure and version control."
+        },
+        {
+          "module_id": "BASE-CYBER-001",
+          "module_title": "Digital safety and privacy",
+          "learning_objective": "Reduce common account and device risks.",
+          "assessment_instrument_ref": "BASE-CYBER-001",
+          "assessment_construct": "The assessment samples whether the learner can: Reduce common account and device risks."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PRODUCT-004",
+      "project_class": "product_business_foundation",
+      "target_module_ids": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-002",
+        "BASE-BIZ-004",
+        "BASE-FIN-001",
+        "BASE-FIN-008",
+        "BASE-RES-001",
+        "BASE-RES-007",
+        "BASE-RES-008",
+        "BASE-COMM-009",
+        "BASE-PSY-008",
+        "BASE-LEAD-010"
+      ],
+      "module_assessment_refs": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-002",
+        "BASE-BIZ-004",
+        "BASE-FIN-001",
+        "BASE-FIN-008",
+        "BASE-RES-001",
+        "BASE-RES-007",
+        "BASE-RES-008",
+        "BASE-COMM-009",
+        "BASE-PSY-008",
+        "BASE-LEAD-010"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-BIZ-001",
+          "module_title": "Problem and customer discovery",
+          "learning_objective": "Identify a specific customer group and a problem worth solving.",
+          "assessment_instrument_ref": "BASE-BIZ-001",
+          "assessment_construct": "The assessment samples whether the learner can: Identify a specific customer group and a problem worth solving."
+        },
+        {
+          "module_id": "BASE-BIZ-002",
+          "module_title": "Market research foundations",
+          "learning_objective": "Estimate a market using transparent assumptions and primary/secondary evidence.",
+          "assessment_instrument_ref": "BASE-BIZ-002",
+          "assessment_construct": "The assessment samples whether the learner can: Estimate a market using transparent assumptions and primary/secondary evidence."
+        },
+        {
+          "module_id": "BASE-BIZ-004",
+          "module_title": "Offer and pricing basics",
+          "learning_objective": "Define scope, deliverables, limits and a defensible price.",
+          "assessment_instrument_ref": "BASE-BIZ-004",
+          "assessment_construct": "The assessment samples whether the learner can: Define scope, deliverables, limits and a defensible price."
+        },
+        {
+          "module_id": "BASE-FIN-001",
+          "module_title": "Money numeracy",
+          "learning_objective": "Use percentages, units and comparisons to reason about money.",
+          "assessment_instrument_ref": "BASE-FIN-001",
+          "assessment_construct": "The assessment samples whether the learner can: Use percentages, units and comparisons to reason about money."
+        },
+        {
+          "module_id": "BASE-FIN-008",
+          "module_title": "Risk and uncertainty",
+          "learning_objective": "Distinguish risk types and avoid treating uncertain outcomes as guaranteed.",
+          "assessment_instrument_ref": "BASE-FIN-008",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish risk types and avoid treating uncertain outcomes as guaranteed."
+        },
+        {
+          "module_id": "BASE-RES-001",
+          "module_title": "Question formation",
+          "learning_objective": "Turn curiosity into a focused, answerable research question.",
+          "assessment_instrument_ref": "BASE-RES-001",
+          "assessment_construct": "The assessment samples whether the learner can: Turn curiosity into a focused, answerable research question."
+        },
+        {
+          "module_id": "BASE-RES-007",
+          "module_title": "Research design basics",
+          "learning_objective": "Choose a method that can answer the question ethically.",
+          "assessment_instrument_ref": "BASE-RES-007",
+          "assessment_construct": "The assessment samples whether the learner can: Choose a method that can answer the question ethically."
+        },
+        {
+          "module_id": "BASE-RES-008",
+          "module_title": "Data collection and quality",
+          "learning_objective": "Collect data consistently and document measurement limits.",
+          "assessment_instrument_ref": "BASE-RES-008",
+          "assessment_construct": "The assessment samples whether the learner can: Collect data consistently and document measurement limits."
+        },
+        {
+          "module_id": "BASE-COMM-009",
+          "module_title": "Persuasion and ethical influence",
+          "learning_objective": "Present benefits and trade-offs without deception.",
+          "assessment_instrument_ref": "BASE-COMM-009",
+          "assessment_construct": "The assessment samples whether the learner can: Present benefits and trade-offs without deception."
+        },
+        {
+          "module_id": "BASE-PSY-008",
+          "module_title": "Decision-making",
+          "learning_objective": "Compare options under uncertainty using explicit criteria.",
+          "assessment_instrument_ref": "BASE-PSY-008",
+          "assessment_construct": "The assessment samples whether the learner can: Compare options under uncertainty using explicit criteria."
+        },
+        {
+          "module_id": "BASE-LEAD-010",
+          "module_title": "Decision and accountability",
+          "learning_objective": "Make decisions with clear ownership and review.",
+          "assessment_instrument_ref": "BASE-LEAD-010",
+          "assessment_construct": "The assessment samples whether the learner can: Make decisions with clear ownership and review."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PRODUCT-005",
+      "project_class": "product_business_foundation",
+      "target_module_ids": [
+        "BASE-COMM-005",
+        "BASE-RES-003",
+        "BASE-RES-009",
+        "BASE-PSY-003",
+        "BASE-PSY-004",
+        "BASE-AEST-003",
+        "BASE-AEST-009",
+        "BASE-LANG-007",
+        "BASE-BIZ-001"
+      ],
+      "module_assessment_refs": [
+        "BASE-COMM-005",
+        "BASE-RES-003",
+        "BASE-RES-009",
+        "BASE-PSY-003",
+        "BASE-PSY-004",
+        "BASE-AEST-003",
+        "BASE-AEST-009",
+        "BASE-LANG-007",
+        "BASE-BIZ-001"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-COMM-005",
+          "module_title": "Explanation and teaching",
+          "learning_objective": "Make an idea understandable through examples and checks.",
+          "assessment_instrument_ref": "BASE-COMM-005",
+          "assessment_construct": "The assessment samples whether the learner can: Make an idea understandable through examples and checks."
+        },
+        {
+          "module_id": "BASE-RES-003",
+          "module_title": "Source credibility",
+          "learning_objective": "Evaluate authority, evidence, methods, currency and conflicts.",
+          "assessment_instrument_ref": "BASE-RES-003",
+          "assessment_construct": "The assessment samples whether the learner can: Evaluate authority, evidence, methods, currency and conflicts."
+        },
+        {
+          "module_id": "BASE-RES-009",
+          "module_title": "Evidence synthesis",
+          "learning_objective": "Compare findings across sources and explain agreement/disagreement.",
+          "assessment_instrument_ref": "BASE-RES-009",
+          "assessment_construct": "The assessment samples whether the learner can: Compare findings across sources and explain agreement/disagreement."
+        },
+        {
+          "module_id": "BASE-PSY-003",
+          "module_title": "Memory systems",
+          "learning_objective": "Distinguish encoding, storage and retrieval.",
+          "assessment_instrument_ref": "BASE-PSY-003",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish encoding, storage and retrieval."
+        },
+        {
+          "module_id": "BASE-PSY-004",
+          "module_title": "Learning and behaviour",
+          "learning_objective": "Explain practice, feedback and reinforcement without reducing learning to rewards.",
+          "assessment_instrument_ref": "BASE-PSY-004",
+          "assessment_construct": "The assessment samples whether the learner can: Explain practice, feedback and reinforcement without reducing learning to rewards."
+        },
+        {
+          "module_id": "BASE-AEST-003",
+          "module_title": "Hierarchy and information design",
+          "learning_objective": "Order content by importance and user task.",
+          "assessment_instrument_ref": "BASE-AEST-003",
+          "assessment_construct": "The assessment samples whether the learner can: Order content by importance and user task."
+        },
+        {
+          "module_id": "BASE-AEST-009",
+          "module_title": "Accessibility foundations",
+          "learning_objective": "Design so information and controls remain perceivable and operable.",
+          "assessment_instrument_ref": "BASE-AEST-009",
+          "assessment_construct": "The assessment samples whether the learner can: Design so information and controls remain perceivable and operable."
+        },
+        {
+          "module_id": "BASE-LANG-007",
+          "module_title": "Writing foundations",
+          "learning_objective": "Write clear paragraphs with a claim, support and logical sequence.",
+          "assessment_instrument_ref": "BASE-LANG-007",
+          "assessment_construct": "The assessment samples whether the learner can: Write clear paragraphs with a claim, support and logical sequence."
+        },
+        {
+          "module_id": "BASE-BIZ-001",
+          "module_title": "Problem and customer discovery",
+          "learning_objective": "Identify a specific customer group and a problem worth solving.",
+          "assessment_instrument_ref": "BASE-BIZ-001",
+          "assessment_construct": "The assessment samples whether the learner can: Identify a specific customer group and a problem worth solving."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-PRODUCT-006",
+      "project_class": "product_business_foundation",
+      "target_module_ids": [
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-WORK-003",
+        "BASE-WORK-004",
+        "BASE-WORK-012",
+        "BASE-LEAD-002",
+        "BASE-LEAD-008",
+        "BASE-COMM-001",
+        "BASE-CYBER-001"
+      ],
+      "module_assessment_refs": [
+        "BASE-BIZ-003",
+        "BASE-BIZ-004",
+        "BASE-WORK-003",
+        "BASE-WORK-004",
+        "BASE-WORK-012",
+        "BASE-LEAD-002",
+        "BASE-LEAD-008",
+        "BASE-COMM-001",
+        "BASE-CYBER-001"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-BIZ-003",
+          "module_title": "Value proposition",
+          "learning_objective": "Connect a customer problem to a credible outcome and differentiator.",
+          "assessment_instrument_ref": "BASE-BIZ-003",
+          "assessment_construct": "The assessment samples whether the learner can: Connect a customer problem to a credible outcome and differentiator."
+        },
+        {
+          "module_id": "BASE-BIZ-004",
+          "module_title": "Offer and pricing basics",
+          "learning_objective": "Define scope, deliverables, limits and a defensible price.",
+          "assessment_instrument_ref": "BASE-BIZ-004",
+          "assessment_construct": "The assessment samples whether the learner can: Define scope, deliverables, limits and a defensible price."
+        },
+        {
+          "module_id": "BASE-WORK-003",
+          "module_title": "Task capture and triage",
+          "learning_objective": "Convert open loops into clear next actions.",
+          "assessment_instrument_ref": "BASE-WORK-003",
+          "assessment_construct": "The assessment samples whether the learner can: Convert open loops into clear next actions."
+        },
+        {
+          "module_id": "BASE-WORK-004",
+          "module_title": "Planning and estimation",
+          "learning_objective": "Break work into milestones and estimate with uncertainty.",
+          "assessment_instrument_ref": "BASE-WORK-004",
+          "assessment_construct": "The assessment samples whether the learner can: Break work into milestones and estimate with uncertainty."
+        },
+        {
+          "module_id": "BASE-WORK-012",
+          "module_title": "Workflow improvement",
+          "learning_objective": "Measure bottlenecks and improve a process incrementally.",
+          "assessment_instrument_ref": "BASE-WORK-012",
+          "assessment_construct": "The assessment samples whether the learner can: Measure bottlenecks and improve a process incrementally."
+        },
+        {
+          "module_id": "BASE-LEAD-002",
+          "module_title": "Reliability and ownership",
+          "learning_objective": "Take responsibility for agreed work and communicate blockers.",
+          "assessment_instrument_ref": "BASE-LEAD-002",
+          "assessment_construct": "The assessment samples whether the learner can: Take responsibility for agreed work and communicate blockers."
+        },
+        {
+          "module_id": "BASE-LEAD-008",
+          "module_title": "Project coordination",
+          "learning_objective": "Track dependencies, risks and changes.",
+          "assessment_instrument_ref": "BASE-LEAD-008",
+          "assessment_construct": "The assessment samples whether the learner can: Track dependencies, risks and changes."
+        },
+        {
+          "module_id": "BASE-COMM-001",
+          "module_title": "Audience and purpose",
+          "learning_objective": "Adapt message to what the audience needs to know or do.",
+          "assessment_instrument_ref": "BASE-COMM-001",
+          "assessment_construct": "The assessment samples whether the learner can: Adapt message to what the audience needs to know or do."
+        },
+        {
+          "module_id": "BASE-CYBER-001",
+          "module_title": "Digital safety and privacy",
+          "learning_objective": "Reduce common account and device risks.",
+          "assessment_instrument_ref": "BASE-CYBER-001",
+          "assessment_construct": "The assessment samples whether the learner can: Reduce common account and device risks."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-INTRINSIC-001",
+      "project_class": "intrinsic_exploration",
+      "target_module_ids": [
+        "BASE-ART-001",
+        "BASE-ART-002",
+        "BASE-ART-003",
+        "BASE-ART-005",
+        "BASE-ART-006",
+        "BASE-ART-008",
+        "BASE-ART-011",
+        "BASE-AEST-002",
+        "BASE-AEST-010"
+      ],
+      "module_assessment_refs": [
+        "BASE-ART-001",
+        "BASE-ART-002",
+        "BASE-ART-003",
+        "BASE-ART-005",
+        "BASE-ART-006",
+        "BASE-ART-008",
+        "BASE-ART-011",
+        "BASE-AEST-002",
+        "BASE-AEST-010"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-ART-001",
+          "module_title": "Observation and visual analysis",
+          "learning_objective": "Describe what is actually visible before drawing interpretation.",
+          "assessment_instrument_ref": "BASE-ART-001",
+          "assessment_construct": "The assessment samples whether the learner can: Describe what is actually visible before drawing interpretation."
+        },
+        {
+          "module_id": "BASE-ART-002",
+          "module_title": "Line and mark control",
+          "learning_objective": "Use line weight and mark direction intentionally.",
+          "assessment_instrument_ref": "BASE-ART-002",
+          "assessment_construct": "The assessment samples whether the learner can: Use line weight and mark direction intentionally."
+        },
+        {
+          "module_id": "BASE-ART-003",
+          "module_title": "Shape and form",
+          "learning_objective": "Distinguish 2D silhouette from 3D volume.",
+          "assessment_instrument_ref": "BASE-ART-003",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish 2D silhouette from 3D volume."
+        },
+        {
+          "module_id": "BASE-ART-005",
+          "module_title": "Perspective foundations",
+          "learning_objective": "Represent spatial depth using consistent perspective cues.",
+          "assessment_instrument_ref": "BASE-ART-005",
+          "assessment_construct": "The assessment samples whether the learner can: Represent spatial depth using consistent perspective cues."
+        },
+        {
+          "module_id": "BASE-ART-006",
+          "module_title": "Value and light",
+          "learning_objective": "Describe form through light direction and value grouping.",
+          "assessment_instrument_ref": "BASE-ART-006",
+          "assessment_construct": "The assessment samples whether the learner can: Describe form through light direction and value grouping."
+        },
+        {
+          "module_id": "BASE-ART-008",
+          "module_title": "Composition",
+          "learning_objective": "Arrange shapes and values to guide the viewer.",
+          "assessment_instrument_ref": "BASE-ART-008",
+          "assessment_construct": "The assessment samples whether the learner can: Arrange shapes and values to guide the viewer."
+        },
+        {
+          "module_id": "BASE-ART-011",
+          "module_title": "Reference and study practice",
+          "learning_objective": "Use reference ethically and extract principles rather than copying blindly.",
+          "assessment_instrument_ref": "BASE-ART-011",
+          "assessment_construct": "The assessment samples whether the learner can: Use reference ethically and extract principles rather than copying blindly."
+        },
+        {
+          "module_id": "BASE-AEST-002",
+          "module_title": "Composition and framing",
+          "learning_objective": "Arrange elements to guide attention and establish balance.",
+          "assessment_instrument_ref": "BASE-AEST-002",
+          "assessment_construct": "The assessment samples whether the learner can: Arrange elements to guide attention and establish balance."
+        },
+        {
+          "module_id": "BASE-AEST-010",
+          "module_title": "Photography foundations",
+          "learning_objective": "Control composition, exposure and focus for a deliberate image.",
+          "assessment_instrument_ref": "BASE-AEST-010",
+          "assessment_construct": "The assessment samples whether the learner can: Control composition, exposure and focus for a deliberate image."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-INTRINSIC-002",
+      "project_class": "intrinsic_exploration",
+      "target_module_ids": [
+        "BASE-ELEC-001",
+        "BASE-ELEC-002",
+        "BASE-ELEC-003",
+        "BASE-ELEC-004",
+        "BASE-ELEC-005",
+        "BASE-ELEC-006",
+        "BASE-ELEC-007",
+        "BASE-ELEC-008",
+        "BASE-ELEC-010",
+        "BASE-MATH-005",
+        "BASE-RES-008"
+      ],
+      "module_assessment_refs": [
+        "BASE-ELEC-001",
+        "BASE-ELEC-002",
+        "BASE-ELEC-003",
+        "BASE-ELEC-004",
+        "BASE-ELEC-005",
+        "BASE-ELEC-006",
+        "BASE-ELEC-007",
+        "BASE-ELEC-008",
+        "BASE-ELEC-010",
+        "BASE-MATH-005",
+        "BASE-RES-008"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-ELEC-001",
+          "module_title": "Electrical safety",
+          "learning_objective": "Recognize hazards and select safe low-voltage learning conditions.",
+          "assessment_instrument_ref": "BASE-ELEC-001",
+          "assessment_construct": "The assessment samples whether the learner can: Recognize hazards and select safe low-voltage learning conditions."
+        },
+        {
+          "module_id": "BASE-ELEC-002",
+          "module_title": "Units and circuit quantities",
+          "learning_objective": "Use SI units and distinguish voltage, current, resistance and power.",
+          "assessment_instrument_ref": "BASE-ELEC-002",
+          "assessment_construct": "The assessment samples whether the learner can: Use SI units and distinguish voltage, current, resistance and power."
+        },
+        {
+          "module_id": "BASE-ELEC-003",
+          "module_title": "Measurement instruments",
+          "learning_objective": "Measure voltage and continuity using correct meter settings and connection.",
+          "assessment_instrument_ref": "BASE-ELEC-003",
+          "assessment_construct": "The assessment samples whether the learner can: Measure voltage and continuity using correct meter settings and connection."
+        },
+        {
+          "module_id": "BASE-ELEC-004",
+          "module_title": "Circuit diagrams",
+          "learning_objective": "Read and draw basic circuit symbols and current paths.",
+          "assessment_instrument_ref": "BASE-ELEC-004",
+          "assessment_construct": "The assessment samples whether the learner can: Read and draw basic circuit symbols and current paths."
+        },
+        {
+          "module_id": "BASE-ELEC-005",
+          "module_title": "Ohm’s law",
+          "learning_objective": "Relate voltage, current and resistance in a resistive element.",
+          "assessment_instrument_ref": "BASE-ELEC-005",
+          "assessment_construct": "The assessment samples whether the learner can: Relate voltage, current and resistance in a resistive element."
+        },
+        {
+          "module_id": "BASE-ELEC-006",
+          "module_title": "Series and parallel networks",
+          "learning_objective": "Predict how current and voltage behave in simple series/parallel circuits.",
+          "assessment_instrument_ref": "BASE-ELEC-006",
+          "assessment_construct": "The assessment samples whether the learner can: Predict how current and voltage behave in simple series/parallel circuits."
+        },
+        {
+          "module_id": "BASE-ELEC-007",
+          "module_title": "Resistors and LEDs",
+          "learning_objective": "Choose current-limiting resistance for a low-voltage LED circuit.",
+          "assessment_instrument_ref": "BASE-ELEC-007",
+          "assessment_construct": "The assessment samples whether the learner can: Choose current-limiting resistance for a low-voltage LED circuit."
+        },
+        {
+          "module_id": "BASE-ELEC-008",
+          "module_title": "Diode behaviour",
+          "learning_objective": "Explain one-way conduction and the limits of a diode model.",
+          "assessment_instrument_ref": "BASE-ELEC-008",
+          "assessment_construct": "The assessment samples whether the learner can: Explain one-way conduction and the limits of a diode model."
+        },
+        {
+          "module_id": "BASE-ELEC-010",
+          "module_title": "Capacitors and time response",
+          "learning_objective": "Explain charge storage and basic RC timing.",
+          "assessment_instrument_ref": "BASE-ELEC-010",
+          "assessment_construct": "The assessment samples whether the learner can: Explain charge storage and basic RC timing."
+        },
+        {
+          "module_id": "BASE-MATH-005",
+          "module_title": "Ratios and rates",
+          "learning_objective": "Compare quantities using ratios and unit rates.",
+          "assessment_instrument_ref": "BASE-MATH-005",
+          "assessment_construct": "The assessment samples whether the learner can: Compare quantities using ratios and unit rates."
+        },
+        {
+          "module_id": "BASE-RES-008",
+          "module_title": "Data collection and quality",
+          "learning_objective": "Collect data consistently and document measurement limits.",
+          "assessment_instrument_ref": "BASE-RES-008",
+          "assessment_construct": "The assessment samples whether the learner can: Collect data consistently and document measurement limits."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-INTRINSIC-003",
+      "project_class": "intrinsic_exploration",
+      "target_module_ids": [
+        "BASE-ART-003",
+        "BASE-ART-008",
+        "BASE-ART-010",
+        "BASE-ART-011",
+        "BASE-AEST-001",
+        "BASE-AEST-002",
+        "BASE-LANG-007",
+        "BASE-COMM-004",
+        "BASE-PERF-008"
+      ],
+      "module_assessment_refs": [
+        "BASE-ART-003",
+        "BASE-ART-008",
+        "BASE-ART-010",
+        "BASE-ART-011",
+        "BASE-AEST-001",
+        "BASE-AEST-002",
+        "BASE-LANG-007",
+        "BASE-COMM-004",
+        "BASE-PERF-008"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-ART-003",
+          "module_title": "Shape and form",
+          "learning_objective": "Distinguish 2D silhouette from 3D volume.",
+          "assessment_instrument_ref": "BASE-ART-003",
+          "assessment_construct": "The assessment samples whether the learner can: Distinguish 2D silhouette from 3D volume."
+        },
+        {
+          "module_id": "BASE-ART-008",
+          "module_title": "Composition",
+          "learning_objective": "Arrange shapes and values to guide the viewer.",
+          "assessment_instrument_ref": "BASE-ART-008",
+          "assessment_construct": "The assessment samples whether the learner can: Arrange shapes and values to guide the viewer."
+        },
+        {
+          "module_id": "BASE-ART-010",
+          "module_title": "Visual storytelling",
+          "learning_objective": "Communicate action and sequence through composition and visual cues.",
+          "assessment_instrument_ref": "BASE-ART-010",
+          "assessment_construct": "The assessment samples whether the learner can: Communicate action and sequence through composition and visual cues."
+        },
+        {
+          "module_id": "BASE-ART-011",
+          "module_title": "Reference and study practice",
+          "learning_objective": "Use reference ethically and extract principles rather than copying blindly.",
+          "assessment_instrument_ref": "BASE-ART-011",
+          "assessment_construct": "The assessment samples whether the learner can: Use reference ethically and extract principles rather than copying blindly."
+        },
+        {
+          "module_id": "BASE-AEST-001",
+          "module_title": "Visual perception",
+          "learning_objective": "Explain how contrast, grouping and visual attention shape interpretation.",
+          "assessment_instrument_ref": "BASE-AEST-001",
+          "assessment_construct": "The assessment samples whether the learner can: Explain how contrast, grouping and visual attention shape interpretation."
+        },
+        {
+          "module_id": "BASE-AEST-002",
+          "module_title": "Composition and framing",
+          "learning_objective": "Arrange elements to guide attention and establish balance.",
+          "assessment_instrument_ref": "BASE-AEST-002",
+          "assessment_construct": "The assessment samples whether the learner can: Arrange elements to guide attention and establish balance."
+        },
+        {
+          "module_id": "BASE-LANG-007",
+          "module_title": "Writing foundations",
+          "learning_objective": "Write clear paragraphs with a claim, support and logical sequence.",
+          "assessment_instrument_ref": "BASE-LANG-007",
+          "assessment_construct": "The assessment samples whether the learner can: Write clear paragraphs with a claim, support and logical sequence."
+        },
+        {
+          "module_id": "BASE-COMM-004",
+          "module_title": "Message structure",
+          "learning_objective": "Organize information in a sequence the audience can follow.",
+          "assessment_instrument_ref": "BASE-COMM-004",
+          "assessment_construct": "The assessment samples whether the learner can: Organize information in a sequence the audience can follow."
+        },
+        {
+          "module_id": "BASE-PERF-008",
+          "module_title": "Phrasing and expression",
+          "learning_objective": "Shape phrases using breath, emphasis and dynamics.",
+          "assessment_instrument_ref": "BASE-PERF-008",
+          "assessment_construct": "The assessment samples whether the learner can: Shape phrases using breath, emphasis and dynamics."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-INTRINSIC-004",
+      "project_class": "intrinsic_exploration",
+      "target_module_ids": [
+        "BASE-MATH-001",
+        "BASE-MATH-005",
+        "BASE-MATH-007",
+        "BASE-MATH-009",
+        "BASE-MATH-011",
+        "BASE-MATH-012",
+        "BASE-RES-001",
+        "BASE-RES-008"
+      ],
+      "module_assessment_refs": [
+        "BASE-MATH-001",
+        "BASE-MATH-005",
+        "BASE-MATH-007",
+        "BASE-MATH-009",
+        "BASE-MATH-011",
+        "BASE-MATH-012",
+        "BASE-RES-001",
+        "BASE-RES-008"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-MATH-001",
+          "module_title": "Number sense",
+          "learning_objective": "Estimate magnitude and judge whether a result is plausible.",
+          "assessment_instrument_ref": "BASE-MATH-001",
+          "assessment_construct": "The assessment samples whether the learner can: Estimate magnitude and judge whether a result is plausible."
+        },
+        {
+          "module_id": "BASE-MATH-005",
+          "module_title": "Ratios and rates",
+          "learning_objective": "Compare quantities using ratios and unit rates.",
+          "assessment_instrument_ref": "BASE-MATH-005",
+          "assessment_construct": "The assessment samples whether the learner can: Compare quantities using ratios and unit rates."
+        },
+        {
+          "module_id": "BASE-MATH-007",
+          "module_title": "Algebraic expressions",
+          "learning_objective": "Represent unknown quantities with symbols and simplify equivalent expressions.",
+          "assessment_instrument_ref": "BASE-MATH-007",
+          "assessment_construct": "The assessment samples whether the learner can: Represent unknown quantities with symbols and simplify equivalent expressions."
+        },
+        {
+          "module_id": "BASE-MATH-009",
+          "module_title": "Exponents, powers and roots",
+          "learning_objective": "Interpret a^n as repeated multiplication for positive integer n and identify base and exponent.; Use product, quotient and power-of-a-power rules when their conditions are met.; Explain zero and negative integer exponents for non-zero bases.; Find and estimate square roots and cube roots, distinguishing principal square roots from both solutions of x² = a.; Use powers of ten and scientific notation to express and compare very large or small quantities.",
+          "assessment_instrument_ref": "BASE-MATH-009",
+          "assessment_construct": "The assessment samples whether the learner can: Interpret a^n as repeated multiplication for positive integer n and identify base and exponent.; Use product, quotient and power-of-a-power rules when their conditions are met.; Explain zero and negative integer exponents for non-zero bases.; Find and estimate square roots and cube roots, distinguishing principal square roots from both solutions of x² = a.; Use powers of ten and scientific notation to express and compare very large or small quantities."
+        },
+        {
+          "module_id": "BASE-MATH-011",
+          "module_title": "Coordinate graphs, relations and functions",
+          "learning_objective": "Plot and interpret ordered pairs on a Cartesian coordinate plane.; Distinguish a relation from a function using the one-input-one-output rule.; Interpret slope as rate of change and intercepts as contextual starting values.; Construct and interpret tables, equations and graphs of simple linear relationships.; Identify domain, range, scale choices and limitations in a graph-based model.",
+          "assessment_instrument_ref": "BASE-MATH-011",
+          "assessment_construct": "The assessment samples whether the learner can: Plot and interpret ordered pairs on a Cartesian coordinate plane.; Distinguish a relation from a function using the one-input-one-output rule.; Interpret slope as rate of change and intercepts as contextual starting values.; Construct and interpret tables, equations and graphs of simple linear relationships.; Identify domain, range, scale choices and limitations in a graph-based model."
+        },
+        {
+          "module_id": "BASE-MATH-012",
+          "module_title": "Mathematical reasoning, problem solving and proof",
+          "learning_objective": "Translate a verbal or practical situation into a mathematical representation and identify assumptions.; Distinguish examples, counterexamples, conjectures, definitions and proofs.; Use logical statements, implication and counterexample reasoning accurately.; Construct clear arithmetic, algebraic and elementary geometric justifications.; Check solutions, detect invalid reasoning and communicate a conclusion with appropriate limits.",
+          "assessment_instrument_ref": "BASE-MATH-012",
+          "assessment_construct": "The assessment samples whether the learner can: Translate a verbal or practical situation into a mathematical representation and identify assumptions.; Distinguish examples, counterexamples, conjectures, definitions and proofs.; Use logical statements, implication and counterexample reasoning accurately.; Construct clear arithmetic, algebraic and elementary geometric justifications.; Check solutions, detect invalid reasoning and communicate a conclusion with appropriate limits."
+        },
+        {
+          "module_id": "BASE-RES-001",
+          "module_title": "Question formation",
+          "learning_objective": "Turn curiosity into a focused, answerable research question.",
+          "assessment_instrument_ref": "BASE-RES-001",
+          "assessment_construct": "The assessment samples whether the learner can: Turn curiosity into a focused, answerable research question."
+        },
+        {
+          "module_id": "BASE-RES-008",
+          "module_title": "Data collection and quality",
+          "learning_objective": "Collect data consistently and document measurement limits.",
+          "assessment_instrument_ref": "BASE-RES-008",
+          "assessment_construct": "The assessment samples whether the learner can: Collect data consistently and document measurement limits."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-INTRINSIC-005",
+      "project_class": "intrinsic_exploration",
+      "target_module_ids": [
+        "BASE-PERF-001",
+        "BASE-PERF-002",
+        "BASE-PERF-003",
+        "BASE-PERF-004",
+        "BASE-PERF-005",
+        "BASE-PERF-007",
+        "BASE-PERF-008",
+        "BASE-PERF-010"
+      ],
+      "module_assessment_refs": [
+        "BASE-PERF-001",
+        "BASE-PERF-002",
+        "BASE-PERF-003",
+        "BASE-PERF-004",
+        "BASE-PERF-005",
+        "BASE-PERF-007",
+        "BASE-PERF-008",
+        "BASE-PERF-010"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-PERF-001",
+          "module_title": "Vocal health",
+          "learning_objective": "Recognize comfortable versus strained voice use.",
+          "assessment_instrument_ref": "BASE-PERF-001",
+          "assessment_construct": "The assessment samples whether the learner can: Recognize comfortable versus strained voice use."
+        },
+        {
+          "module_id": "BASE-PERF-002",
+          "module_title": "Breath coordination",
+          "learning_objective": "Coordinate easy breath flow with short phrases.",
+          "assessment_instrument_ref": "BASE-PERF-002",
+          "assessment_construct": "The assessment samples whether the learner can: Coordinate easy breath flow with short phrases."
+        },
+        {
+          "module_id": "BASE-PERF-003",
+          "module_title": "Pitch foundations",
+          "learning_objective": "Recognize and reproduce simple pitch relationships.",
+          "assessment_instrument_ref": "BASE-PERF-003",
+          "assessment_construct": "The assessment samples whether the learner can: Recognize and reproduce simple pitch relationships."
+        },
+        {
+          "module_id": "BASE-PERF-004",
+          "module_title": "Rhythm and timing",
+          "learning_objective": "Maintain a pulse and subdivide simple patterns.",
+          "assessment_instrument_ref": "BASE-PERF-004",
+          "assessment_construct": "The assessment samples whether the learner can: Maintain a pulse and subdivide simple patterns."
+        },
+        {
+          "module_id": "BASE-PERF-005",
+          "module_title": "Listening and ear training",
+          "learning_objective": "Attend to pitch, rhythm, timbre and phrasing.",
+          "assessment_instrument_ref": "BASE-PERF-005",
+          "assessment_construct": "The assessment samples whether the learner can: Attend to pitch, rhythm, timbre and phrasing."
+        },
+        {
+          "module_id": "BASE-PERF-007",
+          "module_title": "Resonance and tone",
+          "learning_objective": "Explore comfortable resonance without forcing volume.",
+          "assessment_instrument_ref": "BASE-PERF-007",
+          "assessment_construct": "The assessment samples whether the learner can: Explore comfortable resonance without forcing volume."
+        },
+        {
+          "module_id": "BASE-PERF-008",
+          "module_title": "Phrasing and expression",
+          "learning_objective": "Shape phrases using breath, emphasis and dynamics.",
+          "assessment_instrument_ref": "BASE-PERF-008",
+          "assessment_construct": "The assessment samples whether the learner can: Shape phrases using breath, emphasis and dynamics."
+        },
+        {
+          "module_id": "BASE-PERF-010",
+          "module_title": "Recording and self-review",
+          "learning_objective": "Record a performance and assess it against one criterion.",
+          "assessment_instrument_ref": "BASE-PERF-010",
+          "assessment_construct": "The assessment samples whether the learner can: Record a performance and assess it against one criterion."
+        }
+      ]
+    },
+    {
+      "project_id": "ATH-PROJ-INTRINSIC-006",
+      "project_class": "intrinsic_exploration",
+      "target_module_ids": [
+        "BASE-LANG-002",
+        "BASE-LANG-004",
+        "BASE-LANG-012",
+        "BASE-LANG-003",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-ART-001"
+      ],
+      "module_assessment_refs": [
+        "BASE-LANG-002",
+        "BASE-LANG-004",
+        "BASE-LANG-012",
+        "BASE-LANG-003",
+        "BASE-RES-003",
+        "BASE-RES-005",
+        "BASE-ART-001"
+      ],
+      "link_status": "candidate_direct_mapping",
+      "mapping_rule": "Module link is retained only where the project gives a concrete opportunity to practise the module objective. A project may link to an assessment instrument but does not automatically complete it.",
+      "review_required": true,
+      "module_objective_links": [
+        {
+          "module_id": "BASE-LANG-002",
+          "module_title": "Sound and phonology",
+          "learning_objective": "Notice and produce meaningful sound contrasts.",
+          "assessment_instrument_ref": "BASE-LANG-002",
+          "assessment_construct": "The assessment samples whether the learner can: Notice and produce meaningful sound contrasts."
+        },
+        {
+          "module_id": "BASE-LANG-004",
+          "module_title": "Grammar as structure",
+          "learning_objective": "Use grammar to express relationships between ideas.",
+          "assessment_instrument_ref": "BASE-LANG-004",
+          "assessment_construct": "The assessment samples whether the learner can: Use grammar to express relationships between ideas."
+        },
+        {
+          "module_id": "BASE-LANG-012",
+          "module_title": "Linguistic awareness",
+          "learning_objective": "Notice how languages encode meaning differently.",
+          "assessment_instrument_ref": "BASE-LANG-012",
+          "assessment_construct": "The assessment samples whether the learner can: Notice how languages encode meaning differently."
+        },
+        {
+          "module_id": "BASE-LANG-003",
+          "module_title": "Vocabulary acquisition",
+          "learning_objective": "Learn words with context, collocation and retrieval.",
+          "assessment_instrument_ref": "BASE-LANG-003",
+          "assessment_construct": "The assessment samples whether the learner can: Learn words with context, collocation and retrieval."
+        },
+        {
+          "module_id": "BASE-RES-003",
+          "module_title": "Source credibility",
+          "learning_objective": "Evaluate authority, evidence, methods, currency and conflicts.",
+          "assessment_instrument_ref": "BASE-RES-003",
+          "assessment_construct": "The assessment samples whether the learner can: Evaluate authority, evidence, methods, currency and conflicts."
+        },
+        {
+          "module_id": "BASE-RES-005",
+          "module_title": "Citation and provenance",
+          "learning_objective": "Record sources so another person can locate and evaluate them.",
+          "assessment_instrument_ref": "BASE-RES-005",
+          "assessment_construct": "The assessment samples whether the learner can: Record sources so another person can locate and evaluate them."
+        },
+        {
+          "module_id": "BASE-ART-001",
+          "module_title": "Observation and visual analysis",
+          "learning_objective": "Describe what is actually visible before drawing interpretation.",
+          "assessment_instrument_ref": "BASE-ART-001",
+          "assessment_construct": "The assessment samples whether the learner can: Describe what is actually visible before drawing interpretation."
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "module_ids_resolve_against_baseline": true,
+    "assessment_refs_resolve_against_wave08_bank": true,
+    "mastery_auto_award": false
+  }
+}

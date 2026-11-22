@@ -1,0 +1,937 @@
+{
+  "registry": "ATHENA_MICRO_SKILL_CANONICAL_WORKING_CROSSWALK",
+  "version": "0.1",
+  "status": "candidate_reconciliation_proposal",
+  "canonical_count": 20,
+  "working_candidate_count": 155,
+  "canonical_rows": [
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-COG-MENTAL-ARITHMETIC",
+      "canonical_name": "Mental arithmetic estimation",
+      "working_candidate_ids": [
+        "MS-01-009"
+      ],
+      "working_candidate_names": [
+        "Estimate before calculating"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-COG-ACTIVE-RECALL",
+      "canonical_name": "Active recall prompt generation",
+      "working_candidate_ids": [
+        "MS-01-001",
+        "MS-01-007"
+      ],
+      "working_candidate_names": [
+        "Active recall from a blank page",
+        "Create a retrieval prompt"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-COG-OBSERVATION-LOG",
+      "canonical_name": "Structured observation logging",
+      "working_candidate_ids": [
+        "MS-15-002"
+      ],
+      "working_candidate_names": [
+        "Visual Observation (structured scene description)"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-COG-MEMORY-CHUNKING",
+      "canonical_name": "Information chunking",
+      "working_candidate_ids": [
+        "MS-01-010"
+      ],
+      "working_candidate_names": [
+        "Chunk a procedure"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-PEN-CONTROL",
+      "canonical_name": "Basic pen control patterns",
+      "working_candidate_ids": [
+        "MS-02-003"
+      ],
+      "working_candidate_names": [
+        "Pen Spinning (safe basic rotations)"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-COIN-ROLL",
+      "canonical_name": "Coin transfer and rolling coordination",
+      "working_candidate_ids": [
+        "MS-02-002"
+      ],
+      "working_candidate_names": [
+        "Coin Rolling (finger roll and controlled transfer)"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-ORIGAMI-BASE",
+      "canonical_name": "Basic origami folds",
+      "working_candidate_ids": [
+        "MS-02-006"
+      ],
+      "working_candidate_names": [
+        "Origami (foundational folds and model sequence)"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-DEX-TYPING-ACCURACY",
+      "canonical_name": "Touch-typing accuracy",
+      "working_candidate_ids": [
+        "MS-02-008"
+      ],
+      "working_candidate_names": [
+        "Keyboard touch-typing home row"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-COOKING-MISE",
+      "canonical_name": "Basic kitchen mise en place",
+      "working_candidate_ids": [
+        "MS-13-009",
+        "MS-13-010"
+      ],
+      "working_candidate_names": [
+        "Plan a simple balanced meal",
+        "Use a household checklist"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-KNOT-SQUARE",
+      "canonical_name": "Square knot recognition and tying",
+      "working_candidate_ids": [
+        "MS-02-004"
+      ],
+      "working_candidate_names": [
+        "Everyday Knot Tying (foundational knots)"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-SEW-BUTTON",
+      "canonical_name": "Sewing on a button",
+      "working_candidate_ids": [
+        "MS-03-003"
+      ],
+      "working_candidate_names": [
+        "Sew on a button"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-PRACT-NAVIGATION-LANDMARKS",
+      "canonical_name": "Landmark-based local navigation",
+      "working_candidate_ids": [
+        "MS-08-005",
+        "MS-08-001"
+      ],
+      "working_candidate_names": [
+        "Recognise orientation landmarks",
+        "Orient a map to the environment"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-ACTIVE-LISTENING",
+      "canonical_name": "Active listening and paraphrase",
+      "working_candidate_ids": [
+        "MS-04-003"
+      ],
+      "working_candidate_names": [
+        "Active listening summary"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-ONE-MIN-EXPLANATION",
+      "canonical_name": "One-minute structured explanation",
+      "working_candidate_ids": [
+        "MS-04-006"
+      ],
+      "working_candidate_names": [
+        "Speak for one minute without notes"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-QUESTION-CLARIFICATION",
+      "canonical_name": "Clarifying-question formulation",
+      "working_candidate_ids": [
+        "MS-04-002"
+      ],
+      "working_candidate_names": [
+        "Ask a precise question"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SOC-DISAGREEMENT-STEELMAN",
+      "canonical_name": "Fair disagreement summary",
+      "working_candidate_ids": [
+        "MS-04-005"
+      ],
+      "working_candidate_names": [
+        "Disagree respectfully"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-EMERGENCY-CALL",
+      "canonical_name": "Emergency-call information sequence",
+      "working_candidate_ids": [
+        "MS-07-003",
+        "MS-07-001"
+      ],
+      "working_candidate_names": [
+        "Communicate an emergency clearly",
+        "Identify local emergency contact route"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-HAZARD-SCAN",
+      "canonical_name": "Basic hazard scan",
+      "working_candidate_ids": [
+        "MS-07-002"
+      ],
+      "working_candidate_names": [
+        "Check a scene for immediate hazards"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-CPR-LEARNING-READINESS",
+      "canonical_name": "CPR and first-aid course readiness",
+      "working_candidate_ids": [
+        "MS-07-009"
+      ],
+      "working_candidate_names": [
+        "CPR/AED (certified practical competency pathway)"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    },
+    {
+      "canonical_micro_skill_id": "ATH-MICRO-SAFE-STOP-AND-ESCALATE",
+      "canonical_name": "Stop-work and escalation judgement",
+      "working_candidate_ids": [
+        "MS-07-005",
+        "MS-07-006"
+      ],
+      "working_candidate_names": [
+        "Recognise unsafe electrical conditions",
+        "Read a basic product safety label"
+      ],
+      "relationship": "candidate_equivalent_or_supporting_candidate",
+      "status": "proposed_not_approved",
+      "rationale": "Candidate linkage only; equivalence must be checked against target performance, assessment and safety requirements."
+    }
+  ],
+  "working_candidates_not_linked_to_canonical": [
+    {
+      "id": "MS-01-002",
+      "name": "Confidence calibration",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-01-003",
+      "name": "Explain a concept simply",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-01-004",
+      "name": "Build a useful analogy",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-01-005",
+      "name": "Spot a hidden assumption",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-01-006",
+      "name": "Separate fact, inference, and opinion",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-01-008",
+      "name": "Error log analysis",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-02-001",
+      "name": "Ambidexterity Basics (longitudinal non-dominant-hand use)",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-02-005",
+      "name": "Knot tying: bowline",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-02-007",
+      "name": "Handwriting legibility under time",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-02-009",
+      "name": "Mouse / trackpad precision",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-02-010",
+      "name": "Basic ball wall pass control",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-03-001",
+      "name": "Fold a T-shirt consistently",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-002",
+      "name": "Pack a small bag by checklist",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-004",
+      "name": "Tie shoelaces securely",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-005",
+      "name": "Read a measuring tape",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-006",
+      "name": "Use a spirit level",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-007",
+      "name": "Basic screwdriver selection",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-008",
+      "name": "Organise a digital folder",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-009",
+      "name": "Make a simple spreadsheet table",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-03-010",
+      "name": "Read a public transport route",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-04-001",
+      "name": "Introduce yourself clearly",
+      "category": "Communication & social"
+    },
+    {
+      "id": "MS-04-004",
+      "name": "Give specific feedback",
+      "category": "Communication & social"
+    },
+    {
+      "id": "MS-04-007",
+      "name": "Summarise a long message",
+      "category": "Communication & social"
+    },
+    {
+      "id": "MS-04-008",
+      "name": "Read aloud with punctuation",
+      "category": "Communication & social"
+    },
+    {
+      "id": "MS-04-009",
+      "name": "Negotiate a simple agreement",
+      "category": "Communication & social"
+    },
+    {
+      "id": "MS-04-010",
+      "name": "Write a concise professional message",
+      "category": "Communication & social"
+    },
+    {
+      "id": "MS-05-001",
+      "name": "Use keyboard shortcuts safely",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-002",
+      "name": "Search with exact phrases",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-003",
+      "name": "Evaluate a source quickly",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-004",
+      "name": "Capture a reproducible bug report",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-005",
+      "name": "Use Git status and diff",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-006",
+      "name": "Create a strong unique passphrase",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-007",
+      "name": "Recognise phishing indicators",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-008",
+      "name": "Back up a file and verify restore",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-009",
+      "name": "Use a terminal safely",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-05-010",
+      "name": "Read a simple JSON object",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-06-001",
+      "name": "Notice three levels of visual hierarchy",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-002",
+      "name": "Frame a phone photograph",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-003",
+      "name": "Lock focus and exposure on phone",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-004",
+      "name": "Use natural light direction",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-005",
+      "name": "Sketch basic 3D forms",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-006",
+      "name": "Identify dominant rhythm",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-007",
+      "name": "Match a pitch by ear",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-008",
+      "name": "Controlled breathing for speech",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-009",
+      "name": "Observe a subject before drawing",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-06-010",
+      "name": "Spot color temperature shifts",
+      "category": "Observation & creative"
+    },
+    {
+      "id": "MS-07-004",
+      "name": "Basic digital account recovery hygiene",
+      "category": "Safety & emergency literacy"
+    },
+    {
+      "id": "MS-07-007",
+      "name": "Use a fire extinguisher decision model",
+      "category": "Safety & emergency literacy"
+    },
+    {
+      "id": "MS-07-008",
+      "name": "Basic wound-care literacy",
+      "category": "Safety & emergency literacy"
+    },
+    {
+      "id": "MS-07-010",
+      "name": "Choking Response (certified practical competency pathway)",
+      "category": "Safety & emergency literacy"
+    },
+    {
+      "id": "MS-08-002",
+      "name": "Follow a multi-step route plan",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-003",
+      "name": "Estimate walking time and distance",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-004",
+      "name": "Use a compass bearing safely",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-006",
+      "name": "Recover calmly after a wrong turn",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-007",
+      "name": "Give a precise location description",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-008",
+      "name": "Read a transit interchange diagram",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-009",
+      "name": "Maintain a situational check-in routine",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-08-010",
+      "name": "Distinguish safe from unsafe shortcuts",
+      "category": "Navigation & situational awareness"
+    },
+    {
+      "id": "MS-09-001",
+      "name": "Select the correct screwdriver bit",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-002",
+      "name": "Use a hand tool with controlled force",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-003",
+      "name": "Clamp a workpiece securely",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-004",
+      "name": "Measure and mark a straight cut line",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-005",
+      "name": "Identify common fastener types",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-006",
+      "name": "Inspect a tool before use",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-007",
+      "name": "Strip a wire to a specified length",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-008",
+      "name": "Make a secure low-voltage breadboard connection",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-009",
+      "name": "Identify resistor colour bands",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-09-010",
+      "name": "Keep a tidy tool and parts station",
+      "category": "Workshop & tool handling"
+    },
+    {
+      "id": "MS-10-001",
+      "name": "Perform a balanced athletic landing",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-002",
+      "name": "Accelerate over a short distance",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-003",
+      "name": "Decelerate under control",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-004",
+      "name": "Change direction with body control",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-005",
+      "name": "Receive and cushion a football pass",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-006",
+      "name": "Pass accurately to a moving target",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-007",
+      "name": "Scan before receiving a ball",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-008",
+      "name": "Use the weaker foot for a controlled pass",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-009",
+      "name": "Maintain a steady aerobic pace",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-10-010",
+      "name": "Perform a safe dynamic warm-up sequence",
+      "category": "Movement & sport technique"
+    },
+    {
+      "id": "MS-11-001",
+      "name": "Clean a phone camera lens safely",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-002",
+      "name": "Choose an aspect ratio intentionally",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-003",
+      "name": "Use grid lines for alignment",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-004",
+      "name": "Avoid digital zoom degradation",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-005",
+      "name": "Expose for highlights",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-006",
+      "name": "Stabilise a handheld phone shot",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-007",
+      "name": "Use leading lines deliberately",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-008",
+      "name": "Separate subject from background",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-009",
+      "name": "Edit exposure without destroying detail",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-11-010",
+      "name": "Export an image for a target platform",
+      "category": "Photography & visual capture"
+    },
+    {
+      "id": "MS-12-001",
+      "name": "Find a comfortable speaking pitch",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-002",
+      "name": "Articulate consonant endings clearly",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-003",
+      "name": "Maintain a steady beat",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-004",
+      "name": "Hear simple pitch direction",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-005",
+      "name": "Sing a short phrase in tune",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-006",
+      "name": "Use a clean vocal onset",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-007",
+      "name": "Pace a spoken explanation",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-008",
+      "name": "Listen for phrase structure in music",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-009",
+      "name": "Project speech without shouting",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-12-010",
+      "name": "Record clean phone audio",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-13-001",
+      "name": "Wash hands using a complete routine",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-002",
+      "name": "Read a food date and storage label",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-003",
+      "name": "Prepare a simple no-heat snack hygienically",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-004",
+      "name": "Use a kitchen knife safely under supervision",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-005",
+      "name": "Measure dry and liquid ingredients",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-006",
+      "name": "Clean a surface using the correct product",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-007",
+      "name": "Sort laundry by care requirements",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-13-008",
+      "name": "Fold and store common clothing",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-14-001",
+      "name": "Break a task into next actions",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-002",
+      "name": "Estimate task duration realistically",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-003",
+      "name": "Create a simple contingency plan",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-004",
+      "name": "Maintain a short decision log",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-005",
+      "name": "Use a checklist without becoming dependent",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-006",
+      "name": "Prioritise by consequence and urgency",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-007",
+      "name": "Prepare a concise handoff",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-008",
+      "name": "Keep a simple inventory",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-009",
+      "name": "Compare two options with a decision matrix",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-14-010",
+      "name": "Close a work session cleanly",
+      "category": "Personal operations & planning"
+    },
+    {
+      "id": "MS-15-001",
+      "name": "Doomsday Algorithm (weekday mental calculation)",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-15-003",
+      "name": "Memory Palace (method of loci)",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-15-004",
+      "name": "Lucid-Dream Reality Checks (sleep-safe awareness practice)",
+      "category": "Cognitive & learning"
+    },
+    {
+      "id": "MS-15-005",
+      "name": "Speed Reading (flexible reading-rate control)",
+      "category": "Language & communication"
+    },
+    {
+      "id": "MS-15-006",
+      "name": "Morse Code (basic send and receive)",
+      "category": "Digital & technical"
+    },
+    {
+      "id": "MS-15-007",
+      "name": "Rubik’s Cube 3×3 (beginner solve)",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-15-008",
+      "name": "Locksport Fundamentals (owned transparent practice lock only)",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-15-009",
+      "name": "French Drop (basic coin-vanish sleight)",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-15-010",
+      "name": "One-Handed Card Shuffle (basic packet control)",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-15-011",
+      "name": "Faro Shuffle (introductory card interweave)",
+      "category": "Dexterity & coordination"
+    },
+    {
+      "id": "MS-15-012",
+      "name": "Safe Lighter Handling (non-flourish replacement for Zippo trick)",
+      "category": "Practical & everyday"
+    },
+    {
+      "id": "MS-15-013",
+      "name": "Stadium Whistle (finger-assisted loud whistle)",
+      "category": "Vocal & auditory performance"
+    },
+    {
+      "id": "MS-15-014",
+      "name": "Signature Dish (repeatable personal recipe)",
+      "category": "Household & food skills"
+    },
+    {
+      "id": "MS-15-015",
+      "name": "Advanced Everyday Tie Knots (non-life-safety set)",
+      "category": "Practical & everyday"
+    }
+  ],
+  "governance": {
+    "no_canonical_records_changed": true,
+    "no_candidate_deleted": true,
+    "no_alias_assigned_without_approval": true,
+    "note": "Many working candidates are legitimately additional skills. Lack of a canonical counterpart is not a defect by itself."
+  }
+}

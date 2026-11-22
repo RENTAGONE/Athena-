@@ -1,0 +1,4949 @@
+{
+  "registry": "ATHENA_BASELINE_DOMAIN_AND_MICRO_LINK_CANDIDATES",
+  "version": "1.0-working-batch-I",
+  "status": "draft_review_required",
+  "domain_count": 145,
+  "micro_skill_count": 155,
+  "domain_links": [
+    {
+      "domain_id": "DOM-ENG-01",
+      "domain_name": "Computational Thinking",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-011",
+        "BASE-ENG-007",
+        "BASE-ENG-001"
+      ],
+      "match_scores": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-02",
+      "domain_name": "Programming Foundations",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-003",
+        "BASE-ENG-007",
+        "BASE-ENG-006"
+      ],
+      "match_scores": [
+        0.273,
+        0.182,
+        0.182
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-03",
+      "domain_name": "Programming Languages & Paradigms",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-011",
+        "BASE-ENG-008",
+        "BASE-ENG-006"
+      ],
+      "match_scores": [
+        0.045,
+        0.045,
+        0.045
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-04",
+      "domain_name": "Software Engineering",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-009",
+        "BASE-ENG-011",
+        "BASE-ENG-007"
+      ],
+      "match_scores": [
+        0.154,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-05",
+      "domain_name": "Web and Application Engineering",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-011",
+        "BASE-ENG-010"
+      ],
+      "match_scores": [
+        0.053,
+        0.053
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-06",
+      "domain_name": "Computer Systems",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [],
+      "match_scores": [],
+      "mapping_status": "unmapped_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-07",
+      "domain_name": "Networks and Distributed Systems",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-012"
+      ],
+      "match_scores": [
+        0.071
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-08",
+      "domain_name": "Data and Intelligent Systems",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-011",
+        "BASE-ENG-006",
+        "BASE-ENG-003"
+      ],
+      "match_scores": [
+        0.133,
+        0.067,
+        0.067
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ENG-09",
+      "domain_name": "Advanced Computer Science",
+      "discipline_code": "ENG",
+      "candidate_module_ids": [
+        "BASE-ENG-012",
+        "BASE-ENG-010",
+        "BASE-ENG-006"
+      ],
+      "match_scores": [
+        0.067,
+        0.067,
+        0.067
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-01",
+      "domain_name": "Customer and Market Discovery",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-001",
+        "BASE-BIZ-003",
+        "BASE-BIZ-002"
+      ],
+      "match_scores": [
+        0.3,
+        0.2,
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-02",
+      "domain_name": "Value Proposition and Offer Design",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-004",
+        "BASE-BIZ-003",
+        "BASE-BIZ-012"
+      ],
+      "match_scores": [
+        0.364,
+        0.273,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-03",
+      "domain_name": "Sales and Negotiation",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-005",
+        "BASE-BIZ-007",
+        "BASE-BIZ-001"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-04",
+      "domain_name": "Marketing and Distribution",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-007",
+        "BASE-BIZ-012",
+        "BASE-BIZ-011"
+      ],
+      "match_scores": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-05",
+      "domain_name": "Business Operations",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-010",
+        "BASE-BIZ-011",
+        "BASE-BIZ-012"
+      ],
+      "match_scores": [
+        0.333,
+        0.167,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-06",
+      "domain_name": "Finance and Unit Economics",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-009",
+        "BASE-BIZ-008",
+        "BASE-BIZ-004"
+      ],
+      "match_scores": [
+        0.364,
+        0.273,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-07",
+      "domain_name": "Product and Growth",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-005",
+        "BASE-BIZ-001"
+      ],
+      "match_scores": [
+        0.125,
+        0.125
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BIZ-08",
+      "domain_name": "Governance and Strategy",
+      "discipline_code": "BIZ",
+      "candidate_module_ids": [
+        "BASE-BIZ-012",
+        "BASE-BIZ-005",
+        "BASE-BIZ-001"
+      ],
+      "match_scores": [
+        0.182,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-01",
+      "domain_name": "Electrical Safety and Measurement",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-001",
+        "BASE-ELEC-005",
+        "BASE-ELEC-003"
+      ],
+      "match_scores": [
+        0.4,
+        0.2,
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-02",
+      "domain_name": "Circuit Fundamentals",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-006",
+        "BASE-ELEC-003",
+        "BASE-ELEC-001"
+      ],
+      "match_scores": [
+        0.385,
+        0.231,
+        0.231
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-03",
+      "domain_name": "Components and Devices",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-007",
+        "BASE-ELEC-010"
+      ],
+      "match_scores": [
+        0.167,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-04",
+      "domain_name": "Prototyping and Fabrication",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-011"
+      ],
+      "match_scores": [
+        0.167
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-05",
+      "domain_name": "Digital Electronics",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-012",
+        "BASE-ELEC-001"
+      ],
+      "match_scores": [
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-06",
+      "domain_name": "Embedded Systems",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-012",
+        "BASE-ELEC-009"
+      ],
+      "match_scores": [
+        0.143,
+        0.071
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-07",
+      "domain_name": "Signals and Control",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-012",
+        "BASE-ELEC-009"
+      ],
+      "match_scores": [
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ELEC-08",
+      "domain_name": "Power and Product Engineering",
+      "discipline_code": "ELEC",
+      "candidate_module_ids": [
+        "BASE-ELEC-011",
+        "BASE-ELEC-007",
+        "BASE-ELEC-005"
+      ],
+      "match_scores": [
+        0.091,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-01",
+      "domain_name": "Personal Financial Foundations",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-008",
+        "BASE-FIN-002",
+        "BASE-FIN-007"
+      ],
+      "match_scores": [
+        0.182,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-02",
+      "domain_name": "Accounting and Business Finance",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-007",
+        "BASE-FIN-006",
+        "BASE-FIN-003"
+      ],
+      "match_scores": [
+        0.4,
+        0.3,
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-03",
+      "domain_name": "Economics Foundations",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-012",
+        "BASE-FIN-009",
+        "BASE-FIN-002"
+      ],
+      "match_scores": [
+        0.333,
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-04",
+      "domain_name": "Financial Markets",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-009",
+        "BASE-FIN-008",
+        "BASE-FIN-007"
+      ],
+      "match_scores": [
+        0.4,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-05",
+      "domain_name": "Investment Analysis",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-010"
+      ],
+      "match_scores": [
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-06",
+      "domain_name": "Corporate Finance",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-002",
+        "BASE-FIN-012",
+        "BASE-FIN-007"
+      ],
+      "match_scores": [
+        0.222,
+        0.111,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-07",
+      "domain_name": "Quantitative Finance and Research",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-008",
+        "BASE-FIN-010",
+        "BASE-FIN-001"
+      ],
+      "match_scores": [
+        0.231,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-FIN-08",
+      "domain_name": "Public and Development Finance",
+      "discipline_code": "FIN",
+      "candidate_module_ids": [
+        "BASE-FIN-007"
+      ],
+      "match_scores": [
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-01",
+      "domain_name": "Anatomy and Biological Organization",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-001",
+        "BASE-BODY-005",
+        "BASE-BODY-012"
+      ],
+      "match_scores": [
+        0.25,
+        0.167,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-02",
+      "domain_name": "Human Physiology",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-012",
+        "BASE-BODY-008",
+        "BASE-BODY-006"
+      ],
+      "match_scores": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-03",
+      "domain_name": "Biomechanics",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-011",
+        "BASE-BODY-007"
+      ],
+      "match_scores": [
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-04",
+      "domain_name": "Nutrition Science",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-011",
+        "BASE-BODY-008"
+      ],
+      "match_scores": [
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-05",
+      "domain_name": "Sleep and Recovery Science",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-010",
+        "BASE-BODY-009",
+        "BASE-BODY-012"
+      ],
+      "match_scores": [
+        0.273,
+        0.273,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-06",
+      "domain_name": "Health Information Literacy",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-011",
+        "BASE-BODY-005",
+        "BASE-BODY-001"
+      ],
+      "match_scores": [
+        0.188,
+        0.062,
+        0.062
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-07",
+      "domain_name": "Exercise Physiology",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-010",
+        "BASE-BODY-009",
+        "BASE-BODY-006"
+      ],
+      "match_scores": [
+        0.25,
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-BODY-08",
+      "domain_name": "Research and Human Variation",
+      "discipline_code": "BODY",
+      "candidate_module_ids": [
+        "BASE-BODY-012",
+        "BASE-BODY-011"
+      ],
+      "match_scores": [
+        0.364,
+        0.273
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-01",
+      "domain_name": "Cognitive Psychology",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-003",
+        "BASE-PSY-002",
+        "BASE-PSY-012"
+      ],
+      "match_scores": [
+        0.444,
+        0.444,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-02",
+      "domain_name": "Learning and Behavior",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-006",
+        "BASE-PSY-004"
+      ],
+      "match_scores": [
+        0.25,
+        0.25
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-03",
+      "domain_name": "Emotion and Wellbeing Science",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-005",
+        "BASE-PSY-009",
+        "BASE-PSY-006"
+      ],
+      "match_scores": [
+        0.273,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-04",
+      "domain_name": "Social Psychology",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-009",
+        "BASE-PSY-010",
+        "BASE-PSY-012"
+      ],
+      "match_scores": [
+        0.364,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-05",
+      "domain_name": "Decision Science",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-007",
+        "BASE-PSY-008"
+      ],
+      "match_scores": [
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-06",
+      "domain_name": "Strategic Reasoning",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-011",
+        "BASE-PSY-012",
+        "BASE-PSY-005"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-07",
+      "domain_name": "Systems and Causal Thinking",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-012",
+        "BASE-PSY-004",
+        "BASE-PSY-003"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PSY-08",
+      "domain_name": "Psychological Research Literacy",
+      "discipline_code": "PSY",
+      "candidate_module_ids": [
+        "BASE-PSY-001"
+      ],
+      "match_scores": [
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-01",
+      "domain_name": "Visual Literacy",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-002",
+        "BASE-AEST-001",
+        "BASE-AEST-009"
+      ],
+      "match_scores": [
+        0.25,
+        0.25,
+        0.125
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-02",
+      "domain_name": "Color and Typography",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-005",
+        "BASE-AEST-012",
+        "BASE-AEST-009"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-03",
+      "domain_name": "Graphic and Brand Design",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-012",
+        "BASE-AEST-007",
+        "BASE-AEST-006"
+      ],
+      "match_scores": [
+        0.222,
+        0.222,
+        0.222
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-04",
+      "domain_name": "Interface and Interaction Design",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-008",
+        "BASE-AEST-003",
+        "BASE-AEST-012"
+      ],
+      "match_scores": [
+        0.182,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-05",
+      "domain_name": "Photography and Imaging",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-010",
+        "BASE-AEST-002"
+      ],
+      "match_scores": [
+        0.333,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-06",
+      "domain_name": "Motion and Time-Based Design",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-012",
+        "BASE-AEST-003",
+        "BASE-AEST-002"
+      ],
+      "match_scores": [
+        0.077,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-07",
+      "domain_name": "Three-Dimensional Design",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-012",
+        "BASE-AEST-003",
+        "BASE-AEST-002"
+      ],
+      "match_scores": [
+        0.083,
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-AEST-08",
+      "domain_name": "Design Systems and Direction",
+      "discipline_code": "AEST",
+      "candidate_module_ids": [
+        "BASE-AEST-012",
+        "BASE-AEST-006",
+        "BASE-AEST-003"
+      ],
+      "match_scores": [
+        0.333,
+        0.111,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-01",
+      "domain_name": "Personal Information Management",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-002",
+        "BASE-WORK-001",
+        "BASE-WORK-005"
+      ],
+      "match_scores": [
+        0.308,
+        0.231,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-02",
+      "domain_name": "Planning and Execution",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-005",
+        "BASE-WORK-004",
+        "BASE-WORK-008"
+      ],
+      "match_scores": [
+        0.182,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-03",
+      "domain_name": "Digital Literacy",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-001"
+      ],
+      "match_scores": [
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-04",
+      "domain_name": "Developer Workflow",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-008",
+        "BASE-WORK-012",
+        "BASE-WORK-010"
+      ],
+      "match_scores": [
+        0.182,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-05",
+      "domain_name": "Office and Data Tools",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-010"
+      ],
+      "match_scores": [
+        0.25
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-06",
+      "domain_name": "Automation and Integration",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-011",
+        "BASE-WORK-012",
+        "BASE-WORK-009"
+      ],
+      "match_scores": [
+        0.182,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-07",
+      "domain_name": "Knowledge Systems",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-002",
+        "BASE-WORK-010",
+        "BASE-WORK-003"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-WORK-08",
+      "domain_name": "Operational Design",
+      "discipline_code": "WORK",
+      "candidate_module_ids": [
+        "BASE-WORK-012"
+      ],
+      "match_scores": [
+        0.25
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-01",
+      "domain_name": "Observation and Visual Fundamentals",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-001",
+        "BASE-ART-006",
+        "BASE-ART-003"
+      ],
+      "match_scores": [
+        0.286,
+        0.143,
+        0.143
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-02",
+      "domain_name": "Perspective and Space",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-008",
+        "BASE-ART-005",
+        "BASE-ART-004"
+      ],
+      "match_scores": [
+        0.333,
+        0.333,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-03",
+      "domain_name": "Anatomy and Figure Drawing",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-009",
+        "BASE-ART-001",
+        "BASE-ART-004"
+      ],
+      "match_scores": [
+        0.455,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-04",
+      "domain_name": "Color and Painting",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-006"
+      ],
+      "match_scores": [
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-05",
+      "domain_name": "Composition and Storytelling",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-008",
+        "BASE-ART-010",
+        "BASE-ART-002"
+      ],
+      "match_scores": [
+        0.333,
+        0.222,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-06",
+      "domain_name": "Illustration and Concept Art",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-001",
+        "BASE-ART-010",
+        "BASE-ART-003"
+      ],
+      "match_scores": [
+        0.182,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-07",
+      "domain_name": "Digital Art Production",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-007",
+        "BASE-ART-002"
+      ],
+      "match_scores": [
+        0.071,
+        0.071
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ART-08",
+      "domain_name": "Personal Practice and Critique",
+      "discipline_code": "ART",
+      "candidate_module_ids": [
+        "BASE-ART-012",
+        "BASE-ART-011"
+      ],
+      "match_scores": [
+        0.182,
+        0.182
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-01",
+      "domain_name": "Movement Literacy",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-001",
+        "BASE-ATH-004",
+        "BASE-ATH-006"
+      ],
+      "match_scores": [
+        0.455,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-02",
+      "domain_name": "Strength and Power",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-005",
+        "BASE-ATH-011",
+        "BASE-ATH-009"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-03",
+      "domain_name": "Aerobic and Anaerobic Conditioning",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-006",
+        "BASE-ATH-011"
+      ],
+      "match_scores": [
+        0.154,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-04",
+      "domain_name": "Speed and Agility",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-008",
+        "BASE-ATH-007"
+      ],
+      "match_scores": [
+        0.3,
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-05",
+      "domain_name": "Sport-Specific Skill",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-009",
+        "BASE-ATH-003"
+      ],
+      "match_scores": [
+        0.231,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-06",
+      "domain_name": "Training Design",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-011",
+        "BASE-ATH-010",
+        "BASE-ATH-002"
+      ],
+      "match_scores": [
+        0.3,
+        0.3,
+        0.3
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-07",
+      "domain_name": "Performance Psychology",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-012",
+        "BASE-ATH-009"
+      ],
+      "match_scores": [
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-ATH-08",
+      "domain_name": "Coaching and Performance Analysis",
+      "discipline_code": "ATH",
+      "candidate_module_ids": [
+        "BASE-ATH-012",
+        "BASE-ATH-009",
+        "BASE-ATH-004"
+      ],
+      "match_scores": [
+        0.3,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-01",
+      "domain_name": "Vocal Health and Mechanics",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-002",
+        "BASE-PERF-001",
+        "BASE-PERF-007"
+      ],
+      "match_scores": [
+        0.333,
+        0.25,
+        0.167
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-02",
+      "domain_name": "Pitch and Musicality",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-003",
+        "BASE-PERF-004",
+        "BASE-PERF-008"
+      ],
+      "match_scores": [
+        0.333,
+        0.222,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-03",
+      "domain_name": "Voice Development",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-005",
+        "BASE-PERF-007",
+        "BASE-PERF-003"
+      ],
+      "match_scores": [
+        0.3,
+        0.2,
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-04",
+      "domain_name": "Listening and Musicianship",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-005",
+        "BASE-PERF-004"
+      ],
+      "match_scores": [
+        0.273,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-05",
+      "domain_name": "Performance Craft",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-011",
+        "BASE-PERF-012",
+        "BASE-PERF-009"
+      ],
+      "match_scores": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-06",
+      "domain_name": "Recording and Production",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-010"
+      ],
+      "match_scores": [
+        0.364
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-07",
+      "domain_name": "Speech and Diction",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-006",
+        "BASE-PERF-011"
+      ],
+      "match_scores": [
+        0.25,
+        0.125
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-PERF-08",
+      "domain_name": "Performance Research and Repertoire",
+      "discipline_code": "PERF",
+      "candidate_module_ids": [
+        "BASE-PERF-012",
+        "BASE-PERF-009",
+        "BASE-PERF-006"
+      ],
+      "match_scores": [
+        0.273,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-01",
+      "domain_name": "Numeracy and Arithmetic",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [
+        "BASE-MATH-001",
+        "BASE-MATH-006",
+        "BASE-MATH-005"
+      ],
+      "match_scores": [
+        0.231,
+        0.154,
+        0.154
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-02",
+      "domain_name": "Pre-Algebra and Algebra",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [
+        "BASE-MATH-009",
+        "BASE-MATH-008",
+        "BASE-MATH-011"
+      ],
+      "match_scores": [
+        0.2,
+        0.2,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-03",
+      "domain_name": "Geometry and Measurement",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [
+        "BASE-MATH-010",
+        "BASE-MATH-012",
+        "BASE-MATH-011"
+      ],
+      "match_scores": [
+        0.364,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-04",
+      "domain_name": "Functions and Modeling",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [
+        "BASE-MATH-011"
+      ],
+      "match_scores": [
+        0.3
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-05",
+      "domain_name": "Probability and Statistics",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [],
+      "match_scores": [],
+      "mapping_status": "unmapped_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-06",
+      "domain_name": "Trigonometry and Vectors",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [
+        "BASE-MATH-010",
+        "BASE-MATH-006",
+        "BASE-MATH-005"
+      ],
+      "match_scores": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-07",
+      "domain_name": "Calculus and Analysis",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [],
+      "match_scores": [],
+      "mapping_status": "unmapped_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-MATH-08",
+      "domain_name": "Advanced Mathematics",
+      "discipline_code": "MATH",
+      "candidate_module_ids": [
+        "BASE-MATH-012",
+        "BASE-MATH-011",
+        "BASE-MATH-008"
+      ],
+      "match_scores": [
+        0.091,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-01",
+      "domain_name": "Digital Safety and Privacy",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-001",
+        "BASE-CYBER-008",
+        "BASE-CYBER-006"
+      ],
+      "match_scores": [
+        0.385,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-02",
+      "domain_name": "Operating Systems and Networks",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-003",
+        "BASE-CYBER-002",
+        "BASE-CYBER-007"
+      ],
+      "match_scores": [
+        0.214,
+        0.143,
+        0.071
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-03",
+      "domain_name": "Secure Software Foundations",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-009",
+        "BASE-CYBER-008",
+        "BASE-CYBER-004"
+      ],
+      "match_scores": [
+        0.4,
+        0.4,
+        0.3
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-04",
+      "domain_name": "Defensive Security Operations",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-011",
+        "BASE-CYBER-010",
+        "BASE-CYBER-009"
+      ],
+      "match_scores": [
+        0.231,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-05",
+      "domain_name": "Cryptography and Identity",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-009",
+        "BASE-CYBER-004"
+      ],
+      "match_scores": [
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-06",
+      "domain_name": "Threat Modeling and Risk",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-010",
+        "BASE-CYBER-008",
+        "BASE-CYBER-001"
+      ],
+      "match_scores": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-07",
+      "domain_name": "Authorized Testing and Research",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-012",
+        "BASE-CYBER-008",
+        "BASE-CYBER-005"
+      ],
+      "match_scores": [
+        0.308,
+        0.154,
+        0.154
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-CYBER-08",
+      "domain_name": "Advanced Infrastructure Security",
+      "discipline_code": "CYBER",
+      "candidate_module_ids": [
+        "BASE-CYBER-008",
+        "BASE-CYBER-003"
+      ],
+      "match_scores": [
+        0.111,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-01",
+      "domain_name": "Language Foundations",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-004",
+        "BASE-LANG-003",
+        "BASE-LANG-001"
+      ],
+      "match_scores": [
+        0.182,
+        0.182,
+        0.182
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-02",
+      "domain_name": "English Mastery",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-009",
+        "BASE-LANG-008",
+        "BASE-LANG-007"
+      ],
+      "match_scores": [
+        0.25,
+        0.167,
+        0.167
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-03",
+      "domain_name": "Bangla Literacy and Technical Language",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-009",
+        "BASE-LANG-007",
+        "BASE-LANG-003"
+      ],
+      "match_scores": [
+        0.2,
+        0.133,
+        0.133
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-04",
+      "domain_name": "Additional Language Tracks",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-011",
+        "BASE-LANG-008",
+        "BASE-LANG-007"
+      ],
+      "match_scores": [
+        0.077,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-05",
+      "domain_name": "Linguistics",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-012",
+        "BASE-LANG-004"
+      ],
+      "match_scores": [
+        0.333,
+        0.333
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-06",
+      "domain_name": "Multilingual Communication",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-012",
+        "BASE-LANG-011",
+        "BASE-LANG-001"
+      ],
+      "match_scores": [
+        0.083,
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-07",
+      "domain_name": "Advanced Literacy",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-007"
+      ],
+      "match_scores": [
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LANG-08",
+      "domain_name": "Language Assessment and Practice",
+      "discipline_code": "LANG",
+      "candidate_module_ids": [
+        "BASE-LANG-001",
+        "BASE-LANG-011",
+        "BASE-LANG-005"
+      ],
+      "match_scores": [
+        0.333,
+        0.25,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-01",
+      "domain_name": "Question and Search Design",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-002",
+        "BASE-RES-007",
+        "BASE-RES-001"
+      ],
+      "match_scores": [
+        0.3,
+        0.2,
+        0.2
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-02",
+      "domain_name": "Source Evaluation",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-003",
+        "BASE-RES-004",
+        "BASE-RES-009"
+      ],
+      "match_scores": [
+        0.385,
+        0.154,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-03",
+      "domain_name": "Research Methods",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-007",
+        "BASE-RES-008",
+        "BASE-RES-012"
+      ],
+      "match_scores": [
+        0.556,
+        0.222,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-04",
+      "domain_name": "Data and Analysis",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-008",
+        "BASE-RES-004",
+        "BASE-RES-011"
+      ],
+      "match_scores": [
+        0.222,
+        0.222,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-05",
+      "domain_name": "Synthesis and Writing",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-010",
+        "BASE-RES-012",
+        "BASE-RES-009"
+      ],
+      "match_scores": [
+        0.273,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-06",
+      "domain_name": "Reproducibility and Ethics",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-012",
+        "BASE-RES-011",
+        "BASE-RES-010"
+      ],
+      "match_scores": [
+        0.333,
+        0.167,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-07",
+      "domain_name": "Advanced Evidence Review",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-009",
+        "BASE-RES-004",
+        "BASE-RES-002"
+      ],
+      "match_scores": [
+        0.077,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-RES-08",
+      "domain_name": "Independent Research Projects",
+      "discipline_code": "RES",
+      "candidate_module_ids": [
+        "BASE-RES-012",
+        "BASE-RES-010",
+        "BASE-RES-007"
+      ],
+      "match_scores": [
+        0.154,
+        0.154,
+        0.154
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-01",
+      "domain_name": "Personal Organization",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-006",
+        "BASE-INDEP-005",
+        "BASE-INDEP-002"
+      ],
+      "match_scores": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-02",
+      "domain_name": "Food and Kitchen Skills",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-004",
+        "BASE-INDEP-009",
+        "BASE-INDEP-003"
+      ],
+      "match_scores": [
+        0.25,
+        0.167,
+        0.167
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-03",
+      "domain_name": "Tools and Repairs",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-009",
+        "BASE-INDEP-010",
+        "BASE-INDEP-005"
+      ],
+      "match_scores": [
+        0.286,
+        0.214,
+        0.071
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-04",
+      "domain_name": "Navigation and Travel",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-008",
+        "BASE-INDEP-012",
+        "BASE-INDEP-011"
+      ],
+      "match_scores": [
+        0.455,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-05",
+      "domain_name": "Money and Consumer Skills",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-007"
+      ],
+      "match_scores": [
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-06",
+      "domain_name": "Safety and First Aid Literacy",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-INDEP-012",
+        "BASE-INDEP-009"
+      ],
+      "match_scores": [
+        0.4,
+        0.2,
+        0.067
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-07",
+      "domain_name": "Digital and Administrative Independence",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-007",
+        "BASE-INDEP-002"
+      ],
+      "match_scores": [
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-INDEP-08",
+      "domain_name": "Problem Solving and Self-Reliance",
+      "discipline_code": "INDEP",
+      "candidate_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-INDEP-002",
+        "BASE-INDEP-001"
+      ],
+      "match_scores": [
+        0.071,
+        0.071,
+        0.071
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-01",
+      "domain_name": "Personal Leadership",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-001",
+        "BASE-LEAD-012",
+        "BASE-LEAD-010"
+      ],
+      "match_scores": [
+        0.375,
+        0.125,
+        0.125
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-02",
+      "domain_name": "Teamwork and Collaboration",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-004",
+        "BASE-LEAD-003",
+        "BASE-LEAD-011"
+      ],
+      "match_scores": [
+        0.364,
+        0.182,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-03",
+      "domain_name": "Communication and Feedback",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-011",
+        "BASE-LEAD-006",
+        "BASE-LEAD-004"
+      ],
+      "match_scores": [
+        0.1,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-04",
+      "domain_name": "Project and Operations Management",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-008",
+        "BASE-LEAD-007",
+        "BASE-LEAD-002"
+      ],
+      "match_scores": [
+        0.385,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-05",
+      "domain_name": "People Development",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-009",
+        "BASE-LEAD-007",
+        "BASE-LEAD-006"
+      ],
+      "match_scores": [
+        0.222,
+        0.111,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-06",
+      "domain_name": "Strategy and Decision Making",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-011",
+        "BASE-LEAD-010",
+        "BASE-LEAD-008"
+      ],
+      "match_scores": [
+        0.091,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-07",
+      "domain_name": "Organization and Governance",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-012",
+        "BASE-LEAD-008",
+        "BASE-LEAD-001"
+      ],
+      "match_scores": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-LEAD-08",
+      "domain_name": "Advanced Leadership Practice",
+      "discipline_code": "LEAD",
+      "candidate_module_ids": [
+        "BASE-LEAD-012"
+      ],
+      "match_scores": [
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-01",
+      "domain_name": "Foundational Communication",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-011",
+        "BASE-COMM-009",
+        "BASE-COMM-006"
+      ],
+      "match_scores": [
+        0.2,
+        0.1,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-02",
+      "domain_name": "Writing and Explanation",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-007",
+        "BASE-COMM-003",
+        "BASE-COMM-005"
+      ],
+      "match_scores": [
+        0.3,
+        0.2,
+        0.1
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-03",
+      "domain_name": "Argument and Critical Discussion",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-008",
+        "BASE-COMM-011",
+        "BASE-COMM-010"
+      ],
+      "match_scores": [
+        0.167,
+        0.083,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-04",
+      "domain_name": "Persuasion and Rhetoric",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-009",
+        "BASE-COMM-011",
+        "BASE-COMM-007"
+      ],
+      "match_scores": [
+        0.444,
+        0.111,
+        0.111
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-05",
+      "domain_name": "Speaking and Presentation",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-011",
+        "BASE-COMM-006",
+        "BASE-COMM-004"
+      ],
+      "match_scores": [
+        0.182,
+        0.091,
+        0.091
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-06",
+      "domain_name": "Negotiation and Conflict",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-012",
+        "BASE-COMM-010"
+      ],
+      "match_scores": [
+        0.167,
+        0.083
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-07",
+      "domain_name": "Digital and Cross-Cultural Communication",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-010",
+        "BASE-COMM-007"
+      ],
+      "match_scores": [
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    },
+    {
+      "domain_id": "DOM-COMM-08",
+      "domain_name": "Advanced Communication Strategy",
+      "discipline_code": "COMM",
+      "candidate_module_ids": [
+        "BASE-COMM-011",
+        "BASE-COMM-008",
+        "BASE-COMM-005"
+      ],
+      "match_scores": [
+        0.077,
+        0.077,
+        0.077
+      ],
+      "mapping_status": "candidate_mapping_review_required",
+      "note": "Lexical candidate mapping only; not an approved coverage claim or prerequisite edge."
+    }
+  ],
+  "micro_skill_links": [
+    {
+      "micro_skill_id": "MS-01-001",
+      "micro_skill_name": "Active recall from a blank page",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-010",
+        "BASE-RES-005",
+        "BASE-WORK-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-002",
+      "micro_skill_name": "Confidence calibration",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-007",
+        "BASE-RES-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-003",
+      "micro_skill_name": "Explain a concept simply",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-004",
+      "micro_skill_name": "Build a useful analogy",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-006",
+        "BASE-MATH-012",
+        "BASE-RES-011",
+        "BASE-WORK-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-005",
+      "micro_skill_name": "Spot a hidden assumption",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-001",
+        "BASE-MATH-012",
+        "BASE-RES-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-006",
+      "micro_skill_name": "Separate fact, inference, and opinion",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-RES-006",
+        "BASE-WORK-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-007",
+      "micro_skill_name": "Create a retrieval prompt",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-012",
+        "BASE-MATH-012",
+        "BASE-RES-001",
+        "BASE-WORK-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-008",
+      "micro_skill_name": "Error log analysis",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-006",
+        "BASE-RES-011",
+        "BASE-WORK-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-009",
+      "micro_skill_name": "Estimate before calculating",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-01-010",
+      "micro_skill_name": "Chunk a procedure",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-001",
+      "micro_skill_name": "Ambidexterity Basics (longitudinal non-dominant-hand use)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-011",
+        "BASE-ART-012",
+        "BASE-PERF-012",
+        "BASE-ELEC-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-002",
+      "micro_skill_name": "Coin Rolling (finger roll and controlled transfer)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ART-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-003",
+      "micro_skill_name": "Pen Spinning (safe basic rotations)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-004",
+      "micro_skill_name": "Everyday Knot Tying (foundational knots)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-005",
+      "micro_skill_name": "Knot tying: bowline",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-007",
+        "BASE-PERF-001",
+        "BASE-ELEC-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-006",
+      "micro_skill_name": "Origami (foundational folds and model sequence)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ART-010",
+        "BASE-PERF-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-007",
+      "micro_skill_name": "Handwriting legibility under time",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-011",
+        "BASE-ELEC-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-008",
+      "micro_skill_name": "Keyboard touch-typing home row",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-009",
+      "micro_skill_name": "Mouse / trackpad precision",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-02-010",
+      "micro_skill_name": "Basic ball wall pass control",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-004",
+        "BASE-ART-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-001",
+      "micro_skill_name": "Fold a T-shirt consistently",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-BIZ-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-002",
+      "micro_skill_name": "Pack a small bag by checklist",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-003",
+      "micro_skill_name": "Sew on a button",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-004",
+      "micro_skill_name": "Tie shoelaces securely",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-005",
+      "micro_skill_name": "Read a measuring tape",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-BIZ-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-006",
+      "micro_skill_name": "Use a spirit level",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008",
+        "BASE-BIZ-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-007",
+      "micro_skill_name": "Basic screwdriver selection",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-008",
+      "micro_skill_name": "Organise a digital folder",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-006",
+        "BASE-BIZ-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-009",
+      "micro_skill_name": "Make a simple spreadsheet table",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009",
+        "BASE-WORK-009",
+        "BASE-BIZ-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-03-010",
+      "micro_skill_name": "Read a public transport route",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008",
+        "BASE-BIZ-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-001",
+      "micro_skill_name": "Introduce yourself clearly",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-003",
+        "BASE-LANG-006",
+        "BASE-PSY-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-002",
+      "micro_skill_name": "Ask a precise question",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-006",
+        "BASE-LANG-006",
+        "BASE-LEAD-006",
+        "BASE-PSY-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-003",
+      "micro_skill_name": "Active listening summary",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-002",
+        "BASE-LANG-006",
+        "BASE-LEAD-003",
+        "BASE-PSY-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-004",
+      "micro_skill_name": "Give specific feedback",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-010",
+        "BASE-LANG-011",
+        "BASE-LEAD-006",
+        "BASE-PSY-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-005",
+      "micro_skill_name": "Disagree respectfully",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-006",
+      "micro_skill_name": "Speak for one minute without notes",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-007",
+      "micro_skill_name": "Summarise a long message",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-012",
+        "BASE-PSY-012"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-008",
+      "micro_skill_name": "Read aloud with punctuation",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-LANG-011",
+        "BASE-PSY-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-009",
+      "micro_skill_name": "Negotiate a simple agreement",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-012",
+        "BASE-LANG-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-04-010",
+      "micro_skill_name": "Write a concise professional message",
+      "category": "Communication & social",
+      "related_disciplines": [
+        "COMM",
+        "LANG",
+        "LEAD",
+        "PSY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-COMM-003",
+        "BASE-LANG-006",
+        "BASE-PSY-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-001",
+      "micro_skill_name": "Use keyboard shortcuts safely",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-007",
+        "BASE-WORK-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-002",
+      "micro_skill_name": "Search with exact phrases",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-003",
+      "micro_skill_name": "Evaluate a source quickly",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-CYBER-012",
+        "BASE-WORK-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-004",
+      "micro_skill_name": "Capture a reproducible bug report",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-CYBER-012",
+        "BASE-WORK-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-005",
+      "micro_skill_name": "Use Git status and diff",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-010",
+        "BASE-CYBER-001",
+        "BASE-WORK-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-006",
+      "micro_skill_name": "Create a strong unique passphrase",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-CYBER-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-007",
+      "micro_skill_name": "Recognise phishing indicators",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-008",
+      "micro_skill_name": "Back up a file and verify restore",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-007",
+        "BASE-CYBER-012",
+        "BASE-WORK-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-009",
+      "micro_skill_name": "Use a terminal safely",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-008",
+        "BASE-WORK-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-05-010",
+      "micro_skill_name": "Read a simple JSON object",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-011",
+        "BASE-CYBER-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-001",
+      "micro_skill_name": "Notice three levels of visual hierarchy",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-003",
+        "BASE-ART-011",
+        "BASE-RES-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-002",
+      "micro_skill_name": "Frame a phone photograph",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-010",
+        "BASE-ART-002",
+        "BASE-RES-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-003",
+      "micro_skill_name": "Lock focus and exposure on phone",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-010",
+        "BASE-RES-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-004",
+      "micro_skill_name": "Use natural light direction",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-011",
+        "BASE-ART-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-005",
+      "micro_skill_name": "Sketch basic 3D forms",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ART-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-006",
+      "micro_skill_name": "Identify dominant rhythm",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-002",
+        "BASE-ART-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-007",
+      "micro_skill_name": "Match a pitch by ear",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-007",
+        "BASE-ART-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-008",
+      "micro_skill_name": "Controlled breathing for speech",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-009",
+      "micro_skill_name": "Observe a subject before drawing",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-002",
+        "BASE-ART-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-06-010",
+      "micro_skill_name": "Spot color temperature shifts",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-004",
+        "BASE-ART-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-001",
+      "micro_skill_name": "Identify local emergency contact route",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-012",
+        "BASE-ATH-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-002",
+      "micro_skill_name": "Check a scene for immediate hazards",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-003",
+      "micro_skill_name": "Communicate an emergency clearly",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-012"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-004",
+      "micro_skill_name": "Basic digital account recovery hygiene",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009",
+        "BASE-BODY-010",
+        "BASE-ATH-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-005",
+      "micro_skill_name": "Recognise unsafe electrical conditions",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-006",
+      "micro_skill_name": "Read a basic product safety label",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-BODY-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-007",
+      "micro_skill_name": "Use a fire extinguisher decision model",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-012",
+        "BASE-BODY-004",
+        "BASE-ATH-012"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-008",
+      "micro_skill_name": "Basic wound-care literacy",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-BODY-011",
+        "BASE-ATH-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-009",
+      "micro_skill_name": "CPR/AED (certified practical competency pathway)",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-BODY-009",
+        "BASE-ATH-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-07-010",
+      "micro_skill_name": "Choking Response (certified practical competency pathway)",
+      "category": "Safety & emergency literacy",
+      "related_disciplines": [
+        "INDEP",
+        "BODY",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-BODY-009",
+        "BASE-ATH-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-001",
+      "micro_skill_name": "Orient a map to the environment",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-002",
+      "micro_skill_name": "Follow a multi-step route plan",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008",
+        "BASE-RES-001"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-003",
+      "micro_skill_name": "Estimate walking time and distance",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008",
+        "BASE-ATH-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-004",
+      "micro_skill_name": "Use a compass bearing safely",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-005",
+      "micro_skill_name": "Recognise orientation landmarks",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-006",
+      "micro_skill_name": "Recover calmly after a wrong turn",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-007",
+      "micro_skill_name": "Give a precise location description",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-008",
+      "micro_skill_name": "Read a transit interchange diagram",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-009",
+      "micro_skill_name": "Maintain a situational check-in routine",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-08-010",
+      "micro_skill_name": "Distinguish safe from unsafe shortcuts",
+      "category": "Navigation & situational awareness",
+      "related_disciplines": [
+        "INDEP",
+        "RES",
+        "ATH"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-001",
+      "micro_skill_name": "Select the correct screwdriver bit",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-002",
+      "micro_skill_name": "Use a hand tool with controlled force",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-002",
+        "BASE-INDEP-009",
+        "BASE-ENG-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-003",
+      "micro_skill_name": "Clamp a workpiece securely",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-004",
+      "micro_skill_name": "Measure and mark a straight cut line",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-004",
+        "BASE-INDEP-009",
+        "BASE-ENG-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-005",
+      "micro_skill_name": "Identify common fastener types",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-010",
+        "BASE-INDEP-009",
+        "BASE-ENG-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-006",
+      "micro_skill_name": "Inspect a tool before use",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009",
+        "BASE-ENG-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-007",
+      "micro_skill_name": "Strip a wire to a specified length",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ENG-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-008",
+      "micro_skill_name": "Make a secure low-voltage breadboard connection",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-001",
+        "BASE-INDEP-003",
+        "BASE-ENG-012"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-009",
+      "micro_skill_name": "Identify resistor colour bands",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-007",
+        "BASE-INDEP-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-09-010",
+      "micro_skill_name": "Keep a tidy tool and parts station",
+      "category": "Workshop & tool handling",
+      "related_disciplines": [
+        "ELEC",
+        "INDEP",
+        "ENG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-001",
+      "micro_skill_name": "Perform a balanced athletic landing",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-002",
+      "micro_skill_name": "Accelerate over a short distance",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-003",
+      "micro_skill_name": "Decelerate under control",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-007",
+        "BASE-BODY-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-004",
+      "micro_skill_name": "Change direction with body control",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-008",
+        "BASE-BODY-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-005",
+      "micro_skill_name": "Receive and cushion a football pass",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-006",
+      "micro_skill_name": "Pass accurately to a moving target",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-007",
+      "micro_skill_name": "Scan before receiving a ball",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-009",
+        "BASE-BODY-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-008",
+      "micro_skill_name": "Use the weaker foot for a controlled pass",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-009",
+      "micro_skill_name": "Maintain a steady aerobic pace",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-006",
+        "BASE-BODY-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-10-010",
+      "micro_skill_name": "Perform a safe dynamic warm-up sequence",
+      "category": "Movement & sport technique",
+      "related_disciplines": [
+        "ATH",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-002",
+        "BASE-BODY-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-001",
+      "micro_skill_name": "Clean a phone camera lens safely",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-002",
+      "micro_skill_name": "Choose an aspect ratio intentionally",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-002",
+        "BASE-ART-008",
+        "BASE-WORK-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-003",
+      "micro_skill_name": "Use grid lines for alignment",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-006",
+        "BASE-ART-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-004",
+      "micro_skill_name": "Avoid digital zoom degradation",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-002",
+        "BASE-WORK-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-005",
+      "micro_skill_name": "Expose for highlights",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-006",
+      "micro_skill_name": "Stabilise a handheld phone shot",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-007",
+      "micro_skill_name": "Use leading lines deliberately",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-005",
+        "BASE-ART-011",
+        "BASE-WORK-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-008",
+      "micro_skill_name": "Separate subject from background",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-009",
+      "micro_skill_name": "Edit exposure without destroying detail",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-11-010",
+      "micro_skill_name": "Export an image for a target platform",
+      "category": "Photography & visual capture",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-001",
+      "micro_skill_name": "Find a comfortable speaking pitch",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-007",
+        "BASE-COMM-011",
+        "BASE-LANG-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-002",
+      "micro_skill_name": "Articulate consonant endings clearly",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-006",
+        "BASE-LANG-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-003",
+      "micro_skill_name": "Maintain a steady beat",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-004",
+      "micro_skill_name": "Hear simple pitch direction",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-003",
+        "BASE-LANG-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-005",
+      "micro_skill_name": "Sing a short phrase in tune",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-006",
+      "micro_skill_name": "Use a clean vocal onset",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-007",
+        "BASE-LANG-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-007",
+      "micro_skill_name": "Pace a spoken explanation",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-008",
+        "BASE-COMM-011",
+        "BASE-LANG-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-008",
+      "micro_skill_name": "Listen for phrase structure in music",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-008",
+        "BASE-COMM-007",
+        "BASE-LANG-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-009",
+      "micro_skill_name": "Project speech without shouting",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-002",
+        "BASE-LANG-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-12-010",
+      "micro_skill_name": "Record clean phone audio",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-001",
+      "micro_skill_name": "Wash hands using a complete routine",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-002",
+      "micro_skill_name": "Read a food date and storage label",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-004",
+        "BASE-BODY-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-003",
+      "micro_skill_name": "Prepare a simple no-heat snack hygienically",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-004",
+      "micro_skill_name": "Use a kitchen knife safely under supervision",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-005",
+      "micro_skill_name": "Measure dry and liquid ingredients",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-006",
+      "micro_skill_name": "Clean a surface using the correct product",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-007",
+      "micro_skill_name": "Sort laundry by care requirements",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-006",
+        "BASE-BODY-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-008",
+      "micro_skill_name": "Fold and store common clothing",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-009",
+      "micro_skill_name": "Plan a simple balanced meal",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-004",
+        "BASE-BODY-009"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-13-010",
+      "micro_skill_name": "Use a household checklist",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-001",
+      "micro_skill_name": "Break a task into next actions",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003",
+        "BASE-LEAD-007",
+        "BASE-INDEP-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-002",
+      "micro_skill_name": "Estimate task duration realistically",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-005",
+        "BASE-INDEP-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-003",
+      "micro_skill_name": "Create a simple contingency plan",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003",
+        "BASE-INDEP-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-004",
+      "micro_skill_name": "Maintain a short decision log",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-011",
+        "BASE-LEAD-011",
+        "BASE-INDEP-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-005",
+      "micro_skill_name": "Use a checklist without becoming dependent",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003",
+        "BASE-LEAD-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-006",
+      "micro_skill_name": "Prioritise by consequence and urgency",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003",
+        "BASE-LEAD-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-007",
+      "micro_skill_name": "Prepare a concise handoff",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003",
+        "BASE-LEAD-011",
+        "BASE-INDEP-008"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-008",
+      "micro_skill_name": "Keep a simple inventory",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-LEAD-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-009",
+      "micro_skill_name": "Compare two options with a decision matrix",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-LEAD-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-14-010",
+      "micro_skill_name": "Close a work session cleanly",
+      "category": "Personal operations & planning",
+      "related_disciplines": [
+        "WORK",
+        "LEAD",
+        "INDEP"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-WORK-003",
+        "BASE-LEAD-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-001",
+      "micro_skill_name": "Doomsday Algorithm (weekday mental calculation)",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-RES-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-002",
+      "micro_skill_name": "Visual Observation (structured scene description)",
+      "category": "Observation & creative",
+      "related_disciplines": [
+        "AEST",
+        "ART",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-AEST-001",
+        "BASE-ART-001",
+        "BASE-RES-004"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-003",
+      "micro_skill_name": "Memory Palace (method of loci)",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-003",
+        "BASE-MATH-008",
+        "BASE-RES-003",
+        "BASE-WORK-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-004",
+      "micro_skill_name": "Lucid-Dream Reality Checks (sleep-safe awareness practice)",
+      "category": "Cognitive & learning",
+      "related_disciplines": [
+        "PSY",
+        "MATH",
+        "RES",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PSY-009",
+        "BASE-MATH-003",
+        "BASE-RES-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-005",
+      "micro_skill_name": "Speed Reading (flexible reading-rate control)",
+      "category": "Language & communication",
+      "related_disciplines": [
+        "LANG",
+        "COMM",
+        "RES"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-LANG-005",
+        "BASE-COMM-001",
+        "BASE-RES-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-006",
+      "micro_skill_name": "Morse Code (basic send and receive)",
+      "category": "Digital & technical",
+      "related_disciplines": [
+        "ENG",
+        "CYBER",
+        "WORK"
+      ],
+      "candidate_macro_module_ids": [],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-007",
+      "micro_skill_name": "Rubik’s Cube 3×3 (beginner solve)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-005"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-008",
+      "micro_skill_name": "Locksport Fundamentals (owned transparent practice lock only)",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-BIZ-012"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-009",
+      "micro_skill_name": "French Drop (basic coin-vanish sleight)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-012",
+        "BASE-PERF-012",
+        "BASE-ELEC-006"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-010",
+      "micro_skill_name": "One-Handed Card Shuffle (basic packet control)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ATH-004",
+        "BASE-ART-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-011",
+      "micro_skill_name": "Faro Shuffle (introductory card interweave)",
+      "category": "Dexterity & coordination",
+      "related_disciplines": [
+        "ATH",
+        "ART",
+        "PERF",
+        "ELEC"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-ELEC-010"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-012",
+      "micro_skill_name": "Safe Lighter Handling (non-flourish replacement for Zippo trick)",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-013",
+      "micro_skill_name": "Stadium Whistle (finger-assisted loud whistle)",
+      "category": "Vocal & auditory performance",
+      "related_disciplines": [
+        "PERF",
+        "COMM",
+        "LANG"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-PERF-012",
+        "BASE-COMM-007"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-014",
+      "micro_skill_name": "Signature Dish (repeatable personal recipe)",
+      "category": "Household & food skills",
+      "related_disciplines": [
+        "INDEP",
+        "BODY"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-003"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    },
+    {
+      "micro_skill_id": "MS-15-015",
+      "micro_skill_name": "Advanced Everyday Tie Knots (non-life-safety set)",
+      "category": "Practical & everyday",
+      "related_disciplines": [
+        "INDEP",
+        "WORK",
+        "BIZ"
+      ],
+      "candidate_macro_module_ids": [
+        "BASE-INDEP-011",
+        "BASE-BIZ-002"
+      ],
+      "relationship": "supports_or_applies_to",
+      "mapping_status": "candidate_link_review_required",
+      "note": "Category and lexical mapping seed only; user-visible semantic links require review."
+    }
+  ]
+}

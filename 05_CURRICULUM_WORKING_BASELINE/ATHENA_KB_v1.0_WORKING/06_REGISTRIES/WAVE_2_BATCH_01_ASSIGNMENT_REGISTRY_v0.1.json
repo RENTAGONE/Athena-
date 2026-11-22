@@ -1,0 +1,211 @@
+{
+  "registry_id": "ATHENA-WAVE2-BATCH01",
+  "version": "0.1",
+  "production_message": 10,
+  "status": "draft",
+  "disciplines": [
+    "BIZ",
+    "FIN",
+    "WORK",
+    "CYBER",
+    "PSY",
+    "LEAD"
+  ],
+  "unit_count": 6,
+  "units": [
+    {
+      "unit_id": "BIZ-FOUND-001",
+      "discipline_code": "BIZ",
+      "title": "Business discovery: customer, problem and evidence",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "basic_arithmetic",
+        "observation_vs_interpretation",
+        "consent_and_respect"
+      ],
+      "learning_outcomes": [
+        "define_segment",
+        "conduct_neutral_discovery",
+        "separate_observation_from_claim",
+        "identify_uncertainty"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "consent; anonymise; do not misrepresent fictional data as real"
+    },
+    {
+      "unit_id": "FIN-FOUND-001",
+      "discipline_code": "FIN",
+      "title": "Personal cash flow, budgeting and financial records",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "addition_subtraction_percentages",
+        "dates_and_records"
+      ],
+      "learning_outcomes": [
+        "maintain_ledger",
+        "reconcile_cash",
+        "build_budget",
+        "explain_timing_and_purchasing_power"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "fictional records preferred; no credentials; educational not investment advice"
+    },
+    {
+      "unit_id": "WORK-FOUND-001",
+      "discipline_code": "WORK",
+      "title": "Workflow design, prioritisation and reliable execution",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "task_description",
+        "file_literacy"
+      ],
+      "learning_outcomes": [
+        "define_acceptance_criteria",
+        "map_dependencies",
+        "identify_bottleneck",
+        "design_reversible_improvement"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "avoid destructive automation and consequential actions in practice"
+    },
+    {
+      "unit_id": "CYBER-FOUND-001",
+      "discipline_code": "CYBER",
+      "title": "Threat modelling and personal security fundamentals",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "account_device_file_network_basics",
+        "written_procedure"
+      ],
+      "learning_outcomes": [
+        "scope_authorised_assets",
+        "model_threats",
+        "select_controls",
+        "plan_recovery"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "only owned or explicitly authorised systems and training labs"
+    },
+    {
+      "unit_id": "PSY-FOUND-001",
+      "discipline_code": "PSY",
+      "title": "Learning science: attention, memory and retrieval",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "learning_task_description",
+        "basic_variables"
+      ],
+      "learning_outcomes": [
+        "explain_attention_and_memory",
+        "use_retrieval_and_spacing",
+        "interpret_small_learning_comparison",
+        "state_limits"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "not diagnosis; no clinical inference from self-experiment"
+    },
+    {
+      "unit_id": "LEAD-FOUND-001",
+      "discipline_code": "LEAD",
+      "title": "Goal setting, execution and accountable teamwork",
+      "status": "draft_instructional_unit",
+      "prerequisites": [
+        "task_definition",
+        "respectful_communication"
+      ],
+      "learning_outcomes": [
+        "define_verifiable_goal",
+        "assign_roles_and_authority",
+        "plan_checkpoints",
+        "give_actionable_feedback"
+      ],
+      "evidence_required": [
+        "learner_explanation",
+        "worked_or_scenario_application",
+        "independent_task_artifact",
+        "limitations_and_reflection"
+      ],
+      "assessment": {
+        "rubric_dimensions": 5,
+        "scale": "0-3 per dimension",
+        "pass_threshold": "11/15 except FIN requires 12/15; CYBER requires 12/15 and zero scope violations",
+        "mastery_effect": "none_automatically",
+        "learner_approval_required": true
+      },
+      "safety_or_ethics": "consent, boundaries, no humiliation or coercion"
+    }
+  ],
+  "workflow_contract": {
+    "assign": "ATHENA presents objective, prerequisites, resources and evidence criteria",
+    "learn": "learner chooses external learning source",
+    "evaluate": "independent evaluator checks explanation, application, limits and provenance",
+    "update": "generate proposed structured update; do not auto-award mastery",
+    "commit": "learner reviews and approves engine changes"
+  },
+  "validation_limits": [
+    "not expert reviewed",
+    "not learner piloted",
+    "not importer tested",
+    "resource links not yet mapped to specific sections"
+  ]
+}

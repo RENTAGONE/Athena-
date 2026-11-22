@@ -1,0 +1,93 @@
+{
+  "report_id": "ATHENA_WAVE_09_VALIDATION_v1.0",
+  "version": "1.0",
+  "status": "internal_structural_validation_passed_draft",
+  "baseline": {
+    "kb": "v3.23",
+    "vault": "v5.9",
+    "modules": 216,
+    "disciplines": 18,
+    "legacy_portfolio_projects": 9,
+    "legacy_traceability_projects": 9
+  },
+  "checks": {
+    "project_count": 18,
+    "class_distribution": {
+      "personal_use": 6,
+      "product_business_foundation": 6,
+      "intrinsic_exploration": 6
+    },
+    "unique_project_ids": true,
+    "all_three_classes_present": true,
+    "project_record_schema_v1_1_errors": 0,
+    "blueprint_schema_errors": 0,
+    "target_module_count": 161,
+    "unresolved_module_refs": 0,
+    "unresolved_assessment_refs": 0,
+    "module_coverage_disciplines": [
+      "AEST",
+      "ART",
+      "ATH",
+      "BIZ",
+      "BODY",
+      "COMM",
+      "CYBER",
+      "ELEC",
+      "ENG",
+      "FIN",
+      "INDEP",
+      "LANG",
+      "LEAD",
+      "MATH",
+      "PERF",
+      "PSY",
+      "RES",
+      "WORK"
+    ],
+    "uncovered_baseline_disciplines": [],
+    "legacy_portfolio_records_preserved": true,
+    "legacy_project_ids_unique": true,
+    "all_blueprints_have_milestones": true,
+    "all_blueprints_have_safety_section": true,
+    "all_blueprints_have_mastery_boundary": true,
+    "resource_source_records": 7,
+    "zip_integrity": {
+      "kb_v3_24": "passed",
+      "vault_v6_0": "passed",
+      "embedded_kb_matches_standalone": "357/357 files byte-identical"
+    },
+    "existing_ontology_validator": {
+      "return_code": 0,
+      "result": "PASS; 0 errors",
+      "note": "Runtime emitted a non-fatal spreadsheet warmup warning on stderr; validator completed successfully."
+    },
+    "all_json_in_kb_parse": true,
+    "new_wave09_json_parse_errors": 0,
+    "legacy_project_records_mapped": 33,
+    "legacy_project_records_expected": 33,
+    "legacy_project_mapping_types": {
+      "direct_ancestor": 7,
+      "adaptable_ancestor": 1,
+      "not_a_project_class": 1,
+      "direct_candidate": 18,
+      "conditional_candidate": 6
+    },
+    "legacy_mapping_class_distribution": {
+      "product_business_foundation": 9,
+      "intrinsic_exploration": 11,
+      "personal_use": 12,
+      "cross_class_delivery_format": 1
+    },
+    "legacy_mapping_conditional_count": 6,
+    "legacy_mapping_unclassified_count": 1
+  },
+  "limitations": [
+    "Project class definitions and project bank are authored working proposals, not expert-approved curriculum.",
+    "Module mappings are candidate objective links; discipline owners must confirm semantic fit before canonical promotion.",
+    "No learner has completed these projects as part of this production work.",
+    "No project effectiveness, learner transfer, mastery or retention result is claimed.",
+    "Source registry documents design-method sources; it is not a substitute for resource research for each project's individual subject objectives.",
+    "App importer/device/offline behaviour has not been tested.",
+    "Some legacy project classifications are conditional because titles and old briefs do not always specify primary intent; actual project intent must determine final class."
+  ]
+}

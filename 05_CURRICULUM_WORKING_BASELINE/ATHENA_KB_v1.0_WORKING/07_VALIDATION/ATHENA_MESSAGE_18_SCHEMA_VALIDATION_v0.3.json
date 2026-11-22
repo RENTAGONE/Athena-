@@ -1,0 +1,87 @@
+{
+  "baseline_modules": {
+    "errors": 0,
+    "first_errors": []
+  },
+  "assessment_specs": {
+    "errors": 0,
+    "first_errors": []
+  },
+  "retention_integration": {
+    "errors": 0,
+    "first_errors": []
+  },
+  "relationship_edges": {
+    "count": 26,
+    "errors": 0,
+    "first_errors": []
+  },
+  "resource_records": {
+    "count": 52,
+    "errors": 0,
+    "first_errors": []
+  },
+  "canonical_micro_skills": {
+    "count": 20,
+    "errors": 0,
+    "first_errors": []
+  },
+  "canonical_skill_seed": {
+    "count": 42,
+    "errors": 0,
+    "first_errors": []
+  },
+  "evidence_fixtures": {
+    "count": 7,
+    "passed": 7,
+    "failed": 0,
+    "cases": [
+      {
+        "case_id": "EVID-OUTCOME-01",
+        "expected": "valid",
+        "actual": "valid",
+        "pass": true
+      },
+      {
+        "case_id": "EVID-OUTCOME-02",
+        "expected": "valid",
+        "actual": "valid",
+        "pass": true
+      },
+      {
+        "case_id": "EVID-OUTCOME-03",
+        "expected": "invalid",
+        "actual": "invalid",
+        "pass": true
+      },
+      {
+        "case_id": "EVID-OUTCOME-04",
+        "expected": "valid",
+        "actual": "valid",
+        "pass": true
+      },
+      {
+        "case_id": "EVID-OUTCOME-05",
+        "expected": "valid",
+        "actual": "valid",
+        "pass": true
+      },
+      {
+        "case_id": "EVID-OUTCOME-06",
+        "expected": "invalid",
+        "actual": "invalid",
+        "pass": true
+      },
+      {
+        "case_id": "EVID-OUTCOME-07",
+        "expected": "invalid",
+        "actual": "invalid",
+        "pass": true
+      }
+    ]
+  },
+  "schema_inventory": {
+    "count": 32,
+    "note": "Includes Master Vault reference schema library plus active KB exchange and Message 18 working schemas; inventory is not semantic unification."
+  }
+}

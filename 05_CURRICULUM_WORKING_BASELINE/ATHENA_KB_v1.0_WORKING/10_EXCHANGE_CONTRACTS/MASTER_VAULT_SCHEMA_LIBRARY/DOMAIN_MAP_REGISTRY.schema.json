@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/domain-map-registry-v0.3.schema.json",
+  "title": "ATHENA_DOMAIN_MAP_REGISTRY_v0.3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_type",
+    "status",
+    "discipline_registry_version",
+    "counts",
+    "domains",
+    "skill_families"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.3.0"
+    },
+    "registry_type": {
+      "const": "domain_and_family_map"
+    },
+    "status": {
+      "enum": [
+        "draft_for_review",
+        "approved"
+      ]
+    },
+    "discipline_registry_version": {
+      "type": "string"
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "disciplines",
+        "domains",
+        "skill_families",
+        "total_domain_and_family_records"
+      ],
+      "properties": {
+        "disciplines": {
+          "const": 18
+        },
+        "domains": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "skill_families": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_domain_and_family_records": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://athena.local/schemas/athena-domain-record.schema.json",
+        "title": "ATHENA_DOMAIN_RECORD",
+        "description": "Canonical domain record; owner discipline must agree with its primary parent discipline.",
+        "type": "object",
+        "required": [
+          "id",
+          "object_type",
+          "title",
+          "description",
+          "discipline_ids",
+          "owner_discipline_id",
+          "parent_id",
+          "code",
+          "status",
+          "content_version",
+          "review_state",
+          "aliases",
+          "source_basis",
+          "existing_in_v0_1_seed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ATH-DOM-[A-Z]+-[A-Z0-9-]+$"
+          },
+          "object_type": {
+            "const": "domain"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "description": {
+            "type": "string"
+          },
+          "discipline_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^ATH-DISC-[A-Z]+$"
+            }
+          },
+          "owner_discipline_id": {
+            "type": "string",
+            "pattern": "^ATH-DISC-[A-Z]+$"
+          },
+          "parent_id": {
+            "type": "string",
+            "pattern": "^ATH-DISC-[A-Z]+$"
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Z0-9-]+$"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "review",
+              "approved",
+              "deprecated",
+              "archived"
+            ]
+          },
+          "content_version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "review_state": {
+            "enum": [
+              "needs_review",
+              "in_review",
+              "reviewed",
+              "approved",
+              "blocked"
+            ]
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_basis": {
+            "type": "string"
+          },
+          "existing_in_v0_1_seed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "skill_families": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://athena.local/schemas/athena-skill-family-record.schema.json",
+        "title": "ATHENA_SKILL_FAMILY_RECORD",
+        "description": "Canonical skill-family record; one primary domain parent.",
+        "type": "object",
+        "required": [
+          "id",
+          "object_type",
+          "title",
+          "discipline_ids",
+          "owner_discipline_id",
+          "parent_id",
+          "code",
+          "status",
+          "content_version",
+          "review_state"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ATH-FAM-[A-Z]+-[A-Z0-9-]+$"
+          },
+          "object_type": {
+            "const": "skill_family"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "discipline_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^ATH-DISC-[A-Z]+$"
+            }
+          },
+          "owner_discipline_id": {
+            "type": "string",
+            "pattern": "^ATH-DISC-[A-Z]+$"
+          },
+          "parent_id": {
+            "type": "string",
+            "pattern": "^ATH-DOM-[A-Z]+-[A-Z0-9-]+$"
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Z0-9-]+$"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "review",
+              "approved",
+              "deprecated",
+              "archived"
+            ]
+          },
+          "content_version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "review_state": {
+            "enum": [
+              "needs_review",
+              "in_review",
+              "reviewed",
+              "approved",
+              "blocked"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

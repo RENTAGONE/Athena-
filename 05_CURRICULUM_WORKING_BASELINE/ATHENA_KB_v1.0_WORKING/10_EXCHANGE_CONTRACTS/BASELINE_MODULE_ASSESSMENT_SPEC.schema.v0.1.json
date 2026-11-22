@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.local/schemas/athena-baseline-assessment-spec-v0.1.schema.json",
+  "title": "ATHENA_BASELINE_ASSESSMENT_SPEC_v0.1",
+  "type": "object",
+  "required": [
+    "registry",
+    "version",
+    "status",
+    "module_count",
+    "task_blueprint_count",
+    "policy",
+    "records"
+  ],
+  "properties": {
+    "registry": {
+      "const": "ATHENA_BASELINE_MODULE_ASSESSMENT_SPECIFICATIONS"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "module_count": {
+      "type": "integer"
+    },
+    "task_blueprint_count": {
+      "type": "integer"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 216,
+      "items": {
+        "type": "object",
+        "required": [
+          "module_id",
+          "discipline_code",
+          "module_title",
+          "task_blueprint_ids",
+          "assessment_prompt",
+          "scoring_criteria",
+          "evidence_required",
+          "feedback_and_retry",
+          "calibration_status",
+          "expert_review_status",
+          "learner_pilot_status",
+          "safety_boundary"
+        ],
+        "properties": {
+          "module_id": {
+            "type": "string",
+            "pattern": "^BASE-[A-Z]+-[0-9]{3}$"
+          },
+          "discipline_code": {
+            "type": "string"
+          },
+          "module_title": {
+            "type": "string"
+          },
+          "task_blueprint_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "assessment_prompt": {
+            "type": "string"
+          },
+          "scoring_criteria": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "evidence_required": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "feedback_and_retry": {
+            "type": "string"
+          },
+          "calibration_status": {
+            "type": "string"
+          },
+          "expert_review_status": {
+            "type": "string"
+          },
+          "learner_pilot_status": {
+            "type": "string"
+          },
+          "safety_boundary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "additionalProperties": true
+  }
+}

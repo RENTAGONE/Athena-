@@ -1,0 +1,217 @@
+{
+  "wave": "02",
+  "version": "1.0",
+  "source_count": 30,
+  "sources": [
+    {
+      "source_id": "SRC-W2-LRN-01",
+      "title": "Classroom meta-analysis: retrieval, distributed and interleaved practice",
+      "source_type": "Peer-reviewed meta-analysis",
+      "url": "https://link.springer.com/article/10.1007/s10648-026-10225-5",
+      "scope_and_limitations": "Supports context-dependent use of retrieval, spacing and interleaving; 53 studies / 7,303 learners; moderators matter."
+    },
+    {
+      "source_id": "SRC-W2-LRN-02",
+      "title": "Method of loci systematic review and meta-analysis",
+      "source_type": "Peer-reviewed systematic review/meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40457944/",
+      "scope_and_limitations": "Adult recall evidence; low/very-low overall evidence quality and high risk of bias; do not oversell or assume adolescent transfer."
+    },
+    {
+      "source_id": "SRC-W2-MOT-01",
+      "title": "Contextual interference and motor retention systematic review",
+      "source_type": "Peer-reviewed systematic review/meta-analysis",
+      "url": "https://www.nature.com/articles/s41598-024-65753-3",
+      "scope_and_limitations": "Supports examining varied/interleaved practice for motor retention; does not justify universal random practice."
+    },
+    {
+      "source_id": "SRC-W2-NAV-01",
+      "title": "Finding Your Way With Map and Compass",
+      "source_type": "Government educational resource (USGS)",
+      "url": "https://www.usgs.gov/educational-resources/finding-your-way-map-and-compass",
+      "scope_and_limitations": "Map scale, distance, cardinal directions, bearing and map reading."
+    },
+    {
+      "source_id": "SRC-W2-NAV-02",
+      "title": "How to orient map and compass",
+      "source_type": "Government educational resource (USGS)",
+      "url": "https://www.usgs.gov/educational-resources/how-get-your-map-and-compass-face-same-direction",
+      "scope_and_limitations": "Compass/map alignment, magnetic declination and metal interference."
+    },
+    {
+      "source_id": "SRC-W2-TOOL-01",
+      "title": "Hand and Power Tools",
+      "source_type": "Government safety guidance (OSHA)",
+      "url": "https://www.osha.gov/sites/default/files/publications/OSHA3080.pdf",
+      "scope_and_limitations": "Tool condition, guards, clamping, safe handling; workplace context, adapt age-appropriately."
+    },
+    {
+      "source_id": "SRC-W2-TOOL-02",
+      "title": "Construction tools: general requirements",
+      "source_type": "Government safety standard (OSHA)",
+      "url": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.300",
+      "scope_and_limitations": "Tool condition and guarding; not a youth workshop curriculum."
+    },
+    {
+      "source_id": "SRC-W2-ELEC-01",
+      "title": "Electrical safety foundation",
+      "source_type": "Government/technical safety resource",
+      "url": "https://www.esfi.org/",
+      "scope_and_limitations": "Electrical hazard recognition and escalation; no household mains practice."
+    },
+    {
+      "source_id": "SRC-W2-SPORT-01",
+      "title": "Child Activity: An Overview",
+      "source_type": "Government public-health guidance (CDC)",
+      "url": "https://www.cdc.gov/physical-activity-basics/guidelines/children.html",
+      "scope_and_limitations": "Age-group activity guidance; not a prescription for an individual athlete."
+    },
+    {
+      "source_id": "SRC-W2-SPORT-02",
+      "title": "Age- and stage-appropriate strength and conditioning",
+      "source_type": "Professional sports medicine guidance (ACSM)",
+      "url": "https://www.acsm.org/wp-content/uploads/2025/02/NYSHSI-LTAD2-Adolescent-Development-on-Fitness-and-Conditioning.pdf",
+      "scope_and_limitations": "Developmental readiness, motor competency, qualified supervision and youth conditioning."
+    },
+    {
+      "source_id": "SRC-W2-SPORT-03",
+      "title": "Injury prevention and management in youth sport",
+      "source_type": "Children’s hospital guidance",
+      "url": "https://www.schn.health.nsw.gov.au/kids-health-hub/physical-activity/organised-sport/injury",
+      "scope_and_limitations": "Surface checks, technique coaching, warm-up and safe sport context."
+    },
+    {
+      "source_id": "SRC-W2-PHOTO-01",
+      "title": "Smartphone photography guidance",
+      "source_type": "Professional instructional resource (Adobe)",
+      "url": "https://www.adobe.com/in/creativecloud/roc/blog/photography/capture-professional-photos-with-smartphone.html",
+      "scope_and_limitations": "Focus/exposure, grid, natural light, HDR and composition; instructional not controlled efficacy evidence."
+    },
+    {
+      "source_id": "SRC-W2-PHOTO-02",
+      "title": "Leading lines photography",
+      "source_type": "Professional instructional resource (Adobe)",
+      "url": "https://www.adobe.com/creativecloud/photography/technique/leading-lines.html",
+      "scope_and_limitations": "Leading-line composition and viewpoint practice."
+    },
+    {
+      "source_id": "SRC-W2-VOICE-01",
+      "title": "Voice Disorders Practice Portal",
+      "source_type": "Professional clinical guidance (ASHA)",
+      "url": "https://www.asha.org/practice-portal/clinical-topics/voice-disorders/",
+      "scope_and_limitations": "Vocal hygiene, strain signs, hydration and avoiding shouting; not singing pedagogy."
+    },
+    {
+      "source_id": "SRC-W2-VOICE-02",
+      "title": "Vocal hygiene: caring for your voice",
+      "source_type": "Clinical patient guidance (NHS Trust)",
+      "url": "https://sfh-tr.nhs.uk/media/klolhauh/pil202512-04-vhcv-vocal-hygiene-caring-for-your-voice.pdf",
+      "scope_and_limitations": "Voice rest, avoid forcing/shouting and strain."
+    },
+    {
+      "source_id": "SRC-W2-AUDIO-01",
+      "title": "How to record and mix vocals",
+      "source_type": "Manufacturer technical instruction (Shure)",
+      "url": "https://www.shure.com/en-US/insights/how-to-record-and-mix-vocals",
+      "scope_and_limitations": "Microphone distance/position consistency and recording practice."
+    },
+    {
+      "source_id": "SRC-W2-FOOD-01",
+      "title": "Four steps to food safety",
+      "source_type": "Government public-health guidance (FoodSafety.gov)",
+      "url": "https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety",
+      "scope_and_limitations": "Clean, separate, cook, chill; hand hygiene and cross-contamination."
+    },
+    {
+      "source_id": "SRC-W2-FOOD-02",
+      "title": "Community hand hygiene guidelines",
+      "source_type": "WHO guideline",
+      "url": "https://www.who.int/news/item/15-10-2025-new-guidelines-on-community-hand-hygiene",
+      "scope_and_limitations": "Hand hygiene moments, soap/water and accessible practice."
+    },
+    {
+      "source_id": "SRC-W2-FOOD-03",
+      "title": "Food product dating",
+      "source_type": "Government food-safety guidance (USDA FSIS)",
+      "url": "https://ask.fsis.usda.gov/article/Is-food-safe-after-the-date-expires",
+      "scope_and_limitations": "Date-label interpretation is jurisdiction/product-specific; teach label wording and local advice, not US date rules as Bangladesh law."
+    },
+    {
+      "source_id": "SRC-W2-CLEAN-01",
+      "title": "Cleaning products and indoor air quality",
+      "source_type": "Government environmental health guidance (EPA)",
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/biological-contaminants-and-indoor-air-quality",
+      "scope_and_limitations": "Follow product labels, ventilation, never mix cleaning products."
+    },
+    {
+      "source_id": "SRC-W2-OPS-01",
+      "title": "Implementation intentions and goal pursuit",
+      "source_type": "Peer-reviewed foundational research (Gollwitzer)",
+      "url": "https://doi.org/10.1037/0003-066X.54.7.493",
+      "scope_and_limitations": "If-then planning as a strategy; effect depends on task and context."
+    },
+    {
+      "source_id": "SRC-W2-OPS-02",
+      "title": "The Checklist Manifesto / checklist research context",
+      "source_type": "Professional practice resource",
+      "url": "https://www.ihi.org/resources/Pages/Tools/PatientSafetyEssentialsToolkit.aspx",
+      "scope_and_limitations": "Checklist design as memory/coordination support; avoid substituting checklist compliance for understanding."
+    },
+    {
+      "source_id": "SRC-W2-LEG-01",
+      "title": "Rubik’s Cube official beginner guide",
+      "source_type": "Official instructional resource",
+      "url": "https://www.rubiks.com/solution-guide",
+      "scope_and_limitations": "Stepwise beginner solve reference; no claim of broad cognitive transfer."
+    },
+    {
+      "source_id": "SRC-W2-LEG-02",
+      "title": "Morse code reference",
+      "source_type": "International technical reference (ITU)",
+      "url": "https://www.itu.int/rec/R-REC-M.1677/en",
+      "scope_and_limitations": "Morse code symbol reference; practice/recognition standards."
+    },
+    {
+      "source_id": "SRC-W2-LEG-03",
+      "title": "Speed reading and comprehension evidence overview",
+      "source_type": "Peer-reviewed research context (Rayner et al.)",
+      "url": "https://doi.org/10.1177/1529100615623267",
+      "scope_and_limitations": "Reading speed is constrained by comprehension/eye movement; reject claims of universally doubling speed without loss."
+    },
+    {
+      "source_id": "SRC-W2-LEG-04",
+      "title": "Sleep and dream health guidance",
+      "source_type": "Government health guidance (CDC)",
+      "url": "https://www.cdc.gov/sleep/about/index.html",
+      "scope_and_limitations": "Sleep health; no sleep deprivation, alarms or sleep disruption for lucid-dream practice."
+    },
+    {
+      "source_id": "SRC-W2-LEG-05",
+      "title": "Locks and locksmithing safety/legal boundaries",
+      "source_type": "General consumer resource index; not a legal authority for locksport",
+      "url": "https://www.consumer.ftc.gov/",
+      "scope_and_limitations": "Not used to infer local legality. Locksport limits in ATHENA are an internal ethical/safety scope restriction; local law must be checked with a guardian and appropriate local authority."
+    },
+    {
+      "source_id": "SRC-W2-LEG-06",
+      "title": "Card handling and sleight-of-hand practice",
+      "source_type": "Instructional resource",
+      "url": "https://www.conjuringarts.org/",
+      "scope_and_limitations": "Dexterity practice only; no evidence of broad transfer."
+    },
+    {
+      "source_id": "SRC-W2-LEG-07",
+      "title": "Origami instructional reference",
+      "source_type": "Educational instructional resource",
+      "url": "https://origamiusa.org/",
+      "scope_and_limitations": "Folding sequence instruction; not efficacy evidence."
+    },
+    {
+      "source_id": "SRC-W2-LEG-08",
+      "title": "Doomsday algorithm calendar arithmetic reference",
+      "source_type": "Educational reference",
+      "url": "https://en.wikipedia.org/wiki/Doomsday_rule",
+      "scope_and_limitations": "Algorithmic explanation; verify independently before using dates."
+    }
+  ]
+}

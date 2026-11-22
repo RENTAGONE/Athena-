@@ -1,0 +1,143 @@
+# Micro-skill canonical expansion proposals — 130 unlinked candidates
+
+**Status: proposals only; not canonical records and not approved.** The existing canonical registry remains unchanged. The proposals preserve candidates that do not have a defensible equivalent in the current 20-entry canonical set.
+
+## Review rules
+
+- Do not force a candidate into a superficially similar canonical skill.
+- A reviewer may merge, split, rename, reject or promote a proposal.
+- Safety-sensitive candidates require qualified review before approval or practical competency claims.
+- Candidate protocol drafts remain unreviewed; no mastery or skill state is awarded.
+
+## Proposal inventory
+
+- **ATH-MICRO-COG-CANDIDATE-01-002** ← `MS-01-002` — Confidence calibration [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-01-003** ← `MS-01-003` — Explain a concept simply [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-01-004** ← `MS-01-004` — Build a useful analogy [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-01-005** ← `MS-01-005` — Spot a hidden assumption [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-01-006** ← `MS-01-006` — Separate fact, inference, and opinion [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-01-008** ← `MS-01-008` — Error log analysis [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-02-001** ← `MS-02-001` — Ambidexterity Basics (longitudinal non-dominant-hand use) [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-02-005** ← `MS-02-005` — Knot tying: bowline [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-02-007** ← `MS-02-007` — Handwriting legibility under time [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-02-009** ← `MS-02-009` — Mouse / trackpad precision [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-02-010** ← `MS-02-010` — Basic ball wall pass control [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-001** ← `MS-03-001` — Fold a T-shirt consistently [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-002** ← `MS-03-002` — Pack a small bag by checklist [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-004** ← `MS-03-004` — Tie shoelaces securely [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-005** ← `MS-03-005` — Read a measuring tape [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-006** ← `MS-03-006` — Use a spirit level [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-007** ← `MS-03-007` — Basic screwdriver selection [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-008** ← `MS-03-008` — Organise a digital folder [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-009** ← `MS-03-009` — Make a simple spreadsheet table [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-03-010** ← `MS-03-010` — Read a public transport route [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-04-001** ← `MS-04-001` — Introduce yourself clearly [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-04-004** ← `MS-04-004` — Give specific feedback [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-04-007** ← `MS-04-007` — Summarise a long message [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-04-008** ← `MS-04-008` — Read aloud with punctuation [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-04-009** ← `MS-04-009` — Negotiate a simple agreement [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-04-010** ← `MS-04-010` — Write a concise professional message [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-001** ← `MS-05-001` — Use keyboard shortcuts safely [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-002** ← `MS-05-002` — Search with exact phrases [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-003** ← `MS-05-003` — Evaluate a source quickly [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-004** ← `MS-05-004` — Capture a reproducible bug report [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-005** ← `MS-05-005` — Use Git status and diff [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-006** ← `MS-05-006` — Create a strong unique passphrase [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-007** ← `MS-05-007` — Recognise phishing indicators [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-008** ← `MS-05-008` — Back up a file and verify restore [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-009** ← `MS-05-009` — Use a terminal safely [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-05-010** ← `MS-05-010` — Read a simple JSON object [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-001** ← `MS-06-001` — Notice three levels of visual hierarchy [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-002** ← `MS-06-002` — Frame a phone photograph [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-003** ← `MS-06-003` — Lock focus and exposure on phone [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-004** ← `MS-06-004` — Use natural light direction [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-005** ← `MS-06-005` — Sketch basic 3D forms [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-006** ← `MS-06-006` — Identify dominant rhythm [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-007** ← `MS-06-007` — Match a pitch by ear [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-008** ← `MS-06-008` — Controlled breathing for speech [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-009** ← `MS-06-009` — Observe a subject before drawing [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-06-010** ← `MS-06-010` — Spot color temperature shifts [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-07-004** ← `MS-07-004` — Basic digital account recovery hygiene [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-07-007** ← `MS-07-007` — Use a fire extinguisher decision model [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-07-008** ← `MS-07-008` — Basic wound-care literacy [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-07-010** ← `MS-07-010` — Choking Response (certified practical competency pathway) [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-002** ← `MS-08-002` — Follow a multi-step route plan [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-003** ← `MS-08-003` — Estimate walking time and distance [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-004** ← `MS-08-004` — Use a compass bearing safely [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-006** ← `MS-08-006` — Recover calmly after a wrong turn [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-007** ← `MS-08-007` — Give a precise location description [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-008** ← `MS-08-008` — Read a transit interchange diagram [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-009** ← `MS-08-009` — Maintain a situational check-in routine [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-08-010** ← `MS-08-010` — Distinguish safe from unsafe shortcuts [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-001** ← `MS-09-001` — Select the correct screwdriver bit [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-002** ← `MS-09-002` — Use a hand tool with controlled force [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-003** ← `MS-09-003` — Clamp a workpiece securely [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-004** ← `MS-09-004` — Measure and mark a straight cut line [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-005** ← `MS-09-005` — Identify common fastener types [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-006** ← `MS-09-006` — Inspect a tool before use [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-007** ← `MS-09-007` — Strip a wire to a specified length [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-008** ← `MS-09-008` — Make a secure low-voltage breadboard connection [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-009** ← `MS-09-009` — Identify resistor colour bands [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SAFE-CANDIDATE-09-010** ← `MS-09-010` — Keep a tidy tool and parts station [SAFE] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-001** ← `MS-10-001` — Perform a balanced athletic landing [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-002** ← `MS-10-002` — Accelerate over a short distance [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-003** ← `MS-10-003` — Decelerate under control [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-004** ← `MS-10-004` — Change direction with body control [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-005** ← `MS-10-005` — Receive and cushion a football pass [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-006** ← `MS-10-006` — Pass accurately to a moving target [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-007** ← `MS-10-007` — Scan before receiving a ball [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-008** ← `MS-10-008` — Use the weaker foot for a controlled pass [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-009** ← `MS-10-009` — Maintain a steady aerobic pace [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-10-010** ← `MS-10-010` — Perform a safe dynamic warm-up sequence [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-001** ← `MS-11-001` — Clean a phone camera lens safely [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-002** ← `MS-11-002` — Choose an aspect ratio intentionally [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-003** ← `MS-11-003` — Use grid lines for alignment [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-004** ← `MS-11-004` — Avoid digital zoom degradation [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-005** ← `MS-11-005` — Expose for highlights [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-006** ← `MS-11-006` — Stabilise a handheld phone shot [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-007** ← `MS-11-007` — Use leading lines deliberately [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-008** ← `MS-11-008` — Separate subject from background [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-009** ← `MS-11-009` — Edit exposure without destroying detail [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-11-010** ← `MS-11-010` — Export an image for a target platform [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-001** ← `MS-12-001` — Find a comfortable speaking pitch [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-002** ← `MS-12-002` — Articulate consonant endings clearly [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-003** ← `MS-12-003` — Maintain a steady beat [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-004** ← `MS-12-004` — Hear simple pitch direction [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-005** ← `MS-12-005` — Sing a short phrase in tune [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-006** ← `MS-12-006` — Use a clean vocal onset [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-007** ← `MS-12-007` — Pace a spoken explanation [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-008** ← `MS-12-008` — Listen for phrase structure in music [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-009** ← `MS-12-009` — Project speech without shouting [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-12-010** ← `MS-12-010` — Record clean phone audio [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-001** ← `MS-13-001` — Wash hands using a complete routine [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-002** ← `MS-13-002` — Read a food date and storage label [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-003** ← `MS-13-003` — Prepare a simple no-heat snack hygienically [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-004** ← `MS-13-004` — Use a kitchen knife safely under supervision [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-005** ← `MS-13-005` — Measure dry and liquid ingredients [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-006** ← `MS-13-006` — Clean a surface using the correct product [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-007** ← `MS-13-007` — Sort laundry by care requirements [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-13-008** ← `MS-13-008` — Fold and store common clothing [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-001** ← `MS-14-001` — Break a task into next actions [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-002** ← `MS-14-002` — Estimate task duration realistically [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-003** ← `MS-14-003` — Create a simple contingency plan [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-004** ← `MS-14-004` — Maintain a short decision log [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-005** ← `MS-14-005` — Use a checklist without becoming dependent [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-006** ← `MS-14-006` — Prioritise by consequence and urgency [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-007** ← `MS-14-007` — Prepare a concise handoff [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-008** ← `MS-14-008` — Keep a simple inventory [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-009** ← `MS-14-009` — Compare two options with a decision matrix [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-14-010** ← `MS-14-010` — Close a work session cleanly [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-15-001** ← `MS-15-001` — Doomsday Algorithm (weekday mental calculation) [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-15-003** ← `MS-15-003` — Memory Palace (method of loci) [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-COG-CANDIDATE-15-004** ← `MS-15-004` — Lucid-Dream Reality Checks (sleep-safe awareness practice) [COG] — proposal_not_canonical_not_approved
+- **ATH-MICRO-SOC-CANDIDATE-15-005** ← `MS-15-005` — Speed Reading (flexible reading-rate control) [SOC] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-15-006** ← `MS-15-006` — Morse Code (basic send and receive) [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-15-007** ← `MS-15-007` — Rubik’s Cube 3×3 (beginner solve) [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-15-008** ← `MS-15-008` — Locksport Fundamentals (owned transparent practice lock only) [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-15-009** ← `MS-15-009` — French Drop (basic coin-vanish sleight) [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-15-010** ← `MS-15-010` — One-Handed Card Shuffle (basic packet control) [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-DEX-CANDIDATE-15-011** ← `MS-15-011` — Faro Shuffle (introductory card interweave) [DEX] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-15-012** ← `MS-15-012` — Safe Lighter Handling (non-flourish replacement for Zippo trick) [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-15-013** ← `MS-15-013` — Stadium Whistle (finger-assisted loud whistle) [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-15-014** ← `MS-15-014` — Signature Dish (repeatable personal recipe) [PRACT] — proposal_not_canonical_not_approved
+- **ATH-MICRO-PRACT-CANDIDATE-15-015** ← `MS-15-015` — Advanced Everyday Tie Knots (non-life-safety set) [PRACT] — proposal_not_canonical_not_approved

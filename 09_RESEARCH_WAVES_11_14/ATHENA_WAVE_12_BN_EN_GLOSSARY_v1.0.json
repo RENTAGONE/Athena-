@@ -1,0 +1,511 @@
+{
+  "version": "1.0",
+  "status": "draft_needs_bilingual_subject_review",
+  "term_count": 72,
+  "terms": [
+    {
+      "term_en": "input",
+      "term_bn": "ইনপুট",
+      "definition_bn": "তথ্য/মান যা কোনো প্রক্রিয়ায় প্রবেশ করে",
+      "localisation_note": "Keep the English term visible in code and interface contexts.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "output",
+      "term_bn": "আউটপুট",
+      "definition_bn": "প্রক্রিয়ার ফল বা উৎপন্ন তথ্য",
+      "localisation_note": "Do not translate as only “result” when output is a system interface.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "variable",
+      "term_bn": "চলক",
+      "definition_bn": "যে নামযুক্ত স্থানে মান রাখা হয়",
+      "localisation_note": "Distinguish variable from a changing physical quantity.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "function",
+      "term_bn": "ফাংশন",
+      "definition_bn": "নির্দিষ্ট কাজ করা পুনর্ব্যবহারযোগ্য কোড/গাণিতিক সম্পর্ক",
+      "localisation_note": "Context-specific: programming function vs mathematical function.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "algorithm",
+      "term_bn": "অ্যালগরিদম",
+      "definition_bn": "সমস্যা সমাধানের সুনির্দিষ্ট ধাপসমষ্টি",
+      "localisation_note": "Do not imply every algorithm is code.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "debugging",
+      "term_bn": "ত্রুটি নির্ণয় ও সংশোধন",
+      "definition_bn": "কোড/সিস্টেমের ভুল খুঁজে ঠিক করার প্রক্রিয়া",
+      "localisation_note": "Prefer explanatory phrase for beginners.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "data",
+      "term_bn": "ডেটা / উপাত্ত",
+      "definition_bn": "বিশ্লেষণ বা প্রক্রিয়াকরণের তথ্য",
+      "localisation_note": "Use উপাত্ত in formal Bangla; ডেটা in common technical UI.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "evidence",
+      "term_bn": "প্রমাণ / প্রমাণ-উপাত্ত",
+      "definition_bn": "কোনো দাবিকে সমর্থন বা দুর্বল করে এমন তথ্য",
+      "localisation_note": "Do not equate evidence with certainty.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "hypothesis",
+      "term_bn": "অনুমানভিত্তিক পরীক্ষাযোগ্য প্রস্তাব",
+      "definition_bn": "পরীক্ষা বা পর্যবেক্ষণে যাচাইযোগ্য ব্যাখ্যা",
+      "localisation_note": "Avoid using অনুমান alone if it sounds like a guess.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "experiment",
+      "term_bn": "পরীক্ষণ",
+      "definition_bn": "নিয়ন্ত্রিতভাবে কোনো প্রশ্ন যাচাই করার পদ্ধতি",
+      "localisation_note": "Use পরীক্ষা for everyday tests; পরীক্ষণ for scientific method.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "measurement",
+      "term_bn": "পরিমাপ",
+      "definition_bn": "এককসহ কোনো রাশির মান নির্ণয়",
+      "localisation_note": "Always show unit and uncertainty when relevant.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "unit",
+      "term_bn": "একক",
+      "definition_bn": "পরিমাপের মান প্রকাশের নির্দিষ্ট মানদণ্ড",
+      "localisation_note": "Keep SI symbols unchanged.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "force",
+      "term_bn": "বল",
+      "definition_bn": "বস্তুর গতি বা আকৃতি পরিবর্তনে প্রভাব ফেলে এমন পারস্পরিক ক্রিয়া",
+      "localisation_note": "Do not define simply as “push” only.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "energy",
+      "term_bn": "শক্তি",
+      "definition_bn": "কাজ করার সামর্থ্য/ভৌত রাশি",
+      "localisation_note": "Use context-specific forms such as kinetic energy.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "voltage",
+      "term_bn": "ভোল্টেজ / বিভব পার্থক্য",
+      "definition_bn": "দুই বিন্দুর বৈদ্যুতিক বিভবের পার্থক্য",
+      "localisation_note": "Voltage is commonly used in practical electronics.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "current",
+      "term_bn": "তড়িৎ প্রবাহ",
+      "definition_bn": "আধান প্রবাহের হার",
+      "localisation_note": "Avoid ambiguity with current meaning present.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "resistance",
+      "term_bn": "রোধ",
+      "definition_bn": "তড়িৎ প্রবাহে বাধার পরিমাপ",
+      "localisation_note": "Use রোধ in circuit context.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "circuit",
+      "term_bn": "বৈদ্যুতিক বর্তনী",
+      "definition_bn": "বিদ্যুৎ প্রবাহের সম্পূর্ণ পথ",
+      "localisation_note": "Explain open/closed circuit distinctly.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "probability",
+      "term_bn": "সম্ভাবনা",
+      "definition_bn": "কোনো ঘটনার ঘটার পরিমিত সম্ভাব্যতা",
+      "localisation_note": "Do not present probability as certainty.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "average",
+      "term_bn": "গড়",
+      "definition_bn": "মানগুলোর যোগফলকে সংখ্যার পরিমাণ দিয়ে ভাগ",
+      "localisation_note": "Specify mean/median/mode when needed.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "median",
+      "term_bn": "মধ্যক",
+      "definition_bn": "ক্রমে সাজানো উপাত্তের মাঝের মান",
+      "localisation_note": "For even count, average of two central values.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "sample",
+      "term_bn": "নমুনা",
+      "definition_bn": "বৃহত্তর গোষ্ঠী থেকে পর্যবেক্ষিত অংশ",
+      "localisation_note": "Explain representativeness and sampling bias.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "bias",
+      "term_bn": "পক্ষপাত / পদ্ধতিগত বিচ্যুতি",
+      "definition_bn": "ফলকে নিয়মিতভাবে একদিকে প্রভাবিত করা",
+      "localisation_note": "Distinguish statistical bias from personal prejudice.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "correlation",
+      "term_bn": "সহসম্পর্ক",
+      "definition_bn": "দুটি চলকের পরিবর্তনের পরিসংখ্যানগত সম্পর্ক",
+      "localisation_note": "State clearly that correlation does not prove causation.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "causation",
+      "term_bn": "কারণগত সম্পর্ক",
+      "definition_bn": "একটি বিষয় অন্যটির পরিবর্তনে কারণ হিসেবে কাজ করে",
+      "localisation_note": "Require stronger evidence than co-occurrence.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "budget",
+      "term_bn": "বাজেট",
+      "definition_bn": "আয়-ব্যয়ের পরিকল্পনা",
+      "localisation_note": "Use taka and locally meaningful examples.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "revenue",
+      "term_bn": "রাজস্ব / বিক্রয় আয়",
+      "definition_bn": "ব্যবসার বিক্রয় বা কার্যক্রম থেকে আসা মোট আয়",
+      "localisation_note": "Do not confuse revenue with profit.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "profit",
+      "term_bn": "মুনাফা",
+      "definition_bn": "আয় থেকে প্রাসঙ্গিক ব্যয় বাদ দেওয়ার পর অবশিষ্ট",
+      "localisation_note": "Explain gross vs net profit.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "cash flow",
+      "term_bn": "নগদ প্রবাহ",
+      "definition_bn": "নগদ অর্থ আসা ও যাওয়ার সময়ভিত্তিক ধারা",
+      "localisation_note": "Profit and cash flow are not identical.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "interest",
+      "term_bn": "সুদ",
+      "definition_bn": "ঋণ বা সঞ্চয়ের ওপর নির্ধারিত অর্থমূল্য",
+      "localisation_note": "Explain rate, period and compounding.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "risk",
+      "term_bn": "ঝুঁকি",
+      "definition_bn": "অনিশ্চিত ফল ও ক্ষতির সম্ভাবনা/প্রভাব",
+      "localisation_note": "Separate likelihood from severity.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "privacy",
+      "term_bn": "গোপনীয়তা",
+      "definition_bn": "ব্যক্তিগত তথ্যের নিয়ন্ত্রণ ও যথাযথ ব্যবহার",
+      "localisation_note": "Not identical to secrecy.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "consent",
+      "term_bn": "সম্মতি",
+      "definition_bn": "স্বেচ্ছায়, তথ্য জেনে অনুমতি দেওয়া",
+      "localisation_note": "Must be specific, informed and revocable where applicable.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "accessibility",
+      "term_bn": "প্রবেশগম্যতা",
+      "definition_bn": "বিভিন্ন সক্ষমতার মানুষ যাতে ব্যবহার করতে পারে সেই নকশা",
+      "localisation_note": "Avoid framing as a special add-on.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "caption",
+      "term_bn": "ক্যাপশন / লিখিত উপশিরোনাম",
+      "definition_bn": "অডিওর কথ্য বিষয়বস্তুর পাঠ্যরূপ",
+      "localisation_note": "Distinguish captions from decorative subtitles.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "screen reader",
+      "term_bn": "স্ক্রিন রিডার",
+      "definition_bn": "স্ক্রিনের তথ্য কণ্ঠ/ব্রেইল আউটপুটে দেয় এমন সহায়ক প্রযুক্তি",
+      "localisation_note": "Test semantic labels and reading order.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "offline-first",
+      "term_bn": "অফলাইন-প্রথম",
+      "definition_bn": "ইন্টারনেট না থাকলেও মূল কাজ চলে এমন নকশা",
+      "localisation_note": "Do not promise every feature works offline.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "synchronisation",
+      "term_bn": "সিঙ্ক্রোনাইজেশন",
+      "definition_bn": "একাধিক সংরক্ষণস্থলের তথ্য মিলিয়ে নেওয়া",
+      "localisation_note": "Conflict policy must be explicit.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "conflict resolution",
+      "term_bn": "দ্বন্দ্ব নিষ্পত্তি",
+      "definition_bn": "একই তথ্যের ভিন্ন পরিবর্তন হলে সিদ্ধান্তের নিয়ম",
+      "localisation_note": "Do not silently use last-write-wins for user content.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "mastery",
+      "term_bn": "দক্ষতার প্রমাণিত আয়ত্ত",
+      "definition_bn": "নির্দিষ্ট মানদণ্ডে ধারাবাহিক সক্ষমতার প্রমাণ",
+      "localisation_note": "Never equate completion or time spent with mastery.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "retention",
+      "term_bn": "দীর্ঘমেয়াদি ধারণ",
+      "definition_bn": "সময় পেরিয়েও জ্ঞান/দক্ষতা মনে রাখা বা প্রয়োগ করা",
+      "localisation_note": "Measure with delayed evidence.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "transfer",
+      "term_bn": "নতুন পরিস্থিতিতে প্রয়োগ",
+      "definition_bn": "শেখা ধারণা ভিন্ন প্রসঙ্গে ব্যবহার",
+      "localisation_note": "Not the same as repeating a familiar exercise.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "feedback",
+      "term_bn": "প্রতিক্রিয়া / ফিডব্যাক",
+      "definition_bn": "কাজের মান ও পরবর্তী পদক্ষেপ সম্পর্কে তথ্য",
+      "localisation_note": "Prefer actionable, evidence-linked feedback.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "metacognition",
+      "term_bn": "চিন্তা-প্রক্রিয়া সম্পর্কে সচেতনতা",
+      "definition_bn": "নিজের শেখা/চিন্তা পর্যবেক্ষণ ও নিয়ন্ত্রণ",
+      "localisation_note": "Avoid treating self-report as objective diagnosis.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "cognitive load",
+      "term_bn": "মানসিক প্রক্রিয়াকরণ-চাপ",
+      "definition_bn": "এক সময়ে তথ্য সামলানোর ওপর চাহিদা",
+      "localisation_note": "Explain intrinsic/extraneous load only when needed.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "deadline",
+      "term_bn": "শেষ সময়সীমা",
+      "definition_bn": "কাজ শেষ বা জমা দেওয়ার নির্ধারিত শেষ সময়",
+      "localisation_note": "Use timezone-aware date/time.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "estimate",
+      "term_bn": "সময়সহ পূর্বানুমান",
+      "definition_bn": "সম্ভাব্য সময়/পরিমাণের আনুমানিক হিসাব",
+      "localisation_note": "Record uncertainty and later actuals.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "routine",
+      "term_bn": "নিয়মিত অভ্যাস/রুটিন",
+      "definition_bn": "পুনরাবৃত্ত কাজের পরিকল্পিত ধারা",
+      "localisation_note": "Distinguish routine from fixed commitment.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "tentative",
+      "term_bn": "সম্ভাব্য / অনিশ্চিত",
+      "definition_bn": "এখনও নিশ্চিত নয় এমন অবস্থা",
+      "localisation_note": "Do not treat as confirmed calendar commitment.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "confirmed",
+      "term_bn": "নিশ্চিত",
+      "definition_bn": "ব্যবহারকারী/আয়োজক নিশ্চিত করেছে",
+      "localisation_note": "Record who confirmed and when.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "buffer",
+      "term_bn": "অতিরিক্ত সময়ের ব্যবধান",
+      "definition_bn": "যাতায়াত/প্রস্তুতি/অনিশ্চয়তার জন্য রাখা সময়",
+      "localisation_note": "Keep travel and preparation separate when useful.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "recovery",
+      "term_bn": "পুনরুদ্ধার / বিশ্রাম",
+      "definition_bn": "পরিশ্রমের পর স্বাভাবিক অবস্থায় ফেরার সময়",
+      "localisation_note": "Not wasted time.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "safeguarding",
+      "term_bn": "সুরক্ষা ও ঝুঁকি প্রতিরোধ",
+      "definition_bn": "শিশু/ঝুঁকিপূর্ণ ব্যক্তিকে ক্ষতি, নির্যাতন বা শোষণ থেকে রক্ষার ব্যবস্থা",
+      "localisation_note": "Use institutional safeguarding meaning.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "first aid",
+      "term_bn": "প্রাথমিক চিকিৎসা / প্রাথমিক সহায়তা",
+      "definition_bn": "জরুরি পেশাদার সহায়তা আসা পর্যন্ত তাৎক্ষণিক সহায়তা",
+      "localisation_note": "Do not imply certification from reading.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "hazard",
+      "term_bn": "বিপদের উৎস",
+      "definition_bn": "ক্ষতি ঘটাতে পারে এমন অবস্থা/বস্তু",
+      "localisation_note": "Separate hazard from risk.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "risk assessment",
+      "term_bn": "ঝুঁকি মূল্যায়ন",
+      "definition_bn": "বিপদ, সম্ভাবনা, প্রভাব ও নিয়ন্ত্রণ বিচার",
+      "localisation_note": "Use before activity, not after incident.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "source provenance",
+      "term_bn": "উৎস-উৎপত্তির তথ্য",
+      "definition_bn": "তথ্য কোথা থেকে, কখন, কীভাবে এসেছে তার রেকর্ড",
+      "localisation_note": "Keep URL, version/date, access date and limitations.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "licence",
+      "term_bn": "লাইসেন্স / ব্যবহারের অনুমতি",
+      "definition_bn": "কোন শর্তে উপাদান ব্যবহার/পরিবর্তন/বিতরণ করা যায়",
+      "localisation_note": "Do not assume publicly visible means reusable.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "prototype",
+      "term_bn": "প্রাথমিক কার্যকর নমুনা",
+      "definition_bn": "পরীক্ষা/প্রতিক্রিয়ার জন্য তৈরি প্রাথমিক সংস্করণ",
+      "localisation_note": "Label limitations; not production-ready.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "rollback",
+      "term_bn": "আগের অবস্থায় ফেরত",
+      "definition_bn": "ব্যর্থ পরিবর্তন বাতিল করে পূর্বের অবস্থা ফিরিয়ে আনা",
+      "localisation_note": "Must be tested, not just promised.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "append-only",
+      "term_bn": "শুধু নতুন রেকর্ড যোগ",
+      "definition_bn": "পুরোনো প্রমাণ না বদলে নতুন রেকর্ড যোগ করা",
+      "localisation_note": "Useful for evidence history.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "jurisdiction",
+      "term_bn": "আইনগত অধিক্ষেত্র",
+      "definition_bn": "যে এলাকার আইন/নিয়ম প্রযোজ্য",
+      "localisation_note": "Do not generalise foreign law to Bangladesh.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "guardian",
+      "term_bn": "অভিভাবক",
+      "definition_bn": "শিশুর দায়িত্বপ্রাপ্ত আইনগত/যত্নকারী ব্যক্তি",
+      "localisation_note": "Exact legal meaning depends on jurisdiction.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "assent",
+      "term_bn": "শিশুর সম্মতিসূচক মত",
+      "definition_bn": "শিশুর বয়স ও বোঝার উপযোগীভাবে অংশগ্রহণে রাজি হওয়া",
+      "localisation_note": "Not a replacement for required guardian consent.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "anonymisation",
+      "term_bn": "পরিচয়মুক্তকরণ",
+      "definition_bn": "পরিচয় শনাক্ত করার উপায় অপসারণ",
+      "localisation_note": "True anonymisation is difficult; test re-identification risk.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "pseudonymisation",
+      "term_bn": "ছদ্মনাম/কোড ব্যবহার",
+      "definition_bn": "পরিচয়কে আলাদা key দিয়ে প্রতিস্থাপন",
+      "localisation_note": "Still personal data if re-linking is possible.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "low bandwidth",
+      "term_bn": "কম গতির ইন্টারনেট",
+      "definition_bn": "সীমিত ডেটা/সংযোগে ব্যবহার",
+      "localisation_note": "Provide text-first and deferred sync.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "screen magnification",
+      "term_bn": "স্ক্রিন বড় করে দেখা",
+      "definition_bn": "ইন্টারফেসের অংশ বড় করে পড়া",
+      "localisation_note": "Do not clip controls or hide focus.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "reduced motion",
+      "term_bn": "কম অ্যানিমেশন",
+      "definition_bn": "নড়াচড়া/ট্রানজিশন কমানোর সেটিং",
+      "localisation_note": "Respect OS preference and provide manual control.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "plain language",
+      "term_bn": "সহজ ও স্পষ্ট ভাষা",
+      "definition_bn": "অপ্রয়োজনীয় জটিলতা ছাড়া নির্ভুল ভাষা",
+      "localisation_note": "Not simplification of the underlying idea.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "localisation",
+      "term_bn": "স্থানীয়করণ",
+      "definition_bn": "ভাষা, একক, উদাহরণ ও প্রাসঙ্গিকতা স্থানীয়ভাবে মানানো",
+      "localisation_note": "Keep canonical concept IDs stable.",
+      "status": "draft_needs_bilingual_review"
+    },
+    {
+      "term_en": "translation",
+      "term_bn": "অনুবাদ",
+      "definition_bn": "এক ভাষার অর্থ অন্য ভাষায় প্রকাশ",
+      "localisation_note": "Technical review and glossary consistency required.",
+      "status": "draft_needs_bilingual_review"
+    }
+  ]
+}

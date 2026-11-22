@@ -1,0 +1,68 @@
+{
+  "scenario_bank_id": "ATHENA-WAVE3-BATCH01-SCENARIOS",
+  "version": "0.1",
+  "production_message": 12,
+  "status": "draft_unpiloted",
+  "scenario_count": 3,
+  "scenarios": [
+    {
+      "scenario_id": "W3-SCEN-001",
+      "title": "Plan a safe community sports demonstration",
+      "disciplines": [
+        "BODY",
+        "ATH",
+        "AEST",
+        "INDEP",
+        "PERF"
+      ],
+      "brief": "Create a short supervised sports demonstration for a small audience. Explain the body-system idea, select safe movement drills, prepare a readable one-page instruction card, rehearse a short spoken introduction and create a guardian-approved logistics/check-in plan.",
+      "deliverables": [
+        "systems explanation with limits",
+        "risk-checked movement sequence and stop rules",
+        "phone-readable visual instruction card",
+        "30–60 second spoken introduction",
+        "supervised logistics checklist"
+      ],
+      "evidence": "Learner explains choices, shows safe practice under appropriate supervision, tests visual readability with a peer and records source provenance.",
+      "critical_fail": "Unsafe exercise prescription, unsupervised hazardous activity, privacy disclosure or misleading health claim."
+    },
+    {
+      "scenario_id": "W3-SCEN-002",
+      "title": "Create a visual story with a live reading",
+      "disciplines": [
+        "ART",
+        "AEST",
+        "PERF"
+      ],
+      "brief": "Develop a short original visual sequence and perform a brief narration. Test composition through thumbnails, apply readable layout and contrast, rehearse pacing and record audience interpretation.",
+      "deliverables": [
+        "six thumbnails",
+        "final three-panel sequence or storyboard",
+        "palette and contrast note",
+        "short narration and rehearsal iterations",
+        "audience feedback reflection"
+      ],
+      "evidence": "Compare intended focal path and audience interpretation; cite or identify all external visual/audio references and permissions.",
+      "critical_fail": "Uncredited copyrighted assets, non-consensual use of another person’s likeness or forced public disclosure."
+    },
+    {
+      "scenario_id": "W3-SCEN-003",
+      "title": "Independent preparation for a supervised meal and appointment day",
+      "disciplines": [
+        "INDEP",
+        "BODY",
+        "AEST"
+      ],
+      "brief": "Plan a simple supervised meal and a guardian-approved familiar appointment/journey. Build checklists that communicate sequence, hygiene, safe delegation and contingency information.",
+      "deliverables": [
+        "meal workflow and hygiene checklist",
+        "adult-only task list",
+        "appointment preparation sheet using fictional data",
+        "route contingency plan",
+        "brief reflection on asking for help"
+      ],
+      "evidence": "Demonstrate only age-appropriate supervised tasks; inspect clarity and privacy of the documents; explain what must be escalated to an adult.",
+      "critical_fail": "Unsafe food handling, unsupervised sharp/hot equipment, exposure of live location or personal documents."
+    }
+  ]
+}

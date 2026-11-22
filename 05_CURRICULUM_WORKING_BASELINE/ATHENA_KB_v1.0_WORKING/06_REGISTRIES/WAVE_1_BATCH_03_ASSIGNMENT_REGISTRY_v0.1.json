@@ -1,0 +1,104 @@
+{
+  "registry_id": "ATHENA-WAVE1-BATCH03-ASSIGNMENTS",
+  "version": "0.1",
+  "status": "working_draft",
+  "production_message": 6,
+  "discipline_codes": [
+    "MATH",
+    "ENG",
+    "ELEC",
+    "RES",
+    "LANG",
+    "COMM"
+  ],
+  "assignment_cycle": [
+    "assign_learning_objectives",
+    "learner_selects_and_records_sources",
+    "practice",
+    "submit_learner_generated_evidence",
+    "independent_evaluation",
+    "propose_evidence_update",
+    "learner_approval",
+    "engine_validation_and_commit"
+  ],
+  "mastery_policy": "Do not infer mastery from completion, time spent, self-rating, AI-generated text, or a resource being opened. Require learner-generated evidence under recorded task conditions.",
+  "units": [
+    {
+      "unit_code": "MATH-MOD-015",
+      "discipline": "MATH",
+      "title": "Mathematical modelling: assumptions, variables and validation",
+      "prerequisites": [
+        "functions",
+        "linear equations",
+        "descriptive statistics"
+      ],
+      "required_evidence_type": "model_report",
+      "status": "IN_PROGRESS",
+      "source_file": "08_BREADTH_FIRST_BASELINE/WAVE_1_SIX_DISCIPLINE_TEACHING_PACK_BATCH_03_v0.1.md"
+    },
+    {
+      "unit_code": "ENG-SWE-002",
+      "discipline": "ENG",
+      "title": "Version control, change history and collaborative software workflow",
+      "prerequisites": [
+        "basic programming",
+        "files and folders",
+        "command-line or Git client"
+      ],
+      "required_evidence_type": "repository_workflow",
+      "status": "IN_PROGRESS",
+      "source_file": "08_BREADTH_FIRST_BASELINE/WAVE_1_SIX_DISCIPLINE_TEACHING_PACK_BATCH_03_v0.1.md"
+    },
+    {
+      "unit_code": "ELEC-MEAS-002",
+      "discipline": "ELEC",
+      "title": "Measurement, multimeter use and uncertainty in low-voltage circuits",
+      "prerequisites": [
+        "voltage current resistance",
+        "Ohms law",
+        "electrical safety"
+      ],
+      "required_evidence_type": "measurement_protocol",
+      "status": "IN_PROGRESS",
+      "source_file": "08_BREADTH_FIRST_BASELINE/WAVE_1_SIX_DISCIPLINE_TEACHING_PACK_BATCH_03_v0.1.md"
+    },
+    {
+      "unit_code": "RES-METHOD-002",
+      "discipline": "RES",
+      "title": "Research questions, operational definitions and study design",
+      "prerequisites": [
+        "source evaluation",
+        "claim and evidence",
+        "basic descriptive statistics",
+        "research ethics"
+      ],
+      "required_evidence_type": "research_protocol",
+      "status": "IN_PROGRESS",
+      "source_file": "08_BREADTH_FIRST_BASELINE/WAVE_1_SIX_DISCIPLINE_TEACHING_PACK_BATCH_03_v0.1.md"
+    },
+    {
+      "unit_code": "LANG-ACQ-002",
+      "discipline": "LANG",
+      "title": "Deliberate language learning: input, retrieval, feedback and transfer",
+      "prerequisites": [
+        "basic literacy",
+        "target-language goal"
+      ],
+      "required_evidence_type": "language_learning_plan",
+      "status": "IN_PROGRESS",
+      "source_file": "08_BREADTH_FIRST_BASELINE/WAVE_1_SIX_DISCIPLINE_TEACHING_PACK_BATCH_03_v0.1.md"
+    },
+    {
+      "unit_code": "COMM-PRES-002",
+      "discipline": "COMM",
+      "title": "Oral presentation: structure, delivery and question handling",
+      "prerequisites": [
+        "evidence-based argumentation",
+        "audience analysis"
+      ],
+      "required_evidence_type": "presentation_and_defence",
+      "status": "IN_PROGRESS",
+      "source_file": "08_BREADTH_FIRST_BASELINE/WAVE_1_SIX_DISCIPLINE_TEACHING_PACK_BATCH_03_v0.1.md"
+    }
+  ]
+}

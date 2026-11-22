@@ -1,0 +1,133 @@
+{
+  "registry_id": "WAVE1_BATCH04_ASSIGNMENT_REGISTRY",
+  "version": "0.1",
+  "production_message": 7,
+  "status": "draft_pending_independent_review",
+  "workflow": [
+    "assign",
+    "learner_selected_research",
+    "practice",
+    "learner_demonstration",
+    "independent_evaluation",
+    "proposed_evidence_package",
+    "learner_approval",
+    "engine_commit"
+  ],
+  "units": [
+    {
+      "code": "MATH-REASON-016",
+      "title": "Mathematical proof, counterexamples and structured problem solving",
+      "discipline": "Mathematical reasoning",
+      "prerequisites": "Arithmetic, algebra, equations, sets and basic logic notation.",
+      "evidence": [
+        "learner_explanation",
+        "worked_solution_or_artefact",
+        "independent_check",
+        "reflection"
+      ],
+      "assessment": {
+        "threshold_percent": 80,
+        "critical_error_blocks_pass": true,
+        "tool_assisted_work_must_be_labelled": true
+      },
+      "status": "authored_draft"
+    },
+    {
+      "code": "ENG-ALGO-003",
+      "title": "Algorithms, data structures and complexity",
+      "discipline": "Software engineering",
+      "prerequisites": "Basic programming, variables, conditionals, loops, functions, arrays/lists and simple debugging.",
+      "evidence": [
+        "learner_explanation",
+        "worked_solution_or_artefact",
+        "independent_check",
+        "reflection"
+      ],
+      "assessment": {
+        "threshold_percent": 80,
+        "critical_error_blocks_pass": true,
+        "tool_assisted_work_must_be_labelled": true
+      },
+      "status": "authored_draft"
+    },
+    {
+      "code": "ELEC-DIG-003",
+      "title": "Digital logic, binary representation and combinational circuits",
+      "discipline": "Electronics",
+      "prerequisites": "Basic arithmetic, voltage/current concepts, safe multimeter use and basic circuit symbols. No mains work.",
+      "evidence": [
+        "learner_explanation",
+        "worked_solution_or_artefact",
+        "independent_check",
+        "reflection"
+      ],
+      "assessment": {
+        "threshold_percent": 80,
+        "critical_error_blocks_pass": true,
+        "tool_assisted_work_must_be_labelled": true
+      },
+      "status": "authored_draft"
+    },
+    {
+      "code": "RES-DATA-003",
+      "title": "Data cleaning, descriptive analysis and reproducible workflows",
+      "discipline": "Research",
+      "prerequisites": "Research question, variable types, basic arithmetic, spreadsheet or beginner programming use.",
+      "evidence": [
+        "learner_explanation",
+        "worked_solution_or_artefact",
+        "independent_check",
+        "reflection"
+      ],
+      "assessment": {
+        "threshold_percent": 80,
+        "critical_error_blocks_pass": true,
+        "tool_assisted_work_must_be_labelled": true
+      },
+      "status": "authored_draft"
+    },
+    {
+      "code": "LANG-READ-003",
+      "title": "Reading comprehension, inference and analytical writing",
+      "discipline": "Language",
+      "prerequisites": "Functional reading fluency in the target language; basic sentence and paragraph structure.",
+      "evidence": [
+        "learner_explanation",
+        "worked_solution_or_artefact",
+        "independent_check",
+        "reflection"
+      ],
+      "assessment": {
+        "threshold_percent": 80,
+        "critical_error_blocks_pass": true,
+        "tool_assisted_work_must_be_labelled": true
+      },
+      "status": "authored_draft"
+    },
+    {
+      "code": "COMM-NEG-003",
+      "title": "Negotiation, conflict resolution and active listening",
+      "discipline": "Communication",
+      "prerequisites": "Active listening, clear expression, emotional self-regulation and basic argumentation.",
+      "evidence": [
+        "learner_explanation",
+        "worked_solution_or_artefact",
+        "independent_check",
+        "reflection"
+      ],
+      "assessment": {
+        "threshold_percent": 80,
+        "critical_error_blocks_pass": true,
+        "tool_assisted_work_must_be_labelled": true
+      },
+      "status": "authored_draft"
+    }
+  ],
+  "integrity_rules": {
+    "ai_output_is_not_mastery_evidence": true,
+    "preserve_raw_submission_and_provenance": true,
+    "no_automatic_mastery_from_completion": true,
+    "learner_approval_required_before_commit": true,
+    "distinguish_unaided_and_tool_assisted_performance": true
+  }
+}

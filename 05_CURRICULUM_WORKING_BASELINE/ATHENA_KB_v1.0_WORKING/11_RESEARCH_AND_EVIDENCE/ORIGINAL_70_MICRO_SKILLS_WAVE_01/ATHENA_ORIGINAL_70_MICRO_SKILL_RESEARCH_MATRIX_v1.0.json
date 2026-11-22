@@ -1,0 +1,1265 @@
+{
+  "matrix": "ATHENA Original 70 Micro-skill Research Matrix",
+  "version": "1.0",
+  "status": "research_refinement_draft",
+  "source_archive": "KB v3.18 / Master Vault v5.4 uploaded by user",
+  "candidate_count": 70,
+  "protocol_sections_found": 70,
+  "expert_reviewed_count": 0,
+  "learner_validated_count": 0,
+  "approved_count": 0,
+  "records": [
+    {
+      "id": "MS-01-001",
+      "name": "Active recall from a blank page",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-01",
+        "SRC-LRN-02",
+        "SRC-LRN-03",
+        "SRC-LRN-05"
+      ],
+      "practice_refinement": "Recall before restudy; use a bounded topic already learned, reconstruct relationships, then correct against an authoritative source.",
+      "assessment_refinement": "Score central propositions and relationship accuracy separately; repeat a cold recall after a delay and use a different question/prompt for transfer.",
+      "limitations_and_safety": "Do not reward page fullness, fluent guessing or unsupported additions. Retrieval is useful when the learner has first encountered and understood the content.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-002",
+      "name": "Confidence calibration",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Commit confidence before seeing feedback; compare confidence bands with actual correctness over many varied, low-stakes items.",
+      "assessment_refinement": "Keep item-level predictions, outcomes and calibration summaries across at least several sets; inspect high-confidence errors first.",
+      "limitations_and_safety": "A small sample cannot establish stable calibration. Do not use self-calibration as the sole basis for medical, legal, financial or safety decisions.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-003",
+      "name": "Explain a concept simply",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-03",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Require a correct mechanism, one apt example, one boundary condition and a novice-facing explanation; then test the listener’s paraphrase.",
+      "assessment_refinement": "Assess factual fidelity, mechanism, boundary and listener reconstruction—not charm, accent or presentation polish.",
+      "limitations_and_safety": "Simplification must not erase necessary conditions or turn analogy into causal proof.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-004",
+      "name": "Build a useful analogy",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-03",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Map at least three target/source relationships, test the mapping against a normal and edge case, and state where it fails.",
+      "assessment_refinement": "A reviewer should identify whether the analogy predicts any false property; learner must restate the target accurately without the analogy.",
+      "limitations_and_safety": "Analogy quality is domain-dependent; no evidence supports treating analogy generation itself as a universal mastery proxy.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-005",
+      "name": "Spot a hidden assumption",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Underline the conclusion, list premises, identify what must be true for the inference to work, then test a counterexample.",
+      "assessment_refinement": "Use short arguments with answer rationales; score correct identification of the unstated premise and a plausible counterexample.",
+      "limitations_and_safety": "Do not label every unstated context detail a logical fallacy; assumptions can be reasonable when shared and supported.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-006",
+      "name": "Separate fact, inference, and opinion",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Annotate statements by epistemic status, then attach the evidence needed to upgrade an inference or verify a factual claim.",
+      "assessment_refinement": "Use mixed examples from science, news and everyday claims; score classification plus justification and source traceability.",
+      "limitations_and_safety": "A statement can combine fact and interpretation. Teach sentence-level decomposition rather than forcing one label on a whole paragraph.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-007",
+      "name": "Create a retrieval prompt",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-01",
+        "SRC-LRN-02",
+        "SRC-LRN-03",
+        "SRC-LRN-05"
+      ],
+      "practice_refinement": "Write prompts that require recall, explanation, comparison and application; answer without notes, then check and revise weak prompts.",
+      "assessment_refinement": "Evaluate prompt quality by whether answers reveal understanding rather than cue recognition; include answer keys and misconception notes.",
+      "limitations_and_safety": "Avoid ambiguous questions, trivia-only prompts and prompts whose answer is copied verbatim from a nearby sentence.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-008",
+      "name": "Error log analysis",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Classify each error (knowledge gap, misread, procedure, calculation, strategy, careless execution), identify cause and choose one next corrective action.",
+      "assessment_refinement": "Use repeated tasks to see whether the same error class declines; compare error recurrence, not just total score.",
+      "limitations_and_safety": "Do not shame or over-record trivial slips. An error log is for diagnosis and action, not self-criticism.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-009",
+      "name": "Estimate before calculating",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "State a plausible range/order of magnitude and a reason before exact computation; compare result to estimate and explain discrepancies.",
+      "assessment_refinement": "Use varied numeric contexts; score range plausibility, unit awareness and post-calculation reasonableness check.",
+      "limitations_and_safety": "Do not require a single exact estimate where multiple assumptions are valid. Avoid high-stakes estimates without proper measurement.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-01-010",
+      "name": "Chunk a procedure",
+      "category": "COGNITIVE / LEARNING",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT FOR CORE LEARNING MECHANISM; INDIRECT FOR THIS EXACT MICRO-SKILL",
+      "evidence_sources": [
+        "SRC-LRN-02",
+        "SRC-LRN-03",
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Identify meaningful stages, name the cue that starts each stage, and practise linking stages into the whole routine.",
+      "assessment_refinement": "Assess both sequence accuracy and ability to recover after interruption; test with a changed example or context.",
+      "limitations_and_safety": "Chunks must reflect the task’s actual structure, not arbitrary groups. Avoid teaching a memorised sequence that omits safety checks.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-001",
+      "name": "Basic two-hand object transfer",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Begin with a light, soft object at low speed; practise smooth transfer, symmetrical control and gaze management before varying direction or pace.",
+      "assessment_refinement": "Record drops, unintended collisions and control across both directions; include a delayed no-demo trial.",
+      "limitations_and_safety": "Do not use heavy, sharp, breakable or hot objects. Stop if pain or numbness occurs.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-002",
+      "name": "Coin roll / finger manipulation",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Use a common coin on a soft, clear surface; isolate finger transitions slowly, then link them. Demonstration plus short deliberate sets is preferable to speed-chasing.",
+      "assessment_refinement": "Count clean controlled cycles, slips and resets over repeated trials; compare dominant/non-dominant hand only if comfortable.",
+      "limitations_and_safety": "No throwing coins near eyes or mouths; avoid prolonged repetitive practice causing pain.",
+      "review_route": "LOW–MODERATE / PHYSICAL-CONTEXT",
+      "review_requirement": "Use safe environment, appropriate equipment and stop-on-pain rules; coaching recommended for sport movement.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-003",
+      "name": "Simple pen spinning control",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Start with a capped, blunt pen; learn a single slow rotation with a stable grip before adding transitions. Use a padded area and controlled catches.",
+      "assessment_refinement": "Assess controlled completion and safe catch consistency, not trick count or speed.",
+      "limitations_and_safety": "No sharp pencils, pointed tools or spinning near faces/others. Stop for hand/wrist pain.",
+      "review_route": "LOW–MODERATE / PHYSICAL-CONTEXT",
+      "review_requirement": "Use safe environment, appropriate equipment and stop-on-pain rules; coaching recommended for sport movement.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-004",
+      "name": "Knot tying: square knot",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Learn the crossing sequence with thick, contrasting, non-load-bearing cord; inspect symmetry and tails after each attempt.",
+      "assessment_refinement": "Identify the knot correctly and reproduce it from memory on a different cord; check that it is not a granny knot.",
+      "limitations_and_safety": "Not for climbing, rescue, securing loads, restraints or life-safety use; those require specialist instruction.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-005",
+      "name": "Knot tying: bowline",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Use large soft practice rope; form the loop and tail path slowly while narrating each step, then verify the finished structure.",
+      "assessment_refinement": "Reproduce and identify the knot under observation; assess correct structure, not whether it holds a person/load.",
+      "limitations_and_safety": "Practice-only cord. Never use this protocol for climbing, lifting, rescue or securing people/animals.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-006",
+      "name": "Basic paper folding accuracy",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Use square paper, align edges/corners before creasing, and compare landmarks after each fold. Begin with a small set of repeatable folds.",
+      "assessment_refinement": "Measure alignment error qualitatively or with a simple grid; reproduce a fold sequence from a diagram after a delay.",
+      "limitations_and_safety": "Use paper only; scissors/cutters are outside this protocol unless separately supervised.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-007",
+      "name": "Handwriting legibility under time",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Stabilise letter formation, spacing and baseline before gradually introducing a comfortable pace; use short passages with consistent difficulty.",
+      "assessment_refinement": "Blind-reader legibility check plus error count; record speed only alongside legibility and comfort.",
+      "limitations_and_safety": "Do not reward painful grip, excessive pressure or speed that degrades readability; consider motor/vision/access needs.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-008",
+      "name": "Keyboard touch-typing home row",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Learn home-row mapping and finger return positions with low-speed accuracy practice; increase speed only after accuracy is stable.",
+      "assessment_refinement": "Use repeated standardised passages; record accuracy, uncorrected errors and words/minute separately.",
+      "limitations_and_safety": "Use neutral posture and breaks; do not force a rigid hand position that causes discomfort.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-009",
+      "name": "Mouse / trackpad precision",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02"
+      ],
+      "practice_refinement": "Practise select, drag, double-click and target acquisition in a harmless sandbox; vary target size only after reliable control.",
+      "assessment_refinement": "Record successful target acquisition, accidental actions and time; test on a new layout.",
+      "limitations_and_safety": "Avoid tasks that delete, publish or purchase; use a practice page and undo/recovery where available.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-02-010",
+      "name": "Basic ball wall pass control",
+      "category": "DEXTERITY / COORDINATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "ADJACENT MOTOR-LEARNING EVIDENCE; SKILL-SPECIFIC EFFICACY NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-MOT-02",
+        "SRC-PHYS-01"
+      ],
+      "practice_refinement": "Use a suitable ball, clear wall and safe surface; begin close with gentle passes, focus on contact and first touch, then vary distance.",
+      "assessment_refinement": "Count passes received under control and passes returned to a marked target; test both feet at comfortable volume.",
+      "limitations_and_safety": "Warm up, use safe footwear/space, avoid traffic/glass and stop for pain or dizziness; adapt intensity to age and ability.",
+      "review_route": "LOW–MODERATE / PHYSICAL-CONTEXT",
+      "review_requirement": "Use safe environment, appropriate equipment and stop-on-pain rules; coaching recommended for sport movement.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-001",
+      "name": "Fold a T-shirt consistently",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Demonstrate a repeatable sequence, use garment seams as alignment cues and compare final shape; practise with one garment type before variation.",
+      "assessment_refinement": "Assess alignment, compactness and whether the garment remains folded after handling; avoid arbitrary speed targets.",
+      "limitations_and_safety": "Do not equate one folding style with universal correctness; garment size/material changes difficulty.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-002",
+      "name": "Pack a small bag by checklist",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Define purpose, duration and constraints; list essentials, pack by category, then verify against the checklist and weight/space limits.",
+      "assessment_refinement": "Scenario-based check: no critical omission, unnecessary duplication or unsafe load; learner explains trade-offs.",
+      "limitations_and_safety": "Do not store sensitive credentials or personal data in shared checklists; consider weather, accessibility and local context.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-003",
+      "name": "Sew on a button",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MOT-01",
+        "SRC-SAFE-05"
+      ],
+      "practice_refinement": "Use a practice fabric and large button; demonstrate threading/anchoring and stitch tension before practice.",
+      "assessment_refinement": "Check secure attachment, no fabric damage and comfortable spacing; learner can explain safe needle storage.",
+      "limitations_and_safety": "Needle handling requires appropriate adult supervision for children and safe storage; no sewing on a person.",
+      "review_route": "MODERATE / SUPERVISION",
+      "review_requirement": "Adult supervision for needle/tool use; keep this protocol bounded to safe hand-tool practice.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-004",
+      "name": "Tie shoelaces securely",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Use a stable seated or standing position; demonstrate one reliable method, then practise symmetrical loops and a snug but comfortable knot.",
+      "assessment_refinement": "Walk briefly and check the knot stays tied without restricting circulation; assess independence on own footwear.",
+      "limitations_and_safety": "Avoid excessively tight laces; adapt for mobility or dexterity needs.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-005",
+      "name": "Read a measuring tape",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-MEAS-01"
+      ],
+      "practice_refinement": "Identify units, zero point, scale increments and measurement direction; measure a stable object twice and compare.",
+      "assessment_refinement": "Record value with unit and repeatability; explain likely sources of measurement error.",
+      "limitations_and_safety": "Watch the tape edge and spring recoil; avoid measuring near live machinery or unstable heights.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-006",
+      "name": "Use a spirit level",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Place on a stable surface, read bubble position, rotate the level 180 degrees to check consistency and compare orientation.",
+      "assessment_refinement": "Assess whether learner can distinguish level from plumb where relevant and repeat the reading.",
+      "limitations_and_safety": "Do not climb or work at height to use a level; use safe stable surfaces.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-007",
+      "name": "Basic screwdriver selection",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-SAFE-05"
+      ],
+      "practice_refinement": "Match bit type/size to screw head, inspect fit before turning, keep tool aligned and apply controlled hand force.",
+      "assessment_refinement": "Show correct selection on several non-powered practice fasteners; no cam-out or damaged head.",
+      "limitations_and_safety": "Hand tool only in this micro-skill; powered tools, electrical work and opening appliances are excluded.",
+      "review_route": "MODERATE / SUPERVISION",
+      "review_requirement": "Adult supervision for needle/tool use; keep this protocol bounded to safe hand-tool practice.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-008",
+      "name": "Organise a digital folder",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Choose a shallow, predictable hierarchy and descriptive filenames; move copies first, then verify before deleting duplicates.",
+      "assessment_refinement": "Give a new user a task to locate a file; score findability, naming consistency and recoverability.",
+      "limitations_and_safety": "Do not expose private files or share cloud folders publicly; test with copies and backups.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-009",
+      "name": "Make a simple spreadsheet table",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-LRN-04"
+      ],
+      "practice_refinement": "Create labelled columns, one record per row, consistent data types and a clear header; test sorting/filtering on sample data.",
+      "assessment_refinement": "Check that sort preserves row integrity, formulas reference intended cells and units are labelled.",
+      "limitations_and_safety": "Use synthetic data; protect personal/financial information and do not trust unverified formulas.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-03-010",
+      "name": "Read a public transport route",
+      "category": "PRACTICAL / EVERYDAY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-ROUTE-01"
+      ],
+      "practice_refinement": "Identify origin/destination, route mode, transfer points and service notices; cross-check with current signage or official updates.",
+      "assessment_refinement": "Learner explains the route, a fallback and how to verify arrival/stop; scenario includes a changed route.",
+      "limitations_and_safety": "Maps can be stale; stay aware of surroundings, follow local signs and ask a trusted adult if uncertain.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-001",
+      "name": "Introduce yourself clearly",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Use a context-appropriate name/role, one relevant detail and a natural close; practise short and longer versions.",
+      "assessment_refinement": "Listener can accurately recall name and relevant detail; learner adapts to formal/informal context.",
+      "limitations_and_safety": "Do not disclose home address, school schedule, phone number or other sensitive details to strangers.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-002",
+      "name": "Ask a precise question",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "State the context, identify the unknown and ask one answerable question; add constraints only when needed.",
+      "assessment_refinement": "A listener can answer without guessing what is being asked; score specificity and relevance.",
+      "limitations_and_safety": "Avoid leading or coercive questions; respect privacy and allow the other person not to answer.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-003",
+      "name": "Active listening summary",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Listen without planning an interruption, paraphrase the main point and ask whether the summary is accurate.",
+      "assessment_refinement": "Speaker confirms or corrects the paraphrase; assess fidelity rather than eye contact or nodding.",
+      "limitations_and_safety": "Eye contact is culturally and neurologically variable; do not treat it as a required marker of listening.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-004",
+      "name": "Give specific feedback",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Describe an observed behaviour, its task impact and one actionable next step; ask whether the feedback is understood.",
+      "assessment_refinement": "Recipient can state the behaviour and next action; feedback remains specific, respectful and evidence-based.",
+      "limitations_and_safety": "Avoid identity judgements, humiliation and unsolicited feedback in sensitive contexts.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-005",
+      "name": "Disagree respectfully",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Restate the other position fairly, identify the precise point of disagreement, offer evidence/reasoning and invite correction.",
+      "assessment_refinement": "A neutral observer confirms the opposing view was represented fairly and disagreement is focused on claims.",
+      "limitations_and_safety": "Do not use “steelman” to legitimise abusive or discriminatory treatment; safety and boundaries come first.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-006",
+      "name": "Speak for one minute without notes",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-VOICE-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Use a simple opening, two or three ordered points and a close; practise with a familiar low-stakes topic.",
+      "assessment_refinement": "Assess coherence, factual accuracy, audibility and time range; record improvement without penalising accent.",
+      "limitations_and_safety": "Stop if voice strain appears; do not force volume or disclose private experiences.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-007",
+      "name": "Summarise a long message",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Extract purpose, key facts, decisions, action owner and deadline; preserve uncertainty and distinguish requests from background.",
+      "assessment_refinement": "Original sender or independent reader verifies no critical change in meaning or omitted action.",
+      "limitations_and_safety": "Do not forward confidential content or omit safety-critical caveats to achieve brevity.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-008",
+      "name": "Read aloud with punctuation",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-VOICE-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Mark phrase boundaries, pause at sentence structure and maintain comfortable pace; rehearse with age-appropriate text.",
+      "assessment_refinement": "Listener answers comprehension questions and identifies main points; score accuracy and intelligibility.",
+      "limitations_and_safety": "Avoid forced accent imitation or excessive volume; accommodate speech/language differences.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-009",
+      "name": "Negotiate a simple agreement",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Identify interests, constraints and alternatives; propose options, clarify commitments and confirm a fair summary.",
+      "assessment_refinement": "Both parties can restate agreed terms, responsibilities and exit conditions; no hidden pressure.",
+      "limitations_and_safety": "Do not practise coercion, deception or high-stakes financial/legal negotiation; seek trusted adult support when needed.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-04-010",
+      "name": "Write a concise professional message",
+      "category": "SOCIAL / COMMUNICATION",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-COM-01",
+        "SRC-COM-02"
+      ],
+      "practice_refinement": "Put purpose/action in the opening, include essential context, use a respectful tone and proofread recipient/attachments.",
+      "assessment_refinement": "Recipient can identify requested action and deadline; no missing context or accidental sensitive disclosure.",
+      "limitations_and_safety": "Do not share credentials, private data or screenshots containing personal information.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-001",
+      "name": "Use keyboard shortcuts safely",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-DIG-01",
+        "SRC-DIG-04"
+      ],
+      "practice_refinement": "Learn a small set of reversible navigation/editing shortcuts in a practice document; preview before actions that overwrite or close work.",
+      "assessment_refinement": "Demonstrate each shortcut in a sandbox and explain undo/recovery; accuracy matters more than memorised count.",
+      "limitations_and_safety": "Avoid destructive shortcuts on unsaved or production data; maintain backups.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-002",
+      "name": "Search with exact phrases",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-DIG-01",
+        "SRC-DIG-04"
+      ],
+      "practice_refinement": "Use quoted phrases for exact strings, add distinctive terms and compare results; remove quotes if wording is uncertain.",
+      "assessment_refinement": "Find a known passage or source among distractors and explain why query refinements helped.",
+      "limitations_and_safety": "Search operators differ across engines; verify syntax in the engine’s help and do not treat rank as truth.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-003",
+      "name": "Evaluate a source quickly",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-DIG-04"
+      ],
+      "practice_refinement": "Use lateral reading: identify who is behind it, seek independent coverage and trace claims to original evidence.",
+      "assessment_refinement": "Given unfamiliar sources, document author/organisation, evidence, independent corroboration and limits.",
+      "limitations_and_safety": "A quick check is triage, not full fact-checking; consequential claims need primary sources and deeper review.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-004",
+      "name": "Capture a reproducible bug report",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-DIG-01",
+        "SRC-DIG-04"
+      ],
+      "practice_refinement": "Record environment/version, exact steps, expected vs actual result, reproducibility and minimal safe evidence.",
+      "assessment_refinement": "A second person reproduces the issue from the report without needing private credentials or hidden context.",
+      "limitations_and_safety": "Redact tokens, passwords, personal data and private URLs; do not attach sensitive logs.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-005",
+      "name": "Use Git status and diff",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT OFFICIAL TECHNICAL/SECURITY GUIDANCE FOR THE TASK",
+      "evidence_sources": [
+        "SRC-DIG-02",
+        "SRC-DIG-03"
+      ],
+      "practice_refinement": "Inspect status before edits, use diff to understand changes, distinguish working tree from staging area and review before commit.",
+      "assessment_refinement": "Learner accurately identifies changed/untracked/staged files and explains each diff hunk.",
+      "limitations_and_safety": "Do not run reset/clean/checkout or destructive commands as part of this skill; practice in a disposable repo.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-006",
+      "name": "Create a strong unique passphrase",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT OFFICIAL TECHNICAL/SECURITY GUIDANCE FOR THE TASK",
+      "evidence_sources": [
+        "SRC-DIG-01"
+      ],
+      "practice_refinement": "Use a password manager to generate/store unique credentials where possible; enable MFA and never reuse or share passwords.",
+      "assessment_refinement": "Demonstrate account settings review and MFA setup on a non-critical practice account; do not reveal the secret to assessor.",
+      "limitations_and_safety": "Do not submit real passwords to quizzes or store them in ATHENA; follow current provider security guidance.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-007",
+      "name": "Recognise phishing indicators",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT OFFICIAL TECHNICAL/SECURITY GUIDANCE FOR THE TASK",
+      "evidence_sources": [
+        "SRC-DIG-01"
+      ],
+      "practice_refinement": "Pause on unexpected urgency, credential/payment requests, mismatched domains and suspicious attachments; verify via a known channel.",
+      "assessment_refinement": "Classify simulated messages and explain the safe next action: do not click, report/delete and verify independently.",
+      "limitations_and_safety": "Do not open live suspicious links or attachments; use sanitised simulations and report through provider channels.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-008",
+      "name": "Back up a file and verify restore",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "DIRECT OFFICIAL TECHNICAL/SECURITY GUIDANCE FOR THE TASK",
+      "evidence_sources": [
+        "SRC-DIG-01"
+      ],
+      "practice_refinement": "Make a separate backup copy, check destination and completeness, then restore to a new location and open/compare it.",
+      "assessment_refinement": "A successful restore is the evidence; a backup icon or completed upload alone is not.",
+      "limitations_and_safety": "Never overwrite the only original during practice; keep sensitive files encrypted and access-controlled.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-009",
+      "name": "Use a terminal safely",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-DIG-01",
+        "SRC-DIG-04"
+      ],
+      "practice_refinement": "Read command, target path and side effects before execution; prefer inspection commands and disposable folders.",
+      "assessment_refinement": "Learner explains what a command will change and safely performs a reversible task; identifies risky flags.",
+      "limitations_and_safety": "No blind copy-paste, privilege escalation or destructive commands; never execute unknown scripts from the internet.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-05-010",
+      "name": "Read a simple JSON object",
+      "category": "DIGITAL / TECHNICAL",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-DIG-01",
+        "SRC-DIG-04"
+      ],
+      "practice_refinement": "Identify braces, key/value pairs, strings, numbers, booleans, null, arrays and nested objects; validate syntax with a parser.",
+      "assessment_refinement": "Given a small object, accurately trace a value path and distinguish string from numeric/boolean values.",
+      "limitations_and_safety": "Do not paste secrets or personal data into online validators; use local/sample JSON.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-001",
+      "name": "Notice three levels of visual hierarchy",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-MOT-01"
+      ],
+      "practice_refinement": "Identify dominant, secondary and supporting elements using size, contrast, position, spacing and weight.",
+      "assessment_refinement": "Ask viewers what they notice first/second/third; compare their scan order with intended hierarchy.",
+      "limitations_and_safety": "Hierarchy is contextual and culturally influenced; no single layout formula is universal.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-002",
+      "name": "Frame a phone photograph",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "INSTRUCTIONAL RESOURCE; NOT CONTROLLED LEARNING-EFFICACY EVIDENCE",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-PHOTO-02"
+      ],
+      "practice_refinement": "Choose a clear subject, check edges/background, use gridlines as an aid and take alternate viewpoints.",
+      "assessment_refinement": "Compare a contact sheet; viewer identifies intended subject without explanation and frame avoids accidental distractions.",
+      "limitations_and_safety": "Respect consent and privacy; do not photograph vulnerable people or private spaces without permission.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-003",
+      "name": "Lock focus and exposure on phone",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "INSTRUCTIONAL RESOURCE; NOT CONTROLLED LEARNING-EFFICACY EVIDENCE",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-PHOTO-02"
+      ],
+      "practice_refinement": "Tap the intended subject, use focus/exposure lock if available, adjust exposure conservatively and recheck after recomposition.",
+      "assessment_refinement": "Inspect sharpness and highlight/shadow detail at full size; repeat in a different lighting condition.",
+      "limitations_and_safety": "Phone controls vary by model; avoid direct sun/laser aiming and do not assume lock behaviour is identical.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-004",
+      "name": "Use natural light direction",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "INSTRUCTIONAL RESOURCE; NOT CONTROLLED LEARNING-EFFICACY EVIDENCE",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-PHOTO-02"
+      ],
+      "practice_refinement": "Observe light direction/quality, move subject or camera rather than forcing a harsh exposure, and compare front/side/back light.",
+      "assessment_refinement": "Take matched frames with one lighting variable changed; explain shadow direction and subject visibility.",
+      "limitations_and_safety": "Avoid looking directly at the sun; avoid unsafe positions near roads/heights to get a shot.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-005",
+      "name": "Sketch basic 3D forms",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-MOT-01"
+      ],
+      "practice_refinement": "Construct boxes, cylinders and spheres with simple contour/axis cues; observe proportions before shading detail.",
+      "assessment_refinement": "Draw the same object from a new angle and assess volume/proportion rather than artistic style.",
+      "limitations_and_safety": "No claim of universal drawing talent; allow accessible tools and avoid hand strain.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-006",
+      "name": "Identify dominant rhythm",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-MOT-01"
+      ],
+      "practice_refinement": "Listen to a short, age-appropriate excerpt and tap or count a stable pulse; distinguish beat from faster subdivisions.",
+      "assessment_refinement": "Match a steady pulse across two excerpts and explain when tempo changes; use audio rather than visual cue.",
+      "limitations_and_safety": "Keep volume safe; do not use copyrighted full tracks in redistributed teaching materials.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-007",
+      "name": "Match a pitch by ear",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-MOT-01"
+      ],
+      "practice_refinement": "Use a comfortable reference tone, listen, hum gently and compare; practise short intervals without forcing range.",
+      "assessment_refinement": "Use a tuner or instructor/reference tone to compare pitch direction and approximate match across trials.",
+      "limitations_and_safety": "No shouting or repeated strained high/low notes; stop with pain/hoarseness and consult a qualified voice professional if persistent.",
+      "review_route": "MODERATE / VOICE-HEALTH",
+      "review_requirement": "No forced range or breath-holding; voice professional review if symptoms persist.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-008",
+      "name": "Controlled breathing for speech",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-VOICE-01"
+      ],
+      "practice_refinement": "Use comfortable, unforced breathing and phrase planning; speak on a natural exhalation without breath-holding or maximal inhalations.",
+      "assessment_refinement": "Record a short explanation and assess whether phrases are comfortable and intelligible, not how long breath is held.",
+      "limitations_and_safety": "Not a respiratory treatment or breath-hold exercise; stop if dizzy, breathless or uncomfortable.",
+      "review_route": "MODERATE / VOICE-HEALTH",
+      "review_requirement": "No forced range or breath-holding; voice professional review if symptoms persist.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-009",
+      "name": "Observe a subject before drawing",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "PRACTICE/INSTRUCTIONAL SUPPORT; EXACT MICRO-SKILL EFFECTIVENESS NOT ESTABLISHED",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-MOT-01"
+      ],
+      "practice_refinement": "Record shape, proportion, light/shadow and spatial relationships before adding interpretation or style.",
+      "assessment_refinement": "Compare drawing against the observed reference; learner names three observed features and one uncertain inference.",
+      "limitations_and_safety": "Respect privacy and consent; do not draw identifying details of people in sensitive settings without permission.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-06-010",
+      "name": "Spot color temperature shifts",
+      "category": "VISUAL / CREATIVE",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "INSTRUCTIONAL RESOURCE; NOT CONTROLLED LEARNING-EFFICACY EVIDENCE",
+      "evidence_sources": [
+        "SRC-PHOTO-01",
+        "SRC-PHOTO-02"
+      ],
+      "practice_refinement": "Compare neutral references and warm/cool casts under different light sources; change one variable at a time.",
+      "assessment_refinement": "Sort matched examples and justify the judgement using reference whites/greys and lighting context.",
+      "limitations_and_safety": "Phone screens and auto white balance alter appearance; record display/light conditions and avoid absolute claims from one screen.",
+      "review_route": "STANDARD DRAFT REVIEW",
+      "review_requirement": "Subject review and learner usability testing still required.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-001",
+      "name": "Identify local emergency contact route",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-01",
+        "SRC-SAFE-02",
+        "SRC-SAFE-03"
+      ],
+      "practice_refinement": "Know the local emergency number and how to state location; keep a trusted adult/contact plan and verify official sources periodically.",
+      "assessment_refinement": "Scenario test: learner chooses the correct route and can state location, callback number and immediate hazard.",
+      "limitations_and_safety": "Bangladesh Police currently lists 999 as emergency service; local availability and routing can change. Do not rely on a stale offline note alone.",
+      "review_route": "MODERATE / LOCAL-CONTEXT-REVIEW",
+      "review_requirement": "Verify local emergency route and local procedure with current official source; adult review before scheduling.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-002",
+      "name": "Check a scene for immediate hazards",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-01",
+        "SRC-SAFE-04",
+        "SRC-SAFE-05"
+      ],
+      "practice_refinement": "Stop at a safe distance; scan for traffic, fire/smoke, electricity, chemicals, structural danger and violence; do not enter unsafe scenes.",
+      "assessment_refinement": "Use photo/scenario recognition and require the learner to identify when to stay back, warn others and call help.",
+      "limitations_and_safety": "Recognition only. Never practise entering a dangerous scene, touching a casualty near live electricity or attempting rescue beyond training.",
+      "review_route": "MODERATE / LOCAL-CONTEXT-REVIEW",
+      "review_requirement": "Verify local emergency route and local procedure with current official source; adult review before scheduling.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-003",
+      "name": "Communicate an emergency clearly",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-01",
+        "SRC-SAFE-02",
+        "SRC-SAFE-03"
+      ],
+      "practice_refinement": "Give exact location/landmarks, what happened, number/condition of people, hazards and callback details; answer dispatcher questions.",
+      "assessment_refinement": "Role-play with fictional scenario and check that another person can locate the scene and understand the request.",
+      "limitations_and_safety": "Do not make prank calls; avoid sharing unnecessary personal details and follow dispatcher instructions.",
+      "review_route": "MODERATE / LOCAL-CONTEXT-REVIEW",
+      "review_requirement": "Verify local emergency route and local procedure with current official source; adult review before scheduling.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-004",
+      "name": "Basic digital account recovery hygiene",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-DIG-01"
+      ],
+      "practice_refinement": "Use official account recovery pages, keep recovery methods current, protect email/phone access and avoid sharing one-time codes.",
+      "assessment_refinement": "Scenario: identify official provider route and reject requests for passwords/OTP; demonstrate recovery settings without exposing secrets.",
+      "limitations_and_safety": "Never help bypass someone else’s account; do not store recovery codes in public/shared files.",
+      "review_route": "MODERATE / LOCAL-CONTEXT-REVIEW",
+      "review_requirement": "Verify local emergency route and local procedure with current official source; adult review before scheduling.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-005",
+      "name": "Recognise unsafe electrical conditions",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-04",
+        "SRC-SAFE-05"
+      ],
+      "practice_refinement": "Recognise frayed cords, heat, buzzing, sparks, water near electrical equipment and damaged plugs; keep away and alert an adult/qualified person.",
+      "assessment_refinement": "Photo-based classification: identify hazard, safe distance, isolation/escalation route; no hands-on repair test.",
+      "limitations_and_safety": "Do not touch, unplug, open or repair suspect equipment; isolate power only if safe and by a competent adult/professional.",
+      "review_route": "HIGH / SAFETY-REVIEW",
+      "review_requirement": "Qualified adult/safety professional review; learner outcome remains recognition and escalation only.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-006",
+      "name": "Read a basic product safety label",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-06"
+      ],
+      "practice_refinement": "Locate product identifier, signal word, pictograms, hazard statements, precautionary statements and first-aid/storage information.",
+      "assessment_refinement": "Use clean sample labels; learner explains where to find the official safety data sheet and what not to infer.",
+      "limitations_and_safety": "Never smell, taste, mix or handle a chemical to identify it; labels and local regulatory formats vary.",
+      "review_route": "MODERATE / LOCAL-CONTEXT-REVIEW",
+      "review_requirement": "Verify local emergency route and local procedure with current official source; adult review before scheduling.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-007",
+      "name": "Use a fire extinguisher decision model",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-07",
+        "SRC-SAFE-12"
+      ],
+      "practice_refinement": "Prioritise alarm, evacuation and calling fire service; understand that extinguisher use is for trained/eligible adults and only under strict conditions.",
+      "assessment_refinement": "Scenario decision assessment: choose evacuate/call in any uncertain, spreading, smoky or exit-blocking case; no live-fire practice in this module.",
+      "limitations_and_safety": "The USFA says young children should not use extinguishers. For a 13-year-old learner, this is recognition/evacuation literacy only.",
+      "review_route": "HIGH / SAFETY-REVIEW",
+      "review_requirement": "Qualified adult/safety professional review; learner outcome remains recognition and escalation only.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-008",
+      "name": "Basic wound-care literacy",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-08",
+        "SRC-SAFE-01"
+      ],
+      "practice_refinement": "Recognise that wound severity varies; know to summon an adult/medical help, protect from contamination and recognise urgent red flags.",
+      "assessment_refinement": "Classify fictional scenarios by self-care information vs urgent/emergency escalation; assess source use, not treatment performance.",
+      "limitations_and_safety": "Not medical training or diagnosis. Severe bleeding, embedded objects, deep wounds, loss of sensation or worsening infection need professional care.",
+      "review_route": "HIGH / SAFETY-REVIEW",
+      "review_requirement": "Qualified adult/safety professional review; learner outcome remains recognition and escalation only.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-009",
+      "name": "CPR/AED competency pathway orientation",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-09",
+        "SRC-SAFE-01"
+      ],
+      "practice_refinement": "Identify a recognised course that includes hands-on practice and skills assessment; track course provider, date and renewal guidance.",
+      "assessment_refinement": "Pass only when learner can identify an appropriate provider/course and distinguish online theory from hands-on skills validation.",
+      "limitations_and_safety": "This does not teach CPR/AED or certify competence. Never award practical CPR mastery from reading/video or an ATHENA quiz.",
+      "review_route": "HIGH / QUALIFIED-TRAINING-GATE",
+      "review_requirement": "Qualified first-aid instructor review; hands-on provider assessment required. No practical competence claim allowed.",
+      "lifecycle": "DRAFT; no approval implied"
+    },
+    {
+      "id": "MS-07-010",
+      "name": "Choking-response competency pathway orientation",
+      "category": "SAFETY / EMERGENCY LITERACY",
+      "existing_protocol": "present_in_v5.4_v3.18_source_archive",
+      "research_status": "researched_refinement_draft",
+      "evidence_fit": "AUTHORITATIVE SAFETY/COURSE GUIDANCE; NOT A VALIDATION OF THE ATHENA TEACHING PROTOCOL",
+      "evidence_sources": [
+        "SRC-SAFE-09",
+        "SRC-SAFE-01"
+      ],
+      "practice_refinement": "Find an age-appropriate recognised first-aid course with instructor-led practice; learn how to summon emergency help.",
+      "assessment_refinement": "Assess course selection, provider legitimacy and completion evidence; practical technique is assessed only by qualified instructor.",
+      "limitations_and_safety": "This does not teach choking manoeuvres. Do not practise on a person; never infer competence from a text simulation.",
+      "review_route": "HIGH / QUALIFIED-TRAINING-GATE",
+      "review_requirement": "Qualified first-aid instructor review; hands-on provider assessment required. No practical competence claim allowed.",
+      "lifecycle": "DRAFT; no approval implied"
+    }
+  ]
+}

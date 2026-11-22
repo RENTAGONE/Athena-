@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1.0",
+  "registry_status": "draft_seed",
+  "edges": [
+    {
+      "id": "ATH-EDGE-MATH-ALGEBRA-REASONING",
+      "source_id": "ATH-SKILL-MATH-NUMBER-ALGEBRA",
+      "target_id": "ATH-SKILL-MATH-SCIENTIFIC-REASONING",
+      "relation_type": "SUPPORTS",
+      "status": "draft",
+      "strength": null,
+      "rationale": "Quantitative representation supports modelling and interpretation of scientific evidence; neither skill is a universal hard gate for the other.",
+      "hard_gate_justification": null,
+      "evidence_refs": [],
+      "source_refs": [],
+      "created_by": "ATHENA_ARCHITECTURE_SEED"
+    },
+    {
+      "id": "ATH-EDGE-RESEARCH-SOURCE-EVAL",
+      "source_id": "ATH-SKILL-RES-SOURCE-EVALUATION",
+      "target_id": "ATH-SKILL-RES-RESEARCH-SYNTHESIS",
+      "relation_type": "PREREQUISITE_FOR",
+      "status": "draft",
+      "strength": "recommended",
+      "rationale": "Synthesis quality improves when the learner can first assess source reliability; supervised beginner synthesis can still begin earlier.",
+      "hard_gate_justification": null,
+      "evidence_refs": [],
+      "source_refs": [],
+      "created_by": "ATHENA_ARCHITECTURE_SEED"
+    },
+    {
+      "id": "ATH-EDGE-BODY-ANATOMY-MOVEMENT",
+      "source_id": "ATH-SKILL-BODY-ANATOMY-FOUNDATIONS",
+      "target_id": "ATH-SKILL-ATH-MOVEMENT-FOUNDATIONS",
+      "relation_type": "SUPPORTS",
+      "status": "draft",
+      "strength": null,
+      "rationale": "Anatomical knowledge can inform movement understanding but is not a prerequisite to safe basic movement practice.",
+      "hard_gate_justification": null,
+      "evidence_refs": [],
+      "source_refs": [],
+      "created_by": "ATHENA_ARCHITECTURE_SEED"
+    }
+  ]
+}

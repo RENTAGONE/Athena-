@@ -1,0 +1,141 @@
+{
+  "registry": "ATHENA_WAVE_10_SOURCE_REGISTER",
+  "version": "1.0.0",
+  "status": "source_identity_and_scope_reviewed_not_full_claim_audit",
+  "count": 10,
+  "records": [
+    {
+      "id": "LSRC-01",
+      "title": "Metacognition and self-regulation",
+      "publisher": "Education Endowment Foundation",
+      "year": "review updated May 2025; page accessed 2026-11-19",
+      "url": "https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/metacognition-and-self-regulation/",
+      "source_type": "evidence synthesis/toolkit",
+      "supports": [
+        "explicit planning-monitoring-evaluation",
+        "teach strategies in subject tasks",
+        "teacher modelling and scaffolding"
+      ],
+      "limitations": "Toolkit average impact is a synthesis, not a guaranteed individual outcome; context and implementation matter."
+    },
+    {
+      "id": "LSRC-02",
+      "title": "A Meta-Analysis of the Effectiveness and Boundary Conditions of Retrieval Practice, Distributed Practice, and Interleaved Practice in Authentic School Classrooms",
+      "publisher": "Educational Psychology Review / Springer Nature",
+      "year": "2026",
+      "url": "https://link.springer.com/article/10.1007/s10648-026-10225-5",
+      "source_type": "meta-analysis",
+      "supports": [
+        "retrieval, spacing and interleaving in authentic classrooms",
+        "moderators and context dependence"
+      ],
+      "limitations": "53 studies, 7,303 participants; moderators and sparse cells limit universal prescriptions; use strategy according to task and learner."
+    },
+    {
+      "id": "LSRC-03",
+      "title": "Cognitive-Load Theory: Methods to Manage Working Memory Load in the Learning of Complex Tasks",
+      "publisher": "Current Directions in Psychological Science / SAGE",
+      "year": "2020",
+      "url": "https://journals.sagepub.com/doi/10.1177/0963721420922183",
+      "source_type": "peer-reviewed review",
+      "supports": [
+        "worked examples",
+        "task/learner/environment load management",
+        "guidance adaptation"
+      ],
+      "limitations": "Theory-guided instructional design; specific effects depend on task complexity, prior knowledge and implementation."
+    },
+    {
+      "id": "LSRC-04",
+      "title": "Teacher Feedback to Improve Pupil Learning",
+      "publisher": "Education Endowment Foundation",
+      "year": "2021",
+      "url": "https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/feedback",
+      "source_type": "evidence-informed guidance report",
+      "supports": [
+        "feedback foundations",
+        "alignment to learning intentions and gaps",
+        "feedback principles over delivery medium"
+      ],
+      "limitations": "Teacher/school context; adapt carefully to independent learning and automated feedback."
+    },
+    {
+      "id": "LSRC-05",
+      "title": "Calibration and Self-Regulated Learning",
+      "publisher": "Cambridge University Press, Cambridge Handbook of Cognition and Education",
+      "year": "2019",
+      "url": "https://www.cambridge.org/core/books/abs/cambridge-handbook-of-cognition-and-education/calibration-and-selfregulated-learning/C538EB0FD066D4911C4CC376C2D4A6C2",
+      "source_type": "research handbook chapter",
+      "supports": [
+        "confidence-performance calibration",
+        "forethought, performance and reflection",
+        "content-specific monitoring interventions"
+      ],
+      "limitations": "Chapter summary and handbook context; do not infer that one confidence rating is a stable trait."
+    },
+    {
+      "id": "LSRC-06",
+      "title": "A Review of Self-regulated Learning: Six Models and Four Directions for Research",
+      "publisher": "Frontiers in Psychology",
+      "year": "2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5408091/",
+      "source_type": "peer-reviewed review",
+      "supports": [
+        "cyclical SRL models",
+        "planning, performance monitoring and reflection",
+        "motivation and context"
+      ],
+      "limitations": "Multiple models differ in terminology and emphasis; ATHENA uses a practical synthesis, not a claim that models are identical."
+    },
+    {
+      "id": "LSRC-07",
+      "title": "A Meta-Analysis of Ten Learning Techniques",
+      "publisher": "Frontiers in Education",
+      "year": "2021",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2021.581216/full",
+      "source_type": "meta-analysis",
+      "supports": [
+        "distributed practice and practice testing among strongly supported techniques"
+      ],
+      "limitations": "Aggregated effects across heterogeneous studies; strategy effectiveness depends on outcomes and conditions."
+    },
+    {
+      "id": "LSRC-08",
+      "title": "Recommended Amount of Sleep for Pediatric Populations: A Consensus Statement of the American Academy of Sleep Medicine",
+      "publisher": "Journal of Clinical Sleep Medicine / AASM",
+      "year": "2016",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4877308/",
+      "source_type": "professional consensus statement",
+      "supports": [
+        "age-based sleep duration recommendations",
+        "sleep associations with attention, learning and health"
+      ],
+      "limitations": "Population recommendation, not diagnosis or personalised treatment; sleep concerns belong with guardians and qualified clinicians."
+    },
+    {
+      "id": "LSRC-09",
+      "title": "High contextual interference improves retention in motor learning: systematic review and meta-analysis",
+      "publisher": "Scientific Reports / Nature",
+      "year": "2024",
+      "url": "https://www.nature.com/articles/s41598-024-65753-3",
+      "source_type": "systematic review and meta-analysis",
+      "supports": [
+        "practice schedule variability and retention in motor learning"
+      ],
+      "limitations": "Do not generalise directly to all sports, all skill levels or unsafe high-variability practice."
+    },
+    {
+      "id": "LSRC-10",
+      "title": "The effects of self-monitoring on strategy use and academic performance: A meta-analysis",
+      "publisher": "International Journal of Educational Research / Elsevier",
+      "year": "2022",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0883035522000179",
+      "source_type": "meta-analysis",
+      "supports": [
+        "self-monitoring strategy use and academic performance",
+        "environmental support and intervention packages"
+      ],
+      "limitations": "36 experimental studies; effects depend on supports and intervention design."
+    }
+  ]
+}

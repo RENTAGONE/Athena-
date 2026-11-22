@@ -1,0 +1,203 @@
+{
+  "registry": "ATHENA_MATHEMATICS_MASTER_SCOPE_AND_SEQUENCE",
+  "version": "0.1",
+  "status": "working_curriculum_architecture_not_approved",
+  "discipline": "Mathematics & Scientific Reasoning",
+  "purpose": "Define a coherent broad mathematics curriculum from foundational numeracy through advanced undergraduate-level capabilities, with applied pathways. This is a scope and sequencing contract, not proof that all teaching content has been authored.",
+  "strands": [
+    {
+      "id": "MAT-01",
+      "title": "Numeracy and number systems",
+      "scope": "Place value; integers; rational and irrational numbers; real number properties; divisibility; primes; factors and multiples; fractions; decimals; percentages; ratio; rates; estimation; significant figures; scientific notation.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-02",
+      "title": "Algebra and symbolic reasoning",
+      "scope": "Variables; expressions; equivalence; equations; inequalities; rearrangement; identities; polynomials; factoring; rational expressions; radicals; complex numbers; systems; matrices; modelling.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-03",
+      "title": "Functions and mathematical modelling",
+      "scope": "Relations; domain/range; function notation; transformations; inverses; composition; linear, quadratic, polynomial, rational, exponential, logarithmic, piecewise and periodic models; model fit and limitations.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-04",
+      "title": "Geometry and spatial reasoning",
+      "scope": "Euclidean geometry; angles; triangles; congruence; similarity; polygons; circles; constructions; coordinate geometry; vectors; transformations; proof; perimeter, area, surface area, volume; measurement uncertainty.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-05",
+      "title": "Trigonometry",
+      "scope": "Right-triangle ratios; radians; unit circle; identities; graphs; inverse trig; equations; sine/cosine rules; bearings; vectors; periodic applications.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-06",
+      "title": "Sequences, series and discrete patterns",
+      "scope": "Arithmetic/geometric sequences; recursive definitions; summation; finite/infinite series; convergence basics; recurrence; induction; binomial theorem; growth patterns.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-07",
+      "title": "Probability and combinatorics",
+      "scope": "Sample spaces; counting principles; permutations; combinations; conditional probability; independence; Bayes rule; random variables; expectation; distributions; simulation.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-08",
+      "title": "Statistics and data reasoning",
+      "scope": "Data types; sampling; bias; visualisation; centre/spread; quantiles; outliers; probability models; estimation; confidence intervals; hypothesis tests; correlation/regression; causal limits.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-09",
+      "title": "Calculus and continuous change",
+      "scope": "Limits; continuity; derivatives; rules; implicit differentiation; optimisation; related rates; integrals; accumulation; fundamental theorem; techniques; differential equations; multivariable introduction.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-10",
+      "title": "Linear algebra",
+      "scope": "Vectors; matrices; linear systems; row reduction; span; linear independence; subspaces; basis/dimension; linear transformations; determinants; eigenvalues/eigenvectors; least squares.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-11",
+      "title": "Discrete mathematics and logic",
+      "scope": "Propositional/predicate logic; sets; relations; functions; proof methods; induction; recursion; graph theory; trees; combinatorics; Boolean algebra; modular arithmetic; algorithmic complexity foundations.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-12",
+      "title": "Number theory",
+      "scope": "Divisibility; primes; gcd/lcm; Euclidean algorithm; congruences; modular arithmetic; Diophantine equations; elementary cryptographic mathematics and limitations.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-13",
+      "title": "Numerical and computational mathematics",
+      "scope": "Approximation; error; floating-point representation; numerical root finding; interpolation; numerical differentiation/integration; iterative methods; stability; reproducibility; computational verification.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-14",
+      "title": "Optimisation and operations research",
+      "scope": "Objective functions; constraints; feasible regions; linear programming; integer programming concepts; networks; scheduling; decision analysis; sensitivity and uncertainty.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-15",
+      "title": "Mathematical modelling and applied quantitative reasoning",
+      "scope": "Dimensional analysis; proportional models; scaling; rates; finance mathematics; physical models; uncertainty; sensitivity; validation; ethical communication of quantitative conclusions.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-16",
+      "title": "Mathematical communication and proof",
+      "scope": "Definitions; conjectures; counterexamples; direct proof; contradiction; contrapositive; induction; proof critique; notation; mathematical writing; diagram and data argument.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    },
+    {
+      "id": "MAT-17",
+      "title": "Foundations of mathematical practice",
+      "scope": "Problem formulation; strategy selection; estimation; checking; tool selection; calculator/spreadsheet/CAS use; reproducible working; mathematical history and context; responsible use of computational outputs.",
+      "status": "scope_defined_content_authoring_and_review_required"
+    }
+  ],
+  "pathways": [
+    {
+      "id": "PATH-MATH-CORE",
+      "title": "Core quantitative literacy",
+      "sequence": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-04",
+        "MAT-08",
+        "MAT-15",
+        "MAT-16"
+      ],
+      "outcome": "Interpret quantities, calculate reliably, model common relationships, evaluate data claims and communicate justified conclusions."
+    },
+    {
+      "id": "PATH-MATH-STEM",
+      "title": "STEM mathematics",
+      "sequence": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-04",
+        "MAT-05",
+        "MAT-06",
+        "MAT-09",
+        "MAT-10",
+        "MAT-13",
+        "MAT-15"
+      ],
+      "outcome": "Use algebra, functions, geometry, trigonometry, calculus, linear algebra and numerical methods in scientific and engineering contexts."
+    },
+    {
+      "id": "PATH-MATH-COMPUTING",
+      "title": "Computing and discrete mathematics",
+      "sequence": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-06",
+        "MAT-07",
+        "MAT-10",
+        "MAT-11",
+        "MAT-12",
+        "MAT-13"
+      ],
+      "outcome": "Reason about discrete structures, algorithms, probability, modular arithmetic and computational representations."
+    },
+    {
+      "id": "PATH-MATH-DATA",
+      "title": "Statistics and data science foundations",
+      "sequence": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-07",
+        "MAT-08",
+        "MAT-10",
+        "MAT-13",
+        "MAT-15"
+      ],
+      "outcome": "Collect, analyse, model and communicate data while accounting for uncertainty, bias and causal limitations."
+    },
+    {
+      "id": "PATH-MATH-DECISION",
+      "title": "Finance, optimisation and decision mathematics",
+      "sequence": [
+        "MAT-01",
+        "MAT-02",
+        "MAT-03",
+        "MAT-07",
+        "MAT-08",
+        "MAT-14",
+        "MAT-15"
+      ],
+      "outcome": "Compare quantitative options, model constraints and evaluate uncertainty without confusing models with guarantees."
+    }
+  ],
+  "completion_policy": {
+    "scope_definition": "A strand is not complete when its title and scope exist. It requires sequenced learning units, specific objectives, accurate teaching, worked examples, practice with solutions, misconception feedback, assessments/rubrics, applied transfer, resources with provenance, retention design, prerequisites and review status.",
+    "review_states": [
+      "scope_defined",
+      "outline_complete",
+      "teaching_draft_complete",
+      "internal_content_checked",
+      "source_checked",
+      "subject_reviewed",
+      "learner_validated",
+      "approved"
+    ],
+    "no_false_completion": "Do not mark a strand or discipline approved when any required component is missing or when external review is pending.",
+    "level_ceiling": "The v1.0 baseline should define a coherent path to functional competence and clearly marked advanced branches; it must not imply mastery of every specialised research subfield."
+  }
+}

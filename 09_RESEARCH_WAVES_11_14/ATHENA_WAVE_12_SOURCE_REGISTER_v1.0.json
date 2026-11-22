@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "id": "SRC-W12-01",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "publisher": "W3C",
+      "url": "https://www.w3.org/TR/wcag/",
+      "use": "Testable accessibility success criteria across devices.",
+      "limitations": "Conformance does not guarantee every user need; conduct user testing.",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": "SRC-W12-02",
+      "title": "Mobile Accessibility at W3C",
+      "publisher": "W3C WAI",
+      "url": "https://www.w3.org/WAI/standards-guidelines/mobile/",
+      "use": "Explains applying existing accessibility guidance to mobile devices.",
+      "limitations": "Guidance is not a separate mobile conformance standard.",
+      "accessed": "2026-11-19"
+    }
+  ]
+}

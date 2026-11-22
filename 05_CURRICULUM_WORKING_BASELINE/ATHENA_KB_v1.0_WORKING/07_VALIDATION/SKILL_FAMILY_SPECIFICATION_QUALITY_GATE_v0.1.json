@@ -1,0 +1,33 @@
+{
+  "gate": "ATHENA_SKILL_FAMILY_SPECIFICATION_QUALITY_GATE",
+  "version": "0.1",
+  "batch_ref": "SKILL_FAMILY_SPECIFICATION_BATCH_WAVE1_CORE_v0.1.json",
+  "expected_record_count": 59,
+  "checks": {
+    "unique_working_ids": true,
+    "parent_domain_resolves": true,
+    "canonical_domain_candidate_resolves": true,
+    "scope_statement_nonempty": true,
+    "observable_outcome_nonempty": true,
+    "success_criteria_minimum": 3,
+    "assessment_examples_minimum": 2,
+    "scope_boundary_nonempty": true,
+    "no_prerequisite_edges_created": true,
+    "subject_review_status": "not_reviewed",
+    "learner_validation_status": "not_validated"
+  },
+  "actual": {
+    "record_count": 59,
+    "unique_ids": 59,
+    "all_parent_domains_resolve": true,
+    "all_canonical_domain_candidates_resolve": false,
+    "all_scopes_nonempty": true,
+    "all_outcomes_nonempty": true,
+    "all_have_three_success_criteria": true,
+    "all_have_two_evidence_examples": true,
+    "all_boundaries_nonempty": true,
+    "expert_reviewed": 0,
+    "learner_validated": 0
+  },
+  "status": "structural_quality_gate_passed_content_review_pending"
+}

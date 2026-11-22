@@ -1,0 +1,447 @@
+{
+  "bank_id": "ATHENA-WAVE3-BATCH02-FORMATIVE",
+  "version": "0.1",
+  "production_message": 13,
+  "status": "draft_formative",
+  "item_count": 48,
+  "items": [
+    {
+      "item_id": "W3B02-001",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-001",
+      "prompt": "Why is it inaccurate to say that the three energy systems switch on one at a time?",
+      "answer_guidance": "ATP resynthesis pathways overlap continuously; their relative contribution changes with intensity, duration and context. A response should avoid fixed universal percentages.",
+      "item_type": "explanation",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-002",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-001",
+      "prompt": "Compare the likely energy demands of a 5-second sprint and a 20-minute easy cycle.",
+      "answer_guidance": "Sprint has a high rapid-energy demand with major phosphagen contribution; sustained easy cycling relies predominantly on oxidative metabolism. Both use multiple pathways; explain context and overlap.",
+      "item_type": "application",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-003",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-001",
+      "prompt": "Give one example of an acute exercise response and one longer-term adaptation.",
+      "answer_guidance": "Acute: increased ventilation or heart rate during a session. Adaptation: change in capacity after repeated training and recovery. Do not claim one session creates a stable adaptation.",
+      "item_type": "distinction",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-004",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-001",
+      "prompt": "A learner feels very tired after a session. Can they conclude that glycolysis was the only energy pathway used?",
+      "answer_guidance": "No. Subjective fatigue has multiple contributors and does not identify a single pathway. State measurement limits and avoid diagnosis.",
+      "item_type": "limits",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-005",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-002",
+      "prompt": "Distinguish incidence from prevalence.",
+      "answer_guidance": "Incidence counts new cases over a defined period in a population at risk; prevalence describes existing cases at a point or over a period. State denominator and time context.",
+      "item_type": "definition",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-006",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-002",
+      "prompt": "In a fictional group of 10,000, 10 people experience an outcome in group A and 20 in group B during the same period. Calculate the absolute risks and risk ratio.",
+      "answer_guidance": "A=0.1%; B=0.2%; risk ratio=2. Absolute difference=0.1 percentage point (10 per 10,000). This alone does not establish causation.",
+      "item_type": "calculation",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-007",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-002",
+      "prompt": "Name two reasons an observed association may not be causal.",
+      "answer_guidance": "Confounding, selection bias, measurement bias, reverse causality or chance; explain one mechanism.",
+      "item_type": "bias",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-008",
+      "discipline_code": "BODY",
+      "unit_id": "BODY-ADV-002",
+      "prompt": "Rewrite “the habit doubles risk” so that a reader is less likely to misinterpret it.",
+      "answer_guidance": "Specify baseline absolute risk, comparison, outcome, population and time period; include uncertainty and source context.",
+      "item_type": "communication",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-009",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-001",
+      "prompt": "Why should a training plan record external workload and internal response separately?",
+      "answer_guidance": "External work describes task performed; internal response describes perceived/physiological demand. They are related but not interchangeable; context and individual variation matter.",
+      "item_type": "planning",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-010",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-001",
+      "prompt": "A learner has two football sessions on consecutive days and proposes adding maximal sprint work between them. Identify planning concerns and a safer design principle.",
+      "answer_guidance": "Stacked high-demand exposure and recovery constraints; avoid maximal unsupervised work; align goal, reduce volume/intensity, use technical low-risk practice or rest with adult/coach oversight.",
+      "item_type": "application",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-011",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-001",
+      "prompt": "Explain specificity, progression and recovery in a practice plan.",
+      "answer_guidance": "Specificity matches task to goal; progression changes demand gradually based on evidence; recovery supports adaptation and movement quality. Avoid universal fixed percentages.",
+      "item_type": "concept",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-012",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-001",
+      "prompt": "Name three reasons to modify or stop a session.",
+      "answer_guidance": "Pain, dizziness/faintness, unusual breathing difficulty, unsafe surface/weather, illness or deteriorating control; tell responsible adult/coach.",
+      "item_type": "decision",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-013",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-002",
+      "prompt": "A player passes backward under pressure. Explain why the action cannot be judged from direction alone.",
+      "answer_guidance": "Context includes pressure, available lanes, team support, possession security, space and next action. Decision and execution should be evaluated separately.",
+      "item_type": "tactical",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-014",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-002",
+      "prompt": "Why define event codes before reviewing a match clip?",
+      "answer_guidance": "Improves consistency, reduces post-hoc bias and clarifies what counts as an observed event; codes should be tested and revised transparently.",
+      "item_type": "method",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-015",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-002",
+      "prompt": "Give an example of a tactical principle that can conflict with another in a specific moment.",
+      "answer_guidance": "For example, maintaining width may reduce immediate compact support; penetration may expose balance. Context determines trade-off.",
+      "item_type": "analysis",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-016",
+      "discipline_code": "ATH",
+      "unit_id": "ATH-ADV-002",
+      "prompt": "What permissions and limitations matter when using match footage for analysis?",
+      "answer_guidance": "Consent/permission, privacy, permitted sharing, avoid public shaming, small-sample and observer limitations.",
+      "item_type": "ethics",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-017",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-001",
+      "prompt": "Distinguish articulation, pace, phrasing and emphasis.",
+      "answer_guidance": "Articulation shapes speech sounds; pace is rate; phrasing groups meaning; emphasis directs attention. Explain how they interact.",
+      "item_type": "definition",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-018",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-001",
+      "prompt": "Listeners miss key terms in a fast explanation. Propose a controlled revision and a way to test it.",
+      "answer_guidance": "Mark phrase boundaries, slow selectively around key terms, articulate endings, record consistently and ask listener to paraphrase before feedback.",
+      "item_type": "application",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-019",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-001",
+      "prompt": "Why is an accent not a defect that a learner should erase?",
+      "answer_guidance": "Accent is linguistic variation; clarity is audience/context dependent. Avoid bias and forced imitation; test intelligibility, not conformity.",
+      "item_type": "limits",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-020",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-001",
+      "prompt": "List safe boundaries for repeated voice practice.",
+      "answer_guidance": "Comfortable range/volume, short sets, rest, no shouting/forced extremes; stop for pain or persistent hoarseness and seek adult/qualified support.",
+      "item_type": "safety",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-021",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-002",
+      "prompt": "List the stages of a small performance production and explain why a brief is needed.",
+      "answer_guidance": "Brief, concept, rehearsal, capture, review, revision, delivery; brief defines audience, purpose, constraints and success criteria.",
+      "item_type": "workflow",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-022",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-002",
+      "prompt": "How can technical quality and artistic quality differ?",
+      "answer_guidance": "Clean capture does not guarantee meaning; compelling performance may have imperfect equipment. Evaluate separately against goals.",
+      "item_type": "analysis",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-023",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-002",
+      "prompt": "Why preserve earlier takes and record what changed?",
+      "answer_guidance": "Enables comparison, provenance, rollback and reasoned revision; avoid overwriting evidence.",
+      "item_type": "versioning",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-024",
+      "discipline_code": "PERF",
+      "unit_id": "PERF-ADV-002",
+      "prompt": "What should be checked before publishing a performance using music, images or another person’s voice?",
+      "answer_guidance": "Rights/licence, attribution, permissions and consent; do not assume public availability grants reuse rights.",
+      "item_type": "rights",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-025",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-001",
+      "prompt": "What belongs in a small design system beyond colours?",
+      "answer_guidance": "Type scale, spacing tokens, grid/container rules, component patterns and states, interaction and accessibility rules.",
+      "item_type": "design",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-026",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-001",
+      "prompt": "Why is shrinking a desktop page not sufficient responsive design?",
+      "answer_guidance": "Content priority and navigation may need reflow, stacking, altered interaction and preserved reading order; labels may expand.",
+      "item_type": "application",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-027",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-001",
+      "prompt": "Name four responsive/accessibility stress tests.",
+      "answer_guidance": "Long headings, zoom/reflow, keyboard focus, narrow viewport, translated labels, missing images, touch target and contrast checks.",
+      "item_type": "testing",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-028",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-001",
+      "prompt": "When might a design token need a context-specific exception?",
+      "answer_guidance": "When evidence shows a repeated token harms fit/readability/accessibility; document exception and avoid arbitrary drift.",
+      "item_type": "judgement",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-029",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-002",
+      "prompt": "Which visual channel is generally more accurate for comparing quantities: position/length or area/colour intensity? Why?",
+      "answer_guidance": "Position and length are generally more accurately compared; area and colour intensity can be harder to estimate. Context still matters.",
+      "item_type": "selection",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-030",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-002",
+      "prompt": "A bar chart starts its axis at 47 to compare 48 and 52. What is the risk?",
+      "answer_guidance": "Visual exaggeration; bars usually need a zero baseline or explicit justification and clear scale.",
+      "item_type": "critique",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-031",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-002",
+      "prompt": "What information should accompany a chart to support interpretation?",
+      "answer_guidance": "Title/question, units, time window, denominator, labels/legend, source, relevant uncertainty and scale.",
+      "item_type": "application",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-032",
+      "discipline_code": "AEST",
+      "unit_id": "AEST-ADV-002",
+      "prompt": "Why does a dashboard correlation not establish causation?",
+      "answer_guidance": "Confounding, selection, reverse causality and other explanations; visual co-movement is descriptive only.",
+      "item_type": "limits",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-033",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-001",
+      "prompt": "In a simple one-point perspective drawing, which edges converge and which may remain vertical/horizontal?",
+      "answer_guidance": "Depth edges aligned with the receding direction converge toward the vanishing point; verticals and front-facing horizontals may remain parallel in the simplified setup.",
+      "item_type": "construction",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-034",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-001",
+      "prompt": "How would you check whether a cast shadow is consistent with a single light source?",
+      "answer_guidance": "Infer source direction and compare shadow direction/shape across objects; note multiple sources and surface geometry as limits.",
+      "item_type": "application",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-035",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-001",
+      "prompt": "Why use negative space and sighting rather than drawing from object symbols?",
+      "answer_guidance": "They provide comparative evidence for proportion, angle and placement, reducing assumptions from remembered symbols.",
+      "item_type": "method",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-036",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-001",
+      "prompt": "What should be corrected before adding detailed texture?",
+      "answer_guidance": "Major proportion, perspective, overlap and value grouping; structural errors affect the whole image.",
+      "item_type": "revision",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-037",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-002",
+      "prompt": "What provenance details should a visual reference log retain?",
+      "answer_guidance": "Creator, title/description, source URL/location, access date and licence/permission/usage constraints.",
+      "item_type": "research",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-038",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-002",
+      "prompt": "Why is a reference board not permission to reproduce its contents?",
+      "answer_guidance": "Research access and reproduction rights are distinct; copyright/licence and consent still apply.",
+      "item_type": "ethics",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-039",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-002",
+      "prompt": "How can three concepts be meaningfully different rather than superficial variations?",
+      "answer_guidance": "Vary central idea, narrative/metaphor, information structure or audience approach, not merely colour or layout.",
+      "item_type": "ideation",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-040",
+      "discipline_code": "ART",
+      "unit_id": "ART-ADV-002",
+      "prompt": "What makes an iteration useful?",
+      "answer_guidance": "It tests a specific question against brief/user evidence, records change and outcome, and preserves prior versions.",
+      "item_type": "process",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-041",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-001",
+      "prompt": "An item costs 2,400 units upfront plus 150 per month for 6 months. What is the six-month total before other costs?",
+      "answer_guidance": "2,400 + 6×150 = 3,300 units. State that delivery, fees and replacement costs may be additional.",
+      "item_type": "calculation",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-042",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-001",
+      "prompt": "Why include “do not buy” as an option in a purchase comparison?",
+      "answer_guidance": "It tests whether purchase is necessary and prevents false choice among sellers; budget and timing matter.",
+      "item_type": "judgement",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-043",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-001",
+      "prompt": "Name three warning signs of a potentially misleading online sales offer.",
+      "answer_guidance": "Unverifiable seller, unrealistic urgency/countdown, unclear recurring charges, missing return/warranty terms, pressure to share data or off-platform payment.",
+      "item_type": "risk",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-044",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-001",
+      "prompt": "What must never be stored in a general purchase comparison spreadsheet?",
+      "answer_guidance": "Passwords, full payment credentials, identity numbers or unnecessary private data; use fictional practice data and guardian oversight.",
+      "item_type": "privacy",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-045",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-002",
+      "prompt": "A learner sees water near an electrical appliance. What should they do and avoid?",
+      "answer_guidance": "Do not touch appliance or water/unplug it; move away, warn others if safe, alert adult immediately and follow local emergency guidance.",
+      "item_type": "safety",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-046",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-002",
+      "prompt": "Distinguish observation from diagnosis in a household hazard report.",
+      "answer_guidance": "Observation: “water visible on floor beside appliance at 4 pm”; diagnosis: “appliance wiring is faulty” without evidence. Report facts only.",
+      "item_type": "classification",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-047",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-002",
+      "prompt": "Why is escalation part of independence rather than failure?",
+      "answer_guidance": "Recognising limits prevents harm; trained adults/professionals handle hazardous tasks. Clear reporting enables safe action.",
+      "item_type": "escalation",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    },
+    {
+      "item_id": "W3B02-048",
+      "discipline_code": "INDEP",
+      "unit_id": "INDEP-ADV-002",
+      "prompt": "Why should a learner avoid photographing keys, access codes or detailed security layouts?",
+      "answer_guidance": "Could expose household security and private information; keep checklist records minimal and guardian-approved.",
+      "item_type": "privacy",
+      "scoring_note": "Score 0–3 for accuracy, reasoning, application and limits; apply unit-specific critical-fail rules; formative evidence only; no automatic mastery."
+    }
+  ],
+  "scoring_policy": {
+    "scale": "0-3 per item",
+    "use": "formative and diagnostic; use fresh transfer prompts for summative evidence",
+    "mastery_effect": "none_automatically",
+    "critical_fail": "Unsafe practice, privacy/consent/copyright violation, fabricated evidence or unsupported diagnostic/causal claim blocks a pass where relevant."
+  }
+}

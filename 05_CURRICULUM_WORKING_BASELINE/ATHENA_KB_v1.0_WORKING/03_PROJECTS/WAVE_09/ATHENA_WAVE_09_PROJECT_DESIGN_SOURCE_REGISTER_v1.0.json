@@ -1,0 +1,86 @@
+{
+  "registry": "ATHENA_WAVE_09_PROJECT_DESIGN_SOURCE_REGISTER",
+  "version": "1.0",
+  "status": "source_pages_opened_and_scope_checked",
+  "records": [
+    {
+      "id": "W09-SRC-001",
+      "title": "Gold Standard Project Design Elements",
+      "publisher": "PBLWorks",
+      "url": "https://www.pblworks.org/gold-standard/pbl-project-design",
+      "use": "Use the relevant elements—authenticity, learner voice/choice, reflection, critique/revision and public product—as design options, not a universal checklist imposed on every project class.",
+      "access_note": "Public framework page; no full-text copying.",
+      "observed_design_elements": [
+        "challenging question/problem",
+        "sustained inquiry",
+        "authenticity",
+        "learner voice/choice",
+        "reflection",
+        "critique/revision",
+        "public product"
+      ],
+      "design_limit": "Public product is one of the framework's elements; ATHENA does not impose public sharing on personal-use or intrinsic projects where it is not part of the class purpose or safe/desired."
+    },
+    {
+      "id": "W09-SRC-002",
+      "title": "Core Practices for Project-Based Learning",
+      "publisher": "Penn Graduate School of Education",
+      "url": "https://www.gse.upenn.edu/our-expertise/project-based-learning/core-practices-project-based-learning",
+      "use": "Supports higher-order thinking, alignment to disciplinary ideas, iteration, formative feedback and reflection/revision.",
+      "observed_design_elements": [
+        "disciplinary learning",
+        "authentic work",
+        "collaboration",
+        "iteration",
+        "higher-order thinking",
+        "content alignment"
+      ]
+    },
+    {
+      "id": "W09-SRC-003",
+      "title": "Project-Based Learning",
+      "publisher": "Virginia Tech Center for Excellence in Teaching and Learning",
+      "url": "https://teaching.vt.edu/teachingresources/project-based-learning.html",
+      "use": "Supports authentic questions, application of disciplinary knowledge, student choice, feedback, revision, audience and right-sized scope.",
+      "observed_design_elements": [
+        "authentic question",
+        "disciplinary application",
+        "learner choice",
+        "feedback/revision",
+        "right-sized scope",
+        "reflection"
+      ]
+    },
+    {
+      "id": "W09-SRC-004",
+      "title": "Framework for High Quality Project Based Learning",
+      "publisher": "High Quality Project Based Learning",
+      "url": "https://hqpbl.org/",
+      "use": "Reference for intellectual challenge, authenticity, collaboration, project management and reflection."
+    },
+    {
+      "id": "W09-SRC-005",
+      "title": "A Practical Guide to Open Portfolios",
+      "publisher": "Maker Ed",
+      "url": "https://makered.org/wp-content/uploads/2016/11/Maker-Ed-OPP-A-Practical-Guide-to-Open-Portfolios_final.pdf",
+      "use": "Supports process evidence, learner-centred making and portfolios that show growth and application; public sharing is not treated as mandatory.",
+      "license_note": "The PDF states CC BY-NC-SA 4.0. Link to it and attribute; do not copy/adapt it into ATHENA content unless the license conditions are satisfied. Non-commercial restriction is relevant."
+    },
+    {
+      "id": "W09-SRC-006",
+      "title": "Assessing learning in technology-rich maker activities: A systematic review of empirical research",
+      "publisher": "Computers & Education",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0360131520301421",
+      "use": "Caution: maker assessment should combine artefact evidence with other methods; psychometric evidence was limited in reviewed studies.",
+      "evidence_caution": "The review abstract reports that only 15% of the reviewed studies provided psychometric evidence for reliability and validity of maker assessments; do not assume project rubrics are validated."
+    },
+    {
+      "id": "W09-SRC-007",
+      "title": "Fostering Students' Creativity and Critical Thinking",
+      "publisher": "OECD",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/10/fostering-students-creativity-and-critical-thinking_3ffa73e4/62212c37-en.pdf",
+      "use": "Supports situated inquiry and creation of artefacts while emphasising process and reflection."
+    }
+  ],
+  "limitations": "The four opened pages were inspected for identity and relevant scope; this is not a systematic review of all underlying research, and does not validate ATHENA's project bank. The MakerEd guide is CC BY-NC-SA 4.0; use a link and attribution rather than copying/adapting content unless its conditions are satisfied. Design-method sources do not replace subject-specific resource discovery for each project's target objectives."
+}

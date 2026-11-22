@@ -1,0 +1,201 @@
+{
+  "registry": "ATHENA_WAVE_1_CONTENT_REMEDIATION",
+  "version": "1.0",
+  "status": "authored_internal_structural_checks_passed_review_pending",
+  "batch_id": "WAVE1_ENGINEERING_BATCH_01",
+  "records": [
+    {
+      "module_id": "BASE-ENG-003",
+      "discipline_code": "ENG",
+      "sequence": 3,
+      "title": "Variables and data types",
+      "status": "WAVE1_AUTHORED_DRAFT_INTERNAL_CHECK_PENDING",
+      "learning_outcomes": [
+        "Represent program state with meaningful names and appropriate types.",
+        "Predict the result of assignment, conversion and supported operations.",
+        "Diagnose type errors and choose conversions that preserve meaning."
+      ],
+      "entry_assumptions": [
+        "Can read a short sequence of pseudocode or Python statements.",
+        "Understands that input, processing and output are different parts of a program.",
+        "No prior knowledge of formal type systems is required."
+      ],
+      "key_terms_and_model": {
+        "core_model": "A variable name refers to a value; the value has a type; operations are valid only when their operands and meaning support them.",
+        "terms": [
+          "value",
+          "identifier",
+          "assignment",
+          "type",
+          "integer",
+          "float",
+          "string",
+          "boolean",
+          "conversion",
+          "mutability",
+          "type error"
+        ]
+      },
+      "learner_explanation": "## 1. A variable is a name bound to a value\n\nA program needs to remember information while it runs. A variable gives a value a name so later instructions can use it. In Python, `score = 12` means: evaluate the expression on the right, then bind the name `score` to the resulting value. The equals sign is assignment here; it is not a claim that two algebraic expressions are permanently identical.\n\nA useful mental model is a labelled reference to the current value. If the program later executes `score = score + 3`, it reads the old value, adds three, then rebinds `score` to the new value. The result is 15. This is a state change.\n\n## 2. Types describe what a value is and which operations make sense\n\nCommon beginner types include:\n- `int`: whole-number values such as `12` or `-4`.\n- `float`: approximate decimal values such as `8.5`.\n- `str`: text such as `\"pen\"`.\n- `bool`: truth values `True` and `False`.\n\nTypes matter because operations have meaning. Adding two numbers is meaningful. Joining two strings is meaningful. Adding an integer to a string is not automatically meaningful: Python raises a `TypeError` rather than guessing whether you wanted text joining, arithmetic or something else.\n\n## 3. Assignment is not the same as conversion\n\n`age = 13` stores an integer. `age_text = str(age)` creates a string representation. `int(\"13\")` converts valid numeric text to an integer. Conversion should reflect the meaning of the data, not merely silence an error. For example, converting `\"013\"` to an integer loses the leading zero. That may be correct for a count, but wrong for a postal code or an ID where the zero is part of the label.\n\n## 4. Input arrives as text unless you convert it\n\nIn Python, `input()` returns a string. If a user types `42`, the program receives the text `\"42\"`. To calculate with it, convert deliberately: `quantity = int(input(\"Quantity: \"))`. If the input might be invalid, validate it and explain the problem instead of letting an unexplained crash be the user experience.\n\n## 5. Names and state should communicate intent\n\nPrefer `unit_price` to `x`, and `is_available` to `flag`. A name should describe the meaning of the value, not its type alone. Use `total_cost` for a calculated amount and `customer_id` for an identifier. Avoid using a number for a value that is conceptually a label.\n\n## 6. A reliable check\n\nFor every variable, ask: What real-world or program concept does it represent? What type expresses that concept? Which operations are valid? Can the value be missing, malformed or outside an expected range? This small discipline prevents many beginner bugs and makes later debugging easier.",
+      "worked_example": "### Example A — Calculate a small order\n\n```python\nquantity = 3          # int\nunit_price = 25.5      # float\nitem_name = \"notebook\" # str\nsubtotal = quantity * unit_price\nprint(item_name, subtotal)\n```\n\nReasoning:\n1. `quantity` is a count, so an integer is appropriate.\n2. `unit_price` may contain a fractional currency amount, so a decimal representation is used for this simple demonstration. Real financial software should use decimal-safe currency handling rather than binary floating-point arithmetic.\n3. Multiplying an integer by a float produces a numeric result: `76.5`.\n4. `item_name` is text. It can be printed beside the number, but it should not be added to the number.\n\n### Example B — Convert input without confusing labels and quantities\n\n```python\nraw_quantity = input(\"How many? \")\nquantity = int(raw_quantity)\nprint(quantity * 2)\n```\n\nIf the user enters `\"4\"`, `int(\"4\")` produces `4`, and the output is `8`. If the user enters `\"four\"`, conversion fails because that text is not an integer literal. A robust program catches the invalid input and asks again.\n\nImportant contrast: `student_id = \"0042\"` should usually remain a string. It is an identifier, not a quantity; converting it to an integer would discard the leading zeros.",
+      "guided_practice": "1. Predict the types of `count = 8`, `temperature = 26.5`, `city = \"Dhaka\"` and `is_ready = False`.\n2. Predict the result of `count + 2`, `city + \" City\"` and `count + city`. Identify which expression raises a type error and why.\n3. A program reads `raw = input(\"Age: \")`. Explain why `raw + 1` fails and write the conversion needed for a whole-number age.\n4. Decide whether `\"007\"` should be stored as an integer or string when it is a locker code. Explain the information that would be lost by integer conversion.",
+      "independent_practice": "Complete these without copying the worked examples:\n\n**Task 1 — Inventory line.** Store a product name, a whole-number stock count and a unit price. Calculate the stock value. Print a readable summary.\n\n**Task 2 — Diagnose.** Explain why `\"5\" + 2` fails. Show two different valid repairs: one that treats the text as a number and one that treats the number as text. State when each repair is appropriate.\n\n**Task 3 — Boundary case.** Design input handling for a quantity. It must reject empty text, alphabetic text and negative quantities. You may write pseudocode if you have not learned exception handling yet.",
+      "answer_guidance": "**Task 1:** A sound solution uses `str` for the product name, `int` for stock and a numeric price. It multiplies stock by price and labels the result. A strong answer states the currency assumption and does not imply that floating-point is suitable for production accounting.\n\n**Task 2:** `\"5\"` is text and `2` is an integer. Numeric interpretation: `int(\"5\") + 2` gives `7`, provided the string is valid numeric input. Text interpretation: `\"5\" + str(2)` gives `\"52\"`, appropriate only when constructing text. The two outputs mean different things.\n\n**Task 3:** Check that input is not empty; attempt numeric parsing; reject values below zero; give a clear retry message. Do not silently convert invalid input to zero. A robust answer distinguishes parsing failure from a valid negative number.\n\nFor all tasks, award credit for correct type choice, meaningful names, correct operation, explicit assumptions and a relevant invalid-input or boundary check.",
+      "misconceptions_and_feedback": "- **“The equals sign means the two sides are mathematically equal forever.”** Correction: in assignment, the right side is evaluated and its result is assigned to the name on the left. Trace the value before and after the statement.\n- **“Anything that looks like a number is numeric.”** Correction: `input()` returns text; inspect the type and convert only when the meaning is numeric.\n- **“If conversion fixes the error, it is always correct.”** Correction: conversion can destroy meaning, such as leading zeros in identifiers. Decide whether the data represents a quantity or a label.\n- **“A float is exact money.”** Correction: binary floating-point can represent some decimal fractions only approximately. Use a decimal-safe representation for real financial calculations.\n- **“A variable's name determines its type.”** Correction: the value and language rules determine the runtime type; names communicate intended meaning but do not enforce it.",
+      "assessment_task": "Given a short inventory-input program containing at least two type errors and one semantically wrong conversion, diagnose each issue, repair it, and justify the chosen types.",
+      "assessment_rubric": "**Type selection**\n- Not yet evidenced: Chooses types that conflict with the value meaning or cannot support the required operation.\n- Developing: Chooses most types correctly but misses one important distinction, such as identifier versus quantity.\n- Independent: Chooses appropriate types for all required values and explains the main operation rules.\n- Adaptive transfer: Adapts type choices to a changed representation or domain constraint and explains trade-offs.\n\n**State and conversion reasoning**\n- Not yet evidenced: Cannot trace assignment or proposes conversions without explaining them.\n- Developing: Traces simple assignment but confuses conversion, assignment or input text.\n- Independent: Accurately traces state changes and uses conversions that preserve the intended meaning.\n- Adaptive transfer: Handles malformed, missing or boundary input and explains when conversion would lose information.\n\n**Debugging**\n- Not yet evidenced: Leaves type errors unresolved or hides them with arbitrary casts.\n- Developing: Repairs the obvious error but misses a semantic or boundary problem.\n- Independent: Repairs all stated errors and gives a meaningful reason for each repair.\n- Adaptive transfer: Identifies an additional failure mode and proposes a maintainable validation strategy.\n\n**Communication and transfer**\n- Not yet evidenced: Cannot explain the solution or apply it to another value.\n- Developing: Explains the immediate example but transfer is incomplete.\n- Independent: Explains the reasoning and applies it to a new inventory or form-input case.\n- Adaptive transfer: Transfers the model to a domain with different data semantics, such as IDs, money or measurements.",
+      "retrieval_and_maintenance": "Immediately after practice, reconstruct the four common types and explain one valid operation and one invalid operation for each. At the next study session, predict types and outputs from unseen code. Schedule another check only if type choice or conversion reasoning was inaccurate; if correct, use a less familiar context rather than repeating the same drill. Record which error recurred.",
+      "transfer_task": "A clinic form stores a patient age, appointment code, temperature and consent checkbox. Choose a representation for each, explain why an appointment code should not automatically be numeric, and design one validation check per field. Do not use real personal health data.",
+      "scope_and_safety_boundary": "Use fictional/sample data only. Do not paste real customer, patient, school or account records into practice. This lesson is about programming data types, not production financial or medical software validation.",
+      "accessibility_and_language_notes": "Pair each type name with a plain-language meaning and a small example. Permit handwritten tracing tables or spoken explanations. For Bangla support, distinguish “সংখ্যা/পরিমাণ” (quantity) from “পরিচয়/কোড” (identifier); do not translate type names in a way that hides their exact Python spelling.",
+      "candidate_resource_ids": [
+        "ATH-RES-ENG-PYTHON-TUTORIAL"
+      ],
+      "resource_note": "Candidate resource carried forward from the existing register; exact section fit, current access and usage rights still require Wave 2 source verification.",
+      "evidence_requirements": [
+        "Corrected code or pseudocode",
+        "Trace table showing before/after assignment",
+        "Explanation of quantity versus identifier",
+        "Invalid-input test case"
+      ],
+      "review_state": {
+        "expert_review": "NOT_PERFORMED",
+        "learner_validation": "NOT_PERFORMED",
+        "safety_review": "LOW_RISK_SCOPE_RECORDED",
+        "approval": "NOT_APPROVED"
+      },
+      "authoring_notes": {
+        "batch": "WAVE1_ENGINEERING_BATCH_01",
+        "quality_status": "module_specific_substantive_draft",
+        "known_limit": "No external subject review or learner validation; source locator not yet verified."
+      }
+    },
+    {
+      "module_id": "BASE-ENG-004",
+      "discipline_code": "ENG",
+      "sequence": 4,
+      "title": "Control flow",
+      "status": "WAVE1_AUTHORED_DRAFT_INTERNAL_CHECK_PENDING",
+      "learning_outcomes": [
+        "Construct conditional branches that cover intended cases.",
+        "Trace loops and update program state correctly.",
+        "Identify termination conditions and boundary errors."
+      ],
+      "entry_assumptions": [
+        "Can read variables and basic expressions.",
+        "Understands boolean values and comparisons at an introductory level."
+      ],
+      "key_terms_and_model": {
+        "core_model": "A program follows a sequence unless a decision selects a branch or a loop repeats a block; each loop needs a clear progress and termination argument.",
+        "terms": [
+          "sequence",
+          "condition",
+          "boolean expression",
+          "branch",
+          "iteration",
+          "loop variable",
+          "termination",
+          "off-by-one error",
+          "loop invariant"
+        ]
+      },
+      "learner_explanation": "## 1. Control flow is the route through a program\n\nA program is not merely a list of instructions. Control flow determines which instruction runs next. Three basic structures are sequence, selection and iteration.\n\n- **Sequence:** instructions run in order.\n- **Selection:** a condition chooses which branch runs.\n- **Iteration:** a block repeats while a condition or collection says there is more work.\n\nThese structures are enough to express a large range of beginner algorithms. The key is to make the conditions and state changes explicit.\n\n## 2. A condition is a question with a truth value\n\nAn expression such as `stock > 0` evaluates to `True` or `False`. An `if` statement uses that result to choose a branch. Conditions should match the decision being made. If a product is available only when stock is positive, `stock > 0` expresses the rule. `stock >= 0` would incorrectly include zero stock.\n\nUse `elif` when there are multiple mutually exclusive cases and `else` for the remaining cases. Test boundary values: just below, exactly at and just above a threshold. This is where many branch mistakes appear.\n\n## 3. Loops repeat work, but must make progress\n\nA `for` loop is useful when iterating over a known sequence or range. A `while` loop is useful when repetition depends on a condition that may change during execution. A loop needs three answers: what starts it, what changes each iteration, and what makes it stop? If the state never changes in a way that can make the condition false, a `while` loop may run forever.\n\n## 4. Trace the state, not just the output\n\nFor each iteration, record the values of the loop variable, accumulator and condition. This reveals off-by-one errors and incorrect update order. For example, `range(1, 5)` produces 1, 2, 3 and 4; the stop value 5 is excluded. Never guess a loop's behaviour from its visual shape—trace the actual values.\n\n## 5. Choose a loop that matches the problem\n\nUse `for item in items` when each item should be processed. Use `range(n)` when a count of repetitions is intended. Use `while` when a condition controls continuation, such as retrying until valid input is received. Avoid a complicated loop when a direct condition or built-in operation is clearer.\n\n## 6. Test the edges\n\nFor a threshold, test values on both sides and exactly at the boundary. For a collection, test empty, one-item and several-item cases. For a loop, test zero repetitions and the final iteration. These tests reveal missing branches, skipped items and repeated work.",
+      "worked_example": "### Example A — Classify a score\n\n```python\nscore = 74\nif score >= 80:\n    result = \"high\"\nelif score >= 50:\n    result = \"pass\"\nelse:\n    result = \"retry\"\n```\n\nTrace: 74 >= 80 is false; 74 >= 50 is true; the program assigns `\"pass\"` and skips the `else`. Boundary tests: 49 → retry; 50 → pass; 79 → pass; 80 → high. The order matters: placing `score >= 50` first would capture 80 as pass and make the high branch unreachable.\n\n### Example B — Count a sequence\n\n```python\ntotal = 0\nfor value in [4, 2, 5]:\n    total = total + value\nprint(total)\n```\n\nTrace: start total=0; after 4 total=4; after 2 total=6; after 5 total=11. The loop visits each item once. The accumulator changes every iteration.\n\n### Example C — A condition-controlled retry\n\n```python\nattempts = 0\nwhile attempts < 3:\n    print(\"Try again\")\n    attempts += 1\n```\n\nThe values tested are 0, 1 and 2. After the third update, attempts becomes 3 and the condition is false. If the update were removed, the loop would not make progress and would repeat indefinitely.",
+      "guided_practice": "1. For `temperature = 30`, trace `if temperature > 30`, `elif temperature == 30`, `else`. Which branch runs?\n2. Predict the values produced by `range(2, 6)`. Explain why the last value is not 6.\n3. Trace `total = 0; for n in [1, 3, 3]: total += n`. Record total after each iteration.\n4. Inspect `while balance > 0: print(balance)`. What state change is missing if the intention is to count down?\n5. Test a discount rule that applies at purchases of 500 or more. Identify the correct results for 499, 500 and 501.",
+      "independent_practice": "**Task 1 — Range classifier.** Classify a mark as `\"invalid\"` if outside 0–100, `\"pass\"` for 50–79 and `\"high\"` for 80–100. Ensure boundary cases are handled once.\n\n**Task 2 — Running total.** Given a list of daily sales, calculate the total and count how many days had sales above a stated threshold. Test an empty list.\n\n**Task 3 — Retry loop.** Write pseudocode for a maximum of three attempts. Show what happens after success and after all attempts fail. Prove that the loop terminates.",
+      "answer_guidance": "**Task 1:** Check invalid bounds first (`mark < 0 or mark > 100`), then `mark >= 80`, then `mark >= 50`, else below 50. Boundary values 49, 50, 79, 80, 100 must be correct.\n\n**Task 2:** Initialise total and count to zero. Iterate once through the list, update total for every value and count only when the value is greater than the threshold. Empty input should produce total 0 and count 0.\n\n**Task 3:** Initialise attempts to zero; repeat while attempts is below three and success is false; increase attempts each time; stop immediately on success. The loop terminates because attempts increases by one and cannot remain below three indefinitely.\n\nA correct output with no trace or boundary reasoning is incomplete. Learners should show branch order, loop state and termination condition.",
+      "misconceptions_and_feedback": "- **“`range(1, 5)` includes 5.”** Correction: the stop value is excluded. Write out the generated values before tracing the body.\n- **“`elif` conditions are all checked.”** Correction: once one branch is selected, later branches are skipped. Order overlapping conditions from most specific to broader.\n- **“A loop repeats a fixed number of times automatically.”** Correction: the loop's iterable or condition controls repetition. Trace the actual iteration values.\n- **“A while loop will eventually stop.”** Correction: it stops only if its condition becomes false. Identify the state variable and prove progress.\n- **“Testing one ordinary value is enough.”** Correction: test boundaries, empty inputs and the final iteration; ordinary cases often hide off-by-one errors.",
+      "assessment_task": "Given a score-classification function and a loop that totals values, identify two branch/boundary defects and one termination defect, then repair and test them.",
+      "assessment_rubric": "**Branch logic**\n- Not yet evidenced: Branches overlap incorrectly or omit valid cases.\n- Developing: Main cases work but one boundary or branch-order defect remains.\n- Independent: Branches are mutually consistent and correctly handle all specified boundaries.\n- Adaptive transfer: Adapts the logic to new thresholds or additional cases without creating unreachable branches.\n\n**Loop tracing**\n- Not yet evidenced: Cannot track loop state or gives an incorrect iteration count.\n- Developing: Traces typical iterations but misses an endpoint or update-order issue.\n- Independent: Accurately traces each iteration and accumulator/state change.\n- Adaptive transfer: Explains loop invariants or proves the required condition remains true across iterations.\n\n**Termination and edge cases**\n- Not yet evidenced: Loop may not terminate or empty/boundary cases fail.\n- Developing: Recognises one failure but cannot explain why it occurs.\n- Independent: Shows progress and termination and tests empty, one-item and boundary cases as appropriate.\n- Adaptive transfer: Identifies a less obvious non-termination or complexity risk and proposes a simpler safe design.\n\n**Debugging and transfer**\n- Not yet evidenced: Cannot repair the provided control-flow defects.\n- Developing: Repairs the obvious defect but does not test changed conditions.\n- Independent: Repairs all defects and demonstrates correct behaviour with test cases.\n- Adaptive transfer: Transfers the method to a different workflow and justifies the branch/loop structure.",
+      "retrieval_and_maintenance": "Reconstruct sequence, selection and iteration from memory. Trace a new conditional and loop without running it. If boundary or termination errors appear, schedule a short contrasting example before moving to a more complex loop. If the trace is correct, use an unseen problem and explain why the loop terminates.",
+      "transfer_task": "Model a simple order-processing workflow: reject invalid quantity, check stock availability, calculate a total for each valid item and stop when all items are processed. Use fictional data and show how empty orders and zero stock behave.",
+      "scope_and_safety_boundary": "Use small local examples and fictional values. Do not use loops to automate login attempts, spam, scraping or actions against systems without permission. This lesson teaches control flow, not authorization to automate external services.",
+      "accessibility_and_language_notes": "Use trace tables with one column per variable and one row per iteration. Allow paper tracing before code execution. Explain `if`, `elif`, `else`, `for` and `while` with the exact code spelling and a plain-language Bangla explanation.",
+      "candidate_resource_ids": [
+        "ATH-RES-ENG-PYTHON-TUTORIAL"
+      ],
+      "resource_note": "Candidate resource carried forward from the existing register; exact section fit, current access and usage rights still require Wave 2 source verification.",
+      "evidence_requirements": [
+        "Branch table with boundary tests",
+        "Loop trace table",
+        "Corrected pseudocode or code",
+        "Termination explanation"
+      ],
+      "review_state": {
+        "expert_review": "NOT_PERFORMED",
+        "learner_validation": "NOT_PERFORMED",
+        "safety_review": "LOW_RISK_SCOPE_RECORDED",
+        "approval": "NOT_APPROVED"
+      },
+      "authoring_notes": {
+        "batch": "WAVE1_ENGINEERING_BATCH_01",
+        "quality_status": "module_specific_substantive_draft",
+        "known_limit": "No external subject review or learner validation; source locator not yet verified."
+      }
+    },
+    {
+      "module_id": "BASE-ENG-005",
+      "discipline_code": "ENG",
+      "sequence": 5,
+      "title": "Functions and contracts",
+      "status": "WAVE1_AUTHORED_DRAFT_INTERNAL_CHECK_PENDING",
+      "learning_outcomes": [
+        "Define functions with clear inputs, outputs and responsibilities.",
+        "Use parameters and return values to separate a task from its caller.",
+        "State and test simple preconditions, postconditions and side effects."
+      ],
+      "entry_assumptions": [
+        "Can use variables, expressions and basic control flow.",
+        "Can read and write short sequential programs."
+      ],
+      "key_terms_and_model": {
+        "core_model": "A function is a named unit with a contract: inputs and preconditions, a defined responsibility, outputs/postconditions and any explicit side effects.",
+        "terms": [
+          "function",
+          "call",
+          "parameter",
+          "argument",
+          "return value",
+          "scope",
+          "precondition",
+          "postcondition",
+          "side effect",
+          "contract"
+        ]
+      },
+      "learner_explanation": "## 1. A function gives a task a name and boundary\n\nA function packages a coherent operation so it can be called from different places. Instead of repeating the same calculation, define it once and give it a name that communicates what it does. A function should usually have one clear responsibility.\n\nIn Python, `def add_tax(price, rate):` defines a function with two parameters. When the program calls `add_tax(100, 0.05)`, the values 100 and 0.05 are arguments supplied to those parameters. The function body runs and may return a result.\n\n## 2. Parameters are inputs; return values are outputs\n\nA parameter names information the function needs. A return value sends a result back to the caller. `return` is not the same as `print`: printing displays something, while returning makes a value available for later computation. A function that prints a result may be useful for a user interface, but a calculation function is usually easier to test when it returns the result.\n\n## 3. A function contract makes expectations explicit\n\nA simple contract states:\n- **Preconditions:** what must be true before the function is called.\n- **Postconditions:** what the function guarantees if it completes normally.\n- **Side effects:** changes outside the returned result, such as writing a file, changing shared state or sending a request.\n\nFor example, a `calculate_discount(price, rate)` function might require `price >= 0` and `0 <= rate <= 1`, and guarantee a non-negative discounted price no greater than the original price. If it also changes a global variable or writes to a file, that side effect must be explicit.\n\n## 4. Keep responsibilities narrow\n\nA function named `calculate_total` should calculate a total, not also ask for input, print a menu, save a file and send a message. Separating these tasks makes each part easier to understand and test. One function can validate input, another can calculate, and a caller can decide how to display the result.\n\n## 5. Scope prevents accidental coupling\n\nNames created inside a function are generally local to that function unless explicitly declared otherwise. Pass required values as parameters instead of relying on hidden global variables. A function is easier to reuse when its behaviour depends on explicit inputs rather than distant program state.\n\n## 6. Test the contract, not only one example\n\nTest ordinary inputs, boundary inputs and invalid inputs. Check the return value and any side effects separately. If a function promises not to change its input list, verify that it does not mutate it. If a precondition is violated, decide whether the function should reject the input, return a defined error result or rely on a validated caller—then document the decision.",
+      "worked_example": "### Example A — A pure calculation function\n\n```python\ndef line_total(quantity, unit_price):\n    if quantity < 0 or unit_price < 0:\n        raise ValueError(\"Inputs must be non-negative\")\n    return quantity * unit_price\n\nsubtotal = line_total(3, 25)\nprint(subtotal)  # 75\n```\n\nContract: quantity and unit price must be non-negative; the function returns their product; it does not print, modify global state or write a file. The caller chooses how to display the result.\n\n### Example B — Why `print` is not `return`\n\n```python\ndef show_double(number):\n    print(number * 2)\n\ndef get_double(number):\n    return number * 2\n\nresult_a = show_double(4)  # displays 8; result_a is None\nresult_b = get_double(4)   # result_b is 8\n```\n\nThe first function performs an output side effect but returns no useful value. The second returns a value that can be stored, tested or combined with another calculation.\n\n### Example C — Explicit dependency\n\nA function that reads a global `tax_rate` can silently change behaviour when another part of the program changes that variable. Passing `tax_rate` as a parameter makes the dependency visible: `calculate_tax(price, tax_rate)`. The caller can now test different rates without changing hidden program state.",
+      "guided_practice": "1. Identify the parameters, arguments and return value in `def square(n): return n * n` when called as `square(6)`.\n2. Rewrite a function that prints `price * quantity` so it returns the total instead.\n3. State a precondition and postcondition for a function that converts minutes to seconds.\n4. A function named `save_and_send_report` calculates data, writes a file and sends a message. Identify its separate responsibilities and propose a clearer decomposition.\n5. Explain why passing a required value as a parameter is usually easier to test than reading it from a global variable.",
+      "independent_practice": "**Task 1 — Pure calculation.** Write `minutes_to_seconds(minutes)` that returns the converted value and rejects negative input.\n\n**Task 2 — Contract.** Specify preconditions, postconditions and side effects for a function that calculates the final price after a percentage discount.\n\n**Task 3 — Refactor.** Given pseudocode that asks for input, calculates a total, prints a receipt and saves a file in one function, split it into at least two functions with explicit inputs and outputs.\n\n**Task 4 — Test design.** Provide one normal, one boundary and one invalid test for your calculation function.",
+      "answer_guidance": "**Task 1:** For a valid non-negative number of minutes, return `minutes * 60`. The function should not print. A negative value should be rejected consistently, for example with `ValueError`.\n\n**Task 2:** Preconditions: price is non-negative and discount rate is between 0 and 1 inclusive. Postcondition: returned price equals `price * (1 - rate)` and is within the allowed range. Side effects: none, unless the design explicitly logs or stores something.\n\n**Task 3:** A reasonable split is `calculate_total(items)` returning a number, and `format_receipt(items, total)` returning text. File saving can be a separate I/O function. Input collection belongs at the application boundary. The exact split may vary if responsibilities remain clear.\n\n**Task 4:** Normal: 3 minutes → 180 seconds. Boundary: 0 → 0. Invalid: -1 → defined rejection. A strong test checks both the result and the rejection behaviour.",
+      "misconceptions_and_feedback": "- **“A function is just a block of code with a name.”** Correction: it is also a responsibility boundary with explicit inputs, outputs and side effects. State its contract.\n- **“`print` returns the displayed value.”** Correction: `print` displays; a function without an explicit return normally returns `None`. Trace the value received by the caller.\n- **“Parameters and arguments are the same thing.”** Correction: parameters are names in the definition; arguments are values supplied at the call.\n- **“A global variable makes a function reusable.”** Correction: hidden dependencies make behaviour harder to test. Pass required values explicitly where practical.\n- **“More work in one function means fewer functions and simpler code.”** Correction: unrelated responsibilities create coupling. Split when each part has a coherent contract and can be tested independently.",
+      "assessment_task": "Refactor a monolithic order-total routine into functions with explicit contracts. Demonstrate correct return values, invalid-input handling, no unintended side effects and tests for normal/boundary/invalid cases.",
+      "assessment_rubric": "**Function boundary**\n- Not yet evidenced: Function has no clear responsibility or relies on hidden inputs.\n- Developing: Responsibility is mostly clear but inputs or side effects remain implicit.\n- Independent: Each function has a coherent purpose and explicit parameters/return behaviour.\n- Adaptive transfer: Boundaries minimise coupling and remain understandable as requirements change.\n\n**Contract quality**\n- Not yet evidenced: No usable preconditions/postconditions or they contradict behaviour.\n- Developing: States some expectations but omits important boundary or error behaviour.\n- Independent: States valid inputs, guaranteed result and relevant side effects accurately.\n- Adaptive transfer: Identifies assumptions and failure modes and designs a contract that supports safe composition.\n\n**Implementation and tests**\n- Not yet evidenced: Function returns incorrect values or tests only printed output.\n- Developing: Main example works but return/side-effect or boundary behaviour is unclear.\n- Independent: Correctly returns results and passes normal, boundary and invalid tests.\n- Adaptive transfer: Uses additional tests to expose hidden state, mutation or dependency problems.\n\n**Decomposition and transfer**\n- Not yet evidenced: Keeps unrelated work coupled or cannot explain the split.\n- Developing: Splits code but responsibilities overlap or dependencies remain hidden.\n- Independent: Separates calculation, input/output and persistence where appropriate.\n- Adaptive transfer: Transfers the contract approach to a new domain and justifies the chosen interfaces.",
+      "retrieval_and_maintenance": "Without notes, explain parameter versus argument, print versus return, and precondition versus postcondition. Then trace an unseen function call. If the learner confuses displayed output with returned data, use a short contrastive task. If correct, move to testing a function with an invalid input and an observable side effect.",
+      "transfer_task": "Design a small personal-expense calculator with separate functions for validating an entry, calculating a total and formatting a summary. Use fictional values only. State each function contract and identify which function, if any, is allowed to write a file.",
+      "scope_and_safety_boundary": "Use fictional/sample data. Do not write real credentials, personal records or customer information to files for this exercise. File I/O and external messaging should be introduced separately with explicit permission and error handling.",
+      "accessibility_and_language_notes": "Show a function call as a labelled input/output diagram before code. Permit pseudocode and trace tables. Explain parameter (ফাংশনের ইনপুটের নাম), argument (কলের সময় দেওয়া মান) and return value (ফেরত দেওয়া ফল) while retaining exact Python terms.",
+      "candidate_resource_ids": [
+        "ATH-RES-ENG-PYTHON-TUTORIAL"
+      ],
+      "resource_note": "Candidate resource carried forward from the existing register; exact section fit, current access and usage rights still require Wave 2 source verification.",
+      "evidence_requirements": [
+        "Refactored code or pseudocode",
+        "Function contract for each function",
+        "Return-value trace",
+        "Normal/boundary/invalid test results"
+      ],
+      "review_state": {
+        "expert_review": "NOT_PERFORMED",
+        "learner_validation": "NOT_PERFORMED",
+        "safety_review": "LOW_RISK_SCOPE_RECORDED",
+        "approval": "NOT_APPROVED"
+      },
+      "authoring_notes": {
+        "batch": "WAVE1_ENGINEERING_BATCH_01",
+        "quality_status": "module_specific_substantive_draft",
+        "known_limit": "No external subject review or learner validation; source locator not yet verified."
+      }
+    }
+  ]
+}
