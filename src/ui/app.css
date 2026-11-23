@@ -462,6 +462,8 @@ label > .label { display: block; margin-bottom: 4px; }
 .atlas-empty {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
   width: min(430px, calc(100% - 32px));
+  /* The card is an invitation, not a curtain: taps outside its buttons still reach the atlas. */
+  pointer-events: none;
   background: rgba(14, 24, 44, 0.9);
   border: 1px solid var(--glass-edge-strong);
   border-radius: var(--radius-modal); padding: var(--space-5); z-index: 5; text-align: left;
@@ -469,6 +471,7 @@ label > .label { display: block; margin-bottom: 4px; }
   backdrop-filter: blur(26px);
 }
 .atlas-empty h2 { font-size: 20px; margin-bottom: 6px; }
+.atlas-empty .btn, .atlas-empty a { pointer-events: auto; }
 .atlas-empty p { margin-bottom: 14px; }
 @media (max-width: 430px) {
   .hud-actions .btn span { display: none; }
@@ -2105,3 +2108,179 @@ html.athena-cockpit.athena-rail-collapsed .brandrail { transform: translateX(-10
   .lab-grid .btn { min-height: 34px; padding: 0 6px; }
   .lab-slider { margin-bottom: 4px; }
 }
+
+/* ── Command deck: reticle, flight bar, scanner, NAV zoom, chaos lab ───────── */
+/* The reticle sits at the co-moving frame's centre: the locked body is always there. */
+.reticle { position: absolute; inset: 0; z-index: 8; pointer-events: none; }
+.reticle .corner { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; border: 1.6px solid rgba(53, 217, 255, 0.85); }
+.reticle .corner.tl { transform: translate(-46px, -46px); border-right: 0; border-bottom: 0; }
+.reticle .corner.tr { transform: translate(24px, -46px); border-left: 0; border-bottom: 0; }
+.reticle .corner.bl { transform: translate(-46px, 24px); border-right: 0; border-top: 0; }
+.reticle .corner.br { transform: translate(24px, 24px); border-left: 0; border-top: 0; }
+.reticle-meta { position: absolute; left: 50%; top: calc(50% + 34px); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 1px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; color: #bfe9ff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9); white-space: nowrap; }
+.reticle-meta b { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #f2fbff; }
+.reticle-meta .mono { color: var(--atlas-cyan); font-size: 8px; }
+.reticle-meta .num { opacity: 0.76; font-size: 8.5px; }
+.edge-chevron { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 2px; font-family: var(--font-mono); color: #8ff2ff; font-size: 16px; }
+.edge-chevron em { font-style: normal; font-size: 8px; letter-spacing: 0.08em; color: #cbeaff; white-space: nowrap; }
+
+/* Flight systems bar: horizontal, scrollable, and clear of the joystick zone. */
+.flight-bar {
+  position: absolute; left: 50%; bottom: calc(64px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  z-index: 22; display: flex; align-items: center; gap: 6px; padding: 7px 9px;
+  max-width: calc(100vw - 24px); overflow-x: auto; scrollbar-width: none;
+  background: rgba(9, 9, 11, 0.9); border: 1px solid #263858; border-radius: 999px;
+  backdrop-filter: blur(16px); box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+}
+.flight-bar::-webkit-scrollbar { display: none; }
+.flight-bar .btn { flex: 0 0 auto; white-space: nowrap; font-size: 11px; min-height: 32px; }
+.flight-bar .pill { flex: 0 0 auto; }
+.flight-bar .pill button { min-height: 30px; padding: 0 9px; font-size: 11px; }
+.eva-bar .label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8ff2ff; white-space: nowrap; }
+.eva-bar .num { font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); white-space: nowrap; }
+
+.deck-prompt {
+  position: absolute; left: 50%; bottom: calc(116px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  z-index: 21; padding: 5px 12px; border-radius: 999px; pointer-events: none;
+  background: rgba(4, 14, 22, 0.86); border: 1px solid rgba(53, 217, 255, 0.35);
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #bdf1ff;
+  max-width: calc(100vw - 32px); text-align: center;
+}
+
+/* Scanner card: the same glass as the record drawer, but for a procedural star. */
+.scan-card {
+  position: absolute; z-index: 24; left: 14px; top: 104px; width: min(290px, 82vw);
+  max-height: calc(100vh - 190px); overflow-y: auto;
+  padding: 12px 14px; border-radius: 14px; border: 1px solid #263858;
+  background: color-mix(in srgb, #0b111c 94%, transparent); backdrop-filter: blur(16px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+}
+.scan-card .label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+.scan-card .mono { font-family: var(--font-mono); font-size: 9px; color: var(--atlas-cyan); overflow: hidden; text-overflow: ellipsis; }
+.scan-card h2 { font-size: 16px; margin: 4px 0 8px; }
+.scan-card .kv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px; margin: 0 0 8px; }
+.scan-card .kv div { display: flex; justify-content: space-between; gap: 6px; border-bottom: 1px solid rgba(126, 170, 255, 0.1); padding-bottom: 3px; }
+.scan-card .kv dt { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+.scan-card .kv dd { font-family: var(--font-mono); font-size: 10px; color: #d7ecff; margin: 0; }
+.scan-worlds { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 3px; }
+.scan-worlds li { display: flex; align-items: baseline; gap: 6px; font-size: 10px; color: var(--text-secondary); }
+.scan-worlds b { color: #e6f4ff; font-weight: 600; }
+.scan-worlds em { margin-left: auto; font-style: normal; font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); }
+.scan-card .lab-grid { grid-template-columns: 1fr; }
+.jump-history { margin-top: 8px; border-top: 1px solid rgba(126, 170, 255, 0.12); padding-top: 6px; }
+.jump-history .num { font-family: var(--font-mono); font-size: 8.5px; color: var(--text-muted); }
+
+/* NAV-ZOOM: a survey console, not a modal that blocks the sky. */
+.nav-panel {
+  position: absolute; z-index: 25; left: 50%; bottom: calc(70px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  width: min(420px, calc(100vw - 24px)); padding: 12px 14px; border-radius: 16px;
+  border: 1px solid #263858; background: rgba(9, 9, 11, 0.94); backdrop-filter: blur(18px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
+}
+.nav-panel strong { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #d9f4ff; }
+.nav-panel .lab-slider { margin: 10px 0 6px; }
+.nav-panel .lab-grid { grid-template-columns: 1fr; }
+
+/* Zen chaos lab: a dark glass dock that cannot cover the joystick. */
+.chaos-dock {
+  position: absolute; z-index: 26; left: 50%; transform: translateX(-50%);
+  bottom: calc(198px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; align-items: center; gap: 6px;
+  max-width: calc(100vw - 20px);
+}
+.chaos-toggle { border: 1px solid #263858; background: rgba(9, 9, 11, 0.94); color: #cfe9ff; border-radius: 999px; }
+.chaos-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; padding: 8px; border-radius: 14px; border: 1px solid #263858; background: rgba(16, 27, 51, 0.94); backdrop-filter: blur(16px); box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55); }
+.chaos-tools .btn { font-size: 11px; min-height: 32px; }
+.chaos-tools .btn[aria-pressed="true"] { border-color: #35d9ff; background: rgba(53, 217, 255, 0.16); color: #ecfdff; }
+.audio-toggle { font-size: 13px; }
+
+@media (max-width: 480px) {
+  /* Portrait: the scanner and the flight systems sit above the joystick, never on top of it. */
+  .scan-card { left: 10px; right: 10px; width: auto; top: auto; bottom: calc(190px + env(safe-area-inset-bottom)); max-height: 40vh; }
+  .scan-card .scan-worlds { display: none; }
+  .scan-card h2 { font-size: 14px; }
+  .flight-bar { bottom: calc(198px + env(safe-area-inset-bottom)); padding: 6px; }
+  .nav-panel { bottom: calc(190px + env(safe-area-inset-bottom)); }
+  .deck-prompt { bottom: calc(246px + env(safe-area-inset-bottom)); }
+}
+/* Landscape: the scan card docks left, the flight bar sits above the bottom edge. */
+[data-landscape="true"] .scan-card { top: 70px; max-height: calc(100vh - 130px); width: min(240px, 32vw); }
+/* Landscape: the joystick owns the bottom-left 152 px, so the bar starts to its right. */
+[data-landscape="true"] .flight-bar {
+  left: 168px; right: 12px; transform: none; max-width: none;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+}
+[data-landscape="true"] .chaos-dock { bottom: calc(96px + env(safe-area-inset-bottom)); }
+[data-landscape="true"] .deck-prompt { bottom: calc(52px + env(safe-area-inset-bottom)); }
+
+/* ── Photo mode: the frame is the interface ───────────────────────────────── */
+.photo-bar {
+  position: absolute; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  z-index: 30; display: flex; align-items: center; gap: 12px; padding: 8px 12px;
+  max-width: calc(100vw - 20px); overflow-x: auto;
+  border-radius: 999px; border: 1px solid rgba(53, 217, 255, 0.28);
+  background: rgba(6, 10, 16, 0.72); backdrop-filter: blur(14px);
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #bfe9ff;
+}
+.photo-bar label { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.photo-bar input[type="range"] { width: 90px; accent-color: #35d9ff; }
+.photo-bar .label { color: #8ff2ff; }
+html.athena-photo .atlas-hud,
+html.athena-photo .atlas-chips,
+html.athena-photo .atlas-galaxies,
+html.athena-photo .atlas-crumbs,
+html.athena-photo .atlas-legend,
+html.athena-photo .atlas-zoom,
+html.athena-photo .atlas-system,
+html.athena-photo .atlas-lock,
+html.athena-photo .atlas-reset,
+html.athena-photo .atlas-empty,
+html.athena-photo .flight-bar,
+html.athena-photo .scan-card,
+html.athena-photo .reticle,
+html.athena-photo .deck-prompt,
+html.athena-photo .drawer,
+html.athena-photo .core-card,
+html.athena-photo .test-lab,
+html.athena-photo .chaos-dock {
+  opacity: 0; pointer-events: none;
+}
+
+/* Mobile collapses button text, but glyph-only controls must keep their glyph. */
+@media (max-width: 430px) {
+  .hud-actions .btn.keep-glyph span { display: inline; }
+  .hud-actions .btn.keep-glyph { padding: 0 9px; }
+}
+/* Surface and EVA: the planet is the interface, so map chrome steps back. */
+.atlas-root[data-deck="surface"] .atlas-zoom,
+.atlas-root[data-deck="surface"] .atlas-system,
+.atlas-root[data-deck="surface"] .drawer,
+.atlas-root[data-deck="surface"] .core-card,
+.atlas-root[data-deck="eva"] .atlas-zoom,
+.atlas-root[data-deck="eva"] .atlas-system,
+.atlas-root[data-deck="surface"] .atlas-chips,
+.atlas-root[data-deck="surface"] .atlas-galaxies,
+.atlas-root[data-deck="surface"] .atlas-crumbs { opacity: 0; pointer-events: none; }
+/* Portrait flight bar wraps into two rows instead of hiding half its systems off-screen. */
+@media (max-width: 480px) {
+  .flight-bar { flex-wrap: wrap; justify-content: center; border-radius: 16px; overflow: visible; row-gap: 5px; }
+  .flight-bar .pill { order: -1; }
+}
+@media (max-width: 480px) {
+  /* A wrapped flight bar must take the full width available, not shrink to a column. */
+  .flight-bar { width: calc(100vw - 20px); }
+}
+@media (max-width: 480px) {
+  /* Portrait: flight systems dock as a right-hand grid, leaving the ship and the joystick clear. */
+  .flight-bar {
+    left: auto; right: 8px; width: 196px; transform: none;
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    bottom: calc(66px + env(safe-area-inset-bottom));
+    border-radius: 14px;
+  }
+  .flight-bar .pill { grid-column: 1 / -1; justify-content: center; }
+  .flight-bar .btn { justify-content: center; min-height: 30px; padding: 0 4px; font-size: 10px; }
+  .eva-bar { display: flex; flex-wrap: wrap; width: calc(100vw - 20px); left: 10px; right: 10px; }
+  .hud-actions .btn { white-space: nowrap; }
+}
+.atlas-root[data-deck="surface"] .deck-prompt,
+.atlas-root[data-deck="eva"] .deck-prompt { bottom: auto; top: 148px; }

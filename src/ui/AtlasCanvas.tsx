@@ -22,6 +22,7 @@ import {
 import type { NodeRecord } from "../domain/types.ts";
 import { getPrefs } from "./prefs.ts";
 import { AtlasScene, MULTIVERSE_REVEAL, UNITS_PER_AU, webglAvailable, type AtlasViewState, type CosmicBody } from "./atlas-scene.ts";
+import type { ChaosTool, CockpitAction, Telemetry } from "./atlas-command-deck.ts";
 
 const TIER_LABEL: Record<MasteryTier, string> = {
   unassessed: "unassessed",
@@ -39,8 +40,20 @@ const TIER_COLOR: Record<MasteryTier, string> = {
 
 const SPEEDS = [0, 1, 10, 100] as const;
 
-/** A saved coordinate: a knowledge record or a procedural universe, galaxy, core or station. */
-type Waypoint = { id: string; name: string; kind: "node" | "cosmic" };
+/** Short console labels on the bar; the full system name stays in the accessible label. */
+const SYSTEM_LABEL: Record<string, string> = {
+  AUTOPILOT: "AUTOPILOT",
+  BOOST: "BOOST",
+  NAV: "NAV-ZOOM",
+  PING: "PING",
+  LAND: "LAND / DOCK",
+  EVA: "EJECT EVA",
+  VIEW: "Cockpit view",
+  AUDIO: "Audio",
+};
+
+/** A saved coordinate: a knowledge record, a cosmic body, or a scanned field star with its own xyz. */
+type Waypoint = { id: string; name: string; kind: "node" | "cosmic"; pos?: { x: number; y: number; z: number }; radius?: number };
 
 const WAYPOINT_KEY = "athena.atlas.pins";
 
@@ -51,6 +64,7 @@ function readWaypoints(): Waypoint[] {
     if (!Array.isArray(parsed)) return [];
     return parsed
       .filter((p): p is Waypoint => Boolean(p) && typeof p.id === "string" && typeof p.name === "string" && (p.kind === "node" || p.kind === "cosmic"))
+      .map((p) => (p.pos && typeof p.pos.x === "number" ? { ...p, pos: { x: p.pos.x, y: p.pos.y, z: p.pos.z } } : { id: p.id, name: p.name, kind: p.kind }))
       .slice(0, 6);
   } catch {
     return [];
@@ -98,6 +112,33 @@ export function Knowledge(): ReactNode {
   const [labMastery, setLabMastery] = useState<number | null>(null);
   const [labPreview, setLabPreview] = useState<string | null>(null);
   const [satellite, setSatellite] = useState(0);
+  /** Flight, EVA, landing and scanner telemetry from the command deck (~10 Hz). */
+  const [deck, setDeck] = useState<Telemetry | null>(null);
+  const [chaosTool, setChaosTool] = useState<ChaosTool | null>(null);
+  const [audioOn, setAudioOn] = useState(false);
+  const [navZoom, setNavZoom] = useState(0);
+  const [chaosOpen, setChaosOpen] = useState(false);
+  const [photo, setPhoto] = useState(false);
+  const [photoFov, setPhotoFov] = useState(55);
+  const [photoRoll, setPhotoRoll] = useState(0);
+
+  /** Photo mode hides the chrome in CSS and unlocks lens zoom + roll in the scene. */
+  useEffect(() => {
+    document.documentElement.classList.toggle("athena-photo", photo);
+    sceneRef.current?.setPhotoMode(photo);
+    return () => document.documentElement.classList.remove("athena-photo");
+  }, [photo]);
+
+  /** Flight and chaos commands share one entry point so HUD and cockpit cannot diverge. */
+  const shipCmd = useCallback((action: CockpitAction) => {
+    if (action === "AUDIO") setAudioOn((on) => !on);
+    sceneRef.current?.shipCommand(action);
+  }, []);
+
+  const chooseChaos = useCallback((tool: ChaosTool | null) => {
+    setChaosTool(tool);
+    sceneRef.current?.setChaosTool(tool);
+  }, []);
   const [homeSystem, setHomeSystem] = useState<string | null>(() => {
     try {
       return window.localStorage.getItem("athena.home.system");
@@ -255,6 +296,10 @@ export function Knowledge(): ReactNode {
 
   const goTo = useCallback((point: Waypoint) => {
     setPinsOpen(false);
+    if (point.pos) {
+      sceneRef.current?.focusPoint(point.pos, point.radius ?? 40);
+      return;
+    }
     if (point.kind === "cosmic") {
       sceneRef.current?.focusCosmic(point.id);
       return;
@@ -289,9 +334,12 @@ export function Knowledge(): ReactNode {
         setCore(body);
         if (body) setSelected(null);
       },
+      onTelemetry: (state) => setDeck(state),
     });
     sceneRef.current = scene;
-    if (import.meta.env.DEV) (window as unknown as { __atlasScene?: AtlasScene }).__atlasScene = scene;
+    // Automation/deep-link hook: used by the e2e command-deck suite and Studio's inspect flows. It
+    // exposes no data beyond the live scene the user is already looking at.
+    (window as unknown as { __atlasScene?: AtlasScene }).__atlasScene = scene;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     scene.setTimeScale(reduced ? 0 : getPrefs().atlasOrbit ? 1 : 0);
     return () => {
@@ -483,6 +531,14 @@ export function Knowledge(): ReactNode {
       data-lab-preview={labPreview ?? ""}
       data-mastery={labMastery === null ? "live" : labMastery.toFixed(2)}
       data-satellite={String(satellite)}
+      data-deck={deck?.mode ?? "atlas"}
+      data-catalog={deck?.catalog ?? ""}
+      data-autopilot={deck?.autopilot ?? "manual"}
+      data-chaos={chaosTool ?? "off"}
+      data-magboots={deck?.magBoots ? "on" : "off"}
+      data-surface={deck?.surface ?? ""}
+      data-chaos-effects={String(deck?.effects ?? 0)}
+      data-photo={photo ? "true" : "false"}
     >
       <div className="atlas-stage">
         <canvas ref={canvasRef} className="atlas-canvas" aria-hidden={view === "index"} />
@@ -580,6 +636,42 @@ export function Knowledge(): ReactNode {
           <button className="btn sm ghost" aria-label="Zen view" aria-pressed={zen} onClick={() => setZen(true)}>
             <Eye size={15} strokeWidth={1.5} aria-hidden="true" />
             <span>Zen</span>
+          </button>
+          {view === "atlas" && (
+            <button
+              className="btn sm ghost keep-glyph"
+              aria-label={deck && deck.mode !== "atlas" && deck.mode !== "nav" ? "Stow starfighter" : "Launch starfighter"}
+              aria-pressed={Boolean(deck && deck.mode !== "atlas" && deck.mode !== "nav")}
+              data-ship={deck?.mode ?? "atlas"}
+              onClick={() => {
+                if (deck && deck.mode !== "atlas" && deck.mode !== "nav") sceneRef.current?.stowShip();
+                else sceneRef.current?.launchShip();
+              }}
+            >
+              <span aria-hidden="true">⟁</span>
+              <span>{deck && deck.mode !== "atlas" && deck.mode !== "nav" ? "Stow" : "Launch"}</span>
+            </button>
+          )}
+          {view === "atlas" && (
+            <button
+              className="btn sm ghost keep-glyph"
+              aria-label={photo ? "Exit photo mode" : "Photo mode"}
+              aria-pressed={photo}
+              onClick={() => setPhoto((on) => !on)}
+            >
+              <span aria-hidden="true">📷</span>
+            </button>
+          )}
+          <button
+            className="btn sm ghost audio-toggle keep-glyph"
+            aria-label={audioOn ? "Mute procedural audio" : "Enable procedural audio"}
+            aria-pressed={audioOn}
+            onClick={() => {
+              setAudioOn((on) => !on);
+              sceneRef.current?.shipCommand("AUDIO");
+            }}
+          >
+            <span aria-hidden="true">{audioOn ? "🔊" : "🔇"}</span>
           </button>
           <div className="pill" role="group" aria-label="Atlas view" data-index={view === "index" ? "1" : "0"}>
             <span className="pill-thumb" aria-hidden="true" />
@@ -921,6 +1013,243 @@ export function Knowledge(): ReactNode {
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4" }} />demonstrated</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4", background: "#42e6c4" }} />mastered</span>
       </div>
+
+      {/* Diegetic target reticle: a co-moving frame keeps the locked body dead centre. */}
+      {view === "atlas" && deck?.targetName && deck.targetDistance > 0 && deck.mode !== "surface" && deck.mode !== "eva" && (
+        <div className={`reticle${deck.screen?.onScreen === false ? " offscreen" : ""}`} aria-live="polite">
+          {deck.screen?.onScreen !== false && (
+            <>
+              <span className="corner tl" aria-hidden="true" />
+              <span className="corner tr" aria-hidden="true" />
+              <span className="corner bl" aria-hidden="true" />
+              <span className="corner br" aria-hidden="true" />
+              <div className="reticle-meta">
+                <b>{deck.targetName}</b>
+                <span className="mono">{deck.catalog ?? "TARGET LOCK"}</span>
+                <span className="num">
+                  {Math.round(deck.targetDistance)} u · close {deck.closing.toFixed(1)} km/s · {deck.autopilot}
+                </span>
+              </div>
+            </>
+          )}
+          {deck.screen?.onScreen === false && (
+            <div
+              className="edge-chevron"
+              style={{
+                left: `${Math.max(6, Math.min(94, (deck.screen.x / Math.max(1, window.innerWidth)) * 100))}%`,
+                top: `${deck.screen.y < 0 ? 14 : 82}%`,
+                transform: `translate(-50%, -50%) rotate(${deck.screen.y < 0 ? 0 : 180}deg)`,
+              }}
+            >
+              <span aria-hidden="true">▲</span>
+              <em>{deck.targetName} · {Math.round(deck.targetDistance)} u</em>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Starfighter HUD: the same eight systems as the physical cockpit console. */}
+      {view === "atlas" && deck && (deck.mode === "chase" || deck.mode === "cockpit") && (
+        <div className="flight-bar" role="toolbar" aria-label="Starfighter systems">
+          <div className="pill" role="group" aria-label="Flight speed">
+            {[1, 10, 100].map((s) => (
+              <button
+                key={s}
+                aria-pressed={false}
+                onClick={() => sceneRef.current?.setSpeedSelector(s)}
+              >
+                {s}x
+              </button>
+            ))}
+          </div>
+          {([
+            ["AUTOPILOT", "AUTO"],
+            ["BOOST", "BOOST"],
+            ["NAV", "NAV"],
+            ["PING", "PING"],
+            ["LAND", "LAND"],
+            ["EVA", "EVA"],
+            ["VIEW", deck.mode === "cockpit" ? "CHASE" : "COCKPIT"],
+            ["AUDIO", audioOn ? "MUTE" : "AUDIO"],
+          ] as [CockpitAction, string][]).map(([action, label]) => (
+            <button key={action} className="btn sm" aria-label={SYSTEM_LABEL[action] ?? label} onClick={() => shipCmd(action)}>
+              {label}
+            </button>
+          ))}
+          <button className="btn sm ghost" onClick={() => sceneRef.current?.stowShip()} aria-label="Leave starfighter">
+            Exit
+          </button>
+        </div>
+      )}
+
+      {/* NAV-ZOOM: a survey screen decoupled from the ship, with target actions. */}
+      {view === "atlas" && deck?.mode === "nav" && (
+        <div className="nav-panel" role="dialog" aria-label="Tactical zoom screen">
+          <div className="row between">
+            <strong>Tactical Zoom</strong>
+            <button className="btn sm ghost" onClick={() => shipCmd("NAV")} aria-label="Close tactical zoom">Close</button>
+          </div>
+          <label className="lab-slider">
+            <span className="row between">
+              <span className="label">Range · 0.6 u → 96,000 u</span>
+              <output>{Math.round(0.6 * Math.exp(navZoom * 12.3)).toLocaleString("en-US")} u</output>
+            </span>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              step={1}
+              aria-label="Tactical zoom range"
+              value={Math.round(navZoom * 100)}
+              onChange={(e: { target: HTMLInputElement }) => {
+                const v = Number(e.target.value) / 100;
+                setNavZoom(v);
+                sceneRef.current?.setNavZoom(v);
+              }}
+            />
+          </label>
+          <div className="lab-grid">
+            <button
+              className="btn sm"
+              onClick={() => {
+                if (!deck.scan) return;
+                pin({ id: deck.scan.catalog, name: deck.scan.name, kind: "cosmic", pos: deck.scan.position, radius: deck.scan.radius });
+              }}
+            >
+              Save Waypoint
+            </button>
+            <button className="btn sm ghost" onClick={() => sceneRef.current?.landNearest()}>
+              Inspect System
+            </button>
+            <button className="btn sm" onClick={() => sceneRef.current?.lockAndEngage()}>
+              Lock &amp; Engage Autopilot
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Scanner card for a tapped procedural star. */}
+      {view === "atlas" && deck?.scan && !chaosTool && (deck.mode === "atlas" || deck.mode === "nav") && (
+        <aside className="scan-card" aria-label="Astrophysical scanner">
+          <div className="row between">
+            <span className="label">Deep field scan</span>
+            <span className="mono">{deck.scan.catalog}</span>
+          </div>
+          <h2>{deck.scan.name}</h2>
+          <dl className="kv">
+            <div><dt>Spectral</dt><dd>{deck.scan.spectral}</dd></div>
+            <div><dt>Mass</dt><dd>{deck.scan.mass} M☉</dd></div>
+            <div><dt>Temp</dt><dd>{deck.scan.temperature.toLocaleString("en-US")} K</dd></div>
+            <div><dt>Worlds</dt><dd>{deck.scan.planets}</dd></div>
+            <div><dt>Distance</dt><dd>{deck.scan.distance.toLocaleString("en-US")} u</dd></div>
+          </dl>
+          {deck.scan.planetsList.length > 0 && (
+            <ul className="scan-worlds">
+              {deck.scan.planetsList.slice(0, 5).map((p) => (
+                <li key={p.name}><b>{p.name}</b><span>{p.biome}</span><em>{p.radius} R</em></li>
+              ))}
+            </ul>
+          )}
+          <div className="lab-grid">
+            <button className="btn sm" onClick={() => pin({ id: deck.scan!.catalog, name: deck.scan!.name, kind: "cosmic", pos: deck.scan!.position, radius: deck.scan!.radius })}>
+              Save Waypoint
+            </button>
+            <button className="btn sm ghost" onClick={() => sceneRef.current?.engageAutopilot()}>
+              Autopilot Ship
+            </button>
+            <button className="btn sm ghost" onClick={() => sceneRef.current?.landNearest()}>
+              Land on Surface
+            </button>
+          </div>
+          <div className="row between jump-history">
+            <button className="btn sm ghost" aria-label="Previous jump" onClick={() => sceneRef.current?.jumpHistory(-1)}>‹</button>
+            <span className="num">{deck.jumpHistory.length} jumps · {deck.mounted}/4 systems mounted</span>
+            <button className="btn sm ghost" aria-label="Next jump" onClick={() => sceneRef.current?.jumpHistory(1)}>›</button>
+          </div>
+        </aside>
+      )}
+
+      {/* EVA and surface control bars. */}
+      {view === "atlas" && deck && (deck.mode === "eva" || deck.mode === "surface") && (
+        <div className="flight-bar eva-bar" role="toolbar" aria-label="EVA controls">
+          <span className="label">{deck.surface ?? "EVA · orbital"}</span>
+          <button className="btn sm" aria-pressed={deck.magBoots} onClick={() => sceneRef.current?.toggleMagBoots()}>
+            {deck.magBoots ? "Mag-Boots ON" : "Zero-G Jetpack"}
+          </button>
+          <button className="btn sm" onClick={() => sceneRef.current?.boardShip()}>
+            {deck.mode === "surface" ? "Launch to Orbit" : "Board Ship"}
+          </button>
+          <span className="num">{deck.grounded ? `grounded · ${deck.surface ?? "hull"}` : "floating"}</span>
+        </div>
+      )}
+
+      {/* Photo mode: only the lens controls remain on screen. */}
+      {view === "atlas" && photo && (
+        <div className="photo-bar" role="toolbar" aria-label="Photo mode lens">
+          <span className="label">📷 Photo</span>
+          <label>
+            <span>FOV {photoFov}°</span>
+            <input
+              type="range"
+              min={20}
+              max={100}
+              value={photoFov}
+              aria-label="Lens field of view"
+              onChange={(e: { target: HTMLInputElement }) => {
+                const v = Number(e.target.value);
+                setPhotoFov(v);
+                sceneRef.current?.setPhotoFov(v);
+              }}
+            />
+          </label>
+          <label>
+            <span>Roll {photoRoll}°</span>
+            <input
+              type="range"
+              min={-40}
+              max={40}
+              value={photoRoll}
+              aria-label="Camera roll"
+              onChange={(e: { target: HTMLInputElement }) => {
+                const v = Number(e.target.value);
+                setPhotoRoll(v);
+                sceneRef.current?.setPhotoRoll(v);
+              }}
+            />
+          </label>
+          <button className="btn sm ghost" onClick={() => setPhoto(false)} aria-label="Leave photo mode">Exit</button>
+        </div>
+      )}
+
+      {view === "atlas" && deck?.prompt && (
+        <div className="deck-prompt" role="status">{deck.prompt}</div>
+      )}
+
+      {/* Zen Mode chaos dock: five ephemeral tools and Restore System. */}
+      {view === "atlas" && zen && (
+        <div className={`chaos-dock${chaosOpen ? " open" : ""}`} role="group" aria-label="Chaos Lab">
+          <button className="btn sm chaos-toggle" aria-expanded={chaosOpen} onClick={() => setChaosOpen((o) => !o)}>
+            ☄ Chaos Lab
+          </button>
+          {chaosOpen && (
+            <div className="chaos-tools">
+              {([["beam", "Plasma Beam"], ["meteor", "Meteor"], ["well", "Gravity Well"], ["star", "Supernova"]] as [ChaosTool, string][]).map(([tool, label]) => (
+                <button
+                  key={tool}
+                  className="btn sm"
+                  aria-pressed={chaosTool === tool}
+                  onClick={() => chooseChaos(chaosTool === tool ? null : tool)}
+                >
+                  {label}
+                </button>
+              ))}
+              <button className="btn sm ghost" onClick={() => { sceneRef.current?.restoreSystem(); }}>
+                Restore System
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
       {labOpen && view === "atlas" && (
         <div className="test-lab" role="dialog" aria-label="Sim and Visual Test Lab">

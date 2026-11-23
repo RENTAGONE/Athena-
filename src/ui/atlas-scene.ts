@@ -26,6 +26,8 @@ import { createBlackHole, createPulsar, createQuasar, createWormhole } from "../
 import { CosmosStreamer } from "../engine/cosmos-streamer.ts";
 import { synthesizeCustomSystem } from "../engine/system-synthesizer.ts";
 import { buildShowcasePlanet, biomeById, buildSystem as buildEngineSystem } from "../engine/planet-star-builder.ts";
+import { CommandDeck, type ChaosTool, type CockpitAction, type ScanCard, type Telemetry } from "./atlas-command-deck.ts";
+import { spaceAudio } from "../engine/space-audio.ts";
 
 /** Minimum 3D separation between two discipline systems, in world units. */
 export const SYSTEM_SEPARATION = 4200;
@@ -88,6 +90,8 @@ export interface AtlasSceneCallbacks {
   onState: (state: AtlasViewState) => void;
   /** A universe, galaxy, black hole or station was tapped. */
   onInspect?: (body: CosmicBody | null) => void;
+  /** Flight, EVA, landing and scanner telemetry, throttled to ~10 Hz. */
+  onTelemetry?: (state: Telemetry) => void;
 }
 
 const clamp = (n: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, n));
@@ -479,6 +483,15 @@ export class AtlasScene {
   private filter: string | null = null;
   private home: string | null = null;
   private timeScale = 1;
+  /* Deep-space photo mode: HUD-free free-cam with lens FOV and roll. */
+  private photo = false;
+  private photoFov = 55;
+  private photoRoll = 0;
+  /** Pointer drag accumulated while the command deck owns the camera (flight, EVA, surface). */
+  private lookDX = 0;
+  private lookDY = 0;
+  private chaosFrom = { x: 0, y: 0 };
+  private deck!: CommandDeck;
   private elapsed = 0;
   private lastFrame = 0;
   private width = 1;
@@ -528,6 +541,33 @@ export class AtlasScene {
     this.cleanup.push(() => {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("keyup", onKeyUp);
+    });
+
+    // The command deck takes over the camera only in flight, cockpit, EVA, NAV or landing modes.
+    this.deck = new CommandDeck({
+      camera: this.camera,
+      scene: this.scene,
+      root: this.root,
+      streamer: this.streamer,
+      width: () => this.width,
+      height: () => this.height,
+      look: () => {
+        const out = { dx: this.lookDX, dy: this.lookDY };
+        this.lookDX = 0;
+        this.lookDY = 0;
+        return out;
+      },
+      stick: () => ({ x: this.stick?.vector.x ?? 0, y: this.stick?.vector.y ?? 0 }),
+      glide: (position, distance, duration) => this.glideTo(position, distance, this.yaw, clamp(this.pitch, 0.3, Math.PI - 0.3), duration),
+      setFollow: (id) => {
+        this.follow = id;
+      },
+      clearSelection: () => {
+        this.selected = null;
+        this.callbacks.onSelect(null);
+      },
+      telemetry: (state) => this.callbacks.onTelemetry?.(state),
+      audio: spaceAudio,
     });
 
     this.lastFrame = performance.now();
@@ -1664,6 +1704,7 @@ export class AtlasScene {
     const down = (e: PointerEvent): void => {
       canvas.setPointerCapture(e.pointerId);
       const p = local(e);
+      this.chaosFrom = p;
       this.pointers.set(e.pointerId, p);
       this.pointerAt = p;
       this.draggedDistance = 0;
@@ -1706,6 +1747,11 @@ export class AtlasScene {
       const dy = p.y - prev.y;
       this.pointers.set(e.pointerId, p);
       this.draggedDistance += Math.abs(dx) + Math.abs(dy);
+      // Zen chaos tools consume the drag: the beam paints as the finger moves.
+      if (this.deck?.chaosActive && this.deck.chaosTool === "beam") {
+        this.deck.chaosGesture("beam", this.chaosFrom, p, true);
+        return;
+      }
       if (this.stick && this.stick.id === e.pointerId) {
         const sx = p.x - this.stick.origin.x;
         const sy = p.y - this.stick.origin.y;
@@ -1729,6 +1775,13 @@ export class AtlasScene {
           const mid = { x: ((a?.x ?? 0) + (b?.x ?? 0)) / 2, y: ((a?.y ?? 0) + (b?.y ?? 0)) / 2 };
           this.dolly((this.pinchStart * this.pinchDistanceValue) / Math.max(1, d), mid);
         }
+        return;
+      }
+      if (this.deck?.active) {
+        // Flight, EVA and surface: the deck owns the camera, so the drag is attitude input, not orbit.
+        this.lookDX += dx;
+        this.lookDY += dy;
+        this.glide = null;
         return;
       }
       if (this.dragMode === "pan" || e.shiftKey) {
@@ -1759,9 +1812,30 @@ export class AtlasScene {
         // Strict zero-drift: the instant the last finger lifts, every goal snaps to where the camera is.
         this.halt();
       }
-      if (wasStick || this.draggedDistance > 6) return;
       const p = local(e);
+      if (this.deck?.chaosActive && this.deck.chaosTool) {
+        // Meteor swipes and gravity-well taps are finished on release, not during the drag.
+        this.deck.chaosGesture(this.deck.chaosTool, this.chaosFrom, p, this.draggedDistance > 6);
+        return;
+      }
+      if (wasStick || this.draggedDistance > 6) return;
+      // A cockpit console button is a physical switch, not part of the map: check it first.
+      const button = this.deck.cockpitHit(p.x, p.y);
+      if (button) {
+        this.shipCommand(button);
+        pulse(6);
+        return;
+      }
+      // Streamed field stars have no meshes: they are picked by projected centre within 24 px.
+      const field = this.deck.pickFieldStar(p.x, p.y);
       const hit = this.pick(p.x, p.y);
+      if (field && !hit) {
+        pulse(8);
+        this.deck.focusFieldStar(field);
+        this.callbacks.onSelect(null);
+        this.callbacks.onInspect?.(null);
+        return;
+      }
       if (!hit) {
         this.callbacks.onSelect(null);
         this.callbacks.onInspect?.(null);
@@ -2001,6 +2075,129 @@ export class AtlasScene {
     this.timeScale = scale;
   }
 
+  /** Photo mode: hide nothing in 3D, but unlock lens zoom and camera roll for a clean frame. */
+  setPhotoMode(on: boolean): void {
+    this.photo = on;
+    if (on) this.photoRoll = 0;
+  }
+
+  setPhotoFov(deg: number): void {
+    this.photoFov = clamp(deg, 20, 100);
+  }
+
+  setPhotoRoll(deg: number): void {
+    this.photoRoll = (clamp(deg, -40, 40) * Math.PI) / 180;
+  }
+
+  /* ── command deck controls ────────────────────────────────────────────── */
+
+  /** HUD and cockpit console share one command surface. */
+  shipCommand(action: CockpitAction): void {
+    this.deck.command(action);
+  }
+
+  launchShip(): void {
+    this.deck.launchShip();
+  }
+
+  stowShip(): void {
+    this.deck.stowShip();
+  }
+
+  toggleMagBoots(): void {
+    this.deck.toggleMagBoots();
+  }
+
+  boardShip(): void {
+    this.deck.boardShip();
+  }
+
+  jumpHistory(direction: -1 | 1): void {
+    this.deck.jump(direction);
+  }
+
+  setChaosLab(on: boolean): void {
+    this.deck.setChaos(on);
+  }
+
+  chaosAction(action: "beam" | "well" | "star", x: number, y: number): void {
+    if (action === "beam") this.deck.fireBeam(x, y);
+    else if (action === "well") this.deck.dropWell(x, y);
+    else this.deck.collapseStar(x, y);
+  }
+
+  meteorSwipe(x0: number, y0: number, x1: number, y1: number): void {
+    this.deck.flingMeteor(x0, y0, x1, y1);
+  }
+
+  restoreSystem(): void {
+    this.deck.restoreSystem();
+  }
+
+  landOn(name: string, biome: string, mastery: number, radius: number, center: THREE.Vector3): void {
+    this.deck.landOn(name, biome, mastery, radius, center);
+  }
+
+  setSpeedSelector(speed: number): void {
+    this.deck.setSpeed(speed);
+  }
+
+  engageAutopilot(): void {
+    this.deck.engageAutopilot();
+  }
+
+  /** The scanner card currently open, for the HUD panel. */
+  scanCard(): ScanCard | null {
+    return this.deck.currentScan;
+  }
+
+  /** Automation hook: focus and scan the nearest streamed field star. */
+  scanNearestStar(): ScanCard | null {
+    return this.deck.scanNearestStar();
+  }
+
+  setChaosTool(tool: ChaosTool | null): void {
+    this.deck.setChaosTool(tool);
+  }
+
+  /** Glide to any scanned coordinate: used by waypoints saved from a field-star scan. */
+  focusPoint(point: { x: number; y: number; z: number }, radius: number): void {
+    const at = new THREE.Vector3(point.x, point.y, point.z);
+    this.follow = null;
+    this.glideTo(at, Math.max(1, radius * 3.2), this.yaw, clamp(this.pitch, 0.3, Math.PI - 0.3), 1100);
+  }
+
+  /** Land on the nearest planet to the current camera focus. */
+  landNearest(): void {
+    this.deck.landNearest(this.camera.position);
+  }
+
+  /** NAV-ZOOM tactical distance, expressed as a 0..1 slider over six orders of magnitude. */
+  setNavZoom(value: number): void {
+    const t = clamp(value, 0, 1);
+    const distance = Math.exp(Math.log(0.6) + t * (Math.log(96_000) - Math.log(0.6)));
+    // A tactical slider is a direct control: the camera follows the thumb rather than easing behind it.
+    this.distance = distance;
+    this.distanceGoal = distance;
+    this.glide = null;
+    this.streamer.update(this.camera.position, this.distance, true);
+    this.syncStreamerBodies();
+  }
+
+  /** Lock the current camera focus and hand it to the autopilot. */
+  lockAndEngage(): void {
+    this.deck.engageAutopilot();
+  }
+
+  /** True while Zen Mode's chaos tools own the pointer. */
+  get chaosActive(): boolean {
+    return this.deck.chaosTool !== null;
+  }
+
+  disposeDeck(): void {
+    this.deck.dispose();
+  }
+
   focusSystem(index: number, instant = false): void {
     const s = this.systems[index];
     if (!s) return;
@@ -2023,18 +2220,24 @@ export class AtlasScene {
     if (!body || !object) return;
     const pos = new THREE.Vector3();
     object.getWorldPosition(pos);
-    const dist = Math.max(
-      MIN_CAMERA_DISTANCE + 0.4,
-      body.kind === "star" ? 1100 : body.radius * (body.kind === "planet" ? 7 : 9),
-    );
-    // Distant targets take the 900 ms hyperspace lane; nearby ones keep the short orbital glide.
+    // Hero framing: radius × 3.2, the distance at which a body fills the centre of the frame while
+    // its moons and rings still read. Co-moving lock keeps it there as it orbits.
+    const dist = Math.max(body.kind === "star" ? 140 : 0.35, body.radius * 3.2);
+    const lock = (): THREE.Vector3 => {
+      const at = new THREE.Vector3();
+      this.bodyObject.get(id)?.getWorldPosition(at);
+      return at;
+    };
+    // Distant targets take the hyperspace lane; nearby ones keep the 1.1 s eased glide.
     if (!instant && this.camera.position.distanceTo(pos) > 2600) {
       this.warpTo(pos, dist, this.yaw, clamp(this.pitch, 0.5, Math.PI - 0.5), id);
+      this.deck?.lockTarget(id, body.label, lock, body.radius);
       return;
     }
-    this.glideTo(pos, dist, this.yaw, clamp(this.pitch, 0.5, Math.PI - 0.5), instant ? 0 : 600);
+    this.glideTo(pos, dist, this.yaw, clamp(this.pitch, 0.5, Math.PI - 0.5), instant ? 0 : 1100);
     this.follow = id;
     this.followPrev.copy(pos);
+    this.deck?.lockTarget(id, body.label, lock, body.radius);
   }
 
   reset(): void {
@@ -2101,6 +2304,8 @@ export class AtlasScene {
   private syncStreamerBodies(): void {
     this.cosmicBodies = this.cosmicBodies.filter((b) => !b.id.startsWith("STR-"));
     for (const b of this.streamer.pickable(420)) {
+      // Field stars are picked by the command deck's 24 px projection test, never as containers.
+      if (b.kind === "star") continue;
       this.cosmicBodies.push({
         id: b.id,
         kind: b.kind === "universe" ? "universe" : "galaxy",
@@ -2257,11 +2462,11 @@ export class AtlasScene {
     if (id) {
       const body = this.bodies.get(id);
       if (body) {
-        const floor = body.kind === "satellite" || body.kind === "moon" ? 0.45 : MIN_CAMERA_DISTANCE;
-        return Math.max(floor, body.radius * 1.45);
+        const floor = body.kind === "satellite" || body.kind === "moon" ? 0.35 : 0.35;
+        return Math.max(floor, body.radius * 1.35);
       }
       const cosmic = this.cosmicBodies.find((c) => c.id === id);
-      if (cosmic && cosmic.kind !== "universe" && cosmic.kind !== "galaxy") return Math.max(MIN_CAMERA_DISTANCE, cosmic.radius * 1.45);
+      if (cosmic && cosmic.kind !== "universe" && cosmic.kind !== "galaxy") return Math.max(0.35, cosmic.radius * 1.35);
     }
     return MIN_CAMERA_DISTANCE;
   }
@@ -2406,6 +2611,14 @@ export class AtlasScene {
     );
     this.camera.lookAt(this.target);
     if (this.warpJitter.lengthSq() > 0) this.camera.position.add(this.warpJitter);
+    // Photo mode: the lens is the only UI left, so FOV and roll must be live in the frame loop.
+    if (this.photo) {
+      if (Math.abs(this.camera.fov - this.photoFov) > 0.01) {
+        this.camera.fov = this.photoFov;
+        this.camera.updateProjectionMatrix();
+      }
+      if (this.photoRoll !== 0) this.camera.rotateZ(this.photoRoll);
+    }
 
     // Phenomenon shaders and the infinite sector field both advance on the same frame clock.
     for (const p of this.phenomena) p.update?.(this.elapsed);
@@ -2416,7 +2629,7 @@ export class AtlasScene {
     }
     const streamed = this.streamer.update(this.camera.position, this.distance);
     if (streamed) this.syncStreamerBodies();
-    this.camera.near = Math.max(0.02, this.distance * 0.00025);
+    this.camera.near = 0.05;
     this.camera.far = Math.max(420_000, this.distance * 40);
     this.camera.updateProjectionMatrix();
 
@@ -2575,6 +2788,10 @@ export class AtlasScene {
         this.resize();
       }
     }
+
+    // The command deck runs last: when it owns the camera (flight, cockpit, EVA, surface) its pose
+    // replaces the orbital rig for this frame, and it can never be overwritten afterwards.
+    this.deck.update(dt, now);
 
     this.renderer.render(this.scene, this.camera);
     this.drawLabels();
@@ -3192,6 +3409,7 @@ export class AtlasScene {
   }
 
   destroy(): void {
+    this.deck?.dispose();
     this.disposed = true;
     this.renderer.setAnimationLoop(null);
     this.ro.disconnect();

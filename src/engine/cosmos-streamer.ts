@@ -251,6 +251,17 @@ export class CosmosStreamer {
               col[cursor * 3 + 2] = c.b;
               cursor += 1;
               stars += 1;
+              // Only the 27 nearest cells carry pick records: that is enough to tap any star within
+              // reach, without allocating 62,500 Vector3 objects every time a sector changes.
+              if (Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && Math.abs(dz) <= 1) {
+                this.bodies.push({
+                  id: `STR-SYS-${sx}-${sy}-${sz}-${i}`,
+                  kind,
+                  name: nameFor(kind, (seed ^ (i * 2654435761)) >>> 0),
+                  center: new THREE.Vector3(sx2, sy2, sz2),
+                  radius: 3.2,
+                });
+              }
             }
           }
         }
