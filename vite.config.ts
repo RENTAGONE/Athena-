@@ -25,7 +25,8 @@ export default defineConfig({
         ],
       },
       workbox: {
-      mode: "development",
+        // Development mode keeps the generated worker readable and skips the minified runtime.
+        mode: "development",
         // Do not leave superseded precaches behind: they are what makes an install look stale.
         cleanupOutdatedCaches: true,
         globPatterns: ["**/*.{js,css,html,woff2,svg,png,json}"],

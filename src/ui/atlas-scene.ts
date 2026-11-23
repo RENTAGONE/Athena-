@@ -21,6 +21,11 @@ import { DENSE_STARS_PER_GALAXY, hash01, separatedStarPositions, SpatialHash3D, 
 import { moonMap, planetMap, starMap } from "./textures.ts";
 import { DISCIPLINE_BY_ID } from "./disciplines.ts";
 import type { NodeRecord } from "../domain/types.ts";
+import { buildSatellite, buildStation, SATELLITE_VARIANTS } from "../engine/spacecraft-assembler.ts";
+import { createBlackHole, createPulsar, createQuasar, createWormhole } from "../engine/blackhole-quasar.ts";
+import { CosmosStreamer } from "../engine/cosmos-streamer.ts";
+import { synthesizeCustomSystem } from "../engine/system-synthesizer.ts";
+import { buildShowcasePlanet, biomeById, buildSystem as buildEngineSystem } from "../engine/planet-star-builder.ts";
 
 /** Minimum 3D separation between two discipline systems, in world units. */
 export const SYSTEM_SEPARATION = 4200;
@@ -86,6 +91,12 @@ export interface AtlasSceneCallbacks {
 }
 
 const clamp = (n: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, n));
+
+/** Reused frame vectors: eclipse tests must never allocate on a 60 Hz path. */
+const SCRATCH_A = new THREE.Vector3();
+const SCRATCH_B = new THREE.Vector3();
+const SCRATCH_C = new THREE.Vector3();
+const SCRATCH_D = new THREE.Vector3();
 
 /** A gentle 8 ms haptic on lock or warp. Silently absent on desktop and on browsers without it. */
 function pulse(ms = 8): void {
@@ -323,6 +334,10 @@ interface SystemNode {
   beacon: THREE.Sprite;
   /** Mastery heatmap halo: shown only while the Heatmap chip is on. */
   heat: THREE.Sprite;
+  /** Progression-hardlock sensor fog: an unverified system stays behind this until evidence lands. */
+  fog: THREE.Sprite;
+  /** Constellation threads: only drawn at close range, never as a cage around the whole galaxy. */
+  wires: THREE.LineSegments[];
 }
 
 /**
@@ -349,6 +364,14 @@ export class AtlasScene {
   private clouds: { mesh: THREE.Mesh; speed: number }[] = [];
   private binaries: { pivot: THREE.Object3D; bridge: THREE.Mesh; phase: number; separation: number }[] = [];
   private moonRingMats: { mat: THREE.LineBasicMaterial; system: number }[] = [];
+  /** Moons with their planet and a shadow-cone shell, evaluated every frame. */
+  private moonEclipses: {
+    moon: THREE.Object3D;
+    shell: THREE.Mesh;
+    planet: THREE.Object3D;
+    planetRadius: number;
+    system: number;
+  }[] = [];
   private starFlares: { mesh: THREE.Object3D; mat: THREE.MeshBasicMaterial; phase: number; speed: number }[] = [];
   private belts: { holder: THREE.Object3D; spin: number }[] = [];
   private comets: {
@@ -441,6 +464,16 @@ export class AtlasScene {
   private heatmap = false;
   private heatTiers = new Map<string, MasteryTier>();
   private readonly tetherFlashes: { line: THREE.Line; born: number }[] = [];
+  /** Engine phenomena that animate themselves (quasars, pulsars, wormholes, black holes). */
+  private readonly stationsInteriors: THREE.Group[] = [];
+  private readonly phenomena: { object: THREE.Object3D; update?: (elapsed: number) => void }[] = [];
+  /** Infinite 360° sector streamer: multiverse → universe → galaxy → star field. */
+  private readonly streamer = new CosmosStreamer();
+  private progressionLocked = false;
+  private masteryOverride: number | null = null;
+  /** A Test Lab object placed in front of the camera, replaced on every preview. */
+  private showcase: { group: THREE.Group; update?: (elapsed: number) => void; label: string } | null = null;
+  private stationInteriorPreview: THREE.Group | null = null;
   private hovered: string | null = null;
   private selected: string | null = null;
   private filter: string | null = null;
@@ -626,6 +659,7 @@ export class AtlasScene {
     this.clouds = [];
     this.binaries = [];
     this.moonRingMats = [];
+    this.moonEclipses = [];
     this.starFlares = [];
     this.belts = [];
     this.comets = [];
@@ -858,7 +892,8 @@ export class AtlasScene {
     beacon.visible = false;
     beacon.userData.bodyId = starBody.id;
     group.add(beacon);
-    this.buildConstellationThreads(system, index, group, anchor);
+    const wires: THREE.LineSegments[] = [];
+    this.buildConstellationThreads(system, index, group, anchor, wires);
 
     // Relativistic quasar at a synthesis hub: a major cross-discipline bridge fires twin opposing
     // cyan/violet jets 1,200 units out, perpendicular to the accretion disk.
@@ -1059,6 +1094,17 @@ export class AtlasScene {
         moonMesh.scale.setScalar(mRadius);
         moonMesh.userData.bodyId = moon.node.id;
         mHolder.add(moonMesh);
+
+        // Real planet shadow cone: a dark shell that fades in while this moon sits inside the
+        // planet→star umbra cylinder, so a moon visibly darkens as it passes behind its world.
+        const eclipseShell = new THREE.Mesh(
+          UNIT_SPHERE_LO,
+          new THREE.MeshBasicMaterial({ color: 0x02040a, transparent: true, opacity: 0, depthWrite: false }),
+        );
+        eclipseShell.scale.setScalar(mRadius * 1.02);
+        eclipseShell.visible = false;
+        mHolder.add(eclipseShell);
+        this.moonEclipses.push({ moon: mHolder, shell: eclipseShell, planet: holder, planetRadius: radius, system: index });
 
         const moonBody: AtlasBody = {
           id: moon.node.id,
@@ -1304,8 +1350,16 @@ export class AtlasScene {
     heat.visible = false;
     group.add(heat);
 
+    // Progression lock fog: a cool tactical haze plus a lock ring, parked until hardlock asks for it.
+    const fog = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: SOFT_DOT, color: 0x2a4a7a, transparent: true, opacity: 0.42, depthWrite: false, blending: THREE.AdditiveBlending }),
+    );
+    fog.scale.setScalar(STAR_RADIUS * 17);
+    fog.visible = false;
+    group.add(fog);
+
     this.root.add(group);
-    this.systems.push({ index, code: system.code, color, group, star, corona, light, planets, moons, satellites, small, label: system.discipline.title, beacon, heat });
+    this.systems.push({ index, code: system.code, color, group, star, corona, light, planets, moons, satellites, small, label: system.discipline.title, beacon, heat, fog, wires });
     void evidence;
   }
 
@@ -1315,7 +1369,7 @@ export class AtlasScene {
    * Members are the family's skills; the ring radius grows with the member count so a large family
    * reads as a larger constellation rather than a denser scribble.
    */
-  private buildConstellationThreads(system: GalaxyStar, index: number, group: THREE.Group, anchor: Vec3): void {
+  private buildConstellationThreads(system: GalaxyStar, index: number, group: THREE.Group, anchor: Vec3, wires: THREE.LineSegments[]): void {
     system.constellations.forEach((c, ci) => {
       if (c.members.length === 0 && !c.planet) return;
       const count = Math.max(4, Math.min(11, c.members.length + 3));
@@ -1346,6 +1400,7 @@ export class AtlasScene {
         geo,
         new THREE.LineBasicMaterial({ color: 0x35d9ff, transparent: true, opacity: 0.28, depthWrite: false }),
       );
+      wires.push(threads);
       group.add(threads);
 
       // Subtle volumetric nebula backing behind the family, so the threads sit in gas rather than void.
@@ -1503,140 +1558,10 @@ export class AtlasScene {
     return mesh;
   }
 
-  /** Ten distinct probe archetypes, assigned deterministically by record. Shared geometries and
-   *  materials keep a few hundred satellites to a handful of buffers. */
+  /** One of 180 modular satellites (6 chassis × 6 wings × 5 payloads) from the assembler. */
   private satelliteMesh(radius: number, color: THREE.Color, variant: number): THREE.Group {
-    const r = radius;
-    const group = new THREE.Group();
-    const add = (geo: THREE.BufferGeometry, mat: THREE.Material, x = 0, y = 0, z = 0): THREE.Mesh => {
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.set(x, y, z);
-      group.add(mesh);
-      return mesh;
-    };
-    const bus = new THREE.BoxGeometry(r * 1.5, r * 1.8, r * 1.5);
-    const wingGeo = new THREE.BoxGeometry(r * 2.2, r * 1.25, r * 0.08);
-    const rodGeo = new THREE.CylinderGeometry(r * 0.035, r * 0.035, r * 1.8, 5);
-    const beaconMat = new THREE.MeshBasicMaterial({ color: color.clone().lerp(new THREE.Color(0xffffff), 0.55) });
-    const panel = new THREE.MeshStandardMaterial({ color: 0x24457f, roughness: 0.3, metalness: 0.85, emissive: 0x0a1a33, emissiveIntensity: 0.7 });
-    const foil = new THREE.MeshStandardMaterial({ color: 0xd9b45a, roughness: 0.38, metalness: 0.9 });
-    const ti = new THREE.MeshStandardMaterial({ color: 0xb8c4d8, roughness: 0.45, metalness: 0.85 });
-    const mirror = new THREE.MeshStandardMaterial({ color: 0xe8f4ff, roughness: 0.12, metalness: 1 });
-    const dark = new THREE.MeshStandardMaterial({ color: 0x2a3346, roughness: 0.7, metalness: 0.6 });
-
-    switch (variant % 10) {
-      case 0: {
-        // Twin-wing solar communications relay: gold bus, articulated blue wings, small relay horn.
-        add(bus, foil);
-        for (const dir of [-1, 1]) {
-          add(wingGeo, panel, dir * r * 2.1, 0, 0);
-          add(new THREE.BoxGeometry(r * 0.5, r * 0.1, r * 0.1), ti, dir * r * 1.1, 0, 0);
-        }
-        add(new THREE.SphereGeometry(r * 0.34, 12, 9), beaconMat, 0, r * 1.05, 0);
-        break;
-      }
-      case 1: {
-        // Deep-space parabolic dish orbiter: high-gain dish, feed horn, thruster pod.
-        add(new THREE.BoxGeometry(r * 1.1, r * 1.1, r * 1.1), ti);
-        const dish = add(new THREE.SphereGeometry(r * 1.15, 18, 12, 0, Math.PI * 2, 0, Math.PI / 2), mirror, 0, -r * 0.55, 0);
-        dish.rotation.x = Math.PI;
-        add(new THREE.CylinderGeometry(r * 0.06, r * 0.06, r * 1.5, 6), ti, 0, -r * 1.5, 0);
-        add(new THREE.SphereGeometry(r * 0.26, 10, 8), beaconMat, 0, -r * 2.2, 0);
-        add(new THREE.ConeGeometry(r * 0.28, r * 0.6, 10), dark, 0, r * 0.9, 0);
-        break;
-      }
-      case 2: {
-        // Octagonal telemetry bus with whip antennas and a strobe.
-        const oct = add(new THREE.CylinderGeometry(r * 0.85, r * 0.85, r * 1.9, 8), foil);
-        oct.rotation.z = 0.2;
-        for (const [x, z] of [[0.5, 0], [-0.5, 0], [0, 0.5], [0, -0.5]] as const) {
-          const whip = add(rodGeo, ti, x * r, r * 1.2, z * r);
-          whip.rotation.z = x * 0.5;
-          whip.rotation.x = -z * 0.5;
-        }
-        add(new THREE.SphereGeometry(r * 0.24, 10, 8), beaconMat, 0, r * 1.85, 0);
-        break;
-      }
-      case 3: {
-        // Centrifuge habitat ring around a central docking hub.
-        add(new THREE.TorusGeometry(r * 1.5, r * 0.2, 10, 40), ti).rotation.x = Math.PI / 2;
-        add(new THREE.CylinderGeometry(r * 0.3, r * 0.3, r * 1.5, 10), foil);
-        for (let i = 0; i < 4; i += 1) {
-          const spoke = add(new THREE.BoxGeometry(r * 1.25, r * 0.07, r * 0.07), ti);
-          spoke.rotation.y = (i / 4) * Math.PI;
-        }
-        add(new THREE.SphereGeometry(r * 0.28, 12, 9), beaconMat, 0, r * 0.85, 0);
-        break;
-      }
-      case 4: {
-        // Magnetometer boom surveyor: sensor core, long truss boom, twin paddles.
-        add(new THREE.BoxGeometry(r * 1.2, r * 1.2, r * 1.2), foil);
-        const boom = add(new THREE.CylinderGeometry(r * 0.05, r * 0.05, r * 6, 6), ti);
-        boom.rotation.z = Math.PI / 2;
-        boom.position.x = r * 3;
-        add(new THREE.SphereGeometry(r * 0.3, 10, 8), beaconMat, r * 6.1, 0, 0);
-        for (const dir of [-1, 1]) add(wingGeo, panel, 0, 0, dir * r * 1.7).rotation.x = Math.PI / 2;
-        break;
-      }
-      case 5: {
-        // Hex-array solar collector: six mirror petals around a hub.
-        add(new THREE.CylinderGeometry(r * 0.42, r * 0.42, r * 0.7, 8), ti);
-        const petal = new THREE.CylinderGeometry(r * 0.62, r * 0.62, r * 0.05, 6);
-        for (let i = 0; i < 6; i += 1) {
-          const a = (i / 6) * Math.PI * 2;
-          const p = add(petal, mirror, Math.cos(a) * r * 1.25, 0, Math.sin(a) * r * 1.25);
-          p.rotation.z = 0.55;
-          p.rotation.y = a;
-        }
-        add(new THREE.SphereGeometry(r * 0.22, 8, 6), beaconMat, 0, r * 0.55, 0);
-        break;
-      }
-      case 6: {
-        // Atmospheric weather scanner: nadir sensor turret and radiator fins.
-        add(new THREE.BoxGeometry(r * 1.4, r * 1.5, r * 1.4), ti);
-        const turret = add(new THREE.CylinderGeometry(r * 0.42, r * 0.5, r * 0.6, 12), dark, 0, -r * 1.05, 0);
-        turret.rotation.x = Math.PI;
-        add(new THREE.SphereGeometry(r * 0.26, 10, 8), new THREE.MeshBasicMaterial({ color: 0x7ce8ff }), 0, -r * 1.42, 0);
-        for (const dir of [-1, 1]) add(new THREE.BoxGeometry(r * 0.05, r * 0.9, r * 1.1), dark, dir * r * 0.85, 0, 0);
-        break;
-      }
-      case 7: {
-        // Laser optical relay: gimbaled cyan transceivers under a sunshield.
-        add(new THREE.CylinderGeometry(r * 0.6, r * 0.6, r * 1.4, 10), foil);
-        for (const dir of [-1, 1]) {
-          const lens = add(new THREE.CylinderGeometry(r * 0.34, r * 0.34, r * 0.3, 14), new THREE.MeshBasicMaterial({ color: 0x8be9fd }), dir * r * 0.8, r * 0.3, 0);
-          lens.rotation.z = Math.PI / 2;
-        }
-        add(new THREE.BoxGeometry(r * 2.1, r * 0.06, r * 1.3), mirror, 0, r * 0.95, 0).rotation.z = 0.2;
-        add(new THREE.SphereGeometry(r * 0.22, 8, 6), beaconMat, 0, -r * 0.9, 0);
-        break;
-      }
-      case 8: {
-        // CubeSat constellation: three units in formation with deployable antennas.
-        const cube = new THREE.BoxGeometry(r * 0.75, r * 0.75, r * 0.75);
-        const offsets: [number, number, number][] = [[0, r * 0.95, 0], [-r * 0.9, -r * 0.55, 0], [r * 0.9, -r * 0.55, 0]];
-        for (const [x, y, z] of offsets) {
-          add(cube, panel, x, y, z);
-          const ant = add(new THREE.CylinderGeometry(r * 0.03, r * 0.03, r * 0.9, 5), ti, x, y + r * 0.7, z);
-          ant.rotation.z = x > 0 ? -0.4 : x < 0 ? 0.4 : 0;
-        }
-        add(new THREE.SphereGeometry(r * 0.2, 8, 6), beaconMat, 0, r * 2, 0);
-        break;
-      }
-      default: {
-        // Tri-panel deep-orbit sentinel: three radial wings and a nuclear RTG fin.
-        add(new THREE.CylinderGeometry(r * 0.55, r * 0.55, r * 1.6, 10), foil);
-        for (let i = 0; i < 3; i += 1) {
-          const a = (i / 3) * Math.PI * 2;
-          const w = add(wingGeo, panel, Math.cos(a) * r * 1.85, 0, Math.sin(a) * r * 1.85);
-          w.rotation.y = -a;
-        }
-        add(new THREE.BoxGeometry(r * 0.16, r * 1.3, r * 0.9), dark, 0, -r * 1.35, 0);
-        add(new THREE.SphereGeometry(r * 0.26, 10, 8), beaconMat, 0, r * 0.95, 0);
-        break;
-      }
-    }
-    return group;
+    void color;
+    return buildSatellite(variant, radius);
   }
 
   /** An invisible, raycastable sphere so a 0.12-unit satellite can still be tapped from 2 units out. */
@@ -2048,7 +1973,6 @@ export class AtlasScene {
    */
   setHeat(tiers: Map<string, MasteryTier>): void {
     this.heatTiers = tiers;
-    if (!this.heatmap) return;
     for (const s of this.systems) {
       const tier = tiers.get(s.code) ?? "unassessed";
       const mat = s.heat.material as THREE.SpriteMaterial;
@@ -2060,6 +1984,13 @@ export class AtlasScene {
     this.heatmap = on;
     for (const s of this.systems) s.heat.visible = on;
     if (on) this.setHeat(this.heatTiers);
+  }
+
+  /** The exact colours the heatmap halo materials carry, for inspection and automated checks. */
+  heatColors(): string {
+    return this.systems
+      .map((s) => `${s.code}:${(s.heat.material as THREE.SpriteMaterial).color.getHexString()}`)
+      .join(",");
   }
 
   setHomeSystem(code: string | null): void {
@@ -2164,6 +2095,139 @@ export class AtlasScene {
     line.renderOrder = 5;
     this.scene.add(line);
     this.tetherFlashes.push({ line, born: typeof performance === "undefined" ? Date.now() : performance.now() });
+  }
+
+  /** Keep the streamer's nearest universes and galaxies tappable through the existing cosmic path. */
+  private syncStreamerBodies(): void {
+    this.cosmicBodies = this.cosmicBodies.filter((b) => !b.id.startsWith("STR-"));
+    for (const b of this.streamer.pickable(420)) {
+      this.cosmicBodies.push({
+        id: b.id,
+        kind: b.kind === "universe" ? "universe" : "galaxy",
+        name: b.name,
+        center: b.center,
+        radius: b.radius,
+      });
+    }
+  }
+
+  /** Progression Hardlock: unverified systems sit behind sensor fog until real evidence unlocks them. */
+  setProgressionLocked(locked: boolean): void {
+    this.progressionLocked = locked;
+    for (const s of this.systems) {
+      const gate = this.masteryOverride ?? this.progress.get(s.code) ?? 0;
+      s.fog.visible = locked && gate < 0.05;
+    }
+  }
+
+  /** Test Lab override. `null` returns every world to its live Dexie mastery. */
+  previewMastery(value: number | null): void {
+    this.masteryOverride = value;
+    for (const shader of this.nightShaders) shader.mat.uniforms.uProgress!.value = value ?? (this.progress.get(shader.body.node.id) ?? 0);
+    for (const mega of this.megaStructures) mega.mesh.visible = (value ?? 1) >= 0.999;
+    for (const swarm of this.dysonSwarms) swarm.group.visible = (value ?? 1) >= 0.999;
+    if (this.progressionLocked) this.setProgressionLocked(true);
+  }
+
+  private clearShowcase(): void {
+    if (!this.showcase) return;
+    this.root.remove(this.showcase.group);
+    this.showcase.group.traverse((object) => {
+      const mesh = object as THREE.Mesh;
+      if (mesh.geometry && !SHARED_GEOMETRY.has(mesh.geometry)) mesh.geometry.dispose();
+    });
+    this.showcase = null;
+    this.stationInteriorPreview = null;
+  }
+
+  /** Place an engine-built phenomenon in front of the camera and fly to it. */
+  spawnShowcase(kind: "blackhole" | "quasar" | "wormhole" | "binary" | "gas_giant" | "lava" | "pulsar" | "station" | "satellite", variant = 0): void {
+    this.clearShowcase();
+    const group = new THREE.Group();
+    const at = this.target.clone();
+    // Park the preview well above the local galaxy plane: a clean star-field backdrop, no label soup.
+    at.y += 9000;
+    at.x += 2500;
+    let update: ((elapsed: number) => void) | undefined;
+    let distance = 220;
+    if (kind === "blackhole") {
+      const bh = createBlackHole(48);
+      group.add(bh.group);
+      update = bh.update;
+      distance = 700;
+    } else if (kind === "quasar") {
+      const qso = createQuasar(26);
+      group.add(qso.group);
+      update = qso.update;
+      distance = 1400;
+    } else if (kind === "wormhole") {
+      const hole = createWormhole(120);
+      group.add(hole.group);
+      update = hole.update;
+      distance = 520;
+    } else if (kind === "pulsar") {
+      const pulsar = createPulsar(2.2);
+      group.add(pulsar.group);
+      update = pulsar.update;
+      distance = 90;
+    } else if (kind === "binary") {
+      const spec = synthesizeCustomSystem({ seed: 4821, stats: { domainCount: 2, skillCount: 9, masteryRatio: 0.7, needsRevisionCount: 0 } });
+      spec.star.multiplicity = "binary";
+      if (spec.star.companions.length === 0) spec.star.companions.push({ spectral: spec.star.spectral, separation: 0.9, mass: spec.star.mass * 0.8, radius: spec.star.radius * 0.7, color: 0xffd28e, texture: "star-orange-dwarf" });
+      const built = buildEngineSystem(spec, { starRadius: 26, mastery: this.masteryOverride ?? spec.mastery });
+      group.add(built.group);
+      update = (elapsed) => built.update(0.016, elapsed, this.masteryOverride ?? undefined);
+      distance = 620;
+    } else if (kind === "station") {
+      const station = buildStation(3.0);
+      station.interior.visible = true;
+      for (const child of station.group.children) if (child !== station.interior) child.visible = false;
+      group.add(station.group);
+      this.stationInteriorPreview = station.interior;
+      distance = 13;
+    } else if (kind === "satellite") {
+      group.add(buildSatellite(variant, 1.1));
+      distance = 9;
+    } else {
+      const style = biomeById(kind === "lava" ? "lava" : "gas_giant");
+      const built = buildShowcasePlanet(style, kind === "gas_giant" ? 3.2 : 2.4, this.masteryOverride ?? 0.6);
+      built.star.visible = false;
+      group.add(built.group);
+      update = (elapsed) => built.update(0.016, elapsed, this.masteryOverride ?? undefined);
+      distance = kind === "gas_giant" ? 22 : 12;
+    }
+    group.position.copy(at);
+    // Preview lighting: the gallery is lit like a studio, not by a distant star.
+    const key = new THREE.PointLight(0xe8f4ff, 3.2, 0, 1.1);
+    key.position.set(6, 9, 12);
+    group.add(key);
+    const fill = new THREE.PointLight(0x77b8ff, 1.4, 0, 1.4);
+    fill.position.set(-10, -6, -8);
+    group.add(fill);
+    this.root.add(group);
+    this.showcase = { group, update, label: kind };
+    this.follow = null;
+    this.selected = null;
+    const previewPitch = kind === "blackhole" ? 1.5 : kind === "quasar" ? 1.56 : kind === "station" ? 1.52 : 1.15;
+    this.glideTo(at, distance, this.yaw, previewPitch, 700);
+  }
+
+  /** Test Lab gallery: step through all 180 assembled satellites. */
+  cycleSatellite(step: number): number {
+    const current = this.showcase?.group.userData.variant as number | undefined;
+    const next = (((current ?? 0) + step) % SATELLITE_VARIANTS + SATELLITE_VARIANTS) % SATELLITE_VARIANTS;
+    this.spawnShowcase("satellite", next);
+    if (this.showcase) this.showcase.group.userData.variant = next;
+    return next;
+  }
+
+  /** Fly straight into the station's lit hangar and command deck. */
+  enterStationInterior(): void {
+    this.spawnShowcase("station");
+  }
+
+  exitShowcase(): void {
+    this.clearShowcase();
   }
 
   travel(id: string): void {
@@ -2342,6 +2406,16 @@ export class AtlasScene {
     );
     this.camera.lookAt(this.target);
     if (this.warpJitter.lengthSq() > 0) this.camera.position.add(this.warpJitter);
+
+    // Phenomenon shaders and the infinite sector field both advance on the same frame clock.
+    for (const p of this.phenomena) p.update?.(this.elapsed);
+    this.showcase?.update?.(this.elapsed);
+    if (this.stationInteriorPreview) {
+      const holo = this.stationInteriorPreview.userData.hologram as THREE.Mesh | undefined;
+      if (holo) holo.rotation.y += dt * 0.6;
+    }
+    const streamed = this.streamer.update(this.camera.position, this.distance);
+    if (streamed) this.syncStreamerBodies();
     this.camera.near = Math.max(0.02, this.distance * 0.00025);
     this.camera.far = Math.max(420_000, this.distance * 40);
     this.camera.updateProjectionMatrix();
@@ -2394,6 +2468,25 @@ export class AtlasScene {
       // Moon and satellite rings fade out smoothly past system scale (no popping).
       const ringFade = clamp((d - 450) / 250, 0, 1);
       for (const r of this.moonRingMats) if (r.system === s.index) r.mat.opacity = 0.22 * (1 - ringFade);
+      // Eclipse shadow cone: a moon behind its planet (relative to the star) and inside the umbra
+      // radius goes dark. Truly geometric, not a painted-in gradient.
+      if (d < 1800) {
+        const sun = s.group.position;
+        for (const e of this.moonEclipses) {
+          if (e.system !== s.index) continue;
+          e.moon.getWorldPosition(SCRATCH_A);
+          e.planet.getWorldPosition(SCRATCH_B);
+          SCRATCH_C.copy(sun).sub(SCRATCH_B).normalize();
+          SCRATCH_D.copy(SCRATCH_A).sub(SCRATCH_B);
+          const along = SCRATCH_D.dot(SCRATCH_C);
+          SCRATCH_D.addScaledVector(SCRATCH_C, -along);
+          const inside = along < 0 && SCRATCH_D.length() < e.planetRadius * 1.08;
+          const mat = e.shell.material as THREE.MeshBasicMaterial;
+          const target = inside ? 0.72 : 0;
+          mat.opacity += (target - mat.opacity) * Math.min(1, dt * 6);
+          e.shell.visible = mat.opacity > 0.01;
+        }
+      }
       // Level of detail is what keeps a phone at 60 FPS: only the system being flown stays fully
       // populated, and its moons and satellites appear as the camera closes on them.
       // Four LOD tiers. A: full geometry. B: spheres and tracks. C: one spectral beacon that keeps
@@ -2407,6 +2500,9 @@ export class AtlasScene {
       s.corona.visible = tier === "A" || tier === "B";
       s.beacon.visible = tier === "C";
       if (s.beacon.visible) s.beacon.scale.setScalar(Math.max(60, d * 0.017));
+      // Constellation threads are a system-scale reading aid. At galaxy range they collapse into a
+      // tangled wire cage, so they fade out entirely rather than clutter the sky.
+      for (const wire of s.wires) wire.visible = !this.showcase && d < 3200;
       if (this.heatmap && s.heat.visible) {
         // Mastered sectors breathe emerald-gold; revision bottlenecks pulse an amber warning ring.
         const beat = 0.5 + 0.5 * Math.sin(this.elapsed * 0.0022 + s.index * 1.7);
@@ -2507,6 +2603,8 @@ export class AtlasScene {
     if (!ctx) return;
     ctx.clearRect(0, 0, this.width, this.height);
     if (this.width < 2) return;
+    // A Test Lab preview is a clean specimen: no galaxy label soup over the phenomenon.
+    if (this.showcase) return;
     const placed: { x0: number; y0: number; x1: number; y1: number }[] = [];
     // One clean label per visible object: a body can never be captioned twice in a frame.
     const seen = new Set<string>();
@@ -2713,33 +2811,10 @@ export class AtlasScene {
     this.cosmos.add(this.multiverse, this.galaxyField);
 
     const h = MULTIVERSE_HALF;
-    const edges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(new THREE.BoxGeometry(h * 2, h * 2, h * 2)),
-      new THREE.LineBasicMaterial({ color: 0x35d9ff, transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending }),
-    );
-    this.multiverse.add(edges);
-    for (const shrink of [0.34, 0.67]) {
-      const lattice = new THREE.LineSegments(
-        new THREE.EdgesGeometry(new THREE.BoxGeometry(h * 2 * shrink, h * 2 * shrink, h * 2 * shrink)),
-        new THREE.LineBasicMaterial({ color: 0x263858, transparent: true, opacity: 0.9, depthWrite: false }),
-      );
-      this.multiverse.add(lattice);
-    }
-    // Corner coordinate ticks: three short axes at each vertex of the box.
-    const ticks: number[] = [];
-    for (const sx of [-1, 1]) {
-      for (const sy of [-1, 1]) {
-        for (const sz of [-1, 1]) {
-          const x = sx * h;
-          const y = sy * h;
-          const z = sz * h;
-          ticks.push(x, y, z, x - sx * 1500, y, z, x, y, z, x, y - sy * 1500, z, x, y, z, x, y, z - sz * 1500);
-        }
-      }
-    }
-    const tickGeo = new THREE.BufferGeometry();
-    tickGeo.setAttribute("position", new THREE.Float32BufferAttribute(ticks, 3));
-    this.multiverse.add(new THREE.LineSegments(tickGeo, new THREE.LineBasicMaterial({ color: 0x7fe9ff, transparent: true, opacity: 0.5, depthWrite: false })));
+    // The containment wireframe cube is gone: the streamer owns the 360° field now.
+    this.cosmos.add(this.streamer.group);
+    this.streamer.group.position.set(0, 0, 0);
+    this.streamer.update(new THREE.Vector3(0, 0, 0), 60_000, true);
 
     // 24 procedural universes, spread through the volume with a real minimum separation.
     const centres: THREE.Vector3[] = [new THREE.Vector3(0, 0, 0)];
@@ -2918,177 +2993,30 @@ export class AtlasScene {
     }
   }
 
-  /** A quasar: a hyper-luminous accretion core firing twin opposing relativistic jets, cyan on one
-   *  pole and violet on the other. Both jets are additive cones, so the beam brightens toward the tip. */
+  /** A quasar: relativistic black hole with feathered, particle-streaming twin jets. */
   private quasar(scale: number): THREE.Group {
-    const group = this.relativisticBlackHole(scale);
-    const jetLen = 1200;
-    for (const [dir, color] of [[1, 0x35d9ff], [-1, 0xa78bfa]] as const) {
-      const mat = new THREE.MeshBasicMaterial({
-        color,
-        transparent: true,
-        opacity: 0.30,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        side: THREE.DoubleSide,
-      });
-      const jet = new THREE.Mesh(new THREE.ConeGeometry(scale * 1.5, jetLen, 24, 1, true), mat);
-      jet.rotation.x = dir > 0 ? Math.PI : 0;
-      jet.position.y = (dir * jetLen) / 2;
-      group.add(jet);
-      // A brighter inner beam and a terminal shock lobe make the jet read as relativistic plasma.
-      const core = new THREE.Mesh(
-        new THREE.CylinderGeometry(scale * 0.18, scale * 0.62, jetLen * 0.96, 16, 1, true),
-        new THREE.MeshBasicMaterial({ color: 0xf2fbff, transparent: true, opacity: 0.42, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }),
-      );
-      core.position.y = (dir * jetLen) / 2;
-      group.add(core);
-      const lobe = new THREE.Sprite(
-        new THREE.SpriteMaterial({ map: radialSprite(`rgba(${dir > 0 ? "120,240,255" : "190,160,255"},0.9)`, "rgba(40,40,90,0)"), transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false }),
-      );
-      lobe.scale.setScalar(scale * 7);
-      lobe.position.y = dir * jetLen;
-      group.add(lobe);
-    }
-    return group;
+    const qso = createQuasar(scale);
+    this.phenomena.push({ object: qso.group, update: qso.update });
+    return qso.group;
   }
 
-  /** A relativistic black hole: pitch-black shadow, omnidirectional photon ring, lensed halo and a
-   *  turbulent Doppler-beamed accretion disk. */
+  /** A relativistic black hole: Schwarzschild shadow, photon ring, lensing shell, Doppler disk. */
   private relativisticBlackHole(scale: number): THREE.Group {
-    const group = new THREE.Group();
-    // Schwarzschild shadow: unlit, so it reads as a hole punched in the star field.
-    const horizon = new THREE.Mesh(UNIT_SPHERE, new THREE.MeshBasicMaterial({ color: 0x000000 }));
-    horizon.scale.setScalar(scale);
-    group.add(horizon);
-    // The photon ring is drawn in three orthogonal planes: whichever way you orbit, one faces you.
-    const photonMat = new THREE.MeshBasicMaterial({
-      color: 0xfff7dc,
-      transparent: true,
-      opacity: 0.95,
-      side: THREE.DoubleSide,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    });
-    for (const [rx, ry] of [[0, 0], [Math.PI / 2, 0], [0, Math.PI / 2]] as const) {
-      const photon = new THREE.Mesh(new THREE.RingGeometry(scale * 1.015, scale * 1.048, 160), photonMat);
-      photon.rotation.set(rx, ry, 0);
-      group.add(photon);
-    }
-    // Lensing shells: additive, view-dependent, and slightly larger than the shadow so the far side
-    // of the disk appears bent over the top and under the bottom of the horizon.
-    for (const [factor, opacity] of [[1.22, 1], [1.62, 0.55]] as const) {
-      const mat = lensingHaloMaterial();
-      mat.uniforms.uTime!.value = 0;
-      this.diskMats.push(mat);
-      const shell = new THREE.Mesh(UNIT_SPHERE, mat);
-      shell.scale.setScalar(scale * factor);
-      shell.renderOrder = 2 - opacity;
-      group.add(shell);
-    }
-    // Curved lensed arcs, doubled in yaw so the halo bends from every viewing angle.
-    for (const turn of [0, Math.PI / 2]) {
-      for (const start of [0.08, 1.08]) {
-        const arc = new THREE.Mesh(
-          new THREE.RingGeometry(scale * 1.13, scale * 1.215, 96, 1, Math.PI * start, Math.PI * 0.84),
-          new THREE.MeshBasicMaterial({ color: 0xfff0d4, transparent: true, opacity: 0.17, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false }),
-        );
-        arc.rotation.y = turn;
-        group.add(arc);
-      }
-    }
-    const diskMat = blackHoleDiskMaterial(scale * 4);
-    this.diskMats.push(diskMat);
-    const disk = new THREE.Mesh(new THREE.RingGeometry(scale * 1.42, scale * 4.0, 192, 3), diskMat);
-    disk.rotation.x = Math.PI / 2 - 0.34;
-    group.add(disk);
-    // A second, thinner counter-tilted sheet fakes the disk's own lensed underside.
-    const underMat = blackHoleDiskMaterial(scale * 3.1);
-    underMat.opacity = 0.5;
-    this.diskMats.push(underMat);
-    const under = new THREE.Mesh(new THREE.RingGeometry(scale * 1.38, scale * 2.4, 128, 2), underMat);
-    under.rotation.x = Math.PI / 2 + 0.46;
-    group.add(under);
-    const halo = new THREE.Sprite(
-      new THREE.SpriteMaterial({
-        map: radialSprite("rgba(255,247,220,0.9)", "rgba(124,232,255,0.28)"),
-        transparent: true,
-        opacity: 0.18,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      }),
-    );
-    halo.scale.setScalar(scale * 2.6);
-    group.add(halo);
-    return group;
+    const bh = createBlackHole(scale);
+    this.phenomena.push({ object: bh.group, update: bh.update });
+    return bh.group;
   }
 
-  /** A multi-part outpost: counter-rotating habitation rings, solar wings, strobe beacons and an open
-   *  lit docking tunnel. Built from shared geometry so 20 stations cost almost nothing. */
+  /** A multi-deck outpost from the spacecraft assembler: decks, rails, pads, hangar and interior. */
   private stationMesh(scale: number): { craft: THREE.Group; rings: THREE.Object3D[]; beacons: { mat: THREE.MeshBasicMaterial; phase: number }[]; bay: THREE.Mesh } {
-    const craft = new THREE.Group();
-    const metal = new THREE.MeshStandardMaterial({ color: 0xc8d6ec, roughness: 0.42, metalness: 0.85 });
-    const hull = new THREE.MeshStandardMaterial({ color: 0x8fa2c4, roughness: 0.55, metalness: 0.7 });
-    // Two habitat rings turning against each other, the classic spin-gravity silhouette.
-    const rings: THREE.Object3D[] = [];
-    const ringA = new THREE.Object3D();
-    ringA.add(new THREE.Mesh(STATION_PARTS.ring, metal));
-    for (let i = 0; i < 8; i += 1) {
-      const spoke = new THREE.Mesh(STATION_PARTS.pylon, hull);
-      spoke.rotation.y = (i / 8) * Math.PI * 2;
-      spoke.scale.set(0.8, 0.8, 0.8);
-      ringA.add(spoke);
-    }
-    const ringB = new THREE.Object3D();
-    ringB.add(new THREE.Mesh(STATION_PARTS.ring2, hull));
-    ringB.rotation.set(Math.PI / 2.6, 0.3, 0);
-    rings.push(ringA, ringB);
-    craft.add(ringA, ringB);
-    craft.add(new THREE.Mesh(STATION_PARTS.hub, metal));
-    const truss = new THREE.Mesh(STATION_PARTS.truss, hull);
-    craft.add(truss);
-    // Solar collector wings on outriggers, dark blue cells catching the local star.
-    const cell = new THREE.MeshStandardMaterial({ color: 0x1d3a63, roughness: 0.3, metalness: 0.55, emissive: 0x0b2340, emissiveIntensity: 0.8 });
-    for (const dir of [-1, 1]) {
-      const arm = new THREE.Mesh(STATION_PARTS.pylon, hull);
-      arm.position.set(dir * 0.5, 0, 0);
-      craft.add(arm);
-      const wing = new THREE.Mesh(STATION_PARTS.wing, cell);
-      wing.position.set(dir * 0.82, 0, 0);
-      wing.rotation.z = dir * 0.18;
-      craft.add(wing);
-    }
-    // Open docking tunnel through the hub, glowing at the mouth for approach.
-    const bayMat = new THREE.MeshBasicMaterial({ color: 0x8be9fd, side: THREE.DoubleSide });
-    const bay = new THREE.Mesh(STATION_PARTS.dock, bayMat);
-    bay.rotation.z = Math.PI / 2;
-    craft.add(bay);
-    const rimMat = new THREE.MeshBasicMaterial({ color: 0xbdf6ff, transparent: true, opacity: 0.9, side: THREE.DoubleSide });
-    for (const dir of [-1, 1]) {
-      const lip = new THREE.Mesh(new THREE.RingGeometry(0.115, 0.17, 20), rimMat);
-      lip.rotation.y = Math.PI / 2;
-      lip.position.x = dir * 0.17;
-      craft.add(lip);
-      const light = new THREE.Mesh(STATION_PARTS.bay, new THREE.MeshBasicMaterial({ color: 0x7ce8ff, transparent: true, opacity: 0.8 }));
-      light.position.set(dir * 0.3, 0.14, 0);
-      craft.add(light);
-    }
-    // Navigation strobes: red on the port wing tip, cyan on starboard and the dorsal mast.
-    const beacons: { mat: THREE.MeshBasicMaterial; phase: number }[] = [];
-    const spots: [number, number, number, number, number][] = [
-      [-0.98, 0, 0, 0xff4d5e, 0],
-      [0.98, 0, 0, 0x8be9fd, 1.7],
-      [0, 0.52, 0, 0x9cf7ff, 3.1],
-    ];
-    for (const [x, y, z, color, phase] of spots) {
-      const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 1 });
-      const beacon = new THREE.Mesh(STATION_PARTS.beacon, mat);
-      beacon.position.set(x, y, z);
-      craft.add(beacon);
-      beacons.push({ mat, phase });
-    }
-    craft.scale.setScalar(scale);
-    return { craft, rings, beacons, bay };
+    const station = buildStation(scale);
+    const craft = station.group;
+    craft.userData.walkableSurfaces = station.walkableSurfaces;
+    craft.userData.interiorBounds = station.interiorBounds;
+    craft.userData.interior = station.interior;
+    this.stationInteriorPreview = station.interior;
+    this.stationsInteriors.push(station.interior);
+    return { craft, rings: station.rings, beacons: station.beacons, bay: station.bay };
   }
 
   private addStation(id: string, parent: THREE.Object3D, scale: number, orbit: number): void {

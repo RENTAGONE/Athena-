@@ -91,6 +91,13 @@ export function Knowledge(): ReactNode {
   const [waypoints, setWaypoints] = useState<Waypoint[]>([]);
   const [pinsOpen, setPinsOpen] = useState(false);
   const [webgl, setWebgl] = useState(true);
+  /** Progression hardlock: unverified systems stay behind sensor fog until evidence unlocks them. */
+  const [hardlock, setHardlock] = useState(false);
+  /** Sim & Visual Test Lab: preview visual states without touching Dexie. */
+  const [labOpen, setLabOpen] = useState(false);
+  const [labMastery, setLabMastery] = useState<number | null>(null);
+  const [labPreview, setLabPreview] = useState<string | null>(null);
+  const [satellite, setSatellite] = useState(0);
   const [homeSystem, setHomeSystem] = useState<string | null>(() => {
     try {
       return window.localStorage.getItem("athena.home.system");
@@ -159,13 +166,67 @@ export function Knowledge(): ReactNode {
     return out;
   }, [galaxy, index]);
 
+  /** Tier counts straight from the same Dexie-derived map that feeds the scene. */
+  const heatCounts = useMemo(() => {
+    const out: Record<MasteryTier, number> = { mastered: 0, demonstrated: 0, needs_revision: 0, unassessed: 0 };
+    for (const star of galaxy.stars) out[masteryTier(index, star.discipline.id)] += 1;
+    return out;
+  }, [galaxy, index]);
+  const [heatColors, setHeatColors] = useState("");
+
   useEffect(() => {
-    sceneRef.current?.setHeat(heat);
-  }, [heat]);
+    const apply = (): void => {
+      const scene = sceneRef.current;
+      scene?.setHeat(heat);
+      setHeatColors(scene?.heatColors() ?? "");
+    };
+    apply();
+    const t = window.setTimeout(apply, 80);
+    return () => window.clearTimeout(t);
+  }, [heat, galaxy]);
+
+  /** Deep-link/automation hook: select a record by id without hunting for its star. */
+  useEffect(() => {
+    const onInspect = (event: Event): void => {
+      const id = (event as CustomEvent<{ id?: string }>).detail?.id;
+      if (typeof id !== "string") return;
+      setCore(null);
+      setSelected(id);
+    };
+    window.addEventListener("athena:inspect", onInspect);
+    return () => window.removeEventListener("athena:inspect", onInspect);
+  }, []);
 
   useEffect(() => {
     sceneRef.current?.setHeatmap(heatmap);
   }, [heatmap]);
+
+  useEffect(() => {
+    sceneRef.current?.setProgressionLocked(hardlock);
+  }, [hardlock]);
+
+  useEffect(() => {
+    sceneRef.current?.previewMastery(labMastery);
+  }, [labMastery]);
+
+  /** Test Lab transport: build a phenomenon in front of the camera. Nothing is written to Dexie. */
+  const preview = useCallback((kind: "blackhole" | "quasar" | "wormhole" | "binary" | "gas_giant" | "lava" | "pulsar" | "station" | "satellite") => {
+    setLabPreview(kind);
+    sceneRef.current?.spawnShowcase(kind, satellite);
+  }, [satellite]);
+
+  const stepSatellite = useCallback((dir: number) => {
+    const next = sceneRef.current?.cycleSatellite(dir) ?? satellite;
+    setSatellite(next);
+    setLabPreview("satellite");
+  }, [satellite]);
+
+  const resetLab = useCallback(() => {
+    sceneRef.current?.exitShowcase();
+    sceneRef.current?.previewMastery(null);
+    setLabMastery(null);
+    setLabPreview(null);
+  }, []);
 
   const saveWaypoints = useCallback((next: Waypoint[]) => {
     setWaypoints(next);
@@ -414,6 +475,14 @@ export function Knowledge(): ReactNode {
       data-zen={zen ? "true" : undefined}
       data-landscape={landscape ? "true" : undefined}
       data-rail-open={railOpen ? "true" : undefined}
+      data-heatmap={heatmap ? "true" : "false"}
+      data-heat={`${heatCounts.mastered}/${heatCounts.demonstrated}/${heatCounts.needs_revision}/${heatCounts.unassessed}`}
+      data-heat-colors={heatColors}
+      data-progression={hardlock ? "locked" : "explorer"}
+      data-lab={labOpen ? "open" : "closed"}
+      data-lab-preview={labPreview ?? ""}
+      data-mastery={labMastery === null ? "live" : labMastery.toFixed(2)}
+      data-satellite={String(satellite)}
     >
       <div className="atlas-stage">
         <canvas ref={canvasRef} className="atlas-canvas" aria-hidden={view === "index"} />
@@ -459,6 +528,30 @@ export function Knowledge(): ReactNode {
               onClick={toggleRail}
             >
               <Menu size={17} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          )}
+          {view === "atlas" && (
+            <button
+              className="btn sm ghost"
+              aria-label={hardlock ? "Progression locked" : "Progression explorer"}
+              aria-pressed={hardlock}
+              title={hardlock ? "Unverified systems are fogged until evidence unlocks them" : "Free explorer: inspect everything"}
+              onClick={() => setHardlock((on) => !on)}
+            >
+              <span className="lock-dot" aria-hidden="true" />
+              <span>{hardlock ? "Locked" : "Explorer"}</span>
+            </button>
+          )}
+          {view === "atlas" && (
+            <button
+              className="btn sm ghost"
+              aria-label="Sim and Visual Test Lab"
+              aria-expanded={labOpen}
+              aria-pressed={labOpen}
+              onClick={() => setLabOpen((open) => !open)}
+            >
+              <span aria-hidden="true">⌬</span>
+              <span>Test Lab</span>
             </button>
           )}
           {view === "atlas" && (
@@ -828,6 +921,58 @@ export function Knowledge(): ReactNode {
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4" }} />demonstrated</span>
         <span><i style={{ borderColor: "#42e6c4", color: "#42e6c4", background: "#42e6c4" }} />mastered</span>
       </div>
+
+      {labOpen && view === "atlas" && (
+        <div className="test-lab" role="dialog" aria-label="Sim and Visual Test Lab">
+          <div className="row between">
+            <strong>Sim &amp; Visual Test Lab</strong>
+            <button className="icon-btn" aria-label="Close Test Lab" onClick={() => setLabOpen(false)}>
+              <X size={14} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          </div>
+          <p className="hint">Preview visual states in 3D. Nothing here is written to Dexie.</p>
+          <label className="lab-slider">
+            <span className="row between">
+              <span className="label">Mastery city lights</span>
+              <output>{labMastery === null ? "live Dexie" : `${Math.round(labMastery * 100)}%`}</output>
+            </span>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              step={5}
+              aria-label="Mastery city lights and megastructures override"
+              value={labMastery === null ? 100 : Math.round(labMastery * 100)}
+              onChange={(e: { target: HTMLInputElement }) => setLabMastery(Number(e.target.value) / 100)}
+            />
+            <span className="lab-scale" aria-hidden="true"><i>0% dark</i><i>50% regional</i><i>100% orbital ring</i></span>
+          </label>
+          <div className="lab-grid" role="group" aria-label="Spawn phenomena">
+            <button className="btn sm" aria-pressed={labPreview === "blackhole"} onClick={() => preview("blackhole")}>Black Hole</button>
+            <button className="btn sm" aria-pressed={labPreview === "quasar"} onClick={() => preview("quasar")}>Quasar</button>
+            <button className="btn sm" aria-pressed={labPreview === "wormhole"} onClick={() => preview("wormhole")}>Wormhole</button>
+            <button className="btn sm" aria-pressed={labPreview === "binary"} onClick={() => preview("binary")}>Binary Star</button>
+            <button className="btn sm" aria-pressed={labPreview === "gas_giant"} onClick={() => preview("gas_giant")}>Ringed Gas Giant</button>
+            <button className="btn sm" aria-pressed={labPreview === "lava"} onClick={() => preview("lava")}>Lava World</button>
+            <button className="btn sm" aria-pressed={labPreview === "pulsar"} onClick={() => preview("pulsar")}>Pulsar</button>
+          </div>
+          <div className="lab-row">
+            <span className="label">Satellite gallery · <span className="num">{satellite + 1}/180</span></span>
+            <div className="row">
+              <button className="btn sm ghost" aria-label="Previous satellite" onClick={() => stepSatellite(-1)}>‹ Prev</button>
+              <button className="btn sm ghost" aria-label="Next satellite" onClick={() => stepSatellite(1)}>Next ›</button>
+            </div>
+          </div>
+          <div className="lab-row">
+            <button className="btn sm" aria-pressed={labPreview === "station"} onClick={() => { setLabPreview("station"); sceneRef.current?.enterStationInterior(); }}>
+              Station Interior
+            </button>
+            <button className="btn sm ghost" aria-label="Reset to live Dexie" onClick={resetLab}>
+              Reset to Live Dexie
+            </button>
+          </div>
+        </div>
+      )}
 
       {controls && (
         <div className="atlas-controls" role="dialog" aria-label="Flight controls">
